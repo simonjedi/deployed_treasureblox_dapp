@@ -1,0 +1,27 @@
+.background {
+    /* The image used */
+    /* background-image: url(./treasure1.jpg); */
+    background: url(./treasureblox_background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* background-attachment: fixed; */
+    /* Full height */
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.customFont{
+  font-family: 'Bangers', cursive;
+}
+
+.spaceTopHome{
+  margin-top: 100px;
+}

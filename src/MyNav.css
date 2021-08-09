@@ -1,0 +1,20 @@
+.MyBakground{
+  background: #001219;
+  font-size: 1.3rem;
+
+}
+
+.customLinks{
+    color: rgba(255,255,255,.5);
+    padding-right: .5rem;
+    padding-left: .5rem;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background-color: transparent;
+}
+.customLinks:hover {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+
+}

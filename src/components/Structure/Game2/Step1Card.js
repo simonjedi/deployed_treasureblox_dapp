@@ -50,8 +50,8 @@ const Step1Card = (props) => {
 
     }
 
-
-// check if a user has entered?
+    const date = new Date(props.game2_head_start_time*1000);
+    var headStart = date.toLocaleDateString("en-US");
 
 
 
@@ -75,7 +75,7 @@ const Step1Card = (props) => {
               <div>
                 <div className="largeEnter">Enter Here!</div>
                 <div className="gameTitleEnter">Entry Cost {game2_entry_cost} Blox</div>
-                <div>Only those who have entered may participate in this quest. The Quest participant limit will increase 10x in {props.game2_head_start_time} so enter now to gain a head start!
+                <div>Only those who have entered may participate in this quest. The Quest participant limit will increase 10x on {headStart} so enter now to gain a head start!
                 </div>
 
                 <br />

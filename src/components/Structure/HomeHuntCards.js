@@ -23,6 +23,10 @@ const HuntWowCards = (props) => {
 
   const commaNumber = require('comma-number')
 
+  const game1_prize = commaNumber(props.game1_prize,',');
+  const game2_prize = commaNumber(props.game2_prize,',');
+
+
 
   // console.log(game1_id)s
 
@@ -46,7 +50,7 @@ const HuntWowCards = (props) => {
       <Card.Body >
         <Card.Title className="gameTitle">Elon's lost his Rocket!</Card.Title>
         <div>Riddle {props.game1_riddle}</div>
-        <div>Prize {props.game1_prize} Blox</div>
+        <div>Prize {game1_prize} Blox</div>
         <div>Number of people entered {props.game1numberOfEntries}</div>
         <br/>
         <Link to="/hunt2">
@@ -63,7 +67,7 @@ const HuntWowCards = (props) => {
       <Card.Body >
         <Card.Title className="gameTitle">Fort Blox</Card.Title>
         <div>Riddle {props.game2_riddle}</div>
-        <div>Prize {props.game2_prize} Blox</div>
+        <div>Prize {game2_prize} Blox</div>
         <div>Number of people entered {props.game2numberOfEntries}</div>
         <br/>
         <Link to="/hunt2">

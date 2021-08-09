@@ -141,7 +141,7 @@ const App = () => {
         // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x2f62f1C0abCCae1315aEfc616119e20955ECfdb7");
 
         // TestNet
-        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x7Ca5b04D437b2a3EeAeC1903142bB139292Ac636");
+        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x334Defe76533853B9cFdFd66845Ebd4779CA9ab2");
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 

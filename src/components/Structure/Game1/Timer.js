@@ -13,6 +13,10 @@ import Step2Card from "./Step2Card";
 import Step3Card from "./Step3Card";
 import Step3CardNoEntry from "./Step3CardNoEntry";
 
+import celebrate from '../Sounds/celebrate.wav';
+
+import ReactAudioPlayer from 'react-audio-player';
+
 
 const Timer = (props) => {
   const commaNumber = require('comma-number')
@@ -20,15 +24,34 @@ const Timer = (props) => {
 
   const winning_prize1 = commaNumber(props.winning_prize1,',');
 
+  const [transactionConfirmed,setTransactionConfirmed] = useState(undefined);
+  const [timeLock,setTimelock] = useState(false);
 
-// DO CHECKS WITH THE USER
-  // Check the game is live
-  const game1_live = props.game1_live;
-  // Enter Game
-  const enter = props.userEntered_game1;
-  // Head Start Time Lock
-  const timeLock = props.countGame1DeadlineTrue;
+
+  // DO CHECKS WITH THE USER
+    // Check the game is live
+    const game1_live = props.game1_live;
+    // Enter Game
+    const enter = props.userEntered_game1;
+    // Head Start Time Lock
+
+
+  const updateLocalDeadLineTime = (bool) => {
+    if (bool){
+      setTransactionConfirmed(true);
+      console.log("pre timelock:", timeLock)
+      setTimelock(true);
+      console.log("updated timelock:", timeLock)
+    }
+  }
+  // setTimelock(props.countGame1DeadlineTrue);
   // User Activated time Lock
+
+  const cancelLocalTime = () => {
+      setTimelock(false);
+  }
+
+
 
 
   return(
@@ -50,14 +73,18 @@ const Timer = (props) => {
           <div>
 
             <div>
-                    {timeLock ? (
+                    { timeLock || props.countGame2DeadlineTrue ? (
                       <div>
-                        {props.accounts == props.attemptAddress1 ?(
+                        {setTransactionConfirmed || props.accounts == props.attemptAddress2 ?(
                           <div>
 
                             { props.accounts == props.winning_address1 ?(
 
                                 <div>
+                                  <ReactAudioPlayer
+                                    src={celebrate}
+                                    autoPlay
+                                  />
                                   Congratulations you have solved the quest!
                                   <div className="largeEnter">WINNER</div>
                                   <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>
@@ -71,12 +98,14 @@ const Timer = (props) => {
                                   {props.winning_address1}
 
                                 </div>
+
                             ):(
+
 
                                 <div className="descriptionTitle">
 
                                   <Step3Card
-                                  {...props}/>
+                                  {...props} cancelLocalTime={cancelLocalTime}/>
 
                                 </div>
                             )}
@@ -86,8 +115,7 @@ const Timer = (props) => {
                           <div>
 
                             <Step3CardNoEntry
-                            {...props}
-                            />
+                            {...props }cancelLocalTime={cancelLocalTime}/>
 
                           </div>
                         )}
@@ -98,7 +126,7 @@ const Timer = (props) => {
                       <div>
 
                         <Step2Card
-                        {...props}/>
+                        {...props} updateLocalDeadLineTime={updateLocalDeadLineTime}/>
 
                       </div>
 
@@ -127,6 +155,10 @@ const Timer = (props) => {
           <div>
             {props.treasure_found1?(
                 <div>
+                  <ReactAudioPlayer
+                    src={celebrate}
+                    autoPlay
+                  />
                   Congratulations a treasure hunter helped Elon find his Rocket!
                   <div className="largeEnter">WINNER</div>
                   <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>

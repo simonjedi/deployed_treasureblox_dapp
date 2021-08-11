@@ -25,6 +25,7 @@ const Connection = (props) =>  {
        setFirstPartAddress(stringOfUsersAccount.slice(0, 5));
        setSecondPartAddress('____'+stringOfUsersAccount.slice(27, 32));
 
+
      }
      init()
    });
@@ -36,7 +37,10 @@ const Connection = (props) =>  {
     console.log(stringOfUsersAccount.slice(0, 4)); // "01"
     setFirstPartAddress('Welcome');
     setSecondPartAddress('');
+    window.location.reload();
+
   }
+
 
   return(
     <div>

@@ -52,6 +52,11 @@ const Step3Card = (props) => {
 
     }
 
+
+    if (props.countGame1 === 0){
+      props.cancelLocalTime()
+    }
+
   return(
 
               <div>

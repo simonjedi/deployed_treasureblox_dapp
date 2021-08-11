@@ -4,8 +4,11 @@ import Timer from './Timer';
 
 import img1 from '../images/elons-rocket.jpg';
 import img2 from '../images/fortblox.png';
+import blox_loading from '../images/Blox.gif';
 
 
+import waiting from '../Sounds/waiting.wav';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 import {Spinner,Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
@@ -54,8 +57,6 @@ const Step1Card = (props) => {
     var headStart = date.toLocaleDateString("en-US");
 
 
-
-
   return(
 
         <div>
@@ -67,7 +68,16 @@ const Step1Card = (props) => {
                   Verifying Your Entry To Elons Rocket Quest!
                   <br/>
                   <br/>
-                  <Spinner animation="grow" variant="light" />
+                  <img
+                    alt="Blox Loading"
+                    src={blox_loading}
+                    width="75"
+                    className="d-inline-block align-middle"
+                  />
+                  <ReactAudioPlayer
+                    src={waiting}
+                    autoPlay
+                  />
                 <br/>
               <br/>
               </div>

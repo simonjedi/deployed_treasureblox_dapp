@@ -13,6 +13,12 @@ import Step2Card from "./Step2Card";
 import Step3Card from "./Step3Card";
 import Step3CardNoEntry from "./Step3CardNoEntry";
 
+import celebrate from '../Sounds/celebrate.wav';
+
+
+
+import ReactAudioPlayer from 'react-audio-player';
+
 
 const Timer = (props) => {
   const commaNumber = require('comma-number')
@@ -20,15 +26,37 @@ const Timer = (props) => {
 
   const winning_prize2 = commaNumber(props.winning_prize2,',');
 
+  const [transactionConfirmed,setTransactionConfirmed] = useState(undefined);
+  const [timeLock,setTimelock] = useState(false);
 
-// DO CHECKS WITH THE USER
-  // Check the game is live
-  const game2_live = props.game2_live;
-  // Enter Game
-  const enter = props.userEntered_game2;
-  // Head Start Time Lock
-  const timeLock = props.countGame2DeadlineTrue;
+
+  // DO CHECKS WITH THE USER
+    // Check the game is live
+    const game2_live = props.game2_live;
+    // Enter Game
+    const enter = props.userEntered_game2;
+    // Head Start Time Lock
+
+
+  const updateLocalDeadLineTime = (bool) => {
+    if (bool){
+      setTransactionConfirmed(true);
+      console.log("pre timelock:", timeLock)
+      setTimelock(true);
+      console.log("updated timelock:", timeLock)
+    }
+  }
+  // setTimelock(props.countGame1DeadlineTrue);
   // User Activated time Lock
+
+  const cancelLocalTime = () => {
+      setTimelock(false);
+  }
+
+
+
+
+
 
 
   return(
@@ -50,14 +78,19 @@ const Timer = (props) => {
           <div>
 
             <div>
-                    {timeLock ? (
+
+                    { timeLock || props.countGame2DeadlineTrue ? (
                       <div>
-                        {props.accounts == props.attemptAddress2 ?(
+                        {setTransactionConfirmed || props.accounts == props.attemptAddress2 ?(
                           <div>
 
                             { props.accounts == props.winning_address2 ?(
 
                                 <div>
+                                  <ReactAudioPlayer
+                                    src={celebrate}
+                                    autoPlay
+                                  />
                                   Congratulations you have solved the quest!
                                   <div className="largeEnter">WINNER</div>
                                   <div className="gameTitleEnter">Prize Won {winning_prize2} Blox</div>
@@ -68,15 +101,17 @@ const Timer = (props) => {
 
                                   <br/><br/>
                                   <div className="enterGameTitle">Winning Address</div>
-                                  {props.winning_address2}
+                                  {props.winning_address1}
 
                                 </div>
+
                             ):(
+
 
                                 <div className="descriptionTitle">
 
                                   <Step3Card
-                                  {...props}/>
+                                  {...props} cancelLocalTime={cancelLocalTime}/>
 
                                 </div>
                             )}
@@ -86,8 +121,7 @@ const Timer = (props) => {
                           <div>
 
                             <Step3CardNoEntry
-                            {...props}
-                            />
+                            {...props }cancelLocalTime={cancelLocalTime}/>
 
                           </div>
                         )}
@@ -98,7 +132,7 @@ const Timer = (props) => {
                       <div>
 
                         <Step2Card
-                        {...props}/>
+                        {...props} updateLocalDeadLineTime={updateLocalDeadLineTime}/>
 
                       </div>
 
@@ -127,7 +161,11 @@ const Timer = (props) => {
           <div>
             {props.treasure_found2?(
                 <div>
-                  Congratulations a treasure hunter solved fort Blox!
+                  <ReactAudioPlayer
+                    src={celebrate}
+                    autoPlay
+                  />
+                  Congratulations a treasure hunter helped Elon find his Rocket!
                   <div className="largeEnter">WINNER</div>
                   <div className="gameTitleEnter">Prize Won {winning_prize2} Blox</div>
                   <br/>

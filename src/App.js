@@ -32,6 +32,7 @@ import Hunt2 from "./Hunt2";
 
 const App = () => {
 
+
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
   const [contract,setContract] = useState(null)
@@ -119,14 +120,19 @@ const App = () => {
   const [attemptAddress2, setAttemptAddress2] = useState(undefined);
   const [attemptUsername2, setAttemptUsername2] = useState(undefined);
   const [attemptDeadline2, setAttemptDeadline2] = useState(undefined);
+  const [loaded, setloaded] = useState(false);
+
+
+
+
+
 
   useEffect(() => {
 
 
-
-
-
       const init = async() => {
+
+
 
         const web3 = await getWeb3();
 
@@ -138,10 +144,10 @@ const App = () => {
         // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
 
         // LOCAL
-        // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x2f62f1C0abCCae1315aEfc616119e20955ECfdb7");
+        // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
 
         // TestNet
-        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x334Defe76533853B9cFdFd66845Ebd4779CA9ab2");
+        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xfa5b74c31239D781fb67182de9edf2319c491714");
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 
@@ -251,6 +257,12 @@ const App = () => {
             const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
             const attemptUsername1 = await getAllLatestGameAttempts1[3];
 
+            // Fetches New Games if required
+            // const item = await contract.getPastEvents('setGameEvent',{});
+            // console.log(item[0].returnValues[0])
+            // console.log(item[0].returnValues[1])
+            // console.log(item[0].returnValues[2])
+
 
             var currentStartDate = Date();
             var startDate = new Date(currentStartDate);
@@ -293,9 +305,10 @@ const App = () => {
             // console.log(getDifferenceInHours(endDate, startDate));
             // console.log(getDifferenceInMinutes(endDate, startDate));
 
-            console.log(getDifferenceInSeconds(startDate, endDateGame1));
+            // console.log(getDifferenceInSeconds(startDate, endDateGame1));
 
             var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
+
 
             setTimeGame1(timeGame1)
             setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!

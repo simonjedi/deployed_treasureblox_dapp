@@ -55,10 +55,6 @@ const Timer = (props) => {
 
 
 
-
-
-
-
   return(
 
 

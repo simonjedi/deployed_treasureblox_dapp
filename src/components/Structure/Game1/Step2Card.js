@@ -50,12 +50,12 @@ const Step2Card = (props) => {
     const handleSubmit = async() => {
 
       setloading(true);
-      const result2 = await contract.methods.headStartTimeLock(username,props.allGame1_id).send({from: accounts});
+      const result1 = await contract.methods.headStartTimeLock(username,props.allGame1_id).send({from: accounts});
       setUsername(undefined);
 
-      console.log("Transaction confirmed",result2)
+      console.log("Transaction confirmed",result1)
 
-      props.updateLocalDeadLineTime(result2)
+      props.updateLocalDeadLineTime(result1)
 
       console.log("I am the first log");
 

@@ -58,7 +58,7 @@ const App = () => {
   const [allGame1_username,setallGame1_username] = useState(undefined)
   const [allGame1_total_game_tries,setallGame1_total_game_tries] = useState(undefined)
 
-  const [countGame1, setTimeGame1] = useState(60);
+  const [countGame1, setTimeGame1] = useState(90);
   const [countGame1DeadlineTrue, setcountGame1DeadlineTrue] = useState(false);
 
   const [game1numberOfEntries, setGame1numberOfEntries] = useState(0);
@@ -100,7 +100,7 @@ const App = () => {
   const [allGame2_username,setallGame2_username] = useState(undefined)
   const [allGame2_total_game_tries,setallGame2_total_game_tries] = useState(undefined)
 
-  const [countGame2, setTimeGame2] = useState(60);
+  const [countGame2, setTimeGame2] = useState(90);
   const [countGame2DeadlineTrue, setcountGame2DeadlineTrue] = useState(false);
 
   const [game2numberOfEntries, setGame2numberOfEntries] = useState(0);

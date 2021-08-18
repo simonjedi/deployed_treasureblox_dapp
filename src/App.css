@@ -1,11 +1,15 @@
 .background {
     /* The image used */
     /* background-image: url(./treasure1.jpg); */
-    background: url(./treasureblox_background.jpg) no-repeat center center fixed;
+    /* background: url(./treasureblox_background.jpg) no-repeat center center fixed; */
+    /* background: url(./background2.jpg) no-repeat center center fixed; */
+    /* background: url(./background1.png) no-repeat center center fixed; */
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-color: #071C2D;
 
     /* background-attachment: fixed; */
     /* Full height */

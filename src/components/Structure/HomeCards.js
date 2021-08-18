@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img1 from './images/elons-rocket.jpg';
+import img1 from './images/elons_lost_his_rocket.png';
 import img2 from './images/fortblox.png';
 
 

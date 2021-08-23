@@ -44,26 +44,41 @@ const HomeCards = (props) => {
     <div>
           <Card className='cardRounded'>
             <Card.Body className="customBodyThree">
-              <Card.Title className="gameTitle">How it works?</Card.Title>
-
-              <div className="descriptionTitle">Step 1</div>
-              <div className="descriptionBody">Purchase Blox, enter a treasure quest maybe even purchase a head start. All quests have different entry requirements. </div>
-              <div className="descriptionTitle">Step 2</div>
-              <div className="descriptionBody">Think you know the answer? Purchase a time lock for 90 seconds where you are the only player who can answer the secret.</div>
-              <div className="descriptionTitle">Final Step</div>
-              <div className="descriptionBody">Once the Time lock is purchased you can enter your secret. If you win so does the community as 10x the prize is burnt from the total token supply.</div>
+              <Card.Title className="gameTitle">How does it work?</Card.Title>
+              <div className="descriptionTitle">Step 1 - White Paper</div>
+              <div className="descriptionBody">Read the white paper for a detailed understanding of the project.</div>
+              <div className="descriptionTitle">Step 2 - Purchase</div>
+              <div className="descriptionBody">Purchase BLOX from pancakeswap to enter the treasure hunts.</div>
+              <div className="descriptionTitle">Step 3 - Enter</div>
+              <div className="descriptionBody">Select a treasure hunt to enter - good luck!</div>
               <br/>
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">Contract</Button>
-              </Link>
-
               <Link to="/hunt1">
                 <Button className="tinyCustomButtonDescription" to="/hunt1">White Paper</Button>
               </Link>
 
               <Link to="/hunt1">
+                <Button className="tinyCustomButtonDescription" to="/hunt1">pancakeswap</Button>
+              </Link>
+
+              <Link to="/hunt1">
+                <Button className="tinyCustomButtonDescription" to="/hunt1">Contract</Button>
+              </Link>
+
+
+
+              <br/><br/>
+              <Link to="/hunt1">
                 <Button className="tinyCustomButtonDescription" to="/hunt1">Telegram</Button>
               </Link>
+
+              <Link to="/hunt1">
+                <Button className="tinyCustomButtonDescription" to="/hunt1">BSC SCAN</Button>
+              </Link>
+
+              <Link to="/hunt1">
+                <Button className="tinyCustomButtonDescription" to="/hunt1">Liquidity</Button>
+              </Link>
+
 
             </Card.Body>
           </Card>
@@ -71,7 +86,7 @@ const HomeCards = (props) => {
           <Card className='cardRounded'>
             <Card.Body className="customBodyTwo">
               <Card.Title className="gameTitle">Purchase Blox</Card.Title>
-              <div className="descriptionTitle">Total Treasure Chest {treasure} Blox</div>
+              <div className="descriptionTitle">Total Treasure Fund {treasure} Blox</div>
               <div >Purchase your Blox to enter a quest </div>
               <br/>
               <Button className="customButton" >Buy Blox</Button>

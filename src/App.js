@@ -147,11 +147,11 @@ const App = () => {
         // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
 
         // TestNet
-        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x54Dace4d39CA9762fc842Ce968C02C47CB021b45");
+        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x72be369131d9884C1a2b3BdB9F9F5701C23B29BB");
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 
-        const totalTreasure = await contract.methods.balanceOf("0xe3bAD75D329c7C238C8DEbf6b0FDed1786C16Cf1").call();
+        const totalTreasure = await contract.methods.balanceOf("0xD10283b232c43924BCc2834bd73F811918851f3C").call();
 
 
         // const owner = await contract.methods._owner().call();

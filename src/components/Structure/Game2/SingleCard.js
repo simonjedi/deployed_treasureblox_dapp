@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img1 from '../images/Treasure-hunt.jpeg';
+import img1 from '../images/elons_lost_his_rocket.png';
 
 
 import { CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown,Row,Col } from 'react-bootstrap';
@@ -23,11 +23,8 @@ const SingleCard = (props) => {
 
   return(
 
-    <Container className='mt-5' fluid="md">
+<div>
 
-    <Row >
-
-    <Col>
     <div>
       <Card className="customRoundedOne">
       <Card.Header >Prize</Card.Header>
@@ -43,8 +40,7 @@ const SingleCard = (props) => {
       </Card>
     </div>
 
-    </Col>
-    <Col>
+
     <div >
       <Card className="customRoundedOne">
       <Card.Header >Riddle</Card.Header>
@@ -62,11 +58,7 @@ const SingleCard = (props) => {
       </Card>
     </div>
 
-    </Col>
-  </Row>
-
-
-    </Container>
+</div>
 
 
   );

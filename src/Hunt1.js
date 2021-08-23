@@ -15,6 +15,8 @@ import "./App.css";
 import Timer from './components/Structure/Game1/Timer';
 
 import HomeCards from './components/Structure/HomeCards';
+import GameCard from './components/Structure/GameCard';
+
 import HomeHuntCards from './components/Structure/HomeHuntCards';
 
 import PageCard from './components/Structure/Game1/PageCard';
@@ -97,19 +99,31 @@ const Hunt1 = (props) => {
 
       <div>
             <div className="siteTitle">Welcome, Elon has lost his Rocket! Can you help him find it to win the prize?</div>
-      <SingleCard{...props}/>
+
 
       <Container className='mt-5' fluid="md">
             <CardGroup className='mt-5'>
               <CardColumns>
 
-                <EnterHuntCards {...props}/>
+              <PageCard {...props}/>
+
+              <EnterHuntCards {...props}/>
+
+              <GameCard/>
+
+              <HuntWowCards {...props}/>
+
+              <SingleCard{...props}/>
+
+
+
+
+
                 <br/>
-                <HuntWowCards {...props}/>
 
-                <PageCard {...props}/>
 
-                <HomeCards/>
+
+
 
               </CardColumns>
             </CardGroup>

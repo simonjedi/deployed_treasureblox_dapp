@@ -70,7 +70,10 @@ const Home = (props) => {
 
   <div className="spaceTopHome">
 
-        <div className="siteTitle">TreasureBlox - The Worlds biggets internet and real world crypto treasure hunt.</div>
+        <div className="siteTitle">TreasureBlox - The Worlds first crypto and real world treasure hunt.</div>
+          <br/>
+        <div className="homeSubTitle">TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</div>
+
         <CardGroup className='mt-5'>
 
           <CardColumns >

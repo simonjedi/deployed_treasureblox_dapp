@@ -53,7 +53,7 @@ const HuntWowCards = (props) => {
         <div>Prize {game1_prize} Blox</div>
         <div>Number of people entered {props.game1numberOfEntries}</div>
         <br/>
-        <Link to="/hunt2">
+        <Link to="/hunt1">
           <Button className="customButton" to="/hunt1">View Elon's Quest</Button>
         </Link>
         <br/><br/>

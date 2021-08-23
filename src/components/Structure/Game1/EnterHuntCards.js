@@ -50,7 +50,7 @@ console.log("enter card.js: ",props.attemptAddress1)
     <div>
           <Card className='cardRounded border border-danger'>
             <Card.Body className="customBodyThree">
-              <Card.Header className="enterGameTitle">Elon's Wife lost his Rocket?</Card.Header>
+              <Card.Header className="howToTitle">PLAY HERE</Card.Header>
 
               <Timer
               {...props}

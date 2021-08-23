@@ -43,7 +43,7 @@ console.log("enter card.js: ",props.attemptAddress2)
     <div>
           <Card className='cardRounded border border-danger'>
             <Card.Body className="customBodyThree">
-              <Card.Header className="enterGameTitle">Can you break into Fort Blox?</Card.Header>
+            <Card.Header className="howToTitle">PLAY HERE</Card.Header>
 
               <Timer
               {...props}

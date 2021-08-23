@@ -14,6 +14,8 @@ import "./App.css";
 import Timer from './components/Structure/Game2/Timer';
 
 import HomeCards from './components/Structure/HomeCards';
+import GameCard from './components/Structure/GameCard';
+
 import HomeHuntCards from './components/Structure/HomeHuntCards';
 import SingleCard from './components/Structure/Game2/SingleCard';
 
@@ -99,19 +101,20 @@ const Hunt2 = (props) => {
 
       <div>
             <div className="siteTitle">Welcome to Fort Blox, can you break into the facility and steal the prize?</div>
-      <SingleCard{...props}/>
 
       <Container className='mt-5' fluid="md">
             <CardGroup className='mt-5'>
               <CardColumns>
 
-                <EnterHuntCards {...props}/>
-                <br/>
-                <HuntWowCards {...props}/>
+              <PageCard {...props}/>
 
-                <PageCard {...props}/>
+              <EnterHuntCards {...props}/>
 
-                <HomeCards/>
+              <GameCard/>
+
+              <HuntWowCards {...props}/>
+
+              <SingleCard{...props}/>
 
               </CardColumns>
             </CardGroup>

@@ -48,12 +48,14 @@ const MyNav = (props) => {
           <Link className='customLinks' to="/hunt2">
           Fort Blox
           </Link>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          <NavDropdown title="Project information" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">White Paper</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">pancakeswap</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Contract</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">Telegram</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">BSC SCAN</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">Liquidity</NavDropdown.Item>
+
           </NavDropdown>
 
         </Nav>

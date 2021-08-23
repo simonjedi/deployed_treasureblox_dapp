@@ -1,6 +1,7 @@
 .customRoundedOne{
   border-radius: 15px 50px 10px 10px;
   border:0;
+  background-color: #001219;
 
 }
 
@@ -134,4 +135,11 @@
 .readMeSmall{
   font-size: 1rem;
   color: #005f73;
+}
+
+.howToTitle{
+  font-size: 1.8rem;
+  color: #ee9b00;
+  text-align: center;
+
 }

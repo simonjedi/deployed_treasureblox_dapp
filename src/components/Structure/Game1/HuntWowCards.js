@@ -40,9 +40,8 @@ const HuntWowCards = (props) => {
 
           <Card className='cardRounded'>
             <Card.Body className="customBodyTwo">
-              <Card.Title className="gameTitle">Costs</Card.Title>
-              <div >Simply purchase Blox to enter this game. The entry fee is a one off purchase. You pay every time you use the time lock or submit a secret.</div>
-              <br/>
+              <Card.Header className="howToTitle">Costs</Card.Header>
+      
               <div className="descriptionTitle">Cost to Enter {props.game1_entry_cost} BLOX</div>
               <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} BLOX</div>
               <div className="descriptionTitle">Cost to submit Secret {props.game1_submit_secret_cost} BLOX</div>

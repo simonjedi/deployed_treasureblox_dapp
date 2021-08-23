@@ -174,9 +174,9 @@ const Timer = (props) => {
                 </div>
             ):(
                 <div>
-                We are launching this treasure quest very soon!
-                <div className="largeEnter">WATCH THIS SPACE!</div>
-            </div>
+                  We are launching this treasure quest very soon!
+                  <div className="largeEnter">WATCH THIS SPACE!</div>
+                </div>
 
       )}
 

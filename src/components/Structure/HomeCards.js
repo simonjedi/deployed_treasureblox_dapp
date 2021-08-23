@@ -56,28 +56,19 @@ const HomeCards = (props) => {
                 <Button className="tinyCustomButtonDescription" to="/hunt1">White Paper</Button>
               </Link>
 
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">pancakeswap</Button>
-              </Link>
+                <Button className="tinyCustomButtonDescription" href="#">pancakeswap</Button>
 
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">Contract</Button>
-              </Link>
+                <Button className="tinyCustomButtonDescription" href="#">Contract</Button>
+
 
 
 
               <br/><br/>
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">Telegram</Button>
-              </Link>
+                <Button className="tinyCustomButtonDescription" href="https://t.me/treasureblox">Telegram</Button>
 
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">BSC SCAN</Button>
-              </Link>
+                <Button className="tinyCustomButtonDescription" href="#">BSC SCAN</Button>
 
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">Liquidity</Button>
-              </Link>
+                <Button className="tinyCustomButtonDescription" href="#">Liquidity</Button>
 
 
             </Card.Body>

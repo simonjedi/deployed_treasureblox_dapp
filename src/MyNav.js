@@ -49,12 +49,14 @@ const MyNav = (props) => {
           Fort Blox
           </Link>
           <NavDropdown title="Project information" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">White Paper</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">pancakeswap</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Contract</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Telegram</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">BSC SCAN</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4">Liquidity</NavDropdown.Item>
+            <NavDropdown.Item href="#">White Paper</NavDropdown.Item>
+            <NavDropdown.Item href="#">pancakeswap</NavDropdown.Item>
+            <NavDropdown.Item href="#">Contract</NavDropdown.Item>
+            <NavDropdown.Item href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
+            <NavDropdown.Item href="#">BSC SCAN</NavDropdown.Item>
+            <NavDropdown.Item href="#">Liquidity</NavDropdown.Item>
+
+
 
           </NavDropdown>
 

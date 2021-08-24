@@ -59,7 +59,6 @@ const HomeCards = (props) => {
 
                 <Button className="tinyCustomButtonDescription" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
 
-
               <br/><br/>
                 <Button className="tinyCustomButtonDescription" href="https://t.me/treasureblox">Telegram</Button>
 

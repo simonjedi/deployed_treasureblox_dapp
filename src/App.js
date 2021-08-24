@@ -27,11 +27,15 @@ import Home from "./Home";
 import Hunt1 from "./Hunt1";
 import Hunt2 from "./Hunt2";
 
+import { Helmet } from 'react-helmet';
 
+import ReactGA from 'react-ga';
 
 
 const App = () => {
 
+  const TRACKING_ID = "G-WJMCNN9YYG"; // YOUR_OWN_TRACKING_ID
+  ReactGA.initialize(TRACKING_ID);
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
@@ -448,7 +452,12 @@ const App = () => {
 
     return (
 
+
         <div className="background customFont">
+
+        <Helmet>
+          <title>TreasureBlox | DAPP</title>
+        </Helmet>
 
 
         <Router>

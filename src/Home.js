@@ -20,6 +20,9 @@ import HomeHuntCards from './components/Structure/HomeHuntCards';
 import img1 from './components/Structure/images/elons-rocket.jpg';
 import img2 from './components/Structure/images/fortblox.png';
 
+import { Helmet } from 'react-helmet';
+
+
 
 import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
 
@@ -66,11 +69,14 @@ const Home = (props) => {
     return (
 
       <div>
+      <Helmet>
+        <title>TreasureBlox | Home</title>
+      </Helmet>
       <Container className='mt-5' fluid="md">
 
   <div className="spaceTopHome">
 
-        <div className="siteTitle">TreasureBlox - The Worlds first crypto and real world treasure hunt.</div>
+        <div className="siteTitle">TreasureBlox - The World's first crypto and real world treasure hunt.</div>
           <br/>
         <div className="homeSubTitle">TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</div>
 

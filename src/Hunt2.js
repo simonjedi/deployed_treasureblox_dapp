@@ -25,7 +25,7 @@ import HuntWowCards from './components/Structure/Game2/HuntWowCards';
 import EnterHuntCards from './components/Structure/Game2/EnterHuntCards';
 
 import Confetti from 'react-confetti'
-
+import { Helmet } from 'react-helmet';
 // Hook
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -75,6 +75,9 @@ const Hunt2 = (props) => {
     return (
 
       <div className="spaceTopHome">
+      <Helmet>
+        <title>TreasureBlox | Hunt2</title>
+      </Helmet>
       {winner? (
         <div><Confetti
           width={width}

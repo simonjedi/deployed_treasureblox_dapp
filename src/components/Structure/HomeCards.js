@@ -24,7 +24,10 @@ const HomeCards = (props) => {
   const commaNumber = require('comma-number')
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
-  const treasure = commaNumber(props.totalTreasure,',');
+  var treasure = commaNumber(props.totalTreasure,',');
+
+
+
 
 
   // console.log(game1_id)s
@@ -55,7 +58,7 @@ const HomeCards = (props) => {
 
                 <Button className="tinyCustomButtonDescription" href = {Pdf} target = "_blank">White Paper</Button>
 
-                <Button className="tinyCustomButtonDescription" href="#">pancakeswap</Button>
+                <Button className="tinyCustomButtonDescription" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">pancakeswap</Button>
 
                 <Button className="tinyCustomButtonDescription" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
 
@@ -64,7 +67,7 @@ const HomeCards = (props) => {
 
                 <Button className="tinyCustomButtonDescription" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</Button>
 
-                <Button className="tinyCustomButtonDescription" href="#">Liquidity</Button>
+                <Button className="tinyCustomButtonDescription" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</Button>
 
 
             </Card.Body>
@@ -76,7 +79,7 @@ const HomeCards = (props) => {
               <div className="descriptionTitle">Total Treasure Fund {treasure} Blox</div>
               <div >Purchase your Blox to enter a quest </div>
               <br/>
-              <Button className="customButton" >Buy Blox</Button>
+              <Button className="customButton" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">Buy Blox</Button>
 
               <br/>
 

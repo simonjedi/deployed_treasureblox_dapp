@@ -52,11 +52,11 @@ const MyNav = (props) => {
           </Link>
           <NavDropdown title="Project information" id="collasible-nav-dropdown">
             <NavDropdown.Item href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
-            <NavDropdown.Item href="#">pancakeswap</NavDropdown.Item>
+            <NavDropdown.Item href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">pancakeswap</NavDropdown.Item>
             <NavDropdown.Item href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
             <NavDropdown.Item href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
             <NavDropdown.Item href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
-            <NavDropdown.Item href="#">Liquidity</NavDropdown.Item>
+            <NavDropdown.Item href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</NavDropdown.Item>
 
 
 

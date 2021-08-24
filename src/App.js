@@ -149,9 +149,11 @@ const App = () => {
 
         // LOCAL
         // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
+        // MainNet
+        const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
         // TestNet
-        const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x72be369131d9884C1a2b3BdB9F9F5701C23B29BB");
+        // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 

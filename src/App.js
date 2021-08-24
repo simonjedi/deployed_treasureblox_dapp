@@ -157,7 +157,7 @@ const App = () => {
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 
-        const totalTreasure = await contract.methods.balanceOf("0xD10283b232c43924BCc2834bd73F811918851f3C").call();
+        const totalTreasure = await contract.methods.balanceOf("0xbb4e46e5407d69b7a8e5948703C7bf3214f84295").call();
 
 
         // const owner = await contract.methods._owner().call();

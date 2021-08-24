@@ -9,6 +9,8 @@ import App from "./App";
 import Hunt1 from "./Hunt1";
 
 import logo from './TreasureBlox_Logo.png';
+import Pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
+
 
 import {
   BrowserRouter as Router,
@@ -49,11 +51,11 @@ const MyNav = (props) => {
           Fort Blox
           </Link>
           <NavDropdown title="Project information" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#">White Paper</NavDropdown.Item>
+            <NavDropdown.Item href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
             <NavDropdown.Item href="#">pancakeswap</NavDropdown.Item>
-            <NavDropdown.Item href="#">Contract</NavDropdown.Item>
+            <NavDropdown.Item href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
             <NavDropdown.Item href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
-            <NavDropdown.Item href="#">Poo Coin</NavDropdown.Item>
+            <NavDropdown.Item href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
             <NavDropdown.Item href="#">Liquidity</NavDropdown.Item>
 
 

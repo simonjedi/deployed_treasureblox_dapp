@@ -2,7 +2,7 @@ import React from 'react';
 
 import img1 from './images/elons_lost_his_rocket.png';
 import img2 from './images/fortblox.png';
-
+import Pdf from './images/TreasureBloxWhitePaperV1.pdf';
 
 
 
@@ -52,21 +52,18 @@ const HomeCards = (props) => {
               <div className="descriptionTitle">Step 3 - Enter</div>
               <div className="descriptionBody">Select a treasure hunt to enter - good luck!</div>
               <br/>
-              <Link to="/hunt1">
-                <Button className="tinyCustomButtonDescription" to="/hunt1">White Paper</Button>
-              </Link>
+
+                <Button className="tinyCustomButtonDescription" href = {Pdf} target = "_blank">White Paper</Button>
 
                 <Button className="tinyCustomButtonDescription" href="#">pancakeswap</Button>
 
-                <Button className="tinyCustomButtonDescription" href="#">Contract</Button>
-
-
+                <Button className="tinyCustomButtonDescription" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
 
 
               <br/><br/>
                 <Button className="tinyCustomButtonDescription" href="https://t.me/treasureblox">Telegram</Button>
 
-                <Button className="tinyCustomButtonDescription" href="#">Poo Coin</Button>
+                <Button className="tinyCustomButtonDescription" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</Button>
 
                 <Button className="tinyCustomButtonDescription" href="#">Liquidity</Button>
 

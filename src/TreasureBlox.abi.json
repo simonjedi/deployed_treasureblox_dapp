@@ -127,197 +127,109 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "approve",
+		"name": "Games",
 		"outputs": [
 			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "constructor1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "subtractedValue",
-				"type": "uint256"
-			}
-		],
-		"name": "decreaseAllowance",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			}
-		],
-		"name": "enterGame",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_userName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_thisId",
-				"type": "uint256"
-			}
-		],
-		"name": "headStartTimeLock",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "spender",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "addedValue",
-				"type": "uint256"
-			}
-		],
-		"name": "increaseAllowance",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
+				"name": "id",
 				"type": "uint256"
 			},
 			{
 				"internalType": "bool",
-				"name": "_live",
+				"name": "live",
 				"type": "bool"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_prize",
+				"name": "prize",
 				"type": "uint256"
 			},
 			{
 				"internalType": "bytes32",
-				"name": "_submitQuestionHash",
+				"name": "questionHash",
 				"type": "bytes32"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_costToEnter",
+				"name": "costToEnter",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_submitSecretCost",
+				"name": "submitSecretCost",
 				"type": "uint256"
 			},
 			{
 				"internalType": "string",
-				"name": "_riddle",
+				"name": "riddle",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "_clue",
+				"name": "clue",
 				"type": "string"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_headStartTime",
+				"name": "headStartTime",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_entryLimit",
+				"name": "entryLimit",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_entryCost",
+				"name": "entryCost",
 				"type": "uint256"
 			}
 		],
-		"name": "setTreasureHuntGame",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_gamePotUsedForGames",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_treasureChest",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_marketingWallet",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "setWallets",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "Pot1AnsweredCorrectly",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "winningAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "treasurefound",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "winningPrize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "questionHashSolved",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "winnerMessage",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -346,72 +258,6 @@
 		"name": "SubmitSecret",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "recipient",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newCode",
-				"type": "address"
-			}
-		],
-		"name": "updateCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -576,6 +422,30 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "account",
 				"type": "address"
 			}
@@ -593,12 +463,51 @@
 	},
 	{
 		"inputs": [],
+		"name": "constructor1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "decimals",
 		"outputs": [
 			{
 				"internalType": "uint8",
 				"name": "",
 				"type": "uint8"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			}
+		],
+		"name": "enterGame",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "excludedFromTax",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -612,75 +521,6 @@
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "Games",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "live",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "prize",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "questionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "submitSecretCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "riddle",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "clue",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "headStartTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "entryLimit",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "entryCost",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -724,12 +564,30 @@
 						"type": "uint256"
 					}
 				],
-				"internalType": "struct TREASUREBLOX.Time",
+				"internalType": "struct ERC20DataLayout.Time",
 				"name": "",
 				"type": "tuple"
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_userName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_thisId",
+				"type": "uint256"
+			}
+		],
+		"name": "headStartTimeLock",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -799,19 +657,6 @@
 	},
 	{
 		"inputs": [],
-		"name": "MARKETING_FEE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "marketingWallet",
 		"outputs": [
 			{
@@ -856,45 +701,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "Pot1AnsweredCorrectly",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "winningAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "treasurefound",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "winningPrize",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "questionHashSolved",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "string",
-				"name": "winnerMessage",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "proxiableUUID",
 		"outputs": [
@@ -918,6 +724,135 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_BURN_FEE",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_TAX_FEE",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_TREASURE_FEE",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_MARKETING_FEE",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_TREASURECHEST_ATTEMPT_FEE",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_TAX_FEE_GAME_ENTRY",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_TREASURE_CHEST_GAME_ENTRY",
+				"type": "uint256"
+			}
+		],
+		"name": "setFees",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_live",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_prize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_submitQuestionHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_costToEnter",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_submitSecretCost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_riddle",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_clue",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_headStartTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_entryLimit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_entryCost",
+				"type": "uint256"
+			}
+		],
+		"name": "setTreasureHuntGame",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gamePotUsedForGames",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_treasureChest",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_marketingWallet",
+				"type": "address"
+			}
+		],
+		"name": "setWallets",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -960,6 +895,59 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "treasureChest",
 		"outputs": [
@@ -970,6 +958,19 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newCode",
+				"type": "address"
+			}
+		],
+		"name": "updateCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

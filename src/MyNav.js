@@ -52,7 +52,7 @@ const MyNav = (props) => {
             <NavDropdown.Item href="#">White Paper</NavDropdown.Item>
             <NavDropdown.Item href="#">pancakeswap</NavDropdown.Item>
             <NavDropdown.Item href="#">Contract</NavDropdown.Item>
-            <NavDropdown.Item href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
+            <NavDropdown.Item href="https://t.me/joinchat/Oc8is-YeGVQyYjg0">Telegram</NavDropdown.Item>
             <NavDropdown.Item href="#">Poo Coin</NavDropdown.Item>
             <NavDropdown.Item href="#">Liquidity</NavDropdown.Item>
 

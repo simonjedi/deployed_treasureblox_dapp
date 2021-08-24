@@ -74,7 +74,7 @@ const Hunt1 = (props) => {
 
       <div className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Hunt1</title>
+        <title>TreasureBlox | Elon's Rocket</title>
       </Helmet>
       {winner? (
         <div><Confetti

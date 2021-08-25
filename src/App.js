@@ -34,8 +34,8 @@ import ReactGA from 'react-ga';
 
 const App = () => {
 
-  const TRACKING_ID = "G-WJMCNN9YYG"; // YOUR_OWN_TRACKING_ID
-  ReactGA.initialize(TRACKING_ID);
+
+
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
@@ -83,7 +83,6 @@ const App = () => {
   const [attemptUsername1, setAttemptUsername1] = useState(undefined);
   const [attemptDeadline1, setAttemptDeadline1] = useState(undefined);
 
-
 // GAME 2
 
   const [game2_id,setGame2_id] = useState(undefined)
@@ -125,10 +124,6 @@ const App = () => {
   const [attemptUsername2, setAttemptUsername2] = useState(undefined);
   const [attemptDeadline2, setAttemptDeadline2] = useState(undefined);
   const [loaded, setloaded] = useState(false);
-
-
-
-
 
 
   useEffect(() => {
@@ -450,12 +445,15 @@ const App = () => {
   winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2
 ])
 
+// const TRACKING_ID = "G-WJMCNN9YYG"; // YOUR_OWN_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
 
 
     return (
 
 
         <div className="background customFont">
+
 
         <Helmet>
           <title>TreasureBlox | DAPP</title>

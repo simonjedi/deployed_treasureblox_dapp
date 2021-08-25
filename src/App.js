@@ -29,15 +29,7 @@ import Hunt2 from "./Hunt2";
 
 import { Helmet } from 'react-helmet';
 
-import ReactGA from 'react-ga';
-import createHistory from 'history/createBrowserHistory'
 
-const history = createHistory()
-ReactGA.initialize('G-WJMCNN9YYG');
-history.listen((location, action) => {
-    ReactGA.pageview(location.pathname + location.search);
-    console.log(location.pathname)
-});
 
 
 const App = () => {
@@ -471,7 +463,7 @@ const App = () => {
         </Helmet>
 
 
-        <Router history={history}>
+        <Router>
         <MyNav accounts={accounts}/>
 
 

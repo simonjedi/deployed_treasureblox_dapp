@@ -20,6 +20,7 @@ import HomeHuntCards from './components/Structure/HomeHuntCards';
 import img1 from './components/Structure/images/elons-rocket.jpg';
 import img2 from './components/Structure/images/fortblox.png';
 
+
 import { Helmet } from 'react-helmet';
 
 

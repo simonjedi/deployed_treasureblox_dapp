@@ -30,12 +30,19 @@ import Hunt2 from "./Hunt2";
 import { Helmet } from 'react-helmet';
 
 import ReactGA from 'react-ga';
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
+ReactGA.initialize('G-WJMCNN9YYG');
+history.listen((location, action) => {
+    ReactGA.pageview(location.pathname + location.search);
+    console.log(location.pathname)
+});
 
 
 const App = () => {
 
-  const TRACKING_ID = "G-WJMCNN9YYG"; // YOUR_OWN_TRACKING_ID
-  ReactGA.initialize(TRACKING_ID);
+
 
 
   const [web3,setWeb3] = useState(null)
@@ -128,6 +135,8 @@ const App = () => {
 
 
   useEffect(() => {
+
+
 
 
       const init = async() => {
@@ -452,6 +461,8 @@ const App = () => {
     return (
 
 
+
+
         <div className="background customFont">
 
 
@@ -460,7 +471,7 @@ const App = () => {
         </Helmet>
 
 
-        <Router>
+        <Router history={history}>
         <MyNav accounts={accounts}/>
 
 

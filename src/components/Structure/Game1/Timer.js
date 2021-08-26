@@ -75,7 +75,7 @@ import ReactAudioPlayer from 'react-audio-player';
           <div>
 
             <div>
-                    { props.countGame1DeadlineTrue ? (
+                    {  props.countGame1DeadlineTrue ? (
 
                        <div>
                             {props.accounts === props.attemptAddress1 ?(

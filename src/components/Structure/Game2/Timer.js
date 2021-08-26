@@ -76,9 +76,9 @@ const Timer = (props) => {
 
             <div>
 
-                    { timeLock || props.countGame2DeadlineTrue ? (
+                    { props.countGame2DeadlineTrue ? (
                       <div>
-                        {setTransactionConfirmed || props.accounts == props.attemptAddress2 ?(
+                        { props.accounts == props.attemptAddress2 ?(
                           <div>
 
                             { props.accounts == props.winning_address2 ?(

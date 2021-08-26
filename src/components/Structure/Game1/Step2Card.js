@@ -53,6 +53,11 @@ const Step2Card = (props) => {
 
       setloading(true);
       const result1 = await contract.methods.headStartTimeLock(username,props.allGame1_id).send({from: accounts});
+
+      console.log("RESULT:", result1.from);
+
+      const enteringUser = await result1.from
+
       setUsername(undefined);
 
       console.log("Transaction confirmed",result1)
@@ -112,7 +117,7 @@ const Step2Card = (props) => {
                 <Button className="customButton" onClick={handleSubmit}>Lock Time Now</Button>
                 <br />
                 <br />
-                <div>Game Attempts {props.totalumberOfTries}</div>
+                <div>Game Attempts {props.globalNumberOfTries}</div>
               </div>
 
             )}

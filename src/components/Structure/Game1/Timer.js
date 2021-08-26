@@ -25,9 +25,8 @@ import ReactAudioPlayer from 'react-audio-player';
   var winning_prize1 = commaNumber(props.winning_prize1,',');
 
 
-  const [transactionConfirmed,setTransactionConfirmed] = useState(undefined);
+  const [transactionConfirmed,setTransactionConfirmed] = useState(false);
   const [timeLock,setTimelock] = useState(false);
-
 
   // DO CHECKS WITH THE USER
     // Check the game is live
@@ -36,9 +35,11 @@ import ReactAudioPlayer from 'react-audio-player';
     const enter = props.userEntered_game1;
     // Head Start Time Lock
 
-
   const updateLocalDeadLineTime = (bool) => {
-    if (bool){
+    console.log("pre timelock:", bool)
+
+    if (props.bool){
+
       setTransactionConfirmed(true);
       console.log("pre timelock:", timeLock)
       setTimelock(true);
@@ -74,52 +75,52 @@ import ReactAudioPlayer from 'react-audio-player';
           <div>
 
             <div>
-                    { timeLock || props.countGame1DeadlineTrue ? (
-                      <div>
-                        {setTransactionConfirmed || props.accounts == props.attemptAddress1 ?(
-                          <div>
+                    { props.countGame1DeadlineTrue ? (
 
-                            { props.accounts == props.winning_address1 ?(
+                       <div>
+                            {props.accounts === props.attemptAddress1 ?(
+                              <div>
+                                { props.accounts === props.winning_address1 ?(
 
-                                <div>
-                                  <ReactAudioPlayer
-                                    src={celebrate}
-                                    autoPlay
-                                  />
-                                  Congratulations you have solved the quest!
-                                  <div className="largeEnter">WINNER</div>
-                                  <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>
+                                    <div>
+                                      <ReactAudioPlayer
+                                        src={celebrate}
+                                        autoPlay
+                                      />
+                                      Congratulations you have solved the quest!
+                                      <div className="largeEnter">WINNER</div>
+                                      <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>
 
-                                  <br/>
-                                  <div className="enterGameTitle">Winning Message</div>
-                                  <div className="descriptionTitle">{props.winning_message1}</div>
+                                      <br/>
+                                      <div className="enterGameTitle">Winning Message</div>
+                                      <div className="descriptionTitle">{props.winning_message1}</div>
 
-                                  <br/><br/>
-                                  <div className="enterGameTitle">Winning Address</div>
-                                  {props.winning_address1}
+                                      <br/><br/>
+                                      <div className="enterGameTitle">Winning Address</div>
+                                      {props.winning_address1}
 
-                                </div>
+                                    </div>
 
+                                ):(
+
+
+                                    <div className="descriptionTitle">
+
+                                      <Step3Card
+                                      {...props} cancelLocalTime={cancelLocalTime}/>
+
+                                    </div>
+                              )}
+
+                              </div>
                             ):(
+                              <div>
 
+                                <Step3CardNoEntry
+                                {...props }cancelLocalTime={cancelLocalTime}/>
 
-                                <div className="descriptionTitle">
-
-                                  <Step3Card
-                                  {...props} cancelLocalTime={cancelLocalTime}/>
-
-                                </div>
+                              </div>
                             )}
-
-                          </div>
-                        ):(
-                          <div>
-
-                            <Step3CardNoEntry
-                            {...props }cancelLocalTime={cancelLocalTime}/>
-
-                          </div>
-                        )}
                         </div>
 
                     ) : (

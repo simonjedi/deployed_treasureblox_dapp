@@ -23,8 +23,7 @@ const Connection = (props) =>  {
        const stringOfUsersAccount = new String(usersAccount)
        console.log(stringOfUsersAccount.slice(0, 4)); // "01"
        setFirstPartAddress(stringOfUsersAccount.slice(0, 5));
-       setSecondPartAddress('____'+stringOfUsersAccount.slice(27, 32));
-
+       setSecondPartAddress('____'+stringOfUsersAccount.slice(37, 42));
 
      }
      init()

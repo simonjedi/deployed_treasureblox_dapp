@@ -72,7 +72,7 @@ const Step3Card = (props) => {
                 <div className="descriptionTitle">Time Remaining {props.countGame1} Seconds</div>
 
                 <br />
-                <div>Game Attempts {props.allGame1_total_game_tries}</div>
+                <div>Game Attempts {props.globalNumberOfTries}</div>
               </div>
 
   );

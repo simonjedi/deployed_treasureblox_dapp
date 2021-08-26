@@ -24,7 +24,8 @@ const Timer = (props) => {
   const commaNumber = require('comma-number')
 
 
-  const winning_prize2 = commaNumber(props.winning_prize2,',');
+  var winning_prize2 = commaNumber(props.winning_prize2,',');
+  winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
 
   const [transactionConfirmed,setTransactionConfirmed] = useState(undefined);
   const [timeLock,setTimelock] = useState(false);

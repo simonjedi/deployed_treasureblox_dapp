@@ -77,6 +77,7 @@ const App = () => {
   const [attemptAddress1, setAttemptAddress1] = useState(undefined);
   const [attemptUsername1, setAttemptUsername1] = useState(undefined);
   const [attemptDeadline1, setAttemptDeadline1] = useState(undefined);
+  const [totalGameEntriesGame1, settotalGameEntriesGame1] = useState(false);
 
 // GAME 2
 
@@ -119,6 +120,9 @@ const App = () => {
   const [attemptUsername2, setAttemptUsername2] = useState(undefined);
   const [attemptDeadline2, setAttemptDeadline2] = useState(undefined);
   const [loaded, setloaded] = useState(false);
+  const [totalGameEntriesGame2, settotalGameEntriesGame2] = useState(false);
+
+
 
 
   useEffect(() => {
@@ -145,7 +149,7 @@ const App = () => {
         const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
         // TestNet
-        // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
+        // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x714edC2c9E5E0c98700c468e7bd93FDa605bbB61");
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 
@@ -184,6 +188,7 @@ const App = () => {
         const game1_entry_limit = await game1[9];
         var game1_entry_cost = await game1[10];
         game1_entry_cost = game1_entry_cost.substring(0, game1_entry_cost.length-18);
+
 
         setGame1_id(game1_id)
         setGame1_live(game1_live)
@@ -250,7 +255,9 @@ const App = () => {
             const allGame1_username = await allGame1[3];
             const allGame1_total_game_tries = await allGame1[4];
 
-            const game1numberOfEntries = await contract.methods.numberOfEntries(1).call();
+            const numberOfEntriesGame1 = await contract.methods.numberOfEntries(1).call();
+
+
 
             const game1huntEntries = await contract.methods.huntEntries(accounts[0],1).call();
             const userGame1_id = await game1huntEntries[0];
@@ -262,7 +269,10 @@ const App = () => {
             const pot1AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(1).call();
             const winning_address1 = await pot1AnsweredCorrectly[0];
             const treasure_found1 = await pot1AnsweredCorrectly[1];
-            const winning_prize1 =  await pot1AnsweredCorrectly[2];
+            var winning_prize1 =  await pot1AnsweredCorrectly[2];
+            winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
+
+
             const question_hash_solved1 = await pot1AnsweredCorrectly[3];
             const winning_message1 = await pot1AnsweredCorrectly[4];
 
@@ -271,6 +281,9 @@ const App = () => {
             const attemptAddress1 = await getAllLatestGameAttempts1[1];
             const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
             const attemptUsername1 = await getAllLatestGameAttempts1[3];
+
+            const entriesGame1 = await contract.methods.numberOfEntries(1).call()
+            settotalGameEntriesGame1(entriesGame1);
 
             // Fetches New Games if required
             // const item = await contract.getPastEvents('setGameEvent',{});
@@ -325,6 +338,8 @@ const App = () => {
             var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
 
 
+
+
             setTimeGame1(timeGame1)
             setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!
 
@@ -341,7 +356,7 @@ const App = () => {
               setcountGame1DeadlineTrue(false);
             }
 
-            setGame1numberOfEntries(game1numberOfEntries)
+            setGame1numberOfEntries(totalGameEntriesGame1)
 
             setUserGame1_id(userGame1_id)
             setUserEntered_game1(userEntered_game1)
@@ -379,11 +394,17 @@ const App = () => {
           const userGame2_headstart_time =  await game2huntEntries[2];
           const userGame2_live = await game2huntEntries[3];
 
+          const numberOfEntriesGame2 = await contract.methods.numberOfEntries(2).call();
+
+
 
           const pot2AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(2).call();
           const winning_address2 = await pot2AnsweredCorrectly[0];
           const treasure_found2 = await pot2AnsweredCorrectly[1];
-          const winning_prize2 =  await pot2AnsweredCorrectly[2];
+          var winning_prize2 =  await pot2AnsweredCorrectly[2];
+
+          winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
+
           const question_hash_solved2 = await pot2AnsweredCorrectly[3];
           const winning_message2 = await pot2AnsweredCorrectly[4];
 
@@ -452,11 +473,13 @@ const App = () => {
   allGame1_id,allGame1_user_front_of_que,allGame1_deadline_time,allGame1_username,allGame1_total_game_tries,countGame1,countGame1DeadlineTrue,
   game1_head_start_time,game1_entry_limit,game1_entry_cost,game1numberOfEntries,userGame1_id,userEntered_game1,userGame1_headstart_time,userGame1_live,
   winning_address1,treasure_found1,winning_prize1,question_hash_solved1,winning_message1,attemptId1,attemptUsername1,attemptDeadline1,attemptAddress1,
+  totalGameEntriesGame1,
       // GAME2
   game2_id,game2_live,game2_prize,game2_question_hash,game2_time_lock_cost,game2_submit_secret_cost,game2_riddle,game2_clue,
   allGame2_id,allGame2_user_front_of_que,allGame2_deadline_time,allGame2_username,allGame2_total_game_tries,countGame2,countGame2DeadlineTrue,
   game2_head_start_time,game2_entry_limit,game2_entry_cost,game2numberOfEntries,userGame2_id,userEntered_game2,userGame2_headstart_time,userGame2_live,
-  winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2
+  winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2,
+  totalGameEntriesGame2
 ])
 
 
@@ -526,7 +549,7 @@ const App = () => {
                   countGame2={countGame2}
                   countGame2DeadlineTrue={countGame2DeadlineTrue}
 
-                  game2numberOfEntries={game2numberOfEntries}
+                  totalGameEntriesGame1={totalGameEntriesGame1}
 
 
 
@@ -573,6 +596,7 @@ const App = () => {
                 attemptAddress1={attemptAddress1}
                 attemptUsername1={attemptUsername1}
                 attemptDeadline1={attemptDeadline1}
+                totalGameEntriesGame1={totalGameEntriesGame1}
 
                 />
 
@@ -618,6 +642,8 @@ const App = () => {
               attemptAddress2={attemptAddress2}
               attemptUsername2={attemptUsername2}
               attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+
 
               />
 

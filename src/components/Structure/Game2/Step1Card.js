@@ -96,7 +96,7 @@ const Step1Card = (props) => {
                 <Button className="customButton" onClick={handleSubmitEnter}>Enter Quest Now</Button>
                 <br/>
                 <br/>
-                <div>Game Attempts {props.allGame2_total_game_tries}</div>
+                <div>Game Attempts {props.totalGameEntriesGame2}</div>
 
                 <br />
 

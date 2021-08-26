@@ -58,7 +58,7 @@ const HuntWowCards = (props) => {
         </Link>
         <br/><br/>
 
-        <div className="postPrize">{props.allGame1_total_game_tries} Attempts</div>
+        <div className="postPrize">{props.totalGameEntriesGame1} Attempts</div>
       </Card.Body>
     </Card>
 
@@ -74,7 +74,7 @@ const HuntWowCards = (props) => {
           <Button className="customButton" to="/hunt2">View Fort Blox Quest</Button>
         </Link>
         <br/><br/>
-        <div className="postPrize">{props.allGame2_total_game_tries} Attempts</div>
+        <div className="postPrize">{props.totalGameEntriesGame2} Attempts</div>
       </Card.Body>
     </Card>
 

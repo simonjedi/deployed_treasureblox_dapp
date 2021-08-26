@@ -18,11 +18,12 @@ import celebrate from '../Sounds/celebrate.wav';
 import ReactAudioPlayer from 'react-audio-player';
 
 
-const Timer = (props) => {
+  const Timer = (props) => {
   const commaNumber = require('comma-number')
 
 
-  const winning_prize1 = commaNumber(props.winning_prize1,',');
+  var winning_prize1 = commaNumber(props.winning_prize1,',');
+
 
   const [transactionConfirmed,setTransactionConfirmed] = useState(undefined);
   const [timeLock,setTimelock] = useState(false);

@@ -196,7 +196,7 @@ const Step3Card = (props) => {
                   <Button className="customButton" onClick={handleSubmit}>Submit Secret</Button>
                   <br />
                   <br />
-                  <div>Game Attempts {props.allGame1_total_game_tries}</div>
+                  <div>Game Attempts {props.globalNumberOfTries}</div>
                 </div>
 
             </div>

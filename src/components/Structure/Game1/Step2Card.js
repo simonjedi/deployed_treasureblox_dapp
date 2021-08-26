@@ -112,7 +112,7 @@ const Step2Card = (props) => {
                 <Button className="customButton" onClick={handleSubmit}>Lock Time Now</Button>
                 <br />
                 <br />
-                <div>Game Attempts {props.allGame1_total_game_tries}</div>
+                <div>Game Attempts {props.totalumberOfTries}</div>
               </div>
 
             )}

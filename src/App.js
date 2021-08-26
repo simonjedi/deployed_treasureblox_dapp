@@ -121,7 +121,7 @@ const App = () => {
   const [attemptDeadline2, setAttemptDeadline2] = useState(undefined);
   const [loaded, setloaded] = useState(false);
   const [totalGameEntriesGame2, settotalGameEntriesGame2] = useState(false);
-
+  const [globalNumberOfTries, setGlobalNumberOfTries] = useState(false);
 
 
 
@@ -246,6 +246,12 @@ const App = () => {
         const timer = window.setInterval( async() => {
             var moment = require('moment'); // require
 
+
+            // GLOBAL
+
+            const globalTries = await contract.methods.totalumberOfTries().call();
+            console.log("number of tries:",globalTries)
+            setGlobalNumberOfTries(globalTries)
         // GET ALL GAME TIMELINES AND gamesTriess
         // GAME 1
             const allGame1 = await contract.methods.allGames(1).call();
@@ -479,7 +485,8 @@ const App = () => {
   allGame2_id,allGame2_user_front_of_que,allGame2_deadline_time,allGame2_username,allGame2_total_game_tries,countGame2,countGame2DeadlineTrue,
   game2_head_start_time,game2_entry_limit,game2_entry_cost,game2numberOfEntries,userGame2_id,userEntered_game2,userGame2_headstart_time,userGame2_live,
   winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2,
-  totalGameEntriesGame2
+  totalGameEntriesGame2,
+  globalNumberOfTries
 ])
 
 
@@ -550,7 +557,8 @@ const App = () => {
                   countGame2DeadlineTrue={countGame2DeadlineTrue}
 
                   totalGameEntriesGame1={totalGameEntriesGame1}
-
+                  totalGameEntriesGame2={totalGameEntriesGame2}
+                  globalNumberOfTries={globalNumberOfTries}
 
 
                   />
@@ -597,7 +605,7 @@ const App = () => {
                 attemptUsername1={attemptUsername1}
                 attemptDeadline1={attemptDeadline1}
                 totalGameEntriesGame1={totalGameEntriesGame1}
-
+                globalNumberOfTries={globalNumberOfTries}
                 />
 
               </Route>
@@ -643,7 +651,7 @@ const App = () => {
               attemptUsername2={attemptUsername2}
               attemptDeadline2={attemptDeadline2}
               totalGameEntriesGame2={totalGameEntriesGame2}
-
+              globalNumberOfTries={globalNumberOfTries}
 
               />
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import Timer from './Timer';
 
-import img1 from '../images/elons_lost_his_rocket.png';
+// import img1 from '../images/elons_lost_his_rocket.png';
+import img1 from '../images/elon-rocket-clue1.jpg';
+
 import img2 from '../images/fortblox.png';
+
 
 
 

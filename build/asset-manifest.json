@@ -5,8 +5,8 @@
     "static/js/1.1dfa4dba.chunk.js": "/static/js/1.1dfa4dba.chunk.js",
     "static/js/1.1dfa4dba.chunk.js.map": "/static/js/1.1dfa4dba.chunk.js.map",
     "main.css": "/static/css/main.a0239cfe.chunk.css",
-    "main.js": "/static/js/main.68f566c4.chunk.js",
-    "main.js.map": "/static/js/main.68f566c4.chunk.js.map",
+    "main.js": "/static/js/main.981a0835.chunk.js",
+    "main.js.map": "/static/js/main.981a0835.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8436ff01.js",
     "runtime-main.js.map": "/static/js/runtime-main.8436ff01.js.map",
     "static/css/4.081f420c.chunk.css": "/static/css/4.081f420c.chunk.css",
@@ -60,6 +60,7 @@
     "static/media/TreasureBloxWhitePaperV1.347d1343.pdf": "/static/media/TreasureBloxWhitePaperV1.347d1343.pdf",
     "static/media/TreasureBlox_Logo.f079607a.png": "/static/media/TreasureBlox_Logo.f079607a.png",
     "static/media/celebrate.696424d8.wav": "/static/media/celebrate.696424d8.wav",
+    "static/media/elon-rocket-clue1.fa114ae5.jpg": "/static/media/elon-rocket-clue1.fa114ae5.jpg",
     "static/media/elons-rocket.d3d11b7b.jpg": "/static/media/elons-rocket.d3d11b7b.jpg",
     "static/media/elons_lost_his_rocket.6c605c03.png": "/static/media/elons_lost_his_rocket.6c605c03.png",
     "static/media/enter.ba946b4c.wav": "/static/media/enter.ba946b4c.wav",
@@ -75,6 +76,6 @@
     "static/css/4.081f420c.chunk.css",
     "static/js/4.38861f1f.chunk.js",
     "static/css/main.a0239cfe.chunk.css",
-    "static/js/main.68f566c4.chunk.js"
+    "static/js/main.981a0835.chunk.js"
   ]
 }

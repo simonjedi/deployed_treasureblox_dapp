@@ -30,12 +30,7 @@ import Hunt2 from "./Hunt2";
 import { Helmet } from 'react-helmet';
 
 
-
-
 const App = () => {
-
-
-
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
@@ -154,7 +149,8 @@ const App = () => {
         // Sstart Data Calls
         const decimals = await contract.methods.decimals().call().then(console.log('Yes'));
 
-        const totalTreasure = await contract.methods.balanceOf("0xbb4e46e5407d69b7a8e5948703C7bf3214f84295").call();
+        var totalTreasure = await contract.methods.balanceOf("0xbb4e46e5407d69b7a8e5948703C7bf3214f84295").call();
+        totalTreasure = totalTreasure.substring(0, totalTreasure.length-18);
 
 
         // const owner = await contract.methods._owner().call();
@@ -174,42 +170,58 @@ const App = () => {
 
         const game1_id = await game1[0];
         const game1_live = await game1[1];
-        const game1_prize = await game1[2];
+        var game1_prize = await game1[2];
+        game1_prize = game1_prize.substring(0, game1_prize.length-18);
+
         const game1_question_hash = await game1[3];
-        const game1_time_lock_cost= await game1[4];
-        const game1_submit_secret_cost = await game1[5];
+        var game1_time_lock_cost = await game1[4];
+        game1_time_lock_cost = game1_time_lock_cost.substring(0, game1_time_lock_cost.length-18);
+        var game1_submit_secret_cost = await game1[5];
+        game1_submit_secret_cost = game1_submit_secret_cost.substring(0, game1_submit_secret_cost.length-18);
         const game1_riddle = await game1[6];
         const game1_clue = await game1[7];
         const game1_head_start_time = await game1[8];
         const game1_entry_limit = await game1[9];
-        const game1_entry_cost = await game1[10];
+        var game1_entry_cost = await game1[10];
+        game1_entry_cost = game1_entry_cost.substring(0, game1_entry_cost.length-18);
 
         setGame1_id(game1_id)
         setGame1_live(game1_live)
         setGame1_prize(game1_prize)
         setGame1_question_hash(game1_question_hash)
         setgame1_time_lock_cost(game1_time_lock_cost)
+
         setGame1_submit_secret_cost(game1_submit_secret_cost)
+
         setGame1_riddle(game1_riddle)
         setGame1_clue(game1_clue)
         setGame1_head_start_time(game1_head_start_time)
         setGame1_entry_limit(game1_entry_limit)
         setGame1_entry_cost(game1_entry_cost)
 
+
 // GAME 2
         const game2 = await contract.methods.Games(2).call();
 
         const game2_id = await game2[0];
         const game2_live = await game2[1];
-        const game2_prize = await game2[2];
+        var game2_prize = await game2[2];
+        game2_prize = game2_prize.substring(0, game2_prize.length-18);
+
         const game2_question_hash = await game2[3];
-        const game2_time_lock_cost= await game2[4];
-        const game2_submit_secret_cost = await game2[5];
+        var game2_time_lock_cost= await game2[4];
+        game2_time_lock_cost = game2_time_lock_cost.substring(0, game2_time_lock_cost.length-18);
+
+        var game2_submit_secret_cost = await game2[5];
+        game2_submit_secret_cost = game2_submit_secret_cost.substring(0, game2_submit_secret_cost.length-18);
+
         const game2_riddle = await game2[6];
         const game2_clue = await game2[7];
         const game2_head_start_time = await game2[8];
         const game2_entry_limit = await game2[9];
-        const game2_entry_cost = await game2[10];
+        var game2_entry_cost = await game2[10];
+        game2_entry_cost = game2_entry_cost.substring(0, game2_entry_cost.length-18);
+
 
         setGame2_id(game2_id)
         setGame2_live(game2_live)

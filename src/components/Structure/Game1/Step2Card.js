@@ -36,9 +36,11 @@ const Step2Card = (props) => {
 
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
+
+
+
   const contract = props.contract
   const accounts = props.accounts
-
 
     const handleInputChange = (event) => {
       const target = event.target;
@@ -62,8 +64,6 @@ const Step2Card = (props) => {
       setTimeout(function(){
           setloading(false);
       },1000);
-
-
     }
 
 
@@ -100,6 +100,7 @@ const Step2Card = (props) => {
                 <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                 </div>
                 <br/>
+
                 <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
 
                 <br />

@@ -198,13 +198,9 @@ const Step3Card = (props) => {
                   <br />
                   <div>Game Attempts {props.totalGameEntriesGame1}</div>
                 </div>
-
             </div>
-
             )}
         </div>
-
-
 
   );
 

@@ -55,7 +55,7 @@ const HomeCards = (props) => {
 
                 <Button className="tinyCustomButtonDescription" href = {Pdf} target = "_blank">White Paper</Button>
 
-                <Button className="tinyCustomButtonDescription" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">pancakeswap</Button>
+                <Button className="tinyCustomButtonDescription" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</Button>
 
                 <Button className="tinyCustomButtonDescription" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
 
@@ -76,7 +76,7 @@ const HomeCards = (props) => {
               <div className="descriptionTitle">Total Treasure Fund {treasure} Blox</div>
               <div >Purchase your Blox to enter a quest </div>
               <br/>
-              <Button className="customButton" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">Buy Blox</Button>
+              <Button className="customButton" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">Buy Blox</Button>
 
               <br/>
 

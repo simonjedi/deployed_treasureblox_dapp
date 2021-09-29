@@ -272,9 +272,10 @@ const App = () => {
         // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
         // Sstart Data Calls
         const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
-        var totalTreasure = await tokenContract.methods.balanceOf("0xD10283b232c43924BCc2834bd73F811918851f3C").call();
-        totalTreasure = totalTreasure.substring(0, tokenContract.length-18);
-        // console.log(totalTreasure,"Total Treasure token contract")
+
+        var totalTreasure = await tokenContract.methods.balanceOf("0xbb4e46e5407d69b7a8e5948703C7bf3214f84295").call();
+        totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
+        console.log(totalTreasure,"Total Treasure token contract")
 
         // const owner = await contract.methods._owner().call();
         // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));

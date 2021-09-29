@@ -16,16 +16,30 @@ import Timer from './components/Structure/Game1/Timer';
 
 import HomeCards from './components/Structure/HomeCards';
 import HomeHuntCards from './components/Structure/HomeHuntCards';
+import HomeFeatureCards from './components/Structure/HomeFeatureCards';
+
+import Learnmore from './Learnmore';
+
 
 import img1 from './components/Structure/images/elons-rocket.jpg';
 import img2 from './components/Structure/images/fortblox.png';
+import img3 from './components/Structure/images/treasureblox_header1.png';
+import img4 from './components/Structure/images/treasureblox_header2.png';
+import img5 from './components/Structure/images/treasureblox_header3.png';
+import img6 from './components/Structure/images/treasureblox_header4.png';
+import img7 from './components/Structure/images/treasureblox_header5.png';
+import img8 from './components/Structure/images/treasureblox_header6.png';
+
+
+
+import pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
 
 
 import { Helmet } from 'react-helmet';
 
 
 
-import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
+import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown,Carousel } from 'react-bootstrap';
 
 
 
@@ -35,6 +49,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+import { HashLink as LinkHeader } from 'react-router-hash-link';
 
 
 
@@ -75,13 +91,65 @@ const Home = (props) => {
       </Helmet>
       <Container className='mt-5' fluid="md">
 
+
+
   <div className="spaceTopHome">
 
-        <div className="siteTitle">TreasureBlox - The World's first crypto and real world treasure hunt.</div>
-          <br/>
-        <div className="homeSubTitle">TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</div>
+    <Carousel sm={12} lg={4} className="d-none d-lg-block">
+      <Carousel.Item>
+      <img
+        className="d-block w-100 cardRounded "
+        src={img4}
+        alt="First slide"
+      />
+      <Carousel.Caption >
+      <h3>TreasureBlox - The World's first crypto and real world treasure hunt.</h3>
+      <p>TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
+      <LinkHeader to="/home#yourAnchorTag">
+        <Button className="customButton" id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+      </LinkHeader>
+
+      <LinkHeader to="/Learnmore">
+        <Button className="customButton" id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+      </LinkHeader>
+
+
+      </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <img
+        className="d-block w-100 cardRounded"
+        src={img6}
+        alt="Second slide"
+      />
+
+      <Carousel.Caption>
+      <h3>Can you Help Captain Troy 'Mighty' Armstong</h3>
+        <br/>
+      <p>Explorer can you stop 'crypto dave' and build the bridge between the Metaverse and reality...</p>
+      <LinkHeader to="/Blog1#intro">
+        <Button className="customButton" id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
+      </LinkHeader>
+      </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <img
+        className="d-block w-100 cardRounded"
+        src={img5}
+        alt="Second slide"
+      />
+
+      <Carousel.Caption>
+      <h3>Play to Earn, Project Information & More</h3>
+        <br/>
+      <p>Explorers earn Blox for playing and get paid to play!</p>
+        <Button className="customButton" id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+      </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
 
         <CardGroup className='mt-5'>
+        <div id="yourAnchorTag">
 
           <CardColumns >
 
@@ -91,9 +159,12 @@ const Home = (props) => {
 
 
             </CardColumns>
+          </div>
         </CardGroup>
 
       </div>
+
+
       </Container>
       </div>
 

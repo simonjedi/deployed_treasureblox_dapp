@@ -43,7 +43,7 @@ const Connection = (props) =>  {
 
   return(
     <div>
-      <Button onClick={connectWallet} className="customButton enableEthereumButton">{firstPartAddress}{secondPartAddress}</Button>
+      <Button onClick={connectWallet} id="wallet-button" className="customButton enableEthereumButton">{firstPartAddress}{secondPartAddress}</Button>
     </div>
   )
 }

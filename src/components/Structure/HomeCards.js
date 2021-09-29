@@ -53,18 +53,18 @@ const HomeCards = (props) => {
               <div className="descriptionBody">Select a treasure hunt to enter - good luck!</div>
               <br/>
 
-                <Button className="tinyCustomButtonDescription" href = {Pdf} target = "_blank">White Paper</Button>
+                <Button className="tinyCustomButtonDescription" id="card_white_paper" href = {Pdf} target = "_blank">White Paper</Button>
 
-                <Button className="tinyCustomButtonDescription" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</Button>
+                <Button className="tinyCustomButtonDescription" id="card_cafeswap" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</Button>
 
-                <Button className="tinyCustomButtonDescription" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
+                <Button className="tinyCustomButtonDescription" id="card_bsc" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</Button>
 
               <br/><br/>
-                <Button className="tinyCustomButtonDescription" href="https://t.me/treasureblox">Telegram</Button>
+                <Button className="tinyCustomButtonDescription" id="card_telegram" href="https://t.me/treasureblox">Telegram</Button>
 
-                <Button className="tinyCustomButtonDescription" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</Button>
+                <Button className="tinyCustomButtonDescription" id="card_poo_coin" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</Button>
 
-                <Button className="tinyCustomButtonDescription" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</Button>
+                <Button className="tinyCustomButtonDescription" id="card_liquidity" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</Button>
 
 
             </Card.Body>
@@ -76,7 +76,7 @@ const HomeCards = (props) => {
               <div className="descriptionTitle">Total Treasure Fund {treasure} Blox</div>
               <div >Purchase your Blox to enter a quest </div>
               <br/>
-              <Button className="customButton" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">Buy Blox</Button>
+              <Button className="customButton" id="loan_card_buy_blox" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">Buy Blox</Button>
 
               <br/>
 

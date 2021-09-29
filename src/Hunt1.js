@@ -1,11 +1,9 @@
-import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
+import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,Row,Col,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
 import MyNav from './MyNav';
 import SingleCard from './components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component, useState, useEffect } from 'react'
 import Connection from "./Connection";
@@ -22,6 +20,8 @@ import HomeHuntCards from './components/Structure/HomeHuntCards';
 import PageCard from './components/Structure/Game1/PageCard';
 import HuntWowCards from './components/Structure/Game1/HuntWowCards';
 import EnterHuntCards from './components/Structure/Game1/EnterHuntCards';
+import LeaderBoardCard from './components/Structure/Game1/LeaderBoardCard';
+
 
 import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
@@ -52,6 +52,8 @@ function useWindowSize() {
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 }
+
+
 
 const Hunt1 = (props) => {
 
@@ -103,12 +105,24 @@ const Hunt1 = (props) => {
       <div>
             <div className="siteTitle">Welcome, Elon has lost his Rocket! Can you help him find it to win the prize?</div>
 
-
       <Container className='mt-5' fluid="md">
-            <CardGroup className='mt-5'>
-              <CardColumns>
 
-              <PageCard {...props}/>
+
+            <CardGroup className='mt-5'>
+
+            <Row>
+            <Col sm={4}>
+            <PageCard {...props}/>
+
+            </Col>
+
+            <Col sm={8}>
+            <LeaderBoardCard {...props}/>
+            </Col>
+            </Row>
+            <br/>
+
+              <CardColumns>
 
               <EnterHuntCards {...props}/>
 
@@ -119,9 +133,6 @@ const Hunt1 = (props) => {
               <SingleCard{...props}/>
 
 
-
-
-
                 <br/>
 
 
@@ -130,6 +141,7 @@ const Hunt1 = (props) => {
 
               </CardColumns>
             </CardGroup>
+
         </Container>
 
       </div>

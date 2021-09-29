@@ -32,6 +32,24 @@
   animation: wobble 1s 1;
 }
 
+.customButtonBlog{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 40px;
+  width: 150px;
+  font-size: 1rem;
+}
+
+.customButtonBlog:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}
+
 
 @keyframes wobble {
   25% {
@@ -122,6 +140,11 @@
   font-size: 1.8rem;
   color: #9b2226;
 }
+
+.blogTitle{
+  font-size: 1.4rem;
+}
+
 .gameText{
   font-size: 1.3rem;
   color: #001219;
@@ -175,4 +198,8 @@ border-bottom: 1px solid rgba(255,255,255,.25);
   font-size: 1.3rem;
   color: #ee9b00;
   text-align: center;
+}
+
+.card-footer{
+  background-color: white;
 }

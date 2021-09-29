@@ -1,10 +1,6 @@
-import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
+import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Row,Col,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
 import MyNav from './MyNav';
 import moment from 'moment';
-
-// import img1 from './Treasure-hunt.jpeg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component, useState, useEffect } from 'react'
 import Connection from "./Connection";
@@ -19,10 +15,10 @@ import GameCard from './components/Structure/GameCard';
 import HomeHuntCards from './components/Structure/HomeHuntCards';
 import SingleCard from './components/Structure/Game2/SingleCard';
 
-
 import PageCard from './components/Structure/Game2/PageCard';
 import HuntWowCards from './components/Structure/Game2/HuntWowCards';
 import EnterHuntCards from './components/Structure/Game2/EnterHuntCards';
+import LeaderBoardCard from './components/Structure/Game2/LeaderBoard';
 
 import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
@@ -107,21 +103,43 @@ const Hunt2 = (props) => {
             <div className="siteTitle">Welcome to Fort Blox, can you break into the facility and steal the prize?</div>
 
       <Container className='mt-5' fluid="md">
-            <CardGroup className='mt-5'>
-              <CardColumns>
+      <CardGroup className='mt-5'>
 
-              <PageCard {...props}/>
+      <Row>
+      <Col sm={4}>
+      <PageCard {...props}/>
 
-              <EnterHuntCards {...props}/>
+      </Col>
 
-              <GameCard/>
+      <Col sm={8}>
+      <LeaderBoardCard {...props}/>
+      </Col>
+      </Row>
+      <br/>
 
-              <HuntWowCards {...props}/>
 
-              <SingleCard{...props}/>
+        <CardColumns>
 
-              </CardColumns>
-            </CardGroup>
+        <EnterHuntCards {...props}/>
+
+        <GameCard/>
+
+        <HuntWowCards {...props}/>
+
+        <SingleCard{...props}/>
+
+
+
+
+
+          <br/>
+
+
+
+
+
+        </CardColumns>
+      </CardGroup>
         </Container>
 
       </div>

@@ -1,7 +1,7 @@
 .background {
     /* The image used */
     /* background-image: url(./treasure1.jpg); */
-    /* background: url(./treasureblox_background.jpg) no-repeat center center fixed; */
+    background: url(./BloxEscape/assets/fortblox.png) no-repeat center center fixed;
     /* background: url(./background2.jpg) no-repeat center center fixed; */
     /* background: url(./background1.png) no-repeat center center fixed; */
 
@@ -28,4 +28,15 @@
 
 .spaceTopHome{
   margin-top: 100px;
+}
+
+.center{
+  align-items: center;
+}
+.aligned{
+  display: flex;
+  margin: 40px auto;
+  justify-content: center;
+  align-items: center;
+
 }

@@ -50,14 +50,24 @@ const HomeCards = (props) => {
               <div className="descriptionTitle">Step 1 - Enter Game</div>
               <div className="descriptionBody">To enter the game, pay a one time fee in blox.</div>
 
-              <div className="descriptionTitle">Step 2 - Time LOCK</div>
+              <div className="descriptionTitle">Step 2 - Play To Unlock Clues</div>
+              <div className="descriptionBody">Play game to unlock clues, once you've solved the clue go to Step 3</div>
+
+              <div className="descriptionTitle">Step 3 - Time LOCK</div>
               <div className="descriptionBody">Think you know the answer? Use your blox to Purchase a 90 second time lock.</div>
 
               <div className="descriptionTitle">Final Step</div>
               <div className="descriptionBody">Once you have purchased the time lock you are the only player who can enter the secret. Answer the riddle correctly and win!</div>
 
+              <div className="descriptionTitle">Play To Earn</div>
+              <div className="descriptionBody">30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.</div>
+
+              <div className="descriptionTitle">Points</div>
+              <div className="descriptionBody">You gain points every time you play and for leveling up.</div>
+
               <div className="noteTitle">NOTE:</div>
               <div >Each step requires a seperate transaction.</div>
+
 
             </Card.Body>
           </Card>

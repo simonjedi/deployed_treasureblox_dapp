@@ -37,7 +37,7 @@ const SingleCard = (props) => {
 
     <div>
       <Card className="customRoundedOne">
-      <Card.Header className="howToTitle">Prize</Card.Header>
+      <Card.Header className="howToTitle">Game Prize Fund</Card.Header>
       <Card.Body className='customBodyTwo'>
         <div className="gameMainTitle">Total Treasure for Elon's Rocket</div>
 
@@ -47,9 +47,6 @@ const SingleCard = (props) => {
       </Card.Body >
       </Card>
     </div>
-
-
-
 
     <div >
       <Card className="customRoundedOne">

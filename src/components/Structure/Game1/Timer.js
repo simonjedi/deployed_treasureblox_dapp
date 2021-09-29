@@ -23,6 +23,8 @@ import ReactAudioPlayer from 'react-audio-player';
 
 
   var winning_prize1 = commaNumber(props.winning_prize1,',');
+  // winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
+
 
 
   const [transactionConfirmed,setTransactionConfirmed] = useState(false);

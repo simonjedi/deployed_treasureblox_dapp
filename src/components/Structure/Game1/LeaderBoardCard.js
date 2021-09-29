@@ -1,0 +1,129 @@
+import React, {useState,useEffect} from 'react';
+import Iframe from 'react-iframe'
+import img1 from '../images/elons_lost_his_rocket.png';
+
+import { Modal,CardColumns,CardGroup,Card,Button,View,Table,Container,Nav,Navbar,NavDropdown,Row,Col } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './LeaderBoard.css';
+
+
+// import Leaderboard from 'react-native-leaderboard';
+import User from './User';
+import Tableheader from './Tableheader';
+
+const LeaderBoardCard = (props) => {
+  const commaNumber = require('comma-number')
+
+
+  const decimals = props.decimals;
+
+
+  const game1_prize = commaNumber(props.game1_prize,',');
+  const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  //
+  // console.log(props.game1LeaderBoardIndex,"ITEMS");
+  // console.log(props.game1LeaderBoardGameID,"ITEMS");
+  // console.log(props.game1LeaderBoardAddress,"ITEMS");
+  // console.log(props.game1LeaderBoardEntered,"ITEMS");
+  // console.log(props.game1LeaderBoardUsername,"ITEMS");
+  // console.log(props.game1LeaderBoardTries,"ITEMS");
+  // console.log(props.game1LeaderBoardStage,"ITEMS");
+
+  const columns = [
+    {
+    dataField: 'Score',
+    text: 'Score',
+    sort: true,
+
+  }];
+
+
+// console.log(props.game1LeaderBoardIndex)
+// console.log(props.game1LeaderBoardTries)
+
+
+    // const userList = async () => {
+    //   return props.game1LeaderBoardIndex.map((users) => <User data={users} />)
+    // }
+
+console.log(props.game1LeaderBoardIndex)
+  let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
+  let rank = 0;
+
+  let oredered_zipped = zipped.sort((a,b) => a[3] < b[3] ? 1 : -1);
+
+  const userList = oredered_zipped.map((users,index) => {
+          rank++;
+
+          return (
+              //mapping over the User component to display them in the <tbody>
+              //Key makes each User unique.
+              <User key={index} data={users} rank={rank} {...props}/>
+          )
+      });
+
+
+// console.log(zipped.sort((a,b) => a[3] < b[3] ? 1 : -1),"zip sorted")
+// console.log(props.game1LeaderBoardIndex.sort(),"zip sorted")
+
+var personalgamereturn = 0;
+if (props.state_leaderboardAddressSearch_tries_game1){
+    if (props.game1_prize){
+      var personalgamereturn = Math.round((70*(props.state_leaderboardAddressSearch_tries_game1*props.allGame1_total_game_tries/props.game1_prize))*0.8);
+    }
+
+}
+
+  return(
+
+    <div>
+
+
+    <Card className="customRoundedOne">
+
+
+    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game1_prize*.3)} Blox</div>
+</Card.Header>
+    <div className="containerTable">
+        <Table className="customRoundedTable" hover variant="dark" >
+        <thead>
+            <tr>
+                <th className="idcol">#Rank</th>
+                  <th className="sticky-column" data-column="1" >Username</th>
+                  <th className="sticky-column" data-column="2" toggleTopScores={props.onClickTop}>Level</th>
+                  <th className="sticky-column" data-column="3">Score</th>
+                  <th className="sticky-column" >Est Return</th>
+
+            </tr>
+        </thead>
+          <tbody>
+          {userList}
+
+          </tbody>
+        </Table>
+        </div>
+
+</Card>
+
+
+        <br/>
+
+
+
+
+
+
+</div>
+  );
+
+
+};
+
+export default LeaderBoardCard;

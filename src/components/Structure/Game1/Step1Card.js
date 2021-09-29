@@ -28,7 +28,6 @@ import {
 
 const Step1Card = (props) => {
 
-
   const commaNumber = require('comma-number')
 
   const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
@@ -39,6 +38,8 @@ const Step1Card = (props) => {
 
   const contract = props.contract
   const accounts = props.accounts
+  const tokenContract = props.tokenContract;
+  const gameContractAddress = props.gameContractAddress;
 
 
     const handleInputChange = (event) => {
@@ -50,9 +51,8 @@ const Step1Card = (props) => {
 
     const handleSubmitEnter = async() => {
       setloading(true);
+      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
       await contract.methods.enterGame(props.allGame1_id).send({from: accounts});
-
-
       setTimeout(function(){
           setloading(false);
       },30000);
@@ -104,7 +104,7 @@ const Step1Card = (props) => {
                 <br />
 
                 <br />
-                <Button className="customButton" onClick={handleSubmitEnter}>Enter Quest Now</Button>
+                <Button className="customButton" id="enter_elon" onClick={handleSubmitEnter}>Enter Quest Now</Button>
                 <br/>
                 <br/>
                 <div>Game Attempts {props.totalGameEntriesGame1}</div>

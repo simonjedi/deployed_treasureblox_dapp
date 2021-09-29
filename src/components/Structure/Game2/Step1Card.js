@@ -34,8 +34,10 @@ const Step1Card = (props) => {
 
   const [loading,setloading] = useState(false);
 
-  const contract = props.contract
-  const accounts = props.accounts
+  const contract = props.contract;
+  const accounts = props.accounts;
+  const tokenContract = props.tokenContract;
+  const gameContractAddress = props.gameContractAddress;
 
     const handleInputChange = (event) => {
       const target = event.target;
@@ -45,6 +47,7 @@ const Step1Card = (props) => {
 
     const handleSubmitEnter = async() => {
       setloading(true);
+      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
       await contract.methods.enterGame(props.allGame2_id).send({from: accounts});
 
       setTimeout(function(){
@@ -55,6 +58,12 @@ const Step1Card = (props) => {
 
     const date = new Date(props.game2_head_start_time*1000);
     var headStart = date.toLocaleDateString("en-US");
+
+
+    //
+
+
+
 
 
   return(
@@ -94,6 +103,8 @@ const Step1Card = (props) => {
 
                 <br />
                 <Button className="customButton" onClick={handleSubmitEnter}>Enter Quest Now</Button>
+
+
                 <br/>
                 <br/>
                 <div>Game Attempts {props.totalGameEntriesGame2}</div>

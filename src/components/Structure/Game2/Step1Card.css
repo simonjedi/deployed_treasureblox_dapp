@@ -23,7 +23,15 @@
   width: 200px;
   font-size: 1.4rem;
 }
-
+.customButtonApprove{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 60px;
+  width: 200px;
+  font-size: 1.4rem;
+}
 .customButton:hover{
   background-color: #005f73;
   border-color: #005f73;

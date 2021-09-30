@@ -21,7 +21,7 @@ const LeaderBoardCard = (props) => {
 
   const game1_prize = commaNumber(props.game1_prize,',');
 
-  const game1_WinnerPrize = commaNumber(props.game1_prize*0.3,',');
+  const game1_WinnerPrize = commaNumber(Math.round(props.game1_prize*0.3),',');
 
   console.log(game1_WinnerPrize,"prize")
 
@@ -113,7 +113,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
     <Card className="customRoundedOne">
 
 
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game1_WinnerPrize)} Blox</div>
+    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} Blox</div>
 </Card.Header>
     <div className="containerTable">
         <Table className="customRoundedTable" hover variant="dark" >

@@ -20,6 +20,10 @@ const LeaderBoardCard = (props) => {
 
 
   const game2_prize = commaNumber(props.game2_prize,',');
+  const game2_WinnerPrize = commaNumber(props.game2_prize*0.3,',');
+
+  console.log(game2_WinnerPrize,"prize")
+
   const game2_entry_cost = commaNumber(props.game2_entry_cost,',');
 
 
@@ -43,6 +47,16 @@ const LeaderBoardCard = (props) => {
 // console.log(props.game2LeaderBoardIndex)
 // console.log(props.game2LeaderBoardTries)
 
+var total = 0;
+
+for (var i  = 0; i < props.game2LeaderBoardTries.length; i++){
+
+  total  += parseInt(props.game2LeaderBoardTries[i]);
+
+}
+console.log(total,"meeeeeee")
+console.log(props.game2LeaderBoardTries,"meeeeeee")
+
 
   let zipped = props.game2LeaderBoardIndex.map((x, i) => [x, props.game2LeaderBoardUsername[i],props.game2LeaderBoardStage[i],props.game2LeaderBoardTries[i]]);
 
@@ -56,7 +70,7 @@ const LeaderBoardCard = (props) => {
           return (
               //mapping over the User component to display them in the <tbody>
               //Key makes each User unique.
-              <User key={index} data={users} rank={rank} {...props}/>
+              <User key={index} data={users} total={total} rank={rank} {...props}/>
           )
       });
 
@@ -65,7 +79,7 @@ const LeaderBoardCard = (props) => {
 var personalgamereturn = 0;
 if (props.state_leaderboardAddressSearch_tries_game2){
     if (props.game2_prize){
-      var personalgamereturn = Math.round((70*(props.state_leaderboardAddressSearch_tries_game2*props.allGame2_total_game_tries/props.game2_prize))*0.8);
+      var personalgamereturn = Math.round((0.7*((props.state_leaderboardAddressSearch_tries_game2/total)*props.game2_prize))*0.8);
     }
 
 }
@@ -79,7 +93,7 @@ if (props.state_leaderboardAddressSearch_tries_game2){
 
 
 
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game2}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game2}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game2}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game2_prize*.3)} Blox</div>
+    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game2}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game2}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game2}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game2_WinnerPrize)} Blox</div>
 </Card.Header>
     <div className="containerTable">
         <Table className="customRoundedTable" hover variant="dark" >

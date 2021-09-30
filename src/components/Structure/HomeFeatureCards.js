@@ -10,7 +10,7 @@ import feature5 from './images/feature5.png';
 import feature6 from './images/feature6.png';
 import feature7 from './images/feature7.png';
 import feature8 from './images/feature8.png';
-
+import feature9 from './images/feature9.png';
 
 import HomeCards from './HomeCards';
 
@@ -54,6 +54,7 @@ var post5 = "We have created Treasure Valuts (Prize fund) which increases in siz
 var post6 = "The treasureblox project is constanlty under development. We have a very capible team who are motivated and passionate to bring the concept from the metaverse to reality. We are constantly updating our roadmap to ensure the project evolves in a fast and efficient way to benifit token holders and our strategic partners"
 var post7 = "Leaderboards have been introduced in version 2 of our Dapp to allow explorers to visulise their position and understand how much of a share of the community prize fund they will recieve. Treasure vaults are split across the community when the main treasure hunt clue has been solved. This is divided up based on a players points. You can see your points on the game leaderboards. This is all stored on the blockchain for security and is used onchain to distribute returns once the vault is solved. The treasure hunt team will also seed some of the treasure hunts with an initial sum of BLOX so players are effectivly paid to play."
 var post8 = "As part of our community gorwth we aim to answer questions and are delighted to recieve meaningful feedback to enhance and improve our project. We ran our first AMA with CafeSwap as part of our strategic patnership. You can find more here."
+var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cutting-edge play to earn (P2E) treasure hunt platform, where explorers are rewarded for playing games and unlocking clues by earning BLOX, the TreasureBlox BEP-20 token. TreasureBlox has also identified a strategic opportunity to provide Treasure Hunts As A Service (THAAS) to other projects within the DeFi space."
 
 
   return(
@@ -86,23 +87,22 @@ var post8 = "As part of our community gorwth we aim to answer questions and are 
 
     <Col sm={4}>
     <br/>
+
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={feature6} alt="Logo" className='customRounded'/>
+      <Card.Img variant="top" src={feature9} alt="Logo" className='customRounded'/>
       <Card.Body >
-        <Card.Title className="blogTitle">Treasure Hunt as a service</Card.Title>
+        <Card.Title className="blogTitle">TreasureBlox v2 launches</Card.Title>
+        {`${post9.substring(0, 140)}...`}
+      <br/><br/>
 
-        {`${post2.substring(0, 140)}...`}
-        <br/><br/>
-
-        <Link to="/Blog2">
-          <Button className="customButtonBlog" id="blog_post2_button" to="/Blog2">Continue Reading..</Button>
+        <Link to="/Blog9">
+          <Button className="customButtonBlog" id="blog_post6_button" to="/Blog9">Continue Reading..</Button>
         </Link>
-        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
+        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play to Earn</div>
+
 
       </Card.Body>
     </Card>
-
-
 
 <br/>
 
@@ -253,6 +253,56 @@ var post8 = "As part of our community gorwth we aim to answer questions and are 
     </Col>
 
     </Row>
+
+
+
+
+    // Break
+    <br/>
+
+
+
+
+        <Row>
+
+
+        <Col sm={4}>
+        <br/>  <br/>
+
+
+
+        <Card className='cardRounded'>
+          <Card.Img variant="top" src={feature6} alt="Logo" className='customRounded'/>
+          <Card.Body >
+            <Card.Title className="blogTitle">Treasure Hunt as a service</Card.Title>
+
+            {`${post2.substring(0, 140)}...`}
+            <br/><br/>
+
+            <Link to="/Blog2">
+              <Button className="customButtonBlog" id="blog_post2_button" to="/Blog2">Continue Reading..</Button>
+            </Link>
+            <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
+
+          </Card.Body>
+        </Card>
+
+
+        </Col>
+
+        <Col sm={4}>
+    <br/>  <br/>
+
+
+        </Col>
+
+        <Col sm={4}>
+        <br/>  <br/>
+
+
+        </Col>
+
+        </Row>
 
 <br/><br/>
 <br/>

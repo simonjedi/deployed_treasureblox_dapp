@@ -10,7 +10,9 @@ const User = (props) => {
   if (props.allGame1_total_game_tries){
     if (props.data[3]){
       if (props.game1_prize){
-        var gamereturn = Math.round((70*(props.data[3]*props.allGame1_total_game_tries/props.game1_prize))*0.8);
+        var gamereturn = Math.round((0.7*((props.data[3]/props.total)*props.game1_prize))*0.8);
+  
+
       }
     }
   }

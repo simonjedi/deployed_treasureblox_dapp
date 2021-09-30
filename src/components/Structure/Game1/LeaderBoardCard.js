@@ -20,9 +20,16 @@ const LeaderBoardCard = (props) => {
 
 
   const game1_prize = commaNumber(props.game1_prize,',');
+
+  const game1_WinnerPrize = commaNumber(props.game1_prize*0.3,',');
+
+  console.log(game1_WinnerPrize,"prize")
+
+
   const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
   const [show, setShow] = useState(false);
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -53,6 +60,22 @@ const LeaderBoardCard = (props) => {
     //   return props.game1LeaderBoardIndex.map((users) => <User data={users} />)
     // }
 
+
+
+
+
+    var total = 0;
+
+   for (var i  = 0; i < props.game1LeaderBoardTries.length; i++){
+
+      total  += parseInt(props.game1LeaderBoardTries[i]);
+
+   }
+
+
+
+
+
 console.log(props.game1LeaderBoardIndex)
   let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
   let rank = 0;
@@ -65,19 +88,20 @@ console.log(props.game1LeaderBoardIndex)
           return (
               //mapping over the User component to display them in the <tbody>
               //Key makes each User unique.
-              <User key={index} data={users} rank={rank} {...props}/>
+              <User key={index} data={users} total={total} rank={rank} {...props}/>
           )
       });
 
 
 // console.log(zipped.sort((a,b) => a[3] < b[3] ? 1 : -1),"zip sorted")
 // console.log(props.game1LeaderBoardIndex.sort(),"zip sorted")
-
+console.log(props.state_leaderboardAddressSearch_tries_game1,"personal")
 var personalgamereturn = 0;
 if (props.state_leaderboardAddressSearch_tries_game1){
     if (props.game1_prize){
-      var personalgamereturn = Math.round((70*(props.state_leaderboardAddressSearch_tries_game1*props.allGame1_total_game_tries/props.game1_prize))*0.8);
+      var personalgamereturn = Math.round((0.7*((props.state_leaderboardAddressSearch_tries_game1/total)*props.game1_prize))*0.8);
     }
+
 
 }
 
@@ -89,7 +113,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
     <Card className="customRoundedOne">
 
 
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game1_prize*.3)} Blox</div>
+    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {Math.round(game1_WinnerPrize)} Blox</div>
 </Card.Header>
     <div className="containerTable">
         <Table className="customRoundedTable" hover variant="dark" >

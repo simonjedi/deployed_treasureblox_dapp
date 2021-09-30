@@ -59,7 +59,7 @@ const Blog8 = (props) => {
 
       <div>
         <Helmet>
-          <title>TreasureBlox | Blog 1 Title</title>
+          <title>TreasureBlox | TreasureBlox x CafeSwap AMA</title>
         </Helmet>
       <Container className='mt-5' fluid="md">
 

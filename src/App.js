@@ -36,6 +36,7 @@ import Blog5 from "./BlogPosts/Blog5";
 import Blog6 from "./BlogPosts/Blog6";
 import Blog7 from "./BlogPosts/Blog7";
 import Blog8 from "./BlogPosts/Blog8";
+import Blog9 from "./BlogPosts/Blog9";
 
 
 
@@ -1224,6 +1225,11 @@ const App = () => {
 
               <Route path="/Blog8">
               <Blog8/>
+              </Route>
+
+
+              <Route path="/Blog9">
+              <Blog9/>
               </Route>
 
 

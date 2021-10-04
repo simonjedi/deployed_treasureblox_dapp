@@ -69,8 +69,14 @@ import User from './components/Structure/Game1/User';
 import { Helmet } from 'react-helmet';
 
 
+import axios from 'axios'
+
+
 
 const App = () => {
+
+
+
 
 
   const [web3,setWeb3] = useState(null)
@@ -940,6 +946,7 @@ const App = () => {
                 <Route path="/home">
 
                   <Home
+                  accounts={accounts}
                   game1_id={game1_id}
                   game1_live={game1_live}
                   game1_prize={game1_prize}

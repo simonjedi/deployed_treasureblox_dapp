@@ -30,6 +30,7 @@ import img6 from './components/Structure/images/treasureblox_header4.png';
 import img7 from './components/Structure/images/treasureblox_header5.png';
 import img8 from './components/Structure/images/treasureblox_header6.png';
 
+import axios from 'axios'
 
 
 import pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
@@ -53,8 +54,46 @@ import {
 import { HashLink as LinkHeader } from 'react-router-hash-link';
 
 
+import TagManager from 'react-gtm-module'
+
+
+
 
 const Home = (props) => {
+
+
+
+
+
+  const [ip, setIP] = useState('');
+
+  console.log(ip,"<-----IP")
+
+    //creating function to load ip address from the API
+    const getData = async () => {
+      const res = await axios.get('https://geolocation-db.com/json/')
+      console.log(res,"herererererere");
+      setIP(res.data.IPv4)
+      // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
+    }
+  getData()
+
+  const fuckyeah = (event) => {
+    window.dataLayer.push({
+      event: "hello world i'm not giving a fuck",
+      wallet: props.accounts,
+      wallet_ip: ip,
+      url: window.location.pathname
+    });
+  }
+
+
+  // TagManager.initialize(fuckyeah)
+
+
+
+
+
 
   const commaNumber = require('comma-number')
 
@@ -143,7 +182,10 @@ const Home = (props) => {
       <h3>Play to Earn, Project Information & More</h3>
         <br/>
       <p>Explorers earn Blox for playing and get paid to play!</p>
-        <Button className="customButton" id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+
+      <Button className="customButton" onClick={fuckyeah}>View white paper</Button>
+
+        <Button className="customButton" onClick={fuckyeah} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
       </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

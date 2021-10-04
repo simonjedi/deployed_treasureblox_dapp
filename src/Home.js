@@ -80,7 +80,7 @@ const Home = (props) => {
 
   const fuckyeah = (event) => {
     window.dataLayer.push({
-      event: "hello world i'm not giving a fuck",
+      event: "helloworld",
       wallet: props.accounts,
       wallet_ip: ip,
       url: window.location.pathname
@@ -183,6 +183,7 @@ const Home = (props) => {
         <br/>
       <p>Explorers earn Blox for playing and get paid to play!</p>
 
+      <Button className="customButton" onClick={fuckyeah}>View white paper</Button>
 
         <Button className="customButton" onClick={fuckyeah} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
       </Carousel.Caption>

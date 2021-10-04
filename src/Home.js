@@ -183,7 +183,6 @@ const Home = (props) => {
         <br/>
       <p>Explorers earn Blox for playing and get paid to play!</p>
 
-      <Button className="customButton" onClick={fuckyeah}>View white paper</Button>
 
         <Button className="customButton" onClick={fuckyeah} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
       </Carousel.Caption>

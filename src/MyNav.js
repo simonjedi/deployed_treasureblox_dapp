@@ -172,7 +172,7 @@ const MyNav = (props) => {
           <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
           Elon's Rocket
           </Link>
-          <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt2">
+          <Link className='customLinks' onClick={nav_blox_hunt2_link_click} to="/hunt2">
           Fort Blox
           </Link>
 

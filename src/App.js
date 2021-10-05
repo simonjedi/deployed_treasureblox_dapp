@@ -84,6 +84,8 @@ const App = () => {
 
 
   const [wallet_for_google, setWallet_for_google] = useState('Unknown');
+
+  console.log(wallet_for_google,"string?")
   const [ip, setIP] = useState('');
 
 
@@ -262,12 +264,11 @@ const App = () => {
 
 
 
-
         const web3 = await getWeb3();
 
         const accounts = await web3.eth.getAccounts();
 
-        setWallet_for_google(accounts.toString())
+        setWallet_for_google("w="+accounts.toString())
 
         const abi = require('./TreasureBlox.abi.json');
         const abiToken = require('./TreasureBloxToken.abi.json');

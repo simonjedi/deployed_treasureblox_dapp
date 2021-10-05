@@ -32,6 +32,8 @@ const HomeCards = (props) => {
   const renderTooltip = (props) => (
 
 
+
+
   <Tooltip id="button-tooltip" {...props}>
     Once you have purchased your Blox they buy you 30 seconds to enter your answer, no one else can answer in this time and this stops bots from beating you to it!
   </Tooltip>

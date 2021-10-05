@@ -21,6 +21,27 @@ import {
 
 const HuntWowCards = (props) => {
 
+
+  const view_elon_home_view_click = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"view_elon_home_view_click"
+    });
+  }
+
+  const fort_blox_home_view_click = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"fort_blox_home_view_click"
+    });
+  }
+
   const commaNumber = require('comma-number')
 
   const game1_prize = commaNumber(props.game1_prize,',');
@@ -54,7 +75,7 @@ const HuntWowCards = (props) => {
         <div>Number of people entered {props.game1numberOfEntries}</div>
         <br/>
         <Link to="/hunt1">
-          <Button className="customButton" id="view_elon" to="/hunt1">View Elon's Quest</Button>
+          <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
         </Link>
         <br/><br/>
 
@@ -70,7 +91,7 @@ const HuntWowCards = (props) => {
         <div>Number of people entered {props.game2numberOfEntries}</div>
         <br/>
         <Link to="/hunt2">
-          <Button className="customButton" id="fort_blox_home_view_click" to="/hunt2">View Fort Blox Quest</Button>
+          <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
         </Link>
         <br/><br/>
       </Card.Body>

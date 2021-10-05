@@ -80,6 +80,15 @@ function useWindowSize() {
 
 const Level2Game2 = (props) => {
 
+
+  window.dataLayer.push({
+    event: "wallet_information",
+    wallet: props.wallet_for_google,
+    wallet_ip: props.ip,
+    url: window.location.pathname,
+    buttonClicked:"Level2Game2"
+  });
+
   const [play, setPlay]= useState(false)
 
   const handlePlay = async() => {

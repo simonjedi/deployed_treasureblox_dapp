@@ -64,6 +64,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
     }
     const handleSubmit = async() => {
 
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"TimeLock_Attempt_Treasure_Hunt_2"
+      });
+
       setloading(true);
       const result2 = await contract.methods.headStartTimeLock(username,props.allGame2_id).send({from: accounts});
 
@@ -99,6 +107,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
 
     const handlePayQuest = async() => {
 
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Play_MiniGame_Game2_Level_1"
+      });
+
       setloading(true);
       const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel1Game2(true)
@@ -111,6 +127,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
     }
 
     const handlePayQuest2 = async() => {
+
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Play_MiniGame_Game2_Level_2"
+      });
 
       setloading(true);
       const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
@@ -125,6 +149,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
 
     const handlePayQuest3 = async() => {
 
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Play_MiniGame_Game2_Level_3"
+      });
+
       setloading(true);
       const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel3Game2(true)
@@ -137,6 +169,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
     }
 
     const handlePayQuest4 = async() => {
+
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Play_MiniGame_Game2_Level_4"
+      });
 
       setloading(true);
       const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});

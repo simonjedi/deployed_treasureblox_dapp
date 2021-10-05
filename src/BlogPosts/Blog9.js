@@ -53,6 +53,47 @@ import TelegramEmbed from 'react-telegram-embed'
 const Blog8 = (props) => {
 
 
+  const header_play_to_earn = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"header_play_to_earn"
+    });
+  }
+
+
+  const learn_more = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"learn_more_clicked"
+    });
+  }
+
+
+  const white_paper = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"white_paper"
+    });
+  }
+
+  const play_elons_quest = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"play_elons_quest"
+    });
+  }
 
 
     return (
@@ -92,11 +133,11 @@ const Blog8 = (props) => {
           <h3>TreasureBlox - The World's first crypto and real world treasure hunt.</h3>
           <p>TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
           <LinkHeader to="/home#yourAnchorTag">
-            <Button className="customButton" id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+            <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
           </LinkHeader>
 
           <LinkHeader to="/Learnmore">
-            <Button className="customButton" id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+            <Button className="customButton" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
           </LinkHeader>
 
 
@@ -114,7 +155,7 @@ const Blog8 = (props) => {
           <h3>Play to Earn, Project Information & More</h3>
             <br/>
           <p>Explorers earn Blox for playing and get paid to play!</p>
-            <Button className="customButton" id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+            <Button className="customButton" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
           </Carousel.Caption>
           </Carousel.Item>
 
@@ -155,7 +196,7 @@ const Blog8 = (props) => {
                Thank you for reading - see you in the Metaverse!</div>
                <br/><br/>
                <Link to="/hunt1">
-                 <Button className="customButtonBlog" to="/hunt1">Play Elon's Quest</Button>
+                 <Button className="customButtonBlog" onClick={play_elons_quest} to="/hunt1">Play Elon's Quest</Button>
                </Link>
               </Card.Body>
             </Card>
@@ -175,7 +216,7 @@ const Blog8 = (props) => {
         Can you help Captain Troy mighty Armstrong get in and find the treasure and to save the day.</div>
                 <br/>
                 <Link to="/hunt1">
-                  <Button className="customButtonBlog" id="blog_sidebar_play_elon_card" to="/hunt1">Play Elon's Quest</Button>
+                  <Button className="customButtonBlog" onClick={play_elons_quest} id="blog_sidebar_play_elon_card" to="/hunt1">Play Elon's Quest</Button>
                 </Link>
                 <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
 

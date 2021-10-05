@@ -46,6 +46,16 @@ const Step1Card = (props) => {
     }
 
     const handleSubmitEnter = async() => {
+
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Treasure_Hunt_2_Entered"
+      });
+
+
       setloading(true);
       await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
       await contract.methods.enterGame(props.allGame2_id).send({from: accounts});

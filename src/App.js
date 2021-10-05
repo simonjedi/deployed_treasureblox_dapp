@@ -81,6 +81,15 @@ const App = () => {
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
+
+
+  const [wallet_for_google, setWallet_for_google] = useState('Unknown');
+  const [ip, setIP] = useState('');
+
+
+
+
+
   const [contract,setContract] = useState(null)
   const [tokenContract,setTokenContract] = useState(null)
   const [decimals,setDecimals] = useState(null)
@@ -242,10 +251,21 @@ const App = () => {
       const init = async() => {
 
 
+        //creating function to load ip address from the API
+
+        const res = await axios.get('https://geolocation-db.com/json/')
+        console.log(res,"herererererere");
+        setIP(res.data.IPv4)
+        // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
+
+
+
 
         const web3 = await getWeb3();
 
         const accounts = await web3.eth.getAccounts();
+
+        setWallet_for_google(accounts.toString())
 
         const abi = require('./TreasureBlox.abi.json');
         const abiToken = require('./TreasureBloxToken.abi.json');
@@ -899,7 +919,10 @@ const App = () => {
 
 
 
-    },[web3,accounts,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
+
+
+
+    },[web3,accounts,wallet_for_google,ip,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
 
       // GAME1
   game1_id,game1_live,game1_prize,game1_question_hash,game1_time_lock_cost,game1_submit_secret_cost,game1_riddle,game1_clue,
@@ -947,6 +970,8 @@ const App = () => {
 
                   <Home
                   accounts={accounts}
+                  wallet_for_google={wallet_for_google}
+                  ip={ip}
                   game1_id={game1_id}
                   game1_live={game1_live}
                   game1_prize={game1_prize}
@@ -1005,6 +1030,8 @@ const App = () => {
 
                 web3={web3}
                 tokenContract={tokenContract}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
                 game1_id={game1_id}
                 game1_live={game1_live}
                 game1_prize={game1_prize}
@@ -1078,6 +1105,8 @@ const App = () => {
               <Hunt2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1150,6 +1179,8 @@ const App = () => {
               <Route path="/Learnmore">
 
                 <Learnmore
+                wallet_for_google={wallet_for_google}
+                ip={ip}
                 game1_id={game1_id}
                 game1_live={game1_live}
                 game1_prize={game1_prize}
@@ -1203,40 +1234,67 @@ const App = () => {
               </Route>
 // Blog
               <Route path="/Blog1">
-              <Blog1/>
+              <Blog1
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog2">
-              <Blog2/>
+              <Blog2
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog3">
-              <Blog3/>
+              <Blog3
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog4">
-              <Blog4/>
+              <Blog4
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog5">
-              <Blog5/>
+              <Blog5
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog6">
-              <Blog6/>
+              <Blog6
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog7">
-              <Blog7/>
+              <Blog7
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
               <Route path="/Blog8">
-              <Blog8/>
+              <Blog8
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
 
               <Route path="/Blog9">
-              <Blog9/>
+              <Blog9
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              />
               </Route>
 
 
@@ -1250,6 +1308,8 @@ const App = () => {
               <Level1Game1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1321,6 +1381,8 @@ const App = () => {
               <Game1MoreGame1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1392,6 +1454,8 @@ const App = () => {
               <Level2Game1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1463,6 +1527,8 @@ const App = () => {
               <Game2MoreGame1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1534,6 +1600,8 @@ const App = () => {
               <Level3Game1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1605,6 +1673,8 @@ const App = () => {
               <Level4Game1
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1678,6 +1748,8 @@ const App = () => {
               <Level1Game2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1749,6 +1821,8 @@ const App = () => {
               <Game1MoreGame2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1820,6 +1894,8 @@ const App = () => {
               <Level2Game2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1891,6 +1967,8 @@ const App = () => {
               <Game2MoreGame2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -1962,6 +2040,8 @@ const App = () => {
               <Level3Game2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}
@@ -2033,6 +2113,8 @@ const App = () => {
               <Level4Game2
               web3={web3}
               tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
               game2_id={game2_id}
               game2_live={game2_live}
               game2_prize={game2_prize}

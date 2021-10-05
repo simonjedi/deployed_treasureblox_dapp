@@ -72,6 +72,14 @@ function useWindowSize() {
 
 const Level4Game2 = (props) => {
 
+  window.dataLayer.push({
+    event: "wallet_information",
+    wallet: props.wallet_for_google,
+    wallet_ip: props.ip,
+    url: window.location.pathname,
+    buttonClicked:"Level4Game1"
+  });
+
   const commaNumber = require('comma-number')
   const { width, height } = useWindowSize();
 

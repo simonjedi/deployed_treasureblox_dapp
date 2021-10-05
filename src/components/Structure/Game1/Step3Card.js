@@ -93,11 +93,19 @@ const Step3Card = (props) => {
       if (result.events.submitSecretFailEvent.returnValues[2] == true){
         // Block of code to try
         // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
+        window.dataLayer.push({
+          event: "wallet_information",
+          wallet: props.wallet_for_google,
+          wallet_ip: props.ip,
+          url: window.location.pathname,
+          buttonClicked:"Failed_Secret_Treasure_Hunt_1"
+        });
+
         setloading(false);
         setunlucky(true)
       } else {
-        setunlucky(false)
 
+        setunlucky(false)
       }
 
       setSecret('');

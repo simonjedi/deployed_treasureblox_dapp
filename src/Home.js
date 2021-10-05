@@ -30,7 +30,6 @@ import img6 from './components/Structure/images/treasureblox_header4.png';
 import img7 from './components/Structure/images/treasureblox_header5.png';
 import img8 from './components/Structure/images/treasureblox_header6.png';
 
-import axios from 'axios'
 
 
 import pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
@@ -57,38 +56,62 @@ import { HashLink as LinkHeader } from 'react-router-hash-link';
 import TagManager from 'react-gtm-module'
 
 
-
-
 const Home = (props) => {
 
 
 
 
 
-  const [ip, setIP] = useState('');
 
-  console.log(ip,"<-----IP")
 
-    //creating function to load ip address from the API
-    const getData = async () => {
-      const res = await axios.get('https://geolocation-db.com/json/')
-      console.log(res,"herererererere");
-      setIP(res.data.IPv4)
-      // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
-    }
-  getData()
 
-  const fuckyeah = (event) => {
+
+
+
+
+
+  const header_play_to_earn = (event) => {
     window.dataLayer.push({
-      event: "helloworld",
-      wallet: props.accounts,
-      wallet_ip: ip,
-      url: window.location.pathname
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"header_play_to_earn"
     });
   }
 
 
-  // TagManager.initialize(fuckyeah)
+  const learn_more = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"learn_more_clicked"
+    });
+  }
+
+  const the_story_so_far = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"the_story_so_far"
+    });
+  }
+
+  const white_paper = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"white_paper"
+    });
+  }
+
+
 
 
 
@@ -119,6 +142,9 @@ const Home = (props) => {
   </Tooltip>
 );
 
+// TagManager.initialize(fuckyeah)
+
+
 
 
 
@@ -145,11 +171,11 @@ const Home = (props) => {
       <h3>TreasureBlox - The World's first crypto and real world treasure hunt.</h3>
       <p>TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
       <LinkHeader to="/home#yourAnchorTag">
-        <Button className="customButton" id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+        <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
       </LinkHeader>
 
       <LinkHeader to="/Learnmore">
-        <Button className="customButton" id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+        <Button className="customButton" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
       </LinkHeader>
 
 
@@ -167,7 +193,7 @@ const Home = (props) => {
         <br/>
       <p>Explorer can you stop 'crypto dave' and build the bridge between the Metaverse and reality...</p>
       <LinkHeader to="/Blog1#intro">
-        <Button className="customButton" id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
+        <Button className="customButton" onClick={the_story_so_far} id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
       </LinkHeader>
       </Carousel.Caption>
       </Carousel.Item>
@@ -183,9 +209,8 @@ const Home = (props) => {
         <br/>
       <p>Explorers earn Blox for playing and get paid to play!</p>
 
-      // <Button className="customButton" onClick={fuckyeah}>View white paper</Button>
 
-        <Button className="customButton" onClick={fuckyeah} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+        <Button className="customButton" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
       </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

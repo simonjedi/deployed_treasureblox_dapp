@@ -84,6 +84,15 @@ function useWindowSize() {
 
 const Game2MoreGame2 = (props) => {
 
+
+  window.dataLayer.push({
+    event: "wallet_information",
+    wallet: props.wallet_for_google,
+    wallet_ip: props.ip,
+    url: window.location.pathname,
+    buttonClicked:"CompletedLevel2Game1"
+  });
+
   const [dobrail, setdobrail]= useState(false)
 
 

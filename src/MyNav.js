@@ -21,6 +21,128 @@ import {
 
 const MyNav = (props) => {
 
+
+    const nav_home_link_click = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_home_link_click"
+      });
+    }
+    const nav_blox_zone_lean_more_link_click = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_blox_zone_lean_more_link_click"
+      });
+    }
+
+    const nav_blox_hunt1_link_click = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_blox_hunt1_link_click"
+      });
+    }
+
+    const nav_blox_hunt2_link_click = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_blox_hunt2_link_click"
+      });
+    }
+    const nav_white_paper = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_white_paper"
+      });
+    }
+    const nav_cafe_swap = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_cafe_swap"
+      });
+    }
+
+    const nav_pancake_swap = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_pancake_swap"
+      });
+    }
+
+    const nav_bsc_scan = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_bsc_scan"
+      });
+    }
+
+    const nav_telegram = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_telegram"
+      });
+    }
+
+    const nav_poo_coin = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_poo_coin"
+      });
+    }
+
+    const nav_liquidity = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_liquidity"
+      });
+    }
+
+    const nav_wallet_connected_button = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_wallet_connected_button"
+      });
+    }
+
+
+
+
+
   return(
 
     <Navbar collapseOnSelect className="fixed-top MyBakground" expand="lg" variant="dark">
@@ -40,35 +162,36 @@ const MyNav = (props) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Link className='customLinks' to="/home">
+          <Link className='customLinks' onClick={nav_home_link_click} to="/home">
           Home
           </Link>
-          <Link className='customLinks' to="/Learnmore">
+          <Link className='customLinks' onClick={nav_blox_zone_lean_more_link_click} to="/Learnmore">
           Blox Zone
           </Link>
 
-          <Link className='customLinks' to="/hunt1">
+          <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
           Elon's Rocket
           </Link>
-          <Link className='customLinks' to="/hunt2">
+          <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt2">
           Fort Blox
           </Link>
 
           <NavDropdown title="Project information" id="collasible-nav-dropdown">
-            <NavDropdown.Item id="nav_white_paper" href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
-            <NavDropdown.Item id="nav_cafe_swap" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</NavDropdown.Item>
-            <NavDropdown.Item id="nav_pancake_swap" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">PancakeSwap</NavDropdown.Item>
-            <NavDropdown.Item id="nav_bsc_scan" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
-            <NavDropdown.Item id="nav_telegram" href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
-            <NavDropdown.Item id="nav_poo_coin" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
-            <NavDropdown.Item id="nav_liquidity" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_white_paper} href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_cafe_swap} href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_pancake_swap} href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">PancakeSwap</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_bsc_scan} href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_telegram} href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_poo_coin} href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_liquidity} href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</NavDropdown.Item>
 
           </NavDropdown>
 
         </Nav>
         <Nav className="ml-auto">
 
-          <Connection id="wallet-button" accounts={props.accounts}/>
+
+          <Connection id="wallet-button" onClick={nav_wallet_connected_button} accounts={props.accounts}/>
 
         </Nav>
       </Navbar.Collapse>

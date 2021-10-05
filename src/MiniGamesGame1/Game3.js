@@ -108,7 +108,15 @@ function useWindowSize() {
 
 
 
-const Level2Game1 = (props) => {
+const Level3Game1 = (props) => {
+
+  window.dataLayer.push({
+    event: "wallet_information",
+    wallet: props.wallet_for_google,
+    wallet_ip: props.ip,
+    url: window.location.pathname,
+    buttonClicked:"Level1Game1"
+  });
 
   const [play, setPlay]= useState(false)
 
@@ -976,4 +984,4 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
 
 }
 
-export default Level2Game1;
+export default Level3Game1;

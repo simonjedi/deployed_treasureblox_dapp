@@ -29,6 +29,83 @@ import {
 
 const HuntWowCards = (props) => {
 
+
+  const blog_post1_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post1_button"
+    });
+  }
+
+  const blog_post2_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post2_button"
+    });
+  }
+  const blog_post3_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post3_button"
+    });
+  }
+  const blog_post4_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post4_button"
+    });
+  }
+  const blog_post5_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post5_button"
+    });
+  }
+  const blog_post6_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post6_button"
+    });
+  }
+  const blog_post7_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post7_button"
+    });
+  }
+  const blog_post8_button = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"blog_post8_button"
+    });
+  }
+
+
+
   const commaNumber = require('comma-number')
 
   const game1_prize = commaNumber(props.game1_prize,',');
@@ -69,11 +146,11 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
     <Card className='cardRounded'>
       <Card.Img variant="top" src={feature1} alt="Logo" className='customRounded'/>
       <Card.Body >
-        <Card.Title id="blog_post1_button" className="blogTitle">The Story So Far</Card.Title>
+        <Card.Title  className="blogTitle">The Story So Far</Card.Title>
         {`${post1.substring(0, 140)}...`}
         <br/><br/>
         <Link to="/Blog1">
-          <Button className="customButtonBlog" to="/Blog1">Continue Reading..</Button>
+          <Button className="customButtonBlog" onClick={blog_post1_button} to="/Blog1">Continue Reading..</Button>
         </Link>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
 
@@ -96,7 +173,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
       <br/><br/>
 
         <Link to="/Blog9">
-          <Button className="customButtonBlog" id="blog_post6_button" to="/Blog9">Continue Reading..</Button>
+          <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog9">Continue Reading..</Button>
         </Link>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play to Earn</div>
 
@@ -128,7 +205,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
     {`${post3.substring(0, 140)}...`}
   <br/><br/>
     <Link to="/Blog3">
-      <Button className="customButtonBlog" id="blog_post3_button" to="/Blog3">Continue Reading..</Button>
+      <Button className="customButtonBlog" onClick={blog_post3_button} to="/Blog3">Continue Reading..</Button>
     </Link>
     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play To Earn</div>
 
@@ -148,7 +225,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         {`${post4.substring(0, 140)}...`}
         <br/><br/>
         <Link to="/Blog4">
-          <Button className="customButtonBlog" id="blog_post4_button" to="/Blog4">Continue Reading..</Button>
+          <Button className="customButtonBlog" onClick={blog_post4_button} to="/Blog4">Continue Reading..</Button>
         </Link>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
 
@@ -167,7 +244,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
     {`${post5.substring(0, 140)}...`}
   <br/><br/>
     <Link to="/Blog5">
-      <Button className="customButtonBlog" id="blog_post5_button" to="/Blog5">Continue Reading..</Button>
+      <Button className="customButtonBlog" onClick={blog_post5_button} to="/Blog5">Continue Reading..</Button>
     </Link>
     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
 
@@ -202,7 +279,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
       <br/><br/>
 
         <Link to="/Blog6">
-          <Button className="customButtonBlog" id="blog_post6_button" to="/Blog6">Continue Reading..</Button>
+          <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog6">Continue Reading..</Button>
         </Link>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>White Paper</div>
 
@@ -222,7 +299,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
           {`${post7.substring(0, 140)}...`}
         <br/><br/>
           <Link to="/Blog7">
-            <Button className="customButtonBlog" id="blog_post7_button" to="/Blog7">Continue Reading..</Button>
+            <Button className="customButtonBlog" onClick={blog_post7_button} to="/Blog7">Continue Reading..</Button>
           </Link>
 
           <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
@@ -241,7 +318,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         {`${post8.substring(0, 140)}...`}
       <br/><br/>
         <Link to="/Blog8">
-          <Button className="customButtonBlog" id="blog_post8_button" to="/Blog8">Continue Reading..</Button>
+          <Button className="customButtonBlog" onClick={blog_post8_button} to="/Blog8">Continue Reading..</Button>
         </Link>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
 
@@ -280,7 +357,7 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
             <br/><br/>
 
             <Link to="/Blog2">
-              <Button className="customButtonBlog" id="blog_post2_button" to="/Blog2">Continue Reading..</Button>
+              <Button className="customButtonBlog" onClick={blog_post2_button} to="/Blog2">Continue Reading..</Button>
             </Link>
             <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
 

@@ -257,12 +257,10 @@ const App = () => {
 
         const res = await axios.get('https://geolocation-db.com/json/')
         // console.log(res,"herererererere");
-        // setIP(res.data.IPv4)
+        setIP(res.data.IPv4)
 
         console.log(localStorage,"item local")
         // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
-
-
 
         const web3 = await getWeb3();
 

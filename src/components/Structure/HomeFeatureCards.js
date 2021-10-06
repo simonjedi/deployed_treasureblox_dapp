@@ -152,8 +152,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <Link to="/Blog1">
           <Button className="customButtonBlog" onClick={blog_post1_button} to="/Blog1">Continue Reading..</Button>
         </Link>
+        <h5>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
-
+        </h5>
       </Card.Body>
     </Card>
 
@@ -175,8 +176,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <Link to="/Blog9">
           <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog9">Continue Reading..</Button>
         </Link>
+        <h5>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play to Earn</div>
-
+        </h5>
 
       </Card.Body>
     </Card>
@@ -207,8 +209,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
     <Link to="/Blog3">
       <Button className="customButtonBlog" onClick={blog_post3_button} to="/Blog3">Continue Reading..</Button>
     </Link>
+    <h5>
     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play To Earn</div>
-
+    </h5>
     </Card.Body>
 </Card>
 
@@ -227,8 +230,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <Link to="/Blog4">
           <Button className="customButtonBlog" onClick={blog_post4_button} to="/Blog4">Continue Reading..</Button>
         </Link>
+        <h5>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
-
+        </h5>
 
       </Card.Body>
     </Card>
@@ -246,8 +250,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
     <Link to="/Blog5">
       <Button className="customButtonBlog" onClick={blog_post5_button} to="/Blog5">Continue Reading..</Button>
     </Link>
+    <h5>
     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
-
+    </h5>
 
   </Card.Body>
 </Card>
@@ -281,8 +286,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <Link to="/Blog6">
           <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog6">Continue Reading..</Button>
         </Link>
+        <h5>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>White Paper</div>
-
+        </h5>
 
       </Card.Body>
     </Card>
@@ -301,9 +307,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
           <Link to="/Blog7">
             <Button className="customButtonBlog" onClick={blog_post7_button} to="/Blog7">Continue Reading..</Button>
           </Link>
-
+          <h5>
           <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
-
+          </h5>
       </Card.Body>
     </Card>
 
@@ -320,8 +326,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <Link to="/Blog8">
           <Button className="customButtonBlog" onClick={blog_post8_button} to="/Blog8">Continue Reading..</Button>
         </Link>
+        <h5>
         <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
-
+        </h5>
 
       </Card.Body>
     </Card>
@@ -359,8 +366,9 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
             <Link to="/Blog2">
               <Button className="customButtonBlog" onClick={blog_post2_button} to="/Blog2">Continue Reading..</Button>
             </Link>
+            <h5>
             <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
-
+            </h5>
           </Card.Body>
         </Card>
 

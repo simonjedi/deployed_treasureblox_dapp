@@ -266,7 +266,7 @@ const App = () => {
 
         const accounts = await web3.eth.getAccounts();
 
-        setWallet_for_google("w="+accounts.toString())
+
 
         const abi = require('./TreasureBlox.abi.json');
         const abiToken = require('./TreasureBloxToken.abi.json');
@@ -319,15 +319,11 @@ const App = () => {
 
 
 
-
-
-//
-
-
-
 // This Handels the countdown time and collecting information every 1 second so the counter goes down
         const timer = window.setInterval( async() => {
             var moment = require('moment'); // require
+
+            setWallet_for_google("w="+accounts.toString())
 
 
 

@@ -4,11 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import MyNav from './MyNav';
+
+
+// Partnerships
+import ProjectName from "./Partnerships/Template/projectname";
+import PartnershipNav from './PartnershipNav';
+// import PartnershipHunt1 from "./Partnerships/Template/PartnershipHunt1";
+
+
+
+
+
 import SingleCard from './components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
-
 
 import React, { Component, useState, useEffect } from 'react'
 import getWeb3 from "./getWeb3";
@@ -23,7 +33,6 @@ import {
   Redirect
 } from "react-router-dom";
 
-
 import Home from "./Home";
 import Hunt1 from "./Hunt1";
 import Hunt2 from "./Hunt2";
@@ -37,6 +46,7 @@ import Blog6 from "./BlogPosts/Blog6";
 import Blog7 from "./BlogPosts/Blog7";
 import Blog8 from "./BlogPosts/Blog8";
 import Blog9 from "./BlogPosts/Blog9";
+
 
 
 
@@ -251,8 +261,6 @@ const App = () => {
 
 
       const init = async() => {
-
-
         //creating function to load ip address from the API
 
         // const res = await axios.get('https://geolocation-db.com/json/')
@@ -266,8 +274,6 @@ const App = () => {
 
         const accounts = await web3.eth.getAccounts();
 
-
-
         const abi = require('./TreasureBlox.abi.json');
         const abiToken = require('./TreasureBloxToken.abi.json');
         // Set the provider
@@ -278,7 +284,6 @@ const App = () => {
         // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
         // MainNet
         // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
-
 
 // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
 // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
@@ -317,15 +322,11 @@ const App = () => {
         setTotalTreasure(totalTreasure)
         setTokenContract(tokenContract)
 
-
+        setWallet_for_google("w="+accounts.toString())
 
 // This Handels the countdown time and collecting information every 1 second so the counter goes down
         const timer = window.setInterval( async() => {
             var moment = require('moment'); // require
-
-            setWallet_for_google("w="+accounts.toString())
-
-
 
             // GET GAMES
             // GAME 1
@@ -682,10 +683,11 @@ const App = () => {
                 const leaderBoard = await contract.methods.leaderboard(1,i).call();
 
                 var leaderboard_tries = await leaderBoard[4];
-                game1_leaderboard_tries.push(leaderboard_tries);
+                game1_leaderboard_tries.push(parseInt(leaderboard_tries));
               }
 
             setgame1LeaderBoardTries(game1_leaderboard_tries)
+
 
             var game1_leaderboard_stage = [];
               for (var i = 0; i < noOfEntrys; i++) {
@@ -888,7 +890,7 @@ const App = () => {
                           const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
 
                           var leaderboard_tries2 = await leaderBoard2[4];
-                          game2_leaderboard_tries.push(leaderboard_tries2);
+                          game2_leaderboard_tries.push(parseInt(leaderboard_tries2));
                         }
 
                       setgame2LeaderBoardTries(game2_leaderboard_tries)
@@ -906,8 +908,6 @@ const App = () => {
 
         }, 1000);
         // End of Game timer code
-
-
 
       }
       init()
@@ -956,15 +956,19 @@ const App = () => {
 
 
 
+
+
+
+
         <Router>
-        <MyNav accounts={accounts}/>
 
 
-// Pages
+
 
         <Switch>
-                <Route path="/home">
 
+                <Route path="/home">
+                <MyNav accounts={accounts}/>
                   <Home
                   accounts={accounts}
                   wallet_for_google={wallet_for_google}
@@ -1022,7 +1026,7 @@ const App = () => {
                 </Route>
 
               <Route path="/hunt1">
-
+                <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Hunt1
 
                 web3={web3}
@@ -1098,7 +1102,7 @@ const App = () => {
               </Route>
 
               <Route path="/hunt2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Hunt2
               web3={web3}
               tokenContract={tokenContract}
@@ -1174,7 +1178,7 @@ const App = () => {
 
 
               <Route path="/Learnmore">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Learnmore
                 wallet_for_google={wallet_for_google}
                 ip={ip}
@@ -1229,8 +1233,9 @@ const App = () => {
 
                 />
               </Route>
-// Blog
+
               <Route path="/Blog1">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog1
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1238,6 +1243,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog2">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog2
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1245,6 +1251,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog3">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog3
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1252,6 +1259,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog4">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog4
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1259,6 +1267,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog5">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog5
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1266,6 +1275,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog6">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog6
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1273,6 +1283,7 @@ const App = () => {
               </Route>
 
               <Route path="/Blog7">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog7
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1280,14 +1291,15 @@ const App = () => {
               </Route>
 
               <Route path="/Blog8">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog8
               wallet_for_google={wallet_for_google}
               ip={ip}
               />
               </Route>
 
-
               <Route path="/Blog9">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Blog9
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -1296,9 +1308,7 @@ const App = () => {
 
 
 
-// Blog End
 
-              // HUNT 1
 
               <Route path="/Level1Game1">
 
@@ -1739,7 +1749,6 @@ const App = () => {
               </Route>
 
 
-// HUNT 2
               <Route path="/Level1Game2">
 
               <Level1Game2
@@ -2178,11 +2187,25 @@ const App = () => {
               />
               </Route>
 
+
+              <Route path="/Partnerships/projectname">
+              <PartnershipNav accounts={accounts} onClick={() => Connection()}/>
+                <ProjectName/>
+              </Route>
+
+
+
+
+
+              <Route component={Home} />
+
+
         </Switch>
 
 
 
-        <Redirect to="/home" />
+
+
 </Router>
 
 

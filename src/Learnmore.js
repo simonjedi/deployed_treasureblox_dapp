@@ -54,7 +54,7 @@ import { HashLink as LinkHeader } from 'react-router-hash-link';
 
 const Learnmore = (props) => {
 
-  
+
 
   const commaNumber = require('comma-number')
 
@@ -80,12 +80,10 @@ const Learnmore = (props) => {
   </Tooltip>
 );
 
-
-
-
     return (
 
       <div>
+
         <Helmet>
           <title>TreasureBlox | Blox Zone</title>
         </Helmet>

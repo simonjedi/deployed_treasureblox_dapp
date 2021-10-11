@@ -11,7 +11,7 @@ const User = (props) => {
     if (props.data[3]){
       if (props.game1_prize){
         var gamereturn = Math.round((0.7*((props.data[3]/props.total)*props.game1_prize))*0.8);
-  
+
 
       }
     }

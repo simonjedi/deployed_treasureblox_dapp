@@ -150,7 +150,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
 
     <Nav justify variant="pills"  >
       <Nav.Item>
-        <Nav.Link eventKey="first">Leaderboard</Nav.Link>
+        <Nav.Link eventKey="first">Final Riddle</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link eventKey="link-1">How To Play?</Nav.Link>
@@ -159,7 +159,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
         <Nav.Link eventKey="link-2">Costs</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="link-3" >Riddle</Nav.Link>
+        <Nav.Link eventKey="link-3" >Leaderboard</Nav.Link>
       </Nav.Item>
     </Nav>
 
@@ -167,6 +167,20 @@ if (props.state_leaderboardAddressSearch_tries_game1){
 
       <Tab.Content>
         <Tab.Pane eventKey="first" >
+        <Riddle {...props}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="link-1">
+          <Rules {...props}/>
+        </Tab.Pane>
+
+        <Tab.Pane eventKey="link-2">
+          <Costs {...props}/>
+
+        </Tab.Pane>
+
+        <Tab.Pane eventKey="link-3">
+
+
         <div className="containerTable">
 
             <Table className="customRoundedTable" hover variant="dark" >
@@ -186,18 +200,6 @@ if (props.state_leaderboardAddressSearch_tries_game1){
               </tbody>
             </Table>
             </div>
-        </Tab.Pane>
-        <Tab.Pane eventKey="link-1">
-          <Rules {...props}/>
-        </Tab.Pane>
-
-        <Tab.Pane eventKey="link-2">
-          <Costs {...props}/>
-
-        </Tab.Pane>
-
-        <Tab.Pane eventKey="link-3">
-        <Riddle {...props}/>
 
         </Tab.Pane>
 
@@ -208,19 +210,6 @@ if (props.state_leaderboardAddressSearch_tries_game1){
 
 
 </Tab.Container>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

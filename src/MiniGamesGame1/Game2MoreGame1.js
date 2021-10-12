@@ -124,6 +124,8 @@ const handlePlayBrailOff = async() => {
 
     return (
 
+      <div className="background">
+
       <div className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -201,7 +203,7 @@ const handlePlayBrailOff = async() => {
 </div>
 
 </div>
-
+</div>
 
 
 

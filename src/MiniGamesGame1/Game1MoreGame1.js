@@ -105,7 +105,7 @@ const Game1MoreGame1 = (props) => {
 
 
     return (
-
+<div className="background">
       <div className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -184,7 +184,7 @@ const Game1MoreGame1 = (props) => {
 
 </div>
 
-
+</div>
 
 
     );

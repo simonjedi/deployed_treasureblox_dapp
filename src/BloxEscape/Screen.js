@@ -262,8 +262,7 @@ const Screen = (props) =>{
     }
 
   return (
-
-    <div style={{height: height}}>
+    <div style={{height: height}} >
 
 
     <div style={{height: height/3}}/>

@@ -284,6 +284,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
 
 
+
                       </div>
                       <br/>
                       <div className="gameTitleEnter">Use Time Lock Now!</div>
@@ -316,8 +317,6 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                       <div>
 
                         <Button className="customButton" onClick={handlePayQuest}>Play For Clue</Button>
-
-
 
                       </div>
                       <br/>

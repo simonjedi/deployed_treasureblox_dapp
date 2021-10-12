@@ -102,7 +102,7 @@ const Level1Game2 = (props) => {
 
 
     return (
-
+<div className="background">
       <div className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -154,7 +154,7 @@ const Level1Game2 = (props) => {
 
 </div>
 
-
+</div>
 
     );
 

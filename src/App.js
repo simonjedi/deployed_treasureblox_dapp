@@ -103,7 +103,7 @@ console.log(partnerLandingPageHome,"URL")
 
 
 
-const App = () => {
+const App = (props) => {
 
 
   const [web3,setWeb3] = useState(null)
@@ -1323,8 +1323,6 @@ const [partnerPageExample, setPartnerPageExample] = useState(false);
 
 
 
-
-
               <Route path="/Level1Game1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
@@ -2202,8 +2200,9 @@ const [partnerPageExample, setPartnerPageExample] = useState(false);
               />
               </Route>
 
+// Partnership Starts
               <Route path="/PartnershipExample1" component={PartnershipHunt1}>
-              <PartnershipNav accounts={accounts} onClick={() => Connection()}/>
+              <PartnershipNav {...props} onClick={() => Connection()}/>
                 <PartnershipHunt1
 
                 web3={web3}
@@ -2277,7 +2276,6 @@ const [partnerPageExample, setPartnerPageExample] = useState(false);
 
                 />
               </Route>
-
 
               <Route path="/PartnershipExampleHome" >
               <PartnershipNav accounts={accounts}  onClick={() => Connection()}/>
@@ -2357,6 +2355,445 @@ const [partnerPageExample, setPartnerPageExample] = useState(false);
                 />
               </Route>
 
+              <Route path="/PartnershipLevel1">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Level1Game1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+              <Route path="/PartnershipLevel1More">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Game1MoreGame1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+              <Route path="/PartnershipLevel2">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Level2Game1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+              <Route path="/PartnershipLevel2More">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Game2MoreGame1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+              <Route path="/Level3Game1">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Level3Game1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+              <Route path="/PartnershipLevel4">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Level4Game1
+              web3={web3}
+              tokenContract={tokenContract}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGame2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
+              decimals={decimals}
+              totalTreasure={totalTreasure}
+              contract={contract}
+              accounts={accounts}
+              game2numberOfEntries={game2numberOfEntries}
+              userGame2_id={userGame2_id}
+              userEntered_game2={userEntered_game2}
+              userGame2_headstart_time={userGame2_headstart_time}
+              userGame2_live={userGame2_live}
+              winning_address2={winning_address2}
+              treasure_found2={treasure_found2}
+              winning_prize2={winning_prize2}
+              question_hash_solved2={question_hash_solved2}
+              winning_message2={winning_message2}
+              attemptId2={attemptId2}
+              attemptAddress2={attemptAddress2}
+              attemptUsername2={attemptUsername2}
+              attemptDeadline2={attemptDeadline2}
+              totalGameEntriesGame2={totalGameEntriesGame2}
+              globalNumberOfTries={globalNumberOfTries}
+
+              game2LeaderBoardIndex={game2LeaderBoardIndex}
+              game2LeaderBoardGameID={game2LeaderBoardGameID}
+              game2LeaderBoardAddress={game2LeaderBoardAddress}
+              game2LeaderBoardEntered={game2LeaderBoardEntered}
+              game2LeaderBoardUsername={game2LeaderBoardUsername}
+              game2LeaderBoardTries={game2LeaderBoardTries}
+              game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game2LeaderBoard={game2LeaderBoard}
+              game2UserList={game2UserList}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
+              gameContractAddress={gameContractAddress}
+
+              userLevel1Game2={userLevel1Game2}
+              userLevel2Game2={userLevel2Game2}
+              userLevel3Game2={userLevel3Game2}
+              userLevel4Game2={userLevel4Game2}
+              />
+              </Route>
+
+// Partnership End
 
               <Route path="">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
@@ -2415,6 +2852,7 @@ const [partnerPageExample, setPartnerPageExample] = useState(false);
 
                 />
               </Route>
+
 
 
         </Switch>

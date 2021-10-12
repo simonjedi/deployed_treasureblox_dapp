@@ -618,7 +618,7 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
 
 
     return (
-
+<div className="background">
       <div style={{height: height}} className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -977,7 +977,7 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
 
 </div>
 
-
+</div>
 
 
     );

@@ -61,44 +61,44 @@ const PartnerHome = (props) => {
 
 
 
-  const header_play_to_earn = (event) => {
+  const partner_example_header_play_to_earn = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
       wallet_ip: props.ip,
       url: window.location.pathname,
-      buttonClicked:"header_play_to_earn"
+      buttonClicked:"partner_example_header_play_to_earn"
     });
   }
 
 
-  const learn_more = (event) => {
+  const partner_example_learn_more = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
       wallet_ip: props.ip,
       url: window.location.pathname,
-      buttonClicked:"learn_more_clicked"
+      buttonClicked:"partner_example_learn_more_clicked"
     });
   }
 
-  const the_story_so_far = (event) => {
+  const partner_example_the_story_so_far = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
       wallet_ip: props.ip,
       url: window.location.pathname,
-      buttonClicked:"the_story_so_far"
+      buttonClicked:"partner_example_the_story_so_far"
     });
   }
 
-  const white_paper = (event) => {
+  const partner_example_white_paper = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
       wallet_ip: props.ip,
       url: window.location.pathname,
-      buttonClicked:"white_paper"
+      buttonClicked:"partner_example_white_paper"
     });
   }
 
@@ -193,7 +193,7 @@ const { width, height } = useWindowSize();
       <h3>Treasure hunts As A Service (THAAS)</h3>
       <p>Would you like to have your very own custom treasure hunt? </p>
       <LinkHeader to="/PartnershipExample1">
-        <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
+        <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
       </LinkHeader>
       </Carousel.Caption>
       </Carousel.Item>

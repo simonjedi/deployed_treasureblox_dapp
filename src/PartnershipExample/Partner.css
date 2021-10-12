@@ -44,3 +44,41 @@
   align-items: center;
 
 }
+
+
+.customBodyMiniGame {
+  background-color: #001219;
+  border-width: 0px;
+  color: #172774;
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+
+}
+
+.cardRoundedMiniGame{
+  border-radius: 15px 50px 0px 0px;
+  color: #172774;
+
+
+}
+
+.MiniGameTitle{
+  font-size: 1.4rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.MiniGameSubTitle{
+  font-size: 1.2rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.MiniGameDetails{
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+
+}

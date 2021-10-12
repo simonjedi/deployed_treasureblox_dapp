@@ -82,6 +82,8 @@ const Learnmore = (props) => {
 
     return (
 
+      <div className="background">
+
       <div>
 
         <Helmet>
@@ -106,7 +108,7 @@ const Learnmore = (props) => {
 
       </div>
 
-
+</div>
     );
 
 }

@@ -17,6 +17,7 @@ import {Spinner,Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumn
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Step2Card.css';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +25,8 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+
+
 
 const Step2Card = (props) => {
 
@@ -195,6 +198,10 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
   return(
         <div>
+
+
+
+
 
         {redirectLevel1?(
           <div>
@@ -514,7 +521,9 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
                 </div>
 
+
             )}
+
         </div>
 
 

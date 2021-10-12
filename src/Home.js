@@ -152,7 +152,7 @@ const Home = (props) => {
 
 
 
-      <div>
+      <div className="background">
       <Helmet>
         <title>TreasureBlox | Home</title>
       </Helmet>

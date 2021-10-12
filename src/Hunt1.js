@@ -10,6 +10,8 @@ import Connection from "./Connection";
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import "./App.css";
 
+
+
 import Timer from './components/Structure/Game1/Timer';
 
 import HomeCards from './components/Structure/HomeCards';
@@ -79,8 +81,9 @@ const Hunt1 = (props) => {
   const winner = props.treasure_found1;
 
     return (
+      <div className="background">
 
-      <div className="spaceTopHome">
+      <div className=" spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Elon's Rocket</title>
       </Helmet>
@@ -155,7 +158,7 @@ const Hunt1 = (props) => {
 
 
 </div>
-
+</div>
 
 
     );

@@ -161,7 +161,10 @@ const Level1Game1 = (props) => {
 
     return (
 
+
       <div style={{height: height}} className="spaceTopHome">
+
+      <div className="background">
 
       {more && <Redirect to="/Game1MoreGame1" {...props}/> }
       {bye && <Redirect to="/hunt1" {...props}/> }
@@ -256,6 +259,7 @@ const Level1Game1 = (props) => {
 
 <br/><br/><br/><br/>
 
+</div>
 </div>
 </div>
 

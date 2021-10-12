@@ -71,6 +71,8 @@ const Hunt2 = (props) => {
 
     return (
 
+      <div className="background">
+
       <div className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -148,7 +150,7 @@ const Hunt2 = (props) => {
 
 </div>
 
-
+</div>
 
     );
 

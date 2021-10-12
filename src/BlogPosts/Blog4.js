@@ -100,7 +100,7 @@ const Blog4 = (props) => {
 
 
     return (
-
+<div className="background">
       <div>
         <Helmet>
           <title>TreasureBlox | Defi Treasure hunt games explained</title>
@@ -259,7 +259,7 @@ const Blog4 = (props) => {
       </Container>
 
       </div>
-
+</div>
 
     );
 

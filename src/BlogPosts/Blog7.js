@@ -97,6 +97,7 @@ const Blog7 = (props) => {
 
     return (
 
+<div className="background">
       <div>
         <Helmet>
           <title>TreasureBlox | Defi Leaderboards and Gamification</title>
@@ -231,7 +232,7 @@ const Blog7 = (props) => {
       </Container>
 
       </div>
-
+</div>
 
     );
 

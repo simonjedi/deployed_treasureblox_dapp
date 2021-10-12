@@ -99,6 +99,8 @@ const Blog8 = (props) => {
 
     return (
 
+      <div className="background">
+
       <div>
         <Helmet>
           <title>TreasureBlox | TreasureBlox x CafeSwap AMA</title>
@@ -230,7 +232,7 @@ const Blog8 = (props) => {
       </Container>
 
       </div>
-
+</div>
 
     );
 

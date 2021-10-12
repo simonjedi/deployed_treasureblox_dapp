@@ -101,6 +101,8 @@ const Blog5 = (props) => {
 
     return (
 
+      <div className="background">
+
       <div>
         <Helmet>
           <title>TreasureBlox | Farming, Staking and Treasure Vaults</title>
@@ -258,7 +260,7 @@ const Blog5 = (props) => {
       </Container>
 
       </div>
-
+</div>
 
     );
 

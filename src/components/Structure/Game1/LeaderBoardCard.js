@@ -79,15 +79,18 @@ console.log(props.game1LeaderBoardIndex)
 
   let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
 
-  console.log(zipped[1],"zipped")
+  console.log(zipped,"zipped")
 
   let rank = 0;
 
   let oredered_zipped = zipped.sort((a,b) => a[3] < b[3] ? 1 : -1);
 
 
+
+
   console.log(zipped,"zipped")
   console.log(oredered_zipped,"orders")
+
 
   console.log(oredered_zipped.slice(1),"orders")
 

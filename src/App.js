@@ -1,5 +1,8 @@
 import { Button,Container,Nav,Navbar,NavDropdown,Carousel } from 'react-bootstrap';
 import './App.css';
+
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -7,9 +10,9 @@ import MyNav from './MyNav';
 
 
 // Partnerships
-import ProjectName from "./Partnerships/Template/projectname";
-import PartnershipNav from './PartnershipNav';
-// import PartnershipHunt1 from "./Partnerships/Template/PartnershipHunt1";
+import PartnershipHunt1 from "./PartnershipExample/PartnershipHunt1";
+import PartnershipNav from './PartnershipExample/PartnershipNav';
+import PartnerHome from "./PartnershipExample/PartnerHome";
 
 
 
@@ -48,8 +51,6 @@ import Blog8 from "./BlogPosts/Blog8";
 import Blog9 from "./BlogPosts/Blog9";
 
 
-
-
 // HUNT 1
 import Level1Game1 from "./MiniGamesGame1/Game1";
 import Game1MoreGame1 from "./MiniGamesGame1/Game1MoreGame1";
@@ -83,10 +84,26 @@ import axios from 'axios'
 
 
 
+// Handle Partner Landing PAGE
+
+var partnerLandingPageHome = false;
+
+if (window.location.href.includes("PartnershipExampleHome")){
+  var partnerLandingPageHome = true;
+}
+
+if (window.location.href.includes("PartnershipExample1")){
+  var partnerLandingPageHome = true;
+}
+
+
+
+console.log(window.location.href,"URL")
+console.log(partnerLandingPageHome,"URL")
+
+
+
 const App = () => {
-
-
-
 
 
   const [web3,setWeb3] = useState(null)
@@ -98,16 +115,11 @@ const App = () => {
   console.log(wallet_for_google,"string?")
   const [ip, setIP] = useState('');
 
-
-
-
-
   const [contract,setContract] = useState(null)
   const [tokenContract,setTokenContract] = useState(null)
   const [decimals,setDecimals] = useState(null)
   const [totalTreasure,setTotalTreasure] = useState(null)
   const [gameContractAddress,setGameContractAddress] = useState(null)
-
 
 // GAME 1
   const [game1_id,setGame1_id] = useState(undefined)
@@ -173,7 +185,6 @@ const App = () => {
   const [state_WinnerEstPrizeGame1, setWinnerEstPrizeGame1] = useState(false);
 
 // User Levels
-
 
   const [userLevel1Game1,setUserLevel1Game1] = useState(false);
   const [userLevel2Game1,setUserLevel2Game1] = useState(false);
@@ -256,6 +267,10 @@ const App = () => {
     const [userLevel4Game2,setUserLevel4Game2] = useState(false);
 
 
+
+
+
+const [partnerPageExample, setPartnerPageExample] = useState(false);
 
   useEffect(() => {
 
@@ -913,12 +928,6 @@ const App = () => {
       init()
 
 
-
-
-
-
-
-
     },[web3,accounts,wallet_for_google,ip,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
 
       // GAME1
@@ -941,12 +950,15 @@ const App = () => {
 
 
 
+
+
+
     return (
 
 
 
 
-        <div className="background customFont">
+        <div className="customFont">
 
 
 
@@ -967,7 +979,10 @@ const App = () => {
 
         <Switch>
 
+
+
                 <Route path="/home">
+                <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <MyNav accounts={accounts}/>
                   <Home
                   accounts={accounts}
@@ -1311,7 +1326,7 @@ const App = () => {
 
 
               <Route path="/Level1Game1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
               web3={web3}
               tokenContract={tokenContract}
@@ -1384,7 +1399,7 @@ const App = () => {
               </Route>
 
               <Route path="/Game1MoreGame1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame1
               web3={web3}
               tokenContract={tokenContract}
@@ -1457,7 +1472,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level2Game1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game1
               web3={web3}
               tokenContract={tokenContract}
@@ -1530,7 +1545,7 @@ const App = () => {
               </Route>
 
               <Route path="/Game2MoreGame1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame1
               web3={web3}
               tokenContract={tokenContract}
@@ -1603,7 +1618,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level3Game1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game1
               web3={web3}
               tokenContract={tokenContract}
@@ -1676,7 +1691,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level4Game1">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game1
               web3={web3}
               tokenContract={tokenContract}
@@ -1750,7 +1765,7 @@ const App = () => {
 
 
               <Route path="/Level1Game2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game2
               web3={web3}
               tokenContract={tokenContract}
@@ -1823,7 +1838,7 @@ const App = () => {
               </Route>
 
               <Route path="/Game1MoreGame2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame2
               web3={web3}
               tokenContract={tokenContract}
@@ -1896,7 +1911,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level2Game2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game2
               web3={web3}
               tokenContract={tokenContract}
@@ -1969,7 +1984,7 @@ const App = () => {
               </Route>
 
               <Route path="/Game2MoreGame2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame2
               web3={web3}
               tokenContract={tokenContract}
@@ -2042,7 +2057,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level3Game2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game2
               web3={web3}
               tokenContract={tokenContract}
@@ -2115,7 +2130,7 @@ const App = () => {
               </Route>
 
               <Route path="/Level4Game2">
-
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game2
               web3={web3}
               tokenContract={tokenContract}
@@ -2187,26 +2202,244 @@ const App = () => {
               />
               </Route>
 
-
-              <Route path="/Partnerships/projectname">
+              <Route path="/PartnershipExample1" component={PartnershipHunt1}>
               <PartnershipNav accounts={accounts} onClick={() => Connection()}/>
-                <ProjectName/>
+                <PartnershipHunt1
+
+                web3={web3}
+                tokenContract={tokenContract}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                game1_id={game1_id}
+                game1_live={game1_live}
+                game1_prize={game1_prize}
+                game1_question_hash={game1_question_hash}
+                game1_time_lock_cost={game1_time_lock_cost}
+                game1_submit_secret_cost={game1_submit_secret_cost}
+                game1_riddle={game1_riddle}
+                game1_clue={game1_clue}
+                game1_head_start_time={game1_head_start_time}
+                game1_entry_limit={game1_entry_limit}
+                game1_entry_cost={game1_entry_cost}
+                allGame1_id={allGame1_id}
+                allGasme1_user_front_of_que={allGame1_user_front_of_que}
+                allGame1_deadline_time={allGame1_deadline_time}
+                allGame1_username={allGame1_username}
+                allGame1_total_game_tries={allGame1_total_game_tries}
+                countGame1={countGame1}
+                countGame1DeadlineTrue={countGame1DeadlineTrue}
+                decimals={decimals}
+                totalTreasure={totalTreasure}
+                contract={contract}
+                accounts={accounts}
+                game1numberOfEntries={game1numberOfEntries}
+                userGame1_id={userGame1_id}
+                userEntered_game1={userEntered_game1}
+                userGame1_headstart_time={userGame1_headstart_time}
+                userGame1_live={userGame1_live}
+                winning_address1={winning_address1}
+                treasure_found1={treasure_found1}
+                winning_prize1={winning_prize1}
+                question_hash_solved1={question_hash_solved1}
+                winning_message1={winning_message1}
+                attemptId1={attemptId1}
+                attemptAddress1={attemptAddress1}
+                attemptUsername1={attemptUsername1}
+                attemptDeadline1={attemptDeadline1}
+                totalGameEntriesGame1={totalGameEntriesGame1}
+                globalNumberOfTries={globalNumberOfTries}
+
+                game1LeaderBoardIndex={game1LeaderBoardIndex}
+                game1LeaderBoardGameID={game1LeaderBoardGameID}
+                game1LeaderBoardAddress={game1LeaderBoardAddress}
+                game1LeaderBoardEntered={game1LeaderBoardEntered}
+                game1LeaderBoardUsername={game1LeaderBoardUsername}
+                game1LeaderBoardTries={game1LeaderBoardTries}
+                game1LeaderBoardStage={game1LeaderBoardStage}
+
+                game1LeaderBoard={game1LeaderBoard}
+                game1UserList={game1UserList}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1}
+                gameContractAddress={gameContractAddress}
+
+
+                userLevel1Game1={userLevel1Game1}
+                userLevel2Game1={userLevel2Game1}
+                userLevel3Game1={userLevel3Game1}
+                userLevel4Game1={userLevel4Game1}
+
+                />
               </Route>
 
 
+              <Route path="/PartnershipExampleHome" >
+              <PartnershipNav accounts={accounts}  onClick={() => Connection()}/>
+                <PartnerHome
 
 
 
-              <Route component={Home} />
+                web3={web3}
+                tokenContract={tokenContract}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                game1_id={game1_id}
+                game1_live={game1_live}
+                game1_prize={game1_prize}
+                game1_question_hash={game1_question_hash}
+                game1_time_lock_cost={game1_time_lock_cost}
+                game1_submit_secret_cost={game1_submit_secret_cost}
+                game1_riddle={game1_riddle}
+                game1_clue={game1_clue}
+                game1_head_start_time={game1_head_start_time}
+                game1_entry_limit={game1_entry_limit}
+                game1_entry_cost={game1_entry_cost}
+                allGame1_id={allGame1_id}
+                allGasme1_user_front_of_que={allGame1_user_front_of_que}
+                allGame1_deadline_time={allGame1_deadline_time}
+                allGame1_username={allGame1_username}
+                allGame1_total_game_tries={allGame1_total_game_tries}
+                countGame1={countGame1}
+                countGame1DeadlineTrue={countGame1DeadlineTrue}
+                decimals={decimals}
+                totalTreasure={totalTreasure}
+                contract={contract}
+                accounts={accounts}
+                game1numberOfEntries={game1numberOfEntries}
+                userGame1_id={userGame1_id}
+                userEntered_game1={userEntered_game1}
+                userGame1_headstart_time={userGame1_headstart_time}
+                userGame1_live={userGame1_live}
+                winning_address1={winning_address1}
+                treasure_found1={treasure_found1}
+                winning_prize1={winning_prize1}
+                question_hash_solved1={question_hash_solved1}
+                winning_message1={winning_message1}
+                attemptId1={attemptId1}
+                attemptAddress1={attemptAddress1}
+                attemptUsername1={attemptUsername1}
+                attemptDeadline1={attemptDeadline1}
+                totalGameEntriesGame1={totalGameEntriesGame1}
+                globalNumberOfTries={globalNumberOfTries}
+
+                game1LeaderBoardIndex={game1LeaderBoardIndex}
+                game1LeaderBoardGameID={game1LeaderBoardGameID}
+                game1LeaderBoardAddress={game1LeaderBoardAddress}
+                game1LeaderBoardEntered={game1LeaderBoardEntered}
+                game1LeaderBoardUsername={game1LeaderBoardUsername}
+                game1LeaderBoardTries={game1LeaderBoardTries}
+                game1LeaderBoardStage={game1LeaderBoardStage}
+
+                game1LeaderBoard={game1LeaderBoard}
+                game1UserList={game1UserList}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1}
+                gameContractAddress={gameContractAddress}
+
+
+                userLevel1Game1={userLevel1Game1}
+                userLevel2Game1={userLevel2Game1}
+                userLevel3Game1={userLevel3Game1}
+                userLevel4Game1={userLevel4Game1}
+
+                />
+              </Route>
+
+
+              <Route path="">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Home
+                accounts={accounts}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                game1_id={game1_id}
+                game1_live={game1_live}
+                game1_prize={game1_prize}
+                game1_question_hash={game1_question_hash}
+                game1_time_lock_cost={game1_time_lock_cost}
+                game1_submit_secret_cost={game1_submit_secret_cost}
+                game1_riddle={game1_riddle}
+                game1_clue={game1_clue}
+                game1_head_start_time={game1_head_start_time}
+                game1_entry_limit={game1_entry_limit}
+                game1_entry_cost={game1_entry_cost}
+
+                allGame1_id={allGame1_id}
+                allGasme1_user_front_of_que={allGame1_user_front_of_que}
+                allGame1_deadline_time={allGame1_deadline_time}
+                allGame1_username={allGame1_username}
+                allGame1_total_game_tries={allGame1_total_game_tries}
+                countGame1={countGame1}
+                countGame1DeadlineTrue={countGame1DeadlineTrue}
+                totalTreasure={totalTreasure}
+                game1numberOfEntries={game1numberOfEntries}
+
+                game2_id={game2_id}
+                game2_live={game2_live}
+                game2_prize={game2_prize}
+                game2_question_hash={game2_question_hash}
+                game2_time_lock_cost={game2_time_lock_cost}
+                game2_submit_secret_cost={game2_submit_secret_cost}
+                game2_riddle={game2_riddle}
+                game2_clue={game2_clue}
+                game2_head_start_time={game2_head_start_time}
+                game2_entry_limit={game2_entry_limit}
+                game2_entry_cost={game2_entry_cost}
+                allGame2_id={allGame2_id}
+                allGasme2_user_front_of_que={allGame2_user_front_of_que}
+                allGame2_deadline_time={allGame2_deadline_time}
+                allGame2_username={allGame2_username}
+                allGame2_total_game_tries={allGame2_total_game_tries}
+                countGame2={countGame2}
+                countGame2DeadlineTrue={countGame2DeadlineTrue}
+
+                totalGameEntriesGame1={totalGameEntriesGame1}
+                totalGameEntriesGame2={totalGameEntriesGame2}
+                globalNumberOfTries={globalNumberOfTries}
+
+                tokenContract={tokenContract}
+
+
+
+                />
+              </Route>
 
 
         </Switch>
+        <div>
 
 
+        {partnerLandingPageHome?(
+          <div>
 
+          </div>
+        ):(
+        <div>
+        <Redirect component={Home} >
+        <MyNav accounts={accounts} />
+        </Redirect>
+        </div>
+        )}
+
+        </div>
 
 
 </Router>
+
+
+
 
 
       </div>

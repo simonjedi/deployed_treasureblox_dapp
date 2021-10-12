@@ -103,6 +103,8 @@ const Blog1 = (props) => {
 
     return (
 
+      <div className="background">
+
       <div>
         <Helmet>
           <title>TreasureBlox | Building a bridge from the metaverse to reality</title>
@@ -253,7 +255,7 @@ const Blog1 = (props) => {
       </Container>
 
       </div>
-
+</div>
 
     );
 

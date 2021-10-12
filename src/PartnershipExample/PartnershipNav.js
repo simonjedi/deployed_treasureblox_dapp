@@ -68,6 +68,12 @@ const PartnerNav = (props) => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
 
+
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/PartnershipExampleHome">
+        Home
+        </Link>
+
+
           <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/PartnershipExample1">
           Treasure Hunt Name
           </Link>

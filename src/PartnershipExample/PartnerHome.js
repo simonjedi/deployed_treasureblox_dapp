@@ -1,4 +1,3 @@
-import SingleCard from '../components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
 import PartnerNav from './PartnershipNav';
@@ -187,7 +186,7 @@ const { width, height } = useWindowSize();
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
-        src={img4}
+        src={img6}
         alt="First slide"
       />
       <Carousel.Caption >

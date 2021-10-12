@@ -1,7 +1,7 @@
 .custombackground {
     /* The image used */
     /* background-image: url(./treasure1.jpg); */
-    background: url(./assets/ExampleBackground.png) no-repeat center center fixed;
+    background: url(./assets/WolfBackgroundExample.png) no-repeat center center fixed;
     /* background: url(./background2.jpg) no-repeat center center fixed; */
     /* background: url(./background1.png) no-repeat center center fixed; */
 
@@ -9,7 +9,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: #071C2D;
+    background-color: #172774;
 
     /* background-attachment: fixed; */
     /* Full height */

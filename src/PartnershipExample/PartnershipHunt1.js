@@ -1,5 +1,4 @@
 import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,Row,Col,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
-import SingleCard from '../components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
@@ -9,17 +8,14 @@ import Connection from "../Connection";
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import './Partner.css';
 
-import Timer from '../components/Structure/Game1/Timer';
+import Timer from '../components/Structure/PartnerExampleGame1Clone/Timer';
 
-import HomeCards from '../components/Structure/HomeCards';
 import GameCard from '../components/Structure/GameCard';
 
 import HomeHuntCards from '../components/Structure/HomeHuntCards';
 
-import PageCard from '../components/Structure/Game1/PageCard';
-import HuntWowCards from '../components/Structure/Game1/HuntWowCards';
-import EnterHuntCards from '../components/Structure/Game1/EnterHuntCards';
-import LeaderBoardCard from '../components/Structure/Game1/LeaderBoardCard';
+import EnterHuntCards from '../components/Structure/PartnerExampleGame1Clone/EnterHuntCards';
+import LeaderBoardCard from '../components/Structure/PartnerExampleGame1Clone/LeaderBoardCard';
 
 
 import Confetti from 'react-confetti'
@@ -74,7 +70,11 @@ const PartnershipHunt1 = (props) => {
 
     return (
 
-      <div className=" spaceTopHome">
+
+      <div style={{height: height}} className="custombackground">
+
+
+      <div className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Elon's Rocket</title>
       </Helmet>
@@ -103,7 +103,7 @@ const PartnershipHunt1 = (props) => {
       )}
 
       <div>
-            <div className="siteTitle">Welcome, Elon has lost his Rocket! Can you help him find it to win the prize?</div>
+            <div className="siteTitle">Welcome, We will create a custom treasure hunt for your project?</div>
 
       <Container className='mt-5' fluid="md">
 
@@ -112,7 +112,8 @@ const PartnershipHunt1 = (props) => {
 
             <Row>
             <Col sm={4}>
-            <PageCard {...props}/>
+
+            <EnterHuntCards {...props}/>
 
             </Col>
 
@@ -122,24 +123,7 @@ const PartnershipHunt1 = (props) => {
             </Row>
             <br/>
 
-              <CardColumns>
 
-              <EnterHuntCards {...props}/>
-
-              <GameCard/>
-
-              <HuntWowCards {...props}/>
-
-              <SingleCard{...props}/>
-
-
-                <br/>
-
-
-
-
-
-              </CardColumns>
             </CardGroup>
 
         </Container>
@@ -149,7 +133,7 @@ const PartnershipHunt1 = (props) => {
 
 
 </div>
-
+</div>
 
 
     );

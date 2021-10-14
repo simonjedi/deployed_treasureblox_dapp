@@ -8,7 +8,6 @@ import Connection from "../Connection";
 import Hunt1 from "../Hunt1";
 
 import logo from '../TreasureBlox_Logo.png';
-import Pdf from '../components/Structure/images/TreasureBloxWhitePaperV1.pdf';
 
 
 import {

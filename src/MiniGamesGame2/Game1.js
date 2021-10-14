@@ -86,11 +86,9 @@ const Level1Game2 = (props) => {
   const commaNumber = require('comma-number')
   const { width, height } = useWindowSize();
 
-
   const game2_prize = commaNumber(props.game2_prize,',');
 
   const winner = props.treasure_found2;
-
 
   const [show, setShow] = useState(true);
 

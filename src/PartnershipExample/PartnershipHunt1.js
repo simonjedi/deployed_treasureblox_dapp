@@ -2,27 +2,23 @@ import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,Row,Co
 import moment from 'moment';
 
 
-import img1 from './assets/lift_off.png';
-import img2 from './assets/LightsOut.png';
-import img3 from './assets/the_maze.png';
+import img1 from './assets/images/lift_off.png';
+import img2 from './assets/images/LightsOut.png';
+import img3 from './assets/images/the_maze.png';
 
 
-
-// import img1 from '../images/elons_lost_his_rocket.png';
+// import img1 from '../assets/images/elons_lost_his_rocket.png';
 
 import React, { Component, useState, useEffect } from 'react'
 import Connection from "../Connection";
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import './Partner.css';
 
-import Timer from '../components/Structure/PartnerExampleGame1Clone/Timer';
+import Timer from './TreasureHuntGame/Timer';
 
-import GameCard from '../components/Structure/GameCard';
 
-import HomeHuntCards from '../components/Structure/HomeHuntCards';
-
-import EnterHuntCards from '../components/Structure/PartnerExampleGame1Clone/EnterHuntCards';
-import LeaderBoardCard from '../components/Structure/PartnerExampleGame1Clone/LeaderBoardCard';
+import EnterHuntCards from './TreasureHuntGame/EnterHuntCards';
+import LeaderBoardCard from './TreasureHuntGame/LeaderBoardCard';
 
 
 import Confetti from 'react-confetti'
@@ -111,7 +107,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -188,7 +184,14 @@ const PartnershipHunt1 = (props) => {
 
 
 
-
+  // "/PartnershipExample1"
+  // "/PartnershipExampleHome"
+  // "/PartnershipLevel1"
+  // "/PartnershipLevel1More"
+  // "/PartnershipLevel2"
+  // "/PartnershipLevel2More"
+  // "/PartnershipLevel3"
+  // "/PartnershipLevel4"
 
 
   const winner = props.treasure_found1;
@@ -198,9 +201,12 @@ const PartnershipHunt1 = (props) => {
 
       <div className="custombackground">
 
+
+
+
       {redirectLevel1?(
         <div>
-        <Redirect to="/Level1Game1" {...props}/>
+        <Redirect to={props.partnership_1} {...props}/>
         </div>
 
       ):(
@@ -211,7 +217,7 @@ const PartnershipHunt1 = (props) => {
 
       {redirectLevel2?(
         <div>
-        <Redirect to="/Level2Game2" {...props}/>
+        <Redirect to={props.partnership_2} {...props}/>
         </div>
 
       ):(
@@ -223,7 +229,7 @@ const PartnershipHunt1 = (props) => {
 
       {redirectLevel3?(
         <div>
-        <Redirect to="/Level3Game1" {...props}/>
+        <Redirect to={props.partnership_3} {...props}/>
         </div>
 
       ):(
@@ -234,7 +240,7 @@ const PartnershipHunt1 = (props) => {
 
       {redirectLevel4?(
         <div>
-        <Redirect to="/Level4Game1" {...props}/>
+        <Redirect to={props.partnership_4} {...props}/>
         </div>
 
       ):(
@@ -347,7 +353,7 @@ const PartnershipHunt1 = (props) => {
 
                   </Card.Header>
                   <br/>
-                  <div className="MiniGameSubTitle">
+                  <div className="MiniGameDetails">
 
                   Play for a clue! Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 20 points!
 
@@ -374,11 +380,11 @@ const PartnershipHunt1 = (props) => {
               <Card.Img variant="top" src={img3} alt="Logo" className='cardRoundedMiniGame'/>
 
                 <Card.Body className="customBodyMiniGame">
-                  <Card.Header className="MiniGameTitle">Level 3 - The Maze!
+                  <Card.Header className="MiniGameTitle">Level 3 - Mystery!
 
                   </Card.Header>
                   <br/>
-                  <div className="MiniGameSubTitle">
+                  <div className="MiniGameDetails">
 
                   Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
 
@@ -386,6 +392,8 @@ const PartnershipHunt1 = (props) => {
                   </div>
                   <br/>
                   <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+
+
 
 
                   <footer className="blockquote">
@@ -412,7 +420,7 @@ const PartnershipHunt1 = (props) => {
               </div>
             )}
 
-
+            <br/>
 
 
 

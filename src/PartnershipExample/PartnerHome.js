@@ -6,34 +6,25 @@ import PartnerNav from './PartnershipNav';
 import './Partner.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../components/Structure/HomeCard.css';
 
 import React, { Component, useState, useEffect } from 'react'
 import Connection from "../Connection";
 import { useWallet, UseWalletProvider } from 'use-wallet'
 
-import Timer from '../components/Structure/Game1/Timer';
+import Timer from './TreasureHuntGame/Timer';
 
-import HomeCards from '../components/Structure/HomeCards';
-import HomeHuntCards from '../components/Structure/HomeHuntCards';
-import HomeFeatureCards from '../components/Structure/HomeFeatureCards';
 
 import Learnmore from '../Learnmore';
 
 
-import img1 from '../components/Structure/images/elons-rocket.jpg';
-import img2 from '../components/Structure/images/fortblox.png';
-import img3 from '../components/Structure/images/treasureblox_header1.png';
-import img4 from '../components/Structure/images/treasureblox_header2.png';
-import img5 from '../components/Structure/images/treasureblox_header3.png';
-import img6 from '../components/Structure/images/treasureblox_header4.png';
-import img7 from '../components/Structure/images/treasureblox_header5.png';
-import img8 from '../components/Structure/images/treasureblox_header6.png';
-
-
-
-import pdf from '../components/Structure/images/TreasureBloxWhitePaperV1.pdf';
-
+import img1 from './assets/images/elons-rocket.jpg';
+import img2 from './assets/images/fortblox.png';
+import img3 from './assets/images/treasureblox_header1.png';
+import img4 from './assets/images/treasureblox_header2.png';
+import img5 from './assets/images/treasureblox_header3.png';
+import img6 from './assets/images/treasureblox_header4.png';
+import img7 from './assets/images/treasureblox_header5.png';
+import img8 from './assets/images/treasureblox_header6.png';
 
 import { Helmet } from 'react-helmet';
 

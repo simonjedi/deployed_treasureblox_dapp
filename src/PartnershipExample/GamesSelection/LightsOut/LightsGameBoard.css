@@ -1,0 +1,45 @@
+body {
+
+p {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+}
+
+
+
+
+.easy {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hard {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.done {
+  background-color: #21D351;
+  transition: background-color 1s;
+}
+
+.on {
+  background-color: #16BFFD;
+  transition: all 0.5s;
+}
+
+.off {
+  background-color: #303030;
+  transition: all 0.5s;
+}
+
+.off:hover {
+  background-color: #3D3D3D;
+}

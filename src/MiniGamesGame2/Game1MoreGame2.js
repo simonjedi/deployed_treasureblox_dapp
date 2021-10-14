@@ -160,7 +160,7 @@ const Game1MoreGame2 = (props) => {
 
       {props.playLevel1Game1?(
         <div>
-        <Redirect to="/hunt2" {...props}/>
+        <Redirect to={props.partnership_home_xyz_} {...props}/>
         </div>
       ):(
         <div>

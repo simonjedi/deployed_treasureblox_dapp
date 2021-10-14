@@ -639,7 +639,7 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
 
       {props.playLevel1Game1?(
         <div>
-        <Redirect to="/hunt2" {...props}/>
+        <Redirect to="/hunt1" {...props}/>
         </div>
       ):(
         <div>

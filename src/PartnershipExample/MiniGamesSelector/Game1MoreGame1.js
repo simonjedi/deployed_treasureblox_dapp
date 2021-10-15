@@ -150,7 +150,7 @@ const Game1MoreGame1 = (props) => {
         </Card.Body>
       </Card>
 
-      
+
 
       {props.playLevel1Game1?(
         <div>

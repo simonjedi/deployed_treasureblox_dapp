@@ -2,6 +2,9 @@ import MyNav from './MyNav';
 import SingleCard from './components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
+import Iframe from 'react-iframe'
+
+
 // import img1 from './Treasure-hunt.jpeg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -89,16 +92,6 @@ const Home = (props) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
   const header_play_to_earn = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
@@ -175,6 +168,9 @@ const { width, height } = useWindowSize();
 
 
 
+
+
+
   <div className="spaceTopHome">
 
     <Carousel sm={12} lg={4} className="d-none d-lg-block" prevIcon="" prevLabel="" nextIcon="" nextLabel="">
@@ -201,6 +197,8 @@ const { width, height } = useWindowSize();
 
 
       </div>
+
+
 
 
       </Container>

@@ -63,13 +63,6 @@ function useWindowSize() {
 }
 
 
-
-
-
-
-
-
-
 const PartnershipHunt1 = (props) => {
 
 

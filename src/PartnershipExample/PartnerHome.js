@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import Iframe from 'react-iframe'
+
 import PartnerNav from './PartnershipNav';
 
 // import img1 from './Treasure-hunt.jpeg';
@@ -157,11 +159,11 @@ const PartnerHome = (props) => {
 
 const { width, height } = useWindowSize();
 
-
+// style={{height: height}}
     return (
 
 
-      <div style={{height: height}} className="custombackground">
+      <div  className="custombackground">
 
 
       <Helmet>
@@ -192,12 +194,26 @@ const { width, height } = useWindowSize();
 
     </Carousel>
 
+    <br/>
+    <div className="siteTitle">IFRAME EMBEDING ON YOUR PLATFORM</div>
+    <br/>
 
+          <Iframe url="https://www.treasureblox.finance/PartnershipExample1"
+                  width="100%"
+                  height="1000"
+                  display="initial"
+                  frameBorder="0"
+                  position="relative"/>
 
       </div>
 
 
+
       </Container>
+
+
+
+
       </div>
 
 

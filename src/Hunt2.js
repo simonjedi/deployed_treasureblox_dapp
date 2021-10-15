@@ -7,6 +7,14 @@ import Connection from "./Connection";
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import "./App.css";
 
+
+import img1 from './components/Structure/images/mine_field.png';
+import img2 from './components/Structure/images/blox_escape.png';
+import img3 from './components/Structure/images/blox_maze.png';
+
+
+
+
 import Timer from './components/Structure/Game2/Timer';
 
 import HomeCards from './components/Structure/HomeCards';
@@ -22,6 +30,15 @@ import LeaderBoardCard from './components/Structure/Game2/LeaderBoard';
 
 import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+
 
 // Hook
 function useWindowSize() {
@@ -59,19 +76,160 @@ const Hunt2 = (props) => {
 
   const game2_prize = commaNumber(props.game1_prize,',');
 
+  const [loading,setloading] = useState(false);
 
-  const renderTooltip = (props) => (
+  const [playLevel1Game2,setplayLevel1Game2] = useState(false);
+  const [redirectLevel1,setredirectLevel1] = useState(false);
 
-  <Tooltip id="button-tooltip" {...props}>
-    Once you have purchased your Blox they buy you 30 seconds to enter your answer, no one else can answer in this time and this stops bots from beating you to it!
-  </Tooltip>
-);
+
+  const [playLevel2Game2,setplayLevel2Game2] = useState(false);
+  const [redirectLevel2,setredirectLevel2] = useState(false);
+
+  const [playLevel3Game2,setplayLevel3Game2] = useState(false);
+  const [redirectLevel3,setredirectLevel3] = useState(false);
+
+
+  const [playLevel4Game2,setplayLevel4Game2] = useState(false);
+  const [redirectLevel4,setredirectLevel4] = useState(false);
+
+  const handlePayQuest = async() => {
+
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"Play_MiniGame_Game1_Level_1"
+    });
+
+    setloading(true);
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: props.accounts});
+    setplayLevel1Game2(true)
+    setredirectLevel1(true)
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
+
+  const handlePayQuest2 = async() => {
+
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"Play_MiniGame_Game1_Level_2"
+    });
+
+    setloading(true);
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: props.accounts});
+    setplayLevel2Game2(true)
+    setredirectLevel2(true)
+
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
+
+  const handlePayQuest3 = async() => {
+
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"Play_MiniGame_Game1_Level_2"
+    });
+
+    setloading(true);
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: props.accounts});
+    setplayLevel3Game2(true)
+    setredirectLevel3(true)
+
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
+
+  const handlePayQuest4 = async() => {
+
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"Play_MiniGame_Game1_Level_2"
+    });
+
+    setloading(true);
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: props.accounts});
+    setplayLevel4Game2(true)
+    setredirectLevel4(true)
+
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
+
+
+
+
 
   const winner = props.treasure_found2;
 
     return (
 
       <div className="background">
+      {redirectLevel1?(
+        <div>
+        <Redirect to="/level1Game2" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+      {redirectLevel2?(
+        <div>
+        <Redirect to="/level2Game2" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+      {redirectLevel3?(
+        <div>
+        <Redirect to="/level3Game2" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+      {redirectLevel4?(
+        <div>
+        <Redirect to="/level4Game2" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
 
       <div className="spaceTopHome">
       <Helmet>
@@ -104,45 +262,153 @@ const Hunt2 = (props) => {
       <div>
             <div className="siteTitle">Welcome to Fort Blox, can you break into the facility and steal the prize?</div>
 
-      <Container className='mt-5' fluid="md">
-      <CardGroup className='mt-5'>
+            <Container className='mt-5' fluid="md">
 
-      <Row>
-      <Col sm={4}>
-      <PageCard {...props}/>
 
-      </Col>
 
-      <Col sm={8}>
-      <LeaderBoardCard {...props}/>
-      </Col>
-      </Row>
+                  <CardGroup className='mt-5'>
+
+                  <Row>
+                  <Col sm={4}>
+
+                  <EnterHuntCards {...props}/>
+
+                  </Col>
+
+                  <Col sm={8}>
+                  <LeaderBoardCard {...props}/>
+                  </Col>
+                  </Row>
+
+
+
+
+
+                  {(props.userEntered_game2) ?(
+                    <div>
+
+                    <div className="siteTitle">Complete the levels in order to find clues and submit them to the timelock!</div>
       <br/>
+                    <Row>
+
+                    <Col sm={4}>
 
 
-        <CardColumns>
+                    <Card className='cardRounded border border-danger'>
+                    <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedMiniGame'/>
 
-        <EnterHuntCards {...props}/>
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 1 - Mine Field!
 
-        <GameCard/>
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">
 
-        <HuntWowCards {...props}/>
-
-        <SingleCard{...props}/>
-
-
-
-
-
-          <br/>
-
-
+                        Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
 
 
 
-        </CardColumns>
-      </CardGroup>
-        </Container>
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+
+
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                    </Card>
+
+                    </Col>
+
+                    <Col sm={4}>
+
+                    <Card className='cardRounded border border-danger'>
+                    <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 2 - Blox Escape!
+
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Play for a clue! Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 20 points!
+
+
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
+
+
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                    </Card>
+
+                    </Col>
+                    <Col sm={4}>
+
+                    <Card className='cardRounded border border-danger'>
+                    <Card.Img variant="top" src={img3} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 3 - Mystery!
+
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
+
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+
+
+
+
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                    </Card>
+
+                    </Col>
+
+
+                    </Row>
+
+
+                    </div>
+                  ):(
+                    <div style={{height: height}}>
+
+
+
+                    </div>
+                  )}
+
+                  <br/>
+
+
+
+
+                  </CardGroup>
+
+              </Container>
 
       </div>
 

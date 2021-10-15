@@ -252,7 +252,7 @@ const PartnershipHunt1 = (props) => {
 
       <div className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Elon's Rocket</title>
+        <title>TreasureBlox | Partner Hunt</title>
       </Helmet>
       {winner? (
         <div><Confetti

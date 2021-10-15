@@ -2,11 +2,15 @@ import React, {useState,useEffect} from 'react';
 import Iframe from 'react-iframe'
 import img1 from '../images/elons_lost_his_rocket.png';
 
-import { Modal,CardColumns,CardGroup,Card,Button,View,Table,Container,Nav,Navbar,NavDropdown,Row,Col } from 'react-bootstrap';
+import { Modal,CardColumns,CardGroup,Card,Button,View,Table,Container,Nav,Navbar,NavDropdown,Row,Col,Tab } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './User.css';
 
+
+import Costs from './Costs';
+import Riddle from './Riddle';
+import Rules from './Rules';
 
 // import Leaderboard from 'react-native-leaderboard';
 import User from './User';
@@ -91,28 +95,74 @@ if (props.state_leaderboardAddressSearch_tries_game2){
 
     <Card className="customRoundedOne">
 
-
-
+<Tab.Container defaultActiveKey="first">
     <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game2}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game2}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game2}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {game2_WinnerPrize} Blox</div>
+
+
+    <Nav justify variant="pills"  >
+      <Nav.Item>
+        <Nav.Link eventKey="first">Final Riddle</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="link-1">How To Play?</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="link-2">Costs</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="link-3" >Leaderboard</Nav.Link>
+      </Nav.Item>
+    </Nav>
+
 </Card.Header>
-    <div className="containerTable">
-        <Table className="customRoundedTable" hover variant="dark" >
-        <thead>
-            <tr>
-                <th className="idcol">#Rank</th>
-                  <th className="sticky-column" data-column="1" >Username</th>
-                  <th className="sticky-column" data-column="2" >Level</th>
-                  <th className="sticky-column" data-column="3">Score</th>
-                  <th className="sticky-column" >Est Return</th>
 
-            </tr>
-        </thead>
-          <tbody>
-          {userList}
+      <Tab.Content>
+        <Tab.Pane eventKey="first" >
+        <Riddle {...props}/>
+        </Tab.Pane>
+        <Tab.Pane eventKey="link-1">
+          <Rules {...props}/>
+        </Tab.Pane>
 
-          </tbody>
-        </Table>
-        </div>
+        <Tab.Pane eventKey="link-2">
+          <Costs {...props}/>
+
+        </Tab.Pane>
+
+        <Tab.Pane eventKey="link-3">
+
+
+        <div className="containerTable">
+
+            <Table className="customRoundedTable" hover variant="dark" >
+            <thead>
+                <tr>
+                    <th className="idcol">#Rank</th>
+                      <th className="sticky-column" data-column="1" >Username</th>
+                      <th className="sticky-column" data-column="2" toggleTopScores={props.onClickTop}>Level</th>
+                      <th className="sticky-column" data-column="3">Score</th>
+                      <th className="sticky-column" >Est Return</th>
+
+                </tr>
+            </thead>
+              <tbody>
+              {userList}
+
+              </tbody>
+            </Table>
+            </div>
+
+        </Tab.Pane>
+
+
+      </Tab.Content>
+
+
+
+
+</Tab.Container>
+
+
 
 </Card>
 

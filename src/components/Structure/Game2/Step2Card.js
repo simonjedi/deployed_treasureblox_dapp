@@ -271,7 +271,15 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                       <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 1</div>
                       <div>
 
-                        <Button className="customButton" onClick={handlePayQuest}>Play For Clue</Button>
+                      <div className="MiniGameDetails">
+
+                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
+
+
+
+                      </div>
+
+                        <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
 
 
                       </div>
@@ -305,7 +313,15 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                       <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 1</div>
                       <div>
 
-                        <Button className="customButton" onClick={handlePayQuest}>Play For Clue</Button>
+                      <div className="MiniGameDetails">
+
+                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
+
+
+
+                      </div>
+
+                        <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
 
 
 
@@ -333,7 +349,15 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                           <br/>
                           <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 2</div>
                           <div>
-                          <Button className="customButton" onClick={handlePayQuest2}>Play For Clue</Button>
+
+                          <div className="MiniGameDetails">
+
+                          Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 20 points!
+
+
+
+                          </div>
+                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
 
                           </div>
                           <br/>
@@ -365,7 +389,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                           <br/>
                           <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 2</div>
                           <div>
-                          <Button className="customButton" onClick={handlePayQuest2}>Play For Clue</Button>
+                          <div className="MiniGameDetails">
+
+                          Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 20 points!
+
+
+
+                          </div>
+                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 3</Button>
 
                           </div>
                           <br/>
@@ -390,7 +421,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                             <br/>
                             <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 3</div>
                             <div>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play For Clue</Button>
+                            <div className="MiniGameDetails">
+
+                            Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
+
+
+
+                            </div>
+                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
 
                             </div>
                             <br/>
@@ -422,6 +460,13 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                             <br/>
                             <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 3</div>
                             <div>
+                            <div className="MiniGameDetails">
+
+                            Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
+
+
+
+                            </div>
                             <Button className="customButton" onClick={handlePayQuest3}>Play For Clue</Button>
 
                             </div>

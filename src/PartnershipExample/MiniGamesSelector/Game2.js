@@ -36,7 +36,6 @@ import Board from '../GamesSelection/LightsOut/Board';
 // import Board from '../GamesSelection/MineGame/BloxMine/Board';
 
 
-
 import lightsmusic from '../GamesSelection/LightsOut/assets/lightsmusic.mp4';
 
 import denied from '../GamesSelection/MineGame/assets/Denied.mp3';

@@ -80,7 +80,6 @@ const PartnerNav = (props) => {
 
 
 
-
         </Nav>
         <Nav className="ml-auto">
 

@@ -188,6 +188,15 @@ const { width, height } = useWindowSize();
       <LinkHeader to="/PartnershipExample1">
         <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
       </LinkHeader>
+
+      <LinkHeader to="/PartnershipExampleHome#form">
+        <Button className="customButton" to="/PartnershipExampleHome#form" style={{margin:'10px'}}>THAAS FORM</Button>
+      </LinkHeader>
+
+
+                <Link className='customLinks' to="/PartnershipExampleHome#form">
+                THAAS PROJECT FORM
+                </Link>
       </Carousel.Caption>
       </Carousel.Item>
 
@@ -200,11 +209,20 @@ const { width, height } = useWindowSize();
 
           <Iframe url="https://www.treasureblox.finance/PartnershipExample1"
                   width="100%"
-                  height="1000"
+                  height="1334"
                   display="initial"
                   frameBorder="0"
                   position="relative"/>
 
+      <br/>
+      
+      <div id="form">
+      <br/>
+
+      <div className="siteTitle">THAAS PROJECT INITIATION FORM</div>
+      <br/>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0WWPjPmX_Dkg7zfX1GUVeqO9m31wKpW1mpPbYlERYq7JKdw/viewform?embedded=true" width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
       </div>
 
 

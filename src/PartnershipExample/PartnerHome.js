@@ -191,10 +191,7 @@ const { width, height } = useWindowSize();
       </LinkHeader>
 
 
-
       <Button  href = {Pdf} target = "_blank">Treasure Hunt Form</Button>
-
-
 
 
       </Carousel.Caption>

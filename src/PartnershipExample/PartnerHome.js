@@ -196,7 +196,7 @@ const { width, height } = useWindowSize();
 
 
 
-                
+
       </Carousel.Caption>
       </Carousel.Item>
 

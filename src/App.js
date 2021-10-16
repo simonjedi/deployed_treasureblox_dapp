@@ -121,6 +121,7 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
     var partnerLandingPageHome = true;
   }
 
+
 // Set URL's
   const web3partnership_home = "/PartnershipExampleHome";
   const partnership_treasure_hunt_page = "/PartnershipExample1";

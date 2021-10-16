@@ -15,6 +15,7 @@ import { useWallet, UseWalletProvider } from 'use-wallet'
 
 import Timer from './TreasureHuntGame/Timer';
 
+import Pdf from './assets/treasureblox_project_initiation_form.pdf';
 
 import Learnmore from '../Learnmore';
 
@@ -189,14 +190,13 @@ const { width, height } = useWindowSize();
         <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
       </LinkHeader>
 
-      <LinkHeader to="/PartnershipExampleHome#form">
-        <Button className="customButton" to="/PartnershipExampleHome#form" style={{margin:'10px'}}>THAAS FORM</Button>
-      </LinkHeader>
 
 
-                <Link className='customLinks' to="/PartnershipExampleHome#form">
-                THAAS PROJECT FORM
-                </Link>
+      <Button  href = {Pdf} target = "_blank">Treasure Hunt Form</Button>
+
+
+
+                
       </Carousel.Caption>
       </Carousel.Item>
 
@@ -214,16 +214,11 @@ const { width, height } = useWindowSize();
                   frameBorder="0"
                   position="relative"/>
 
-      <br/>
 
-      <div id="form">
-      <br/>
 
-      <div className="siteTitle">THAAS PROJECT INITIATION FORM</div>
-      <br/>
 
       </div>
-      </div>
+
 
 
 

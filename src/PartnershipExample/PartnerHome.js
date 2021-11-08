@@ -201,7 +201,7 @@ const { width, height } = useWindowSize();
     </Carousel>
 
     <br/>
-    <div className="siteTitle">IFRAME EMBEDING ON YOUR PLATFORM</div>
+    <div className="siteTitle">IFRAME EMBEDDED ON YOUR PLATFORM</div>
     <br/>
 
           <Iframe url="https://www.treasureblox.finance/PartnershipExample1"

@@ -90,7 +90,6 @@ const LeaderBoardCard = (props) => {
 console.log(props.game1LeaderBoardIndex)
 
 
-
   let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
 
   console.log(zipped,"zipped")
@@ -134,6 +133,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
 
 
 }
+console.log(props.game1LeaderBoardUsername[8],"here")
 
 
 

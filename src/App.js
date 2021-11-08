@@ -244,7 +244,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [state_leaderboardAddressSearch_username_game1_xyz_, setleaderboardAddressSearch_username_game1_xyz_] = useState(false);
   const [state_leaderboardAddressSearch_tries_game1_xyz_, setleaderboardAddressSearch_tries_game1_xyz_] = useState(false);
   const [state_leaderboardAddressSearch_stage_game1_xyz_, setleaderboardAddressSearch_stage_game1_xyz_] = useState(false);
+  const [state_leaderboardAddressSearch_team_game1_xyz_, setleaderboardAddressSearch_team_game1_xyz_] = useState(false);
+
   const [state_WinnerEstPrizeGame1_xyz_, setWinnerEstPrizeGame1_xyz_] = useState(false);
+
+
+
 
 // User Levels
 
@@ -252,6 +257,20 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [userLevel2Game1_xyz_,setUserLevel2Game1_xyz_] = useState(false);
   const [userLevel3Game1_xyz_,setUserLevel3Game1_xyz_] = useState(false);
   const [userLevel4Game1_xyz_,setUserLevel4Game1_xyz_] = useState(false);
+
+
+// Team Details
+  const [game1team1_xyz_teamid,setGame1_team1_xyz_teamid] = useState(false);
+  const [game1team1_xyz_team_points_target,setGame1_team1_xyz_team_points_target] = useState(false);
+  const [game1team1_xyz_ppp,setGame1_team1_xyz_ppp] = useState(false);
+  const [game1team1_xyz_team_entries,setGame1_team1_xyz_team_entries] = useState(false);
+  const [game1team1_xyz_team_actual_points,setGame1_team1_xyz_team_actual_points] = useState(false);
+
+  const [game1team2_xyz_teamid,setGame1_team2_xyz_teamid] = useState(false);
+  const [game1team2_xyz_team_points_target,setGame1_team2_xyz_team_points_target] = useState(false);
+  const [game1team2_xyz_ppp,setGame1_team2_xyz_ppp] = useState(false);
+  const [game1team2_xyz_team_entries,setGame1_team2_xyz_team_entries] = useState(false);
+  const [game1team2_xyz_team_actual_points,setGame1_team2_xyz_team_actual_points] = useState(false);
 
 // PARTNER GAME EXAMPLE ENDS
 
@@ -419,11 +438,17 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
         const accounts_xyz_ = await web3.eth.getAccounts();
-        const abi_xyz_ = require('./TreasureBlox.abi.json');
+        const abi_xyz_ = require('./TreasureBlox.abi_example.json');
         const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
 
-        const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://bsc-dataseed.binance.org/" && "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643");
-        const gameAddress_xyz_ = "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643"
+
+// full new games contract required
+        // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://bsc-dataseed.binance.org/" && "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643");
+        // const gameAddress_xyz_ = "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643"
+        const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://bsc-dataseed.binance.org/" && "0xEcF17ea4918b27ce408404167c76597D3A9b33cA");
+        const gameAddress_xyz_ = "0xEcF17ea4918b27ce408404167c76597D3A9b33cA"
+
+
 
         setGameContractAddress_xyz_(gameAddress_xyz_);
 
@@ -595,7 +620,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             const numberOfEntriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
 
 
-
             const game1huntEntries_xyz_ = await contract_xyz_.methods.huntEntries(accounts_xyz_[0],1).call();
             const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
             const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
@@ -701,6 +725,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
             var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
             var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
+            var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
 
 
 
@@ -710,6 +735,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             setleaderboardAddressSearch_username_game1_xyz_(leaderboardAddressSearch_username_game1_xyz_)
             setleaderboardAddressSearch_tries_game1_xyz_(leaderboardAddressSearch_tries_game1_xyz_)
             setleaderboardAddressSearch_stage_game1_xyz_(leaderboardAddressSearch_stage_game1_xyz_)
+            setleaderboardAddressSearch_team_game1_xyz_(leaderboardAddressSearch_team_game1_xyz_)
 
             // User Levels
             if (leaderboardAddressSearch_stage_game1_xyz_ == 0){
@@ -811,6 +837,34 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               }
 
             setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
+
+
+
+            const game1_team1_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,1).call();
+            const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
+            const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
+            const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
+            const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
+            const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
+
+            const game1_team2_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,2).call();
+            const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
+            const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
+            const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
+            const game1_team2_xyz_team_entries = await game1_team2_details_xyz_[3];
+            const game1_team2_xyz_team_actual_points = await game1_team2_details_xyz_[4];
+
+            setGame1_team1_xyz_teamid(game1_team1_xyz_teamid)
+            setGame1_team1_xyz_team_points_target(game1_team1_xyz_team_points_target)
+            setGame1_team1_xyz_ppp(game1_team1_xyz_ppp)
+            setGame1_team1_xyz_team_entries(game1_team1_xyz_team_entries)
+            setGame1_team1_xyz_team_actual_points(game1_team1_xyz_team_actual_points)
+
+            setGame1_team2_xyz_teamid(game1_team2_xyz_teamid)
+            setGame1_team2_xyz_team_points_target(game1_team2_xyz_team_points_target)
+            setGame1_team2_xyz_ppp(game1_team2_xyz_ppp)
+            setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
+            setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
 
 
 // PARTNER EXAMPLE GET GAME 1 END
@@ -1408,9 +1462,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   winning_address1_xyz_,treasure_found1_xyz_,winning_prize1_xyz_,question_hash_solved1_xyz_,winning_message1_xyz_,attemptId1_xyz_,attemptUsername1_xyz_,attemptDeadline1_xyz_,attemptAddress1_xyz_,
   totalGameEntriesGame1_xyz_,game1LeaderBoardIndex_xyz_,game1LeaderBoardGameID_xyz_,game1LeaderBoardAddress_xyz_,
   game1LeaderBoardEntered_xyz_,game1LeaderBoardUsername_xyz_,game1LeaderBoardTries_xyz_,game1LeaderBoardStage_xyz_,game1LeaderBoard_xyz_,game1UserList_xyz_,state_leaderboardAddressSearch_huntid_game1_xyz_,state_leaderboardAddressSearch_address_game1_xyz_,state_leaderboardAddressSearch_entered_game1_xyz_,
-  state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
+  state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_leaderboardAddressSearch_team_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
 
   web3partnership_home,partnership_treasure_hunt_page,partnership_1,partnership_1_more,partnership_2,partnership_2_more,partnership_3,partnership_4,
+
+  game1team1_xyz_team_points_target,game1team1_xyz_ppp,game1team1_xyz_team_entries,game1team1_xyz_team_actual_points,
+  game1team2_xyz_team_points_target,game1team2_xyz_ppp,game1team2_xyz_team_entries,game1team2_xyz_team_actual_points,
+
+
+
   // PARTNER EXAMPLE ENDS
 
 
@@ -1431,7 +1491,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
         <Helmet>
-          <title>TreasureBlox | DAPP</title>
+          <title>TreasureBlox | The Worlds First Metaverse TreasureHunt Adventure</title>
         </Helmet>
 
 
@@ -2734,6 +2794,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
                 state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
                 state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
                 state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
                 gameContractAddress={gameContractAddress_xyz_}
 
@@ -2751,6 +2812,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 partnership_2_more={partnership_2_more}
                 partnership_3={partnership_3}
                 partnership_4={partnership_4}
+
+                game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+                game1team1_xyz_ppp={game1team1_xyz_ppp}
+                game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+                game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+                game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+                game1team2_xyz_ppp={game1team2_xyz_ppp}
+                game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+                game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
                 />
               </Route>
@@ -2817,6 +2887,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
                 state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
                 state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
                 state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
                 gameContractAddress={gameContractAddress_xyz_}
 
@@ -2834,6 +2906,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 partnership_2_more={partnership_2_more}
                 partnership_3={partnership_3}
                 partnership_4={partnership_4}
+
+                game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+                game1team1_xyz_ppp={game1team1_xyz_ppp}
+                game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+                game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+                game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+                game1team2_xyz_ppp={game1team2_xyz_ppp}
+                game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+                game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
                 />
               </Route>
@@ -2901,6 +2982,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -2918,6 +3001,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -2985,6 +3077,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -3002,6 +3096,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -3069,6 +3172,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -3086,6 +3191,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -3153,6 +3267,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -3170,6 +3286,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -3237,6 +3362,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -3254,6 +3381,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -3321,6 +3457,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
               gameContractAddress={gameContractAddress_xyz_}
 
@@ -3338,6 +3476,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               partnership_2_more={partnership_2_more}
               partnership_3={partnership_3}
               partnership_4={partnership_4}
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
               />
               </Route>
@@ -3395,6 +3542,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 globalNumberOfTries={globalNumberOfTries}
 
                 tokenContract={tokenContract}
+
+
 
 
 

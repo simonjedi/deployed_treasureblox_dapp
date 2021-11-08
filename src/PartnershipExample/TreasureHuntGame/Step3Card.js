@@ -88,7 +88,7 @@ const Step3Card = (props) => {
     const handleSubmitSecret = async() => {
 
       setloading(true);
-      const result = await contract.methods.SubmitSecret(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
+      const result = await contract.methods.SubmitSecret(hashedSecret,secret,props.allGame1_id,message,props.state_leaderboardAddressSearch_team_game1).send({from: accounts});
 
       if (result.events.submitSecretFailEvent.returnValues[2] == true){
         // Block of code to try
@@ -98,7 +98,7 @@ const Step3Card = (props) => {
           wallet: props.wallet_for_google,
           wallet_ip: props.ip,
           url: window.location.pathname,
-          buttonClicked:"Failed_Secret_Treasure_Hunt_1"
+          buttonClicked:"Explorer_Submit_Secret"
         });
 
         setloading(false);
@@ -117,80 +117,7 @@ const Step3Card = (props) => {
 
     }
 
-    const handleSubmitLevel1 = async() => {
 
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-      // console.log(result.events.submitSecretFailEvent.returnValues[2],"result wrong.....<-----")
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-        // console.log(result.events.submitSecretFailEvent.returnValues[2],"result winner.....<-----")
-        setunlucky(false)
-        setLevelWon(true)
-      }
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
-
-    const handleSubmitLevel2 = async() => {
-
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-
-        setunlucky(false)
-        setLevelWon(true)
-      }
-
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
-
-    const handleSubmitLevel3 = async() => {
-
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-        setunlucky(false)
-        setLevelWon(true)
-      }
-
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
 
     if (props.countGame1 === 0){
       props.cancelLocalTime()
@@ -305,7 +232,7 @@ const Step3Card = (props) => {
                                         <div>Enter a victory message!</div>
                                         <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
                                         <br />
-                                        <Button className="customButton" onClick={handleSubmitLevel1}>Submit Secret</Button>
+                                        <Button className="customButton" onClick={handleSubmitSecret}>Submit Secret</Button>
                                         <br />
                                         <br />
                                         <div>Game Entrants {props.totalGameEntriesGame1}</div>
@@ -371,7 +298,7 @@ const Step3Card = (props) => {
                                           <div>Enter a victory message!</div>
                                           <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
                                           <br />
-                                          <Button className="customButton" onClick={handleSubmitLevel2}>Submit Secret</Button>
+                                          <Button className="customButton" onClick={handleSubmitSecret}>Submit Secret</Button>
                                           <br />
                                           <br />
                                           <div>Game Entrants {props.totalGameEntriesGame1}</div>
@@ -443,7 +370,7 @@ const Step3Card = (props) => {
                                               <div>Enter a victory message!</div>
                                               <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
                                               <br />
-                                              <Button className="customButton" onClick={handleSubmitLevel3}>Submit Secret</Button>
+                                              <Button className="customButton" onClick={handleSubmitSecret}>Submit Secret</Button>
                                               <br />
                                               <br />
                                               <div>Game Entrants {props.totalGameEntriesGame1}</div>

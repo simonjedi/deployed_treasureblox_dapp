@@ -55,15 +55,107 @@
 
 }
 
+.customEnterTeam {
+  background-color: #001219;
+  border-width: 0px;
+  color: #172774;
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+
+}
+
 .cardRoundedMiniGame{
   border-radius: 15px 50px 0px 0px;
   color: #172774;
+}
 
+
+.cardRoundedEnterPage{
+  border-radius: 25px 25px 25px 25px;
+  color: #172774;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+
+}
+
+.cardRoundedEnterPageMini{
+  border-radius: 10px 10px 10px 10px;
+  color: #172774;
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
 
 }
 
 .MiniGameTitle{
   font-size: 1.4rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+.MiniGameSmallTitle{
+  font-size: 1rem;
+  color: #000000;
+  text-align: center;
+
+}
+
+.MiniGameEnter{
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+}
+
+.MiniGameEnterTab{
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.MiniGameTargetEnter{
+  font-size: 2rem;
+  color: #000000;
+  pointer-events: none;
+
+
+}
+
+.MiniGameTitleEnter{
+  font-size: 1rem;
+  color: #ee9b00;
+  text-align: center;
+}
+
+.MiniGameTitleEnterTargetRaised{
+  font-size: 1.4rem;
+  text-align: left;
+  color: #ee9b00;
+  pointer-events: none;
+}
+
+.MiniGamePrizeEnter{
+  font-size: 2.4rem;
+  color: #ee9b00;
+  text-align: left;
+
+}
+
+.StatsGameEnter{
+  font-size: 3.4rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.StatsGameEnterSub{
+  font-size: 2rem;
+  color: #ee9b00;
+  text-align: center;
+
+}
+
+.StatsGameEnterSmallSub{
+  font-size: 1rem;
   color: #ee9b00;
   text-align: center;
 
@@ -82,3 +174,51 @@
   text-align: center;
 
 }
+
+
+.customButtonEntering{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 40px;
+  width: 150px;
+  font-size: 1rem;
+}
+
+.customButtonEntering:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}
+
+.MiniGameTitleEnterMore{
+  font-size: 1.2rem;
+  text-align: center;
+  color: #000000;
+}
+
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+  color:#ee9b00;
+}
+
+.blink_me2 {
+  animation: blinker 1.5s linear infinite;
+  color:#ee9b00;
+}
+
+@keyframes blinker {
+  70% {
+    opacity: .3;
+  }
+}
+
+.SubTitleHeader{
+    font-size: 1rem;
+    color: #ee9b00;
+    text-align: center;
+  }

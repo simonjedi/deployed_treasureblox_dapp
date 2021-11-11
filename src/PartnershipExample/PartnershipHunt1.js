@@ -5,10 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import moment from 'moment';
 
+import img1 from './assets/images/PowerPose.gif';
+import img2 from './assets/images/Cash.gif';
 
-import img1 from './assets/images/lift_off.png';
-import img2 from './assets/images/LightsOut.png';
+
 import img3 from './assets/images/the_maze.png';
+import img4 from './assets/images/lift_off.png';
+import img5 from './assets/images/LightsOut.png';
 import blox_loading from './GamesSelection/BloxEscape/assets/Blox.gif';
 import waiting from './assets/Sounds/waiting.wav';
 import ReactAudioPlayer from 'react-audio-player';
@@ -376,13 +379,13 @@ const handleSubmitEnterDave = async() => {
 
 
       {(counter >= 0)?(
-        <div >
-        <div className="siteTitle">Welcome, We will create a custom treasure hunt for your project?</div>
+        <div>
+        <div className="siteTitle">Welcome, We will create a custom treasure hunt for your project? </div>
 
         <Container className='mt-5' fluid="md">
 
 
-              <CardGroup className='mt-5'>
+              <CardGroup className='mt-5' fluid="md">
 
               <Row>
               <Col sm={4}>
@@ -407,7 +410,13 @@ const handleSubmitEnterDave = async() => {
 
               <Row>
                 <Col sm={6}>
-                <div className="StatsGameEnter">{props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
+
+                <div className="StatsGameEnter">
+
+                <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPageLarge'/>
+<br/>
+
+                {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
                 <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
                 <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
@@ -432,7 +441,10 @@ const handleSubmitEnterDave = async() => {
 
                 </Col>
                 <Col sm={6}>
-                <div className="StatsGameEnter">{props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
+                <div className="StatsGameEnter">
+                <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPageLarge'/>
+                <br/>
+                {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
                 <div className="siteTitle">Team Crypto Dave</div>
                 <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
 
@@ -776,7 +788,7 @@ const handleSubmitEnterDave = async() => {
 
 
                 <Card className='cardRounded border border-danger'>
-                <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedMiniGame'/>
+                <Card.Img variant="top" src={img4} alt="Logo" className='cardRoundedMiniGame'/>
 
                   <Card.Body className="customBodyMiniGame">
                     <Card.Header className="MiniGameTitle">Level 1 - Lift Off!
@@ -808,7 +820,7 @@ const handleSubmitEnterDave = async() => {
                 <Col sm={4}>
 
                 <Card className='cardRounded border border-danger'>
-                <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedMiniGame'/>
+                <Card.Img variant="top" src={img5} alt="Logo" className='cardRoundedMiniGame'/>
 
                   <Card.Body className="customBodyMiniGame">
                     <Card.Header className="MiniGameTitle">Level 2 - Lights Out!
@@ -897,7 +909,7 @@ const handleSubmitEnterDave = async() => {
 
 
 
-          </div>
+        </div>
       ):(
         <div style={{height: height}}>
         <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>

@@ -841,6 +841,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
             var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
             var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
+            var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
 
 
 

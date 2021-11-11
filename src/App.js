@@ -841,7 +841,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
             var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
             var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
-            var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
+
 
 
 
@@ -1169,6 +1169,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
             var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
             var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
+            var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
 
 
 
@@ -1456,6 +1457,9 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
           var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
           var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
+          var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
+
+
 
           setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
           setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
@@ -1463,6 +1467,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
           setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
           setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
+          setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
+
 
 
           // User Levels
@@ -2224,6 +2230,9 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
           var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
           var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
+          var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
+
+
 
 
 
@@ -2233,6 +2242,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           setleaderboardAddressSearch_username_game1(leaderboardAddressSearch_username_game1)
           setleaderboardAddressSearch_tries_game1(leaderboardAddressSearch_tries_game1)
           setleaderboardAddressSearch_stage_game1(leaderboardAddressSearch_stage_game1)
+          setleaderboardAddressSearch_team_game1(leaderboardAddressSearch_team_game1)
 
 
 
@@ -2510,6 +2520,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
         var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
         var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
         var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
+        var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
+
+
+
 
         setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
         setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
@@ -2517,6 +2531,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
         setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
         setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
         setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
+        setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
+
 
 
         // User Levels

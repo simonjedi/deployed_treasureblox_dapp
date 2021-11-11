@@ -56,12 +56,50 @@ const Step1Card = (props) => {
         wallet: props.wallet_for_google,
         wallet_ip: props.ip,
         url: window.location.pathname,
-        buttonClicked:"Treasure_Hunt_2_Entered"
+        buttonClicked:"Treasure_Hunt_1_Entered"
       });
-      
+
       setloading(true);
       await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
       await contract.methods.enterGame(props.allGame1_id).send({from: accounts});
+      setTimeout(function(){
+          setloading(false);
+      },30000);
+
+    }
+
+    const handleSubmitEnterTroy = async() => {
+
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Treasure_Hunt_2_Entered"
+      });
+
+      setloading(true);
+      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
+      await contract.methods.enterGame(props.allGame1_id,1).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+      setTimeout(function(){
+          setloading(false);
+      },30000);
+
+    }
+
+    const handleSubmitEnterDave = async() => {
+
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"Treasure_Hunt_1_Entered"
+      });
+
+      setloading(true);
+      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
+      await contract.methods.enterGame(props.allGame1_id,2).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
       setTimeout(function(){
           setloading(false);
       },30000);
@@ -113,7 +151,10 @@ const Step1Card = (props) => {
                 <br />
 
                 <br />
-                <Button className="customButton" id="enter_elon" onClick={handleSubmitEnter}>Enter Quest Now</Button>
+                <Button className="customEnterButton" id="enter_elon" onClick={handleSubmitEnterTroy}>Enter - Join Team Troy</Button>
+                <br />
+                <br />
+                <Button className="customEnterButton" id="enter_elon" onClick={handleSubmitEnterDave}>Enter - Join Team Crypto Dave</Button>
                 <br/>
                 <br/>
                 <div>Game Attempts {props.totalGameEntriesGame1}</div>

@@ -84,7 +84,6 @@ const Connection = (props) =>  {
 
     window.location.reload(false);
 
-
   }
 
   const meter = async(e) => {
@@ -94,7 +93,7 @@ const Connection = (props) =>  {
 
 
     const chainId = "0x53"; //Meter Mainnet
-    // const chainId = "0x52"; //BSC Mainnet
+    // const chainId = "0x52"; //Meter Mainnet
 
     const chainName = "Meter Testnet";
     const currencyName = "MTR";

@@ -78,14 +78,6 @@ function useWindowSize() {
 
 
 
-
-
-
-
-
-
-
-
 const Hunt1 = (props) => {
 
 
@@ -299,7 +291,7 @@ const Hunt1 = (props) => {
 
   }
 
-    var counter = parseInt(props.game1team1_xyz_team_entries)+parseInt(props.game1team2_xyz_team_entries);
+    var counter = parseInt(props.game1team1_team_entries)+parseInt(props.game1team2_team_entries);
 
 
     const game1_live = props.game1_live;
@@ -310,7 +302,7 @@ const Hunt1 = (props) => {
       return (
 
 
-        <div className="custombackground">
+        <div className="background">
 
 
 
@@ -430,12 +422,12 @@ const Hunt1 = (props) => {
                   <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPageLarge'/>
   <br/>
 
-                  {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
+                  {props.game1team1_team_actual_points} / {props.game1team1_ppp*props.game1team1_team_entries} Points</div>
                   <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
                   <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
 
-                  {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
+                  {props.game1team1_team_actual_points > (props.game1team1_ppp*props.game1team1_team_entries) ?(
                     <div>
                     {props.treasure_found1?(
                       <div>
@@ -458,11 +450,11 @@ const Hunt1 = (props) => {
                   <div className="StatsGameEnter">
                   <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPageLarge'/>
                   <br/>
-                  {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
+                  {props.game1team2_team_actual_points} / {props.game1team2_ppp*props.game1team2_team_entries} Points</div>
                   <div className="siteTitle">Team Crypto Dave</div>
                   <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
 
-                  {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+                  {props.game1team2_team_actual_points > (props.game1team2_ppp*props.game1team2_team_entries) ?(
                     <div>
                     {props.treasure_found1?(
                       <div>
@@ -548,13 +540,13 @@ const Hunt1 = (props) => {
                           Team Troy
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team1_xyz_ppp}
+                          {props.game1team1_ppp}
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team1_xyz_team_entries}
+                          {props.game1team1_team_entries}
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+                          {props.game1team1_ppp*props.game1team1_team_entries}
                           </Col>
 
                           <Col className="MiniGameEnter" sm={2}>
@@ -600,13 +592,13 @@ const Hunt1 = (props) => {
                           Crypto Dave
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team2_xyz_ppp}
+                          {props.game1team2_ppp}
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team2_xyz_team_entries}
+                          {props.game1team2_team_entries}
                           </Col>
                           <Col className="MiniGameEnter" sm={2}>
-                          {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+                          {props.game1team2_ppp*props.game1team2_team_entries}
                           </Col>
 
                           <Col className="MiniGameEnter" sm={2}>
@@ -990,13 +982,13 @@ const Hunt1 = (props) => {
                     Team Troy
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team1_xyz_ppp}
+                    {props.game1team1_ppp}
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team1_xyz_team_entries}
+                    {props.game1team1_team_entries}
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+                    {props.game1team1_ppp*props.game1team1_team_entries}
                     </Col>
 
                     <Col className="MiniGameEnter" sm={2}>
@@ -1042,13 +1034,13 @@ const Hunt1 = (props) => {
                     Crypto Dave
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team2_xyz_ppp}
+                    {props.game1team2_ppp}
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team2_xyz_team_entries}
+                    {props.game1team2_team_entries}
                     </Col>
                     <Col className="MiniGameEnter" sm={2}>
-                    {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+                    {props.game1team2_ppp*props.game1team2_team_entries}
                     </Col>
 
                     <Col className="MiniGameEnter" sm={2}>

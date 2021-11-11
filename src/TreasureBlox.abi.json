@@ -105,6 +105,41 @@
 				"internalType": "uint256",
 				"name": "_gameId",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_team",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_teamPPPStart",
+				"type": "uint256"
+			}
+		],
+		"name": "addTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "constructor1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_team",
+				"type": "uint256"
 			}
 		],
 		"name": "enterGame",
@@ -153,47 +188,27 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_BURN_FEE",
+				"name": "_gameId",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_TAX_FEE",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_TREASURE_FEE",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_MARKETING_FEE",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_TREASURECHEST_ATTEMPT_FEE",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_TAX_FEE_GAME_ENTRY",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_TREASURE_CHEST_GAME_ENTRY",
+				"name": "_cost",
 				"type": "uint256"
 			}
 		],
-		"name": "setFees",
+		"name": "setBNBEntry",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_levelToSet",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_gameId",
@@ -238,85 +253,12 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_live",
-				"type": "bool"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "_submitQuestionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_submitSecretCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_entryLimit",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "points",
-				"type": "uint256"
+				"internalType": "contract IERC20",
+				"name": "token",
+				"type": "address"
 			}
 		],
-		"name": "setLevel2Game",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_live",
-				"type": "bool"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "_submitQuestionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_submitSecretCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_entryLimit",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "points",
-				"type": "uint256"
-			}
-		],
-		"name": "setLevel3Game",
+		"name": "setPartnerToken",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -349,11 +291,6 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "uint256",
-				"name": "_submitSecretCost",
-				"type": "uint256"
-			},
-			{
 				"internalType": "string",
 				"name": "_riddle",
 				"type": "string"
@@ -375,7 +312,12 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_entryCost",
+				"name": "_team",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_teamPPPStart",
 				"type": "uint256"
 			}
 		],
@@ -389,16 +331,6 @@
 			{
 				"internalType": "address payable",
 				"name": "_gamePotUsedForGames",
-				"type": "address"
-			},
-			{
-				"internalType": "address payable",
-				"name": "_treasureChest",
-				"type": "address"
-			},
-			{
-				"internalType": "address payable",
-				"name": "_marketingWallet",
 				"type": "address"
 			}
 		],
@@ -428,34 +360,11 @@
 				"internalType": "string",
 				"name": "_winningMessage",
 				"type": "string"
-			}
-		],
-		"name": "SubmitLevel",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "hashedConfirm",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "string",
-				"name": "_answer",
-				"type": "string"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_treasureGameid",
+				"name": "_teamId",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_winningMessage",
-				"type": "string"
 			}
 		],
 		"name": "SubmitSecret",
@@ -466,13 +375,40 @@
 	{
 		"inputs": [
 			{
-				"internalType": "contract IERC20",
-				"name": "token",
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_teamId",
+				"type": "uint256"
+			}
+		],
+		"name": "TeamCheck",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newCode",
 				"type": "address"
 			}
 		],
+		"name": "updateCode",
+		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -480,6 +416,19 @@
 		"outputs": [
 			{
 				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_token",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
 				"name": "",
 				"type": "address"
 			}
@@ -665,9 +614,22 @@
 						"type": "uint256"
 					}
 				],
-				"internalType": "struct GAMES_V2.Time",
+				"internalType": "struct DataLayout.Time",
 				"name": "",
 				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -706,6 +668,19 @@
 			{
 				"internalType": "bool",
 				"name": "gameLive",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "initialized",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
 				"type": "bool"
 			}
 		],
@@ -769,6 +744,11 @@
 				"internalType": "uint256",
 				"name": "stage",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "team",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -817,6 +797,11 @@
 			{
 				"internalType": "uint256",
 				"name": "stage",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "team",
 				"type": "uint256"
 			}
 		],
@@ -990,19 +975,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "marketingWallet",
-		"outputs": [
-			{
-				"internalType": "address payable",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -1086,11 +1058,68 @@
 	},
 	{
 		"inputs": [],
+		"name": "proxiableUUID",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "queEndsLastAttemptGlobal",
 		"outputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TeamDetails",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "teamid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamPointsTarget",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ppp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamEntries",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamActualPoints",
 				"type": "uint256"
 			}
 		],
@@ -1105,19 +1134,6 @@
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "treasureChest",
-		"outputs": [
-			{
-				"internalType": "address payable",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",

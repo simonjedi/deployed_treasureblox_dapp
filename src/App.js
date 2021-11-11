@@ -254,8 +254,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [state_WinnerEstPrizeGame1_xyz_, setWinnerEstPrizeGame1_xyz_] = useState(false);
 
 
-
-
 // User Levels
 
   const [userLevel1Game1_xyz_,setUserLevel1Game1_xyz_] = useState(false);
@@ -342,6 +340,9 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [state_leaderboardAddressSearch_username_game1, setleaderboardAddressSearch_username_game1] = useState(false);
   const [state_leaderboardAddressSearch_tries_game1, setleaderboardAddressSearch_tries_game1] = useState(false);
   const [state_leaderboardAddressSearch_stage_game1, setleaderboardAddressSearch_stage_game1] = useState(false);
+  const [state_leaderboardAddressSearch_team_game1, setleaderboardAddressSearch_team_game1] = useState(false);
+
+
   const [state_WinnerEstPrizeGame1, setWinnerEstPrizeGame1] = useState(false);
 
 // User Levels
@@ -350,6 +351,20 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [userLevel2Game1,setUserLevel2Game1] = useState(false);
   const [userLevel3Game1,setUserLevel3Game1] = useState(false);
   const [userLevel4Game1,setUserLevel4Game1] = useState(false);
+
+
+// Team Details
+  const [game1team1_teamid,setGame1_team1_teamid] = useState(false);
+  const [game1team1_team_points_target,setGame1_team1_team_points_target] = useState(false);
+  const [game1team1_ppp,setGame1_team1_ppp] = useState(false);
+  const [game1team1_team_entries,setGame1_team1_team_entries] = useState(false);
+  const [game1team1_team_actual_points,setGame1_team1_team_actual_points] = useState(false);
+
+  const [game1team2_teamid,setGame1_team2_teamid] = useState(false);
+  const [game1team2_team_points_target,setGame1_team2_team_points_target] = useState(false);
+  const [game1team2_ppp,setGame1_team2_ppp] = useState(false);
+  const [game1team2_team_entries,setGame1_team2_team_entries] = useState(false);
+  const [game1team2_team_actual_points,setGame1_team2_team_actual_points] = useState(false);
 
 
 
@@ -418,6 +433,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
     const [state_leaderboardAddressSearch_username_game2, setleaderboardAddressSearch_username_game2] = useState(false);
     const [state_leaderboardAddressSearch_tries_game2, setleaderboardAddressSearch_tries_game2] = useState(false);
     const [state_leaderboardAddressSearch_stage_game2, setleaderboardAddressSearch_stage_game2] = useState(false);
+    const [state_leaderboardAddressSearch_team_game2, setleaderboardAddressSearch_team_game2] = useState(false);
+
     const [state_WinnerEstPrizeGame2, setWinnerEstPrizeGame2] = useState(false);
 
     // User Levels
@@ -426,6 +443,21 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
     const [userLevel2Game2,setUserLevel2Game2] = useState(false);
     const [userLevel3Game2,setUserLevel3Game2] = useState(false);
     const [userLevel4Game2,setUserLevel4Game2] = useState(false);
+
+
+  // Team Details
+    const [game2team1_teamid,setGame2_team1_teamid] = useState(false);
+    const [game2team1_team_points_target,setGame2_team1_team_points_target] = useState(false);
+    const [game2team1_ppp,setGame2_team1_ppp] = useState(false);
+    const [game2team1_team_entries,setGame2_team1_team_entries] = useState(false);
+    const [game2team1_team_actual_points,setGame2_team1_team_actual_points] = useState(false);
+
+    const [game2team2_teamid,setGame2_team2_teamid] = useState(false);
+    const [game2team2_team_points_target,setGame2_team2_team_points_target] = useState(false);
+    const [game2team2_ppp,setGame2_team2_ppp] = useState(false);
+    const [game2team2_team_entries,setGame2_team2_team_entries] = useState(false);
+    const [game2team2_team_actual_points,setGame2_team2_team_actual_points] = useState(false);
+
 
 
 
@@ -512,7 +544,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
         setGameContractAddress_xyz_(gameAddress_xyz_);
 
-
         // BSC
           const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
           console.log(tokenContract_xyz_,"START twoooooooo")
@@ -574,8 +605,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
 
 
-          const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643");
-          const gameAddress = "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643"
+          const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x419C30f9D9f6b00f13d6e272ae0DBF057666575d");
+          const gameAddress = "0x419C30f9D9f6b00f13d6e272ae0DBF057666575d"
+
+// TOORGANISEGameCONTRACTAMAINNET
+          // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643");
+          // const gameAddress = "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643"
 
           // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
           // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
@@ -1251,6 +1286,34 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             setgame1LeaderBoardStage(game1_leaderboard_stage)
 
+
+            const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
+            const game1_team1_teamid = await game1_team1_details[0];
+            const game1_team1_team_points_target = await game1_team1_details[1];
+            const game1_team1_ppp = await game1_team1_details[2];
+            const game1_team1_team_entries = await game1_team1_details[3];
+            const game1_team1_team_actual_points = await game1_team1_details[4];
+
+            const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
+            const game1_team2_teamid = await game1_team2_details[0];
+            const game1_team2_team_points_target = await game1_team2_details[1];
+            const game1_team2_ppp = await game1_team2_details[2];
+            const game1_team2_team_entries = await game1_team2_details[3];
+            const game1_team2_team_actual_points = await game1_team2_details[4];
+
+            setGame1_team1_teamid(game1_team1_teamid)
+            setGame1_team1_team_points_target(game1_team1_team_points_target)
+            setGame1_team1_ppp(game1_team1_ppp)
+            setGame1_team1_team_entries(game1_team1_team_entries)
+            setGame1_team1_team_actual_points(game1_team1_team_actual_points)
+
+            setGame1_team2_teamid(game1_team2_teamid)
+            setGame1_team2_team_points_target(game1_team2_team_points_target)
+            setGame1_team2_ppp(game1_team2_ppp)
+            setGame1_team2_team_entries(game1_team2_team_entries)
+            setGame1_team2_team_actual_points(game1_team2_team_actual_points)
+
+
             // GAME 1 TREASUREBLOX ENDS
 
 
@@ -1503,6 +1566,33 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                         }
 
                       setgame2LeaderBoardStage(game2_leaderboard_stage)
+
+
+                      const game2_team1_details = await contract.methods.TeamDetails(1,1).call();
+                      const game2_team1_teamid = await game2_team1_details[0];
+                      const game2_team1_team_points_target = await game2_team1_details[1];
+                      const game2_team1_ppp = await game2_team1_details[2];
+                      const game2_team1_team_entries = await game2_team1_details[3];
+                      const game2_team1_team_actual_points = await game2_team1_details[4];
+
+                      const game2_team2_details = await contract.methods.TeamDetails(1,2).call();
+                      const game2_team2_teamid = await game2_team2_details[0];
+                      const game2_team2_team_points_target = await game2_team2_details[1];
+                      const game2_team2_ppp = await game2_team2_details[2];
+                      const game2_team2_team_entries = await game2_team2_details[3];
+                      const game2_team2_team_actual_points = await game2_team2_details[4];
+
+                      setGame2_team1_teamid(game2_team1_teamid)
+                      setGame2_team1_team_points_target(game2_team1_team_points_target)
+                      setGame2_team1_ppp(game2_team1_ppp)
+                      setGame2_team1_team_entries(game1_team2_team_entries)
+                      setGame2_team1_team_actual_points(game2_team1_team_actual_points)
+
+                      setGame2_team2_teamid(game2_team2_teamid)
+                      setGame2_team2_team_points_target(game2_team2_team_points_target)
+                      setGame2_team2_ppp(game2_team2_ppp)
+                      setGame2_team2_team_entries(game2_team2_team_entries)
+                      setGame2_team2_team_actual_points(game2_team2_team_actual_points)
 
         }, 1000);
         // End of Game timer code
@@ -2251,6 +2341,33 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
           setgame1LeaderBoardStage(game1_leaderboard_stage)
 
+
+          const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
+          const game1_team1_teamid = await game1_team1_details[0];
+          const game1_team1_team_points_target = await game1_team1_details[1];
+          const game1_team1_ppp = await game1_team1_details[2];
+          const game1_team1_team_entries = await game1_team1_details[3];
+          const game1_team1_team_actual_points = await game1_team1_details[4];
+
+          const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
+          const game1_team2_teamid = await game1_team2_details[0];
+          const game1_team2_team_points_target = await game1_team2_details[1];
+          const game1_team2_ppp = await game1_team2_details[2];
+          const game1_team2_team_entries = await game1_team2_details[3];
+          const game1_team2_team_actual_points = await game1_team2_details[4];
+
+          setGame1_team1_teamid(game1_team1_teamid)
+          setGame1_team1_team_points_target(game1_team1_team_points_target)
+          setGame1_team1_ppp(game1_team1_ppp)
+          setGame1_team1_team_entries(game1_team1_team_entries)
+          setGame1_team1_team_actual_points(game1_team1_team_actual_points)
+
+          setGame1_team2_teamid(game1_team2_teamid)
+          setGame1_team2_team_points_target(game1_team2_team_points_target)
+          setGame1_team2_ppp(game1_team2_ppp)
+          setGame1_team2_team_entries(game1_team2_team_entries)
+          setGame1_team2_team_actual_points(game1_team2_team_actual_points)
+
           // GAME 1 TREASUREBLOX ENDS
 
 
@@ -2504,6 +2621,32 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
                     setgame2LeaderBoardStage(game2_leaderboard_stage)
 
+                    const game2_team1_details = await contract.methods.TeamDetails(1,1).call();
+                    const game2_team1_teamid = await game2_team1_details[0];
+                    const game2_team1_team_points_target = await game2_team1_details[1];
+                    const game2_team1_ppp = await game2_team1_details[2];
+                    const game2_team1_team_entries = await game2_team1_details[3];
+                    const game2_team1_team_actual_points = await game2_team1_details[4];
+
+                    const game2_team2_details = await contract.methods.TeamDetails(1,2).call();
+                    const game2_team2_teamid = await game2_team2_details[0];
+                    const game2_team2_team_points_target = await game2_team2_details[1];
+                    const game2_team2_ppp = await game2_team2_details[2];
+                    const game2_team2_team_entries = await game2_team2_details[3];
+                    const game2_team2_team_actual_points = await game2_team2_details[4];
+
+                    setGame2_team1_teamid(game2_team1_teamid)
+                    setGame2_team1_team_points_target(game2_team1_team_points_target)
+                    setGame2_team1_ppp(game2_team1_ppp)
+                    setGame2_team1_team_entries(game1_team2_team_entries)
+                    setGame2_team1_team_actual_points(game2_team1_team_actual_points)
+
+                    setGame2_team2_teamid(game2_team2_teamid)
+                    setGame2_team2_team_points_target(game2_team2_team_points_target)
+                    setGame2_team2_ppp(game2_team2_ppp)
+                    setGame2_team2_team_entries(game2_team2_team_entries)
+                    setGame2_team2_team_actual_points(game2_team2_team_actual_points)
+
 
       }, 1000);
       // End of Game timer code
@@ -2516,6 +2659,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
+    console.log(game1team2_ppp,"wankkkkkkkker")
 
 
 
@@ -2532,17 +2676,30 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   game1_head_start_time,game1_entry_limit,game1_entry_cost,game1numberOfEntries,userGame1_id,userEntered_game1,userGame1_headstart_time,userGame1_live,
   winning_address1,treasure_found1,winning_prize1,question_hash_solved1,winning_message1,attemptId1,attemptUsername1,attemptDeadline1,attemptAddress1,
   totalGameEntriesGame1,game1LeaderBoardIndex,game1LeaderBoardGameID,game1LeaderBoardAddress,
-    game1LeaderBoardEntered,game1LeaderBoardUsername,game1LeaderBoardTries,game1LeaderBoardStage,game1LeaderBoard,game1UserList,state_leaderboardAddressSearch_huntid_game1,state_leaderboardAddressSearch_address_game1,state_leaderboardAddressSearch_entered_game1,
-    state_leaderboardAddressSearch_username_game1,state_leaderboardAddressSearch_tries_game1,state_leaderboardAddressSearch_stage_game1,state_WinnerEstPrizeGame1,userLevel1Game1,userLevel2Game1,userLevel3Game1,userLevel4Game1,
-      // GAME2
+  game1LeaderBoardEntered,game1LeaderBoardUsername,game1LeaderBoardTries,game1LeaderBoardStage,game1LeaderBoard,game1UserList,state_leaderboardAddressSearch_huntid_game1,state_leaderboardAddressSearch_address_game1,state_leaderboardAddressSearch_entered_game1,
+
+
+
+
+  state_leaderboardAddressSearch_username_game1,state_leaderboardAddressSearch_tries_game1,state_leaderboardAddressSearch_stage_game1,state_leaderboardAddressSearch_team_game1,state_WinnerEstPrizeGame1,userLevel1Game1,userLevel2Game1,userLevel3Game1,userLevel4Game1,
+
+
+  game1team1_team_points_target,game1team1_ppp,game1team1_team_entries,game1team1_team_actual_points,
+  game1team2_team_points_target,game1team2_ppp,game1team2_team_entries,game1team2_team_actual_points,
+    // GAME2
   game2_id,game2_live,game2_prize,game2_question_hash,game2_time_lock_cost,game2_submit_secret_cost,game2_riddle,game2_clue,
   allGame2_id,allGame2_user_front_of_que,allGame2_deadline_time,allGame2_username,allGame2_total_game_tries,countGame2,countGame2DeadlineTrue,
   game2_head_start_time,game2_entry_limit,game2_entry_cost,game2numberOfEntries,userGame2_id,userEntered_game2,userGame2_headstart_time,userGame2_live,
   winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2,
   totalGameEntriesGame2,game2LeaderBoardIndex,game2LeaderBoardGameID,game2LeaderBoardAddress,
   game2LeaderBoardEntered,game2LeaderBoardUsername,game2LeaderBoardTries,game2LeaderBoardStage,game2LeaderBoard,game2UserList,state_leaderboardAddressSearch_huntid_game2,state_leaderboardAddressSearch_address_game2,state_leaderboardAddressSearch_entered_game2,
-  state_leaderboardAddressSearch_username_game2,state_leaderboardAddressSearch_tries_game2,state_leaderboardAddressSearch_stage_game2,state_WinnerEstPrizeGame2,userLevel1Game2,userLevel2Game2,userLevel3Game2,userLevel4Game2,
 
+
+  state_leaderboardAddressSearch_username_game2,state_leaderboardAddressSearch_tries_game2,state_leaderboardAddressSearch_stage_game2,state_leaderboardAddressSearch_team_game2,state_WinnerEstPrizeGame2,userLevel1Game2,userLevel2Game2,userLevel3Game2,userLevel4Game2,
+
+
+  game2team1_team_points_target,game2team1_ppp,game2team1_team_entries,game2team1_team_actual_points,
+  game2team2_team_points_target,game2team2_ppp,game2team2_team_entries,game2team2_team_actual_points,
 
 
 
@@ -2733,6 +2890,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 userLevel2Game1={userLevel2Game1}
                 userLevel3Game1={userLevel3Game1}
                 userLevel4Game1={userLevel4Game1}
+
+                game1team1_team_points_target={game1team1_team_points_target}
+                game1team1_ppp={game1team1_ppp}
+                game1team1_team_entries={game1team1_team_entries}
+                game1team1_team_actual_points={game1team1_team_actual_points}
+                game1team2_team_points_target={game1team2_team_points_target}
+                game1team2_ppp={game1team2_ppp}
+                game1team2_team_entries={game1team2_team_entries}
+                game1team2_team_actual_points={game1team2_team_actual_points}
                 />
 
               </Route>
@@ -2807,6 +2973,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               userLevel2Game2={userLevel2Game2}
               userLevel3Game2={userLevel3Game2}
               userLevel4Game2={userLevel4Game2}
+
+              game2team1_team_points_target={game2team1_team_points_target}
+              game2team1_ppp={game2team1_ppp}
+              game2team1_team_entries={game2team1_team_entries}
+              game2team1_team_actual_points={game2team1_team_actual_points}
+              game2team2_team_points_target={game2team2_team_points_target}
+              game2team2_ppp={game2team2_ppp}
+              game2team2_team_entries={game2team2_team_entries}
+              game2team2_team_actual_points={game2team2_team_actual_points}
 
               />
 
@@ -3014,6 +3189,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               userLevel2Game2={userLevel2Game2}
               userLevel3Game2={userLevel3Game2}
               userLevel4Game2={userLevel4Game2}
+
+
               />
               </Route>
 

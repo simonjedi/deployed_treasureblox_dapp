@@ -117,7 +117,7 @@ const Hunt1 = (props) => {
       });
 
       setloading(true);
-      const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+      // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
       setplayLevel1Game1(true)
       setredirectLevel1(true)
 
@@ -138,7 +138,7 @@ const Hunt1 = (props) => {
       });
 
       setloading(true);
-      const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+      // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
       setplayLevel2Game1(true)
       setredirectLevel2(true)
 
@@ -160,7 +160,7 @@ const Hunt1 = (props) => {
       });
 
       setloading(true);
-      const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+      // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
       setplayLevel3Game1(true)
       setredirectLevel3(true)
 

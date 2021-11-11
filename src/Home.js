@@ -30,6 +30,9 @@ import img6 from './components/Structure/images/treasureblox_header4.png';
 import img7 from './components/Structure/images/treasureblox_header5.png';
 import img8 from './components/Structure/images/treasureblox_header6.png';
 
+import img9 from './components/Structure/images/TroyPowerPoseHeader.gif';
+
+
 
 
 import pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
@@ -168,11 +171,11 @@ const Home = (props) => {
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
-        src={img4}
+        src={img9}
         alt="First slide"
       />
       <Carousel.Caption >
-      <h3>TreasureBlox - The World's first crypto and real world treasure hunt.</h3>
+      <h3>TreasureBlox - The World's first Metaverse treasure hunt.</h3>
       <p>TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
       <LinkHeader to="/home#yourAnchorTag">
         <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>

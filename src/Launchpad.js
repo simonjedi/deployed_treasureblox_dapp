@@ -32,6 +32,7 @@ import img5 from './components/Structure/images/treasureblox_header3.png';
 import img6 from './components/Structure/images/treasureblox_header4.png';
 import img7 from './components/Structure/images/treasureblox_header5.png';
 import img8 from './components/Structure/images/treasureblox_header6.png';
+import img9 from './components/Structure/images/MetaverseTreasurehuntHeader.gif';
 
 
 
@@ -177,11 +178,11 @@ const { width, height } = useWindowSize();
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
-        src={img4}
+        src={img9}
         alt="First slide"
       />
       <Carousel.Caption >
-      <h3>TreasureBlox - The World's first crypto and real world treasure hunt.</h3>
+      <h3>TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
       <p>Launching Nov 2021.</p>
 
 

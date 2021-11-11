@@ -2899,6 +2899,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1}
                 state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1}
                 state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1}
+
                 state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1}
                 gameContractAddress={gameContractAddress}
 
@@ -2983,6 +2985,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
               state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
               state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2}
+
               state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
               gameContractAddress={gameContractAddress}
 

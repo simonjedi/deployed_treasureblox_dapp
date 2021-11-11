@@ -82,3 +82,13 @@
   text-align: center;
 
 }
+
+.modal.Networkcustom .modal-content {
+  position: fixed;
+  width: 400px;
+  z-index: 1040;
+  top:10%;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+
+}

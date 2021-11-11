@@ -108,7 +108,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -129,7 +129,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel2Game1(true)
     setredirectLevel2(true)
 
@@ -151,7 +151,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel3Game1(true)
     setredirectLevel3(true)
 
@@ -173,7 +173,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel4Game1(true)
     setredirectLevel4(true)
 
@@ -375,7 +375,7 @@ const handleSubmitEnterDave = async() => {
       <div>
 
 
-      {(counter >= 200)?(
+      {(counter >= 0)?(
         <div >
         <div className="siteTitle">Welcome, We will create a custom treasure hunt for your project?</div>
 

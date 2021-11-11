@@ -19,10 +19,11 @@
   border-color: #ee9b00;
   outline-color: #ee9b00;
   color: #001219;
-  height: 60px;
-  width: 200px;
-  font-size: 1.4rem;
+  height: 40px;
+  width: 150px;
+  font-size: 1.2rem;
 }
+
 
 .customButton:hover{
   background-color: #005f73;

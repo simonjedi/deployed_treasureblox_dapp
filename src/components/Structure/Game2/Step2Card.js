@@ -116,7 +116,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel1Game2(true)
       setredirectLevel1(true)
 
@@ -137,7 +137,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel2Game2(true)
       setredirectLevel2(true)
 
@@ -158,7 +158,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel3Game2(true)
       setredirectLevel3(true)
 
@@ -179,7 +179,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
       setplayLevel4Game2(true)
       setredirectLevel4(true)
 

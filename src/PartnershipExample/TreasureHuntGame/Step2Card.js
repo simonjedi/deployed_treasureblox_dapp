@@ -202,8 +202,6 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
 
 
-
-
         {redirectLevel1?(
           <div>
           <Redirect to={props.partnership_1} {...props}/>

@@ -1575,14 +1575,14 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                       setgame2LeaderBoardStage(game2_leaderboard_stage)
 
 
-                      const game2_team1_details = await contract.methods.TeamDetails(1,1).call();
+                      const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
                       const game2_team1_teamid = await game2_team1_details[0];
                       const game2_team1_team_points_target = await game2_team1_details[1];
                       const game2_team1_ppp = await game2_team1_details[2];
                       const game2_team1_team_entries = await game2_team1_details[3];
                       const game2_team1_team_actual_points = await game2_team1_details[4];
 
-                      const game2_team2_details = await contract.methods.TeamDetails(1,2).call();
+                      const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
                       const game2_team2_teamid = await game2_team2_details[0];
                       const game2_team2_team_points_target = await game2_team2_details[1];
                       const game2_team2_ppp = await game2_team2_details[2];
@@ -2638,14 +2638,14 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
                     setgame2LeaderBoardStage(game2_leaderboard_stage)
 
-                    const game2_team1_details = await contract.methods.TeamDetails(1,1).call();
+                    const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
                     const game2_team1_teamid = await game2_team1_details[0];
                     const game2_team1_team_points_target = await game2_team1_details[1];
                     const game2_team1_ppp = await game2_team1_details[2];
                     const game2_team1_team_entries = await game2_team1_details[3];
                     const game2_team1_team_actual_points = await game2_team1_details[4];
 
-                    const game2_team2_details = await contract.methods.TeamDetails(1,2).call();
+                    const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
                     const game2_team2_teamid = await game2_team2_details[0];
                     const game2_team2_team_points_target = await game2_team2_details[1];
                     const game2_team2_ppp = await game2_team2_details[2];

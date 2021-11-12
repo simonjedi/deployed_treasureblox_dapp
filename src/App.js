@@ -1015,7 +1015,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               const game1_entry_limit = await game1[9];
               var game1_entry_cost = await game1[10];
               game1_entry_cost = game1_entry_cost.substring(0, game1_entry_cost.length-18);
-
+              console.log("cuuuunt")
 
               setGame1_id(game1_id)
               setGame1_live(game1_live)
@@ -2676,7 +2676,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
-    console.log(game1team2_ppp,"wankkkkkkkker")
 
 
 
@@ -2882,6 +2881,47 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 totalGameEntriesGame1={totalGameEntriesGame1}
                 globalNumberOfTries={globalNumberOfTries}
 
+                game1_id={game1_id}
+                game1_live={game1_live}
+                game1_prize={game1_prize}
+                game1_question_hash={game1_question_hash}
+                game1_time_lock_cost={game1_time_lock_cost}
+                game1_submit_secret_cost={game1_submit_secret_cost}
+                game1_riddle={game1_riddle}
+                game1_clue={game1_clue}
+                game1_head_start_time={game1_head_start_time}
+                game1_entry_limit={game1_entry_limit}
+                game1_entry_cost={game1_entry_cost}
+
+                allGame1_id={allGame1_id}
+                allGasme1_user_front_of_que={allGame1_user_front_of_que}
+                allGame1_deadline_time={allGame1_deadline_time}
+                allGame1_username={allGame1_username}
+                allGame1_total_game_tries={allGame1_total_game_tries}
+                countGame1={countGame1}
+                countGame1DeadlineTrue={countGame1DeadlineTrue}
+                totalTreasure={totalTreasure}
+                game1numberOfEntries={game1numberOfEntries}
+
+                game2_id={game2_id}
+                game2_live={game2_live}
+                game2_prize={game2_prize}
+                game2_question_hash={game2_question_hash}
+                game2_time_lock_cost={game2_time_lock_cost}
+                game2_submit_secret_cost={game2_submit_secret_cost}
+                game2_riddle={game2_riddle}
+                game2_clue={game2_clue}
+                game2_head_start_time={game2_head_start_time}
+                game2_entry_limit={game2_entry_limit}
+                game2_entry_cost={game2_entry_cost}
+                allGame2_id={allGame2_id}
+                allGasme2_user_front_of_que={allGame2_user_front_of_que}
+                allGame2_deadline_time={allGame2_deadline_time}
+                allGame2_username={allGame2_username}
+                allGame2_total_game_tries={allGame2_total_game_tries}
+                countGame2={countGame2}
+                countGame2DeadlineTrue={countGame2DeadlineTrue}
+
                 game1LeaderBoardIndex={game1LeaderBoardIndex}
                 game1LeaderBoardGameID={game1LeaderBoardGameID}
                 game1LeaderBoardAddress={game1LeaderBoardAddress}
@@ -2984,6 +3024,47 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               game2LeaderBoardUsername={game2LeaderBoardUsername}
               game2LeaderBoardTries={game2LeaderBoardTries}
               game2LeaderBoardStage={game2LeaderBoardStage}
+
+              game1_id={game1_id}
+              game1_live={game1_live}
+              game1_prize={game1_prize}
+              game1_question_hash={game1_question_hash}
+              game1_time_lock_cost={game1_time_lock_cost}
+              game1_submit_secret_cost={game1_submit_secret_cost}
+              game1_riddle={game1_riddle}
+              game1_clue={game1_clue}
+              game1_head_start_time={game1_head_start_time}
+              game1_entry_limit={game1_entry_limit}
+              game1_entry_cost={game1_entry_cost}
+
+              allGame1_id={allGame1_id}
+              allGasme1_user_front_of_que={allGame1_user_front_of_que}
+              allGame1_deadline_time={allGame1_deadline_time}
+              allGame1_username={allGame1_username}
+              allGame1_total_game_tries={allGame1_total_game_tries}
+              countGame1={countGame1}
+              countGame1DeadlineTrue={countGame1DeadlineTrue}
+              totalTreasure={totalTreasure}
+              game1numberOfEntries={game1numberOfEntries}
+
+              game2_id={game2_id}
+              game2_live={game2_live}
+              game2_prize={game2_prize}
+              game2_question_hash={game2_question_hash}
+              game2_time_lock_cost={game2_time_lock_cost}
+              game2_submit_secret_cost={game2_submit_secret_cost}
+              game2_riddle={game2_riddle}
+              game2_clue={game2_clue}
+              game2_head_start_time={game2_head_start_time}
+              game2_entry_limit={game2_entry_limit}
+              game2_entry_cost={game2_entry_cost}
+              allGame2_id={allGame2_id}
+              allGasme2_user_front_of_que={allGame2_user_front_of_que}
+              allGame2_deadline_time={allGame2_deadline_time}
+              allGame2_username={allGame2_username}
+              allGame2_total_game_tries={allGame2_total_game_tries}
+              countGame2={countGame2}
+              countGame2DeadlineTrue={countGame2DeadlineTrue}
 
               game2LeaderBoard={game2LeaderBoard}
               game2UserList={game2UserList}

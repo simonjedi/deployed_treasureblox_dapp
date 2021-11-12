@@ -61,7 +61,7 @@ const Step1Card = (props) => {
 
       setloading(true);
       await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame1_id).send({from: accounts});
+      await contract.methods.enterGame(props.allGame1_id,1).send({from: accounts});
       setTimeout(function(){
           setloading(false);
       },30000);

@@ -138,7 +138,8 @@ const HomeCards = (props) => {
 
             </Card.Body>
           </Card>
-
+          <br className="d-lg-none"/>
+          <br className="d-lg-none"/>
           <Card className='cardRounded'>
             <Card.Body className="customBodyTwo">
               <Card.Title className="gameTitle">Purchase Blox</Card.Title>

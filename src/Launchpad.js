@@ -174,7 +174,7 @@ const { width, height } = useWindowSize();
 
   <div className="spaceTopHome">
 
-    <Carousel sm={12} lg={4} className="d-none d-lg-block" prevIcon="" prevLabel="" nextIcon="" nextLabel="">
+    <Carousel prevIcon="" prevLabel="" nextIcon="" nextLabel="">
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
@@ -182,12 +182,15 @@ const { width, height } = useWindowSize();
         alt="First slide"
       />
       <Carousel.Caption >
-      <h3>TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
-      <p>Launching Nov 2021.</p>
+      <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
+      <p sm={12} lg={4} className="d-lg-none">TreasureBlox - The World's first Metaverse crypto treasure hunt.</p>
+
+
+      <p sm={12} lg={4} className="d-none d-lg-block">Launching Nov 2021.</p>
 
 
 
-        <Button className="customButton" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram</Button>
+        <Button className="customMobileButton" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
 
 
 

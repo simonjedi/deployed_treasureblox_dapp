@@ -71,6 +71,28 @@ const HuntWowCards = (props) => {
 
 
     <div>
+
+
+    <Card className='cardRounded'>
+      <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
+      <Card.Body >
+        <Card.Title className="gameTitle">Fort Blox</Card.Title>
+        <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
+
+        <div>Riddle {props.game2_riddle}</div>
+        <div>Prize {game2_prize} Blox</div>
+        <div>Number of people entered {props.game2numberOfEntries}</div>
+        <br/>
+        <Link to="/hunt2">
+          <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
+        </Link>
+        <br/><br/>
+      </Card.Body>
+    </Card>
+
+    <br className="d-lg-none"/>
+    <br className="d-lg-none"/>
+
     <Card className='cardRounded'>
       <Card.Img variant="top" src={img4} alt="Logo" className='customRounded'/>
       <Card.Body >
@@ -89,22 +111,6 @@ const HuntWowCards = (props) => {
       </Card.Body>
     </Card>
 
-    <Card className='cardRounded'>
-      <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
-      <Card.Body >
-        <Card.Title className="gameTitle">Fort Blox</Card.Title>
-        <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
-
-        <div>Riddle {props.game2_riddle}</div>
-        <div>Prize {game2_prize} Blox</div>
-        <div>Number of people entered {props.game2numberOfEntries}</div>
-        <br/>
-        <Link to="/hunt2">
-          <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
-        </Link>
-        <br/><br/>
-      </Card.Body>
-    </Card>
 
     </div>
 

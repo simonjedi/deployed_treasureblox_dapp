@@ -167,7 +167,7 @@ const Home = (props) => {
 
 
 
-    <Carousel sm={12} lg={4} className="d-none d-lg-block">
+    <Carousel >
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
@@ -175,14 +175,15 @@ const Home = (props) => {
         alt="First slide"
       />
       <Carousel.Caption >
-      <h3>TreasureBlox - The World's first Metaverse treasure hunt.</h3>
-      <p>TreasureBlox is a crypto and real world treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
+      <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse treasure hunt.</h3>
+
+      <p >TreasureBlox is a Metaverse crypto treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
       <LinkHeader to="/home#yourAnchorTag">
-        <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
       </LinkHeader>
 
       <LinkHeader to="/Learnmore">
-        <Button className="customButton" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
       </LinkHeader>
 
 
@@ -196,11 +197,11 @@ const Home = (props) => {
       />
 
       <Carousel.Caption>
-      <h3>Can you Help Captain Troy 'Mighty' Armstong</h3>
+      <h3 sm={12} lg={4} className="d-none d-lg-block">Can you Help Captain Troy 'Mighty' Armstong</h3>
         <br/>
       <p>Explorer can you stop 'crypto dave' and build the bridge between the Metaverse and reality...</p>
       <LinkHeader to="/Blog1#intro">
-        <Button className="customButton" onClick={the_story_so_far} id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
+        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={the_story_so_far} id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
       </LinkHeader>
       </Carousel.Caption>
       </Carousel.Item>
@@ -212,12 +213,12 @@ const Home = (props) => {
       />
 
       <Carousel.Caption>
-      <h3>Play to Earn, Project Information & More</h3>
+      <h3 sm={12} lg={4} className="d-none d-lg-block">Play to Earn, Project Information & More</h3>
         <br/>
-      <p>Explorers earn Blox for playing and get paid to play!</p>
+      <p>Explorers join teams, earn Blox for playing with out P2E rewards!</p>
 
 
-        <Button className="customButton" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
       </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
@@ -228,8 +229,12 @@ const Home = (props) => {
           <CardColumns >
 
             <HomeCards {...props}/>
+            <br className="d-lg-none"/>
+            <br className="d-lg-none"/>
 
             <HomeHuntCards {...props}/>
+            <br className="d-lg-none"/>
+            <br className="d-lg-none"/>
 
 
             </CardColumns>

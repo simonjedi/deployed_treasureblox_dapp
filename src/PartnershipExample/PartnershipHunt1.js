@@ -391,11 +391,15 @@ const handleSubmitEnterDave = async() => {
               <Col sm={4}>
 
               <EnterHuntCards {...props}/>
+              <br className="d-lg-none"/>
+              <br className="d-lg-none"/>
 
               </Col>
 
               <Col sm={8}>
               <LeaderBoardCard {...props}/>
+              <br className="d-lg-none"/>
+              <br className="d-lg-none"/>
               </Col>
               </Row>
 
@@ -814,7 +818,8 @@ const handleSubmitEnterDave = async() => {
 
                   </Card.Body>
                 </Card>
-
+                <br className="d-lg-none"/>
+                <br className="d-lg-none"/>
                 </Col>
 
                 <Col sm={4}>
@@ -846,7 +851,9 @@ const handleSubmitEnterDave = async() => {
 
                   </Card.Body>
                 </Card>
-
+                  <br className="d-lg-none"/>
+                  <br className="d-lg-none"/>
+                
                 </Col>
                 <Col sm={4}>
 
@@ -878,7 +885,8 @@ const handleSubmitEnterDave = async() => {
 
                 </Card.Body>
                 </Card>
-
+                <br className="d-lg-none"/>
+                <br className="d-lg-none"/>
                 </Col>
 
 

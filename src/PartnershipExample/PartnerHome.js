@@ -176,22 +176,27 @@ const { width, height } = useWindowSize();
 
   <div className="spaceTopHome">
 
-    <Carousel sm={12} lg={4} className="d-none d-lg-block"  prevIcon="" prevLabel="" nextIcon="" nextLabel="">
+
+    <Carousel  prevIcon="" prevLabel="" nextIcon="" nextLabel="">
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
         src={img6}
         alt="First slide"
       />
+
       <Carousel.Caption >
-      <h3>Treasure hunts As A Service (THAAS)</h3>
+      <h3 className="d-none d-lg-block">Treasure hunts As A Service (THAAS)</h3>
+
+      <p className="d-lg-none">Treasure hunts As A Service (THAAS)</p>
+
       <p>Would you like to have your very own custom treasure hunt? </p>
       <LinkHeader to="/PartnershipExample1">
         <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
       </LinkHeader>
 
 
-      <Button  href = {Pdf} target = "_blank">Treasure Hunt Form</Button>
+      <Button   href = {Pdf} target = "_blank">Treasure Hunt Form</Button>
 
 
       </Carousel.Caption>

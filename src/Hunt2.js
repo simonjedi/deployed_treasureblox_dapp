@@ -397,7 +397,8 @@ const Hunt2 = (props) => {
                 <Col sm={4}>
 
                 <EnterHuntCards {...props}/>
-
+                <br className="d-lg-none"/>
+                <br className="d-lg-none"/>
                 </Col>
 
                 <Col sm={8}>
@@ -820,7 +821,8 @@ const Hunt2 = (props) => {
 
                     </Card.Body>
                   </Card>
-
+                  <br className="d-lg-none"/>
+                  <br className="d-lg-none"/>
                   </Col>
 
                   <Col sm={4}>
@@ -852,7 +854,8 @@ const Hunt2 = (props) => {
 
                     </Card.Body>
                   </Card>
-
+                  <br className="d-lg-none"/>
+                  <br className="d-lg-none"/>
                   </Col>
                   <Col sm={4}>
 

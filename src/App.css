@@ -92,3 +92,22 @@
   background-color: white;
 
 }
+
+.customMobileButton{
+  background-color: #ee9b00;
+  border-color: #ee9b00;
+  outline-color: #ee9b00;
+  color: #001219;
+  height: 35px;
+  width: 150px;
+  font-size: 1.2rem;
+}
+
+
+.customMobileButton:hover{
+  background-color: #005f73;
+  border-color: #005f73;
+  outline-color: #005f73;
+  color: white;
+  animation: wobble 1s 1;
+}

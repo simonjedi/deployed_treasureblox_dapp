@@ -56,3 +56,11 @@
   background: transparent;
 
 }
+
+.gameOneMobile{
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}

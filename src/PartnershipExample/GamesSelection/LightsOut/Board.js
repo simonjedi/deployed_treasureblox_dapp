@@ -98,7 +98,7 @@ class Board extends Component {
     return(
       <div>
 
-        <div className='Board-title'>
+        <div className='Board-title d-none d-lg-block'>
           <div className='neon-orange'>Blox</div>
           <div className='neon-blue'> Lights Out</div>
         </div>

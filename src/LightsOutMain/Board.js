@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import Cell from "./Cell";
 import './Board.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import lightsmusic from './assets/lightsmusic.mp4';
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -70,7 +72,7 @@ class Board extends Component {
     // if the game is won, shows a winning msg & render nothing else
     if(this.state.hasWon){
       return(
-        <div className='Board-title'>
+        <div className='Board-title d-none d-lg-block'>
           <div className='winner'>
             <span className='neon-orange'>YOU</span>
             <span className='neon-blue'>WON!</span>
@@ -98,9 +100,11 @@ class Board extends Component {
     return(
       <div>
 
-        <div className='Board-title'>
-          <div className='neon-orange'>Blox</div>
-          <div className='neon-blue'> Lights Out</div>
+
+
+        <div className='Board-title d-none d-lg-block'>
+          <div className='neon-orange '>Blox</div>
+          <div className='neon-blue '> Lights Out</div>
         </div>
         <br/><br/>
         <div className="siteTitle">Simply turn out the launch lights!</div>

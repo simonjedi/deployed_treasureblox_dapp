@@ -2910,6 +2910,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 userLevel3Game1={userLevel3Game1}
                 userLevel4Game1={userLevel4Game1}
 
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={partnership_1}
+                partnership_1_more={partnership_1_more}
+                partnership_2={partnership_2}
+                partnership_2_more={partnership_2_more}
+                partnership_3={partnership_3}
+                partnership_4={partnership_4}
+
                 game1team1_team_points_target={game1team1_team_points_target}
                 game1team1_ppp={game1team1_ppp}
                 game1team1_team_entries={game1team1_team_entries}
@@ -2994,6 +3003,15 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               userLevel2Game2={userLevel2Game2}
               userLevel3Game2={userLevel3Game2}
               userLevel4Game2={userLevel4Game2}
+
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
 
               game2team1_team_points_target={game2team1_team_points_target}
               game2team1_ppp={game2team1_ppp}

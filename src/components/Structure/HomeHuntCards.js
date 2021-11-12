@@ -5,6 +5,11 @@ import img2 from './images/fortblox.png';
 
 
 
+import img3 from './images/FortBloxMetaverse.png';
+import img4 from './images/ElonsRocketMetaverse.png';
+
+
+
 
 import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown } from 'react-bootstrap';
 
@@ -67,9 +72,11 @@ const HuntWowCards = (props) => {
 
     <div>
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={img1} alt="Logo" className='customRounded'/>
+      <Card.Img variant="top" src={img4} alt="Logo" className='customRounded'/>
       <Card.Body >
         <Card.Title className="gameTitle">Elon's lost his Rocket!</Card.Title>
+        <Card.Title className="gameTitle">Troy Vs Crypto Dave</Card.Title>
+
         <div>Riddle {props.game1_riddle}</div>
         <div>Prize {game1_prize} Blox</div>
         <div>Number of people entered {props.game1numberOfEntries}</div>
@@ -83,9 +90,11 @@ const HuntWowCards = (props) => {
     </Card>
 
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={img2} alt="Logo" className='customRounded'/>
+      <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
       <Card.Body >
         <Card.Title className="gameTitle">Fort Blox</Card.Title>
+        <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
+
         <div>Riddle {props.game2_riddle}</div>
         <div>Prize {game2_prize} Blox</div>
         <div>Number of people entered {props.game2numberOfEntries}</div>

@@ -246,7 +246,7 @@ const Hunt2 = (props) => {
     });
 
     setloading(true);
-    await contract.methods.TeamCheck(props.allGame2_id,1).send({from: accounts});
+    await contract.methods.TeamCheck(props.allGame2_id,2).send({from: accounts});
     setTimeout(function(){
         setloading(false);
     },30000);

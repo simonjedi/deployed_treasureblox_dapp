@@ -246,7 +246,7 @@ const Hunt1 = (props) => {
     });
 
     setloading(true);
-    await contract.methods.TeamCheck(props.allGame1_id,1).send({from: accounts});
+    await contract.methods.TeamCheck(props.allGame1_id,2).send({from: accounts});
     setTimeout(function(){
         setloading(false);
     },30000);
@@ -383,13 +383,11 @@ const Hunt1 = (props) => {
 
         <div>
 
-
         {(counter >= 0)?(
           <div>
-          <div className="siteTitle">Welcome, We will create a custom treasure hunt for your project? </div>
+          <div className="siteTitle">Explorers, Elon has lost his rocket can you help him find it? </div>
 
           <Container className='mt-5' fluid="md">
-
 
                 <CardGroup className='mt-5' fluid="md">
 

@@ -40,8 +40,8 @@ import LeaderBoardCard from '../components/Structure/Game1/LeaderBoardCard';
 import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
 
-import Board from '../LightsOut/Board';
-import lightsmusic from '../LightsOut/assets/lightsmusic.mp4';
+import Board from '../LightsOutMain/Board';
+import lightsmusic from '../LightsOutMain/assets/lightsmusic.mp4';
 
 import denied from '../MineGame/assets/Denied.mp3';
 import danger from '../MineGame/assets/danger.mp4';

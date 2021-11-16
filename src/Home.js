@@ -178,14 +178,17 @@ const Home = (props) => {
       <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse treasure hunt.</h3>
 
       <p >TreasureBlox is a Metaverse crypto treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
+<center>
       <LinkHeader to="/home#yourAnchorTag">
-        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+
+        <Button  className="customButton d-none d-lg-block" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+
       </LinkHeader>
 
       <LinkHeader to="/Learnmore">
-        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+        <Button  className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
       </LinkHeader>
-
+</center>
 
       </Carousel.Caption>
       </Carousel.Item>
@@ -200,9 +203,11 @@ const Home = (props) => {
       <h3 sm={12} lg={4} className="d-none d-lg-block">Can you Help Captain Troy 'Mighty' Armstong</h3>
         <br/>
       <p>Explorer can you stop 'crypto dave' and build the bridge between the Metaverse and reality...</p>
+<center>
       <LinkHeader to="/Blog1#intro">
         <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={the_story_so_far} id="the_story_so_far" to="/Blog1#intro" style={{margin:'10px'}}>The story so far..</Button>
       </LinkHeader>
+</center>
       </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -217,11 +222,14 @@ const Home = (props) => {
         <br/>
       <p>Explorers join teams, earn Blox for playing with out P2E rewards!</p>
 
-
+<center>
         <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
+</center>
       </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+
+
 
         <CardGroup className='mt-5'>
         <div id="yourAnchorTag">

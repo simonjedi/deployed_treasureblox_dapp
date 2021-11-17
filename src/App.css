@@ -25,6 +25,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 
+html, body {
+  overflow-x: hidden;
+}
 
 .customFont{
   font-family: 'Staatliches', cursive;

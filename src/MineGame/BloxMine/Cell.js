@@ -19,8 +19,8 @@ export default function Cell({details,updateFlag,revealcell}) {
 
     const style={
         cellStyle:{
-            width:45,
-            height:45,
+            width:40,
+            height:40,
             backgroundColor:details.revealed && details.value!==0?details.value==='X'?'red':' #00226d':details.revealed&&details.value===0?'#00226f':'#000',
             opacity:'0.8',
             border:'1px solid white',

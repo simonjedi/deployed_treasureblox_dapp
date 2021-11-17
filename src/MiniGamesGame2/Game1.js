@@ -127,7 +127,7 @@ const Level1Game2 = (props) => {
 
       <div className="siteTitle">Welcome to fort Blox... Can you help Captain Troy 'Mighty' Armstrong find all the mines?</div>
 
-      <Container fluid>
+      <Container style={{ paddingLeft: 20, paddingRight: 20 }}>
 
 
       <div className="aligned">
@@ -153,7 +153,7 @@ const Level1Game2 = (props) => {
 
       </div>
 
-<br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
 
 </div>
 

@@ -175,9 +175,7 @@ const MyNav = (props) => {
           <Link className='customLinks' onClick={nav_home_link_click} to="/home">
           Home
           </Link>
-          <Link className='customLinks' onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">
-          How To Play
-          </Link>
+
 
           <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
           Elon's Rocket
@@ -193,6 +191,12 @@ const MyNav = (props) => {
           <Link className='customLinks' onClick={nav_blox_zone_lean_more_link_click} to="/Learnmore">
           Blox Zone
           </Link>
+
+
+          <NavDropdown title="How to play / Community" id="collasible-nav-dropdown">
+          <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">How to Play</NavDropdown.Item>
+            <NavDropdown.Item onClick={nav_telegram} target = "_blank" href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
+          </NavDropdown>
 
           {
           // <NavDropdown title="Project information" id="collasible-nav-dropdown">

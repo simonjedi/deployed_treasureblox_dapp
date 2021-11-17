@@ -179,15 +179,18 @@ const Home = (props) => {
 
       <p >TreasureBlox is a Metaverse crypto treasure hunt where you enter hunts, find clues and solve riddles to win the treasure pot.</p>
 <center>
-      <LinkHeader to="/home#yourAnchorTag">
+<LinkHeader to="/home#yourAnchorTag">
+  <Button  className="customButton d-none d-lg-block" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+</LinkHeader>
 
-        <Button  className="customButton d-none d-lg-block" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
+{
 
-      </LinkHeader>
+      //
+      // <LinkHeader to="/Learnmore">
+      //   <Button  className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
+      // </LinkHeader>
+}
 
-      <LinkHeader to="/Learnmore">
-        <Button  className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
-      </LinkHeader>
 </center>
 
       </Carousel.Caption>
@@ -236,7 +239,7 @@ const Home = (props) => {
 
           <CardColumns>
 
-      
+
             <HomeCards {...props}/>
 
             <br className="d-lg-none"/>

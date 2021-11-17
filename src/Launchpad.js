@@ -183,22 +183,25 @@ const { width, height } = useWindowSize();
       />
       <Carousel.Caption >
       <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
-      <p sm={12} lg={4} className="d-lg-none">TreasureBlox - The World's first Metaverse crypto treasure hunt.</p>
 
 
       <p sm={12} lg={4} className="d-none d-lg-block">Launching Nov 2021.</p>
 
+<center>
 
-
-        <Button className="customMobileButton" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
-
-
+        <Button className="customMobileButton d-none d-lg-block" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
+</center>
 
       </Carousel.Caption>
       </Carousel.Item>
 
     </Carousel>
-
+    <br/>
+    <center>
+      <h2 sm={12} lg={4} className="landingPageFont d-lg-none">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h2>
+      <Button className="customMobileButton d-lg-none" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
+  <br/>
+  </center>
 
       </div>
 

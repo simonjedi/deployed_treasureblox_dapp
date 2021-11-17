@@ -165,24 +165,44 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
 
     <Col sm={4}>
     <br/>
-
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={feature9} alt="Logo" className='customRounded'/>
+      <Card.Img variant="top" src={feature6} alt="Logo" className='customRounded'/>
       <Card.Body >
-        <Card.Title className="blogTitle">TreasureBlox v2 launches</Card.Title>
-        {`${post9.substring(0, 140)}...`}
-      <br/><br/>
+        <Card.Title className="blogTitle">Treasure Hunt as a service</Card.Title>
 
-        <Link to="/Blog9">
-          <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog9">Continue Reading..</Button>
+        {`${post2.substring(0, 140)}...`}
+        <br/><br/>
+
+        <Link to="/Blog2">
+          <Button className="customButtonBlog" onClick={blog_post2_button} to="/Blog2">Continue Reading..</Button>
         </Link>
         <h5>
-        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play to Earn</div>
+        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
         </h5>
-
       </Card.Body>
     </Card>
 
+
+
+
+{
+    // <Card className='cardRounded'>
+    //   <Card.Img variant="top" src={feature9} alt="Logo" className='customRounded'/>
+    //   <Card.Body >
+    //     <Card.Title className="blogTitle">TreasureBlox v2 launches</Card.Title>
+    //     {`${post9.substring(0, 140)}...`}
+    //   <br/><br/>
+    //
+    //     <Link to="/Blog9">
+    //       <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog9">Continue Reading..</Button>
+    //     </Link>
+    //     <h5>
+    //     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Play to Earn</div>
+    //     </h5>
+    //
+    //   </Card.Body>
+    // </Card>
+}
 <br/>
 
 
@@ -190,13 +210,36 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
 
     <Col sm={4}>
     <br/>
-    <HomeCards {...props}/>
+    <Card className='cardRounded'>
+      <Card.Img variant="top" src={feature4} alt="Logo" className='customRounded'/>
+      <Card.Body >
+          <Card.Title className="blogTitle">Leader boards</Card.Title>
+          {`${post7.substring(0, 140)}...`}
+        <br/><br/>
+          <Link to="/Blog7">
+            <Button className="customButtonBlog" onClick={blog_post7_button} to="/Blog7">Continue Reading..</Button>
+          </Link>
+          <h5>
+          <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
+          </h5>
+      </Card.Body>
+    </Card>
+
+    <br/>
 
 
+        </Col>
 
-    </Col>
+        {
 
+    // <Col sm={4}>
+    // <br/>
+    // <HomeCards {...props}/>
+    //
+    //
+    // </Col>
 
+}
 <Col sm={4}>
 <br/>  <br/>
 <Card className='cardRounded'>
@@ -241,22 +284,24 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
 
 <Col sm={4}>
 <br/>  <br/>
-<Card className='cardRounded'>
-  <Card.Img variant="top" src={feature5} alt="Logo" className='customRounded'/>
-  <Card.Body >
-    <Card.Title className="blog">Farming, Staking and Treasure Vaults</Card.Title>
-    {`${post5.substring(0, 140)}...`}
-  <br/><br/>
-    <Link to="/Blog5">
-      <Button className="customButtonBlog" onClick={blog_post5_button} to="/Blog5">Continue Reading..</Button>
-    </Link>
-    <h5>
-    <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
-    </h5>
 
-  </Card.Body>
-</Card>
-
+{
+// <Card className='cardRounded'>
+//   <Card.Img variant="top" src={feature5} alt="Logo" className='customRounded'/>
+//   <Card.Body >
+//     <Card.Title className="blog">Farming, Staking and Treasure Vaults</Card.Title>
+//     {`${post5.substring(0, 140)}...`}
+//   <br/><br/>
+//     <Link to="/Blog5">
+//       <Button className="customButtonBlog" onClick={blog_post5_button} to="/Blog5">Continue Reading..</Button>
+//     </Link>
+//     <h5>
+//     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
+//     </h5>
+//
+//   </Card.Body>
+// </Card>
+}
 
 </Col>
 
@@ -276,63 +321,66 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
 
     <Col sm={4}>
     <br/>  <br/>
-    <Card className='cardRounded'>
-      <Card.Img variant="top" src={feature8} alt="Logo" className='customRounded'/>
-      <Card.Body >
-        <Card.Title className="blogTitle">Road Map</Card.Title>
-        {`${post6.substring(0, 140)}...`}
-      <br/><br/>
 
-        <Link to="/Blog6">
-          <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog6">Continue Reading..</Button>
-        </Link>
-        <h5>
-        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>White Paper</div>
-        </h5>
-
-      </Card.Body>
-    </Card>
-
+    {
+    // <Card className='cardRounded'>
+    //   <Card.Img variant="top" src={feature8} alt="Logo" className='customRounded'/>
+    //   <Card.Body >
+    //     <Card.Title className="blogTitle">Road Map</Card.Title>
+    //     {`${post6.substring(0, 140)}...`}
+    //   <br/><br/>
+    //
+    //     <Link to="/Blog6">
+    //       <Button className="customButtonBlog" onClick={blog_post6_button} to="/Blog6">Continue Reading..</Button>
+    //     </Link>
+    //     <h5>
+    //     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>White Paper</div>
+    //     </h5>
+    //
+    //   </Card.Body>
+    // </Card>
+}
 
     </Col>
 
     <Col sm={4}>
 <br/>  <br/>
-    <Card className='cardRounded'>
-      <Card.Img variant="top" src={feature4} alt="Logo" className='customRounded'/>
-      <Card.Body >
-          <Card.Title className="blogTitle">Leader boards</Card.Title>
-          {`${post7.substring(0, 140)}...`}
-        <br/><br/>
-          <Link to="/Blog7">
-            <Button className="customButtonBlog" onClick={blog_post7_button} to="/Blog7">Continue Reading..</Button>
-          </Link>
-          <h5>
-          <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
-          </h5>
-      </Card.Body>
-    </Card>
-
-    </Col>
-
-    <Col sm={4}>
-    <br/>  <br/>
-    <Card className='cardRounded'>
-      <Card.Img variant="top" src={feature7} alt="Logo" className='customRounded'/>
-      <Card.Body >
-        <Card.Title className="blog">AMA Zone</Card.Title>
-        {`${post8.substring(0, 140)}...`}
-      <br/><br/>
-        <Link to="/Blog8">
-          <Button className="customButtonBlog" onClick={blog_post8_button} to="/Blog8">Continue Reading..</Button>
-        </Link>
-        <h5>
-        <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
-        </h5>
-
-      </Card.Body>
-    </Card>
-
+{
+    // <Card className='cardRounded'>
+    //   <Card.Img variant="top" src={feature4} alt="Logo" className='customRounded'/>
+    //   <Card.Body >
+    //       <Card.Title className="blogTitle">Leader boards</Card.Title>
+    //       {`${post7.substring(0, 140)}...`}
+    //     <br/><br/>
+    //       <Link to="/Blog7">
+    //         <Button className="customButtonBlog" onClick={blog_post7_button} to="/Blog7">Continue Reading..</Button>
+    //       </Link>
+    //       <h5>
+    //       <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
+    //       </h5>
+    //   </Card.Body>
+    // </Card>
+    //
+    // </Col>
+    //
+    // <Col sm={4}>
+    // <br/>  <br/>
+    // <Card className='cardRounded'>
+    //   <Card.Img variant="top" src={feature7} alt="Logo" className='customRounded'/>
+    //   <Card.Body >
+    //     <Card.Title className="blog">AMA Zone</Card.Title>
+    //     {`${post8.substring(0, 140)}...`}
+    //   <br/><br/>
+    //     <Link to="/Blog8">
+    //       <Button className="customButtonBlog" onClick={blog_post8_button} to="/Blog8">Continue Reading..</Button>
+    //     </Link>
+    //     <h5>
+    //     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Farming & Staking</div>
+    //     </h5>
+    //
+    //   </Card.Body>
+    // </Card>
+}
 
     </Col>
 
@@ -354,24 +402,24 @@ var post9 = "With the launch of TreasureBlox V2, TreasureBlox has launched a cut
         <br/>  <br/>
 
 
-
-        <Card className='cardRounded'>
-          <Card.Img variant="top" src={feature6} alt="Logo" className='customRounded'/>
-          <Card.Body >
-            <Card.Title className="blogTitle">Treasure Hunt as a service</Card.Title>
-
-            {`${post2.substring(0, 140)}...`}
-            <br/><br/>
-
-            <Link to="/Blog2">
-              <Button className="customButtonBlog" onClick={blog_post2_button} to="/Blog2">Continue Reading..</Button>
-            </Link>
-            <h5>
-            <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
-            </h5>
-          </Card.Body>
-        </Card>
-
+{
+        // <Card className='cardRounded'>
+        //   <Card.Img variant="top" src={feature6} alt="Logo" className='customRounded'/>
+        //   <Card.Body >
+        //     <Card.Title className="blogTitle">Treasure Hunt as a service</Card.Title>
+        //
+        //     {`${post2.substring(0, 140)}...`}
+        //     <br/><br/>
+        //
+        //     <Link to="/Blog2">
+        //       <Button className="customButtonBlog" onClick={blog_post2_button} to="/Blog2">Continue Reading..</Button>
+        //     </Link>
+        //     <h5>
+        //     <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Partnerships</div>
+        //     </h5>
+        //   </Card.Body>
+        // </Card>
+}
 
         </Col>
 

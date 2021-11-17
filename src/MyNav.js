@@ -139,6 +139,16 @@ const MyNav = (props) => {
       });
     }
 
+    const nav_how_to_play = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"how_to_play"
+      });
+    }
+
 
 
 
@@ -165,9 +175,10 @@ const MyNav = (props) => {
           <Link className='customLinks' onClick={nav_home_link_click} to="/home">
           Home
           </Link>
-          <Link className='customLinks' onClick={nav_blox_zone_lean_more_link_click} to="/Learnmore">
-          Blox Zone
+          <Link className='customLinks' onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">
+          How To Play
           </Link>
+
           <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
           Elon's Rocket
           </Link>
@@ -175,16 +186,26 @@ const MyNav = (props) => {
           Fort Blox
           </Link>
 
-          <NavDropdown title="Project information" id="collasible-nav-dropdown">
-            <NavDropdown.Item onClick={nav_white_paper} href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_cafe_swap} target = "_blank" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_pancake_swap} target = "_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">PancakeSwap</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_bsc_scan} target = "_blank" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_telegram} target = "_blank" href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_poo_coin} target = "_blank" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
-            <NavDropdown.Item onClick={nav_liquidity} target = "_blank" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</NavDropdown.Item>
+          <Link className='customLinks' onClick={nav_telegram} target = "_blank" href="https://t.me/treasureblox">
+          Telegram
+          </Link>
 
-          </NavDropdown>
+          <Link className='customLinks' onClick={nav_blox_zone_lean_more_link_click} to="/Learnmore">
+          Blox Zone
+          </Link>
+
+          {
+          // <NavDropdown title="Project information" id="collasible-nav-dropdown">
+          //   <NavDropdown.Item onClick={nav_white_paper} href = {Pdf} target = "_blank">White Paper</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_pancake_swap} target = "_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">PancakeSwap</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_telegram} target = "_blank" href="https://t.me/treasureblox">Telegram</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_bsc_scan} target = "_blank" href="https://bscscan.com/address/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Contract</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_cafe_swap} target = "_blank" href="https://dex.cafeswap.finance/#/swap?outputCurrency=0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930">CafeSwap</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_poo_coin} target = "_blank" href="https://poocoin.app/tokens/0x845f23ae63b5d03a363f216ce0bad4fb12259930">Poo Coin</NavDropdown.Item>
+          //   <NavDropdown.Item onClick={nav_liquidity} target = "_blank" href="https://app.unicrypt.network/amm/pancake-v2/pair/0x5726466932caa909d942f3c89bb0ea76100ae0ce">Liquidity</NavDropdown.Item>
+          //
+          // </NavDropdown>
+          }
 
         </Nav>
         <Nav className="ml-auto">

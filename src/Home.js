@@ -234,9 +234,11 @@ const Home = (props) => {
         <CardGroup className='mt-5'>
         <div id="yourAnchorTag">
 
-          <CardColumns >
+          <CardColumns>
 
+      
             <HomeCards {...props}/>
+
             <br className="d-lg-none"/>
             <br className="d-lg-none"/>
 

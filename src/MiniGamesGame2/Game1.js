@@ -127,7 +127,7 @@ const Level1Game2 = (props) => {
 
       <div className="siteTitle">Welcome to fort Blox... Can you help Captain Troy 'Mighty' Armstrong find all the mines?</div>
 
-      <Container className='mt-5' fluid="md">
+      <Container fluid>
 
 
       <div className="aligned">
@@ -137,11 +137,11 @@ const Level1Game2 = (props) => {
         <Redirect to="/hunt2" {...props}/>
         </div>
       ):(
-        <div style={{width: width}}>
+        <div>
 
         <center>
 
-        <Board {...props}/>
+        <Board  {...props}/>
         </center>
 
         </div>

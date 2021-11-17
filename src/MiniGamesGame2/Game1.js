@@ -53,6 +53,8 @@ function useWindowSize() {
     height: undefined,
   });
 
+
+
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
@@ -68,9 +70,15 @@ function useWindowSize() {
     handleResize();
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
+
+    // scroll to top of page
+    window.scrollTo(0, 0)
+
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 }
+
+
 
 const Level1Game2 = (props) => {
 
@@ -122,6 +130,11 @@ const Level1Game2 = (props) => {
         <Card.Img  src={troyImg} alt="Troy" />
 
       </Modal>
+
+
+
+
+
 
 
 

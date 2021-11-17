@@ -184,9 +184,6 @@ const MyNav = (props) => {
           Fort Blox
           </Link>
 
-          <Link className='customLinks' onClick={nav_telegram} target = "_blank" href="https://t.me/treasureblox">
-          Telegram
-          </Link>
 
           <Link className='customLinks' onClick={nav_blox_zone_lean_more_link_click} to="/Learnmore">
           Blox Zone

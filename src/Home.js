@@ -184,7 +184,6 @@ const Home = (props) => {
 </LinkHeader>
 
 {
-
       //
       // <LinkHeader to="/Learnmore">
       //   <Button  className="customButton d-none d-lg-block" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>

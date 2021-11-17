@@ -798,7 +798,7 @@ const Hunt2 = (props) => {
                   <Card.Img variant="top" src={img4} alt="Logo" className='cardRoundedMiniGame'/>
 
                     <Card.Body className="customBodyMiniGame">
-                      <Card.Header className="MiniGameTitle">Level 1 - Lift Off!
+                      <Card.Header className="MiniGameTitle">Level 1 - Blox Mines!
 
                       </Card.Header>
                       <br/>
@@ -831,7 +831,7 @@ const Hunt2 = (props) => {
                   <Card.Img variant="top" src={img5} alt="Logo" className='cardRoundedMiniGame'/>
 
                     <Card.Body className="customBodyMiniGame">
-                      <Card.Header className="MiniGameTitle">Level 2 - Lights Out!
+                      <Card.Header className="MiniGameTitle">Level 2 - Blox Escape!
 
                       </Card.Header>
                       <br/>

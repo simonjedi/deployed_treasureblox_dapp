@@ -54,6 +54,7 @@ function Board(props) {
     useEffect(()=>{
 
         freshBoard();
+        window.scrollTo(0, 0);
     },[]);
 
     // Making freshboard atstart

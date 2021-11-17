@@ -4,6 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MyNav from './MyNav';
 
+// Loading Data
+
+import waiting from './components/Structure/Sounds/waiting.wav';
+import ReactAudioPlayer from 'react-audio-player';
+import blox_loading from './components/Structure/images/Blox.gif';
+
+import LoadingData from './LoadingData'
+
 
 // Partnerships
 import PartnershipHunt1 from "./PartnershipExample/PartnershipHunt1";
@@ -148,6 +156,11 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
   const game2_level_4 = "/Level4Game2/:top";
 
 
+
+
+
+
+
 const App = (props) => {
 
 
@@ -157,6 +170,7 @@ const App = (props) => {
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
+
 
 
 
@@ -195,60 +209,60 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 // PARTNER GAME EXAMPLE STARTS
-  const [game1_id_xyz_,setGame1_id_xyz_] = useState(undefined)
-  const [game1_live_xyz_,setGame1_live_xyz_] = useState(undefined)
-  const [game1_prize_xyz_,setGame1_prize_xyz_] = useState(undefined)
-  const [game1_question_hash_xyz_,setGame1_question_hash_xyz_] = useState(undefined)
-  const [game1_time_lock_cost_xyz_,setgame1_time_lock_cost_xyz_] = useState(undefined)
-  const [game1_submit_secret_cost_xyz_,setGame1_submit_secret_cost_xyz_] = useState(undefined)
-  const [game1_riddle_xyz_,setGame1_riddle_xyz_] = useState(undefined)
-  const [game1_clue_xyz_,setGame1_clue_xyz_] = useState(undefined)
-  const [game1_head_start_time_xyz_,setGame1_head_start_time_xyz_] = useState(undefined)
-  const [game1_entry_limit_xyz_,setGame1_entry_limit_xyz_] = useState(undefined)
-  const [game1_entry_cost_xyz_,setGame1_entry_cost_xyz_] = useState(undefined)
+  const [game1_id_xyz_,setGame1_id_xyz_] = useState("...Loading...")
+  const [game1_live_xyz_,setGame1_live_xyz_] = useState("...Loading...")
+  const [game1_prize_xyz_,setGame1_prize_xyz_] = useState("...Loading...")
+  const [game1_question_hash_xyz_,setGame1_question_hash_xyz_] = useState("...Loading...")
+  const [game1_time_lock_cost_xyz_,setgame1_time_lock_cost_xyz_] = useState("...Loading...")
+  const [game1_submit_secret_cost_xyz_,setGame1_submit_secret_cost_xyz_] = useState("...Loading...")
+  const [game1_riddle_xyz_,setGame1_riddle_xyz_] = useState("...Loading...")
+  const [game1_clue_xyz_,setGame1_clue_xyz_] = useState("...Loading...")
+  const [game1_head_start_time_xyz_,setGame1_head_start_time_xyz_] = useState("...Loading...")
+  const [game1_entry_limit_xyz_,setGame1_entry_limit_xyz_] = useState("...Loading...")
+  const [game1_entry_cost_xyz_,setGame1_entry_cost_xyz_] = useState("...Loading...")
 
-  const [allGame1_id_xyz_,setallGame1_id_xyz_] = useState(undefined)
-  const [allGame1_user_front_of_que_xyz_,setallGame1_user_front_of_que_xyz_] = useState(undefined)
-  const [allGame1_deadline_time_xyz_,setallGame1_deadline_xyz_] = useState(undefined)
-  const [allGame1_username_xyz_,setallGame1_username_xyz_] = useState(undefined)
-  const [allGame1_total_game_tries_xyz_,setallGame1_total_game_tries_xyz_] = useState(undefined)
+  const [allGame1_id_xyz_,setallGame1_id_xyz_] = useState("...Loading...")
+  const [allGame1_user_front_of_que_xyz_,setallGame1_user_front_of_que_xyz_] = useState("...Loading...")
+  const [allGame1_deadline_time_xyz_,setallGame1_deadline_xyz_] = useState("...Loading...")
+  const [allGame1_username_xyz_,setallGame1_username_xyz_] = useState("...Loading...")
+  const [allGame1_total_game_tries_xyz_,setallGame1_total_game_tries_xyz_] = useState("...Loading...")
 
   const [countGame1_xyz_, setTimeGame1_xyz_] = useState(90);
   const [countGame1DeadlineTrue_xyz_, setcountGame1DeadlineTrue_xyz_] = useState(false);
 
   const [game1numberOfEntries_xyz_, setGame1numberOfEntries_xyz_] = useState(0);
-  const [game1huntEntries_xyz_, setGame1huntEntries_xyz_] = useState(undefined);
-  const [userGame1_id_xyz_, setUserGame1_id_xyz_] = useState(undefined);
-  const [userEntered_game1_xyz_, setUserEntered_game1_xyz_] = useState(undefined);
-  const [userGame1_headstart_time_xyz_, setUserGame1_headstart_time_xyz_] = useState(undefined);
-  const [userGame1_live_xyz_, setUserGame1_live_xyz_] = useState(undefined);
+  const [game1huntEntries_xyz_, setGame1huntEntries_xyz_] = useState("...Loading...");
+  const [userGame1_id_xyz_, setUserGame1_id_xyz_] = useState("...Loading...");
+  const [userEntered_game1_xyz_, setUserEntered_game1_xyz_] = useState("...Loading...");
+  const [userGame1_headstart_time_xyz_, setUserGame1_headstart_time_xyz_] = useState("...Loading...");
+  const [userGame1_live_xyz_, setUserGame1_live_xyz_] = useState("...Loading...");
 
-  const [winning_address1_xyz_, setWinning_address1_xyz_] = useState(undefined);
-  const [treasure_found1_xyz_, setTreasure_found1_xyz_] = useState(undefined);
-  const [winning_prize1_xyz_, setWinning_prize1_xyz_] = useState(undefined);
-  const [question_hash_solved1_xyz_, setQuestion_hash_solved1_xyz_] = useState(undefined);
-  const [winning_message1_xyz_, setWinning_message1_xyz_] = useState(undefined);
+  const [winning_address1_xyz_, setWinning_address1_xyz_] = useState("...Loading...");
+  const [treasure_found1_xyz_, setTreasure_found1_xyz_] = useState("...Loading...");
+  const [winning_prize1_xyz_, setWinning_prize1_xyz_] = useState("...Loading...");
+  const [question_hash_solved1_xyz_, setQuestion_hash_solved1_xyz_] = useState("...Loading...");
+  const [winning_message1_xyz_, setWinning_message1_xyz_] = useState("...Loading...");
 
-  const [attemptId1_xyz_, setAttemptId1_xyz_] = useState(undefined);
-  const [attemptAddress1_xyz_, setAttemptAddress1_xyz_] = useState(undefined);
-  const [attemptUsername1_xyz_, setAttemptUsername1_xyz_] = useState(undefined);
-  const [attemptDeadline1_xyz_, setAttemptDeadline1_xyz_] = useState(undefined);
+  const [attemptId1_xyz_, setAttemptId1_xyz_] = useState("...Loading...");
+  const [attemptAddress1_xyz_, setAttemptAddress1_xyz_] = useState("...Loading...");
+  const [attemptUsername1_xyz_, setAttemptUsername1_xyz_] = useState("...Loading...");
+  const [attemptDeadline1_xyz_, setAttemptDeadline1_xyz_] = useState("...Loading...");
   const [totalGameEntriesGame1_xyz_, settotalGameEntriesGame1_xyz_] = useState(false);
   const [globalNumberOfTries_xyz_, setGlobalNumberOfTries_xyz_] = useState(false);
 
 
 // Leaderboard
-  const [game1LeaderBoardIndex_xyz_, setgame1LeaderBoardIndex_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardGameID_xyz_, setgame1LeaderBoardGameID_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardAddress_xyz_, setgame1LeaderBoardAddress_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardEntered_xyz_, setgame1LeaderBoardEntered_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardUsername_xyz_, setgame1LeaderBoardUsername_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardTries_xyz_, setgame1LeaderBoardTries_xyz_] = useState(["Loading"]);
-  const [game1LeaderBoardStage_xyz_, setgame1LeaderBoardStage_xyz_] = useState(["Loading"]);
+  const [game1LeaderBoardIndex_xyz_, setgame1LeaderBoardIndex_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardGameID_xyz_, setgame1LeaderBoardGameID_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardAddress_xyz_, setgame1LeaderBoardAddress_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardEntered_xyz_, setgame1LeaderBoardEntered_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardUsername_xyz_, setgame1LeaderBoardUsername_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardTries_xyz_, setgame1LeaderBoardTries_xyz_] = useState(["...Loading..."]);
+  const [game1LeaderBoardStage_xyz_, setgame1LeaderBoardStage_xyz_] = useState(["...Loading..."]);
 
 
-  const [game1LeaderBoard_xyz_, setgame1LeaderBoard_xyz_] = useState(["Loading"]);
-  const [game1UserList_xyz_, setGame1UserList_xyz_] = useState(["Loading"]);
+  const [game1LeaderBoard_xyz_, setgame1LeaderBoard_xyz_] = useState(["...Loading..."]);
+  const [game1UserList_xyz_, setGame1UserList_xyz_] = useState(["...Loading..."]);
 
   // Leaderbaord Address Search
   const [state_leaderboardAddressSearch_huntid_game1_xyz_, setleaderboardAddressSearch_huntid_game1_xyz_] = useState(false);
@@ -271,75 +285,75 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 // Team Details
-  const [game1team1_xyz_teamid,setGame1_team1_xyz_teamid] = useState(false);
-  const [game1team1_xyz_team_points_target,setGame1_team1_xyz_team_points_target] = useState(false);
-  const [game1team1_xyz_ppp,setGame1_team1_xyz_ppp] = useState(false);
-  const [game1team1_xyz_team_entries,setGame1_team1_xyz_team_entries] = useState(false);
-  const [game1team1_xyz_team_actual_points,setGame1_team1_xyz_team_actual_points] = useState(false);
+  const [game1team1_xyz_teamid,setGame1_team1_xyz_teamid] = useState("...Loading...");
+  const [game1team1_xyz_team_points_target,setGame1_team1_xyz_team_points_target] = useState("...Loading...");
+  const [game1team1_xyz_ppp,setGame1_team1_xyz_ppp] = useState("...Loading...");
+  const [game1team1_xyz_team_entries,setGame1_team1_xyz_team_entries] = useState("...Loading...");
+  const [game1team1_xyz_team_actual_points,setGame1_team1_xyz_team_actual_points] = useState("...Loading...");
 
-  const [game1team2_xyz_teamid,setGame1_team2_xyz_teamid] = useState(false);
-  const [game1team2_xyz_team_points_target,setGame1_team2_xyz_team_points_target] = useState(false);
-  const [game1team2_xyz_ppp,setGame1_team2_xyz_ppp] = useState(false);
-  const [game1team2_xyz_team_entries,setGame1_team2_xyz_team_entries] = useState(false);
-  const [game1team2_xyz_team_actual_points,setGame1_team2_xyz_team_actual_points] = useState(false);
+  const [game1team2_xyz_teamid,setGame1_team2_xyz_teamid] = useState("...Loading...");
+  const [game1team2_xyz_team_points_target,setGame1_team2_xyz_team_points_target] = useState("...Loading...");
+  const [game1team2_xyz_ppp,setGame1_team2_xyz_ppp] = useState("...Loading...");
+  const [game1team2_xyz_team_entries,setGame1_team2_xyz_team_entries] = useState("...Loading...");
+  const [game1team2_xyz_team_actual_points,setGame1_team2_xyz_team_actual_points] = useState("...Loading...");
 
 // PARTNER GAME EXAMPLE ENDS
 
 
 
 // GAME 1
-  const [game1_id,setGame1_id] = useState(undefined)
-  const [game1_live,setGame1_live] = useState(undefined)
-  const [game1_prize,setGame1_prize] = useState(undefined)
-  const [game1_question_hash,setGame1_question_hash] = useState(undefined)
-  const [game1_time_lock_cost,setgame1_time_lock_cost] = useState(undefined)
-  const [game1_submit_secret_cost,setGame1_submit_secret_cost] = useState(undefined)
-  const [game1_riddle,setGame1_riddle] = useState(undefined)
-  const [game1_clue,setGame1_clue] = useState(undefined)
-  const [game1_head_start_time,setGame1_head_start_time] = useState(undefined)
-  const [game1_entry_limit,setGame1_entry_limit] = useState(undefined)
-  const [game1_entry_cost,setGame1_entry_cost] = useState(undefined)
+  const [game1_id,setGame1_id] = useState("...Loading...")
+  const [game1_live,setGame1_live] = useState("...Loading...")
+  const [game1_prize,setGame1_prize] = useState("...Loading...")
+  const [game1_question_hash,setGame1_question_hash] = useState("...Loading...")
+  const [game1_time_lock_cost,setgame1_time_lock_cost] = useState("...Loading...")
+  const [game1_submit_secret_cost,setGame1_submit_secret_cost] = useState("...Loading...")
+  const [game1_riddle,setGame1_riddle] = useState("...Loading...")
+  const [game1_clue,setGame1_clue] = useState("...Loading...")
+  const [game1_head_start_time,setGame1_head_start_time] = useState("...Loading...")
+  const [game1_entry_limit,setGame1_entry_limit] = useState("...Loading...")
+  const [game1_entry_cost,setGame1_entry_cost] = useState("...Loading...")
 
-  const [allGame1_id,setallGame1_id] = useState(undefined)
-  const [allGame1_user_front_of_que,setallGame1_user_front_of_que] = useState(undefined)
-  const [allGame1_deadline_time,setallGame1_deadline] = useState(undefined)
-  const [allGame1_username,setallGame1_username] = useState(undefined)
-  const [allGame1_total_game_tries,setallGame1_total_game_tries] = useState(undefined)
+  const [allGame1_id,setallGame1_id] = useState("...Loading...")
+  const [allGame1_user_front_of_que,setallGame1_user_front_of_que] = useState("...Loading...")
+  const [allGame1_deadline_time,setallGame1_deadline] = useState("...Loading...")
+  const [allGame1_username,setallGame1_username] = useState("...Loading...")
+  const [allGame1_total_game_tries,setallGame1_total_game_tries] = useState("...Loading...")
 
   const [countGame1, setTimeGame1] = useState(90);
   const [countGame1DeadlineTrue, setcountGame1DeadlineTrue] = useState(false);
 
   const [game1numberOfEntries, setGame1numberOfEntries] = useState(0);
-  const [game1huntEntries, setGame1huntEntries] = useState(undefined);
-  const [userGame1_id, setUserGame1_id] = useState(undefined);
-  const [userEntered_game1, setUserEntered_game1] = useState(undefined);
-  const [userGame1_headstart_time, setUserGame1_headstart_time] = useState(undefined);
-  const [userGame1_live, setUserGame1_live] = useState(undefined);
+  const [game1huntEntries, setGame1huntEntries] = useState("...Loading...");
+  const [userGame1_id, setUserGame1_id] = useState("...Loading...");
+  const [userEntered_game1, setUserEntered_game1] = useState("...Loading...");
+  const [userGame1_headstart_time, setUserGame1_headstart_time] = useState("...Loading...");
+  const [userGame1_live, setUserGame1_live] = useState("...Loading...");
 
-  const [winning_address1, setWinning_address1] = useState(undefined);
-  const [treasure_found1, setTreasure_found1] = useState(undefined);
-  const [winning_prize1, setWinning_prize1] = useState(undefined);
-  const [question_hash_solved1, setQuestion_hash_solved1] = useState(undefined);
-  const [winning_message1, setWinning_message1] = useState(undefined);
+  const [winning_address1, setWinning_address1] = useState("...Loading...");
+  const [treasure_found1, setTreasure_found1] = useState("...Loading...");
+  const [winning_prize1, setWinning_prize1] = useState("...Loading...");
+  const [question_hash_solved1, setQuestion_hash_solved1] = useState("...Loading...");
+  const [winning_message1, setWinning_message1] = useState("...Loading...");
 
-  const [attemptId1, setAttemptId1] = useState(undefined);
-  const [attemptAddress1, setAttemptAddress1] = useState(undefined);
-  const [attemptUsername1, setAttemptUsername1] = useState(undefined);
-  const [attemptDeadline1, setAttemptDeadline1] = useState(undefined);
+  const [attemptId1, setAttemptId1] = useState("...Loading...");
+  const [attemptAddress1, setAttemptAddress1] = useState("...Loading...");
+  const [attemptUsername1, setAttemptUsername1] = useState("...Loading...");
+  const [attemptDeadline1, setAttemptDeadline1] = useState("...Loading...");
   const [totalGameEntriesGame1, settotalGameEntriesGame1] = useState(false);
 
 // Leaderboard
-  const [game1LeaderBoardIndex, setgame1LeaderBoardIndex] = useState(["Loading"]);
-  const [game1LeaderBoardGameID, setgame1LeaderBoardGameID] = useState(["Loading"]);
-  const [game1LeaderBoardAddress, setgame1LeaderBoardAddress] = useState(["Loading"]);
-  const [game1LeaderBoardEntered, setgame1LeaderBoardEntered] = useState(["Loading"]);
-  const [game1LeaderBoardUsername, setgame1LeaderBoardUsername] = useState(["Loading"]);
-  const [game1LeaderBoardTries, setgame1LeaderBoardTries] = useState(["Loading"]);
-  const [game1LeaderBoardStage, setgame1LeaderBoardStage] = useState(["Loading"]);
+  const [game1LeaderBoardIndex, setgame1LeaderBoardIndex] = useState(["...Loading..."]);
+  const [game1LeaderBoardGameID, setgame1LeaderBoardGameID] = useState(["...Loading..."]);
+  const [game1LeaderBoardAddress, setgame1LeaderBoardAddress] = useState(["...Loading..."]);
+  const [game1LeaderBoardEntered, setgame1LeaderBoardEntered] = useState(["...Loading..."]);
+  const [game1LeaderBoardUsername, setgame1LeaderBoardUsername] = useState(["...Loading..."]);
+  const [game1LeaderBoardTries, setgame1LeaderBoardTries] = useState(["...Loading..."]);
+  const [game1LeaderBoardStage, setgame1LeaderBoardStage] = useState(["...Loading..."]);
 
 
-  const [game1LeaderBoard, setgame1LeaderBoard] = useState(["Loading"]);
-  const [game1UserList, setGame1UserList] = useState(["Loading"]);
+  const [game1LeaderBoard, setgame1LeaderBoard] = useState(["...Loading..."]);
+  const [game1UserList, setGame1UserList] = useState(["...Loading..."]);
 
   // Leaderbaord Address Search
   const [state_leaderboardAddressSearch_huntid_game1, setleaderboardAddressSearch_huntid_game1] = useState(false);
@@ -378,61 +392,61 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 // GAME 2
 
-  const [game2_id,setGame2_id] = useState(undefined)
-  const [game2_live,setGame2_live] = useState(undefined)
-  const [game2_prize,setGame2_prize] = useState(undefined)
-  const [game2_question_hash,setGame2_question_hash] = useState(undefined)
-  const [game2_time_lock_cost,setgame2_time_lock_cost] = useState(undefined)
-  const [game2_submit_secret_cost,setGame2_submit_secret_cost] = useState(undefined)
-  const [game2_riddle,setGame2_riddle] = useState(undefined)
-  const [game2_clue,setGame2_clue] = useState(undefined)
-  const [game2_head_start_time,setGame2_head_start_time] = useState(undefined)
-  const [game2_entry_limit,setGame2_entry_limit] = useState(undefined)
-  const [game2_entry_cost,setGame2_entry_cost] = useState(undefined)
+  const [game2_id,setGame2_id] = useState("...Loading...")
+  const [game2_live,setGame2_live] = useState("...Loading...")
+  const [game2_prize,setGame2_prize] = useState("...Loading...")
+  const [game2_question_hash,setGame2_question_hash] = useState("...Loading...")
+  const [game2_time_lock_cost,setgame2_time_lock_cost] = useState("...Loading...")
+  const [game2_submit_secret_cost,setGame2_submit_secret_cost] = useState("...Loading...")
+  const [game2_riddle,setGame2_riddle] = useState("...Loading...")
+  const [game2_clue,setGame2_clue] = useState("...Loading...")
+  const [game2_head_start_time,setGame2_head_start_time] = useState("...Loading...")
+  const [game2_entry_limit,setGame2_entry_limit] = useState("...Loading...")
+  const [game2_entry_cost,setGame2_entry_cost] = useState("...Loading...")
 
-  const [allGame2_id,setallGame2_id] = useState(undefined)
-  const [allGame2_user_front_of_que,setallGame2_user_front_of_que] = useState(undefined)
-  const [allGame2_deadline_time,setallGame2_deadline] = useState(undefined)
-  const [allGame2_username,setallGame2_username] = useState(undefined)
-  const [allGame2_total_game_tries,setallGame2_total_game_tries] = useState(undefined)
+  const [allGame2_id,setallGame2_id] = useState("...Loading...")
+  const [allGame2_user_front_of_que,setallGame2_user_front_of_que] = useState("...Loading...")
+  const [allGame2_deadline_time,setallGame2_deadline] = useState("...Loading...")
+  const [allGame2_username,setallGame2_username] = useState("...Loading...")
+  const [allGame2_total_game_tries,setallGame2_total_game_tries] = useState("...Loading...")
 
   const [countGame2, setTimeGame2] = useState(90);
   const [countGame2DeadlineTrue, setcountGame2DeadlineTrue] = useState(false);
 
   const [game2numberOfEntries, setGame2numberOfEntries] = useState(0);
-  const [game2huntEntries, setGame2huntEntries] = useState(undefined);
-  const [userGame2_id, setUserGame2_id] = useState(undefined);
-  const [userEntered_game2, setUserEntered_game2] = useState(undefined);
-  const [userGame2_headstart_time, setUserGame2_headstart_time] = useState(undefined);
-  const [userGame2_live, setUserGame2_live] = useState(undefined);
+  const [game2huntEntries, setGame2huntEntries] = useState("...Loading...");
+  const [userGame2_id, setUserGame2_id] = useState("...Loading...");
+  const [userEntered_game2, setUserEntered_game2] = useState("...Loading...");
+  const [userGame2_headstart_time, setUserGame2_headstart_time] = useState("...Loading...");
+  const [userGame2_live, setUserGame2_live] = useState("...Loading...");
 
-  const [winning_address2, setWinning_address2] = useState(undefined);
-  const [treasure_found2, setTreasure_found2] = useState(undefined);
-  const [winning_prize2, setWinning_prize2] = useState(undefined);
-  const [question_hash_solved2, setQuestion_hash_solved2] = useState(undefined);
-  const [winning_message2, setWinning_message2] = useState(undefined);
+  const [winning_address2, setWinning_address2] = useState("...Loading...");
+  const [treasure_found2, setTreasure_found2] = useState("...Loading...");
+  const [winning_prize2, setWinning_prize2] = useState("...Loading...");
+  const [question_hash_solved2, setQuestion_hash_solved2] = useState("...Loading...");
+  const [winning_message2, setWinning_message2] = useState("...Loading...");
 
-  const [attemptId2, setAttemptId2] = useState(undefined);
-  const [attemptAddress2, setAttemptAddress2] = useState(undefined);
-  const [attemptUsername2, setAttemptUsername2] = useState(undefined);
-  const [attemptDeadline2, setAttemptDeadline2] = useState(undefined);
+  const [attemptId2, setAttemptId2] = useState("...Loading...");
+  const [attemptAddress2, setAttemptAddress2] = useState("...Loading...");
+  const [attemptUsername2, setAttemptUsername2] = useState("...Loading...");
+  const [attemptDeadline2, setAttemptDeadline2] = useState("...Loading...");
   const [loaded, setloaded] = useState(false);
   const [totalGameEntriesGame2, settotalGameEntriesGame2] = useState(false);
   const [globalNumberOfTries, setGlobalNumberOfTries] = useState(false);
 
 
   // Leaderboard
-    const [game2LeaderBoardIndex, setgame2LeaderBoardIndex] = useState(["Loading"]);
-    const [game2LeaderBoardGameID, setgame2LeaderBoardGameID] = useState(["Loading"]);
-    const [game2LeaderBoardAddress, setgame2LeaderBoardAddress] = useState(["Loading"]);
-    const [game2LeaderBoardEntered, setgame2LeaderBoardEntered] = useState(["Loading"]);
-    const [game2LeaderBoardUsername, setgame2LeaderBoardUsername] = useState(["Loading"]);
-    const [game2LeaderBoardTries, setgame2LeaderBoardTries] = useState(["Loading"]);
-    const [game2LeaderBoardStage, setgame2LeaderBoardStage] = useState(["Loading"]);
+    const [game2LeaderBoardIndex, setgame2LeaderBoardIndex] = useState(["...Loading..."]);
+    const [game2LeaderBoardGameID, setgame2LeaderBoardGameID] = useState(["...Loading..."]);
+    const [game2LeaderBoardAddress, setgame2LeaderBoardAddress] = useState(["...Loading..."]);
+    const [game2LeaderBoardEntered, setgame2LeaderBoardEntered] = useState(["...Loading..."]);
+    const [game2LeaderBoardUsername, setgame2LeaderBoardUsername] = useState(["...Loading..."]);
+    const [game2LeaderBoardTries, setgame2LeaderBoardTries] = useState(["...Loading..."]);
+    const [game2LeaderBoardStage, setgame2LeaderBoardStage] = useState(["...Loading..."]);
 
 
-    const [game2LeaderBoard, setgame2LeaderBoard] = useState(["Loading"]);
-    const [game2UserList, setGame2UserList] = useState(["Loading"]);
+    const [game2LeaderBoard, setgame2LeaderBoard] = useState(["...Loading..."]);
+    const [game2UserList, setGame2UserList] = useState(["...Loading..."]);
 
     // Leaderbaord Address Search
     const [state_leaderboardAddressSearch_huntid_game2, setleaderboardAddressSearch_huntid_game2] = useState(false);
@@ -1450,6 +1464,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
           setGame2numberOfEntries(game2numberOfEntries)
 
+
           setUserGame2_id(userGame2_id)
           setUserEntered_game2(userEntered_game2)
           setUserGame2_headstart_time(userGame2_headstart_time)
@@ -2459,6 +2474,11 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
         const game2numberOfEntries = await contract.methods.numberOfEntries(2).call();
 
+
+
+
+
+
         const game2huntEntries = await contract.methods.huntEntries(accounts[0],2).call();
         const userGame2_id = await game2huntEntries[0];
         const userEntered_game2 = await game2huntEntries[1];
@@ -2683,6 +2703,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                     setGame2_team2_team_actual_points(game2_team2_team_actual_points)
 
 
+
       }, 1000);
       // End of Game timer code
 
@@ -2777,7 +2798,17 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
+
+
+
+
+
+
+
+
         <div className="customFont">
+
+
 
 
         <Helmet>
@@ -2785,8 +2816,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
         </Helmet>
-
-
 
 
 
@@ -2802,6 +2831,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
                 <Route path="/home">
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
+
                 <MyNav accounts={accounts}/>
                   <Home
                   is_meter={is_meter}
@@ -2828,7 +2858,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                   countGame1={countGame1}
                   countGame1DeadlineTrue={countGame1DeadlineTrue}
                   totalTreasure={totalTreasure}
+
                   game1numberOfEntries={game1numberOfEntries}
+
+                  game2numberOfEntries={game2numberOfEntries}
 
                   game2_id={game2_id}
                   game2_live={game2_live}
@@ -2858,6 +2891,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
                   />
+
+
                 </Route>
 
               <Route path="/hunt1">

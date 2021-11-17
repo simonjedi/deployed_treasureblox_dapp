@@ -53,7 +53,7 @@ const HuntWowCards = (props) => {
   const game2_prize = commaNumber(props.game2_prize,',');
 
 
-
+console.log(props.game2numberOfEntries,"me")
   // console.log(game1_id)s
 
   const renderTooltip = (props) => (

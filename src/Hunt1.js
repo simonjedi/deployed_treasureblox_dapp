@@ -360,7 +360,7 @@ const Hunt1 = (props) => {
         )}
 
 
-        <div className="spaceTopHome">
+        <div id="top" className="spaceTopHome">
         <Helmet>
           <title>TreasureBlox | Partner Hunt</title>
 
@@ -1251,7 +1251,7 @@ const Hunt1 = (props) => {
 
 
 
-  </div>
+        </div>
 
   </div>
 

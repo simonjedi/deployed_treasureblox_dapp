@@ -117,7 +117,7 @@ const handlePlayBrailOff = async() => {
 
       <div className="background">
 
-      <div className="spaceTopHome">
+      <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>
@@ -171,7 +171,7 @@ const handlePlayBrailOff = async() => {
       </Card>
 
 
-      
+
 
       {props.playLevel1Game1?(
         <div>

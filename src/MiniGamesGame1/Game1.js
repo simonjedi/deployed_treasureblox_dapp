@@ -174,7 +174,7 @@ const Level1Game1 = (props) => {
       />}
 
 
-      <div className="spaceTopHome">
+      <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>

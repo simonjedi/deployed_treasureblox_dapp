@@ -92,7 +92,7 @@ const Learnmore = (props) => {
       <Container className='mt-5' fluid="md">
 
 
-  <div className="spaceTopHome">
+  <div id="top" className="spaceTopHome">
 
 
       <div className="siteTitle">Blox Zone</div>

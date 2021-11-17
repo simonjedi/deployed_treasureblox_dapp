@@ -107,7 +107,7 @@ const Level4Game2 = (props) => {
     return (
 
       <div className="background">
-      <div style={{height: height}} className="spaceTopHome">
+      <div style={{height: height}} id="top" className="spaceTopHome">
 
       <div className="spaceTopHome">
       <Helmet>

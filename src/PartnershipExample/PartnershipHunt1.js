@@ -346,7 +346,7 @@ const handleSubmitEnterDave = async() => {
       )}
 
 
-      <div className="spaceTopHome">
+      <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Partner Hunt</title>
 

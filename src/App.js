@@ -124,32 +124,31 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 
 
 // Set URL's
-  const web3partnership_home = "/PartnershipExampleHome";
-  const partnership_treasure_hunt_page = "/PartnershipExample1";
-  const partnership_1 = "/PartnershipLevel1";
-  const partnership_1_more = "/PartnershipLevel1More";
-  const partnership_2 = "/PartnershipLevel2";
-  const partnership_2_more = "/PartnershipLevel2More";
-  const partnership_3 = "/PartnershipLevel3";
-  const partnership_4 = "/PartnershipLevel4";
+  const web3partnership_home = "/PartnershipExampleHome/:top";
+  const partnership_treasure_hunt_page = "/PartnershipExample1/:top";
+  const partnership_1 = "/PartnershipLevel1/:top";
+  const partnership_1_more = "/PartnershipLevel1More/:top";
+  const partnership_2 = "/PartnershipLevel2/:top";
+  const partnership_2_more = "/PartnershipLevel2More/:top";
+  const partnership_3 = "/PartnershipLevel3/:top";
+  const partnership_4 = "/PartnershipLevel4/:top";
 
-  const game1_level_1 = "/Level1Game1";
-  const game1_level_1_more = "/Game1MoreGame1";
-  const game1_level_2 = "/Level2Game1";
-  const game1_level_2_more = "/Game2MoreGame1";
-  const game1_level_3 = "/Level3Game1";
-  const game1_level_4 = "/Level4Game1";
+  const game1_level_1 = "/Level1Game1/:top";
+  const game1_level_1_more = "/Game1MoreGame1/:top";
+  const game1_level_2 = "/Level2Game1/:top";
+  const game1_level_2_more = "/Game2MoreGame1/:top";
+  const game1_level_3 = "/Level3Game1/:top";
+  const game1_level_4 = "/Level4Game1/:top";
 
   const game2_level_1 = "/Level1Game2/:top";
-  const game2_level_1_more = "/Game1MoreGame2";
-  const game2_level_2 = "/Level2Game2";
-  const game2_level_2_more = "/Game2MoreGame2";
-  const game2_level_3 = "/Level3Game2";
-  const game2_level_4 = "/Level4Game2";
+  const game2_level_1_more = "/Game1MoreGame2/:top";
+  const game2_level_2 = "/Level2Game2/:top";
+  const game2_level_2_more = "/Game2MoreGame2/:top";
+  const game2_level_3 = "/Level3Game2/:top";
+  const game2_level_4 = "/Level4Game2/:top";
 
 
 const App = (props) => {
-
 
 
 
@@ -158,7 +157,6 @@ const App = (props) => {
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
-
 
 
 

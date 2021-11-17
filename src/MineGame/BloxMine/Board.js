@@ -43,9 +43,9 @@ function Board(props) {
     const style={
         display : 'flex',
         flexDirection : 'row',
-        width:'fit-content',
+        width:'device-width',
         color:'white',
-        
+
 
 
 

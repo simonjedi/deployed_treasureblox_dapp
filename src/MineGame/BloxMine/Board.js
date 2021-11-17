@@ -46,6 +46,9 @@ function Board(props) {
         width:'fit-content',
         color:'white',
 
+
+
+
     }
     useEffect(()=>{
 

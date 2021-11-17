@@ -305,7 +305,6 @@ const Hunt1 = (props) => {
         <div className="background">
 
 
-
         {redirectLevel1?(
           <div>
           <Redirect to={props.partnership_1} {...props}/>
@@ -919,7 +918,8 @@ const Hunt1 = (props) => {
 
           </div>
         ):(
-          <div style={{height: height}}>
+          <div>
+      
           <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
           <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
 

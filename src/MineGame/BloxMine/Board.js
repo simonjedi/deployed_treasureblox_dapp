@@ -45,6 +45,7 @@ function Board(props) {
         flexDirection : 'row',
         width:'fit-content',
         color:'white',
+        
 
 
 

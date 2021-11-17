@@ -140,7 +140,7 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
   const game1_level_3 = "/Level3Game1";
   const game1_level_4 = "/Level4Game1";
 
-  const game2_level_1 = "/Level1Game2";
+  const game2_level_1 = "/Level1Game2/:top";
   const game2_level_1_more = "/Game1MoreGame2";
   const game2_level_2 = "/Level2Game2";
   const game2_level_2_more = "/Game2MoreGame2";

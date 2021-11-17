@@ -71,7 +71,7 @@ function useWindowSize() {
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
 
-    window.scrollTo(0, 0);
+
 
 
   }, []); // Empty array ensures that effect is only run on mount
@@ -109,7 +109,7 @@ const Level1Game2 = (props) => {
 
     return (
 <div className="background">
-      <div className="spaceTopHome">
+      <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>
@@ -138,7 +138,7 @@ const Level1Game2 = (props) => {
 
 
 
-      <div className="siteTitle">Welcome to fort Blox... Can you help Captain Troy 'Mighty' Armstrong find all the mines?</div>
+      <div  className="siteTitle">Welcome to fort Blox... Can you help Captain Troy 'Mighty' Armstrong find all the mines?</div>
 
       <Container style={{ paddingLeft: 20, paddingRight: 20 }}>
 

@@ -71,8 +71,8 @@ function useWindowSize() {
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
 
-    // scroll to top of page
-    window.scrollTo(0, 0)
+  
+
 
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;

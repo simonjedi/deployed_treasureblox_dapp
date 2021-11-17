@@ -58,6 +58,9 @@ function useWindowSize() {
   });
 
   useEffect(() => {
+
+
+
     // Handler to call on window resize
     function handleResize() {
       // Set window width/height to state
@@ -72,7 +75,13 @@ function useWindowSize() {
     handleResize();
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
+
+    window.scrollTo(0, 0);
+
+
   }, []); // Empty array ensures that effect is only run on mount
+
+
   return windowSize;
 }
 
@@ -919,7 +928,7 @@ const Hunt1 = (props) => {
           </div>
         ):(
           <div>
-        
+
           <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
           <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
 

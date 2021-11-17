@@ -72,6 +72,9 @@ function useWindowSize() {
     handleResize();
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
+
+    window.scrollTo(0, 0);
+
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 }

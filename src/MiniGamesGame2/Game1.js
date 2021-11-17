@@ -137,7 +137,7 @@ const Level1Game2 = (props) => {
         <Redirect to="/hunt2" {...props}/>
         </div>
       ):(
-        <div style={{width: width,padding:'50px'}}>
+        <div style={{width: width}}>
 
         <center>
 

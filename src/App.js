@@ -133,9 +133,19 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
   const partnership_3 = "/PartnershipLevel3";
   const partnership_4 = "/PartnershipLevel4";
 
+  const game1_level_1 = "/Level1Game1";
+  const game1_level_1_more = "/Game1MoreGame1";
+  const game1_level_2 = "/Level2Game1";
+  const game1_level_2_more = "/Game2MoreGame1";
+  const game1_level_3 = "/Level3Game1";
+  const game1_level_4 = "/Level4Game1";
 
-
-
+  const game2_level_1 = "/Level1Game2";
+  const game2_level_1_more = "/Game1MoreGame2";
+  const game2_level_2 = "/Level2Game2";
+  const game2_level_2_more = "/Game2MoreGame2";
+  const game2_level_3 = "/Level3Game2";
+  const game2_level_4 = "/Level4Game2";
 
 
 const App = (props) => {
@@ -462,6 +472,14 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
+
+// network type
+    const [is_meter,setIs_Meter] = useState(false);
+
+
+
+
+
   useEffect(() => {
 
 
@@ -537,6 +555,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 // START NETWORK IF BSC
         if (currentChainId === 56) {
 
+
+        setIs_Meter(false)
         console.log("boo")
         const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://bsc-dataseed.binance.org/" && "0xEcF17ea4918b27ce408404167c76597D3A9b33cA");
         const gameAddress_xyz_ = "0xEcF17ea4918b27ce408404167c76597D3A9b33cA"
@@ -1609,7 +1629,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
       if (currentChainId === 83) {
 
-
+        setIs_Meter(true)
         console.log("boo")
         // Meter.io
         const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
@@ -2684,7 +2704,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
       init()
 
 
-    },[web3,accounts,wallet_for_google,ip,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
+    },[is_meter,web3,accounts,wallet_for_google,ip,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
+
+
+// XXX
 
       // GAME1
   game1_id,game1_live,game1_prize,game1_question_hash,game1_time_lock_cost,game1_submit_secret_cost,game1_riddle,game1_clue,
@@ -2695,6 +2718,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   game1LeaderBoardEntered,game1LeaderBoardUsername,game1LeaderBoardTries,game1LeaderBoardStage,game1LeaderBoard,game1UserList,state_leaderboardAddressSearch_huntid_game1,state_leaderboardAddressSearch_address_game1,state_leaderboardAddressSearch_entered_game1,
 
 
+  game1_level_1,game1_level_1_more,game1_level_2,game1_level_2_more,game1_level_3,game1_level_4,
 
 
   state_leaderboardAddressSearch_username_game1,state_leaderboardAddressSearch_tries_game1,state_leaderboardAddressSearch_stage_game1,state_leaderboardAddressSearch_team_game1,state_WinnerEstPrizeGame1,userLevel1Game1,userLevel2Game1,userLevel3Game1,userLevel4Game1,
@@ -2709,6 +2733,9 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2,
   totalGameEntriesGame2,game2LeaderBoardIndex,game2LeaderBoardGameID,game2LeaderBoardAddress,
   game2LeaderBoardEntered,game2LeaderBoardUsername,game2LeaderBoardTries,game2LeaderBoardStage,game2LeaderBoard,game2UserList,state_leaderboardAddressSearch_huntid_game2,state_leaderboardAddressSearch_address_game2,state_leaderboardAddressSearch_entered_game2,
+
+
+  game2_level_1,game2_level_1_more,game2_level_2,game2_level_2_more,game2_level_3,game2_level_4,
 
 
   state_leaderboardAddressSearch_username_game2,state_leaderboardAddressSearch_tries_game2,state_leaderboardAddressSearch_stage_game2,state_leaderboardAddressSearch_team_game2,state_WinnerEstPrizeGame2,userLevel1Game2,userLevel2Game2,userLevel3Game2,userLevel4Game2,
@@ -2779,6 +2806,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <MyNav accounts={accounts}/>
                   <Home
+                  is_meter={is_meter}
                   accounts={accounts}
                   wallet_for_google={wallet_for_google}
                   ip={ip}
@@ -2837,7 +2865,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               <Route path="/hunt1">
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Hunt1
-
+                is_meter={is_meter}
                 web3={web3}
                 tokenContract={tokenContract}
                 wallet_for_google={wallet_for_google}
@@ -2952,12 +2980,13 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
                 partnership_home={web3partnership_home}
                 partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-                partnership_1={partnership_1}
-                partnership_1_more={partnership_1_more}
-                partnership_2={partnership_2}
-                partnership_2_more={partnership_2_more}
-                partnership_3={partnership_3}
-                partnership_4={partnership_4}
+                partnership_1={game1_level_1}
+                partnership_1_more={game1_level_1_more}
+                partnership_2={game1_level_2}
+                partnership_2_more={game1_level_2_more}
+                partnership_3={game1_level_3}
+                partnership_4={game1_level_4}
+
 
                 game1team1_team_points_target={game1team1_team_points_target}
                 game1team1_ppp={game1team1_ppp}
@@ -2974,6 +3003,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               <Route path="/hunt2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Hunt2
+              is_meter={is_meter}
               web3={web3}
               tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
@@ -3087,12 +3117,13 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
+
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
 
               game2team1_team_points_target={game2team1_team_points_target}
               game2team1_ppp={game2team1_ppp}
@@ -4883,6 +4914,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
               <Route path="">
               <Launchpad
+              is_meter={is_meter}
                 accounts={accounts}
                 wallet_for_google={wallet_for_google}
                 ip={ip}

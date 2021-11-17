@@ -144,7 +144,7 @@ const Level1Game1 = (props) => {
             setTimeleft(timer)
           }
 
-          if (clicks > 400){
+          if (clicks > 100){
             setMore(true)
           }
 

@@ -657,7 +657,7 @@ const Hunt1 = (props) => {
 
                           </Col>
                           <Col sm={4}>
-                          <div className="StatsGameEnter">0.2 BNB</div>
+                          <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
                           <div className="siteTitle">Entry Cost</div>
                           <div className="StatsGameEnterSmallSub">Select a team to join</div>
                           </Col>
@@ -1101,7 +1101,7 @@ const Hunt1 = (props) => {
 
                     </Col>
                     <Col sm={4}>
-                    <div className="StatsGameEnter">0.2 BNB</div>
+                    <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
                     <div className="siteTitle">Entry Cost</div>
                     <div className="StatsGameEnterSmallSub">Select a team to join</div>
                     </Col>

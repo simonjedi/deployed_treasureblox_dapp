@@ -298,7 +298,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                       <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                       </div>
                       <div>
-                      <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
+                      <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
                       <br />
                       <div>Enter a username</div>
                       <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -374,7 +374,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                           <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                           </div>
                           <div>
-                          <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
+                          <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
                           <br />
                           <div>Enter a username</div>
                           <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -438,7 +438,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                             <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                             </div>
                             <div>
-                            <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
+                            <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
                             <br />
                             <div>Enter a username</div>
                             <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -508,7 +508,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -537,7 +537,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>

@@ -7,7 +7,11 @@ import Connection from "../Connection";
 
 import Hunt1 from "../Hunt1";
 
-import logo from '../TreasureBlox_Logo.png';
+// import logo from '../TreasureBlox_Logo.png';
+
+import logo from './assets/images/treasurebloxXjetswap.png';
+
+
 
 
 import {

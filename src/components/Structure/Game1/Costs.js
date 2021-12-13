@@ -48,7 +48,7 @@ const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
         <div className="postMainPrize">Play for Clue game cost <a className="descriptionTitle">{props.game1_entry_cost}</a> BLOX</div>
 
-        <div className="postMainPrize">90 second Time Lock Cost <a className="descriptionTitle">{props.game1_time_lock_cost}</a> BLOX</div>
+        <div className="postMainPrize">90 second Time Lock Cost <a className="descriptionTitle">XXX</a> BLOX</div>
 
         <div className="postMainPrize">Cost to submit Secret <a className="descriptionTitle">{props.game1_submit_secret_cost}</a> BLOX</div>
         <br/>

@@ -123,12 +123,12 @@ const Step1Card = (props) => {
             ) : (
               <div>
                 <div className="largeEnter">Enter Here!</div>
-                <div className="gameTitleEnter">Entry Cost {game1_entry_cost} Blox</div>
+                <div className="gameTitleEnter">Entry Cost XXX Blox</div>
                 <div>Only those who have entered may participate in this quest. The Quest participant limit will increase 10x on {headStart} so enter now to gain a head start!
                 </div>
 
                 <br />
-                <div className="descriptionTitle">Current Quest Participants {props.game1numberOfEntries} / {props.game1_entry_limit}</div>
+                <div className="descriptionTitle">Current Quest Participants {props.game1numberOfEntries}</div>
                 <br />
 
                 <br />

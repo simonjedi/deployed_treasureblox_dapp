@@ -30,7 +30,7 @@ const Obstacles = ({
                 bottom: randomBottom,
                 opacity: randomOpacity,
             }}></div>
-            <div style={{
+            <div  style={{
                 position: 'absolute',
                 backgroundColor: color,
                 width: obstacleWidth,

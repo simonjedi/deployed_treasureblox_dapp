@@ -51,6 +51,8 @@ function useWindowSize() {
 
 const Screen = (props) =>{
 
+
+
   const [playOne]=useSound(lazer,{volume:5.6});
 
 
@@ -179,7 +181,7 @@ const Screen = (props) =>{
         }
   }, [obstaclesLeftTwo])
 
-  //start second obstacle
+  //start third obstacle
   useEffect(() => {
     if (obstaclesLeftThree > -80) {
       obstaclesTimerIdThree = setInterval(() => {
@@ -198,9 +200,7 @@ const Screen = (props) =>{
 
     //check for collisions
     useEffect(() => {
-      console.log(obstaclesLeft)
-      console.log(screenWidth/2)
-      console.log(obstaclesLeft > screenWidth/2)
+
       if (
         ((birdBottom < (obstaclesNegHeight + obstacleHeight + 30) ||
         birdBottom > (obstaclesNegHeight + obstacleHeight + gap -30)) &&
@@ -274,7 +274,6 @@ const Screen = (props) =>{
     />}
 
 
-
     {exit?(
       <div>
 
@@ -298,8 +297,6 @@ const Screen = (props) =>{
 
     )}
 
-
-
     <div className="siteTitle" style={{fontSize: '30px'}}>Your Score {score}</div>
         <Bird
           birdBottom = {birdBottom}
@@ -315,6 +312,7 @@ const Screen = (props) =>{
           gap = {gap}
           obstaclesLeft = {obstaclesLeft}
           randomOpacity = {randomOpacityValue}
+
         />
 
         <Obstacles
@@ -328,7 +326,7 @@ const Screen = (props) =>{
           randomOpacity = {randomOpacityValue}
         />
 
-        <Obstacles
+        <Obstacles 
           color={'#eb00ee'}
           obstacleWidth = {obstacleWidth}
           obstacleHeight = {obstacleHeight}

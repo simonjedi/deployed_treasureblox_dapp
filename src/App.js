@@ -132,8 +132,8 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 
 
 // Set URL's
-  const web3partnership_home = "/PartnershipExampleHome/:top";
-  const partnership_treasure_hunt_page = "/PartnershipExample1/:top";
+  const web3partnership_home = "/PartnershipExampleHome/";
+  const partnership_treasure_hunt_page = "/PartnershipExample1/";
   const partnership_1 = "/PartnershipLevel1/:top";
   const partnership_1_more = "/PartnershipLevel1More/:top";
   const partnership_2 = "/PartnershipLevel2/:top";
@@ -164,15 +164,10 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 const App = (props) => {
 
 
-
-
 // Set Blox Contracts Starts
 
   const [web3,setWeb3] = useState(null)
   const [accounts,setAccounts] = useState(null)
-
-
-
 
 
   const [wallet_for_google, setWallet_for_google] = useState('Unknown');
@@ -191,35 +186,58 @@ const App = (props) => {
 
 // Set partner Example Contracts Starts
 
+
+// account info
 const [accounts_xyz_,setAccounts_xyz_] = useState(null)
 
-
+// wallet info
 const [wallet_for_google_xyz_, setWallet_for_google_xyz_] = useState('Unknown');
-
-console.log(wallet_for_google_xyz_,"string?")
 const [ip_xyz_, setIP_xyz_] = useState('');
 
+
+// Game storage
+const [GSB_contract_xyz_,set_GSB_Contract_xyz_] = useState(null)
+const [game_GSB_ContractAddress_xyz_,set_GSB_GameContractAddress_xyz_] = useState(null)
+
+
+const [GSC_contract_xyz_,set_GSC_Contract_xyz_] = useState(null)
+const [game_GSC_ContractAddress_xyz_,set_GSC_GameContractAddress_xyz_] = useState(null)
+
+
+const [GSD_contract_xyz_,set_GSD_Contract_xyz_] = useState(null)
+const [game_GSD_ContractAddress_xyz_,set_GSD_GameContractAddress_xyz_] = useState(null)
+
+
+const [MAIN_GAME_contract_xyz_,set_MAIN_GAME_Contract_xyz_] = useState(null)
+const [game_MAIN_GAME_ContractAddress_xyz_,set_MAIN_GAME_GameContractAddress_xyz_] = useState(null)
+
+
+const [VOLT_contract_xyz_,set_VOLT_Contract_xyz_] = useState(null)
+const [game_VOLT_ContractAddress_xyz_,set_VOLT_GameContractAddress_xyz_] = useState(null)
+
+
 const [contract_xyz_,setContract_xyz_] = useState(null)
+const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
+
+
+
+// token contract info
 const [tokenContract_xyz_,setTokenContract_xyz_] = useState(null)
 const [decimals_xyz_,setDecimals_xyz_] = useState(null)
 const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
-const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 // Set partner Example Contracts Ends
 
 
 // PARTNER GAME EXAMPLE STARTS
-  const [game1_id_xyz_,setGame1_id_xyz_] = useState("...Loading...")
   const [game1_live_xyz_,setGame1_live_xyz_] = useState("...Loading...")
   const [game1_prize_xyz_,setGame1_prize_xyz_] = useState("...Loading...")
   const [game1_question_hash_xyz_,setGame1_question_hash_xyz_] = useState("...Loading...")
-  const [game1_time_lock_cost_xyz_,setgame1_time_lock_cost_xyz_] = useState("...Loading...")
-  const [game1_submit_secret_cost_xyz_,setGame1_submit_secret_cost_xyz_] = useState("...Loading...")
+
+
+  const [game1_costToEnter_xyz_,setGame1_costToEnter_xyz_] = useState("...Loading...")
   const [game1_riddle_xyz_,setGame1_riddle_xyz_] = useState("...Loading...")
-  const [game1_clue_xyz_,setGame1_clue_xyz_] = useState("...Loading...")
   const [game1_head_start_time_xyz_,setGame1_head_start_time_xyz_] = useState("...Loading...")
-  const [game1_entry_limit_xyz_,setGame1_entry_limit_xyz_] = useState("...Loading...")
-  const [game1_entry_cost_xyz_,setGame1_entry_cost_xyz_] = useState("...Loading...")
 
   const [allGame1_id_xyz_,setallGame1_id_xyz_] = useState("...Loading...")
   const [allGame1_user_front_of_que_xyz_,setallGame1_user_front_of_que_xyz_] = useState("...Loading...")
@@ -240,8 +258,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [winning_address1_xyz_, setWinning_address1_xyz_] = useState("...Loading...");
   const [treasure_found1_xyz_, setTreasure_found1_xyz_] = useState("...Loading...");
   const [winning_prize1_xyz_, setWinning_prize1_xyz_] = useState("...Loading...");
-  const [question_hash_solved1_xyz_, setQuestion_hash_solved1_xyz_] = useState("...Loading...");
-  const [winning_message1_xyz_, setWinning_message1_xyz_] = useState("...Loading...");
 
   const [attemptId1_xyz_, setAttemptId1_xyz_] = useState("...Loading...");
   const [attemptAddress1_xyz_, setAttemptAddress1_xyz_] = useState("...Loading...");
@@ -306,13 +322,9 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [game1_live,setGame1_live] = useState("...Loading...")
   const [game1_prize,setGame1_prize] = useState("...Loading...")
   const [game1_question_hash,setGame1_question_hash] = useState("...Loading...")
-  const [game1_time_lock_cost,setgame1_time_lock_cost] = useState("...Loading...")
-  const [game1_submit_secret_cost,setGame1_submit_secret_cost] = useState("...Loading...")
+  const [game1_entry_cost ,setGame1_submit_secret_cost] = useState("...Loading...")
   const [game1_riddle,setGame1_riddle] = useState("...Loading...")
-  const [game1_clue,setGame1_clue] = useState("...Loading...")
   const [game1_head_start_time,setGame1_head_start_time] = useState("...Loading...")
-  const [game1_entry_limit,setGame1_entry_limit] = useState("...Loading...")
-  const [game1_entry_cost,setGame1_entry_cost] = useState("...Loading...")
 
   const [allGame1_id,setallGame1_id] = useState("...Loading...")
   const [allGame1_user_front_of_que,setallGame1_user_front_of_que] = useState("...Loading...")
@@ -333,8 +345,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   const [winning_address1, setWinning_address1] = useState("...Loading...");
   const [treasure_found1, setTreasure_found1] = useState("...Loading...");
   const [winning_prize1, setWinning_prize1] = useState("...Loading...");
-  const [question_hash_solved1, setQuestion_hash_solved1] = useState("...Loading...");
-  const [winning_message1, setWinning_message1] = useState("...Loading...");
+
 
   const [attemptId1, setAttemptId1] = useState("...Loading...");
   const [attemptAddress1, setAttemptAddress1] = useState("...Loading...");
@@ -488,6 +499,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 // network type
     const [is_meter,setIs_Meter] = useState(false);
 
+    const partnerId_xyz = 1;
+
 
 
 
@@ -538,11 +551,24 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 // PARTNER EXAMPLE CONTRACT DETAILS START
 
+// PB 0xa43BBB674C4Bd4870c98781d4C0624C87df00287
+// PC 0x677108123Bd31a75ff335D8d94640E9A69f74705
+// PD 0x7704c4bFf6070bdb1D399cEcC59333189be46233
+//
+// VOLT 0x7B84C43b096912F04C291bfb7bcdB0343f05ef2e
+// MAIN GAME 0x592B30557f4044B1d1A84254C379D4aC55533Ee4
+// TOKEN 0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930
+
 
         const accounts_xyz_ = await web3.eth.getAccounts();
+        const GSB_BSC_ = require('./GSB_BSC.abi.json');
+        const GSC_BSC_ = require('./GSC_BSC.abi.json');
+        const GSD_BSC_ = require('./GSD_BSC.abi.json');
+        const MAIN_GAME_xyz_ = require('./MAIN_GAME.abi_xyz.json');
+        const VOLT_xyz_ = require('./VOLT.abi_xyz.json');
+
         const abi_xyz_ = require('./TreasureBlox.abi_example.json');
         const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
-
 
         const Moralis = require('moralis');
 
@@ -559,51 +585,67 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
         const currentChainId = await Moralis.getChainId();
         console.log(currentChainId)
 
-        //
-        //
-
-
 
 // START NETWORK IF BSC
         if (currentChainId === 56) {
 
 
         setIs_Meter(false)
-        console.log("boo")
-        const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://bsc-dataseed.binance.org/" && "0xEcF17ea4918b27ce408404167c76597D3A9b33cA");
-        const gameAddress_xyz_ = "0xEcF17ea4918b27ce408404167c76597D3A9b33cA"
-        console.log(gameAddress_xyz_,"START treassssure")
+        // GAME CONTRACT
 
-        setGameContractAddress_xyz_(gameAddress_xyz_);
+        const GSB_contract_xyz_ = new web3.eth.Contract(GSB_BSC_,"https://bsc-dataseed.binance.org/" && "0xa43BBB674C4Bd4870c98781d4C0624C87df00287");
+        const game_GSB_Address_xyz_ = "0xa43BBB674C4Bd4870c98781d4C0624C87df00287"
+        set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
+
+
+        const GSC_contract_xyz_ = new web3.eth.Contract(GSC_BSC_,"https://bsc-dataseed.binance.org/" && "0x677108123Bd31a75ff335D8d94640E9A69f74705");
+        const game_GSC_Address_xyz_ = "0x677108123Bd31a75ff335D8d94640E9A69f74705"
+        set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
+
+
+        const GSD_contract_xyz_ = new web3.eth.Contract(GSD_BSC_,"https://bsc-dataseed.binance.org/" && "0x7704c4bFf6070bdb1D399cEcC59333189be46233");
+        const game_GSD_Address_xyz_ = "0x7704c4bFf6070bdb1D399cEcC59333189be46233"
+        set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
+
+
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_xyz_,"https://bsc-dataseed.binance.org/" && "0x592B30557f4044B1d1A84254C379D4aC55533Ee4");
+        const game_MAIN_GAME_Address_xyz_ = "0x592B30557f4044B1d1A84254C379D4aC55533Ee4"
+        set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
+
+
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_,"https://bsc-dataseed.binance.org/" && "0x7B84C43b096912F04C291bfb7bcdB0343f05ef2e");
+        const game_VOLT_Address_xyz_ = "0x7B84C43b096912F04C291bfb7bcdB0343f05ef2e"
+        set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
+
+        // TOKEN CONTRACT
 
         // BSC
           const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
           console.log(tokenContract_xyz_,"START twoooooooo")
 
-
           const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
-
           var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
           totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
 
 
-
+          // SET WEB3
           setWeb3(web3)
+          // SET ACCOUNTS
           setAccounts_xyz_(accounts_xyz_[0])
-          setContract_xyz_(contract_xyz_)
+
+          set_GSB_Contract_xyz_(GSB_contract_xyz_)
+          set_GSC_Contract_xyz_(GSC_contract_xyz_)
+          set_GSD_Contract_xyz_(GSD_contract_xyz_)
+          set_MAIN_GAME_Contract_xyz_(MAIN_GAME_contract_xyz_)
+          set_VOLT_Contract_xyz_(VOLT_contract_xyz_)
+
+          // SET TOKEN DETAILS
           setDecimals_xyz_(decimals_xyz_)
           setTotalTreasure_xyz_(totalTreasure_xyz_)
           setTokenContract_xyz_(tokenContract_xyz_)
 
           setWallet_for_google_xyz_("w="+accounts_xyz_.toString())
 
-          console.log(contract_xyz_,"loaded 1")
-
-          // GLOBAL PARTNER EXAMPLE ASYNC STARTS
-
-          const globalTries_xyz_ = await contract_xyz_.methods.totalumberOfTries().call();
-
-          setGlobalNumberOfTries_xyz_(globalTries_xyz_)
 
           // GLOBAL PARTNER EXAMPLE ASYNC Ends
 
@@ -707,6 +749,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
     // This Handels the countdown time and collecting information every 1 second so the counter goes down
         const timer = window.setInterval( async() => {
+
+
             var moment = require('moment'); // require
 
 
@@ -715,83 +759,66 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 // PARTNER EXAMPLE GET GAME 1 START
 
             // PARTNER GAME 1
+            // GSB_contract_xyz_
+            // GSC_contract_xyz_
+            // GSD_contract_xyz_
+            // MAIN_GAME_contract_xyz_
+            // VOLT_contract_xyz_
 
-            const game1_xyz_ = await contract_xyz_.methods.Games(1).call();
+            const game1_xyz_ = await GSC_contract_xyz_.methods.Games(partnerId_xyz,1).call();
+            const game1_live_xyz_ = await game1_xyz_[0];
 
-            const game1_id_xyz_ = await game1_xyz_[0];
-            const game1_live_xyz_ = await game1_xyz_[1];
-            var game1_prize_xyz_ = await game1_xyz_[2];
-
-
-            // Local Testing
-            // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-
+            var game1_prize_xyz_ = await game1_xyz_[1];
             var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
+
             setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
             game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
 
+            const game1_question_hash_xyz_ = await game1_xyz_[2];
 
-            const game1_question_hash_xyz_ = await game1_xyz_[3];
-            var game1_time_lock_cost_xyz_ = await game1_xyz_[4];
-            game1_time_lock_cost_xyz_ = game1_time_lock_cost_xyz_.substring(0, game1_time_lock_cost_xyz_.length-18);
-            var game1_submit_secret_cost_xyz_ = await game1_xyz_[5];
-            game1_submit_secret_cost_xyz_ = game1_submit_secret_cost_xyz_.substring(0, game1_submit_secret_cost_xyz_.length-18);
-            const game1_riddle_xyz_ = await game1_xyz_[6];
-            const game1_clue_xyz_ = await game1_xyz_[7];
-            const game1_head_start_time_xyz_ = await game1_xyz_[8];
-            const game1_entry_limit_xyz_ = await game1_xyz_[9];
-            var game1_entry_cost_xyz_ = await game1_xyz_[10];
-            game1_entry_cost_xyz_ = game1_entry_cost_xyz_.substring(0, game1_entry_cost_xyz_.length-18);
+            var  game1_costToEnter_xyz_ = await game1_xyz_[3];
+            game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
 
-            setGame1_id_xyz_(game1_id_xyz_)
+            const game1_riddle_xyz_ = await game1_xyz_[4];
+            const game1_head_start_time_xyz_ = await game1_xyz_[5];
+
             setGame1_live_xyz_(game1_live_xyz_)
             setGame1_prize_xyz_(game1_prize_xyz_)
             setGame1_question_hash_xyz_(game1_question_hash_xyz_)
-            setgame1_time_lock_cost_xyz_(game1_time_lock_cost_xyz_)
-
-            setGame1_submit_secret_cost_xyz_(game1_submit_secret_cost_xyz_)
-
+            setGame1_costToEnter_xyz_(game1_costToEnter_xyz_)
             setGame1_riddle_xyz_(game1_riddle_xyz_)
-            setGame1_clue_xyz_(game1_clue_xyz_)
             setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
-            setGame1_entry_limit_xyz_(game1_entry_limit_xyz_)
-            setGame1_entry_cost_xyz_(game1_entry_cost_xyz_)
 
-
-            const allGame1_xyz_ = await contract_xyz_.methods.allGames(1).call();
+            const allGame1_xyz_ = await GSB_contract_xyz_.methods.allGames(partnerId_xyz,1).call();
             const allGame1_id_xyz_ = await allGame1_xyz_[0];
             const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
             const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
             const allGame1_username_xyz_ = await allGame1_xyz_[3];
             const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
 
-            const numberOfEntriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
+            const numberOfEntriesGame1_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call();
 
-
-            const game1huntEntries_xyz_ = await contract_xyz_.methods.huntEntries(accounts_xyz_[0],1).call();
+            const game1huntEntries_xyz_ = await GSB_contract_xyz_.methods.huntEntries(accounts_xyz_[0],partnerId_xyz,1).call();
             const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
             const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
             const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
             const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
 
-
-            const pot1AnsweredCorrectly_xyz_ = await contract_xyz_.methods.Pot1AnsweredCorrectly(1).call();
+            const pot1AnsweredCorrectly_xyz_ = await GSB_contract_xyz_.methods.Pot1AnsweredCorrectly(partnerId_xyz,1).call();
             const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
             const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
             var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
-            winning_prize1_xyz_ = winning_prize1_xyz_.substring(0, winning_prize1_xyz_.length-18);
 
 
-            const question_hash_solved1_xyz_ = await pot1AnsweredCorrectly_xyz_[3];
-            const winning_message1_xyz_ = await pot1AnsweredCorrectly_xyz_[4];
-
-            const getAllLatestGameAttempts1_xyz_ = await contract_xyz_.methods.getAllLatestGameAttempts(1).call();
+            const getAllLatestGameAttempts1_xyz_ = await GSB_contract_xyz_.methods.allGames(partnerId_xyz,1).call();
             const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
             const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
             const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
             const attemptUsername1_xyz_ = await getAllLatestGameAttempts1_xyz_[3];
 
-            const entriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call()
+
+
+            const entriesGame1_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call()
             settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
 
 
@@ -853,8 +880,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             setWinning_address1_xyz_(winning_address1_xyz_)
             setTreasure_found1_xyz_(treasure_found1_xyz_)
             setWinning_prize1_xyz_(winning_prize1_xyz_)
-            setQuestion_hash_solved1_xyz_(question_hash_solved1_xyz_)
-            setWinning_message1_xyz_(winning_message1_xyz_)
+
 
             setAttemptId1_xyz_(attemptId1_xyz_)
             setAttemptAddress1_xyz_(attemptAddress1_xyz_)
@@ -864,7 +890,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             // LeaderBoardAddressSearch
 
-            const leaderboardAddressSearch_xyz_ = await contract_xyz_.methods.leaderboardAddressMapping(accounts_xyz_[0],1).call();
+            const leaderboardAddressSearch_xyz_ = await GSC_contract_xyz_.methods.leaderboardAddressMapping(accounts_xyz_[0],partnerId_xyz,1).call();
 
 
             var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
@@ -903,13 +929,13 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
-            const noOfEntrys_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
+            const noOfEntrys_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call();
 
             // LeaderBoard
 
             var game1_leaderboard_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard1_xyz_ = await leaderBoard_xyz_;
 
@@ -927,7 +953,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_game_id_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
                 game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
@@ -937,7 +963,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_address_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
                 game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
@@ -946,7 +972,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_entered_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
                 game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
@@ -957,7 +983,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_username_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
                 game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
@@ -968,7 +994,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_tries_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
                 game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
@@ -979,7 +1005,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
             var game1_leaderboard_stage_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
                 game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
@@ -989,14 +1015,14 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
 
-            const game1_team1_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,1).call();
+            const game1_team1_details_xyz_ = await GSC_contract_xyz_.methods.TeamDetails(partnerId_xyz,1,1).call();
             const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
             const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
             const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
             const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
             const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
 
-            const game1_team2_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,2).call();
+            const game1_team2_details_xyz_ = await GSC_contract_xyz_.methods.TeamDetails(partnerId_xyz,1,2).call();
             const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
             const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
             const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
@@ -1037,31 +1063,21 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
               const game1_question_hash = await game1[3];
-              var game1_time_lock_cost = await game1[4];
-              game1_time_lock_cost = game1_time_lock_cost.substring(0, game1_time_lock_cost.length-18);
-              var game1_submit_secret_cost = await game1[5];
-              game1_submit_secret_cost = game1_submit_secret_cost.substring(0, game1_submit_secret_cost.length-18);
+
+              var game1_entry_cost  = await game1[5];
+              game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
               const game1_riddle = await game1[6];
-              const game1_clue = await game1[7];
               const game1_head_start_time = await game1[8];
-              const game1_entry_limit = await game1[9];
-              var game1_entry_cost = await game1[10];
-              game1_entry_cost = game1_entry_cost.substring(0, game1_entry_cost.length-18);
-              console.log("cuuuunt")
 
               setGame1_id(game1_id)
               setGame1_live(game1_live)
               setGame1_prize(game1_prize)
               setGame1_question_hash(game1_question_hash)
-              setgame1_time_lock_cost(game1_time_lock_cost)
 
-              setGame1_submit_secret_cost(game1_submit_secret_cost)
+              setGame1_submit_secret_cost(game1_entry_cost )
 
               setGame1_riddle(game1_riddle)
-              setGame1_clue(game1_clue)
               setGame1_head_start_time(game1_head_start_time)
-              setGame1_entry_limit(game1_entry_limit)
-              setGame1_entry_cost(game1_entry_cost)
 
 
             const allGame1 = await contract.methods.allGames(1).call();
@@ -1088,9 +1104,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             var winning_prize1 =  await pot1AnsweredCorrectly[2];
             winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
 
-
-            const question_hash_solved1 = await pot1AnsweredCorrectly[3];
-            const winning_message1 = await pot1AnsweredCorrectly[4];
 
             const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
             const attemptId1 = await getAllLatestGameAttempts1[0];
@@ -1182,8 +1195,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
             setWinning_address1(winning_address1)
             setTreasure_found1(treasure_found1)
             setWinning_prize1(winning_prize1)
-            setQuestion_hash_solved1(question_hash_solved1)
-            setWinning_message1(winning_message1)
+
 
             setAttemptId1(attemptId1)
             setAttemptAddress1(attemptAddress1)
@@ -1781,9 +1793,8 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
           const game1_xyz_ = await contract_xyz_.methods.Games(1).call();
 
-          const game1_id_xyz_ = await game1_xyz_[0];
-          const game1_live_xyz_ = await game1_xyz_[1];
-          var game1_prize_xyz_ = await game1_xyz_[2];
+          const game1_live_xyz_ = await game1_xyz_[0];
+          var game1_prize_xyz_ = await game1_xyz_[1];
 
 
           // Local Testing
@@ -1795,30 +1806,20 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
           const game1_question_hash_xyz_ = await game1_xyz_[3];
-          var game1_time_lock_cost_xyz_ = await game1_xyz_[4];
-          game1_time_lock_cost_xyz_ = game1_time_lock_cost_xyz_.substring(0, game1_time_lock_cost_xyz_.length-18);
-          var game1_submit_secret_cost_xyz_ = await game1_xyz_[5];
-          game1_submit_secret_cost_xyz_ = game1_submit_secret_cost_xyz_.substring(0, game1_submit_secret_cost_xyz_.length-18);
-          const game1_riddle_xyz_ = await game1_xyz_[6];
-          const game1_clue_xyz_ = await game1_xyz_[7];
-          const game1_head_start_time_xyz_ = await game1_xyz_[8];
-          const game1_entry_limit_xyz_ = await game1_xyz_[9];
-          var game1_entry_cost_xyz_ = await game1_xyz_[10];
-          game1_entry_cost_xyz_ = game1_entry_cost_xyz_.substring(0, game1_entry_cost_xyz_.length-18);
 
-          setGame1_id_xyz_(game1_id_xyz_)
+          var  game1_costToEnter_xyz_ = await game1_xyz_[5];
+          game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
+          const game1_riddle_xyz_ = await game1_xyz_[6];
+          const game1_head_start_time_xyz_ = await game1_xyz_[8];
+
           setGame1_live_xyz_(game1_live_xyz_)
           setGame1_prize_xyz_(game1_prize_xyz_)
           setGame1_question_hash_xyz_(game1_question_hash_xyz_)
-          setgame1_time_lock_cost_xyz_(game1_time_lock_cost_xyz_)
 
-          setGame1_submit_secret_cost_xyz_(game1_submit_secret_cost_xyz_)
+          setGame1_costToEnter_xyz_( game1_costToEnter_xyz_)
 
           setGame1_riddle_xyz_(game1_riddle_xyz_)
-          setGame1_clue_xyz_(game1_clue_xyz_)
           setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
-          setGame1_entry_limit_xyz_(game1_entry_limit_xyz_)
-          setGame1_entry_cost_xyz_(game1_entry_cost_xyz_)
 
 
           const allGame1_xyz_ = await contract_xyz_.methods.allGames(1).call();
@@ -1845,8 +1846,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           winning_prize1_xyz_ = winning_prize1_xyz_.substring(0, winning_prize1_xyz_.length-18);
 
 
-          const question_hash_solved1_xyz_ = await pot1AnsweredCorrectly_xyz_[3];
-          const winning_message1_xyz_ = await pot1AnsweredCorrectly_xyz_[4];
 
           const getAllLatestGameAttempts1_xyz_ = await contract_xyz_.methods.getAllLatestGameAttempts(1).call();
           const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
@@ -1916,8 +1915,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           setWinning_address1_xyz_(winning_address1_xyz_)
           setTreasure_found1_xyz_(treasure_found1_xyz_)
           setWinning_prize1_xyz_(winning_prize1_xyz_)
-          setQuestion_hash_solved1_xyz_(question_hash_solved1_xyz_)
-          setWinning_message1_xyz_(winning_message1_xyz_)
+
 
           setAttemptId1_xyz_(attemptId1_xyz_)
           setAttemptAddress1_xyz_(attemptAddress1_xyz_)
@@ -2099,31 +2097,22 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
             const game1_question_hash = await game1[3];
-            var game1_time_lock_cost = await game1[4];
-            game1_time_lock_cost = game1_time_lock_cost.substring(0, game1_time_lock_cost.length-18);
-            var game1_submit_secret_cost = await game1[5];
-            game1_submit_secret_cost = game1_submit_secret_cost.substring(0, game1_submit_secret_cost.length-18);
+
+            var game1_entry_cost  = await game1[5];
+            game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
             const game1_riddle = await game1[6];
-            const game1_clue = await game1[7];
             const game1_head_start_time = await game1[8];
-            const game1_entry_limit = await game1[9];
-            var game1_entry_cost = await game1[10];
-            game1_entry_cost = game1_entry_cost.substring(0, game1_entry_cost.length-18);
 
 
             setGame1_id(game1_id)
             setGame1_live(game1_live)
             setGame1_prize(game1_prize)
             setGame1_question_hash(game1_question_hash)
-            setgame1_time_lock_cost(game1_time_lock_cost)
 
-            setGame1_submit_secret_cost(game1_submit_secret_cost)
+            setGame1_submit_secret_cost(game1_entry_cost )
 
             setGame1_riddle(game1_riddle)
-            setGame1_clue(game1_clue)
             setGame1_head_start_time(game1_head_start_time)
-            setGame1_entry_limit(game1_entry_limit)
-            setGame1_entry_cost(game1_entry_cost)
 
 
           const allGame1 = await contract.methods.allGames(1).call();
@@ -2151,8 +2140,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
 
 
-          const question_hash_solved1 = await pot1AnsweredCorrectly[3];
-          const winning_message1 = await pot1AnsweredCorrectly[4];
+
 
           const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
           const attemptId1 = await getAllLatestGameAttempts1[0];
@@ -2244,8 +2232,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
           setWinning_address1(winning_address1)
           setTreasure_found1(treasure_found1)
           setWinning_prize1(winning_prize1)
-          setQuestion_hash_solved1(question_hash_solved1)
-          setWinning_message1(winning_message1)
+
 
           setAttemptId1(attemptId1)
           setAttemptAddress1(attemptAddress1)
@@ -2729,10 +2716,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 // XXX
 
       // GAME1
-  game1_id,game1_live,game1_prize,game1_question_hash,game1_time_lock_cost,game1_submit_secret_cost,game1_riddle,game1_clue,
+  game1_id,game1_live,game1_prize,game1_question_hash,game1_entry_cost ,game1_riddle,
   allGame1_id,allGame1_user_front_of_que,allGame1_deadline_time,allGame1_username,allGame1_total_game_tries,countGame1,countGame1DeadlineTrue,
-  game1_head_start_time,game1_entry_limit,game1_entry_cost,game1numberOfEntries,userGame1_id,userEntered_game1,userGame1_headstart_time,userGame1_live,
-  winning_address1,treasure_found1,winning_prize1,question_hash_solved1,winning_message1,attemptId1,attemptUsername1,attemptDeadline1,attemptAddress1,
+  game1_head_start_time,game1numberOfEntries,userGame1_id,userEntered_game1,userGame1_headstart_time,userGame1_live,
+  winning_address1,treasure_found1,winning_prize1,attemptId1,attemptUsername1,attemptDeadline1,attemptAddress1,
   totalGameEntriesGame1,game1LeaderBoardIndex,game1LeaderBoardGameID,game1LeaderBoardAddress,
   game1LeaderBoardEntered,game1LeaderBoardUsername,game1LeaderBoardTries,game1LeaderBoardStage,game1LeaderBoard,game1UserList,state_leaderboardAddressSearch_huntid_game1,state_leaderboardAddressSearch_address_game1,state_leaderboardAddressSearch_entered_game1,
 
@@ -2768,10 +2755,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
   // PARTNER EXAMPLE STARTS
   web3,accounts_xyz_,wallet_for_google_xyz_,ip_xyz_,contract_xyz_,tokenContract_xyz_,decimals_xyz_,totalTreasure_xyz_,globalNumberOfTries_xyz_,gameContractAddress_xyz_,
 
-  game1_id_xyz_,game1_live_xyz_,game1_prize_xyz_,game1_question_hash_xyz_,game1_time_lock_cost_xyz_,game1_submit_secret_cost_xyz_,game1_riddle_xyz_,game1_clue_xyz_,
+  game1_live_xyz_,game1_prize_xyz_,game1_question_hash_xyz_, game1_costToEnter_xyz_,game1_riddle_xyz_,
   allGame1_id_xyz_,allGame1_user_front_of_que_xyz_,allGame1_deadline_time_xyz_,allGame1_username_xyz_,allGame1_total_game_tries_xyz_,countGame1_xyz_,countGame1DeadlineTrue_xyz_,
-  game1_head_start_time_xyz_,game1_entry_limit_xyz_,game1_entry_cost_xyz_,game1numberOfEntries_xyz_,userGame1_id_xyz_,userEntered_game1_xyz_,userGame1_headstart_time_xyz_,userGame1_live_xyz_,
-  winning_address1_xyz_,treasure_found1_xyz_,winning_prize1_xyz_,question_hash_solved1_xyz_,winning_message1_xyz_,attemptId1_xyz_,attemptUsername1_xyz_,attemptDeadline1_xyz_,attemptAddress1_xyz_,
+  game1_head_start_time_xyz_,game1numberOfEntries_xyz_,userGame1_id_xyz_,userEntered_game1_xyz_,userGame1_headstart_time_xyz_,userGame1_live_xyz_,
+  winning_address1_xyz_,treasure_found1_xyz_,winning_prize1_xyz_,attemptId1_xyz_,attemptUsername1_xyz_,attemptDeadline1_xyz_,attemptAddress1_xyz_,
   totalGameEntriesGame1_xyz_,game1LeaderBoardIndex_xyz_,game1LeaderBoardGameID_xyz_,game1LeaderBoardAddress_xyz_,
   game1LeaderBoardEntered_xyz_,game1LeaderBoardUsername_xyz_,game1LeaderBoardTries_xyz_,game1LeaderBoardStage_xyz_,game1LeaderBoard_xyz_,game1UserList_xyz_,state_leaderboardAddressSearch_huntid_game1_xyz_,state_leaderboardAddressSearch_address_game1_xyz_,state_leaderboardAddressSearch_entered_game1_xyz_,
   state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_leaderboardAddressSearch_team_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
@@ -2794,15 +2781,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
 
     return (
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2842,13 +2820,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                   game1_live={game1_live}
                   game1_prize={game1_prize}
                   game1_question_hash={game1_question_hash}
-                  game1_time_lock_cost={game1_time_lock_cost}
-                  game1_submit_secret_cost={game1_submit_secret_cost}
+
+                  game1_entry_cost ={game1_entry_cost }
                   game1_riddle={game1_riddle}
-                  game1_clue={game1_clue}
                   game1_head_start_time={game1_head_start_time}
-                  game1_entry_limit={game1_entry_limit}
-                  game1_entry_cost={game1_entry_cost}
 
                   allGame1_id={allGame1_id}
                   allGasme1_user_front_of_que={allGame1_user_front_of_que}
@@ -2907,13 +2882,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 game1_live={game1_live}
                 game1_prize={game1_prize}
                 game1_question_hash={game1_question_hash}
-                game1_time_lock_cost={game1_time_lock_cost}
-                game1_submit_secret_cost={game1_submit_secret_cost}
+
+                game1_entry_cost ={game1_entry_cost }
                 game1_riddle={game1_riddle}
-                game1_clue={game1_clue}
                 game1_head_start_time={game1_head_start_time}
-                game1_entry_limit={game1_entry_limit}
-                game1_entry_cost={game1_entry_cost}
                 allGame1_id={allGame1_id}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que}
                 allGame1_deadline_time={allGame1_deadline_time}
@@ -2933,8 +2905,6 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 winning_address1={winning_address1}
                 treasure_found1={treasure_found1}
                 winning_prize1={winning_prize1}
-                question_hash_solved1={question_hash_solved1}
-                winning_message1={winning_message1}
                 attemptId1={attemptId1}
                 attemptAddress1={attemptAddress1}
                 attemptUsername1={attemptUsername1}
@@ -2946,13 +2916,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 game1_live={game1_live}
                 game1_prize={game1_prize}
                 game1_question_hash={game1_question_hash}
-                game1_time_lock_cost={game1_time_lock_cost}
-                game1_submit_secret_cost={game1_submit_secret_cost}
+
+                game1_entry_cost ={game1_entry_cost }
                 game1_riddle={game1_riddle}
-                game1_clue={game1_clue}
                 game1_head_start_time={game1_head_start_time}
-                game1_entry_limit={game1_entry_limit}
-                game1_entry_cost={game1_entry_cost}
 
                 allGame1_id={allGame1_id}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que}
@@ -3092,13 +3059,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               game1_live={game1_live}
               game1_prize={game1_prize}
               game1_question_hash={game1_question_hash}
-              game1_time_lock_cost={game1_time_lock_cost}
-              game1_submit_secret_cost={game1_submit_secret_cost}
+
+              game1_entry_cost ={game1_entry_cost }
               game1_riddle={game1_riddle}
-              game1_clue={game1_clue}
               game1_head_start_time={game1_head_start_time}
-              game1_entry_limit={game1_entry_limit}
-              game1_entry_cost={game1_entry_cost}
 
               allGame1_id={allGame1_id}
               allGasme1_user_front_of_que={allGame1_user_front_of_que}
@@ -3181,13 +3145,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 game1_live={game1_live}
                 game1_prize={game1_prize}
                 game1_question_hash={game1_question_hash}
-                game1_time_lock_cost={game1_time_lock_cost}
-                game1_submit_secret_cost={game1_submit_secret_cost}
+
+                game1_entry_cost ={game1_entry_cost }
                 game1_riddle={game1_riddle}
-                game1_clue={game1_clue}
                 game1_head_start_time={game1_head_start_time}
-                game1_entry_limit={game1_entry_limit}
-                game1_entry_cost={game1_entry_cost}
 
                 allGame1_id={allGame1_id}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que}
@@ -4192,17 +4153,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 tokenContract={tokenContract_xyz_}
                 wallet_for_google={wallet_for_google_xyz_}
                 ip={ip_xyz_}
-                game1_id={game1_id_xyz_}
                 game1_live={game1_live_xyz_}
                 game1_prize={game1_prize_xyz_}
                 game1_question_hash={game1_question_hash_xyz_}
-                game1_time_lock_cost={game1_time_lock_cost_xyz_}
-                game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+                game1_entry_cost ={game1_costToEnter_xyz_}
                 game1_riddle={game1_riddle_xyz_}
-                game1_clue={game1_clue_xyz_}
                 game1_head_start_time={game1_head_start_time_xyz_}
-                game1_entry_limit={game1_entry_limit_xyz_}
-                game1_entry_cost={game1_entry_cost_xyz_}
                 allGame1_id={allGame1_id_xyz_}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
                 allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4222,8 +4178,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 winning_address1={winning_address1_xyz_}
                 treasure_found1={treasure_found1_xyz_}
                 winning_prize1={winning_prize1_xyz_}
-                question_hash_solved1={question_hash_solved1_xyz_}
-                winning_message1={winning_message1_xyz_}
+
                 attemptId1={attemptId1_xyz_}
                 attemptAddress1={attemptAddress1_xyz_}
                 attemptUsername1={attemptUsername1_xyz_}
@@ -4285,17 +4240,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 tokenContract={tokenContract_xyz_}
                 wallet_for_google={wallet_for_google_xyz_}
                 ip={ip_xyz_}
-                game1_id={game1_id_xyz_}
                 game1_live={game1_live_xyz_}
                 game1_prize={game1_prize_xyz_}
                 game1_question_hash={game1_question_hash_xyz_}
-                game1_time_lock_cost={game1_time_lock_cost_xyz_}
-                game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+                game1_entry_cost={game1_costToEnter_xyz_}
                 game1_riddle={game1_riddle_xyz_}
-                game1_clue={game1_clue_xyz_}
                 game1_head_start_time={game1_head_start_time_xyz_}
-                game1_entry_limit={game1_entry_limit_xyz_}
-                game1_entry_cost={game1_entry_cost_xyz_}
                 allGame1_id={allGame1_id_xyz_}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
                 allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4315,8 +4265,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 winning_address1={winning_address1_xyz_}
                 treasure_found1={treasure_found1_xyz_}
                 winning_prize1={winning_prize1_xyz_}
-                question_hash_solved1={question_hash_solved1_xyz_}
-                winning_message1={winning_message1_xyz_}
+
                 attemptId1={attemptId1_xyz_}
                 attemptAddress1={attemptAddress1_xyz_}
                 attemptUsername1={attemptUsername1_xyz_}
@@ -4380,17 +4329,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4410,8 +4354,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4475,17 +4418,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4505,8 +4443,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4570,17 +4507,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4600,8 +4532,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4665,17 +4596,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4695,8 +4621,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4760,17 +4685,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4790,8 +4710,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4855,17 +4774,12 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               tokenContract={tokenContract_xyz_}
               wallet_for_google={wallet_for_google_xyz_}
               ip={ip_xyz_}
-              game1_id={game1_id_xyz_}
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_time_lock_cost={game1_time_lock_cost_xyz_}
-              game1_submit_secret_cost={game1_submit_secret_cost_xyz_}
+              game1_entry_cost ={ game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
-              game1_clue={game1_clue_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
-              game1_entry_limit={game1_entry_limit_xyz_}
-              game1_entry_cost={game1_entry_cost_xyz_}
               allGame1_id={allGame1_id_xyz_}
               allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
@@ -4885,8 +4799,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
-              question_hash_solved1={question_hash_solved1_xyz_}
-              winning_message1={winning_message1_xyz_}
+
               attemptId1={attemptId1_xyz_}
               attemptAddress1={attemptAddress1_xyz_}
               attemptUsername1={attemptUsername1_xyz_}
@@ -4947,7 +4860,7 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
               <Route path="">
               <Launchpad
-              is_meter={is_meter}
+                is_meter={is_meter}
                 accounts={accounts}
                 wallet_for_google={wallet_for_google}
                 ip={ip}
@@ -4955,13 +4868,10 @@ const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
                 game1_live={game1_live}
                 game1_prize={game1_prize}
                 game1_question_hash={game1_question_hash}
-                game1_time_lock_cost={game1_time_lock_cost}
-                game1_submit_secret_cost={game1_submit_secret_cost}
+
+                game1_entry_cost ={game1_entry_cost }
                 game1_riddle={game1_riddle}
-                game1_clue={game1_clue}
                 game1_head_start_time={game1_head_start_time}
-                game1_entry_limit={game1_entry_limit}
-                game1_entry_cost={game1_entry_cost}
 
                 allGame1_id={allGame1_id}
                 allGasme1_user_front_of_que={allGame1_user_front_of_que}

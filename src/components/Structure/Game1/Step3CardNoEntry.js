@@ -63,9 +63,6 @@ const Step3Card = (props) => {
                 <div className="descriptionTitle">TIME LOCK ACTIVATED PLEASE WAIT!</div>
 
                 <br />
-                {props.attemptUsername1} has activated the time lock!
-
-                <br />
                 You can attempt the quest once the countdown has expired!
 
                 <br />

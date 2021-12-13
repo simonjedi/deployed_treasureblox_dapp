@@ -54,7 +54,7 @@ const SingleCard = (props) => {
       <Card.Body className='customBodyTwo'>
         <div className="gameMainTitle">{props.game1_riddle}</div>
 
-        <div className="gamePrize"><p variant="primary" onClick={handleShow}>{props.game1_clue}</p></div>
+        <div className="gamePrize"><p variant="primary" onClick={handleShow}>XXX</p></div>
         <div className="postMainPrize">Best not go to Hawaii</div>
         <br/>
 

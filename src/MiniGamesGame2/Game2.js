@@ -140,7 +140,9 @@ const Level2Game2 = (props) => {
         <div>
         {play?(
           <div style={{height: height}}>
-          <Screen {...props}/>
+
+          <Screen  {...props}/>
+
           <ReactAudioPlayer
             src={bloxEscape}
             autoPlay

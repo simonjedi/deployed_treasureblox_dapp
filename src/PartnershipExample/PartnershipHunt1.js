@@ -296,7 +296,7 @@ const handleSubmitEnterDave = async() => {
     return (
 
 
-      <div className="custombackground">
+      <div style={{height: height*4}} className="custombackground">
 
 
 

@@ -147,7 +147,7 @@ const Step1Card = (props) => {
                 </div>
 
                 <br />
-                <div className="descriptionTitle">Current Quest Participants {props.game1numberOfEntries} / {props.game1_entry_limit}</div>
+                <div className="descriptionTitle">Current Quest Participants {props.game1numberOfEntries}</div>
                 <br />
 
                 <br />

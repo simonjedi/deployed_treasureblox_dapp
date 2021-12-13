@@ -29,7 +29,6 @@ const EnterHuntCards = (props) => {
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
 
-console.log("enter card.js: ",props.attemptAddress1)
 
   // console.log(game1_id)s
 

@@ -1,15 +1,14 @@
-import MyNav from './MyNav';
-import SingleCard from './components/Structure/Game1/SingleCard';
+// import MyNav from './MyNav';
+// import SingleCard from './components/Structure/Game1/SingleCard';
 import moment from 'moment';
 
-import Iframe from 'react-iframe'
+// import Iframe from 'react-iframe'
 
 
 // import img1 from './Treasure-hunt.jpeg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/Structure/HomeCard.css';
+// import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './components/Structure/HomeCard.css';
 
 import React, { Component, useState, useEffect } from 'react'
 import Connection from "./Connection";
@@ -54,7 +53,7 @@ import {
   Link
 } from "react-router-dom";
 
-import { HashLink as LinkHeader } from 'react-router-hash-link';
+// import { HashLink as LinkHeader } from 'react-router-hash-link';
 
 
 import TagManager from 'react-gtm-module'
@@ -157,18 +156,14 @@ const { width, height } = useWindowSize();
 
 
 
-
     return (
 
 
-      <div style={{height: height}} className="background">
+      <div style={{height: height*2}} className="background">
       <Helmet>
         <title>TreasureBlox | Launchpad</title>
       </Helmet>
       <Container className='mt-5' fluid="md">
-
-
-
 
 
 
@@ -185,7 +180,7 @@ const { width, height } = useWindowSize();
       <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
 
 
-      <p sm={12} lg={4} className="d-none d-lg-block">Launching Nov 2021.</p>
+      <p sm={12} lg={4} className="d-none d-lg-block">We are building and preparing to launch with our partners to be anounced shortly!</p>
 
 <center>
 

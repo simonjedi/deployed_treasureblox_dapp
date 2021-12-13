@@ -28,10 +28,13 @@ import img5 from './assets/images/treasureblox_header3.png';
 import img6 from './assets/images/treasureblox_header4.png';
 import img7 from './assets/images/treasureblox_header5.png';
 import img8 from './assets/images/treasureblox_header6.png';
+import img9 from './assets/images/jf_background.png';
+
+
 
 import { Helmet } from 'react-helmet';
 
-
+import FighterScreen from './GamesSelection/FighterPilot/FighterScreen';
 
 import {Tooltip,OverlayTrigger,Form,ButtonGroup,ButtonToolbar,CardColumns,CardGroup,Card,Button,Container,Nav,Navbar,NavDropdown,Carousel } from 'react-bootstrap';
 
@@ -97,12 +100,6 @@ const PartnerHome = (props) => {
   }
 
 
-
-
-
-
-
-
   const commaNumber = require('comma-number')
 
 
@@ -110,9 +107,7 @@ const PartnerHome = (props) => {
   const game1_live = props.game1_live;
   const game1_prize = commaNumber(props.game1_prize,',');
   const game1_question_hash = props.game1_question_hash;
-  const game1_time_lock_cost = props.game1_time_lock_cost;
   const game1_submit_secret_cost = props.game1_submit_secret_cost;
-  const game1_clue = props.game1_clue;
 
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
@@ -181,22 +176,21 @@ const { width, height } = useWindowSize();
       <Carousel.Item>
       <img
         className="d-block w-100 cardRounded "
-        src={img6}
+        src={img9}
         alt="First slide"
       />
 
       <Carousel.Caption >
-      <h3 className="d-none d-lg-block">Treasure hunts As A Service (THAAS)</h3>
+      <h3 className="d-none d-lg-block">Battle for the sky - strike fighter 'earn your wings'</h3>
 
-      <p className="d-lg-none">Treasure hunts As A Service (THAAS)</p>
+      <p className="d-lg-none">Battle for the sky - strike fighter 'earn your wings'</p>
 
-      <p>Would you like to have your very own custom treasure hunt? </p>
+      <p>The ultimate jetswap treasurehunt adventure!</p>
       <LinkHeader to="/PartnershipExample1">
         <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
       </LinkHeader>
 
 
-      <Button   href = {Pdf} target = "_blank">Treasure Hunt Form</Button>
 
 
       </Carousel.Caption>
@@ -206,10 +200,10 @@ const { width, height } = useWindowSize();
     </Carousel>
 
     <br/>
-    <div className="siteTitle">IFRAME EMBEDDED ON YOUR PLATFORM</div>
+    <div className="siteTitle">IFRAME EMBEDDED example</div>
     <br/>
 
-          <Iframe url="https://www.treasureblox.finance/PartnershipExample1"
+          <Iframe url="https://www.treasureblox.finance/PartnershipExampleHome"
                   width="100%"
                   height="1334"
                   display="initial"
@@ -225,6 +219,9 @@ const { width, height } = useWindowSize();
 
 
       </Container>
+
+
+
 
 
 

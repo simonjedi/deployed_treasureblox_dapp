@@ -17,9 +17,6 @@ const Bird = ({birdBottom, birdLeft}) => {
             backgroundSize: "cover",
 
 
-
-
-
         }}></div>
     )
 }

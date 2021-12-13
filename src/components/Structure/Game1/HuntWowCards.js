@@ -45,7 +45,7 @@ const HuntWowCards = (props) => {
               <div className="descriptionTitle">Cost to Enter {props.game1_entry_cost} BLOX</div>
               <div className="descriptionTitle">Play for Clue game cost {props.game1_entry_cost} BLOX</div>
 
-              <div className="descriptionTitle">90 second Time Lock Cost {props.game1_time_lock_cost} BLOX</div>
+              <div className="descriptionTitle">90 second Time Lock Cost XXX BLOX</div>
               <div className="descriptionTitle">Cost to submit Secret {props.game1_submit_secret_cost} BLOX</div>
 <br/>
 

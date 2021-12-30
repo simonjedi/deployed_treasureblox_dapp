@@ -182,9 +182,7 @@ const Level2Game1 = (props) => {
         {play?(
 
 
-
           // here
-
 
           <div style={{height: height}}>
 

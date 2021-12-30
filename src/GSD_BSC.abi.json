@@ -1,9 +1,190 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayerGamesTally",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "winningTeamId",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayerGlobalAbalities",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "abilityName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "abilityAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "abilityValue",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "abilityPos",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "abilityNeg",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "PlayerGlobalProfile",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "userName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "telegram",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "messageToWorld",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "avitar",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Invites",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "PlayerGlobalStats",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "rank",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "wins",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "accessContract",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "constructor1",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "contractAccess",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -162,6 +343,45 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "initialized",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isOwner",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "proxiableUUID",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -304,226 +524,6 @@
 		"name": "updateCode",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "accessContract",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "contractAccess",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "initialized",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "isOwner",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "PlayerGamesTally",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "winningTeamId",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "PlayerGlobalAbalities",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "abilityName",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "abilityAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "abilityValue",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "abilityPos",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "abilityNeg",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "PlayerGlobalProfile",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "userName",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "telegram",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "messageToWorld",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "avitar",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "Invites",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "PlayerGlobalStats",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "rank",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "wins",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "proxiableUUID",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "pure",
 		"type": "function"
 	}
 ]

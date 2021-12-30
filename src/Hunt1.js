@@ -306,12 +306,14 @@ const Hunt1 = (props) => {
     const game1_live = props.game1_live;
 
 
+console.log(props.game1team1_team_actual_points,"meeeeeeee")
+
 
 
       return (
 
 
-        <div className="background">
+        <div style={{height: height*4}} className="background">
 
 
         {redirectLevel1?(

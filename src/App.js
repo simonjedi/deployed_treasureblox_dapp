@@ -90,14 +90,9 @@ import Level4Game2 from "./MiniGamesGame2/Game4";
 //
 import User from './components/Structure/Game1/User';
 
-
 import { Helmet } from 'react-helmet';
 
-
 import axios from 'axios';
-
-
-
 
 // Partnerships Template
 
@@ -112,16 +107,20 @@ import PartnershipLevel2More from "./PartnershipExample/MiniGamesSelector/Game2M
 import PartnershipLevel3 from "./PartnershipExample/MiniGamesSelector/Game3";
 import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 
+import PartnershipRandom1 from "./PartnershipExample/MiniGamesSelector/Random1";
+import PartnershipGun from "./PartnershipExample/MiniGamesSelector/Random2";
+
+
 
   // Handle Partner Landing PAGE
 
   var partnerLandingPageHome = false;
 
-  if (window.location.href.includes("PartnershipExampleHome")){
+  if (window.location.href.includes("JetswapXTreasureBloxHome/:top")){
     var partnerLandingPageHome = true;
   }
 
-  if (window.location.href.includes("PartnershipExample1")){
+  if (window.location.href.includes("JetswapXTreasureBlox1/:top")){
     var partnerLandingPageHome = true;
   }
 
@@ -132,14 +131,18 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 
 
 // Set URL's
-  const web3partnership_home = "/PartnershipExampleHome/";
-  const partnership_treasure_hunt_page = "/PartnershipExample1/";
+  const web3partnership_home = "/JetswapXTreasureBloxHome/:top";
+  const partnership_treasure_hunt_page = "/JetswapXTreasureBlox1/:top";
   const partnership_1 = "/PartnershipLevel1/:top";
   const partnership_1_more = "/PartnershipLevel1More/:top";
   const partnership_2 = "/PartnershipLevel2/:top";
   const partnership_2_more = "/PartnershipLevel2More/:top";
   const partnership_3 = "/PartnershipLevel3/:top";
   const partnership_4 = "/PartnershipLevel4/:top";
+  const partnership_random1 = "/Random1/:top";
+  const partnership_gun = "/Random2/:top";
+
+
 
   const game1_level_1 = "/Level1Game1/:top";
   const game1_level_1_more = "/Game1MoreGame1/:top";
@@ -156,30 +159,58 @@ import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
   const game2_level_4 = "/Level4Game2/:top";
 
 
-
-
-
-
-
 const App = (props) => {
 
 
 // Set Blox Contracts Starts
 
   const [web3,setWeb3] = useState(null)
+  // const [accounts,setAccounts] = useState(null)
+  //
+  //
+  // const [wallet_for_google, setWallet_for_google] = useState('Unknown');
+  //
+  // console.log(wallet_for_google,"string?")
+  // const [ip, setIP] = useState('');
+  //
+  // const [contract,setContract] = useState(null)
+  // const [tokenContract,setTokenContract] = useState(null)
+  // const [decimals,setDecimals] = useState(null)
+  // const [totalTreasure,setTotalTreasure] = useState(null)
+  // const [gameContractAddress,setGameContractAddress] = useState(null)
+
+
+  // Set Global storage BSC
+  // Game storage
+  const [GSB_contract_bsc_,set_GSB_Contract_xyz_] = useState(null)
+  const [game_GSB_ContractAddress_xyz_,set_GSB_GameContractAddress_xyz_] = useState(null)
+
+
+  const [GSC_contract_bsc_,set_GSC_Contract_xyz_] = useState(null)
+  const [game_GSC_ContractAddress_xyz_,set_GSC_GameContractAddress_xyz_] = useState(null)
+
+
+  const [GSD_contract_bsc_,set_GSD_Contract_xyz_] = useState(null)
+  const [game_GSD_ContractAddress_xyz_,set_GSD_GameContractAddress_xyz_] = useState(null)
+
+
+  // account info
   const [accounts,setAccounts] = useState(null)
 
+  // wallet info
+  const [wallet_for_google, setWallet_for_google_treasurebloxNative_] = useState('Unknown');
+  const [ip, setIP_treasurebloxNative_] = useState('');
 
-  const [wallet_for_google, setWallet_for_google] = useState('Unknown');
 
-  console.log(wallet_for_google,"string?")
-  const [ip, setIP] = useState('');
+  const [MAIN_GAME_contract_treasurebloxNative_,set_MAIN_GAME_Contract_treasurebloxNative_] = useState(null)
+  const [game_MAIN_GAME_ContractAddress_treasurebloxNative_,set_MAIN_GAME_GameContractAddress_treasurebloxNative_] = useState(null)
 
-  const [contract,setContract] = useState(null)
-  const [tokenContract,setTokenContract] = useState(null)
-  const [decimals,setDecimals] = useState(null)
-  const [totalTreasure,setTotalTreasure] = useState(null)
-  const [gameContractAddress,setGameContractAddress] = useState(null)
+
+  const [VOLT_contract_treasurebloxNative_,set_VOLT_Contract_treasurebloxNative_] = useState(null)
+  const [game_VOLT_ContractAddress_treasurebloxNative_,set_VOLT_GameContractAddress_treasurebloxNative_] = useState(null)
+
+
+
   // Set Blox Contracts Ends
 
 
@@ -187,25 +218,10 @@ const App = (props) => {
 // Set partner Example Contracts Starts
 
 
-// account info
-const [accounts_xyz_,setAccounts_xyz_] = useState(null)
 
 // wallet info
 const [wallet_for_google_xyz_, setWallet_for_google_xyz_] = useState('Unknown');
 const [ip_xyz_, setIP_xyz_] = useState('');
-
-
-// Game storage
-const [GSB_contract_xyz_,set_GSB_Contract_xyz_] = useState(null)
-const [game_GSB_ContractAddress_xyz_,set_GSB_GameContractAddress_xyz_] = useState(null)
-
-
-const [GSC_contract_xyz_,set_GSC_Contract_xyz_] = useState(null)
-const [game_GSC_ContractAddress_xyz_,set_GSC_GameContractAddress_xyz_] = useState(null)
-
-
-const [GSD_contract_xyz_,set_GSD_Contract_xyz_] = useState(null)
-const [game_GSD_ContractAddress_xyz_,set_GSD_GameContractAddress_xyz_] = useState(null)
 
 
 const [MAIN_GAME_contract_xyz_,set_MAIN_GAME_Contract_xyz_] = useState(null)
@@ -214,17 +230,26 @@ const [game_MAIN_GAME_ContractAddress_xyz_,set_MAIN_GAME_GameContractAddress_xyz
 
 const [VOLT_contract_xyz_,set_VOLT_Contract_xyz_] = useState(null)
 const [game_VOLT_ContractAddress_xyz_,set_VOLT_GameContractAddress_xyz_] = useState(null)
+const [CostToPlay_xyz_,setCostToPlay_xyz_] = useState("...Loading...");
+
+
+const [RANDOM1_contract_xyz_,set_RANDOM1_Contract_xyz_] = useState(null)
+const [game_RANDOM1_xyz_,set_RANDOM1_xyz_] = useState(null)
 
 
 const [contract_xyz_,setContract_xyz_] = useState(null)
 const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
 
-
-
 // token contract info
+// Partner
 const [tokenContract_xyz_,setTokenContract_xyz_] = useState(null)
 const [decimals_xyz_,setDecimals_xyz_] = useState(null)
 const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
+
+// Treasureblox Native
+const [tokenContract_treasurebloxNative_,setTokenContract_treasurebloxNative_] = useState(null)
+const [decimals_treasurebloxNative_,setDecimals_treasurebloxNative_] = useState(null)
+const [totalTreasure_treasurebloxNative_,setTotalTreasure_treasurebloxNative_] = useState(null)
 
 // Set partner Example Contracts Ends
 
@@ -313,185 +338,190 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
   const [game1team2_xyz_team_entries,setGame1_team2_xyz_team_entries] = useState("...Loading...");
   const [game1team2_xyz_team_actual_points,setGame1_team2_xyz_team_actual_points] = useState("...Loading...");
 
+  const [player_loss_xyz_,set_player_loss_xyz_] = useState("...Loading...");
+  const [result_loss_xyz_,set_result_loss_xyz_] = useState("...Loading...");
+  const [pid_loss_xyz_,set_pid_loss_xyz_] = useState("...Loading...");
+
+  const [player_win_xyz_,set_player_win_xyz_] = useState("...Loading...");
+  const [result_win_xyz_,set_result_win_xyz_] = useState("...Loading...");
+  const [pid_win_xyz_,set_pid_win_xyz_] = useState("...Loading...");
+
+
 // PARTNER GAME EXAMPLE ENDS
 
 
 
 // GAME 1
-  const [game1_id,setGame1_id] = useState("...Loading...")
-  const [game1_live,setGame1_live] = useState("...Loading...")
-  const [game1_prize,setGame1_prize] = useState("...Loading...")
-  const [game1_question_hash,setGame1_question_hash] = useState("...Loading...")
-  const [game1_entry_cost ,setGame1_submit_secret_cost] = useState("...Loading...")
-  const [game1_riddle,setGame1_riddle] = useState("...Loading...")
-  const [game1_head_start_time,setGame1_head_start_time] = useState("...Loading...")
-
-  const [allGame1_id,setallGame1_id] = useState("...Loading...")
-  const [allGame1_user_front_of_que,setallGame1_user_front_of_que] = useState("...Loading...")
-  const [allGame1_deadline_time,setallGame1_deadline] = useState("...Loading...")
-  const [allGame1_username,setallGame1_username] = useState("...Loading...")
-  const [allGame1_total_game_tries,setallGame1_total_game_tries] = useState("...Loading...")
-
-  const [countGame1, setTimeGame1] = useState(90);
-  const [countGame1DeadlineTrue, setcountGame1DeadlineTrue] = useState(false);
-
-  const [game1numberOfEntries, setGame1numberOfEntries] = useState(0);
-  const [game1huntEntries, setGame1huntEntries] = useState("...Loading...");
-  const [userGame1_id, setUserGame1_id] = useState("...Loading...");
-  const [userEntered_game1, setUserEntered_game1] = useState("...Loading...");
-  const [userGame1_headstart_time, setUserGame1_headstart_time] = useState("...Loading...");
-  const [userGame1_live, setUserGame1_live] = useState("...Loading...");
-
-  const [winning_address1, setWinning_address1] = useState("...Loading...");
-  const [treasure_found1, setTreasure_found1] = useState("...Loading...");
-  const [winning_prize1, setWinning_prize1] = useState("...Loading...");
 
 
-  const [attemptId1, setAttemptId1] = useState("...Loading...");
-  const [attemptAddress1, setAttemptAddress1] = useState("...Loading...");
-  const [attemptUsername1, setAttemptUsername1] = useState("...Loading...");
-  const [attemptDeadline1, setAttemptDeadline1] = useState("...Loading...");
-  const [totalGameEntriesGame1, settotalGameEntriesGame1] = useState(false);
+const [game1_live_treasurebloxNative_,setGame1_live_treasurebloxNative_] = useState("...Loading...")
+const [game1_prize_treasurebloxNative_,setGame1_prize_treasurebloxNative_] = useState("...Loading...")
+const [game1_question_hash_treasurebloxNative_,setGame1_question_hash_treasurebloxNative_] = useState("...Loading...")
+
+
+const [game1_costToEnter_treasurebloxNative_,setGame1_costToEnter_treasurebloxNative_] = useState("...Loading...")
+const [game1_riddle_treasurebloxNative_,setGame1_riddle_treasurebloxNative_] = useState("...Loading...")
+const [game1_head_start_time_treasurebloxNative_,setGame1_head_start_time_treasurebloxNative_] = useState("...Loading...")
+
+const [allGame1_id_treasurebloxNative_,setallGame1_id_treasurebloxNative_] = useState("...Loading...")
+const [allGame1_user_front_of_que_treasurebloxNative_,setallGame1_user_front_of_que_treasurebloxNative_] = useState("...Loading...")
+const [allGame1_deadline_time_treasurebloxNative_,setallGame1_deadline_treasurebloxNative_] = useState("...Loading...")
+const [allGame1_username_treasurebloxNative_,setallGame1_username_treasurebloxNative_] = useState("...Loading...")
+const [allGame1_total_game_tries_treasurebloxNative_,setallGame1_total_game_tries_treasurebloxNative_] = useState("...Loading...")
+
+const [countGame1_treasurebloxNative_, setTimeGame1_treasurebloxNative_] = useState(90);
+const [countGame1DeadlineTrue_treasurebloxNative_, setcountGame1DeadlineTrue_treasurebloxNative_] = useState(false);
+
+const [game1numberOfEntries_treasurebloxNative_, setGame1numberOfEntries_treasurebloxNative_] = useState(0);
+const [game1huntEntries_treasurebloxNative_, setGame1huntEntries_treasurebloxNative_] = useState("...Loading...");
+const [userGame1_id_treasurebloxNative_, setUserGame1_id_treasurebloxNative_] = useState("...Loading...");
+const [userEntered_game1_treasurebloxNative_, setUserEntered_game1_treasurebloxNative_] = useState("...Loading...");
+const [userGame1_headstart_time_treasurebloxNative_, setUserGame1_headstart_time_treasurebloxNative_] = useState("...Loading...");
+const [userGame1_live_treasurebloxNative_, setUserGame1_live_treasurebloxNative_] = useState("...Loading...");
+
+const [winning_address1_treasurebloxNative_, setWinning_address1_treasurebloxNative_] = useState("...Loading...");
+const [treasure_found1_treasurebloxNative_, setTreasure_found1_treasurebloxNative_] = useState("...Loading...");
+const [winning_prize1_treasurebloxNative_, setWinning_prize1_treasurebloxNative_] = useState("...Loading...");
+
+const [attemptId1_treasurebloxNative_, setAttemptId1_treasurebloxNative_] = useState("...Loading...");
+const [attemptAddress1_treasurebloxNative_, setAttemptAddress1_treasurebloxNative_] = useState("...Loading...");
+const [attemptUsername1_treasurebloxNative_, setAttemptUsername1_treasurebloxNative_] = useState("...Loading...");
+const [attemptDeadline1_treasurebloxNative_, setAttemptDeadline1_treasurebloxNative_] = useState("...Loading...");
+const [totalGameEntriesGame1_treasurebloxNative_, settotalGameEntriesGame1_treasurebloxNative_] = useState(false);
+const [globalNumberOfTries_treasurebloxNative_, setGlobalNumberOfTries_treasurebloxNative_] = useState(false);
 
 // Leaderboard
-  const [game1LeaderBoardIndex, setgame1LeaderBoardIndex] = useState(["...Loading..."]);
-  const [game1LeaderBoardGameID, setgame1LeaderBoardGameID] = useState(["...Loading..."]);
-  const [game1LeaderBoardAddress, setgame1LeaderBoardAddress] = useState(["...Loading..."]);
-  const [game1LeaderBoardEntered, setgame1LeaderBoardEntered] = useState(["...Loading..."]);
-  const [game1LeaderBoardUsername, setgame1LeaderBoardUsername] = useState(["...Loading..."]);
-  const [game1LeaderBoardTries, setgame1LeaderBoardTries] = useState(["...Loading..."]);
-  const [game1LeaderBoardStage, setgame1LeaderBoardStage] = useState(["...Loading..."]);
+const [game1LeaderBoardIndex_treasurebloxNative_, setgame1LeaderBoardIndex_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardGameID_treasurebloxNative_, setgame1LeaderBoardGameID_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardAddress_treasurebloxNative_, setgame1LeaderBoardAddress_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardEntered_treasurebloxNative_, setgame1LeaderBoardEntered_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardUsername_treasurebloxNative_, setgame1LeaderBoardUsername_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardTries_treasurebloxNative_, setgame1LeaderBoardTries_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1LeaderBoardStage_treasurebloxNative_, setgame1LeaderBoardStage_treasurebloxNative_] = useState(["...Loading..."]);
 
 
-  const [game1LeaderBoard, setgame1LeaderBoard] = useState(["...Loading..."]);
-  const [game1UserList, setGame1UserList] = useState(["...Loading..."]);
+const [game1LeaderBoard_treasurebloxNative_, setgame1LeaderBoard_treasurebloxNative_] = useState(["...Loading..."]);
+const [game1UserList_treasurebloxNative_, setGame1UserList_treasurebloxNative_] = useState(["...Loading..."]);
 
-  // Leaderbaord Address Search
-  const [state_leaderboardAddressSearch_huntid_game1, setleaderboardAddressSearch_huntid_game1] = useState(false);
-  const [state_leaderboardAddressSearch_address_game1, setleaderboardAddressSearch_address_game1] = useState(false);
-  const [state_leaderboardAddressSearch_entered_game1, setleaderboardAddressSearch_entered_game1] = useState(false);
-  const [state_leaderboardAddressSearch_username_game1, setleaderboardAddressSearch_username_game1] = useState(false);
-  const [state_leaderboardAddressSearch_tries_game1, setleaderboardAddressSearch_tries_game1] = useState(false);
-  const [state_leaderboardAddressSearch_stage_game1, setleaderboardAddressSearch_stage_game1] = useState(false);
-  const [state_leaderboardAddressSearch_team_game1, setleaderboardAddressSearch_team_game1] = useState(false);
+// Leaderbaord Address Search
+const [state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_, setleaderboardAddressSearch_huntid_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_address_game1_treasurebloxNative_, setleaderboardAddressSearch_address_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_entered_game1_treasurebloxNative_, setleaderboardAddressSearch_entered_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_username_game1_treasurebloxNative_, setleaderboardAddressSearch_username_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_tries_game1_treasurebloxNative_, setleaderboardAddressSearch_tries_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_stage_game1_treasurebloxNative_, setleaderboardAddressSearch_stage_game1_treasurebloxNative_] = useState(false);
+const [state_leaderboardAddressSearch_team_game1_treasurebloxNative_, setleaderboardAddressSearch_team_game1_treasurebloxNative_] = useState(false);
 
+const [state_WinnerEstPrizeGame1_treasurebloxNative_, setWinnerEstPrizeGame1_treasurebloxNative_] = useState(false);
 
-  const [state_WinnerEstPrizeGame1, setWinnerEstPrizeGame1] = useState(false);
 
 // User Levels
 
-  const [userLevel1Game1,setUserLevel1Game1] = useState(false);
-  const [userLevel2Game1,setUserLevel2Game1] = useState(false);
-  const [userLevel3Game1,setUserLevel3Game1] = useState(false);
-  const [userLevel4Game1,setUserLevel4Game1] = useState(false);
+const [userLevel1Game1_treasurebloxNative_,setUserLevel1Game1_treasurebloxNative_] = useState(false);
+const [userLevel2Game1_treasurebloxNative_,setUserLevel2Game1_treasurebloxNative_] = useState(false);
+const [userLevel3Game1_treasurebloxNative_,setUserLevel3Game1_treasurebloxNative_] = useState(false);
+const [userLevel4Game1_treasurebloxNative_,setUserLevel4Game1_treasurebloxNative_] = useState(false);
 
 
 // Team Details
-  const [game1team1_teamid,setGame1_team1_teamid] = useState(false);
-  const [game1team1_team_points_target,setGame1_team1_team_points_target] = useState(false);
-  const [game1team1_ppp,setGame1_team1_ppp] = useState(false);
-  const [game1team1_team_entries,setGame1_team1_team_entries] = useState(false);
-  const [game1team1_team_actual_points,setGame1_team1_team_actual_points] = useState(false);
+const [game1team1_treasurebloxNative_teamid,setGame1_team1_treasurebloxNative_teamid] = useState("...Loading...");
+const [game1team1_treasurebloxNative_team_points_target,setGame1_team1_treasurebloxNative_team_points_target] = useState("...Loading...");
+const [game1team1_treasurebloxNative_ppp,setGame1_team1_treasurebloxNative_ppp] = useState("...Loading...");
+const [game1team1_treasurebloxNative_team_entries,setGame1_team1_treasurebloxNative_team_entries] = useState("...Loading...");
+const [game1team1_treasurebloxNative_team_actual_points,setGame1_team1_treasurebloxNative_team_actual_points] = useState("...Loading...");
 
-  const [game1team2_teamid,setGame1_team2_teamid] = useState(false);
-  const [game1team2_team_points_target,setGame1_team2_team_points_target] = useState(false);
-  const [game1team2_ppp,setGame1_team2_ppp] = useState(false);
-  const [game1team2_team_entries,setGame1_team2_team_entries] = useState(false);
-  const [game1team2_team_actual_points,setGame1_team2_team_actual_points] = useState(false);
-
-
-
-// GAME 2
-
-  const [game2_id,setGame2_id] = useState("...Loading...")
-  const [game2_live,setGame2_live] = useState("...Loading...")
-  const [game2_prize,setGame2_prize] = useState("...Loading...")
-  const [game2_question_hash,setGame2_question_hash] = useState("...Loading...")
-  const [game2_time_lock_cost,setgame2_time_lock_cost] = useState("...Loading...")
-  const [game2_submit_secret_cost,setGame2_submit_secret_cost] = useState("...Loading...")
-  const [game2_riddle,setGame2_riddle] = useState("...Loading...")
-  const [game2_clue,setGame2_clue] = useState("...Loading...")
-  const [game2_head_start_time,setGame2_head_start_time] = useState("...Loading...")
-  const [game2_entry_limit,setGame2_entry_limit] = useState("...Loading...")
-  const [game2_entry_cost,setGame2_entry_cost] = useState("...Loading...")
-
-  const [allGame2_id,setallGame2_id] = useState("...Loading...")
-  const [allGame2_user_front_of_que,setallGame2_user_front_of_que] = useState("...Loading...")
-  const [allGame2_deadline_time,setallGame2_deadline] = useState("...Loading...")
-  const [allGame2_username,setallGame2_username] = useState("...Loading...")
-  const [allGame2_total_game_tries,setallGame2_total_game_tries] = useState("...Loading...")
-
-  const [countGame2, setTimeGame2] = useState(90);
-  const [countGame2DeadlineTrue, setcountGame2DeadlineTrue] = useState(false);
-
-  const [game2numberOfEntries, setGame2numberOfEntries] = useState(0);
-  const [game2huntEntries, setGame2huntEntries] = useState("...Loading...");
-  const [userGame2_id, setUserGame2_id] = useState("...Loading...");
-  const [userEntered_game2, setUserEntered_game2] = useState("...Loading...");
-  const [userGame2_headstart_time, setUserGame2_headstart_time] = useState("...Loading...");
-  const [userGame2_live, setUserGame2_live] = useState("...Loading...");
-
-  const [winning_address2, setWinning_address2] = useState("...Loading...");
-  const [treasure_found2, setTreasure_found2] = useState("...Loading...");
-  const [winning_prize2, setWinning_prize2] = useState("...Loading...");
-  const [question_hash_solved2, setQuestion_hash_solved2] = useState("...Loading...");
-  const [winning_message2, setWinning_message2] = useState("...Loading...");
-
-  const [attemptId2, setAttemptId2] = useState("...Loading...");
-  const [attemptAddress2, setAttemptAddress2] = useState("...Loading...");
-  const [attemptUsername2, setAttemptUsername2] = useState("...Loading...");
-  const [attemptDeadline2, setAttemptDeadline2] = useState("...Loading...");
-  const [loaded, setloaded] = useState(false);
-  const [totalGameEntriesGame2, settotalGameEntriesGame2] = useState(false);
-  const [globalNumberOfTries, setGlobalNumberOfTries] = useState(false);
+const [game1team2_treasurebloxNative_teamid,setGame1_team2_treasurebloxNative_teamid] = useState("...Loading...");
+const [game1team2_treasurebloxNative_team_points_target,setGame1_team2_treasurebloxNative_team_points_target] = useState("...Loading...");
+const [game1team2_treasurebloxNative_ppp,setGame1_team2_treasurebloxNative_ppp] = useState("...Loading...");
+const [game1team2_treasurebloxNative_team_entries,setGame1_team2_treasurebloxNative_team_entries] = useState("...Loading...");
+const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasurebloxNative_team_actual_points] = useState("...Loading...");
 
 
-  // Leaderboard
-    const [game2LeaderBoardIndex, setgame2LeaderBoardIndex] = useState(["...Loading..."]);
-    const [game2LeaderBoardGameID, setgame2LeaderBoardGameID] = useState(["...Loading..."]);
-    const [game2LeaderBoardAddress, setgame2LeaderBoardAddress] = useState(["...Loading..."]);
-    const [game2LeaderBoardEntered, setgame2LeaderBoardEntered] = useState(["...Loading..."]);
-    const [game2LeaderBoardUsername, setgame2LeaderBoardUsername] = useState(["...Loading..."]);
-    const [game2LeaderBoardTries, setgame2LeaderBoardTries] = useState(["...Loading..."]);
-    const [game2LeaderBoardStage, setgame2LeaderBoardStage] = useState(["...Loading..."]);
+
+        // GAME 2
 
 
-    const [game2LeaderBoard, setgame2LeaderBoard] = useState(["...Loading..."]);
-    const [game2UserList, setGame2UserList] = useState(["...Loading..."]);
-
-    // Leaderbaord Address Search
-    const [state_leaderboardAddressSearch_huntid_game2, setleaderboardAddressSearch_huntid_game2] = useState(false);
-    const [state_leaderboardAddressSearch_address_game2, setleaderboardAddressSearch_address_game2] = useState(false);
-    const [state_leaderboardAddressSearch_entered_game2, setleaderboardAddressSearch_entered_game2] = useState(false);
-    const [state_leaderboardAddressSearch_username_game2, setleaderboardAddressSearch_username_game2] = useState(false);
-    const [state_leaderboardAddressSearch_tries_game2, setleaderboardAddressSearch_tries_game2] = useState(false);
-    const [state_leaderboardAddressSearch_stage_game2, setleaderboardAddressSearch_stage_game2] = useState(false);
-    const [state_leaderboardAddressSearch_team_game2, setleaderboardAddressSearch_team_game2] = useState(false);
-
-    const [state_WinnerEstPrizeGame2, setWinnerEstPrizeGame2] = useState(false);
-
-    // User Levels
-
-    const [userLevel1Game2,setUserLevel1Game2] = useState(false);
-    const [userLevel2Game2,setUserLevel2Game2] = useState(false);
-    const [userLevel3Game2,setUserLevel3Game2] = useState(false);
-    const [userLevel4Game2,setUserLevel4Game2] = useState(false);
+        const [game2_live_treasurebloxNative_,setGame2_live_treasurebloxNative_] = useState("...Loading...")
+        const [game2_prize_treasurebloxNative_,setGame2_prize_treasurebloxNative_] = useState("...Loading...")
+        const [game2_question_hash_treasurebloxNative_,setGame2_question_hash_treasurebloxNative_] = useState("...Loading...")
 
 
-  // Team Details
-    const [game2team1_teamid,setGame2_team1_teamid] = useState(false);
-    const [game2team1_team_points_target,setGame2_team1_team_points_target] = useState(false);
-    const [game2team1_ppp,setGame2_team1_ppp] = useState(false);
-    const [game2team1_team_entries,setGame2_team1_team_entries] = useState(false);
-    const [game2team1_team_actual_points,setGame2_team1_team_actual_points] = useState(false);
+        const [game2_costToEnter_treasurebloxNative_,setGame2_costToEnter_treasurebloxNative_] = useState("...Loading...")
+        const [game2_riddle_treasurebloxNative_,setGame2_riddle_treasurebloxNative_] = useState("...Loading...")
+        const [game2_head_start_time_treasurebloxNative_,setGame2_head_start_time_treasurebloxNative_] = useState("...Loading...")
 
-    const [game2team2_teamid,setGame2_team2_teamid] = useState(false);
-    const [game2team2_team_points_target,setGame2_team2_team_points_target] = useState(false);
-    const [game2team2_ppp,setGame2_team2_ppp] = useState(false);
-    const [game2team2_team_entries,setGame2_team2_team_entries] = useState(false);
-    const [game2team2_team_actual_points,setGame2_team2_team_actual_points] = useState(false);
+        const [allGame2_id_treasurebloxNative_,setallGame2_id_treasurebloxNative_] = useState("...Loading...")
+        const [allGame2_user_front_of_que_treasurebloxNative_,setallGame2_user_front_of_que_treasurebloxNative_] = useState("...Loading...")
+        const [allGame2_deadline_time_treasurebloxNative_,setallGame2_deadline_treasurebloxNative_] = useState("...Loading...")
+        const [allGame2_username_treasurebloxNative_,setallGame2_username_treasurebloxNative_] = useState("...Loading...")
+        const [allGame2_total_game_tries_treasurebloxNative_,setallGame2_total_game_tries_treasurebloxNative_] = useState("...Loading...")
+
+        const [countGame2_treasurebloxNative_, setTimeGame2_treasurebloxNative_] = useState(90);
+        const [countGame2DeadlineTrue_treasurebloxNative_, setcountGame2DeadlineTrue_treasurebloxNative_] = useState(false);
+
+        const [game2numberOfEntries_treasurebloxNative_, setGame2numberOfEntries_treasurebloxNative_] = useState(0);
+        const [game2huntEntries_treasurebloxNative_, setGame2huntEntries_treasurebloxNative_] = useState("...Loading...");
+        const [userGame2_id_treasurebloxNative_, setUserGame2_id_treasurebloxNative_] = useState("...Loading...");
+        const [userEntered_game2_treasurebloxNative_, setUserEntered_game2_treasurebloxNative_] = useState("...Loading...");
+        const [userGame2_headstart_time_treasurebloxNative_, setUserGame2_headstart_time_treasurebloxNative_] = useState("...Loading...");
+        const [userGame2_live_treasurebloxNative_, setUserGame2_live_treasurebloxNative_] = useState("...Loading...");
+
+        const [winning_address2_treasurebloxNative_, setWinning_address2_treasurebloxNative_] = useState("...Loading...");
+        const [treasure_found2_treasurebloxNative_, setTreasure_found2_treasurebloxNative_] = useState("...Loading...");
+        const [winning_prize2_treasurebloxNative_, setWinning_prize2_treasurebloxNative_] = useState("...Loading...");
+
+        const [attemptId2_treasurebloxNative_, setAttemptId2_treasurebloxNative_] = useState("...Loading...");
+        const [attemptAddress2_treasurebloxNative_, setAttemptAddress2_treasurebloxNative_] = useState("...Loading...");
+        const [attemptUsername2_treasurebloxNative_, setAttemptUsername2_treasurebloxNative_] = useState("...Loading...");
+        const [attemptDeadline2_treasurebloxNative_, setAttemptDeadline2_treasurebloxNative_] = useState("...Loading...");
+        const [totalGameEntriesGame2_treasurebloxNative_, settotalGameEntriesGame2_treasurebloxNative_] = useState(false);
 
 
+        // Leaderboard
+        const [game2LeaderBoardIndex_treasurebloxNative_, setgame2LeaderBoardIndex_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardGameID_treasurebloxNative_, setgame2LeaderBoardGameID_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardAddress_treasurebloxNative_, setgame2LeaderBoardAddress_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardEntered_treasurebloxNative_, setgame2LeaderBoardEntered_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardUsername_treasurebloxNative_, setgame2LeaderBoardUsername_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardTries_treasurebloxNative_, setgame2LeaderBoardTries_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2LeaderBoardStage_treasurebloxNative_, setgame2LeaderBoardStage_treasurebloxNative_] = useState(["...Loading..."]);
+
+
+        const [game2LeaderBoard_treasurebloxNative_, setgame2LeaderBoard_treasurebloxNative_] = useState(["...Loading..."]);
+        const [game2UserList_treasurebloxNative_, setGame2UserList_treasurebloxNative_] = useState(["...Loading..."]);
+
+        // Leaderbaord Address Search
+        const [state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_, setleaderboardAddressSearch_huntid_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_address_game2_treasurebloxNative_, setleaderboardAddressSearch_address_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_entered_game2_treasurebloxNative_, setleaderboardAddressSearch_entered_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_username_game2_treasurebloxNative_, setleaderboardAddressSearch_username_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_tries_game2_treasurebloxNative_, setleaderboardAddressSearch_tries_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_stage_game2_treasurebloxNative_, setleaderboardAddressSearch_stage_game2_treasurebloxNative_] = useState(false);
+        const [state_leaderboardAddressSearch_team_game2_treasurebloxNative_, setleaderboardAddressSearch_team_game2_treasurebloxNative_] = useState(false);
+
+        const [state_WinnerEstPrizeGame2_treasurebloxNative_, setWinnerEstPrizeGame2_treasurebloxNative_] = useState(false);
+
+
+        // User Levels
+
+        const [userLevel1Game2_treasurebloxNative_,setUserLevel1Game2_treasurebloxNative_] = useState(false);
+        const [userLevel2Game2_treasurebloxNative_,setUserLevel2Game2_treasurebloxNative_] = useState(false);
+        const [userLevel3Game2_treasurebloxNative_,setUserLevel3Game2_treasurebloxNative_] = useState(false);
+        const [userLevel4Game2_treasurebloxNative_,setUserLevel4Game2_treasurebloxNative_] = useState(false);
+
+
+        // Team Details
+        const [game2team1_treasurebloxNative_teamid,setGame2_team1_treasurebloxNative_teamid] = useState("...Loading...");
+        const [game2team1_treasurebloxNative_team_points_target,setGame2_team1_treasurebloxNative_team_points_target] = useState("...Loading...");
+        const [game2team1_treasurebloxNative_ppp,setGame2_team1_treasurebloxNative_ppp] = useState("...Loading...");
+        const [game2team1_treasurebloxNative_team_entries,setGame2_team1_treasurebloxNative_team_entries] = useState("...Loading...");
+        const [game2team1_treasurebloxNative_team_actual_points,setGame2_team1_treasurebloxNative_team_actual_points] = useState("...Loading...");
+
+        const [game2team2_treasurebloxNative_teamid,setGame2_team2_treasurebloxNative_teamid] = useState("...Loading...");
+        const [game2team2_treasurebloxNative_team_points_target,setGame2_team2_treasurebloxNative_team_points_target] = useState("...Loading...");
+        const [game2team2_treasurebloxNative_ppp,setGame2_team2_treasurebloxNative_ppp] = useState("...Loading...");
+        const [game2team2_treasurebloxNative_team_entries,setGame2_team2_treasurebloxNative_team_entries] = useState("...Loading...");
+        const [game2team2_treasurebloxNative_team_actual_points,setGame2_team2_treasurebloxNative_team_actual_points] = useState("...Loading...");
 
 
 
@@ -499,7 +529,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 // network type
     const [is_meter,setIs_Meter] = useState(false);
 
-    const partnerId_xyz = 1;
+    const partnerId_treasurebloxNative = 1;
+
+    const partnerId_xyz = 2;
+
+
 
 
 
@@ -510,10 +544,9 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
       const init = async() => {
 
-
-
-
         const web3 = await getWeb3();
+        const accounts = await web3.eth.getAccounts();
+        setAccounts(accounts[0])
 
 
 
@@ -560,15 +593,22 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 // TOKEN 0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930
 
 
-        const accounts_xyz_ = await web3.eth.getAccounts();
-        const GSB_BSC_ = require('./GSB_BSC.abi.json');
-        const GSC_BSC_ = require('./GSC_BSC.abi.json');
-        const GSD_BSC_ = require('./GSD_BSC.abi.json');
-        const MAIN_GAME_xyz_ = require('./MAIN_GAME.abi_xyz.json');
-        const VOLT_xyz_ = require('./VOLT.abi_xyz.json');
+
+
+
+        const GSB_BSC_ABI = require('./GSB_BSC.abi.json');
+        const GSC_BSC_ABI = require('./GSC_BSC.abi.json');
+        const GSD_BSC_ABI = require('./GSD_BSC.abi.json');
+
+        const MAIN_GAME_contract_xyz_ABI = require('./PartnershipExample/ContractAbis/MAIN_GAME.abi_xyz.json');
+        const VOLT_xyz_ABI = require('./PartnershipExample/ContractAbis/VOLT.abi_xyz.json');
+        const RANDOM1_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM1.abi_xyz.json');
 
         const abi_xyz_ = require('./TreasureBlox.abi_example.json');
+        // this will change to partner token abi contract
         const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
+
+
 
         const Moralis = require('moralis');
 
@@ -590,61 +630,74 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
         if (currentChainId === 56) {
 
 
+
         setIs_Meter(false)
         // GAME CONTRACT
 
-        const GSB_contract_xyz_ = new web3.eth.Contract(GSB_BSC_,"https://bsc-dataseed.binance.org/" && "0xa43BBB674C4Bd4870c98781d4C0624C87df00287");
-        const game_GSB_Address_xyz_ = "0xa43BBB674C4Bd4870c98781d4C0624C87df00287"
+        // SET ACCOUNTS
+        const accounts = await web3.eth.getAccounts();
+        setWallet_for_google_xyz_("w="+accounts.toString())
+        setAccounts(accounts)
+
+
+        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x1ae9808d0b70110Ddf0Ee941F53E9626A5e7e40E");
+        const game_GSB_Address_xyz_ = "0x1ae9808d0b70110Ddf0Ee941F53E9626A5e7e40E"
         set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
 
 
-        const GSC_contract_xyz_ = new web3.eth.Contract(GSC_BSC_,"https://bsc-dataseed.binance.org/" && "0x677108123Bd31a75ff335D8d94640E9A69f74705");
-        const game_GSC_Address_xyz_ = "0x677108123Bd31a75ff335D8d94640E9A69f74705"
+        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0xa924DDe84dCcD2eD13F002799AF30Ccc34953B40");
+        const game_GSC_Address_xyz_ = "0xa924DDe84dCcD2eD13F002799AF30Ccc34953B40"
         set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
 
 
-        const GSD_contract_xyz_ = new web3.eth.Contract(GSD_BSC_,"https://bsc-dataseed.binance.org/" && "0x7704c4bFf6070bdb1D399cEcC59333189be46233");
-        const game_GSD_Address_xyz_ = "0x7704c4bFf6070bdb1D399cEcC59333189be46233"
+        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42");
+        const game_GSD_Address_xyz_ = "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42"
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
 
 
-        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_xyz_,"https://bsc-dataseed.binance.org/" && "0x592B30557f4044B1d1A84254C379D4aC55533Ee4");
-        const game_MAIN_GAME_Address_xyz_ = "0x592B30557f4044B1d1A84254C379D4aC55533Ee4"
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x8E98f1Bf7fe8A176E7773f342D7336acF47DF14e");
+        const game_MAIN_GAME_Address_xyz_ = "0x8E98f1Bf7fe8A176E7773f342D7336acF47DF14e"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
 
-        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_,"https://bsc-dataseed.binance.org/" && "0x7B84C43b096912F04C291bfb7bcdB0343f05ef2e");
-        const game_VOLT_Address_xyz_ = "0x7B84C43b096912F04C291bfb7bcdB0343f05ef2e"
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xd087d5F7F003089FBf31F521A6cE11107fe310cF");
+        const game_VOLT_Address_xyz_ = "0xd087d5F7F003089FBf31F521A6cE11107fe310cF"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 4
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
+        const game_RANDOM1_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
+
+
 
         // TOKEN CONTRACT
 
         // BSC
           const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
-          console.log(tokenContract_xyz_,"START twoooooooo")
 
           const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
-          var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
+          var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
           totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
 
 
-          // SET WEB3
+          // // SET WEB3
           setWeb3(web3)
-          // SET ACCOUNTS
-          setAccounts_xyz_(accounts_xyz_[0])
 
-          set_GSB_Contract_xyz_(GSB_contract_xyz_)
-          set_GSC_Contract_xyz_(GSC_contract_xyz_)
-          set_GSD_Contract_xyz_(GSD_contract_xyz_)
+
+          set_GSB_Contract_xyz_(GSB_contract_bsc_)
+          set_GSC_Contract_xyz_(GSC_contract_bsc_)
+          set_GSD_Contract_xyz_(GSD_contract_bsc_)
+
           set_MAIN_GAME_Contract_xyz_(MAIN_GAME_contract_xyz_)
           set_VOLT_Contract_xyz_(VOLT_contract_xyz_)
+          set_RANDOM1_Contract_xyz_(RANDOM1_contract_xyz_)
 
           // SET TOKEN DETAILS
           setDecimals_xyz_(decimals_xyz_)
           setTotalTreasure_xyz_(totalTreasure_xyz_)
           setTokenContract_xyz_(tokenContract_xyz_)
 
-          setWallet_for_google_xyz_("w="+accounts_xyz_.toString())
 
 
           // GLOBAL PARTNER EXAMPLE ASYNC Ends
@@ -654,6 +707,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
   // TREASUREBLOX EXAMPLE CONTRACT DETAILS START
 
+          // IP ADDRESS CODE - TESTNET - LOCALHOST - OLD ADDRESSES
+
           //creating function to load ip address from the API
 
           // const res = await axios.get('https://geolocation-db.com/json/')
@@ -662,97 +717,70 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
           // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
 
-          const accounts = await web3.eth.getAccounts();
 
-          const abi = require('./TreasureBlox.abi.json');
-          const abiToken = require('./TreasureBloxToken.abi.json');
           // Set the provider
           // web3.setProvider(new web3.providers.WebsocketProvider('ws://localhost:8545'));
           // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
+          // LOCALHOST EXAMPLE
+          // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
+
+          // TestNet
+          // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
+          // Sstart Data Calls
+
 
           // LOCAL
           // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
           // MainNet
           // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
-  // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
-  // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
+          // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
+          // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
+
+          const MAIN_GAME_treasureBloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/MAIN_GAME.abi_xyz.json');
+          const VOLT_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/VOLT.abi_xyz.json');
 
 
-          const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x419C30f9D9f6b00f13d6e272ae0DBF057666575d");
-          const gameAddress = "0x419C30f9D9f6b00f13d6e272ae0DBF057666575d"
-
-// TOORGANISEGameCONTRACTAMAINNET
-          // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643");
-          // const gameAddress = "0x1e59C9EEE5AD272464335deDB5abC466ef9a6643"
-
-          // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
-          // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
-
-          setGameContractAddress(gameAddress);
-
-          const tokenContract = new web3.eth.Contract(abiToken,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
+          const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c");
+          const MAIN_GAME_Address_treasurebloxNative_ = "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c"
+          set_MAIN_GAME_GameContractAddress_treasurebloxNative_(MAIN_GAME_Address_treasurebloxNative_);
 
 
-          // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
+          const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0x19D5Deb61a012cDd53EbAFF891EC9B06bC6f88C6");
+          const VOLT_Address_treasurebloxNative_ = "0x19D5Deb61a012cDd53EbAFF891EC9B06bC6f88C6"
+          set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
 
-          // TestNet
-          // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
-          // Sstart Data Calls
-          const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
+          // TOKEN CONTRACT
+          // BSC
+          const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
-          var totalTreasure = await tokenContract.methods.balanceOf("0xbb4e46e5407d69b7a8e5948703C7bf3214f84295").call();
-          totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
-          console.log(totalTreasure,"Total Treasure token contract")
+          const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call().then(console.log('Yes'));
+          var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
+          totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, tokenContract_xyz_.length-18)
 
-          // const owner = await contract.methods._owner().call();
-          // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
-          //
-          // const total_supply = await contract.methods.totalSupply().call();
-          // const treasure_chest = await contract.methods.treasureChest().call();
+          // // SET WEB3
           setWeb3(web3)
-          setAccounts(accounts[0])
-          setContract(contract)
-          setDecimals(decimals)
-          setTotalTreasure(totalTreasure)
-          setTokenContract(tokenContract)
-
-          setWallet_for_google("w="+accounts.toString())
 
 
-        // GLOBAL TREASUREBLOX ASYNC STARTS
+          set_MAIN_GAME_Contract_treasurebloxNative_(MAIN_GAME_contract_treasurebloxNative_)
+          set_VOLT_Contract_treasurebloxNative_(VOLT_contract_treasurebloxNative_)
 
-          const globalTries = await contract.methods.totalumberOfTries().call();
+          // SET TOKEN DETAILS
+          setDecimals_treasurebloxNative_(decimals_treasurebloxNative_)
+          setTotalTreasure_treasurebloxNative_(totalTreasure_treasurebloxNative_)
+          setTokenContract_treasurebloxNative_(tokenContract_treasurebloxNative_)
 
-          setGlobalNumberOfTries(globalTries)
-        // GLOBAL TREASUREBLOX ASYNC ENDS
+          setWallet_for_google_treasurebloxNative_("w="+accounts.toString())
+
 
 
         // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
 
 
-
-////////////
-
-// Meter.io
-        // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
-        // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-        //
-        // console.log(contract_xyz_,"START treassssure")
-
-
-// Meter
-        // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x6AF26474015a6bF540C79b77a6155b67900879D9");
-
-///////////
-
-
     // This Handels the countdown time and collecting information every 1 second so the counter goes down
         const timer = window.setInterval( async() => {
 
-
             var moment = require('moment'); // require
-
 
 // GET GAMES //
 
@@ -765,7 +793,10 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
             // MAIN_GAME_contract_xyz_
             // VOLT_contract_xyz_
 
-            const game1_xyz_ = await GSC_contract_xyz_.methods.Games(partnerId_xyz,1).call();
+
+
+
+            const game1_xyz_ = await GSC_contract_bsc_.methods.Games(partnerId_xyz,1).call();
             const game1_live_xyz_ = await game1_xyz_[0];
 
             var game1_prize_xyz_ = await game1_xyz_[1];
@@ -789,28 +820,28 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
             setGame1_riddle_xyz_(game1_riddle_xyz_)
             setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
 
-            const allGame1_xyz_ = await GSB_contract_xyz_.methods.allGames(partnerId_xyz,1).call();
+            const allGame1_xyz_ = await GSB_contract_bsc_.methods.allGames(partnerId_xyz,1).call();
             const allGame1_id_xyz_ = await allGame1_xyz_[0];
             const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
             const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
             const allGame1_username_xyz_ = await allGame1_xyz_[3];
             const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
 
-            const numberOfEntriesGame1_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call();
+            const numberOfEntriesGame1_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call();
 
-            const game1huntEntries_xyz_ = await GSB_contract_xyz_.methods.huntEntries(accounts_xyz_[0],partnerId_xyz,1).call();
+            const game1huntEntries_xyz_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_xyz,1).call();
             const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
             const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
             const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
             const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
 
-            const pot1AnsweredCorrectly_xyz_ = await GSB_contract_xyz_.methods.Pot1AnsweredCorrectly(partnerId_xyz,1).call();
+            const pot1AnsweredCorrectly_xyz_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_xyz,1).call();
             const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
             const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
             var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
 
 
-            const getAllLatestGameAttempts1_xyz_ = await GSB_contract_xyz_.methods.allGames(partnerId_xyz,1).call();
+            const getAllLatestGameAttempts1_xyz_ = await GSB_contract_bsc_.methods.allGames(partnerId_xyz,1).call();
             const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
             const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
             const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
@@ -818,7 +849,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
 
 
-            const entriesGame1_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call()
+            const entriesGame1_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call()
             settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
 
 
@@ -890,7 +921,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             // LeaderBoardAddressSearch
 
-            const leaderboardAddressSearch_xyz_ = await GSC_contract_xyz_.methods.leaderboardAddressMapping(accounts_xyz_[0],partnerId_xyz,1).call();
+            const leaderboardAddressSearch_xyz_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_xyz,1).call();
 
 
             var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
@@ -929,13 +960,13 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
 
 
-            const noOfEntrys_xyz_ = await GSB_contract_xyz_.methods.numberOfEntries(partnerId_xyz,1).call();
+            const noOfEntrys_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call();
 
             // LeaderBoard
 
             var game1_leaderboard_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard1_xyz_ = await leaderBoard_xyz_;
 
@@ -953,7 +984,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_game_id_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
                 game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
@@ -963,7 +994,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_address_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
                 game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
@@ -972,7 +1003,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_entered_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
                 game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
@@ -983,7 +1014,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_username_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
                 game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
@@ -994,7 +1025,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_tries_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
                 game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
@@ -1005,7 +1036,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             var game1_leaderboard_stage_xyz_ = [];
               for (var i = 0; i < noOfEntrys_xyz_; i++) {
-                const leaderBoard_xyz_ = await GSC_contract_xyz_.methods.leaderboard(partnerId_xyz,1,i).call();
+                const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
 
                 var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
                 game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
@@ -1013,16 +1044,14 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
             setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
 
-
-
-            const game1_team1_details_xyz_ = await GSC_contract_xyz_.methods.TeamDetails(partnerId_xyz,1,1).call();
+            const game1_team1_details_xyz_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_xyz,1,1).call();
             const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
             const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
             const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
             const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
             const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
 
-            const game1_team2_details_xyz_ = await GSC_contract_xyz_.methods.TeamDetails(partnerId_xyz,1,2).call();
+            const game1_team2_details_xyz_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_xyz,1,2).call();
             const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
             const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
             const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
@@ -1042,323 +1071,342 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
             setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
 
 
-// PARTNER EXAMPLE GET GAME 1 END
+            // // Random1 Event Listener For Loss
+            //
+            // const random_result_xyz_ = await RANDOM1_contract_xyz_.getPastEvents("Loss", {"fromBlock":'latest'});
+            //
+            // try {
+            //     const random_result_player_xyz_ = await random_result_xyz_[0].returnValues["_player"];
+            //     const random_result_number_xyz_ = await random_result_xyz_[0].returnValues["result"];
+            //     const random_result_pid_xyz_ = await random_result_xyz_[0].returnValues["pID"];
+            //     console.log(random_result_player_xyz_,"random_result_player_xyz_")
+            //     console.log(random_result_number_xyz_,"random_result_number_xyz_")
+            //     console.log(random_result_pid_xyz_,"random_result_pid_xyz_")
+            //     set_player_loss_xyz_(random_result_player_xyz_);
+            //     set_result_loss_xyz_(random_result_number_xyz_);
+            //     set_pid_loss_xyz_(random_result_pid_xyz_);
+            // } catch (error) {
+            //     console.log("waiting random 1 loss")
+            //     set_player_loss_xyz_("");
+            //     set_result_loss_xyz_("");
+            //     set_pid_loss_xyz_("");
+            // }
+            //
+            // // Random1 Event Listener For Win
+            //
+            // const random_result_win_xyz_ = await RANDOM1_contract_xyz_.getPastEvents("Win", {"fromBlock":'latest'});
+            // // const random_result_xyz_ = await RANDOM1_contract_xyz_.events.Loss();
+            //
+            // try {
+            //     const random_result_player_win_xyz_ = await random_result_win_xyz_[0].returnValues["_player"];
+            //     const random_result_number_win_xyz_ = await random_result_win_xyz_[0].returnValues["result"];
+            //     const random_result_pid_win_xyz_ = await random_result_win_xyz_[0].returnValues["pID"];
+            //     console.log(random_result_player_win_xyz_,"random_result_player_xyz_")
+            //     console.log(random_result_number_win_xyz_,"random_result_number_xyz_")
+            //     console.log(random_result_pid_win_xyz_,"random_result_pid_xyz_")
+            //     set_player_win_xyz_(random_result_player_win_xyz_);
+            //     set_result_win_xyz_(random_result_number_win_xyz_);
+            //     set_pid_win_xyz_(random_result_pid_win_xyz_);
+            // } catch (error) {
+            //     console.log("waiting random 1 win")
+            //     set_player_win_xyz_("");
+            //     set_result_win_xyz_("");
+            //     set_pid_win_xyz_("");
+            // }
 
 
 
-              // GAME 1 TREASUREBLOX STARTS
-
-              const game1 = await contract.methods.Games(1).call();
-
-              const game1_id = await game1[0];
-              const game1_live = await game1[1];
-              var game1_prize = await game1[2];
-
-              // Local Testing
-              // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-
-              var winnerEstPrizeGame1 = game1_prize.substring(0, Math.round(game1_prize*.3).length-18);
-              setWinnerEstPrizeGame1(winnerEstPrizeGame1)
-              game1_prize = game1_prize.substring(0, game1_prize.length-18);
+            const cost_to_play_xyz_ = await VOLT_contract_xyz_.methods.CostToPlay().call();
+            var CostToPlay_xyz_edit = await cost_to_play_xyz_[0];
+            CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
+            setCostToPlay_xyz_(CostToPlay_xyz_edit);
 
 
-              const game1_question_hash = await game1[3];
-
-              var game1_entry_cost  = await game1[5];
-              game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
-              const game1_riddle = await game1[6];
-              const game1_head_start_time = await game1[8];
-
-              setGame1_id(game1_id)
-              setGame1_live(game1_live)
-              setGame1_prize(game1_prize)
-              setGame1_question_hash(game1_question_hash)
-
-              setGame1_submit_secret_cost(game1_entry_cost )
-
-              setGame1_riddle(game1_riddle)
-              setGame1_head_start_time(game1_head_start_time)
-
-
-            const allGame1 = await contract.methods.allGames(1).call();
-            const allGame1_id = await allGame1[0];
-            const allGame1_user_front_of_que = await allGame1[1];
-            const allGame1_deadline_time =  await allGame1[2];
-            const allGame1_username = await allGame1[3];
-            const allGame1_total_game_tries = await allGame1[4];
-
-            const numberOfEntriesGame1 = await contract.methods.numberOfEntries(1).call();
+            //
+            //
 
 
 
-            const game1huntEntries = await contract.methods.huntEntries(accounts[0],1).call();
-            const userGame1_id = await game1huntEntries[0];
-            const userEntered_game1 = await game1huntEntries[1];
-            const userGame1_headstart_time =  await game1huntEntries[2];
-            const userGame1_live = await game1huntEntries[3];
 
 
-            const pot1AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(1).call();
-            const winning_address1 = await pot1AnsweredCorrectly[0];
-            const treasure_found1 = await pot1AnsweredCorrectly[1];
-            var winning_prize1 =  await pot1AnsweredCorrectly[2];
-            winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
+//////////////////
+            // PARTNER EXAMPLE GET GAME 1 END
 
 
-            const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
-            const attemptId1 = await getAllLatestGameAttempts1[0];
-            const attemptAddress1 = await getAllLatestGameAttempts1[1];
-            const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
-            const attemptUsername1 = await getAllLatestGameAttempts1[3];
+            // GAME 1 TREASUREBLOX STARTS
+            const game1_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,1).call();
+            const game1_live_treasurebloxNative_ = await game1_treasurebloxNative_[0];
 
-            const entriesGame1 = await contract.methods.numberOfEntries(1).call()
-            settotalGameEntriesGame1(entriesGame1);
+            var game1_prize_treasurebloxNative_ = await game1_treasurebloxNative_[1];
+            var winnerEstPrizeGame1_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, Math.round(game1_prize_treasurebloxNative_*.3).length-18);
 
-            // Fetches New Games if required
-            // const item = await contract.getPastEvents('setGameEvent',{});
-            // console.log(item[0].returnValues[0])
-            // console.log(item[0].returnValues[1])
-            // console.log(item[0].returnValues[2])
+            setWinnerEstPrizeGame1_treasurebloxNative_(winnerEstPrizeGame1_treasurebloxNative_)
+            game1_prize_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, game1_prize_treasurebloxNative_.length-18);
+
+            const game1_question_hash_treasurebloxNative_ = await game1_treasurebloxNative_[2];
+
+            var  game1_costToEnter_treasurebloxNative_ = await game1_treasurebloxNative_[3];
+            game1_costToEnter_treasurebloxNative_ =  game1_costToEnter_treasurebloxNative_.substring(0,  game1_costToEnter_treasurebloxNative_.length-18);
+
+            const game1_riddle_treasurebloxNative_ = await game1_treasurebloxNative_[4];
+            const game1_head_start_time_treasurebloxNative_ = await game1_treasurebloxNative_[5];
+
+            setGame1_live_treasurebloxNative_(game1_live_treasurebloxNative_)
+            setGame1_prize_treasurebloxNative_(game1_prize_treasurebloxNative_)
+            setGame1_question_hash_treasurebloxNative_(game1_question_hash_treasurebloxNative_)
+            setGame1_costToEnter_treasurebloxNative_(game1_costToEnter_treasurebloxNative_)
+            setGame1_riddle_treasurebloxNative_(game1_riddle_treasurebloxNative_)
+            setGame1_head_start_time_treasurebloxNative_(game1_head_start_time_treasurebloxNative_)
+
+            const allGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,1).call();
+            const allGame1_id_treasurebloxNative_ = await allGame1_treasurebloxNative_[0];
+            const allGame1_user_front_of_que_treasurebloxNative_ = await allGame1_treasurebloxNative_[1];
+            const allGame1_deadline_time_treasurebloxNative_ =  await allGame1_treasurebloxNative_[2];
+            const allGame1_username_treasurebloxNative_ = await allGame1_treasurebloxNative_[3];
+            const allGame1_total_game_tries_treasurebloxNative_ = await allGame1_treasurebloxNative_[4];
+
+            const numberOfEntriesGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call();
+
+            const game1huntEntries_treasurebloxNative_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_treasurebloxNative,1).call();
+            const userGame1_id_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[0];
+            const userEntered_game1_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[1];
+            const userGame1_headstart_time_treasurebloxNative_ =  await game1huntEntries_treasurebloxNative_[2];
+            const userGame1_live_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[3];
+
+            const pot1AnsweredCorrectly_treasurebloxNative_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_treasurebloxNative,1).call();
+            const winning_address1_treasurebloxNative_ = await pot1AnsweredCorrectly_treasurebloxNative_[0];
+            const treasure_found1_treasurebloxNative_ = await pot1AnsweredCorrectly_treasurebloxNative_[1];
+            var winning_prize1_treasurebloxNative_ =  await pot1AnsweredCorrectly_treasurebloxNative_[2];
 
 
-            var currentStartDate = Date();
-            var startDate = new Date(currentStartDate);
-            // // Hours part from the timestamp
-            // var startDateHours = startDate.getHours();
-            // // Minutes part from the timestamp
-            // var startDateMinutes = startDate.getMinutes();
-            // // Seconds part from the timestamp
-            // var startDateSeconds = startDate.getSeconds();
+            const getAllLatestGameAttempts1_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,1).call();
+            const attemptId1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[0];
+            const attemptAddress1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[1];
+            const attemptDeadline1_treasurebloxNative_ =  await getAllLatestGameAttempts1_treasurebloxNative_[2];
+            const attemptUsername1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[3];
 
-            // Do
-            var endDateGame1 = new Date(allGame1_deadline_time * 1000);
-            // // Hours part from the timestamp
-            // var endDateHours = endDate.getHours();
-            // // Minutes part from the timestamp
-            // var endDateMinutes = endDate.getMinutes();
-            // // Seconds part from the timestamp
-            // var endDateSeconds = endDate.getSeconds();
 
-            function getDifferenceInDays(date1, date2) {
+
+            const entriesGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call()
+            settotalGameEntriesGame1_treasurebloxNative_(entriesGame1_treasurebloxNative_);
+
+
+
+            var currentStartDate_treasurebloxNative_ = Date();
+            var startDate_treasurebloxNative_ = new Date(currentStartDate_treasurebloxNative_);
+
+            var endDateGame1_treasurebloxNative_ = new Date(allGame1_deadline_time_treasurebloxNative_ * 1000);
+
+
+            function getDifferenceInDays_treasurebloxNative_(date1, date2) {
               const diffInMs = Math.abs(date2 - date1);
               return diffInMs / (1000 * 60 * 60 * 24);
               }
 
-            function getDifferenceInHours(date1, date2) {
+            function getDifferenceInHours_treasurebloxNative_(date1, date2) {
               const diffInMs = Math.abs(date2 - date1);
               return diffInMs / (1000 * 60 * 60);
               }
 
-            function getDifferenceInMinutes(date1, date2) {
+            function getDifferenceInMinutes_treasurebloxNative_(date1, date2) {
               const diffInMs = Math.abs(date2 - date1);
               return diffInMs / (1000 * 60);
               }
 
-            function getDifferenceInSeconds(date1, date2) {
+            function getDifferenceInSeconds_treasurebloxNative_(date1, date2) {
               const diffInMs = Math.abs(date2 - date1);
               return diffInMs / 1000;
               }
-            // console.log(getDifferenceInDays(endDate, startDate));
-            // console.log(getDifferenceInHours(endDate, startDate));
-            // console.log(getDifferenceInMinutes(endDate, startDate));
 
-            // console.log(getDifferenceInSeconds(startDate, endDateGame1));
 
-            var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
+            var timeGame1_treasurebloxNative_ = Math.abs(getDifferenceInSeconds_treasurebloxNative_(startDate_treasurebloxNative_, endDateGame1_treasurebloxNative_));
 
 
 
 
-            setTimeGame1(timeGame1)
-            setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!
+            setTimeGame1_treasurebloxNative_(timeGame1_treasurebloxNative_)
+            setTimeGame1_treasurebloxNative_(prevTime => prevTime - 1); // <-- Change this line!
 
-            setallGame1_id(allGame1_id)
-            setallGame1_user_front_of_que(allGame1_user_front_of_que)
-            setallGame1_deadline(allGame1_deadline_time)
-            setallGame1_username(allGame1_username)
-            console.log("username past: ", allGame1_username)
-            setallGame1_total_game_tries(allGame1_total_game_tries)
+            setallGame1_id_treasurebloxNative_(allGame1_id_treasurebloxNative_)
+            setallGame1_user_front_of_que_treasurebloxNative_(allGame1_user_front_of_que_treasurebloxNative_)
+            setallGame1_deadline_treasurebloxNative_(allGame1_deadline_time_treasurebloxNative_)
+            setallGame1_username_treasurebloxNative_(allGame1_username_treasurebloxNative_)
+            setallGame1_total_game_tries_treasurebloxNative_(allGame1_total_game_tries_treasurebloxNative_)
 
-            if (endDateGame1-1 >= startDate){
-              setcountGame1DeadlineTrue(true);
+            if (endDateGame1_treasurebloxNative_-1 >= startDate_treasurebloxNative_){
+              setcountGame1DeadlineTrue_treasurebloxNative_(true);
             } else {
-              setcountGame1DeadlineTrue(false);
+              setcountGame1DeadlineTrue_treasurebloxNative_(false);
             }
 
-            setGame1numberOfEntries(entriesGame1)
+            setGame1numberOfEntries_treasurebloxNative_(entriesGame1_treasurebloxNative_)
 
-            setUserGame1_id(userGame1_id)
-            setUserEntered_game1(userEntered_game1)
-            setUserGame1_headstart_time(userGame1_headstart_time)
-            setUserGame1_live(userGame1_live)
+            setUserGame1_id_treasurebloxNative_(userGame1_id_treasurebloxNative_)
+            setUserEntered_game1_treasurebloxNative_(userEntered_game1_treasurebloxNative_)
+            setUserGame1_headstart_time_treasurebloxNative_(userGame1_headstart_time_treasurebloxNative_)
+            setUserGame1_live_treasurebloxNative_(userGame1_live_treasurebloxNative_)
 
-            setWinning_address1(winning_address1)
-            setTreasure_found1(treasure_found1)
-            setWinning_prize1(winning_prize1)
+            setWinning_address1_treasurebloxNative_(winning_address1_treasurebloxNative_)
+            setTreasure_found1_treasurebloxNative_(treasure_found1_treasurebloxNative_)
+            setWinning_prize1_treasurebloxNative_(winning_prize1_treasurebloxNative_)
 
 
-            setAttemptId1(attemptId1)
-            setAttemptAddress1(attemptAddress1)
-            setAttemptUsername1(attemptUsername1)
-            setAttemptDeadline1(attemptDeadline1)
+            setAttemptId1_treasurebloxNative_(attemptId1_treasurebloxNative_)
+            setAttemptAddress1_treasurebloxNative_(attemptAddress1_treasurebloxNative_)
+            setAttemptUsername1_treasurebloxNative_(attemptUsername1_treasurebloxNative_)
+            setAttemptDeadline1_treasurebloxNative_(attemptDeadline1_treasurebloxNative_)
 
 
             // LeaderBoardAddressSearch
 
-            const leaderboardAddressSearch = await contract.methods.leaderboardAddressMapping(accounts[0],1).call();
+            const leaderboardAddressSearch_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_treasurebloxNative,1).call();
 
 
-            var leaderboardAddressSearch_huntid_game1 = await leaderboardAddressSearch[0];
-            var leaderboardAddressSearch_address_game1 = await leaderboardAddressSearch[1];
-            var leaderboardAddressSearch_entered_game1 = await leaderboardAddressSearch[2];
-            var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
-            var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
-            var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
-            var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
-
-
-
-            setleaderboardAddressSearch_huntid_game1(leaderboardAddressSearch_huntid_game1)
-            setleaderboardAddressSearch_address_game1(leaderboardAddressSearch_address_game1)
-            setleaderboardAddressSearch_entered_game1(leaderboardAddressSearch_entered_game1)
-            setleaderboardAddressSearch_username_game1(leaderboardAddressSearch_username_game1)
-            setleaderboardAddressSearch_tries_game1(leaderboardAddressSearch_tries_game1)
-            setleaderboardAddressSearch_stage_game1(leaderboardAddressSearch_stage_game1)
+            var leaderboardAddressSearch_huntid_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[0];
+            var leaderboardAddressSearch_address_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[1];
+            var leaderboardAddressSearch_entered_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[2];
+            var leaderboardAddressSearch_username_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[3];
+            var leaderboardAddressSearch_tries_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[4];
+            var leaderboardAddressSearch_stage_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[5];
+            var leaderboardAddressSearch_team_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[6];
 
 
 
+
+            setleaderboardAddressSearch_huntid_game1_treasurebloxNative_(leaderboardAddressSearch_huntid_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_address_game1_treasurebloxNative_(leaderboardAddressSearch_address_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_entered_game1_treasurebloxNative_(leaderboardAddressSearch_entered_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_username_game1_treasurebloxNative_(leaderboardAddressSearch_username_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_tries_game1_treasurebloxNative_(leaderboardAddressSearch_tries_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_stage_game1_treasurebloxNative_(leaderboardAddressSearch_stage_game1_treasurebloxNative_)
+            setleaderboardAddressSearch_team_game1_treasurebloxNative_(leaderboardAddressSearch_team_game1_treasurebloxNative_)
 
             // User Levels
-            if (leaderboardAddressSearch_stage_game1 == 0){
-              setUserLevel1Game1(true)
-            } else if (leaderboardAddressSearch_stage_game1 == 1) {
+            if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 0){
+              setUserLevel1Game1_treasurebloxNative_(true)
+            } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 1) {
 
-              await setUserLevel2Game1(true)
+              await setUserLevel2Game1_treasurebloxNative_(true)
 
-            } else if (leaderboardAddressSearch_stage_game1 == 2){
-              setUserLevel3Game1(true)
-            } else if (leaderboardAddressSearch_stage_game1 == 3){
-              setUserLevel4Game1(true)
+            } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 2){
+              setUserLevel3Game1_treasurebloxNative_(true)
+            } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 3){
+              setUserLevel4Game1_treasurebloxNative_(true)
             } else {
-              setUserLevel1Game1(true)
+              setUserLevel1Game1_treasurebloxNative_(true)
             }
 
 
 
-            const noOfEntrys = await contract.methods.numberOfEntries(1).call();
+            const noOfEntrys_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call();
 
-// LeaderBoard
+            // LeaderBoard
 
-            var game1_leaderboard = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard1 = await leaderBoard;
+                var leaderboard1_treasurebloxNative_ = await leaderBoard_treasurebloxNative_;
 
-                game1_leaderboard.push(leaderboard1);
+                game1_leaderboard_treasurebloxNative_.push(leaderboard1_treasurebloxNative_);
               }
 
-              setgame1LeaderBoard(game1_leaderboard)
-              console.log(game1LeaderBoard,"here")
+              setgame1LeaderBoard_treasurebloxNative_(game1_leaderboard_treasurebloxNative_)
 
-
-
-            var game1_indexrows = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                game1_indexrows.push(i);
+            var game1_indexrows_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                game1_indexrows_treasurebloxNative_.push(i);
               }
-            setgame1LeaderBoardIndex(game1_indexrows)
+            setgame1LeaderBoardIndex_treasurebloxNative_(game1_indexrows_treasurebloxNative_)
 
 
-            var game1_leaderboard_game_id = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_game_id_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_game_id = await leaderBoard[0];
-                game1_leaderboard_game_id.push(leaderboard_game_id);
+                var leaderboard_game_id_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[0];
+                game1_leaderboard_game_id_treasurebloxNative_.push(leaderboard_game_id_treasurebloxNative_);
               }
-            setgame1LeaderBoardGameID(game1_leaderboard_game_id)
+            setgame1LeaderBoardGameID_treasurebloxNative_(game1_leaderboard_game_id_treasurebloxNative_)
 
 
-            var game1_leaderboard_address = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_address_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_address = await leaderBoard[1];
-                game1_leaderboard_address.push(leaderboard_address);
+                var leaderboard_address_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[1];
+                game1_leaderboard_address_treasurebloxNative_.push(leaderboard_address_treasurebloxNative_);
               }
-            setgame1LeaderBoardAddress(game1_leaderboard_address)
+            setgame1LeaderBoardAddress_treasurebloxNative_(game1_leaderboard_address_treasurebloxNative_)
 
-            var game1_leaderboard_entered = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_entered_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_entered = await leaderBoard[2];
-                game1_leaderboard_entered.push(leaderboard_entered);
+                var leaderboard_entered_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[2];
+                game1_leaderboard_entered_treasurebloxNative_.push(leaderboard_entered_treasurebloxNative_);
               }
 
-            setgame1LeaderBoardEntered(game1_leaderboard_entered)
+            setgame1LeaderBoardEntered_treasurebloxNative_(game1_leaderboard_entered_treasurebloxNative_)
 
 
-            var game1_leaderboard_username = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_username_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_username = await leaderBoard[3];
-                game1_leaderboard_username.push(leaderboard_username);
+                var leaderboard_username_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[3];
+                game1_leaderboard_username_treasurebloxNative_.push(leaderboard_username_treasurebloxNative_);
               }
 
-            setgame1LeaderBoardUsername(game1_leaderboard_username)
+            setgame1LeaderBoardUsername_treasurebloxNative_(game1_leaderboard_username_treasurebloxNative_)
 
 
-            var game1_leaderboard_tries = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_tries_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_tries = await leaderBoard[4];
-                game1_leaderboard_tries.push(parseInt(leaderboard_tries));
+                var leaderboard_tries_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[4];
+                game1_leaderboard_tries_treasurebloxNative_.push(parseInt(leaderboard_tries_treasurebloxNative_));
               }
 
-            setgame1LeaderBoardTries(game1_leaderboard_tries)
+            setgame1LeaderBoardTries_treasurebloxNative_(game1_leaderboard_tries_treasurebloxNative_)
 
 
-            var game1_leaderboard_stage = [];
-              for (var i = 0; i < noOfEntrys; i++) {
-                const leaderBoard = await contract.methods.leaderboard(1,i).call();
+            var game1_leaderboard_stage_treasurebloxNative_ = [];
+              for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+                const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
 
-                var leaderboard_stage = await leaderBoard[5];
-                game1_leaderboard_stage.push(leaderboard_stage);
+                var leaderboard_stage_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[5];
+                game1_leaderboard_stage_treasurebloxNative_.push(leaderboard_stage_treasurebloxNative_);
               }
 
-            setgame1LeaderBoardStage(game1_leaderboard_stage)
+            setgame1LeaderBoardStage_treasurebloxNative_(game1_leaderboard_stage_treasurebloxNative_)
 
+            const game1_team1_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,1,1).call();
+            const game1_team1_treasurebloxNative_teamid = await game1_team1_details_treasurebloxNative_[0];
+            const game1_team1_treasurebloxNative_team_points_target = await game1_team1_details_treasurebloxNative_[1];
+            const game1_team1_treasurebloxNative_ppp = await game1_team1_details_treasurebloxNative_[2];
+            const game1_team1_treasurebloxNative_team_entries = await game1_team1_details_treasurebloxNative_[3];
+            const game1_team1_treasurebloxNative_team_actual_points = await game1_team1_details_treasurebloxNative_[4];
 
-            const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
-            const game1_team1_teamid = await game1_team1_details[0];
-            const game1_team1_team_points_target = await game1_team1_details[1];
-            const game1_team1_ppp = await game1_team1_details[2];
-            const game1_team1_team_entries = await game1_team1_details[3];
-            const game1_team1_team_actual_points = await game1_team1_details[4];
+            const game1_team2_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,1,2).call();
+            const game1_team2_treasurebloxNative_teamid = await game1_team2_details_treasurebloxNative_[0];
+            const game1_team2_treasurebloxNative_team_points_target = await game1_team2_details_treasurebloxNative_[1];
+            const game1_team2_treasurebloxNative_ppp = await game1_team2_details_treasurebloxNative_[2];
+            const game1_team2_treasurebloxNative_team_entries = await game1_team2_details_treasurebloxNative_[3];
+            const game1_team2_treasurebloxNative_team_actual_points = await game1_team2_details_treasurebloxNative_[4];
 
-            const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
-            const game1_team2_teamid = await game1_team2_details[0];
-            const game1_team2_team_points_target = await game1_team2_details[1];
-            const game1_team2_ppp = await game1_team2_details[2];
-            const game1_team2_team_entries = await game1_team2_details[3];
-            const game1_team2_team_actual_points = await game1_team2_details[4];
+            setGame1_team1_treasurebloxNative_teamid(game1_team1_treasurebloxNative_teamid)
+            setGame1_team1_treasurebloxNative_team_points_target(game1_team1_treasurebloxNative_team_points_target)
+            setGame1_team1_treasurebloxNative_ppp(game1_team1_treasurebloxNative_ppp)
+            setGame1_team1_treasurebloxNative_team_entries(game1_team1_treasurebloxNative_team_entries)
+            setGame1_team1_treasurebloxNative_team_actual_points(game1_team1_treasurebloxNative_team_actual_points)
 
-            setGame1_team1_teamid(game1_team1_teamid)
-            setGame1_team1_team_points_target(game1_team1_team_points_target)
-            setGame1_team1_ppp(game1_team1_ppp)
-            setGame1_team1_team_entries(game1_team1_team_entries)
-            setGame1_team1_team_actual_points(game1_team1_team_actual_points)
-
-            setGame1_team2_teamid(game1_team2_teamid)
-            setGame1_team2_team_points_target(game1_team2_team_points_target)
-            setGame1_team2_ppp(game1_team2_ppp)
-            setGame1_team2_team_entries(game1_team2_team_entries)
-            setGame1_team2_team_actual_points(game1_team2_team_actual_points)
-
+            setGame1_team2_treasurebloxNative_teamid(game1_team2_treasurebloxNative_teamid)
+            setGame1_team2_treasurebloxNative_team_points_target(game1_team2_treasurebloxNative_team_points_target)
+            setGame1_team2_treasurebloxNative_ppp(game1_team2_treasurebloxNative_ppp)
+            setGame1_team2_treasurebloxNative_team_entries(game1_team2_treasurebloxNative_team_entries)
+            setGame1_team2_treasurebloxNative_team_actual_points(game1_team2_treasurebloxNative_team_actual_points)
 
             // GAME 1 TREASUREBLOX ENDS
 
@@ -1368,283 +1416,284 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
           // GAME 2 TREASUREBLOX STARTS
 
 
+          const game2_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,2).call();
+          const game2_live_treasurebloxNative_ = await game2_treasurebloxNative_[0];
 
-          const game2 = await contract.methods.Games(2).call();
+          var game2_prize_treasurebloxNative_ = await game2_treasurebloxNative_[1];
+          var winnerEstPrizeGame2_treasurebloxNative_ = game2_prize_treasurebloxNative_.substring(0, Math.round(game2_prize_treasurebloxNative_*.3).length-18);
 
-          const game2_id = await game2[0];
-          const game2_live = await game2[1];
-          var game2_prize = await game2[2];
+          setWinnerEstPrizeGame2_treasurebloxNative_(winnerEstPrizeGame2_treasurebloxNative_)
+          game2_prize_treasurebloxNative_ = game2_prize_treasurebloxNative_.substring(0, game2_prize_treasurebloxNative_.length-18);
 
-          // Local Testing
-          // var winnerEstPrizeGame2 = Math.round(game2_prize*.3);
+          const game2_question_hash_treasurebloxNative_ = await game2_treasurebloxNative_[2];
 
-          var winnerEstPrizeGame2 = game2_prize.substring(0, Math.round(game2_prize*.3).length-18);
-          setWinnerEstPrizeGame2(winnerEstPrizeGame2)
-          game2_prize = game2_prize.substring(0, game2_prize.length-18);
+          var  game2_costToEnter_treasurebloxNative_ = await game2_treasurebloxNative_[3];
+          game2_costToEnter_treasurebloxNative_ =  game2_costToEnter_treasurebloxNative_.substring(0,  game2_costToEnter_treasurebloxNative_.length-18);
 
+          const game2_riddle_treasurebloxNative_ = await game2_treasurebloxNative_[4];
+          const game2_head_start_time_treasurebloxNative_ = await game2_treasurebloxNative_[5];
 
+          setGame2_live_treasurebloxNative_(game2_live_treasurebloxNative_)
+          setGame2_prize_treasurebloxNative_(game2_prize_treasurebloxNative_)
+          setGame2_question_hash_treasurebloxNative_(game2_question_hash_treasurebloxNative_)
+          setGame2_costToEnter_treasurebloxNative_(game2_costToEnter_treasurebloxNative_)
+          setGame2_riddle_treasurebloxNative_(game2_riddle_treasurebloxNative_)
+          setGame2_head_start_time_treasurebloxNative_(game2_head_start_time_treasurebloxNative_)
 
-          const game2_question_hash = await game2[3];
-          var game2_time_lock_cost= await game2[4];
-          game2_time_lock_cost = game2_time_lock_cost.substring(0, game2_time_lock_cost.length-18);
+          const allGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,2).call();
+          const allGame2_id_treasurebloxNative_ = await allGame2_treasurebloxNative_[0];
+          const allGame2_user_front_of_que_treasurebloxNative_ = await allGame2_treasurebloxNative_[1];
+          const allGame2_deadline_time_treasurebloxNative_ =  await allGame2_treasurebloxNative_[2];
+          const allGame2_username_treasurebloxNative_ = await allGame2_treasurebloxNative_[3];
+          const allGame2_total_game_tries_treasurebloxNative_ = await allGame2_treasurebloxNative_[4];
 
-          var game2_submit_secret_cost = await game2[5];
-          game2_submit_secret_cost = game2_submit_secret_cost.substring(0, game2_submit_secret_cost.length-18);
+          const numberOfEntriesGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call();
 
-          const game2_riddle = await game2[6];
-          const game2_clue = await game2[7];
-          const game2_head_start_time = await game2[8];
-          const game2_entry_limit = await game2[9];
-          var game2_entry_cost = await game2[10];
-          game2_entry_cost = game2_entry_cost.substring(0, game2_entry_cost.length-18);
+          const game2huntEntries_treasurebloxNative_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_treasurebloxNative,2).call();
+          const userGame2_id_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[0];
+          const userEntered_game2_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[1];
+          const userGame2_headstart_time_treasurebloxNative_ =  await game2huntEntries_treasurebloxNative_[2];
+          const userGame2_live_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[3];
 
-
-          setGame2_id(game2_id)
-          setGame2_live(game2_live)
-          setGame2_prize(game2_prize)
-          setGame2_question_hash(game2_question_hash)
-          setgame2_time_lock_cost(game2_time_lock_cost)
-          setGame2_submit_secret_cost(game2_submit_secret_cost)
-          setGame2_riddle(game2_riddle)
-          setGame2_clue(game2_clue)
-          setGame2_head_start_time(game2_head_start_time)
-          setGame2_entry_limit(game2_entry_limit)
-          setGame2_entry_cost(game2_entry_cost)
-
+          const pot2AnsweredCorrectly_treasurebloxNative_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_treasurebloxNative,2).call();
+          const winning_address2_treasurebloxNative_ = await pot2AnsweredCorrectly_treasurebloxNative_[0];
+          const treasure_found2_treasurebloxNative_ = await pot2AnsweredCorrectly_treasurebloxNative_[1];
+          var winning_prize2_treasurebloxNative_ =  await pot2AnsweredCorrectly_treasurebloxNative_[2];
 
 
-          const allGame2 = await contract.methods.allGames(2).call();
-          const allGame2_id = await allGame2[0];
-          const allGame2_user_front_of_que = await allGame2[1];
-          const allGame2_deadline_time =  await allGame2[2];
-          const allGame2_username = await allGame2[3];
-          const allGame2_total_game_tries = await allGame2[4];
-
-          const game2numberOfEntries = await contract.methods.numberOfEntries(2).call();
-
-          const game2huntEntries = await contract.methods.huntEntries(accounts[0],2).call();
-          const userGame2_id = await game2huntEntries[0];
-          const userEntered_game2 = await game2huntEntries[1];
-          const userGame2_headstart_time =  await game2huntEntries[2];
-          const userGame2_live = await game2huntEntries[3];
-
-          const numberOfEntriesGame2 = await contract.methods.numberOfEntries(2).call();
+          const getAllLatestGameAttempts2_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,2).call();
+          const attemptId2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[0];
+          const attemptAddress2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[1];
+          const attemptDeadline2_treasurebloxNative_ =  await getAllLatestGameAttempts2_treasurebloxNative_[2];
+          const attemptUsername2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[3];
 
 
 
-          const pot2AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(2).call();
-          const winning_address2 = await pot2AnsweredCorrectly[0];
-          const treasure_found2 = await pot2AnsweredCorrectly[1];
-          var winning_prize2 =  await pot2AnsweredCorrectly[2];
-
-          winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
-
-          const question_hash_solved2 = await pot2AnsweredCorrectly[3];
-          const winning_message2 = await pot2AnsweredCorrectly[4];
-
-          const getAllLatestGameAttempts2 = await contract.methods.getAllLatestGameAttempts(2).call();
-          const attemptId2 = await getAllLatestGameAttempts2[0];
-          const attemptAddress2 = await getAllLatestGameAttempts2[1];
-          const attemptDeadline2 =  await getAllLatestGameAttempts2[2];
-          const attemptUsername2 = await getAllLatestGameAttempts2[3];
+          const entriesGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call()
+          settotalGameEntriesGame2_treasurebloxNative_(entriesGame2_treasurebloxNative_);
 
 
-          var currentStartDate = Date();
-          var startDate = new Date(currentStartDate);
 
-          // Do
-          var endDateGame2 = new Date(allGame2_deadline_time * 1000);
+          var currentStartDate_treasurebloxNative_ = Date();
+          var startDate_treasurebloxNative_ = new Date(currentStartDate_treasurebloxNative_);
 
-          console.log(getDifferenceInSeconds(startDate, endDateGame2));
+          var endDateGame2_treasurebloxNative_ = new Date(allGame2_deadline_time_treasurebloxNative_ * 1000);
 
-          var timeGame2 = Math.abs(getDifferenceInSeconds(startDate, endDateGame2));
 
-          setTimeGame2(timeGame2)
-          setTimeGame2(prevTime => prevTime - 1); // <-- Change this line!
+          function getDifferenceInDays_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60 * 24);
+            }
 
-          setallGame2_id(allGame2_id)
-          setallGame2_user_front_of_que(allGame2_user_front_of_que)
-          setallGame2_deadline(allGame2_deadline_time)
-          setallGame2_username(allGame2_username)
-          setallGame2_total_game_tries(allGame2_total_game_tries)
+          function getDifferenceInHours_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60);
+            }
 
-          if (endDateGame2-1 >= startDate){
-            setcountGame2DeadlineTrue(true);
+          function getDifferenceInMinutes_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60);
+            }
+
+          function getDifferenceInSeconds_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / 1000;
+            }
+
+
+          var timeGame2_treasurebloxNative_ = Math.abs(getDifferenceInSeconds_treasurebloxNative_(startDate_treasurebloxNative_, endDateGame2_treasurebloxNative_));
+
+
+
+
+          setTimeGame2_treasurebloxNative_(timeGame2_treasurebloxNative_)
+          setTimeGame2_treasurebloxNative_(prevTime => prevTime - 1); // <-- Change this line!
+
+          setallGame2_id_treasurebloxNative_(allGame2_id_treasurebloxNative_)
+          setallGame2_user_front_of_que_treasurebloxNative_(allGame2_user_front_of_que_treasurebloxNative_)
+          setallGame2_deadline_treasurebloxNative_(allGame2_deadline_time_treasurebloxNative_)
+          setallGame2_username_treasurebloxNative_(allGame2_username_treasurebloxNative_)
+          setallGame2_total_game_tries_treasurebloxNative_(allGame2_total_game_tries_treasurebloxNative_)
+
+          if (endDateGame2_treasurebloxNative_-1 >= startDate_treasurebloxNative_){
+            setcountGame2DeadlineTrue_treasurebloxNative_(true);
           } else {
-            setcountGame2DeadlineTrue(false);
+            setcountGame2DeadlineTrue_treasurebloxNative_(false);
           }
 
-          setGame2numberOfEntries(game2numberOfEntries)
+          setGame2numberOfEntries_treasurebloxNative_(entriesGame2_treasurebloxNative_)
+
+          setUserGame2_id_treasurebloxNative_(userGame2_id_treasurebloxNative_)
+          setUserEntered_game2_treasurebloxNative_(userEntered_game2_treasurebloxNative_)
+          setUserGame2_headstart_time_treasurebloxNative_(userGame2_headstart_time_treasurebloxNative_)
+          setUserGame2_live_treasurebloxNative_(userGame2_live_treasurebloxNative_)
+
+          setWinning_address2_treasurebloxNative_(winning_address2_treasurebloxNative_)
+          setTreasure_found2_treasurebloxNative_(treasure_found2_treasurebloxNative_)
+          setWinning_prize2_treasurebloxNative_(winning_prize2_treasurebloxNative_)
 
 
-          setUserGame2_id(userGame2_id)
-          setUserEntered_game2(userEntered_game2)
-          setUserGame2_headstart_time(userGame2_headstart_time)
-          setUserGame2_live(userGame2_live)
-
-          setWinning_address2(winning_address2)
-          setTreasure_found2(treasure_found2)
-          setWinning_prize2(winning_prize2)
-          setQuestion_hash_solved2(question_hash_solved2)
-          setWinning_message2(winning_message2)
-
-          setAttemptId2(attemptId2)
-          setAttemptAddress2(attemptAddress2)
-          setAttemptUsername2(attemptUsername2)
-          setAttemptDeadline2(attemptDeadline2)
+          setAttemptId1_treasurebloxNative_(attemptId1_treasurebloxNative_)
+          setAttemptAddress1_treasurebloxNative_(attemptAddress1_treasurebloxNative_)
+          setAttemptUsername1_treasurebloxNative_(attemptUsername1_treasurebloxNative_)
+          setAttemptDeadline1_treasurebloxNative_(attemptDeadline1_treasurebloxNative_)
 
 
           // LeaderBoardAddressSearch
 
-          const leaderboardAddressSearch2 = await contract.methods.leaderboardAddressMapping(accounts[0],2).call();
-          var leaderboardAddressSearch_huntid_game2 = await leaderboardAddressSearch2[0];
-          var leaderboardAddressSearch_address_game2 = await leaderboardAddressSearch2[1];
-          var leaderboardAddressSearch_entered_game2 = await leaderboardAddressSearch2[2];
-          var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
-          var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
-          var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
-          var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
+          const leaderboardAddressSearch_treasurebloxNative_game2_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_treasurebloxNative,2).call();
+
+
+          var leaderboardAddressSearch_huntid_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[0];
+          var leaderboardAddressSearch_address_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[1];
+          var leaderboardAddressSearch_entered_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[2];
+          var leaderboardAddressSearch_username_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[3];
+          var leaderboardAddressSearch_tries_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[4];
+          var leaderboardAddressSearch_stage_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[5];
+          var leaderboardAddressSearch_team_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[6];
 
 
 
-          setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
-          setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
-          setleaderboardAddressSearch_entered_game2(leaderboardAddressSearch_entered_game2)
-          setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
-          setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
-          setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
-          setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
 
-
+          setleaderboardAddressSearch_huntid_game2_treasurebloxNative_(leaderboardAddressSearch_huntid_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_address_game2_treasurebloxNative_(leaderboardAddressSearch_address_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_entered_game2_treasurebloxNative_(leaderboardAddressSearch_entered_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_username_game2_treasurebloxNative_(leaderboardAddressSearch_username_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_tries_game2_treasurebloxNative_(leaderboardAddressSearch_tries_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_stage_game2_treasurebloxNative_(leaderboardAddressSearch_stage_game2_treasurebloxNative_)
+          setleaderboardAddressSearch_team_game2_treasurebloxNative_(leaderboardAddressSearch_team_game2_treasurebloxNative_)
 
           // User Levels
-          if (state_leaderboardAddressSearch_stage_game2 == 0){
-            setUserLevel1Game2(true)
-          } else if (state_leaderboardAddressSearch_stage_game2 == 1) {
-            setUserLevel2Game2(true)
-          } else if (state_leaderboardAddressSearch_stage_game2 == 2){
-            setUserLevel3Game2(true)
-          } else if (state_leaderboardAddressSearch_stage_game2 == 3){
-            setUserLevel4Game2(true)
+          if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 0){
+            setUserLevel1Game2_treasurebloxNative_(true)
+          } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 1) {
+
+            await setUserLevel2Game2_treasurebloxNative_(true)
+
+          } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 2){
+            setUserLevel3Game2_treasurebloxNative_(true)
+          } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 3){
+            setUserLevel4Game2_treasurebloxNative_(true)
           } else {
-            setUserLevel1Game2(true)
+            setUserLevel1Game2_treasurebloxNative_(true)
           }
 
 
 
-
-          const noOfEntrys2 = await contract.methods.numberOfEntries(2).call();
+          const noOfEntrys_treasurebloxNative_game2_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call();
 
           // LeaderBoard
 
-                      var game2_leaderboard = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+          var game2_leaderboard_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
 
-                          var leaderboard2 = await leaderBoard2;
+              var leaderboard1_treasurebloxNative_ = await leaderBoard_treasurebloxNative_;
 
-                          game2_leaderboard.push(leaderboard2);
-                        }
+              game2_leaderboard_treasurebloxNative_.push(leaderboard1_treasurebloxNative_);
+            }
 
-                        setgame1LeaderBoard(game2_leaderboard)
-                        console.log(game2LeaderBoard,"here")
+            setgame2LeaderBoard_treasurebloxNative_(game2_leaderboard_treasurebloxNative_)
 
-
-
-                      var game2_indexrows = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          game2_indexrows.push(i);
-                        }
-                      setgame2LeaderBoardIndex(game2_indexrows)
+          var game2_indexrows_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              game2_indexrows_treasurebloxNative_.push(i);
+            }
+          setgame2LeaderBoardIndex_treasurebloxNative_(game2_indexrows_treasurebloxNative_)
 
 
-                      var game2_leaderboard_game_id = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+          var game2_leaderboard_game_id_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
 
-                          var leaderboard_game_id2 = await leaderBoard2[0];
-                          game2_leaderboard_game_id.push(leaderboard_game_id2);
-                        }
-                      setgame2LeaderBoardGameID(game2_leaderboard_game_id)
-
-
-                      var game2_leaderboard_address = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                          var leaderboard_address2 = await leaderBoard2[1];
-                          game2_leaderboard_address.push(leaderboard_address2);
-                        }
-                      setgame2LeaderBoardAddress(game2_leaderboard_address)
-
-                      var game2_leaderboard_entered = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                          var leaderboard_entered2 = await leaderBoard2[2];
-                          game2_leaderboard_entered.push(leaderboard_entered2);
-                        }
-
-                      setgame2LeaderBoardEntered(game2_leaderboard_entered)
+              var leaderboard_game_id_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[0];
+              game2_leaderboard_game_id_treasurebloxNative_.push(leaderboard_game_id_treasurebloxNative_);
+            }
+          setgame2LeaderBoardGameID_treasurebloxNative_(game2_leaderboard_game_id_treasurebloxNative_)
 
 
-                      var game2_leaderboard_username = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+          var game2_leaderboard_address_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
 
-                          var leaderboard_username2 = await leaderBoard2[3];
-                          game2_leaderboard_username.push(leaderboard_username2);
-                        }
+              var leaderboard_address_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[1];
+              game2_leaderboard_address_treasurebloxNative_.push(leaderboard_address_treasurebloxNative_);
+            }
+          setgame2LeaderBoardAddress_treasurebloxNative_(game2_leaderboard_address_treasurebloxNative_)
 
-                      setgame2LeaderBoardUsername(game2_leaderboard_username)
+          var game2_leaderboard_entered_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
 
+              var leaderboard_entered_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[2];
+              game2_leaderboard_entered_treasurebloxNative_.push(leaderboard_entered_treasurebloxNative_);
+            }
 
-                      var game2_leaderboard_tries = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                          var leaderboard_tries2 = await leaderBoard2[4];
-                          game2_leaderboard_tries.push(parseInt(leaderboard_tries2));
-                        }
-
-                      setgame2LeaderBoardTries(game2_leaderboard_tries)
-
-                      var game2_leaderboard_stage = [];
-                        for (var i = 0; i < noOfEntrys2; i++) {
-                          const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                          var leaderboard_stage2 = await leaderBoard2[5];
-                          game2_leaderboard_stage.push(leaderboard_stage2);
-                        }
-
-                      setgame2LeaderBoardStage(game2_leaderboard_stage)
+          setgame2LeaderBoardEntered_treasurebloxNative_(game2_leaderboard_entered_treasurebloxNative_)
 
 
-                      const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
-                      const game2_team1_teamid = await game2_team1_details[0];
-                      const game2_team1_team_points_target = await game2_team1_details[1];
-                      const game2_team1_ppp = await game2_team1_details[2];
-                      const game2_team1_team_entries = await game2_team1_details[3];
-                      const game2_team1_team_actual_points = await game2_team1_details[4];
+          var game2_leaderboard_username_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
 
-                      const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
-                      const game2_team2_teamid = await game2_team2_details[0];
-                      const game2_team2_team_points_target = await game2_team2_details[1];
-                      const game2_team2_ppp = await game2_team2_details[2];
-                      const game2_team2_team_entries = await game2_team2_details[3];
-                      const game2_team2_team_actual_points = await game2_team2_details[4];
+              var leaderboard_username_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[3];
+              game2_leaderboard_username_treasurebloxNative_.push(leaderboard_username_treasurebloxNative_);
+            }
 
-                      setGame2_team1_teamid(game2_team1_teamid)
-                      setGame2_team1_team_points_target(game2_team1_team_points_target)
-                      setGame2_team1_ppp(game2_team1_ppp)
-                      setGame2_team1_team_entries(game1_team2_team_entries)
-                      setGame2_team1_team_actual_points(game2_team1_team_actual_points)
+          setgame2LeaderBoardUsername_treasurebloxNative_(game2_leaderboard_username_treasurebloxNative_)
 
-                      setGame2_team2_teamid(game2_team2_teamid)
-                      setGame2_team2_team_points_target(game2_team2_team_points_target)
-                      setGame2_team2_ppp(game2_team2_ppp)
-                      setGame2_team2_team_entries(game2_team2_team_entries)
-                      setGame2_team2_team_actual_points(game2_team2_team_actual_points)
+
+          var game2_leaderboard_tries_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+              var leaderboard_tries_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[4];
+              game2_leaderboard_tries_treasurebloxNative_.push(parseInt(leaderboard_tries_treasurebloxNative_));
+            }
+
+          setgame2LeaderBoardTries_treasurebloxNative_(game2_leaderboard_tries_treasurebloxNative_)
+
+
+          var game2_leaderboard_stage_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+              var leaderboard_stage_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[5];
+              game2_leaderboard_stage_treasurebloxNative_.push(leaderboard_stage_treasurebloxNative_);
+            }
+
+          setgame2LeaderBoardStage_treasurebloxNative_(game2_leaderboard_stage_treasurebloxNative_)
+
+          const game2_team1_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,2,1).call();
+          const game2_team1_treasurebloxNative_teamid = await game2_team1_details_treasurebloxNative_[0];
+          const game2_team1_treasurebloxNative_team_points_target = await game2_team1_details_treasurebloxNative_[1];
+          const game2_team1_treasurebloxNative_ppp = await game2_team1_details_treasurebloxNative_[2];
+          const game2_team1_treasurebloxNative_team_entries = await game2_team1_details_treasurebloxNative_[3];
+          const game2_team1_treasurebloxNative_team_actual_points = await game2_team1_details_treasurebloxNative_[4];
+
+          const game2_team2_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,2,2).call();
+          const game2_team2_treasurebloxNative_teamid = await game2_team2_details_treasurebloxNative_[0];
+          const game2_team2_treasurebloxNative_team_points_target = await game2_team2_details_treasurebloxNative_[1];
+          const game2_team2_treasurebloxNative_ppp = await game2_team2_details_treasurebloxNative_[2];
+          const game2_team2_treasurebloxNative_team_entries = await game2_team2_details_treasurebloxNative_[3];
+          const game2_team2_treasurebloxNative_team_actual_points = await game2_team2_details_treasurebloxNative_[4];
+
+          setGame2_team1_treasurebloxNative_teamid(game2_team1_treasurebloxNative_teamid)
+          setGame2_team1_treasurebloxNative_team_points_target(game2_team1_treasurebloxNative_team_points_target)
+          setGame2_team1_treasurebloxNative_ppp(game2_team1_treasurebloxNative_ppp)
+          setGame2_team1_treasurebloxNative_team_entries(game2_team1_treasurebloxNative_team_entries)
+          setGame2_team1_treasurebloxNative_team_actual_points(game2_team1_treasurebloxNative_team_actual_points)
+
+          setGame2_team2_treasurebloxNative_teamid(game2_team2_treasurebloxNative_teamid)
+          setGame2_team2_treasurebloxNative_team_points_target(game2_team2_treasurebloxNative_team_points_target)
+          setGame2_team2_treasurebloxNative_ppp(game2_team2_treasurebloxNative_ppp)
+          setGame2_team2_treasurebloxNative_team_entries(game2_team2_treasurebloxNative_team_entries)
+          setGame2_team2_treasurebloxNative_team_actual_points(game2_team2_treasurebloxNative_team_actual_points)
+
+
+
+
+
 
         }, 1000);
         // End of Game timer code
@@ -1652,1049 +1701,1063 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
       }// End of network if statement BSC
 
 
-      if (currentChainId === 83) {
-
-        setIs_Meter(true)
-        console.log("boo")
-        // Meter.io
-        const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
-        const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-        console.log(gameAddress_xyz_,"START treassssure111111111")
-
-        setGameContractAddress_xyz_(gameAddress_xyz_);
-
-
-      // BSC
-        const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
-        console.log(tokenContract_xyz_,"START twoooooooo")
-
-
-        const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
-
-        var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
-        totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
-
-
-
-        setWeb3(web3)
-        setAccounts_xyz_(accounts_xyz_[0])
-        setContract_xyz_(contract_xyz_)
-        setDecimals_xyz_(decimals_xyz_)
-        setTotalTreasure_xyz_(totalTreasure_xyz_)
-        setTokenContract_xyz_(tokenContract_xyz_)
-
-        setWallet_for_google_xyz_("w="+accounts_xyz_.toString())
-
-        console.log(contract_xyz_,"loaded 1")
-
-        // GLOBAL PARTNER EXAMPLE ASYNC STARTS
-
-        const globalTries_xyz_ = await contract_xyz_.methods.totalumberOfTries().call();
-
-        setGlobalNumberOfTries_xyz_(globalTries_xyz_)
-
-
-
-        // GLOBAL PARTNER EXAMPLE ASYNC Ends
-
-      // PARTNER EXAMPLE CONTRACT DETAILS END
-
-
-
-      // TREASUREBLOX EXAMPLE CONTRACT DETAILS START
-
-        //creating function to load ip address from the API
-
-        // const res = await axios.get('https://geolocation-db.com/json/')
-        // console.log(res,"herererererere");
-        // setIP(res.data.IPv4)
-
-        // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
-
-        const accounts = await web3.eth.getAccounts();
-
-        const abi = require('./TreasureBlox.abi.json');
-        const abiToken = require('./TreasureBloxToken.abi.json');
-        // Set the provider
-        // web3.setProvider(new web3.providers.WebsocketProvider('ws://localhost:8545'));
-        // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
-
-        // LOCAL
-        // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
-        // MainNet
-        // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
-
-      // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
-      // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
-
-      const contract = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
-      const gameAddress = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-
-
-        // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
-        // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
-
-        setGameContractAddress(gameAddress);
-
-        const tokenContract = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
-
-
-        // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
-
-        // TestNet
-        // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
-        // Sstart Data Calls
-        const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
-
-        var totalTreasure = await tokenContract.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
-        totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
-        console.log(totalTreasure,"Total Treasure token contract")
-
-        // const owner = await contract.methods._owner().call();
-        // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
-        //
-        // const total_supply = await contract.methods.totalSupply().call();
-        // const treasure_chest = await contract.methods.treasureChest().call();
-        setWeb3(web3)
-        setAccounts(accounts[0])
-        setContract(contract)
-        setDecimals(decimals)
-        setTotalTreasure(totalTreasure)
-        setTokenContract(tokenContract)
-
-        setWallet_for_google("w="+accounts.toString())
-
-
-
-      // GLOBAL TREASUREBLOX ASYNC STARTS
-
-        const globalTries = await contract.methods.totalumberOfTries().call();
-
-        setGlobalNumberOfTries(globalTries)
-      // GLOBAL TREASUREBLOX ASYNC ENDS
-
-
-      // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
-
-
-
-
-
-      // This Handels the countdown time and collecting information every 1 second so the counter goes down
-      const timer = window.setInterval( async() => {
-          var moment = require('moment'); // require
-
-
-      // GET GAMES //
-
-      // PARTNER EXAMPLE GET GAME 1 START
-
-          // PARTNER GAME 1
-
-          const game1_xyz_ = await contract_xyz_.methods.Games(1).call();
-
-          const game1_live_xyz_ = await game1_xyz_[0];
-          var game1_prize_xyz_ = await game1_xyz_[1];
-
-
-          // Local Testing
-          // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-
-          var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
-          setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
-          game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
-
-
-          const game1_question_hash_xyz_ = await game1_xyz_[3];
-
-          var  game1_costToEnter_xyz_ = await game1_xyz_[5];
-          game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
-          const game1_riddle_xyz_ = await game1_xyz_[6];
-          const game1_head_start_time_xyz_ = await game1_xyz_[8];
-
-          setGame1_live_xyz_(game1_live_xyz_)
-          setGame1_prize_xyz_(game1_prize_xyz_)
-          setGame1_question_hash_xyz_(game1_question_hash_xyz_)
-
-          setGame1_costToEnter_xyz_( game1_costToEnter_xyz_)
-
-          setGame1_riddle_xyz_(game1_riddle_xyz_)
-          setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
-
-
-          const allGame1_xyz_ = await contract_xyz_.methods.allGames(1).call();
-          const allGame1_id_xyz_ = await allGame1_xyz_[0];
-          const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
-          const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
-          const allGame1_username_xyz_ = await allGame1_xyz_[3];
-          const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
-
-          const numberOfEntriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
-
-
-          const game1huntEntries_xyz_ = await contract_xyz_.methods.huntEntries(accounts_xyz_[0],1).call();
-          const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
-          const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
-          const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
-          const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
-
-
-          const pot1AnsweredCorrectly_xyz_ = await contract_xyz_.methods.Pot1AnsweredCorrectly(1).call();
-          const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
-          const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
-          var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
-          winning_prize1_xyz_ = winning_prize1_xyz_.substring(0, winning_prize1_xyz_.length-18);
-
-
-
-          const getAllLatestGameAttempts1_xyz_ = await contract_xyz_.methods.getAllLatestGameAttempts(1).call();
-          const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
-          const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
-          const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
-          const attemptUsername1_xyz_ = await getAllLatestGameAttempts1_xyz_[3];
-
-          const entriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call()
-          settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
-
-
-
-          var currentStartDate_xyz_ = Date();
-          var startDate_xyz_ = new Date(currentStartDate_xyz_);
-
-          var endDateGame1_xyz_ = new Date(allGame1_deadline_time_xyz_ * 1000);
-
-
-          function getDifferenceInDays_xyz_(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60 * 60 * 24);
-            }
-
-          function getDifferenceInHours_xyz_(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60 * 60);
-            }
-
-          function getDifferenceInMinutes_xyz_(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60);
-            }
-
-          function getDifferenceInSeconds_xyz_(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / 1000;
-            }
-
-
-          var timeGame1_xyz_ = Math.abs(getDifferenceInSeconds_xyz_(startDate_xyz_, endDateGame1_xyz_));
-
-
-
-
-          setTimeGame1_xyz_(timeGame1_xyz_)
-          setTimeGame1_xyz_(prevTime => prevTime - 1); // <-- Change this line!
-
-          setallGame1_id_xyz_(allGame1_id_xyz_)
-          setallGame1_user_front_of_que_xyz_(allGame1_user_front_of_que_xyz_)
-          setallGame1_deadline_xyz_(allGame1_deadline_time_xyz_)
-          setallGame1_username_xyz_(allGame1_username_xyz_)
-          setallGame1_total_game_tries_xyz_(allGame1_total_game_tries_xyz_)
-
-          if (endDateGame1_xyz_-1 >= startDate_xyz_){
-            setcountGame1DeadlineTrue_xyz_(true);
-          } else {
-            setcountGame1DeadlineTrue_xyz_(false);
-          }
-
-          setGame1numberOfEntries_xyz_(entriesGame1_xyz_)
-
-          setUserGame1_id_xyz_(userGame1_id_xyz_)
-          setUserEntered_game1_xyz_(userEntered_game1_xyz_)
-          setUserGame1_headstart_time_xyz_(userGame1_headstart_time_xyz_)
-          setUserGame1_live_xyz_(userGame1_live_xyz_)
-
-          setWinning_address1_xyz_(winning_address1_xyz_)
-          setTreasure_found1_xyz_(treasure_found1_xyz_)
-          setWinning_prize1_xyz_(winning_prize1_xyz_)
-
-
-          setAttemptId1_xyz_(attemptId1_xyz_)
-          setAttemptAddress1_xyz_(attemptAddress1_xyz_)
-          setAttemptUsername1_xyz_(attemptUsername1_xyz_)
-          setAttemptDeadline1_xyz_(attemptDeadline1_xyz_)
-
-
-          // LeaderBoardAddressSearch
-
-          const leaderboardAddressSearch_xyz_ = await contract_xyz_.methods.leaderboardAddressMapping(accounts_xyz_[0],1).call();
-
-
-          var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
-          var leaderboardAddressSearch_address_game1_xyz_ = await leaderboardAddressSearch_xyz_[1];
-          var leaderboardAddressSearch_entered_game1_xyz_ = await leaderboardAddressSearch_xyz_[2];
-          var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
-          var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
-          var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
-          var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
-
-
-
-          setleaderboardAddressSearch_huntid_game1_xyz_(leaderboardAddressSearch_huntid_game1_xyz_)
-          setleaderboardAddressSearch_address_game1_xyz_(leaderboardAddressSearch_address_game1_xyz_)
-          setleaderboardAddressSearch_entered_game1_xyz_(leaderboardAddressSearch_entered_game1_xyz_)
-          setleaderboardAddressSearch_username_game1_xyz_(leaderboardAddressSearch_username_game1_xyz_)
-          setleaderboardAddressSearch_tries_game1_xyz_(leaderboardAddressSearch_tries_game1_xyz_)
-          setleaderboardAddressSearch_stage_game1_xyz_(leaderboardAddressSearch_stage_game1_xyz_)
-          setleaderboardAddressSearch_team_game1_xyz_(leaderboardAddressSearch_team_game1_xyz_)
-
-          // User Levels
-          if (leaderboardAddressSearch_stage_game1_xyz_ == 0){
-            setUserLevel1Game1_xyz_(true)
-          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 1) {
-
-            await setUserLevel2Game1_xyz_(true)
-
-          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 2){
-            setUserLevel3Game1_xyz_(true)
-          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 3){
-            setUserLevel4Game1_xyz_(true)
-          } else {
-            setUserLevel1Game1_xyz_(true)
-          }
-
-
-
-          const noOfEntrys_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
-
-          // LeaderBoard
-
-          var game1_leaderboard_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard1_xyz_ = await leaderBoard_xyz_;
-
-              game1_leaderboard_xyz_.push(leaderboard1_xyz_);
-            }
-
-            setgame1LeaderBoard_xyz_(game1_leaderboard_xyz_)
-
-          var game1_indexrows_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              game1_indexrows_xyz_.push(i);
-            }
-          setgame1LeaderBoardIndex_xyz_(game1_indexrows_xyz_)
-
-
-          var game1_leaderboard_game_id_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
-              game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
-            }
-          setgame1LeaderBoardGameID_xyz_(game1_leaderboard_game_id_xyz_)
-
-
-          var game1_leaderboard_address_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
-              game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
-            }
-          setgame1LeaderBoardAddress_xyz_(game1_leaderboard_address_xyz_)
-
-          var game1_leaderboard_entered_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
-              game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
-            }
-
-          setgame1LeaderBoardEntered_xyz_(game1_leaderboard_entered_xyz_)
-
-
-          var game1_leaderboard_username_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
-              game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
-            }
-
-          setgame1LeaderBoardUsername_xyz_(game1_leaderboard_username_xyz_)
-
-
-          var game1_leaderboard_tries_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
-              game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
-            }
-
-          setgame1LeaderBoardTries_xyz_(game1_leaderboard_tries_xyz_)
-
-
-          var game1_leaderboard_stage_xyz_ = [];
-            for (var i = 0; i < noOfEntrys_xyz_; i++) {
-              const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-
-              var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
-              game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
-            }
-
-          setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
-
-
-
-          const game1_team1_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,1).call();
-          const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
-          const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
-          const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
-          const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
-          const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
-
-          const game1_team2_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,2).call();
-          const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
-          const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
-          const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
-          const game1_team2_xyz_team_entries = await game1_team2_details_xyz_[3];
-          const game1_team2_xyz_team_actual_points = await game1_team2_details_xyz_[4];
-
-          setGame1_team1_xyz_teamid(game1_team1_xyz_teamid)
-          setGame1_team1_xyz_team_points_target(game1_team1_xyz_team_points_target)
-          setGame1_team1_xyz_ppp(game1_team1_xyz_ppp)
-          setGame1_team1_xyz_team_entries(game1_team1_xyz_team_entries)
-          setGame1_team1_xyz_team_actual_points(game1_team1_xyz_team_actual_points)
-
-          setGame1_team2_xyz_teamid(game1_team2_xyz_teamid)
-          setGame1_team2_xyz_team_points_target(game1_team2_xyz_team_points_target)
-          setGame1_team2_xyz_ppp(game1_team2_xyz_ppp)
-          setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
-          setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
-
-
-      // PARTNER EXAMPLE GET GAME 1 END
-
-
-
-            // GAME 1 TREASUREBLOX STARTS
-
-            const game1 = await contract.methods.Games(1).call();
-
-            const game1_id = await game1[0];
-            const game1_live = await game1[1];
-            var game1_prize = await game1[2];
-
-            // Local Testing
-            // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-
-            var winnerEstPrizeGame1 = game1_prize.substring(0, Math.round(game1_prize*.3).length-18);
-            setWinnerEstPrizeGame1(winnerEstPrizeGame1)
-            game1_prize = game1_prize.substring(0, game1_prize.length-18);
-
-
-            const game1_question_hash = await game1[3];
-
-            var game1_entry_cost  = await game1[5];
-            game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
-            const game1_riddle = await game1[6];
-            const game1_head_start_time = await game1[8];
-
-
-            setGame1_id(game1_id)
-            setGame1_live(game1_live)
-            setGame1_prize(game1_prize)
-            setGame1_question_hash(game1_question_hash)
-
-            setGame1_submit_secret_cost(game1_entry_cost )
-
-            setGame1_riddle(game1_riddle)
-            setGame1_head_start_time(game1_head_start_time)
-
-
-          const allGame1 = await contract.methods.allGames(1).call();
-          const allGame1_id = await allGame1[0];
-          const allGame1_user_front_of_que = await allGame1[1];
-          const allGame1_deadline_time =  await allGame1[2];
-          const allGame1_username = await allGame1[3];
-          const allGame1_total_game_tries = await allGame1[4];
-
-          const numberOfEntriesGame1 = await contract.methods.numberOfEntries(1).call();
-
-
-
-          const game1huntEntries = await contract.methods.huntEntries(accounts[0],1).call();
-          const userGame1_id = await game1huntEntries[0];
-          const userEntered_game1 = await game1huntEntries[1];
-          const userGame1_headstart_time =  await game1huntEntries[2];
-          const userGame1_live = await game1huntEntries[3];
-
-
-          const pot1AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(1).call();
-          const winning_address1 = await pot1AnsweredCorrectly[0];
-          const treasure_found1 = await pot1AnsweredCorrectly[1];
-          var winning_prize1 =  await pot1AnsweredCorrectly[2];
-          winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
-
-
-
-
-          const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
-          const attemptId1 = await getAllLatestGameAttempts1[0];
-          const attemptAddress1 = await getAllLatestGameAttempts1[1];
-          const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
-          const attemptUsername1 = await getAllLatestGameAttempts1[3];
-
-          const entriesGame1 = await contract.methods.numberOfEntries(1).call()
-          settotalGameEntriesGame1(entriesGame1);
-
-          // Fetches New Games if required
-          // const item = await contract.getPastEvents('setGameEvent',{});
-          // console.log(item[0].returnValues[0])
-          // console.log(item[0].returnValues[1])
-          // console.log(item[0].returnValues[2])
-
-
-          var currentStartDate = Date();
-          var startDate = new Date(currentStartDate);
-          // // Hours part from the timestamp
-          // var startDateHours = startDate.getHours();
-          // // Minutes part from the timestamp
-          // var startDateMinutes = startDate.getMinutes();
-          // // Seconds part from the timestamp
-          // var startDateSeconds = startDate.getSeconds();
-
-          // Do
-          var endDateGame1 = new Date(allGame1_deadline_time * 1000);
-          // // Hours part from the timestamp
-          // var endDateHours = endDate.getHours();
-          // // Minutes part from the timestamp
-          // var endDateMinutes = endDate.getMinutes();
-          // // Seconds part from the timestamp
-          // var endDateSeconds = endDate.getSeconds();
-
-          function getDifferenceInDays(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60 * 60 * 24);
-            }
-
-          function getDifferenceInHours(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60 * 60);
-            }
-
-          function getDifferenceInMinutes(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / (1000 * 60);
-            }
-
-          function getDifferenceInSeconds(date1, date2) {
-            const diffInMs = Math.abs(date2 - date1);
-            return diffInMs / 1000;
-            }
-          // console.log(getDifferenceInDays(endDate, startDate));
-          // console.log(getDifferenceInHours(endDate, startDate));
-          // console.log(getDifferenceInMinutes(endDate, startDate));
-
-          // console.log(getDifferenceInSeconds(startDate, endDateGame1));
-
-          var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
-
-
-
-
-          setTimeGame1(timeGame1)
-          setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!
-
-          setallGame1_id(allGame1_id)
-          setallGame1_user_front_of_que(allGame1_user_front_of_que)
-          setallGame1_deadline(allGame1_deadline_time)
-          setallGame1_username(allGame1_username)
-          console.log("username past: ", allGame1_username)
-          setallGame1_total_game_tries(allGame1_total_game_tries)
-
-          if (endDateGame1-1 >= startDate){
-            setcountGame1DeadlineTrue(true);
-          } else {
-            setcountGame1DeadlineTrue(false);
-          }
-
-          setGame1numberOfEntries(entriesGame1)
-
-          setUserGame1_id(userGame1_id)
-          setUserEntered_game1(userEntered_game1)
-          setUserGame1_headstart_time(userGame1_headstart_time)
-          setUserGame1_live(userGame1_live)
-
-          setWinning_address1(winning_address1)
-          setTreasure_found1(treasure_found1)
-          setWinning_prize1(winning_prize1)
-
-
-          setAttemptId1(attemptId1)
-          setAttemptAddress1(attemptAddress1)
-          setAttemptUsername1(attemptUsername1)
-          setAttemptDeadline1(attemptDeadline1)
-
-
-          // LeaderBoardAddressSearch
-
-          const leaderboardAddressSearch = await contract.methods.leaderboardAddressMapping(accounts[0],1).call();
-
-
-          var leaderboardAddressSearch_huntid_game1 = await leaderboardAddressSearch[0];
-          var leaderboardAddressSearch_address_game1 = await leaderboardAddressSearch[1];
-          var leaderboardAddressSearch_entered_game1 = await leaderboardAddressSearch[2];
-          var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
-          var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
-          var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
-          var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
-
-
-
-
-
-          setleaderboardAddressSearch_huntid_game1(leaderboardAddressSearch_huntid_game1)
-          setleaderboardAddressSearch_address_game1(leaderboardAddressSearch_address_game1)
-          setleaderboardAddressSearch_entered_game1(leaderboardAddressSearch_entered_game1)
-          setleaderboardAddressSearch_username_game1(leaderboardAddressSearch_username_game1)
-          setleaderboardAddressSearch_tries_game1(leaderboardAddressSearch_tries_game1)
-          setleaderboardAddressSearch_stage_game1(leaderboardAddressSearch_stage_game1)
-          setleaderboardAddressSearch_team_game1(leaderboardAddressSearch_team_game1)
-
-
-
-
-          // User Levels
-          if (leaderboardAddressSearch_stage_game1 == 0){
-            setUserLevel1Game1(true)
-          } else if (leaderboardAddressSearch_stage_game1 == 1) {
-
-            await setUserLevel2Game1(true)
-
-          } else if (leaderboardAddressSearch_stage_game1 == 2){
-            setUserLevel3Game1(true)
-          } else if (leaderboardAddressSearch_stage_game1 == 3){
-            setUserLevel4Game1(true)
-          } else {
-            setUserLevel1Game1(true)
-          }
-
-
-
-          const noOfEntrys = await contract.methods.numberOfEntries(1).call();
-
-      // LeaderBoard
-
-          var game1_leaderboard = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard1 = await leaderBoard;
-
-              game1_leaderboard.push(leaderboard1);
-            }
-
-            setgame1LeaderBoard(game1_leaderboard)
-            console.log(game1LeaderBoard,"here")
-
-
-
-          var game1_indexrows = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              game1_indexrows.push(i);
-            }
-          setgame1LeaderBoardIndex(game1_indexrows)
-
-
-          var game1_leaderboard_game_id = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_game_id = await leaderBoard[0];
-              game1_leaderboard_game_id.push(leaderboard_game_id);
-            }
-          setgame1LeaderBoardGameID(game1_leaderboard_game_id)
-
-
-          var game1_leaderboard_address = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_address = await leaderBoard[1];
-              game1_leaderboard_address.push(leaderboard_address);
-            }
-          setgame1LeaderBoardAddress(game1_leaderboard_address)
-
-          var game1_leaderboard_entered = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_entered = await leaderBoard[2];
-              game1_leaderboard_entered.push(leaderboard_entered);
-            }
-
-          setgame1LeaderBoardEntered(game1_leaderboard_entered)
-
-
-          var game1_leaderboard_username = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_username = await leaderBoard[3];
-              game1_leaderboard_username.push(leaderboard_username);
-            }
-
-          setgame1LeaderBoardUsername(game1_leaderboard_username)
-
-
-          var game1_leaderboard_tries = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_tries = await leaderBoard[4];
-              game1_leaderboard_tries.push(parseInt(leaderboard_tries));
-            }
-
-          setgame1LeaderBoardTries(game1_leaderboard_tries)
-
-
-          var game1_leaderboard_stage = [];
-            for (var i = 0; i < noOfEntrys; i++) {
-              const leaderBoard = await contract.methods.leaderboard(1,i).call();
-
-              var leaderboard_stage = await leaderBoard[5];
-              game1_leaderboard_stage.push(leaderboard_stage);
-            }
-
-          setgame1LeaderBoardStage(game1_leaderboard_stage)
-
-
-          const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
-          const game1_team1_teamid = await game1_team1_details[0];
-          const game1_team1_team_points_target = await game1_team1_details[1];
-          const game1_team1_ppp = await game1_team1_details[2];
-          const game1_team1_team_entries = await game1_team1_details[3];
-          const game1_team1_team_actual_points = await game1_team1_details[4];
-
-          const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
-          const game1_team2_teamid = await game1_team2_details[0];
-          const game1_team2_team_points_target = await game1_team2_details[1];
-          const game1_team2_ppp = await game1_team2_details[2];
-          const game1_team2_team_entries = await game1_team2_details[3];
-          const game1_team2_team_actual_points = await game1_team2_details[4];
-
-          setGame1_team1_teamid(game1_team1_teamid)
-          setGame1_team1_team_points_target(game1_team1_team_points_target)
-          setGame1_team1_ppp(game1_team1_ppp)
-          setGame1_team1_team_entries(game1_team1_team_entries)
-          setGame1_team1_team_actual_points(game1_team1_team_actual_points)
-
-          setGame1_team2_teamid(game1_team2_teamid)
-          setGame1_team2_team_points_target(game1_team2_team_points_target)
-          setGame1_team2_ppp(game1_team2_ppp)
-          setGame1_team2_team_entries(game1_team2_team_entries)
-          setGame1_team2_team_actual_points(game1_team2_team_actual_points)
-
-          // GAME 1 TREASUREBLOX ENDS
-
-
-
-
-        // GAME 2 TREASUREBLOX STARTS
-
-
-
-        const game2 = await contract.methods.Games(2).call();
-
-        const game2_id = await game2[0];
-        const game2_live = await game2[1];
-        var game2_prize = await game2[2];
-
-        // Local Testing
-        // var winnerEstPrizeGame2 = Math.round(game2_prize*.3);
-
-        var winnerEstPrizeGame2 = game2_prize.substring(0, Math.round(game2_prize*.3).length-18);
-        setWinnerEstPrizeGame2(winnerEstPrizeGame2)
-        game2_prize = game2_prize.substring(0, game2_prize.length-18);
-
-
-
-        const game2_question_hash = await game2[3];
-        var game2_time_lock_cost= await game2[4];
-        game2_time_lock_cost = game2_time_lock_cost.substring(0, game2_time_lock_cost.length-18);
-
-        var game2_submit_secret_cost = await game2[5];
-        game2_submit_secret_cost = game2_submit_secret_cost.substring(0, game2_submit_secret_cost.length-18);
-
-        const game2_riddle = await game2[6];
-        const game2_clue = await game2[7];
-        const game2_head_start_time = await game2[8];
-        const game2_entry_limit = await game2[9];
-        var game2_entry_cost = await game2[10];
-        game2_entry_cost = game2_entry_cost.substring(0, game2_entry_cost.length-18);
-
-
-        setGame2_id(game2_id)
-        setGame2_live(game2_live)
-        setGame2_prize(game2_prize)
-        setGame2_question_hash(game2_question_hash)
-        setgame2_time_lock_cost(game2_time_lock_cost)
-        setGame2_submit_secret_cost(game2_submit_secret_cost)
-        setGame2_riddle(game2_riddle)
-        setGame2_clue(game2_clue)
-        setGame2_head_start_time(game2_head_start_time)
-        setGame2_entry_limit(game2_entry_limit)
-        setGame2_entry_cost(game2_entry_cost)
-
-
-
-        const allGame2 = await contract.methods.allGames(2).call();
-        const allGame2_id = await allGame2[0];
-        const allGame2_user_front_of_que = await allGame2[1];
-        const allGame2_deadline_time =  await allGame2[2];
-        const allGame2_username = await allGame2[3];
-        const allGame2_total_game_tries = await allGame2[4];
-
-        const game2numberOfEntries = await contract.methods.numberOfEntries(2).call();
-
-
-
-
-
-
-        const game2huntEntries = await contract.methods.huntEntries(accounts[0],2).call();
-        const userGame2_id = await game2huntEntries[0];
-        const userEntered_game2 = await game2huntEntries[1];
-        const userGame2_headstart_time =  await game2huntEntries[2];
-        const userGame2_live = await game2huntEntries[3];
-
-        const numberOfEntriesGame2 = await contract.methods.numberOfEntries(2).call();
-
-
-
-        const pot2AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(2).call();
-        const winning_address2 = await pot2AnsweredCorrectly[0];
-        const treasure_found2 = await pot2AnsweredCorrectly[1];
-        var winning_prize2 =  await pot2AnsweredCorrectly[2];
-
-        winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
-
-        const question_hash_solved2 = await pot2AnsweredCorrectly[3];
-        const winning_message2 = await pot2AnsweredCorrectly[4];
-
-        const getAllLatestGameAttempts2 = await contract.methods.getAllLatestGameAttempts(2).call();
-        const attemptId2 = await getAllLatestGameAttempts2[0];
-        const attemptAddress2 = await getAllLatestGameAttempts2[1];
-        const attemptDeadline2 =  await getAllLatestGameAttempts2[2];
-        const attemptUsername2 = await getAllLatestGameAttempts2[3];
-
-
-        var currentStartDate = Date();
-        var startDate = new Date(currentStartDate);
-
-        // Do
-        var endDateGame2 = new Date(allGame2_deadline_time * 1000);
-
-        console.log(getDifferenceInSeconds(startDate, endDateGame2));
-
-        var timeGame2 = Math.abs(getDifferenceInSeconds(startDate, endDateGame2));
-
-        setTimeGame2(timeGame2)
-        setTimeGame2(prevTime => prevTime - 1); // <-- Change this line!
-
-        setallGame2_id(allGame2_id)
-        setallGame2_user_front_of_que(allGame2_user_front_of_que)
-        setallGame2_deadline(allGame2_deadline_time)
-        setallGame2_username(allGame2_username)
-        setallGame2_total_game_tries(allGame2_total_game_tries)
-
-        if (endDateGame2-1 >= startDate){
-          setcountGame2DeadlineTrue(true);
-        } else {
-          setcountGame2DeadlineTrue(false);
-        }
-
-        setGame2numberOfEntries(game2numberOfEntries)
-
-        setUserGame2_id(userGame2_id)
-        setUserEntered_game2(userEntered_game2)
-        setUserGame2_headstart_time(userGame2_headstart_time)
-        setUserGame2_live(userGame2_live)
-
-        setWinning_address2(winning_address2)
-        setTreasure_found2(treasure_found2)
-        setWinning_prize2(winning_prize2)
-        setQuestion_hash_solved2(question_hash_solved2)
-        setWinning_message2(winning_message2)
-
-        setAttemptId2(attemptId2)
-        setAttemptAddress2(attemptAddress2)
-        setAttemptUsername2(attemptUsername2)
-        setAttemptDeadline2(attemptDeadline2)
-
-
-        // LeaderBoardAddressSearch
-
-        const leaderboardAddressSearch2 = await contract.methods.leaderboardAddressMapping(accounts[0],2).call();
-        var leaderboardAddressSearch_huntid_game2 = await leaderboardAddressSearch2[0];
-        var leaderboardAddressSearch_address_game2 = await leaderboardAddressSearch2[1];
-        var leaderboardAddressSearch_entered_game2 = await leaderboardAddressSearch2[2];
-        var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
-        var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
-        var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
-        var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
-
-
-
-
-        setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
-        setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
-        setleaderboardAddressSearch_entered_game2(leaderboardAddressSearch_entered_game2)
-        setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
-        setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
-        setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
-        setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
-
-
-
-        // User Levels
-        if (state_leaderboardAddressSearch_stage_game2 == 0){
-          setUserLevel1Game2(true)
-        } else if (state_leaderboardAddressSearch_stage_game2 == 1) {
-          setUserLevel2Game2(true)
-        } else if (state_leaderboardAddressSearch_stage_game2 == 2){
-          setUserLevel3Game2(true)
-        } else if (state_leaderboardAddressSearch_stage_game2 == 3){
-          setUserLevel4Game2(true)
-        } else {
-          setUserLevel1Game2(true)
-        }
-
-
-
-
-        const noOfEntrys2 = await contract.methods.numberOfEntries(2).call();
-
-        // LeaderBoard
-
-                    var game2_leaderboard = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard2 = await leaderBoard2;
-
-                        game2_leaderboard.push(leaderboard2);
-                      }
-
-                      setgame1LeaderBoard(game2_leaderboard)
-                      console.log(game2LeaderBoard,"here")
-
-
-
-                    var game2_indexrows = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        game2_indexrows.push(i);
-                      }
-                    setgame2LeaderBoardIndex(game2_indexrows)
-
-
-                    var game2_leaderboard_game_id = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_game_id2 = await leaderBoard2[0];
-                        game2_leaderboard_game_id.push(leaderboard_game_id2);
-                      }
-                    setgame2LeaderBoardGameID(game2_leaderboard_game_id)
-
-
-                    var game2_leaderboard_address = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_address2 = await leaderBoard2[1];
-                        game2_leaderboard_address.push(leaderboard_address2);
-                      }
-                    setgame2LeaderBoardAddress(game2_leaderboard_address)
-
-                    var game2_leaderboard_entered = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_entered2 = await leaderBoard2[2];
-                        game2_leaderboard_entered.push(leaderboard_entered2);
-                      }
-
-                    setgame2LeaderBoardEntered(game2_leaderboard_entered)
-
-
-                    var game2_leaderboard_username = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_username2 = await leaderBoard2[3];
-                        game2_leaderboard_username.push(leaderboard_username2);
-                      }
-
-                    setgame2LeaderBoardUsername(game2_leaderboard_username)
-
-
-                    var game2_leaderboard_tries = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_tries2 = await leaderBoard2[4];
-                        game2_leaderboard_tries.push(parseInt(leaderboard_tries2));
-                      }
-
-                    setgame2LeaderBoardTries(game2_leaderboard_tries)
-
-                    var game2_leaderboard_stage = [];
-                      for (var i = 0; i < noOfEntrys2; i++) {
-                        const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-
-                        var leaderboard_stage2 = await leaderBoard2[5];
-                        game2_leaderboard_stage.push(leaderboard_stage2);
-                      }
-
-                    setgame2LeaderBoardStage(game2_leaderboard_stage)
-
-                    const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
-                    const game2_team1_teamid = await game2_team1_details[0];
-                    const game2_team1_team_points_target = await game2_team1_details[1];
-                    const game2_team1_ppp = await game2_team1_details[2];
-                    const game2_team1_team_entries = await game2_team1_details[3];
-                    const game2_team1_team_actual_points = await game2_team1_details[4];
-
-                    const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
-                    const game2_team2_teamid = await game2_team2_details[0];
-                    const game2_team2_team_points_target = await game2_team2_details[1];
-                    const game2_team2_ppp = await game2_team2_details[2];
-                    const game2_team2_team_entries = await game2_team2_details[3];
-                    const game2_team2_team_actual_points = await game2_team2_details[4];
-
-                    setGame2_team1_teamid(game2_team1_teamid)
-                    setGame2_team1_team_points_target(game2_team1_team_points_target)
-                    setGame2_team1_ppp(game2_team1_ppp)
-                    setGame2_team1_team_entries(game1_team2_team_entries)
-                    setGame2_team1_team_actual_points(game2_team1_team_actual_points)
-
-                    setGame2_team2_teamid(game2_team2_teamid)
-                    setGame2_team2_team_points_target(game2_team2_team_points_target)
-                    setGame2_team2_ppp(game2_team2_ppp)
-                    setGame2_team2_team_entries(game2_team2_team_entries)
-                    setGame2_team2_team_actual_points(game2_team2_team_actual_points)
-
-
-
-      }, 1000);
+      // if (currentChainId === 83) {
+      //
+      //   ////////////
+      //
+      //   // Meter.io
+      //           // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
+      //           // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
+      //           //
+      //           // console.log(contract_xyz_,"START treassssure")
+      //
+      //
+      //   // Meter
+      //           // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x6AF26474015a6bF540C79b77a6155b67900879D9");
+      //
+      //   ///////////
+      //
+      //   setIs_Meter(true)
+      //   console.log("boo")
+      //   // Meter.io
+      //   const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
+      //   const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
+      //   console.log(gameAddress_xyz_,"START treassssure111111111")
+      //
+      //   setGameContractAddress_xyz_(gameAddress_xyz_);
+      //
+      //
+      // // BSC
+      //   const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
+      //   console.log(tokenContract_xyz_,"START twoooooooo")
+      //
+      //
+      //   const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
+      //
+      //   var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
+      //   totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
+      //
+      //
+      //
+      //   setWeb3(web3)
+      //   setAccounts(accounts[0])
+      //   setContract_xyz_(contract_xyz_)
+      //   setDecimals_xyz_(decimals_xyz_)
+      //   setTotalTreasure_xyz_(totalTreasure_xyz_)
+      //   setTokenContract_xyz_(tokenContract_xyz_)
+      //
+      //   setWallet_for_google_xyz_("w="+accounts.toString())
+      //
+      //   console.log(contract_xyz_,"loaded 1")
+      //
+      //   // GLOBAL PARTNER EXAMPLE ASYNC STARTS
+      //
+      //   const globalTries_xyz_ = await contract_xyz_.methods.totalumberOfTries().call();
+      //
+      //   setGlobalNumberOfTries_xyz_(globalTries_xyz_)
+      //
+      //
+      //
+      //   // GLOBAL PARTNER EXAMPLE ASYNC Ends
+      //
+      // // PARTNER EXAMPLE CONTRACT DETAILS END
+      //
+      //
+      //
+      // // TREASUREBLOX EXAMPLE CONTRACT DETAILS START
+      //
+      //   //creating function to load ip address from the API
+      //
+      //   // const res = await axios.get('https://geolocation-db.com/json/')
+      //   // console.log(res,"herererererere");
+      //   // setIP(res.data.IPv4)
+      //
+      //   // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
+      //
+      //   const accounts = await web3.eth.getAccounts();
+      //
+      //   const abi = require('./TreasureBlox.abi.json');
+      //   const abiToken = require('./TreasureBloxToken.abi.json');
+      //   // Set the provider
+      //   // web3.setProvider(new web3.providers.WebsocketProvider('ws://localhost:8545'));
+      //   // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
+      //
+      //   // LOCAL
+      //   // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
+      //   // MainNet
+      //   // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
+      //
+      // // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
+      // // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
+      //
+      // const contract = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
+      // const gameAddress = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
+      //
+      //
+      //   // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
+      //   // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
+      //
+      //   setGameContractAddress(gameAddress);
+      //
+      //   const tokenContract = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
+      //
+      //
+      //   // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
+      //
+      //   // TestNet
+      //   // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
+      //   // Sstart Data Calls
+      //   const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
+      //
+      //   var totalTreasure = await tokenContract.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
+      //   totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
+      //   console.log(totalTreasure,"Total Treasure token contract")
+      //
+      //   // const owner = await contract.methods._owner().call();
+      //   // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
+      //   //
+      //   // const total_supply = await contract.methods.totalSupply().call();
+      //   // const treasure_chest = await contract.methods.treasureChest().call();
+      //   setWeb3(web3)
+      //   setAccounts(accounts[0])
+      //   setContract(contract)
+      //   setDecimals(decimals)
+      //   setTotalTreasure(totalTreasure)
+      //   setTokenContract(tokenContract)
+      //
+      //   setWallet_for_google("w="+accounts.toString())
+      //
+      //
+      //
+      // // GLOBAL TREASUREBLOX ASYNC STARTS
+      //
+      //   const globalTries = await contract.methods.totalumberOfTries().call();
+      //
+      //   setGlobalNumberOfTries(globalTries)
+      // // GLOBAL TREASUREBLOX ASYNC ENDS
+      //
+      //
+      // // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
+      //
+      //
+      //
+      //
+      //
+      // // This Handels the countdown time and collecting information every 1 second so the counter goes down
+      // const timer = window.setInterval( async() => {
+      //     var moment = require('moment'); // require
+      //
+      //
+      // // GET GAMES //
+      //
+      // // PARTNER EXAMPLE GET GAME 1 START
+      //
+      //     // PARTNER GAME 1
+      //
+      //     const game1_xyz_ = await contract_xyz_.methods.Games(1).call();
+      //
+      //     const game1_live_xyz_ = await game1_xyz_[0];
+      //     var game1_prize_xyz_ = await game1_xyz_[1];
+      //
+      //
+      //     // Local Testing
+      //     // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
+      //
+      //     var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
+      //     setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
+      //     game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
+      //
+      //
+      //     const game1_question_hash_xyz_ = await game1_xyz_[3];
+      //
+      //     var  game1_costToEnter_xyz_ = await game1_xyz_[5];
+      //     game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
+      //     const game1_riddle_xyz_ = await game1_xyz_[6];
+      //     const game1_head_start_time_xyz_ = await game1_xyz_[8];
+      //
+      //     setGame1_live_xyz_(game1_live_xyz_)
+      //     setGame1_prize_xyz_(game1_prize_xyz_)
+      //     setGame1_question_hash_xyz_(game1_question_hash_xyz_)
+      //
+      //     setGame1_costToEnter_xyz_( game1_costToEnter_xyz_)
+      //
+      //     setGame1_riddle_xyz_(game1_riddle_xyz_)
+      //     setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
+      //
+      //
+      //     const allGame1_xyz_ = await contract_xyz_.methods.allGames(1).call();
+      //     const allGame1_id_xyz_ = await allGame1_xyz_[0];
+      //     const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
+      //     const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
+      //     const allGame1_username_xyz_ = await allGame1_xyz_[3];
+      //     const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
+      //
+      //     const numberOfEntriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
+      //
+      //
+      //     const game1huntEntries_xyz_ = await contract_xyz_.methods.huntEntries(accounts[0],1).call();
+      //     const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
+      //     const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
+      //     const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
+      //     const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
+      //
+      //
+      //     const pot1AnsweredCorrectly_xyz_ = await contract_xyz_.methods.Pot1AnsweredCorrectly(1).call();
+      //     const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
+      //     const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
+      //     var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
+      //     winning_prize1_xyz_ = winning_prize1_xyz_.substring(0, winning_prize1_xyz_.length-18);
+      //
+      //
+      //
+      //     const getAllLatestGameAttempts1_xyz_ = await contract_xyz_.methods.getAllLatestGameAttempts(1).call();
+      //     const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
+      //     const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
+      //     const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
+      //     const attemptUsername1_xyz_ = await getAllLatestGameAttempts1_xyz_[3];
+      //
+      //     const entriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call()
+      //     settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
+      //
+      //
+      //
+      //     var currentStartDate_xyz_ = Date();
+      //     var startDate_xyz_ = new Date(currentStartDate_xyz_);
+      //
+      //     var endDateGame1_xyz_ = new Date(allGame1_deadline_time_xyz_ * 1000);
+      //
+      //
+      //     function getDifferenceInDays_xyz_(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60 * 60 * 24);
+      //       }
+      //
+      //     function getDifferenceInHours_xyz_(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60 * 60);
+      //       }
+      //
+      //     function getDifferenceInMinutes_xyz_(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60);
+      //       }
+      //
+      //     function getDifferenceInSeconds_xyz_(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / 1000;
+      //       }
+      //
+      //
+      //     var timeGame1_xyz_ = Math.abs(getDifferenceInSeconds_xyz_(startDate_xyz_, endDateGame1_xyz_));
+      //
+      //
+      //
+      //
+      //     setTimeGame1_xyz_(timeGame1_xyz_)
+      //     setTimeGame1_xyz_(prevTime => prevTime - 1); // <-- Change this line!
+      //
+      //     setallGame1_id_xyz_(allGame1_id_xyz_)
+      //     setallGame1_user_front_of_que_xyz_(allGame1_user_front_of_que_xyz_)
+      //     setallGame1_deadline_xyz_(allGame1_deadline_time_xyz_)
+      //     setallGame1_username_xyz_(allGame1_username_xyz_)
+      //     setallGame1_total_game_tries_xyz_(allGame1_total_game_tries_xyz_)
+      //
+      //     if (endDateGame1_xyz_-1 >= startDate_xyz_){
+      //       setcountGame1DeadlineTrue_xyz_(true);
+      //     } else {
+      //       setcountGame1DeadlineTrue_xyz_(false);
+      //     }
+      //
+      //     setGame1numberOfEntries_xyz_(entriesGame1_xyz_)
+      //
+      //     setUserGame1_id_xyz_(userGame1_id_xyz_)
+      //     setUserEntered_game1_xyz_(userEntered_game1_xyz_)
+      //     setUserGame1_headstart_time_xyz_(userGame1_headstart_time_xyz_)
+      //     setUserGame1_live_xyz_(userGame1_live_xyz_)
+      //
+      //     setWinning_address1_xyz_(winning_address1_xyz_)
+      //     setTreasure_found1_xyz_(treasure_found1_xyz_)
+      //     setWinning_prize1_xyz_(winning_prize1_xyz_)
+      //
+      //
+      //     setAttemptId1_xyz_(attemptId1_xyz_)
+      //     setAttemptAddress1_xyz_(attemptAddress1_xyz_)
+      //     setAttemptUsername1_xyz_(attemptUsername1_xyz_)
+      //     setAttemptDeadline1_xyz_(attemptDeadline1_xyz_)
+      //
+      //
+      //     // LeaderBoardAddressSearch
+      //
+      //     const leaderboardAddressSearch_xyz_ = await contract_xyz_.methods.leaderboardAddressMapping(accounts[0],1).call();
+      //
+      //
+      //     var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
+      //     var leaderboardAddressSearch_address_game1_xyz_ = await leaderboardAddressSearch_xyz_[1];
+      //     var leaderboardAddressSearch_entered_game1_xyz_ = await leaderboardAddressSearch_xyz_[2];
+      //     var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
+      //     var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
+      //     var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
+      //     var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
+      //
+      //
+      //
+      //     setleaderboardAddressSearch_huntid_game1_xyz_(leaderboardAddressSearch_huntid_game1_xyz_)
+      //     setleaderboardAddressSearch_address_game1_xyz_(leaderboardAddressSearch_address_game1_xyz_)
+      //     setleaderboardAddressSearch_entered_game1_xyz_(leaderboardAddressSearch_entered_game1_xyz_)
+      //     setleaderboardAddressSearch_username_game1_xyz_(leaderboardAddressSearch_username_game1_xyz_)
+      //     setleaderboardAddressSearch_tries_game1_xyz_(leaderboardAddressSearch_tries_game1_xyz_)
+      //     setleaderboardAddressSearch_stage_game1_xyz_(leaderboardAddressSearch_stage_game1_xyz_)
+      //     setleaderboardAddressSearch_team_game1_xyz_(leaderboardAddressSearch_team_game1_xyz_)
+      //
+      //     // User Levels
+      //     if (leaderboardAddressSearch_stage_game1_xyz_ == 0){
+      //       setUserLevel1Game1_xyz_(true)
+      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 1) {
+      //
+      //       await setUserLevel2Game1_xyz_(true)
+      //
+      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 2){
+      //       setUserLevel3Game1_xyz_(true)
+      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 3){
+      //       setUserLevel4Game1_xyz_(true)
+      //     } else {
+      //       setUserLevel1Game1_xyz_(true)
+      //     }
+      //
+      //
+      //
+      //     const noOfEntrys_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
+      //
+      //     // LeaderBoard
+      //
+      //     var game1_leaderboard_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard1_xyz_ = await leaderBoard_xyz_;
+      //
+      //         game1_leaderboard_xyz_.push(leaderboard1_xyz_);
+      //       }
+      //
+      //       setgame1LeaderBoard_xyz_(game1_leaderboard_xyz_)
+      //
+      //     var game1_indexrows_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         game1_indexrows_xyz_.push(i);
+      //       }
+      //     setgame1LeaderBoardIndex_xyz_(game1_indexrows_xyz_)
+      //
+      //
+      //     var game1_leaderboard_game_id_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
+      //         game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
+      //       }
+      //     setgame1LeaderBoardGameID_xyz_(game1_leaderboard_game_id_xyz_)
+      //
+      //
+      //     var game1_leaderboard_address_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
+      //         game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
+      //       }
+      //     setgame1LeaderBoardAddress_xyz_(game1_leaderboard_address_xyz_)
+      //
+      //     var game1_leaderboard_entered_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
+      //         game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
+      //       }
+      //
+      //     setgame1LeaderBoardEntered_xyz_(game1_leaderboard_entered_xyz_)
+      //
+      //
+      //     var game1_leaderboard_username_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
+      //         game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
+      //       }
+      //
+      //     setgame1LeaderBoardUsername_xyz_(game1_leaderboard_username_xyz_)
+      //
+      //
+      //     var game1_leaderboard_tries_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
+      //         game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
+      //       }
+      //
+      //     setgame1LeaderBoardTries_xyz_(game1_leaderboard_tries_xyz_)
+      //
+      //
+      //     var game1_leaderboard_stage_xyz_ = [];
+      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
+      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
+      //         game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
+      //       }
+      //
+      //     setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
+      //
+      //
+      //
+      //     const game1_team1_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,1).call();
+      //     const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
+      //     const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
+      //     const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
+      //     const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
+      //     const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
+      //
+      //     const game1_team2_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,2).call();
+      //     const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
+      //     const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
+      //     const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
+      //     const game1_team2_xyz_team_entries = await game1_team2_details_xyz_[3];
+      //     const game1_team2_xyz_team_actual_points = await game1_team2_details_xyz_[4];
+      //
+      //     setGame1_team1_xyz_teamid(game1_team1_xyz_teamid)
+      //     setGame1_team1_xyz_team_points_target(game1_team1_xyz_team_points_target)
+      //     setGame1_team1_xyz_ppp(game1_team1_xyz_ppp)
+      //     setGame1_team1_xyz_team_entries(game1_team1_xyz_team_entries)
+      //     setGame1_team1_xyz_team_actual_points(game1_team1_xyz_team_actual_points)
+      //
+      //     setGame1_team2_xyz_teamid(game1_team2_xyz_teamid)
+      //     setGame1_team2_xyz_team_points_target(game1_team2_xyz_team_points_target)
+      //     setGame1_team2_xyz_ppp(game1_team2_xyz_ppp)
+      //     setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
+      //     setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
+      //
+      //
+      // // PARTNER EXAMPLE GET GAME 1 END
+      //
+      //
+      //
+      //       // GAME 1 TREASUREBLOX STARTS
+      //
+      //       const game1 = await contract.methods.Games(1).call();
+      //
+      //       const game1_id = await game1[0];
+      //       const game1_live = await game1[1];
+      //       var game1_prize = await game1[2];
+      //
+      //       // Local Testing
+      //       // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
+      //
+      //       var winnerEstPrizeGame1 = game1_prize.substring(0, Math.round(game1_prize*.3).length-18);
+      //       setWinnerEstPrizeGame1(winnerEstPrizeGame1)
+      //       game1_prize = game1_prize.substring(0, game1_prize.length-18);
+      //
+      //
+      //       const game1_question_hash = await game1[3];
+      //
+      //       var game1_entry_cost  = await game1[5];
+      //       game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
+      //       const game1_riddle = await game1[6];
+      //       const game1_head_start_time = await game1[8];
+      //
+      //
+      //       setGame1_id(game1_id)
+      //       setGame1_live(game1_live)
+      //       setGame1_prize(game1_prize)
+      //       setGame1_question_hash(game1_question_hash)
+      //
+      //       setGame1_submit_secret_cost(game1_entry_cost )
+      //
+      //       setGame1_riddle(game1_riddle)
+      //       setGame1_head_start_time(game1_head_start_time)
+      //
+      //
+      //     const allGame1 = await contract.methods.allGames(1).call();
+      //     const allGame1_id = await allGame1[0];
+      //     const allGame1_user_front_of_que = await allGame1[1];
+      //     const allGame1_deadline_time =  await allGame1[2];
+      //     const allGame1_username = await allGame1[3];
+      //     const allGame1_total_game_tries = await allGame1[4];
+      //
+      //     const numberOfEntriesGame1 = await contract.methods.numberOfEntries(1).call();
+      //
+      //
+      //
+      //     const game1huntEntries = await contract.methods.huntEntries(accounts[0],1).call();
+      //     const userGame1_id = await game1huntEntries[0];
+      //     const userEntered_game1 = await game1huntEntries[1];
+      //     const userGame1_headstart_time =  await game1huntEntries[2];
+      //     const userGame1_live = await game1huntEntries[3];
+      //
+      //
+      //     const pot1AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(1).call();
+      //     const winning_address1 = await pot1AnsweredCorrectly[0];
+      //     const treasure_found1 = await pot1AnsweredCorrectly[1];
+      //     var winning_prize1 =  await pot1AnsweredCorrectly[2];
+      //     winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
+      //
+      //
+      //
+      //
+      //     const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
+      //     const attemptId1 = await getAllLatestGameAttempts1[0];
+      //     const attemptAddress1 = await getAllLatestGameAttempts1[1];
+      //     const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
+      //     const attemptUsername1 = await getAllLatestGameAttempts1[3];
+      //
+      //     const entriesGame1 = await contract.methods.numberOfEntries(1).call()
+      //     settotalGameEntriesGame1(entriesGame1);
+      //
+      //     // Fetches New Games if required
+      //     // const item = await contract.getPastEvents('setGameEvent',{});
+      //     // console.log(item[0].returnValues[0])
+      //     // console.log(item[0].returnValues[1])
+      //     // console.log(item[0].returnValues[2])
+      //
+      //
+      //     var currentStartDate = Date();
+      //     var startDate = new Date(currentStartDate);
+      //     // // Hours part from the timestamp
+      //     // var startDateHours = startDate.getHours();
+      //     // // Minutes part from the timestamp
+      //     // var startDateMinutes = startDate.getMinutes();
+      //     // // Seconds part from the timestamp
+      //     // var startDateSeconds = startDate.getSeconds();
+      //
+      //     // Do
+      //     var endDateGame1 = new Date(allGame1_deadline_time * 1000);
+      //     // // Hours part from the timestamp
+      //     // var endDateHours = endDate.getHours();
+      //     // // Minutes part from the timestamp
+      //     // var endDateMinutes = endDate.getMinutes();
+      //     // // Seconds part from the timestamp
+      //     // var endDateSeconds = endDate.getSeconds();
+      //
+      //     function getDifferenceInDays(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60 * 60 * 24);
+      //       }
+      //
+      //     function getDifferenceInHours(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60 * 60);
+      //       }
+      //
+      //     function getDifferenceInMinutes(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / (1000 * 60);
+      //       }
+      //
+      //     function getDifferenceInSeconds(date1, date2) {
+      //       const diffInMs = Math.abs(date2 - date1);
+      //       return diffInMs / 1000;
+      //       }
+      //     // console.log(getDifferenceInDays(endDate, startDate));
+      //     // console.log(getDifferenceInHours(endDate, startDate));
+      //     // console.log(getDifferenceInMinutes(endDate, startDate));
+      //
+      //     // console.log(getDifferenceInSeconds(startDate, endDateGame1));
+      //
+      //     var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
+      //
+      //
+      //
+      //
+      //     setTimeGame1(timeGame1)
+      //     setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!
+      //
+      //     setallGame1_id(allGame1_id)
+      //     setallGame1_user_front_of_que(allGame1_user_front_of_que)
+      //     setallGame1_deadline(allGame1_deadline_time)
+      //     setallGame1_username(allGame1_username)
+      //     console.log("username past: ", allGame1_username)
+      //     setallGame1_total_game_tries(allGame1_total_game_tries)
+      //
+      //     if (endDateGame1-1 >= startDate){
+      //       setcountGame1DeadlineTrue(true);
+      //     } else {
+      //       setcountGame1DeadlineTrue(false);
+      //     }
+      //
+      //     setGame1numberOfEntries(entriesGame1)
+      //
+      //     setUserGame1_id(userGame1_id)
+      //     setUserEntered_game1(userEntered_game1)
+      //     setUserGame1_headstart_time(userGame1_headstart_time)
+      //     setUserGame1_live(userGame1_live)
+      //
+      //     setWinning_address1(winning_address1)
+      //     setTreasure_found1(treasure_found1)
+      //     setWinning_prize1(winning_prize1)
+      //
+      //
+      //     setAttemptId1(attemptId1)
+      //     setAttemptAddress1(attemptAddress1)
+      //     setAttemptUsername1(attemptUsername1)
+      //     setAttemptDeadline1(attemptDeadline1)
+      //
+      //
+      //     // LeaderBoardAddressSearch
+      //
+      //     const leaderboardAddressSearch = await contract.methods.leaderboardAddressMapping(accounts[0],1).call();
+      //
+      //
+      //     var leaderboardAddressSearch_huntid_game1 = await leaderboardAddressSearch[0];
+      //     var leaderboardAddressSearch_address_game1 = await leaderboardAddressSearch[1];
+      //     var leaderboardAddressSearch_entered_game1 = await leaderboardAddressSearch[2];
+      //     var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
+      //     var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
+      //     var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
+      //     var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
+      //
+      //
+      //
+      //
+      //
+      //     setleaderboardAddressSearch_huntid_game1(leaderboardAddressSearch_huntid_game1)
+      //     setleaderboardAddressSearch_address_game1(leaderboardAddressSearch_address_game1)
+      //     setleaderboardAddressSearch_entered_game1(leaderboardAddressSearch_entered_game1)
+      //     setleaderboardAddressSearch_username_game1(leaderboardAddressSearch_username_game1)
+      //     setleaderboardAddressSearch_tries_game1(leaderboardAddressSearch_tries_game1)
+      //     setleaderboardAddressSearch_stage_game1(leaderboardAddressSearch_stage_game1)
+      //     setleaderboardAddressSearch_team_game1(leaderboardAddressSearch_team_game1)
+      //
+      //
+      //
+      //
+      //     // User Levels
+      //     if (leaderboardAddressSearch_stage_game1 == 0){
+      //       setUserLevel1Game1(true)
+      //     } else if (leaderboardAddressSearch_stage_game1 == 1) {
+      //
+      //       await setUserLevel2Game1(true)
+      //
+      //     } else if (leaderboardAddressSearch_stage_game1 == 2){
+      //       setUserLevel3Game1(true)
+      //     } else if (leaderboardAddressSearch_stage_game1 == 3){
+      //       setUserLevel4Game1(true)
+      //     } else {
+      //       setUserLevel1Game1(true)
+      //     }
+      //
+      //
+      //
+      //     const noOfEntrys = await contract.methods.numberOfEntries(1).call();
+      //
+      // // LeaderBoard
+      //
+      //     var game1_leaderboard = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard1 = await leaderBoard;
+      //
+      //         game1_leaderboard.push(leaderboard1);
+      //       }
+      //
+      //       setgame1LeaderBoard(game1_leaderboard)
+      //       console.log(game1LeaderBoard,"here")
+      //
+      //
+      //
+      //     var game1_indexrows = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         game1_indexrows.push(i);
+      //       }
+      //     setgame1LeaderBoardIndex(game1_indexrows)
+      //
+      //
+      //     var game1_leaderboard_game_id = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_game_id = await leaderBoard[0];
+      //         game1_leaderboard_game_id.push(leaderboard_game_id);
+      //       }
+      //     setgame1LeaderBoardGameID(game1_leaderboard_game_id)
+      //
+      //
+      //     var game1_leaderboard_address = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_address = await leaderBoard[1];
+      //         game1_leaderboard_address.push(leaderboard_address);
+      //       }
+      //     setgame1LeaderBoardAddress(game1_leaderboard_address)
+      //
+      //     var game1_leaderboard_entered = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_entered = await leaderBoard[2];
+      //         game1_leaderboard_entered.push(leaderboard_entered);
+      //       }
+      //
+      //     setgame1LeaderBoardEntered(game1_leaderboard_entered)
+      //
+      //
+      //     var game1_leaderboard_username = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_username = await leaderBoard[3];
+      //         game1_leaderboard_username.push(leaderboard_username);
+      //       }
+      //
+      //     setgame1LeaderBoardUsername(game1_leaderboard_username)
+      //
+      //
+      //     var game1_leaderboard_tries = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_tries = await leaderBoard[4];
+      //         game1_leaderboard_tries.push(parseInt(leaderboard_tries));
+      //       }
+      //
+      //     setgame1LeaderBoardTries(game1_leaderboard_tries)
+      //
+      //
+      //     var game1_leaderboard_stage = [];
+      //       for (var i = 0; i < noOfEntrys; i++) {
+      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
+      //
+      //         var leaderboard_stage = await leaderBoard[5];
+      //         game1_leaderboard_stage.push(leaderboard_stage);
+      //       }
+      //
+      //     setgame1LeaderBoardStage(game1_leaderboard_stage)
+      //
+      //
+      //     const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
+      //     const game1_team1_teamid = await game1_team1_details[0];
+      //     const game1_team1_team_points_target = await game1_team1_details[1];
+      //     const game1_team1_ppp = await game1_team1_details[2];
+      //     const game1_team1_team_entries = await game1_team1_details[3];
+      //     const game1_team1_team_actual_points = await game1_team1_details[4];
+      //
+      //     const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
+      //     const game1_team2_teamid = await game1_team2_details[0];
+      //     const game1_team2_team_points_target = await game1_team2_details[1];
+      //     const game1_team2_ppp = await game1_team2_details[2];
+      //     const game1_team2_team_entries = await game1_team2_details[3];
+      //     const game1_team2_team_actual_points = await game1_team2_details[4];
+      //
+      //     setGame1_team1_teamid(game1_team1_teamid)
+      //     setGame1_team1_team_points_target(game1_team1_team_points_target)
+      //     setGame1_team1_ppp(game1_team1_ppp)
+      //     setGame1_team1_team_entries(game1_team1_team_entries)
+      //     setGame1_team1_team_actual_points(game1_team1_team_actual_points)
+      //
+      //     setGame1_team2_teamid(game1_team2_teamid)
+      //     setGame1_team2_team_points_target(game1_team2_team_points_target)
+      //     setGame1_team2_ppp(game1_team2_ppp)
+      //     setGame1_team2_team_entries(game1_team2_team_entries)
+      //     setGame1_team2_team_actual_points(game1_team2_team_actual_points)
+      //
+      //     // GAME 1 TREASUREBLOX ENDS
+      //
+      //
+      //
+      //
+      //   // GAME 2 TREASUREBLOX STARTS
+      //
+      //
+      //
+      //   const game2 = await contract.methods.Games(2).call();
+      //
+      //   const game2_id = await game2[0];
+      //   const game2_live = await game2[1];
+      //   var game2_prize = await game2[2];
+      //
+      //   // Local Testing
+      //   // var winnerEstPrizeGame2 = Math.round(game2_prize*.3);
+      //
+      //   var winnerEstPrizeGame2 = game2_prize.substring(0, Math.round(game2_prize*.3).length-18);
+      //   setWinnerEstPrizeGame2(winnerEstPrizeGame2)
+      //   game2_prize = game2_prize.substring(0, game2_prize.length-18);
+      //
+      //
+      //
+      //   const game2_question_hash = await game2[3];
+      //   var game2_time_lock_cost= await game2[4];
+      //   game2_time_lock_cost = game2_time_lock_cost.substring(0, game2_time_lock_cost.length-18);
+      //
+      //   var game2_submit_secret_cost = await game2[5];
+      //   game2_submit_secret_cost = game2_submit_secret_cost.substring(0, game2_submit_secret_cost.length-18);
+      //
+      //   const game2_riddle = await game2[6];
+      //   const game2_clue = await game2[7];
+      //   const game2_head_start_time = await game2[8];
+      //   const game2_entry_limit = await game2[9];
+      //   var game2_entry_cost = await game2[10];
+      //   game2_entry_cost = game2_entry_cost.substring(0, game2_entry_cost.length-18);
+      //
+      //
+      //   setGame2_id(game2_id)
+      //   setGame2_live(game2_live)
+      //   setGame2_prize(game2_prize)
+      //   setGame2_question_hash(game2_question_hash)
+      //   setgame2_time_lock_cost(game2_time_lock_cost)
+      //   setGame2_submit_secret_cost(game2_submit_secret_cost)
+      //   setGame2_riddle(game2_riddle)
+      //   setGame2_clue(game2_clue)
+      //   setGame2_head_start_time(game2_head_start_time)
+      //   setGame2_entry_limit(game2_entry_limit)
+      //   setGame2_entry_cost(game2_entry_cost)
+      //
+      //
+      //
+      //   const allGame2 = await contract.methods.allGames(2).call();
+      //   const allGame2_id = await allGame2[0];
+      //   const allGame2_user_front_of_que = await allGame2[1];
+      //   const allGame2_deadline_time =  await allGame2[2];
+      //   const allGame2_username = await allGame2[3];
+      //   const allGame2_total_game_tries = await allGame2[4];
+      //
+      //   const game2numberOfEntries = await contract.methods.numberOfEntries(2).call();
+      //
+      //
+      //
+      //
+      //
+      //
+      //   const game2huntEntries = await contract.methods.huntEntries(accounts[0],2).call();
+      //   const userGame2_id = await game2huntEntries[0];
+      //   const userEntered_game2 = await game2huntEntries[1];
+      //   const userGame2_headstart_time =  await game2huntEntries[2];
+      //   const userGame2_live = await game2huntEntries[3];
+      //
+      //   const numberOfEntriesGame2 = await contract.methods.numberOfEntries(2).call();
+      //
+      //
+      //
+      //   const pot2AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(2).call();
+      //   const winning_address2 = await pot2AnsweredCorrectly[0];
+      //   const treasure_found2 = await pot2AnsweredCorrectly[1];
+      //   var winning_prize2 =  await pot2AnsweredCorrectly[2];
+      //
+      //   winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
+      //
+      //   const question_hash_solved2 = await pot2AnsweredCorrectly[3];
+      //   const winning_message2 = await pot2AnsweredCorrectly[4];
+      //
+      //   const getAllLatestGameAttempts2 = await contract.methods.getAllLatestGameAttempts(2).call();
+      //   const attemptId2 = await getAllLatestGameAttempts2[0];
+      //   const attemptAddress2 = await getAllLatestGameAttempts2[1];
+      //   const attemptDeadline2 =  await getAllLatestGameAttempts2[2];
+      //   const attemptUsername2 = await getAllLatestGameAttempts2[3];
+      //
+      //
+      //   var currentStartDate = Date();
+      //   var startDate = new Date(currentStartDate);
+      //
+      //   // Do
+      //   var endDateGame2 = new Date(allGame2_deadline_time * 1000);
+      //
+      //   console.log(getDifferenceInSeconds(startDate, endDateGame2));
+      //
+      //   var timeGame2 = Math.abs(getDifferenceInSeconds(startDate, endDateGame2));
+      //
+      //   setTimeGame2(timeGame2)
+      //   setTimeGame2(prevTime => prevTime - 1); // <-- Change this line!
+      //
+      //   setallGame2_id(allGame2_id)
+      //   setallGame2_user_front_of_que(allGame2_user_front_of_que)
+      //   setallGame2_deadline(allGame2_deadline_time)
+      //   setallGame2_username(allGame2_username)
+      //   setallGame2_total_game_tries(allGame2_total_game_tries)
+      //
+      //   if (endDateGame2-1 >= startDate){
+      //     setcountGame2DeadlineTrue(true);
+      //   } else {
+      //     setcountGame2DeadlineTrue(false);
+      //   }
+      //
+      //   setGame2numberOfEntries(game2numberOfEntries)
+      //
+      //   setUserGame2_id(userGame2_id)
+      //   setUserEntered_game2(userEntered_game2)
+      //   setUserGame2_headstart_time(userGame2_headstart_time)
+      //   setUserGame2_live(userGame2_live)
+      //
+      //   setWinning_address2(winning_address2)
+      //   setTreasure_found2(treasure_found2)
+      //   setWinning_prize2(winning_prize2)
+      //   setQuestion_hash_solved2(question_hash_solved2)
+      //   setWinning_message2(winning_message2)
+      //
+      //   setAttemptId2(attemptId2)
+      //   setAttemptAddress2(attemptAddress2)
+      //   setAttemptUsername2(attemptUsername2)
+      //   setAttemptDeadline2(attemptDeadline2)
+      //
+      //
+      //   // LeaderBoardAddressSearch
+      //
+      //   const leaderboardAddressSearch2 = await contract.methods.leaderboardAddressMapping(accounts[0],2).call();
+      //   var leaderboardAddressSearch_huntid_game2 = await leaderboardAddressSearch2[0];
+      //   var leaderboardAddressSearch_address_game2 = await leaderboardAddressSearch2[1];
+      //   var leaderboardAddressSearch_entered_game2 = await leaderboardAddressSearch2[2];
+      //   var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
+      //   var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
+      //   var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
+      //   var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
+      //
+      //
+      //
+      //
+      //   setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
+      //   setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
+      //   setleaderboardAddressSearch_entered_game2(leaderboardAddressSearch_entered_game2)
+      //   setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
+      //   setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
+      //   setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
+      //   setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
+      //
+      //
+      //
+      //   // User Levels
+      //   if (state_leaderboardAddressSearch_stage_game2 == 0){
+      //     setUserLevel1Game2(true)
+      //   } else if (state_leaderboardAddressSearch_stage_game2 == 1) {
+      //     setUserLevel2Game2(true)
+      //   } else if (state_leaderboardAddressSearch_stage_game2 == 2){
+      //     setUserLevel3Game2(true)
+      //   } else if (state_leaderboardAddressSearch_stage_game2 == 3){
+      //     setUserLevel4Game2(true)
+      //   } else {
+      //     setUserLevel1Game2(true)
+      //   }
+      //
+      //
+      //
+      //
+      //   const noOfEntrys2 = await contract.methods.numberOfEntries(2).call();
+      //
+      //   // LeaderBoard
+      //
+      //               var game2_leaderboard = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard2 = await leaderBoard2;
+      //
+      //                   game2_leaderboard.push(leaderboard2);
+      //                 }
+      //
+      //                 setgame1LeaderBoard(game2_leaderboard)
+      //                 console.log(game2LeaderBoard,"here")
+      //
+      //
+      //
+      //               var game2_indexrows = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   game2_indexrows.push(i);
+      //                 }
+      //               setgame2LeaderBoardIndex(game2_indexrows)
+      //
+      //
+      //               var game2_leaderboard_game_id = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_game_id2 = await leaderBoard2[0];
+      //                   game2_leaderboard_game_id.push(leaderboard_game_id2);
+      //                 }
+      //               setgame2LeaderBoardGameID(game2_leaderboard_game_id)
+      //
+      //
+      //               var game2_leaderboard_address = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_address2 = await leaderBoard2[1];
+      //                   game2_leaderboard_address.push(leaderboard_address2);
+      //                 }
+      //               setgame2LeaderBoardAddress(game2_leaderboard_address)
+      //
+      //               var game2_leaderboard_entered = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_entered2 = await leaderBoard2[2];
+      //                   game2_leaderboard_entered.push(leaderboard_entered2);
+      //                 }
+      //
+      //               setgame2LeaderBoardEntered(game2_leaderboard_entered)
+      //
+      //
+      //               var game2_leaderboard_username = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_username2 = await leaderBoard2[3];
+      //                   game2_leaderboard_username.push(leaderboard_username2);
+      //                 }
+      //
+      //               setgame2LeaderBoardUsername(game2_leaderboard_username)
+      //
+      //
+      //               var game2_leaderboard_tries = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_tries2 = await leaderBoard2[4];
+      //                   game2_leaderboard_tries.push(parseInt(leaderboard_tries2));
+      //                 }
+      //
+      //               setgame2LeaderBoardTries(game2_leaderboard_tries)
+      //
+      //               var game2_leaderboard_stage = [];
+      //                 for (var i = 0; i < noOfEntrys2; i++) {
+      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
+      //
+      //                   var leaderboard_stage2 = await leaderBoard2[5];
+      //                   game2_leaderboard_stage.push(leaderboard_stage2);
+      //                 }
+      //
+      //               setgame2LeaderBoardStage(game2_leaderboard_stage)
+      //
+      //               const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
+      //               const game2_team1_teamid = await game2_team1_details[0];
+      //               const game2_team1_team_points_target = await game2_team1_details[1];
+      //               const game2_team1_ppp = await game2_team1_details[2];
+      //               const game2_team1_team_entries = await game2_team1_details[3];
+      //               const game2_team1_team_actual_points = await game2_team1_details[4];
+      //
+      //               const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
+      //               const game2_team2_teamid = await game2_team2_details[0];
+      //               const game2_team2_team_points_target = await game2_team2_details[1];
+      //               const game2_team2_ppp = await game2_team2_details[2];
+      //               const game2_team2_team_entries = await game2_team2_details[3];
+      //               const game2_team2_team_actual_points = await game2_team2_details[4];
+      //
+      //               setGame2_team1_teamid(game2_team1_teamid)
+      //               setGame2_team1_team_points_target(game2_team1_team_points_target)
+      //               setGame2_team1_ppp(game2_team1_ppp)
+      //               setGame2_team1_team_entries(game1_team2_team_entries)
+      //               setGame2_team1_team_actual_points(game2_team1_team_actual_points)
+      //
+      //               setGame2_team2_teamid(game2_team2_teamid)
+      //               setGame2_team2_team_points_target(game2_team2_team_points_target)
+      //               setGame2_team2_ppp(game2_team2_ppp)
+      //               setGame2_team2_team_entries(game2_team2_team_entries)
+      //               setGame2_team2_team_actual_points(game2_team2_team_actual_points)
+      //
+      //
+      //
+      // }, 1000);
       // End of Game timer code
 
-    }// End of network if statement METER
+    // }// End of network if statement METER
 
 
 
@@ -2710,67 +2773,89 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
       init()
 
 
-    },[is_meter,web3,accounts,wallet_for_google,ip,contract,tokenContract,decimals,totalTreasure,globalNumberOfTries,gameContractAddress,
+    },[
+
+    // GAME1
+    is_meter,web3,accounts,wallet_for_google,ip,
+
+    GSB_contract_bsc_,
+    GSC_contract_bsc_,
+    GSD_contract_bsc_,
+    MAIN_GAME_contract_xyz_,
+    VOLT_contract_xyz_,
+    RANDOM1_contract_xyz_,
+    MAIN_GAME_contract_treasurebloxNative_,
+    VOLT_contract_treasurebloxNative_,
 
 
-// XXX
+    ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
 
-      // GAME1
-  game1_id,game1_live,game1_prize,game1_question_hash,game1_entry_cost ,game1_riddle,
-  allGame1_id,allGame1_user_front_of_que,allGame1_deadline_time,allGame1_username,allGame1_total_game_tries,countGame1,countGame1DeadlineTrue,
-  game1_head_start_time,game1numberOfEntries,userGame1_id,userEntered_game1,userGame1_headstart_time,userGame1_live,
-  winning_address1,treasure_found1,winning_prize1,attemptId1,attemptUsername1,attemptDeadline1,attemptAddress1,
-  totalGameEntriesGame1,game1LeaderBoardIndex,game1LeaderBoardGameID,game1LeaderBoardAddress,
-  game1LeaderBoardEntered,game1LeaderBoardUsername,game1LeaderBoardTries,game1LeaderBoardStage,game1LeaderBoard,game1UserList,state_leaderboardAddressSearch_huntid_game1,state_leaderboardAddressSearch_address_game1,state_leaderboardAddressSearch_entered_game1,
+    game1_live_treasurebloxNative_,game1_prize_treasurebloxNative_,game1_question_hash_treasurebloxNative_, game1_costToEnter_treasurebloxNative_,game1_riddle_treasurebloxNative_,
+    allGame1_id_treasurebloxNative_,allGame1_user_front_of_que_treasurebloxNative_,allGame1_deadline_time_treasurebloxNative_,allGame1_username_treasurebloxNative_,allGame1_total_game_tries_treasurebloxNative_,countGame1_treasurebloxNative_,countGame1DeadlineTrue_treasurebloxNative_,
+    game1_head_start_time_treasurebloxNative_,game1numberOfEntries_treasurebloxNative_,userGame1_id_treasurebloxNative_,userEntered_game1_treasurebloxNative_,userGame1_headstart_time_treasurebloxNative_,userGame1_live_treasurebloxNative_,
+    winning_address1_treasurebloxNative_,treasure_found1_treasurebloxNative_,winning_prize1_treasurebloxNative_,attemptId1_treasurebloxNative_,attemptUsername1_treasurebloxNative_,attemptDeadline1_treasurebloxNative_,attemptAddress1_treasurebloxNative_,
+    totalGameEntriesGame1_treasurebloxNative_,game1LeaderBoardIndex_treasurebloxNative_,game1LeaderBoardGameID_treasurebloxNative_,game1LeaderBoardAddress_treasurebloxNative_,
+    game1LeaderBoardEntered_treasurebloxNative_,game1LeaderBoardUsername_treasurebloxNative_,game1LeaderBoardTries_treasurebloxNative_,game1LeaderBoardStage_treasurebloxNative_,game1LeaderBoard_treasurebloxNative_,game1UserList_treasurebloxNative_,state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_,state_leaderboardAddressSearch_address_game1_treasurebloxNative_,state_leaderboardAddressSearch_entered_game1_treasurebloxNative_,
+    state_leaderboardAddressSearch_username_game1_treasurebloxNative_,state_leaderboardAddressSearch_tries_game1_treasurebloxNative_,state_leaderboardAddressSearch_stage_game1_treasurebloxNative_,state_leaderboardAddressSearch_team_game1_treasurebloxNative_,state_WinnerEstPrizeGame1_treasurebloxNative_,userLevel1Game1_treasurebloxNative_,userLevel2Game1_treasurebloxNative_,userLevel3Game1_treasurebloxNative_,userLevel4Game1_treasurebloxNative_,
+
+    game1_level_1,game1_level_1_more,game1_level_2,game1_level_2_more,game1_level_3,game1_level_4,
+
+    game1team1_treasurebloxNative_team_points_target,game1team1_treasurebloxNative_ppp,game1team1_treasurebloxNative_team_entries,game1team1_treasurebloxNative_team_actual_points,
+    game1team2_treasurebloxNative_team_points_target,game1team2_treasurebloxNative_ppp,game1team2_treasurebloxNative_team_entries,game1team2_treasurebloxNative_team_actual_points,
 
 
-  game1_level_1,game1_level_1_more,game1_level_2,game1_level_2_more,game1_level_3,game1_level_4,
-
-
-  state_leaderboardAddressSearch_username_game1,state_leaderboardAddressSearch_tries_game1,state_leaderboardAddressSearch_stage_game1,state_leaderboardAddressSearch_team_game1,state_WinnerEstPrizeGame1,userLevel1Game1,userLevel2Game1,userLevel3Game1,userLevel4Game1,
-
-
-  game1team1_team_points_target,game1team1_ppp,game1team1_team_entries,game1team1_team_actual_points,
-  game1team2_team_points_target,game1team2_ppp,game1team2_team_entries,game1team2_team_actual_points,
     // GAME2
-  game2_id,game2_live,game2_prize,game2_question_hash,game2_time_lock_cost,game2_submit_secret_cost,game2_riddle,game2_clue,
-  allGame2_id,allGame2_user_front_of_que,allGame2_deadline_time,allGame2_username,allGame2_total_game_tries,countGame2,countGame2DeadlineTrue,
-  game2_head_start_time,game2_entry_limit,game2_entry_cost,game2numberOfEntries,userGame2_id,userEntered_game2,userGame2_headstart_time,userGame2_live,
-  winning_address2,treasure_found2,winning_prize2,question_hash_solved2,winning_message2,attemptId2,attemptUsername2,attemptDeadline2,attemptAddress2,
-  totalGameEntriesGame2,game2LeaderBoardIndex,game2LeaderBoardGameID,game2LeaderBoardAddress,
-  game2LeaderBoardEntered,game2LeaderBoardUsername,game2LeaderBoardTries,game2LeaderBoardStage,game2LeaderBoard,game2UserList,state_leaderboardAddressSearch_huntid_game2,state_leaderboardAddressSearch_address_game2,state_leaderboardAddressSearch_entered_game2,
+    web3,accounts,wallet_for_google,ip,
+    GSB_contract_bsc_,
+    GSC_contract_bsc_,
+    GSD_contract_bsc_,
+    MAIN_GAME_contract_xyz_,
+    VOLT_contract_xyz_,
+    RANDOM1_contract_xyz_,
+    MAIN_GAME_contract_treasurebloxNative_,
+    VOLT_contract_treasurebloxNative_,
+    ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
 
+    game2_live_treasurebloxNative_,game2_prize_treasurebloxNative_,game2_question_hash_treasurebloxNative_, game2_costToEnter_treasurebloxNative_,game2_riddle_treasurebloxNative_,
+    allGame2_id_treasurebloxNative_,allGame2_user_front_of_que_treasurebloxNative_,allGame2_deadline_time_treasurebloxNative_,allGame2_username_treasurebloxNative_,allGame2_total_game_tries_treasurebloxNative_,countGame2_treasurebloxNative_,countGame2DeadlineTrue_treasurebloxNative_,
+    game2_head_start_time_treasurebloxNative_,game2numberOfEntries_treasurebloxNative_,userGame2_id_treasurebloxNative_,userEntered_game2_treasurebloxNative_,userGame2_headstart_time_treasurebloxNative_,userGame2_live_treasurebloxNative_,
+    winning_address1_treasurebloxNative_,treasure_found1_treasurebloxNative_,winning_prize1_treasurebloxNative_,attemptId1_treasurebloxNative_,attemptUsername1_treasurebloxNative_,attemptDeadline1_treasurebloxNative_,attemptAddress1_treasurebloxNative_,
+    totalGameEntriesGame2_treasurebloxNative_,game2LeaderBoardIndex_treasurebloxNative_,game2LeaderBoardGameID_treasurebloxNative_,game2LeaderBoardAddress_treasurebloxNative_,
+    game2LeaderBoardEntered_treasurebloxNative_,game2LeaderBoardUsername_treasurebloxNative_,game2LeaderBoardTries_treasurebloxNative_,game2LeaderBoardStage_treasurebloxNative_,game2LeaderBoard_treasurebloxNative_,game2UserList_treasurebloxNative_,state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_,state_leaderboardAddressSearch_address_game2_treasurebloxNative_,state_leaderboardAddressSearch_entered_game2_treasurebloxNative_,
+    state_leaderboardAddressSearch_username_game2_treasurebloxNative_,state_leaderboardAddressSearch_tries_game2_treasurebloxNative_,state_leaderboardAddressSearch_stage_game2_treasurebloxNative_,state_leaderboardAddressSearch_team_game2_treasurebloxNative_,state_WinnerEstPrizeGame2_treasurebloxNative_,userLevel1Game2_treasurebloxNative_,userLevel2Game2_treasurebloxNative_,userLevel3Game2_treasurebloxNative_,userLevel4Game2_treasurebloxNative_,
 
-  game2_level_1,game2_level_1_more,game2_level_2,game2_level_2_more,game2_level_3,game2_level_4,
+    game2_level_1,game2_level_1_more,game2_level_2,game2_level_2_more,game2_level_3,game2_level_4,
 
-
-  state_leaderboardAddressSearch_username_game2,state_leaderboardAddressSearch_tries_game2,state_leaderboardAddressSearch_stage_game2,state_leaderboardAddressSearch_team_game2,state_WinnerEstPrizeGame2,userLevel1Game2,userLevel2Game2,userLevel3Game2,userLevel4Game2,
-
-
-  game2team1_team_points_target,game2team1_ppp,game2team1_team_entries,game2team1_team_actual_points,
-  game2team2_team_points_target,game2team2_ppp,game2team2_team_entries,game2team2_team_actual_points,
-
-
-
-  // PARTNER EXAMPLE STARTS
-  web3,accounts_xyz_,wallet_for_google_xyz_,ip_xyz_,contract_xyz_,tokenContract_xyz_,decimals_xyz_,totalTreasure_xyz_,globalNumberOfTries_xyz_,gameContractAddress_xyz_,
-
-  game1_live_xyz_,game1_prize_xyz_,game1_question_hash_xyz_, game1_costToEnter_xyz_,game1_riddle_xyz_,
-  allGame1_id_xyz_,allGame1_user_front_of_que_xyz_,allGame1_deadline_time_xyz_,allGame1_username_xyz_,allGame1_total_game_tries_xyz_,countGame1_xyz_,countGame1DeadlineTrue_xyz_,
-  game1_head_start_time_xyz_,game1numberOfEntries_xyz_,userGame1_id_xyz_,userEntered_game1_xyz_,userGame1_headstart_time_xyz_,userGame1_live_xyz_,
-  winning_address1_xyz_,treasure_found1_xyz_,winning_prize1_xyz_,attemptId1_xyz_,attemptUsername1_xyz_,attemptDeadline1_xyz_,attemptAddress1_xyz_,
-  totalGameEntriesGame1_xyz_,game1LeaderBoardIndex_xyz_,game1LeaderBoardGameID_xyz_,game1LeaderBoardAddress_xyz_,
-  game1LeaderBoardEntered_xyz_,game1LeaderBoardUsername_xyz_,game1LeaderBoardTries_xyz_,game1LeaderBoardStage_xyz_,game1LeaderBoard_xyz_,game1UserList_xyz_,state_leaderboardAddressSearch_huntid_game1_xyz_,state_leaderboardAddressSearch_address_game1_xyz_,state_leaderboardAddressSearch_entered_game1_xyz_,
-  state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_leaderboardAddressSearch_team_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
-
-  web3partnership_home,partnership_treasure_hunt_page,partnership_1,partnership_1_more,partnership_2,partnership_2_more,partnership_3,partnership_4,
-
-  game1team1_xyz_team_points_target,game1team1_xyz_ppp,game1team1_xyz_team_entries,game1team1_xyz_team_actual_points,
-  game1team2_xyz_team_points_target,game1team2_xyz_ppp,game1team2_xyz_team_entries,game1team2_xyz_team_actual_points,
+    game2team1_treasurebloxNative_team_points_target,game2team1_treasurebloxNative_ppp,game2team1_treasurebloxNative_team_entries,game2team1_treasurebloxNative_team_actual_points,
+    game2team2_treasurebloxNative_team_points_target,game2team2_treasurebloxNative_ppp,game2team2_treasurebloxNative_team_entries,game2team2_treasurebloxNative_team_actual_points,
 
 
 
-  // PARTNER EXAMPLE ENDS
+
+    // PARTNER EXAMPLE STARTS
+
+    // Partner Random Contract 1
+    player_loss_xyz_,result_loss_xyz_,pid_loss_xyz_,player_win_xyz_,result_win_xyz_,pid_win_xyz_,CostToPlay_xyz_,
+
+
+    web3,accounts,wallet_for_google_xyz_,ip_xyz_,partnerId_xyz,contract_xyz_,tokenContract_xyz_,decimals_xyz_,totalTreasure_xyz_,globalNumberOfTries_xyz_,gameContractAddress_xyz_,
+
+    game1_live_xyz_,game1_prize_xyz_,game1_question_hash_xyz_, game1_costToEnter_xyz_,game1_riddle_xyz_,
+    allGame1_id_xyz_,allGame1_user_front_of_que_xyz_,allGame1_deadline_time_xyz_,allGame1_username_xyz_,allGame1_total_game_tries_xyz_,countGame1_xyz_,countGame1DeadlineTrue_xyz_,
+    game1_head_start_time_xyz_,game1numberOfEntries_xyz_,userGame1_id_xyz_,userEntered_game1_xyz_,userGame1_headstart_time_xyz_,userGame1_live_xyz_,
+    winning_address1_xyz_,treasure_found1_xyz_,winning_prize1_xyz_,attemptId1_xyz_,attemptUsername1_xyz_,attemptDeadline1_xyz_,attemptAddress1_xyz_,
+    totalGameEntriesGame1_xyz_,game1LeaderBoardIndex_xyz_,game1LeaderBoardGameID_xyz_,game1LeaderBoardAddress_xyz_,
+    game1LeaderBoardEntered_xyz_,game1LeaderBoardUsername_xyz_,game1LeaderBoardTries_xyz_,game1LeaderBoardStage_xyz_,game1LeaderBoard_xyz_,game1UserList_xyz_,state_leaderboardAddressSearch_huntid_game1_xyz_,state_leaderboardAddressSearch_address_game1_xyz_,state_leaderboardAddressSearch_entered_game1_xyz_,
+    state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_leaderboardAddressSearch_team_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
+
+    web3partnership_home,partnership_treasure_hunt_page,partnership_1,partnership_1_more,partnership_2,partnership_2_more,partnership_3,partnership_4,partnership_gun,
+
+    game1team1_xyz_team_points_target,game1team1_xyz_ppp,game1team1_xyz_team_entries,game1team1_xyz_team_actual_points,
+    game1team2_xyz_team_points_target,game1team2_xyz_ppp,game1team2_xyz_team_entries,game1team2_xyz_team_actual_points,
+
+
+
+    // PARTNER EXAMPLE ENDS
 
 
 ])
@@ -2812,56 +2897,205 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
                 <MyNav accounts={accounts}/>
                   <Home
+                  // main
                   is_meter={is_meter}
-                  accounts={accounts}
+                  web3={web3}
                   wallet_for_google={wallet_for_google}
                   ip={ip}
-                  game1_id={game1_id}
-                  game1_live={game1_live}
-                  game1_prize={game1_prize}
-                  game1_question_hash={game1_question_hash}
+                  partnerId_xyz={partnerId_xyz}
 
-                  game1_entry_cost ={game1_entry_cost }
-                  game1_riddle={game1_riddle}
-                  game1_head_start_time={game1_head_start_time}
+                  // partner random 1
+                  player_loss_xyz_={player_loss_xyz_}
+                  result_loss_xyz_={result_loss_xyz_}
+                  pid_loss_xyz_={pid_loss_xyz_}
+                  player_win_xyz_={player_win_xyz_}
+                  result_win_xyz_={result_win_xyz_}
+                  pid_win_xyz_={pid_win_xyz_}
 
-                  allGame1_id={allGame1_id}
-                  allGasme1_user_front_of_que={allGame1_user_front_of_que}
-                  allGame1_deadline_time={allGame1_deadline_time}
-                  allGame1_username={allGame1_username}
-                  allGame1_total_game_tries={allGame1_total_game_tries}
-                  countGame1={countGame1}
-                  countGame1DeadlineTrue={countGame1DeadlineTrue}
-                  totalTreasure={totalTreasure}
 
-                  game1numberOfEntries={game1numberOfEntries}
 
-                  game2numberOfEntries={game2numberOfEntries}
+                  tokenContract={tokenContract_treasurebloxNative_}
+                  decimals={decimals_treasurebloxNative_}
+                  totalTreasure={totalTreasure_treasurebloxNative_}
 
-                  game2_id={game2_id}
-                  game2_live={game2_live}
-                  game2_prize={game2_prize}
-                  game2_question_hash={game2_question_hash}
-                  game2_time_lock_cost={game2_time_lock_cost}
-                  game2_submit_secret_cost={game2_submit_secret_cost}
-                  game2_riddle={game2_riddle}
-                  game2_clue={game2_clue}
-                  game2_head_start_time={game2_head_start_time}
-                  game2_entry_limit={game2_entry_limit}
-                  game2_entry_cost={game2_entry_cost}
-                  allGame2_id={allGame2_id}
-                  allGasme2_user_front_of_que={allGame2_user_front_of_que}
-                  allGame2_deadline_time={allGame2_deadline_time}
-                  allGame2_username={allGame2_username}
-                  allGame2_total_game_tries={allGame2_total_game_tries}
-                  countGame2={countGame2}
-                  countGame2DeadlineTrue={countGame2DeadlineTrue}
+                  GSB_contract_bsc_={GSB_contract_bsc_}
+                  GSC_contract_bsc_={GSC_contract_bsc_}
+                  GSD_contract_bsc_={GSD_contract_bsc_}
+                  MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                  VOLT_contract_xyz_={VOLT_contract_xyz_}
+                  CostToPlay_xyz_={CostToPlay_xyz_}
+                  RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                  MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+                  VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
-                  totalGameEntriesGame1={totalGameEntriesGame1}
-                  totalGameEntriesGame2={totalGameEntriesGame2}
-                  globalNumberOfTries={globalNumberOfTries}
 
-                  tokenContract={tokenContract}
+                  accounts={accounts}
+
+                  // totals
+
+                  totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                  totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+                  // 1
+                  partnership_home={web3partnership_home}
+                  partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                  partnership_1={game2_level_1}
+                  partnership_1_more={game2_level_1_more}
+                  partnership_2={game2_level_2}
+                  partnership_2_more={game2_level_2_more}
+                  partnership_3={game2_level_3}
+                  partnership_4={game2_level_4}
+                  partnership_random1={partnership_random1}
+                  partnership_gun={partnership_gun}
+                  // 1
+                  game1_live={game1_live_treasurebloxNative_}
+                  game1_prize={game1_prize_treasurebloxNative_}
+                  game1_question_hash={game1_question_hash_treasurebloxNative_}
+                  game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+                  game1_riddle={game1_riddle_treasurebloxNative_}
+                  game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+                  allGame1_id={allGame1_id_treasurebloxNative_}
+                  allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+                  allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+                  allGame1_username={allGame1_username_treasurebloxNative_}
+                  allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+                  countGame1={countGame1_treasurebloxNative_}
+                  countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+                  // 2
+                  game2_live={game2_live_treasurebloxNative_}
+                  game2_prize={game2_prize_treasurebloxNative_}
+                  game2_question_hash={game2_question_hash_treasurebloxNative_}
+                  game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+                  game2_riddle={game2_riddle_treasurebloxNative_}
+                  game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+                  allGame2_id={allGame2_id_treasurebloxNative_}
+                  allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+                  allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+                  allGame2_username={allGame2_username_treasurebloxNative_}
+                  allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+                  countGame2={countGame2_treasurebloxNative_}
+                  countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+                  // 1
+
+
+                  game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+                  userGame1_id={userGame1_id_treasurebloxNative_}
+                  userEntered_game1={userEntered_game1_treasurebloxNative_}
+                  userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+                  userGame1_live={userGame1_live_treasurebloxNative_}
+
+                  winning_address1={winning_address1_treasurebloxNative_}
+                  treasure_found1={treasure_found1_treasurebloxNative_}
+                  winning_prize1={winning_prize1_treasurebloxNative_}
+
+                  attemptId1={attemptId1_treasurebloxNative_}
+                  attemptAddress1={attemptAddress1_treasurebloxNative_}
+                  attemptUsername1={attemptUsername1_treasurebloxNative_}
+                  attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+                  totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                  // 2
+                  game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+                  userGame2_id={userGame2_id_treasurebloxNative_}
+                  userEntered_game2={userEntered_game2_treasurebloxNative_}
+                  userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+                  userGame2_live={userGame2_live_treasurebloxNative_}
+
+                  winning_address2={winning_address2_treasurebloxNative_}
+                  treasure_found2={treasure_found2_treasurebloxNative_}
+                  winning_prize2={winning_prize2_treasurebloxNative_}
+
+                  attemptId2={attemptId2_treasurebloxNative_}
+                  attemptAddress2={attemptAddress2_treasurebloxNative_}
+                  attemptUsername2={attemptUsername2_treasurebloxNative_}
+                  attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+                  totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                  // 1
+                  game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+                  game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+                  game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+                  game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+                  game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+                  game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+                  game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+                  // 2
+                  game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+                  game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+                  game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+                  game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+                  game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+                  game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+                  game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+                  // 1
+                  game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+                  game1UserList={game1UserList_treasurebloxNative_}
+
+                  state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+                  state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+                  state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+                  userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+                  userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+                  userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+                  userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+                  // 2
+
+                  game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+                  game2UserList={game2UserList_treasurebloxNative_}
+
+                  state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+                  state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+                  state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+                  // 1
+                  userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                  userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                  userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                  userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                  game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+                  game1team1_ppp={game1team1_treasurebloxNative_ppp}
+                  game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+                  game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+                  game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+                  game1team2_ppp={game1team2_treasurebloxNative_ppp}
+                  game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+                  game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+                  // 2
+                  userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                  userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                  userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                  userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                  game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+                  game2team1_ppp={game2team1_treasurebloxNative_ppp}
+                  game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+                  game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+                  game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+                  game2team2_ppp={game2team2_treasurebloxNative_ppp}
+                  game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+                  game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
 
 
 
@@ -2873,129 +3107,205 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/hunt1">
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Hunt1
+                // main
                 is_meter={is_meter}
                 web3={web3}
-                tokenContract={tokenContract}
                 wallet_for_google={wallet_for_google}
                 ip={ip}
-                game1_id={game1_id}
-                game1_live={game1_live}
-                game1_prize={game1_prize}
-                game1_question_hash={game1_question_hash}
+                partnerId_xyz={partnerId_xyz}
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
 
-                game1_entry_cost ={game1_entry_cost }
-                game1_riddle={game1_riddle}
-                game1_head_start_time={game1_head_start_time}
-                allGame1_id={allGame1_id}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que}
-                allGame1_deadline_time={allGame1_deadline_time}
-                allGame1_username={allGame1_username}
-                allGame1_total_game_tries={allGame1_total_game_tries}
-                countGame1={countGame1}
-                countGame1DeadlineTrue={countGame1DeadlineTrue}
-                decimals={decimals}
-                totalTreasure={totalTreasure}
-                contract={contract}
+                tokenContract={tokenContract_treasurebloxNative_}
+                decimals={decimals_treasurebloxNative_}
+                totalTreasure={totalTreasure_treasurebloxNative_}
+
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+                VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
                 accounts={accounts}
-                game1numberOfEntries={game1numberOfEntries}
-                userGame1_id={userGame1_id}
-                userEntered_game1={userEntered_game1}
-                userGame1_headstart_time={userGame1_headstart_time}
-                userGame1_live={userGame1_live}
-                winning_address1={winning_address1}
-                treasure_found1={treasure_found1}
-                winning_prize1={winning_prize1}
-                attemptId1={attemptId1}
-                attemptAddress1={attemptAddress1}
-                attemptUsername1={attemptUsername1}
-                attemptDeadline1={attemptDeadline1}
-                totalGameEntriesGame1={totalGameEntriesGame1}
-                globalNumberOfTries={globalNumberOfTries}
 
-                game1_id={game1_id}
-                game1_live={game1_live}
-                game1_prize={game1_prize}
-                game1_question_hash={game1_question_hash}
+                // totals
 
-                game1_entry_cost ={game1_entry_cost }
-                game1_riddle={game1_riddle}
-                game1_head_start_time={game1_head_start_time}
-
-                allGame1_id={allGame1_id}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que}
-                allGame1_deadline_time={allGame1_deadline_time}
-                allGame1_username={allGame1_username}
-                allGame1_total_game_tries={allGame1_total_game_tries}
-                countGame1={countGame1}
-                countGame1DeadlineTrue={countGame1DeadlineTrue}
-                totalTreasure={totalTreasure}
-                game1numberOfEntries={game1numberOfEntries}
-
-                game2_id={game2_id}
-                game2_live={game2_live}
-                game2_prize={game2_prize}
-                game2_question_hash={game2_question_hash}
-                game2_time_lock_cost={game2_time_lock_cost}
-                game2_submit_secret_cost={game2_submit_secret_cost}
-                game2_riddle={game2_riddle}
-                game2_clue={game2_clue}
-                game2_head_start_time={game2_head_start_time}
-                game2_entry_limit={game2_entry_limit}
-                game2_entry_cost={game2_entry_cost}
-                allGame2_id={allGame2_id}
-                allGasme2_user_front_of_que={allGame2_user_front_of_que}
-                allGame2_deadline_time={allGame2_deadline_time}
-                allGame2_username={allGame2_username}
-                allGame2_total_game_tries={allGame2_total_game_tries}
-                countGame2={countGame2}
-                countGame2DeadlineTrue={countGame2DeadlineTrue}
-
-                game1LeaderBoardIndex={game1LeaderBoardIndex}
-                game1LeaderBoardGameID={game1LeaderBoardGameID}
-                game1LeaderBoardAddress={game1LeaderBoardAddress}
-                game1LeaderBoardEntered={game1LeaderBoardEntered}
-                game1LeaderBoardUsername={game1LeaderBoardUsername}
-                game1LeaderBoardTries={game1LeaderBoardTries}
-                game1LeaderBoardStage={game1LeaderBoardStage}
-
-                game1LeaderBoard={game1LeaderBoard}
-                game1UserList={game1UserList}
-
-                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1}
-                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1}
-                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1}
-                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1}
-                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1}
-                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1}
-                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1}
-
-                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1}
-                gameContractAddress={gameContractAddress}
-
-
-                userLevel1Game1={userLevel1Game1}
-                userLevel2Game1={userLevel2Game1}
-                userLevel3Game1={userLevel3Game1}
-                userLevel4Game1={userLevel4Game1}
-
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+                // 1
                 partnership_home={web3partnership_home}
                 partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-                partnership_1={game1_level_1}
-                partnership_1_more={game1_level_1_more}
-                partnership_2={game1_level_2}
-                partnership_2_more={game1_level_2_more}
-                partnership_3={game1_level_3}
-                partnership_4={game1_level_4}
+                partnership_1={game2_level_1}
+                partnership_1_more={game2_level_1_more}
+                partnership_2={game2_level_2}
+                partnership_2_more={game2_level_2_more}
+                partnership_3={game2_level_3}
+                partnership_4={game2_level_4}
+                partnership_random1={partnership_random1}
+
+                partnership_gun={partnership_gun}
+
+                // 1
+                game1_live={game1_live_treasurebloxNative_}
+                game1_prize={game1_prize_treasurebloxNative_}
+                game1_question_hash={game1_question_hash_treasurebloxNative_}
+                game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+                game1_riddle={game1_riddle_treasurebloxNative_}
+                game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+                allGame1_id={allGame1_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+                allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+                allGame1_username={allGame1_username_treasurebloxNative_}
+                allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+                countGame1={countGame1_treasurebloxNative_}
+                countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+                // 2
+                game2_live={game2_live_treasurebloxNative_}
+                game2_prize={game2_prize_treasurebloxNative_}
+                game2_question_hash={game2_question_hash_treasurebloxNative_}
+                game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+                game2_riddle={game2_riddle_treasurebloxNative_}
+                game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+                allGame2_id={allGame2_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+                allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+                allGame2_username={allGame2_username_treasurebloxNative_}
+                allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+                countGame2={countGame2_treasurebloxNative_}
+                countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
 
 
-                game1team1_team_points_target={game1team1_team_points_target}
-                game1team1_ppp={game1team1_ppp}
-                game1team1_team_entries={game1team1_team_entries}
-                game1team1_team_actual_points={game1team1_team_actual_points}
-                game1team2_team_points_target={game1team2_team_points_target}
-                game1team2_ppp={game1team2_ppp}
-                game1team2_team_entries={game1team2_team_entries}
-                game1team2_team_actual_points={game1team2_team_actual_points}
+                // 1
+
+
+                game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+                userGame1_id={userGame1_id_treasurebloxNative_}
+                userEntered_game1={userEntered_game1_treasurebloxNative_}
+                userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+                userGame1_live={userGame1_live_treasurebloxNative_}
+
+                winning_address1={winning_address1_treasurebloxNative_}
+                treasure_found1={treasure_found1_treasurebloxNative_}
+                winning_prize1={winning_prize1_treasurebloxNative_}
+
+                attemptId1={attemptId1_treasurebloxNative_}
+                attemptAddress1={attemptAddress1_treasurebloxNative_}
+                attemptUsername1={attemptUsername1_treasurebloxNative_}
+                attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 2
+                game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+                userGame2_id={userGame2_id_treasurebloxNative_}
+                userEntered_game2={userEntered_game2_treasurebloxNative_}
+                userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+                userGame2_live={userGame2_live_treasurebloxNative_}
+
+                winning_address2={winning_address2_treasurebloxNative_}
+                treasure_found2={treasure_found2_treasurebloxNative_}
+                winning_prize2={winning_prize2_treasurebloxNative_}
+
+                attemptId2={attemptId2_treasurebloxNative_}
+                attemptAddress2={attemptAddress2_treasurebloxNative_}
+                attemptUsername2={attemptUsername2_treasurebloxNative_}
+                attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 1
+                game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+                game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+                game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+                game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+                game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+                game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+                game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+                // 2
+                game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+                game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+                game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+                game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+                game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+                game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+                game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+                // 1
+                game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+                game1UserList={game1UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+                userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+                userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+                userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+                userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+                // 2
+
+                game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+                game2UserList={game2UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+                state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+                // 1
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+                game1team1_ppp={game1team1_treasurebloxNative_ppp}
+                game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+                game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+                game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+                game1team2_ppp={game1team2_treasurebloxNative_ppp}
+                game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+                game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+                // 2
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+                game2team1_ppp={game2team1_treasurebloxNative_ppp}
+                game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+                game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+                game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+                game2team2_ppp={game2team2_treasurebloxNative_ppp}
+                game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+                game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
                 />
 
               </Route>
@@ -3003,133 +3313,205 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/hunt2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Hunt2
+              // main
               is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game1_id={game1_id}
-              game1_live={game1_live}
-              game1_prize={game1_prize}
-              game1_question_hash={game1_question_hash}
-
-              game1_entry_cost ={game1_entry_cost }
-              game1_riddle={game1_riddle}
-              game1_head_start_time={game1_head_start_time}
-
-              allGame1_id={allGame1_id}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que}
-              allGame1_deadline_time={allGame1_deadline_time}
-              allGame1_username={allGame1_username}
-              allGame1_total_game_tries={allGame1_total_game_tries}
-              countGame1={countGame1}
-              countGame1DeadlineTrue={countGame1DeadlineTrue}
-              totalTreasure={totalTreasure}
-              game1numberOfEntries={game1numberOfEntries}
-
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGasme2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
-
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2}
-
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
-
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
-
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-
               partnership_1={game2_level_1}
               partnership_1_more={game2_level_1_more}
               partnership_2={game2_level_2}
               partnership_2_more={game2_level_2_more}
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              game2team1_team_points_target={game2team1_team_points_target}
-              game2team1_ppp={game2team1_ppp}
-              game2team1_team_entries={game2team1_team_entries}
-              game2team1_team_actual_points={game2team1_team_actual_points}
-              game2team2_team_points_target={game2team2_team_points_target}
-              game2team2_ppp={game2team2_ppp}
-              game2team2_team_entries={game2team2_team_entries}
-              game2team2_team_actual_points={game2team2_team_actual_points}
+              partnership_gun={partnership_gun}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
 
               />
 
@@ -3139,51 +3521,203 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/Learnmore">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Learnmore
+                // main
+                is_meter={is_meter}
+                web3={web3}
                 wallet_for_google={wallet_for_google}
                 ip={ip}
-                game1_id={game1_id}
-                game1_live={game1_live}
-                game1_prize={game1_prize}
-                game1_question_hash={game1_question_hash}
+                partnerId_xyz={partnerId_xyz}
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
 
-                game1_entry_cost ={game1_entry_cost }
-                game1_riddle={game1_riddle}
-                game1_head_start_time={game1_head_start_time}
+                tokenContract={tokenContract_treasurebloxNative_}
+                decimals={decimals_treasurebloxNative_}
+                totalTreasure={totalTreasure_treasurebloxNative_}
 
-                allGame1_id={allGame1_id}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que}
-                allGame1_deadline_time={allGame1_deadline_time}
-                allGame1_username={allGame1_username}
-                allGame1_total_game_tries={allGame1_total_game_tries}
-                countGame1={countGame1}
-                countGame1DeadlineTrue={countGame1DeadlineTrue}
-                totalTreasure={totalTreasure}
-                game1numberOfEntries={game1numberOfEntries}
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
 
-                game2_id={game2_id}
-                game2_live={game2_live}
-                game2_prize={game2_prize}
-                game2_question_hash={game2_question_hash}
-                game2_time_lock_cost={game2_time_lock_cost}
-                game2_submit_secret_cost={game2_submit_secret_cost}
-                game2_riddle={game2_riddle}
-                game2_clue={game2_clue}
-                game2_head_start_time={game2_head_start_time}
-                game2_entry_limit={game2_entry_limit}
-                game2_entry_cost={game2_entry_cost}
-                allGame2_id={allGame2_id}
-                allGasme2_user_front_of_que={allGame2_user_front_of_que}
-                allGame2_deadline_time={allGame2_deadline_time}
-                allGame2_username={allGame2_username}
-                allGame2_total_game_tries={allGame2_total_game_tries}
-                countGame2={countGame2}
-                countGame2DeadlineTrue={countGame2DeadlineTrue}
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+                VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
-                totalGameEntriesGame1={totalGameEntriesGame1}
-                totalGameEntriesGame2={totalGameEntriesGame2}
-                globalNumberOfTries={globalNumberOfTries}
+                accounts={accounts}
 
-                tokenContract={tokenContract}
+                // totals
+
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+                // 1
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={game2_level_1}
+                partnership_1_more={game2_level_1_more}
+                partnership_2={game2_level_2}
+                partnership_2_more={game2_level_2_more}
+                partnership_3={game2_level_3}
+                partnership_4={game2_level_4}
+                partnership_random1={partnership_random1}
+
+                partnership_gun={partnership_gun}
+
+                // 1
+                game1_live={game1_live_treasurebloxNative_}
+                game1_prize={game1_prize_treasurebloxNative_}
+                game1_question_hash={game1_question_hash_treasurebloxNative_}
+                game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+                game1_riddle={game1_riddle_treasurebloxNative_}
+                game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+                allGame1_id={allGame1_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+                allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+                allGame1_username={allGame1_username_treasurebloxNative_}
+                allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+                countGame1={countGame1_treasurebloxNative_}
+                countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+                // 2
+                game2_live={game2_live_treasurebloxNative_}
+                game2_prize={game2_prize_treasurebloxNative_}
+                game2_question_hash={game2_question_hash_treasurebloxNative_}
+                game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+                game2_riddle={game2_riddle_treasurebloxNative_}
+                game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+                allGame2_id={allGame2_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+                allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+                allGame2_username={allGame2_username_treasurebloxNative_}
+                allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+                countGame2={countGame2_treasurebloxNative_}
+                countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+                // 1
+
+
+                game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+                userGame1_id={userGame1_id_treasurebloxNative_}
+                userEntered_game1={userEntered_game1_treasurebloxNative_}
+                userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+                userGame1_live={userGame1_live_treasurebloxNative_}
+
+                winning_address1={winning_address1_treasurebloxNative_}
+                treasure_found1={treasure_found1_treasurebloxNative_}
+                winning_prize1={winning_prize1_treasurebloxNative_}
+
+                attemptId1={attemptId1_treasurebloxNative_}
+                attemptAddress1={attemptAddress1_treasurebloxNative_}
+                attemptUsername1={attemptUsername1_treasurebloxNative_}
+                attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 2
+                game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+                userGame2_id={userGame2_id_treasurebloxNative_}
+                userEntered_game2={userEntered_game2_treasurebloxNative_}
+                userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+                userGame2_live={userGame2_live_treasurebloxNative_}
+
+                winning_address2={winning_address2_treasurebloxNative_}
+                treasure_found2={treasure_found2_treasurebloxNative_}
+                winning_prize2={winning_prize2_treasurebloxNative_}
+
+                attemptId2={attemptId2_treasurebloxNative_}
+                attemptAddress2={attemptAddress2_treasurebloxNative_}
+                attemptUsername2={attemptUsername2_treasurebloxNative_}
+                attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 1
+                game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+                game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+                game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+                game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+                game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+                game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+                game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+                // 2
+                game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+                game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+                game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+                game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+                game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+                game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+                game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+                // 1
+                game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+                game1UserList={game1UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+                userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+                userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+                userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+                userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+                // 2
+
+                game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+                game2UserList={game2UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+                state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+                // 1
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+                game1team1_ppp={game1team1_treasurebloxNative_ppp}
+                game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+                game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+                game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+                game1team2_ppp={game1team2_treasurebloxNative_ppp}
+                game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+                game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+                // 2
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+                game2team1_ppp={game2team1_treasurebloxNative_ppp}
+                game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+                game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+                game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+                game2team2_ppp={game2team2_treasurebloxNative_ppp}
+                game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+                game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
 
@@ -3267,73 +3801,204 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/Level1Game1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
 
 
               />
@@ -3342,365 +4007,1035 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/Game1MoreGame1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level2Game1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Game2MoreGame1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level3Game1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level4Game1">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game1
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
@@ -3708,438 +5043,1242 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path="/Level1Game2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Game1MoreGame2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level2Game2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Game2MoreGame2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level3Game2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
               <Route path="/Level4Game2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game2
+              // main
+              is_meter={is_meter}
               web3={web3}
-              tokenContract={tokenContract}
               wallet_for_google={wallet_for_google}
               ip={ip}
-              game2_id={game2_id}
-              game2_live={game2_live}
-              game2_prize={game2_prize}
-              game2_question_hash={game2_question_hash}
-              game2_time_lock_cost={game2_time_lock_cost}
-              game2_submit_secret_cost={game2_submit_secret_cost}
-              game2_riddle={game2_riddle}
-              game2_clue={game2_clue}
-              game2_head_start_time={game2_head_start_time}
-              game2_entry_limit={game2_entry_limit}
-              game2_entry_cost={game2_entry_cost}
-              allGame2_id={allGame2_id}
-              allGame2_user_front_of_que={allGame2_user_front_of_que}
-              allGame2_deadline_time={allGame2_deadline_time}
-              allGame2_username={allGame2_username}
-              allGame2_total_game_tries={allGame2_total_game_tries}
-              countGame2={countGame2}
-              countGame2DeadlineTrue={countGame2DeadlineTrue}
-              decimals={decimals}
-              totalTreasure={totalTreasure}
-              contract={contract}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+
               accounts={accounts}
-              game2numberOfEntries={game2numberOfEntries}
-              userGame2_id={userGame2_id}
-              userEntered_game2={userEntered_game2}
-              userGame2_headstart_time={userGame2_headstart_time}
-              userGame2_live={userGame2_live}
-              winning_address2={winning_address2}
-              treasure_found2={treasure_found2}
-              winning_prize2={winning_prize2}
-              question_hash_solved2={question_hash_solved2}
-              winning_message2={winning_message2}
-              attemptId2={attemptId2}
-              attemptAddress2={attemptAddress2}
-              attemptUsername2={attemptUsername2}
-              attemptDeadline2={attemptDeadline2}
-              totalGameEntriesGame2={totalGameEntriesGame2}
-              globalNumberOfTries={globalNumberOfTries}
 
-              game2LeaderBoardIndex={game2LeaderBoardIndex}
-              game2LeaderBoardGameID={game2LeaderBoardGameID}
-              game2LeaderBoardAddress={game2LeaderBoardAddress}
-              game2LeaderBoardEntered={game2LeaderBoardEntered}
-              game2LeaderBoardUsername={game2LeaderBoardUsername}
-              game2LeaderBoardTries={game2LeaderBoardTries}
-              game2LeaderBoardStage={game2LeaderBoardStage}
+              // totals
 
-              game2LeaderBoard={game2LeaderBoard}
-              game2UserList={game2UserList}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
 
-              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2}
-              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2}
-              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2}
-              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2}
-              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2}
-              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2}
-              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2}
-              gameContractAddress={gameContractAddress}
+              partnership_gun={partnership_gun}
 
-              userLevel1Game2={userLevel1Game2}
-              userLevel2Game2={userLevel2Game2}
-              userLevel3Game2={userLevel3Game2}
-              userLevel4Game2={userLevel4Game2}
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
               />
               </Route>
 
@@ -4148,11 +6287,56 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_treasure_hunt_page} >
               <PartnershipNav {...props} onClick={() => Connection()}/>
                 <PartnershipHunt1
-
+                // main
+                is_meter={is_meter}
                 web3={web3}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                partnerId_xyz={partnerId_xyz}
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
+
                 tokenContract={tokenContract_xyz_}
-                wallet_for_google={wallet_for_google_xyz_}
-                ip={ip_xyz_}
+                decimals={decimals_xyz_}
+                totalTreasure={totalTreasure_xyz_}
+
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
+
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+                accounts={accounts}
+
+                // totals
+
+                totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+                globalNumberOfTries={globalNumberOfTries_xyz_}
+                // 1
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={partnership_1}
+                partnership_1_more={partnership_1_more}
+                partnership_2={partnership_2}
+                partnership_2_more={partnership_2_more}
+                partnership_3={partnership_3}
+                partnership_4={partnership_4}
+                partnership_random1={partnership_random1}
+
+                partnership_gun={partnership_gun}
+
+
+                // 1
                 game1_live={game1_live_xyz_}
                 game1_prize={game1_prize_xyz_}
                 game1_question_hash={game1_question_hash_xyz_}
@@ -4160,21 +6344,22 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 game1_riddle={game1_riddle_xyz_}
                 game1_head_start_time={game1_head_start_time_xyz_}
                 allGame1_id={allGame1_id_xyz_}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
                 allGame1_deadline_time={allGame1_deadline_time_xyz_}
                 allGame1_username={allGame1_username_xyz_}
                 allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
                 countGame1={countGame1_xyz_}
                 countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-                decimals={decimals_xyz_}
-                totalTreasure={totalTreasure_xyz_}
-                contract={contract_xyz_}
-                accounts={accounts_xyz_}
+
+                // 1
+
+
                 game1numberOfEntries={game1numberOfEntries_xyz_}
                 userGame1_id={userGame1_id_xyz_}
                 userEntered_game1={userEntered_game1_xyz_}
                 userGame1_headstart_time={userGame1_headstart_time_xyz_}
                 userGame1_live={userGame1_live_xyz_}
+
                 winning_address1={winning_address1_xyz_}
                 treasure_found1={treasure_found1_xyz_}
                 winning_prize1={winning_prize1_xyz_}
@@ -4186,6 +6371,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
                 globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+                // 1
                 game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
                 game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
                 game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4194,6 +6384,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
                 game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+                // 1
                 game1LeaderBoard={game1LeaderBoard_xyz_}
                 game1UserList={game1UserList_xyz_}
 
@@ -4205,22 +6397,12 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
                 state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
                 state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-                gameContractAddress={gameContractAddress_xyz_}
-
 
                 userLevel1Game1={userLevel1Game1_xyz_}
                 userLevel2Game1={userLevel2Game1_xyz_}
                 userLevel3Game1={userLevel3Game1_xyz_}
                 userLevel4Game1={userLevel4Game1_xyz_}
 
-                partnership_home={web3partnership_home}
-                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-                partnership_1={partnership_1}
-                partnership_1_more={partnership_1_more}
-                partnership_2={partnership_2}
-                partnership_2_more={partnership_2_more}
-                partnership_3={partnership_3}
-                partnership_4={partnership_4}
 
                 game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
                 game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4230,38 +6412,87 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 game1team2_xyz_ppp={game1team2_xyz_ppp}
                 game1team2_xyz_team_entries={game1team2_xyz_team_entries}
                 game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
 
                 />
               </Route>
 
               <Route path={web3partnership_home} >
               <PartnershipNav {...props}  onClick={() => Connection()}/>
-                <PartnerHome web3={web3}
+                <PartnerHome
+                // main
+                is_meter={is_meter}
+                web3={web3}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                partnerId_xyz={partnerId_xyz}
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
+
                 tokenContract={tokenContract_xyz_}
-                wallet_for_google={wallet_for_google_xyz_}
-                ip={ip_xyz_}
+                decimals={decimals_xyz_}
+                totalTreasure={totalTreasure_xyz_}
+
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
+
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+                accounts={accounts}
+
+                // totals
+
+                totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+                globalNumberOfTries={globalNumberOfTries_xyz_}
+                // 1
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={partnership_1}
+                partnership_1_more={partnership_1_more}
+                partnership_2={partnership_2}
+                partnership_2_more={partnership_2_more}
+                partnership_3={partnership_3}
+                partnership_4={partnership_4}
+                partnership_random1={partnership_random1}
+
+                partnership_gun={partnership_gun}
+
+                // 1
                 game1_live={game1_live_xyz_}
                 game1_prize={game1_prize_xyz_}
                 game1_question_hash={game1_question_hash_xyz_}
-                game1_entry_cost={game1_costToEnter_xyz_}
+                game1_entry_cost ={game1_costToEnter_xyz_}
                 game1_riddle={game1_riddle_xyz_}
                 game1_head_start_time={game1_head_start_time_xyz_}
                 allGame1_id={allGame1_id_xyz_}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
                 allGame1_deadline_time={allGame1_deadline_time_xyz_}
                 allGame1_username={allGame1_username_xyz_}
                 allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
                 countGame1={countGame1_xyz_}
                 countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-                decimals={decimals_xyz_}
-                totalTreasure={totalTreasure_xyz_}
-                contract={contract_xyz_}
-                accounts={accounts_xyz_}
+
+                // 1
+
+
                 game1numberOfEntries={game1numberOfEntries_xyz_}
                 userGame1_id={userGame1_id_xyz_}
                 userEntered_game1={userEntered_game1_xyz_}
                 userGame1_headstart_time={userGame1_headstart_time_xyz_}
                 userGame1_live={userGame1_live_xyz_}
+
                 winning_address1={winning_address1_xyz_}
                 treasure_found1={treasure_found1_xyz_}
                 winning_prize1={winning_prize1_xyz_}
@@ -4273,6 +6504,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
                 globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+                // 1
                 game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
                 game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
                 game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4281,6 +6517,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
                 game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+                // 1
                 game1LeaderBoard={game1LeaderBoard_xyz_}
                 game1UserList={game1UserList_xyz_}
 
@@ -4291,24 +6529,15 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
                 state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
                 state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
                 state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-                gameContractAddress={gameContractAddress_xyz_}
-
 
                 userLevel1Game1={userLevel1Game1_xyz_}
                 userLevel2Game1={userLevel2Game1_xyz_}
                 userLevel3Game1={userLevel3Game1_xyz_}
                 userLevel4Game1={userLevel4Game1_xyz_}
 
-                partnership_home={web3partnership_home}
-                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-                partnership_1={partnership_1}
-                partnership_1_more={partnership_1_more}
-                partnership_2={partnership_2}
-                partnership_2_more={partnership_2_more}
-                partnership_3={partnership_3}
-                partnership_4={partnership_4}
+
+
 
                 game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
                 game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4318,6 +6547,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
                 game1team2_xyz_ppp={game1team2_xyz_ppp}
                 game1team2_xyz_team_entries={game1team2_xyz_team_entries}
                 game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
 
                 />
               </Route>
@@ -4325,32 +6555,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_1}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel1
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4362,6 +6638,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4370,6 +6651,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4380,24 +6663,15 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
+
+
 
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4407,6 +6681,9 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
+
 
               />
               </Route>
@@ -4414,32 +6691,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_1_more}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel1More
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4451,6 +6774,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4459,6 +6787,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4469,24 +6799,13 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
 
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4496,6 +6815,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
 
               />
               </Route>
@@ -4503,32 +6824,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_2}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel2
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4540,6 +6907,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4548,6 +6920,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4558,25 +6932,16 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
 
+
+              game1team1_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
               game1team1_xyz_team_entries={game1team1_xyz_team_entries}
@@ -4585,6 +6950,7 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
 
               />
               </Route>
@@ -4592,32 +6958,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_2_more}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel2More
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4629,6 +7041,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4637,6 +7054,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4647,24 +7066,14 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
+
 
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4674,6 +7083,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
 
               />
               </Route>
@@ -4681,32 +7092,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_3}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel3
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4718,6 +7175,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4726,6 +7188,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4736,24 +7200,14 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
+
 
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4763,6 +7217,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
 
               />
               </Route>
@@ -4770,32 +7226,78 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               <Route path={partnership_4}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
               <PartnershipLevel4
+              // main
+              is_meter={is_meter}
               web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
               tokenContract={tokenContract_xyz_}
-              wallet_for_google={wallet_for_google_xyz_}
-              ip={ip_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
               game1_live={game1_live_xyz_}
               game1_prize={game1_prize_xyz_}
               game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={ game1_costToEnter_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
               game1_riddle={game1_riddle_xyz_}
               game1_head_start_time={game1_head_start_time_xyz_}
               allGame1_id={allGame1_id_xyz_}
-              allGasme1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
               allGame1_deadline_time={allGame1_deadline_time_xyz_}
               allGame1_username={allGame1_username_xyz_}
               allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
               countGame1={countGame1_xyz_}
               countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
-              contract={contract_xyz_}
-              accounts={accounts_xyz_}
+
+              // 1
+
+
               game1numberOfEntries={game1numberOfEntries_xyz_}
               userGame1_id={userGame1_id_xyz_}
               userEntered_game1={userEntered_game1_xyz_}
               userGame1_headstart_time={userGame1_headstart_time_xyz_}
               userGame1_live={userGame1_live_xyz_}
+
               winning_address1={winning_address1_xyz_}
               treasure_found1={treasure_found1_xyz_}
               winning_prize1={winning_prize1_xyz_}
@@ -4807,6 +7309,11 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
               globalNumberOfTries={globalNumberOfTries_xyz_}
 
+
+
+
+
+              // 1
               game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
               game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
               game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
@@ -4815,6 +7322,8 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
               game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
 
+
+              // 1
               game1LeaderBoard={game1LeaderBoard_xyz_}
               game1UserList={game1UserList_xyz_}
 
@@ -4825,24 +7334,14 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
               state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
               state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-
               state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
-              gameContractAddress={gameContractAddress_xyz_}
-
 
               userLevel1Game1={userLevel1Game1_xyz_}
               userLevel2Game1={userLevel2Game1_xyz_}
               userLevel3Game1={userLevel3Game1_xyz_}
               userLevel4Game1={userLevel4Game1_xyz_}
 
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
+
 
               game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
               game1team1_xyz_ppp={game1team1_xyz_ppp}
@@ -4852,6 +7351,277 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
               game1team2_xyz_ppp={game1team2_xyz_ppp}
               game1team2_xyz_team_entries={game1team2_xyz_team_entries}
               game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
+
+              />
+              </Route>
+
+              <Route path={partnership_random1}>
+              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipRandom1
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+
+              tokenContract={tokenContract_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+              partnership_gun={partnership_gun}
+
+              // 1
+              game1_live={game1_live_xyz_}
+              game1_prize={game1_prize_xyz_}
+              game1_question_hash={game1_question_hash_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
+              game1_riddle={game1_riddle_xyz_}
+              game1_head_start_time={game1_head_start_time_xyz_}
+              allGame1_id={allGame1_id_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_deadline_time={allGame1_deadline_time_xyz_}
+              allGame1_username={allGame1_username_xyz_}
+              allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
+              countGame1={countGame1_xyz_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_xyz_}
+              userGame1_id={userGame1_id_xyz_}
+              userEntered_game1={userEntered_game1_xyz_}
+              userGame1_headstart_time={userGame1_headstart_time_xyz_}
+              userGame1_live={userGame1_live_xyz_}
+
+              winning_address1={winning_address1_xyz_}
+              treasure_found1={treasure_found1_xyz_}
+              winning_prize1={winning_prize1_xyz_}
+
+              attemptId1={attemptId1_xyz_}
+              attemptAddress1={attemptAddress1_xyz_}
+              attemptUsername1={attemptUsername1_xyz_}
+              attemptDeadline1={attemptDeadline1_xyz_}
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+
+
+
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_xyz_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_xyz_}
+              game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
+              game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
+
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_xyz_}
+              game1UserList={game1UserList_xyz_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_xyz_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_xyz_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_xyz_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
+
+              userLevel1Game1={userLevel1Game1_xyz_}
+              userLevel2Game1={userLevel2Game1_xyz_}
+              userLevel3Game1={userLevel3Game1_xyz_}
+              userLevel4Game1={userLevel4Game1_xyz_}
+
+
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
+
+              />
+              </Route>
+
+              <Route path={partnership_gun}>
+              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipGun
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+
+              tokenContract={tokenContract_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
+              game1_live={game1_live_xyz_}
+              game1_prize={game1_prize_xyz_}
+              game1_question_hash={game1_question_hash_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
+              game1_riddle={game1_riddle_xyz_}
+              game1_head_start_time={game1_head_start_time_xyz_}
+              allGame1_id={allGame1_id_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_deadline_time={allGame1_deadline_time_xyz_}
+              allGame1_username={allGame1_username_xyz_}
+              allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
+              countGame1={countGame1_xyz_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_xyz_}
+              userGame1_id={userGame1_id_xyz_}
+              userEntered_game1={userEntered_game1_xyz_}
+              userGame1_headstart_time={userGame1_headstart_time_xyz_}
+              userGame1_live={userGame1_live_xyz_}
+
+              winning_address1={winning_address1_xyz_}
+              treasure_found1={treasure_found1_xyz_}
+              winning_prize1={winning_prize1_xyz_}
+
+              attemptId1={attemptId1_xyz_}
+              attemptAddress1={attemptAddress1_xyz_}
+              attemptUsername1={attemptUsername1_xyz_}
+              attemptDeadline1={attemptDeadline1_xyz_}
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+
+
+
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_xyz_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_xyz_}
+              game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
+              game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
+
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_xyz_}
+              game1UserList={game1UserList_xyz_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_xyz_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_xyz_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_xyz_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
+
+              userLevel1Game1={userLevel1Game1_xyz_}
+              userLevel2Game1={userLevel2Game1_xyz_}
+              userLevel3Game1={userLevel3Game1_xyz_}
+              userLevel4Game1={userLevel4Game1_xyz_}
+
+
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
 
               />
               </Route>
@@ -4860,55 +7630,127 @@ const [totalTreasure_xyz_,setTotalTreasure_xyz_] = useState(null)
 
               <Route path="">
               <Launchpad
-                is_meter={is_meter}
-                accounts={accounts}
-                wallet_for_google={wallet_for_google}
-                ip={ip}
-                game1_id={game1_id}
-                game1_live={game1_live}
-                game1_prize={game1_prize}
-                game1_question_hash={game1_question_hash}
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
 
-                game1_entry_cost ={game1_entry_cost }
-                game1_riddle={game1_riddle}
-                game1_head_start_time={game1_head_start_time}
+              tokenContract={tokenContract_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
 
-                allGame1_id={allGame1_id}
-                allGasme1_user_front_of_que={allGame1_user_front_of_que}
-                allGame1_deadline_time={allGame1_deadline_time}
-                allGame1_username={allGame1_username}
-                allGame1_total_game_tries={allGame1_total_game_tries}
-                countGame1={countGame1}
-                countGame1DeadlineTrue={countGame1DeadlineTrue}
-                totalTreasure={totalTreasure}
-                game1numberOfEntries={game1numberOfEntries}
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
 
-                game2_id={game2_id}
-                game2_live={game2_live}
-                game2_prize={game2_prize}
-                game2_question_hash={game2_question_hash}
-                game2_time_lock_cost={game2_time_lock_cost}
-                game2_submit_secret_cost={game2_submit_secret_cost}
-                game2_riddle={game2_riddle}
-                game2_clue={game2_clue}
-                game2_head_start_time={game2_head_start_time}
-                game2_entry_limit={game2_entry_limit}
-                game2_entry_cost={game2_entry_cost}
-                allGame2_id={allGame2_id}
-                allGasme2_user_front_of_que={allGame2_user_front_of_que}
-                allGame2_deadline_time={allGame2_deadline_time}
-                allGame2_username={allGame2_username}
-                allGame2_total_game_tries={allGame2_total_game_tries}
-                countGame2={countGame2}
-                countGame2DeadlineTrue={countGame2DeadlineTrue}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
 
-                totalGameEntriesGame1={totalGameEntriesGame1}
-                totalGameEntriesGame2={totalGameEntriesGame2}
-                globalNumberOfTries={globalNumberOfTries}
+              accounts={accounts}
 
-                tokenContract={tokenContract}
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+
+              partnership_gun={partnership_gun}
+
+              // 1
+              game1_live={game1_live_xyz_}
+              game1_prize={game1_prize_xyz_}
+              game1_question_hash={game1_question_hash_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
+              game1_riddle={game1_riddle_xyz_}
+              game1_head_start_time={game1_head_start_time_xyz_}
+              allGame1_id={allGame1_id_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_deadline_time={allGame1_deadline_time_xyz_}
+              allGame1_username={allGame1_username_xyz_}
+              allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
+              countGame1={countGame1_xyz_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
+
+              // 1
 
 
+              game1numberOfEntries={game1numberOfEntries_xyz_}
+              userGame1_id={userGame1_id_xyz_}
+              userEntered_game1={userEntered_game1_xyz_}
+              userGame1_headstart_time={userGame1_headstart_time_xyz_}
+              userGame1_live={userGame1_live_xyz_}
+
+              winning_address1={winning_address1_xyz_}
+              treasure_found1={treasure_found1_xyz_}
+              winning_prize1={winning_prize1_xyz_}
+
+              attemptId1={attemptId1_xyz_}
+              attemptAddress1={attemptAddress1_xyz_}
+              attemptUsername1={attemptUsername1_xyz_}
+              attemptDeadline1={attemptDeadline1_xyz_}
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_xyz_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_xyz_}
+              game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
+              game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
+
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_xyz_}
+              game1UserList={game1UserList_xyz_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_xyz_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_xyz_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_xyz_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
+
+              userLevel1Game1={userLevel1Game1_xyz_}
+              userLevel2Game1={userLevel2Game1_xyz_}
+              userLevel3Game1={userLevel3Game1_xyz_}
+              userLevel4Game1={userLevel4Game1_xyz_}
+
+
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
 
 
 

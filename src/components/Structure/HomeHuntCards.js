@@ -6,7 +6,9 @@ import img2 from './images/fortblox.png';
 
 
 import img3 from './images/FortBloxMetaverse.png';
-import img4 from './images/ElonsRocketMetaverse.png';
+import img4 from './images/Elons_Rocket_Treasureblox.png';
+import img5 from './images/treasurebloxXjetswap.png';
+
 
 
 
@@ -34,6 +36,16 @@ const HuntWowCards = (props) => {
       wallet_ip: props.ip,
       url: window.location.pathname,
       buttonClicked:"view_elon_home_view_click"
+    });
+  }
+
+  const view_strike_fighter_view_click = (event) => {
+    window.dataLayer.push({
+      event: "wallet_information",
+      wallet: props.wallet_for_google,
+      wallet_ip: props.ip,
+      url: window.location.pathname,
+      buttonClicked:"view_strike_fighter_view_click"
     });
   }
 
@@ -105,6 +117,25 @@ console.log(props.game2numberOfEntries,"me")
         <br/>
         <Link to="/hunt1">
           <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
+        </Link>
+        <br/><br/>
+
+      </Card.Body>
+    </Card>
+
+    <br className="d-lg-none"/>
+    <br className="d-lg-none"/>
+
+    <Card className='cardRounded'>
+      <Card.Img variant="top" src={img5} alt="Logo" className='customRounded'/>
+      <Card.Body >
+        <Card.Title className="gameTitle">Strike Fighter Series</Card.Title>
+        <Card.Title className="gameTitle">Earn your wings!</Card.Title>
+
+        <div>The first Play to earn metaverse treasure hunt released on BSC. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>
+        <br/>
+        <Link to="/JetswapXTreasureBloxHome/:top">
+          <Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>
         </Link>
         <br/><br/>
 

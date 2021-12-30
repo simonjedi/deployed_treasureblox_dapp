@@ -135,7 +135,7 @@ const handlePlayBrailOff = async() => {
 
 
 
-      <Container style={{height: height}} className='mt-5' fluid="md">
+      <Container style={{height: height*4}} className='mt-5' fluid="md">
 
 
       <div className="aligned">
@@ -159,8 +159,7 @@ const handlePlayBrailOff = async() => {
               {' '}
               <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
               <br/><br/>Troy's found a message!<br/><br/>
-              <Button className="customButtonDecide" onClick={handlePlayBrail}>Play Me</Button>
-
+              please submit the time lock and use the code "XXXX" to level up!
               {' '}
             </p>
             <footer className="blockquote-footer">

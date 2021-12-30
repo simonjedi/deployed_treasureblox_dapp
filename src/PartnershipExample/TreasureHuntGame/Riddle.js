@@ -38,8 +38,8 @@ const Riddle = (props) => {
       <Card.Body className='customBodyTwo'>
         <div className="gameMainTitle">{props.game1_riddle}</div>
 
-        <div className="gamePrize"><p variant="primary" onClick={handleShow}>XXX</p></div>
-        <div className="postMainPrize">Best not go to Hawaii</div>
+        <div className="gamePrize"><p variant="primary" onClick={handleShow}>X</p></div>
+        <div className="postMainPrize">Crypto Dave Has Stolen The Wings!</div>
         <br/>
 
         <Modal show={show} onHide={handleClose} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>

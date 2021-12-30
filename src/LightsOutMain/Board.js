@@ -6,9 +6,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import lightsmusic from './assets/lightsmusic.mp4';
 import ReactAudioPlayer from 'react-audio-player';
 
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 class Board extends Component {
+
+
+
 
   static defaultProps = {
     nrows: 5,
@@ -38,6 +47,7 @@ class Board extends Component {
     return board
   }
 
+
   /* handles changing a cell: update board & determine if winner */
   flipCellsAround(coord) {
     let {ncols, nrows} = this.props;
@@ -66,18 +76,24 @@ class Board extends Component {
   }
 
 
+
   /* Renders game board or winning message. */
   render() {
 
     // if the game is won, shows a winning msg & render nothing else
     if(this.state.hasWon){
       return(
-        <div className='Board-title d-none d-lg-block'>
-          <div className='winner'>
-            <span className='neon-orange'>YOU</span>
-            <span className='neon-blue'>WON!</span>
+        <center>
+          <div className='Board-title d-none d-lg-block'>
+            <div className='winner'>
+              <span className='neon-orange'>YOU</span>
+              <span className='neon-blue'>WON!</span>
+            </div>
+
+            <Redirect to="/Game2MoreGame1"/>
+
           </div>
-        </div>
+        </center>
       )
     }
 
@@ -95,6 +111,8 @@ class Board extends Component {
       }
       tblBoard.push(<tr key={y}>{row}</tr>)
     }
+
+
 
 
     return(

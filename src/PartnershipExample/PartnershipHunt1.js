@@ -12,6 +12,18 @@ import img2 from './assets/images/Cash.gif';
 import img3 from './assets/images/the_maze.png';
 import img4 from './assets/images/lift_off.png';
 import img5 from './assets/images/LightsOut.png';
+
+import flight_training_img from "./assets/images/flight_training.png";
+import key_pad_img from "./assets/images/key_pad.png";
+import night_vision_img from "./assets/images/night_vision.png";
+import flare_gun from "./assets/images/flare_gun.png";
+import lift_off from "./assets/images/lift_off_game_banner.png";
+import rescue from "./assets/images/emergency_landing.png";
+
+
+
+
+
 import blox_loading from './GamesSelection/BloxEscape/assets/Blox.gif';
 import waiting from './assets/Sounds/waiting.wav';
 import ReactAudioPlayer from 'react-audio-player';
@@ -84,10 +96,8 @@ const PartnershipHunt1 = (props) => {
   const [loading2,setloading2] = useState(false);
 
 
-
   const [playLevel1Game1,setplayLevel1Game1] = useState(false);
   const [redirectLevel1,setredirectLevel1] = useState(false);
-
 
   const [playLevel2Game1,setplayLevel2Game1] = useState(false);
   const [redirectLevel2,setredirectLevel2] = useState(false);
@@ -95,9 +105,13 @@ const PartnershipHunt1 = (props) => {
   const [playLevel3Game1,setplayLevel3Game1] = useState(false);
   const [redirectLevel3,setredirectLevel3] = useState(false);
 
-
   const [playLevel4Game1,setplayLevel4Game1] = useState(false);
   const [redirectLevel4,setredirectLevel4] = useState(false);
+
+  const [redirectRandom1,setRedirectRandom1] = useState(false);
+  const [redirectRandomGun,setRedirectRandomGun] = useState(false);
+
+
 
 
   const handlePayQuest = async() => {
@@ -111,7 +125,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -132,7 +146,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel2Game1(true)
     setredirectLevel2(true)
 
@@ -141,6 +155,33 @@ const PartnershipHunt1 = (props) => {
         setloading(false);
     },30000);
   }
+
+  const handleRandomFunc1 = async() => {
+
+    setloading(true);
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+
+
+    setRedirectRandom1(true);
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
+  const handleRandomFunc = async() => {
+
+    setloading(true);
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+
+
+    setRedirectRandomGun(true);
+
+    setTimeout(function(){
+        setloading(false);
+    },30000);
+  }
+
 
 
   const handlePayQuest3 = async() => {
@@ -154,9 +195,9 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
-    setplayLevel3Game1(true)
-    setredirectLevel3(true)
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    setplayLevel3Game1(true);
+    setredirectLevel3(true);
 
 
     setTimeout(function(){
@@ -176,7 +217,7 @@ const PartnershipHunt1 = (props) => {
     });
 
     setloading(true);
-    const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
     setplayLevel4Game1(true)
     setredirectLevel4(true)
 
@@ -198,9 +239,7 @@ const PartnershipHunt1 = (props) => {
   // "/PartnershipLevel4"
 
 
-  const winner = props.treasure_found1;
-
-
+const winner = props.treasure_found1;
 
 const [modalShow, setModalShow] = React.useState(false);
 const [show, setShow] = useState(false);
@@ -209,7 +248,6 @@ const contract = props.contract
 const accounts = props.accounts
 const tokenContract = props.tokenContract;
 const gameContractAddress = props.gameContractAddress;
-
 
 const handleTryTeam1Win = async() => {
 
@@ -287,16 +325,16 @@ const handleSubmitEnterDave = async() => {
 
   var counter = parseInt(props.game1team1_xyz_team_entries)+parseInt(props.game1team2_xyz_team_entries);
 
-
   const game1_live = props.game1_live;
 
 
+  // const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
 
     return (
 
 
-      <div style={{height: height*4}} className="custombackground">
+      <div id="top" style={{height: height*5}} className="custombackground">
 
 
 
@@ -311,9 +349,33 @@ const handleSubmitEnterDave = async() => {
         </div>
       )}
 
+      {redirectRandom1?(
+        <div>
+
+        <Redirect to="/Random1/:top" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
       {redirectLevel2?(
         <div>
         <Redirect to={props.partnership_2} {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+      {redirectRandomGun?(
+        <div>
+
+        <Redirect to="/Random2/:top" {...props}/>
         </div>
 
       ):(
@@ -672,7 +734,7 @@ const handleSubmitEnterDave = async() => {
 
                         </Col>
                         <Col sm={4}>
-                        <div className="StatsGameEnter blink_me2">$10,000</div>
+                        <div className="StatsGameEnter blink_me2">$20,000</div>
                         <div className="siteTitle">Starting Prize</div>
                         <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -759,21 +821,14 @@ const handleSubmitEnterDave = async() => {
                       </Card>
 
 
-
-
                       </Tab.Pane>
-
-
 
 
 
                     </Tab.Content>
 
 
-
-
               </Tab.Container>
-
 
 
               </Container>
@@ -785,24 +840,38 @@ const handleSubmitEnterDave = async() => {
                 <div >
 
                 <div className="siteTitle">Complete the levels in order to find clues and submit them to the timelock!</div>
-  <br/>
+
+
+                <div className="MiniGameDetails">
+
+                Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
+                Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
+                </div>
+
+
+
                 <Row>
 
                 <Col sm={4}>
 
 
                 <Card className='cardRounded border border-danger'>
-                <Card.Img variant="top" src={img4} alt="Logo" className='cardRoundedMiniGame'/>
+                <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                   <Card.Body className="customBodyMiniGame">
-                    <Card.Header className="MiniGameTitle">Level 1 - Lift Off!
+                    <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
+
+                    </Card.Header>
+                    <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
+                  <br />30 game points
+                  <br />level up + 1
+                  <br />2 points for loss<br />
 
                     </Card.Header>
                     <br/>
                     <div className="MiniGameDetails">
 
-                    Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
-
+                    Cost to play {props.CostToPlay_xyz_} Wings
 
 
                     </div>
@@ -825,18 +894,22 @@ const handleSubmitEnterDave = async() => {
                 <Col sm={4}>
 
                 <Card className='cardRounded border border-danger'>
-                <Card.Img variant="top" src={img5} alt="Logo" className='cardRoundedMiniGame'/>
+                <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                   <Card.Body className="customBodyMiniGame">
-                    <Card.Header className="MiniGameTitle">Level 2 - Lights Out!
+                    <Card.Header className="MiniGameTitle">Level 2 - Emergency Rescue!
+
+                    </Card.Header>
+                    <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
+                  <br />60 game points
+                  <br />level up + 1
+                  <br />2 points for loss<br />
 
                     </Card.Header>
                     <br/>
                     <div className="MiniGameDetails">
 
-                    Play for a clue! Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 20 points!
-
-
+                    Cost to play {props.CostToPlay_xyz_} Wings
 
                     </div>
                     <br/>
@@ -858,17 +931,24 @@ const handleSubmitEnterDave = async() => {
                 <Col sm={4}>
 
                 <Card className='cardRounded border border-danger'>
-                <Card.Img variant="top" src={img3} alt="Logo" className='cardRoundedMiniGame'/>
+                <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                 <Card.Body className="customBodyMiniGame">
-                  <Card.Header className="MiniGameTitle">Level 3 - Mystery!
+                  <Card.Header className="MiniGameTitle">Level 3 - Lights Out!
+
+                  </Card.Header>
+
+
+                  <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
+                <br />90 game points
+                <br />level up + 1
+                <br />2 points for loss<br />
 
                   </Card.Header>
                   <br/>
                   <div className="MiniGameDetails">
 
-                  Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
-
+                  Cost to play {props.CostToPlay_xyz_} Wings
 
                   </div>
                   <br/>
@@ -912,6 +992,176 @@ const handleSubmitEnterDave = async() => {
 
 
               </CardGroup>
+              <br/>
+
+              <CardGroup className='mt-5'>
+
+              {(props.userEntered_game1) ?(
+                <div >
+
+                <div className="siteTitle">Complete luck based games to get instant wins, earn tokens, points and level up!</div>
+  <br/>
+  <div className="MiniGameDetails">
+
+  Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+<br/><br/>
+  The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+
+  </div>
+  <br/><br/>
+                <Row>
+
+                <Col sm={4}>
+
+
+                <Card className='cardRounded border border-danger'>
+                <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
+
+                  <Card.Body className="customBodyMiniGame">
+                    <Card.Header className="MiniGameTitle">Lift Off - Easy!
+
+                    </Card.Header>
+
+
+                    <Card.Header className="MiniGameTitle">1 in 4 chance to win!
+                    <br />2X Play Cost Token Return
+                  <br />15 game points
+                  <br />level up + 1
+                  <br />2 points for loss<br />
+
+                    </Card.Header>
+                    <br/>
+                    <div className="MiniGameDetails">
+
+                    Cost to play {props.CostToPlay_xyz_} Wings
+
+                    </div>
+                    <br/>
+                    <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
+
+
+                    <footer className="blockquote">
+
+
+                    </footer>
+                    <br />
+
+
+
+
+                  </Card.Body>
+                </Card>
+                <br className="d-lg-none"/>
+                <br className="d-lg-none"/>
+                </Col>
+
+                <Col sm={4}>
+
+                <Card className='cardRounded border border-danger'>
+                <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
+
+                  <Card.Body className="customBodyMiniGame">
+                    <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
+
+                    </Card.Header>
+                    <Card.Header className="MiniGameTitle">1 in 6 chance to win!
+                    <br />3X Play Cost Token Return
+                  <br />30 game points
+                  <br />level up + 1
+                  <br />2 points for loss<br />
+                    </Card.Header>
+
+                    <br/>
+
+                    <div className="MiniGameDetails">
+
+                    Cost to play {props.CostToPlay_xyz_} Wings
+                    <br/>
+
+                    </div>
+                    <br/>
+                    <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
+
+
+                    <footer className="blockquote">
+
+                    </footer>
+                    <br />
+
+
+
+
+                  </Card.Body>
+                </Card>
+                  <br className="d-lg-none"/>
+                  <br className="d-lg-none"/>
+
+                </Col>
+                <Col sm={4}>
+
+                <Card className='cardRounded border border-danger'>
+                <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
+
+                <Card.Body className="customBodyMiniGame">
+                  <Card.Header className="MiniGameTitle">Rescue - Difficult!
+
+                  </Card.Header>
+                  <Card.Header className="MiniGameTitle">1 in 20 chance to win!
+                  <br />5X Play Cost Token Return
+                <br />100 game points
+                <br />level up + 1
+              <br />2 points for loss<br />
+                  </Card.Header>
+
+                  <br/>
+                  <div className="MiniGameDetails">
+
+                  Cost to play {props.CostToPlay_xyz_} Wings
+
+                  </div>
+                  <br/>
+                  <Button className="customButton" onClick={handlePayQuest3}>Play Game</Button>
+
+
+
+                  <footer className="blockquote">
+
+                  </footer>
+
+                  <br />
+
+
+                </Card.Body>
+                </Card>
+                <br className="d-lg-none"/>
+                <br className="d-lg-none"/>
+                </Col>
+
+
+                </Row>
+
+
+
+
+                </div>
+              ):(
+                <div style={{height: height}}>
+
+
+
+                </div>
+              )}
+
+              <br/>
+
+
+
+
+
+
+              </CardGroup>
+
+
 
           </Container>
 
@@ -1118,7 +1368,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter blink_me2">$10,000</div>
+                  <div className="StatsGameEnter blink_me2">$20,000</div>
                   <div className="siteTitle">Starting Prize</div>
                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 

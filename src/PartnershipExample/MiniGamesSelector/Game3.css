@@ -1,3 +1,48 @@
+/* @keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    60% {
+        opacity: .7;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+
+
+.custombackgroundfightergame {
+
+    /* flashing  */
+    /* animation: blink 2s;
+    animation-iteration-count: infinite; */
+
+
+
+    /* The image used */
+    /* background-image: url(./treasure1.jpg); */
+    background: url(../GamesSelection/FighterPilot/assets/Cockpit.png) no-repeat center center fixed;
+    /* background: url(./background2.jpg) no-repeat center center fixed; */
+    /* background: url(./background1.png) no-repeat center center fixed; */
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #172774;
+
+    /* background-attachment: fixed; */
+    /* Full height */
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
 
 
 .customRounded{
@@ -25,15 +70,6 @@
   color: #001219;
   height: 60px;
   width: 200px;
-  font-size: 1.4rem;
-}
-.customButtonDecide{
-  background-color: #ee9b00;
-  border-color: #ee9b00;
-  outline-color: #ee9b00;
-  color: #001219;
-  height: 60px;
-  width: 100%;
   font-size: 1.4rem;
 }
 
@@ -145,11 +181,6 @@
   color: #001219;
 }
 
-.gameFont{
-  font-size: 1.3rem;
-  color: white;
-}
-
 .readMe{
   color: #ca6702;
 }
@@ -195,9 +226,24 @@ border-bottom: 1px solid rgba(255,255,255,.25);
 
 }
 
-.siteTitleDesc{
-  font-size: 1.4rem;
-  color: #ffffff;
+.GameFont{
+  font-size: 1.8rem;
+  color: #000000;
   text-align: center;
+}
+
+.modal.custom .modal-dialog {
+    width:20%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    margin:0;
+    border: 0;
+
+}
+.modal-content {
+  background: transparent;
+  border: 0;
+
 
 }

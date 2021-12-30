@@ -3,8 +3,8 @@ import MyNav from '../PartnershipNav';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
-import '../Partner.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Game2.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component, useState, useEffect } from 'react'
 import { useWallet, UseWalletProvider } from 'use-wallet'
@@ -15,6 +15,9 @@ import Timer from '../TreasureHuntGame/Timer';
 
 import troyIntro from '../GamesSelection/MineGame/assets/TroyClip1.mp4';
 import gameSound from '../GamesSelection/MineGame/assets/game1_soundtrack.mp4';
+
+import plane from '../GamesSelection/FighterPilot/assets/plane.mp3';
+
 
 import bloxEscape from '../GamesSelection/BloxEscape/assets/BloxEscape.mp4';
 import help from '../GamesSelection/BloxEscape/assets/Troy_help.mp4';
@@ -33,6 +36,11 @@ import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
 
 import Board from '../GamesSelection/LightsOut/Board';
+// import Board from '../GamesSelection/FighterPilot/FighterScreen';
+// import RandomBoard from '../GamesSelection/Gun/gun';
+
+
+
 // import Board from '../GamesSelection/MineGame/BloxMine/Board';
 
 
@@ -82,6 +90,52 @@ function useWindowSize() {
 const Level2Game1 = (props) => {
 
 
+  const [resultCalc,setResultCalc] = useState('#');
+
+  const handleInputChange = (event) => {
+
+    const target = event.target;
+    var value = target.type === "checkbox" ? target.checked : target.value;
+    setResultCalc(resultCalc+value);
+
+  }
+
+  const handleEnter = async() => {
+
+    if (resultCalc === "#725048" ){
+      setMore(true)
+    }
+    else {
+      setResultCalc("WRONG!");
+
+      // add buzzer
+      setTimeout(function(){
+          setResultCalc("#");
+      },1000);
+
+    }
+
+    setTimeout(function(){
+        // setloading(false);
+    },1000);
+  }
+
+  const handleClear = async() => {
+
+    setResultCalc("#");
+
+    setTimeout(function(){
+        // setloading(false);
+    },1000);
+  }
+
+
+
+
+
+
+
+
   window.dataLayer.push({
     event: "wallet_information",
     wallet: props.wallet_for_google,
@@ -107,7 +161,6 @@ const Level2Game1 = (props) => {
 
   const winner = props.treasure_found2;
 
-
   const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
@@ -118,6 +171,10 @@ const Level2Game1 = (props) => {
   const [start,setStart] = useState(false)
   const [bye,setBye] = useState(false)
   const [doexplode,setExplode] = useState(false)
+  const [more,setMore] = useState(false)
+
+
+
 
 
   const handleBye = async() => {
@@ -143,23 +200,25 @@ const Level2Game1 = (props) => {
         }, 1000)
       }
   })
+
+
     return (
 
-      <div className="background">
+      <div style={{height: height*4}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox x JetSwap</title>
       </Helmet>
       <div>
 
 
+      {more && <Redirect to={props.partnership_2_more} {...props}/> }
 
       {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
       {doexplode &&  <ReactAudioPlayer
         src={denied}
         autoPlay
       />}
-
 
 
       <Container className='mt-5' fluid="md">
@@ -179,18 +238,70 @@ const Level2Game1 = (props) => {
         {play?(
 
 
-
           // here
 
 
           <div style={{height: height}}>
 
-          <Board {...props}/>
+
+
+          <ReactAudioPlayer
+            src={plane}
+            autoPlay
+          />
+
+
 
 
           <br/><br/>
           <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+
           <br/><br/>
+          <div className="siteTitle">Crypto Dave has scrambled the pad enter '#725048' correctly before the time runs out.</div>
+
+
+
+          <center>
+          <div className="outerKeyPad">
+            <br/><br/>
+            <div className="siteTitle topKeyPad">{resultCalc}</div>
+            <br/><br/>
+                      <ButtonGroup size="lg" aria-label="Basic example">
+                        <Button id="1" onClick={handleInputChange} value="0" variant="secondary"> 1 </Button><br/>
+                        <Button id="2" onClick={handleInputChange} value="2" variant="secondary"> 2 </Button>
+                        <Button id="3" onClick={handleInputChange} value="3" variant="secondary"> 3 </Button>
+                        <Button id="4" onClick={handleInputChange} value="7" variant="secondary"> 4 </Button>
+
+                      </ButtonGroup>
+                      <br/><br/>
+                      <ButtonGroup size="lg" aria-label="Basic example">
+                        <Button id="5" onClick={handleInputChange} value="5" variant="secondary"> 5 </Button>
+                        <Button id="6" onClick={handleInputChange} value="9" variant="secondary"> 6 </Button>
+                        <Button id="7" onClick={handleInputChange} value="4" variant="secondary"> 7 </Button>
+                        <Button id="8" onClick={handleInputChange} value="8" variant="secondary"> 8 </Button>
+                      </ButtonGroup>
+                      <br/><br/>
+                      <ButtonGroup size="lg" aria-label="Basic example">
+
+                        <Button id="9" onClick={handleInputChange} value="6" variant="secondary"> 9 </Button>
+                        <Button id="0" onClick={handleInputChange} value="1" variant="secondary"> 0 </Button>
+                        <Button id="#" onClick={handleInputChange} value="*" variant="secondary"> # </Button>
+                        <Button id="*" onClick={handleInputChange} value="#" variant="secondary"> * </Button>
+
+                      </ButtonGroup>
+                      <br/><br/>
+                      <ButtonGroup size="lg" aria-label="Basic example">
+
+                        <Button id="clear" onClick={handleClear} variant="secondary"> CLEAR </Button>
+                        <Button id="handleEnter" onClick={handleEnter} variant="primary"> ENTER </Button>
+
+
+                      </ButtonGroup>
+                      <br/><br/>
+
+
+            </div>
+            </center>
           </div>
         ):(
           <div style={{height: height}}>
@@ -199,13 +310,17 @@ const Level2Game1 = (props) => {
             src={help}
             autoPlay
           />
+
+
+
+
           <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
 
             <Card.Img  src={troyImg} alt="Troy" />
 
           </Modal>
           <br/><br/>
-          <div className="siteTitle">Oh no... Crypto Dave scrambled Elon's launch lighting sequence!
+          <div className="GameFont">Oh no... Crypto Dave scrambled the rescue  launch lighting sequence!
           <br/><br/>
           Exploer can you switch it off?
           <br/><br/>

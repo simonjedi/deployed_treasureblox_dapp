@@ -97,11 +97,14 @@ class Board extends Component {
 
     return(
       <div>
+        <center>
+          <div className='Board-title d-none d-lg-block'>
 
-        <div className='Board-title d-none d-lg-block'>
-          <div className='neon-orange'>Blox</div>
-          <div className='neon-blue'> Lights Out</div>
-        </div>
+            <a className='neon-orange' style={{"text-decoration": "none"}}>Rescue</a>
+            <a className='neon-blue' style={{"text-decoration": "none"}}> Lights</a>
+
+          </div>
+        </center>
         <br/><br/>
         <div className="siteTitle">Simply turn out the launch lights!</div>
 

@@ -305,7 +305,7 @@ const Hunt2 = (props) => {
       return (
 
 
-        <div className="background">
+        <div style={{height: height*4}} className="background">
 
 
 

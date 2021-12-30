@@ -1,5 +1,183 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Games",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "live",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "prize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "questionHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "costToEnter",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "riddle",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "headStartTime",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "LevelMapping",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "live",
+				"type": "bool"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "questionHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "costToEnter",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "submitSecretCost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "entryLimit",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "TeamDetails",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "teamid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamPointsTarget",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "ppp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamEntries",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamActualPoints",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "accessContract",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "constructor1",
 		"outputs": [],
@@ -8,6 +186,30 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "contractAccess",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_gameId",
@@ -54,6 +256,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_gameId",
 				"type": "uint256"
 			}
@@ -71,6 +278,45 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			}
+		],
+		"name": "getGamesSmall",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "live",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "prize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "costToEnterBNB",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_huntId",
@@ -95,6 +341,11 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_huntId",
@@ -139,6 +390,11 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_huntId",
@@ -190,6 +446,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_huntId",
 				"type": "uint256"
 			},
@@ -214,6 +475,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_huntId",
 				"type": "uint256"
 			},
@@ -236,6 +502,11 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_huntId",
@@ -282,6 +553,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_huntId",
 				"type": "uint256"
 			},
@@ -304,6 +580,11 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_huntId",
@@ -330,6 +611,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_huntId",
 				"type": "uint256"
 			},
@@ -354,6 +640,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_gameId",
 				"type": "uint256"
 			},
@@ -376,6 +667,11 @@
 	},
 	{
 		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_gameId",
@@ -422,6 +718,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_gameId",
 				"type": "uint256"
 			},
@@ -446,6 +747,11 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_huntId",
 				"type": "uint256"
 			},
@@ -464,629 +770,6 @@
 			}
 		],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_teamId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_teamPPPStart",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerCreateNewTeam",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "setAccess",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_team",
-				"type": "uint256"
-			}
-		],
-		"name": "setATeam",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_cost",
-				"type": "uint256"
-			}
-		],
-		"name": "setBNBEntry",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_live",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_prize",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "_questionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_costToEnterBNB",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_riddle",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_headStartTime",
-				"type": "uint256"
-			}
-		],
-		"name": "setGame",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_num",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "_entered",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "_username",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_tries",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_stage",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_team",
-				"type": "uint256"
-			}
-		],
-		"name": "setLeaderboard",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "_entered",
-				"type": "bool"
-			},
-			{
-				"internalType": "string",
-				"name": "_username",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_points",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_stage",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_team",
-				"type": "uint256"
-			}
-		],
-		"name": "setLeaderboardAddressMapping",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "setLengthEntrantLeaderbaord",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_level",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_live",
-				"type": "bool"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "_questionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_submitSecretCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_entryLimit",
-				"type": "uint256"
-			}
-		],
-		"name": "setLevel",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_teamId",
-				"type": "uint256"
-			}
-		],
-		"name": "setTeamDetailsEntering",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_add",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_rank",
-				"type": "uint256"
-			}
-		],
-		"name": "setTeamPoints",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_userName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_rank",
-				"type": "uint256"
-			}
-		],
-		"name": "setTimeLockUpdate",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_value",
-				"type": "bool"
-			}
-		],
-		"name": "setUsersEntered",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_add",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_rank",
-				"type": "uint256"
-			}
-		],
-		"name": "setUsersPoints",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_add",
-				"type": "bool"
-			}
-		],
-		"name": "setUsersStage",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_add",
-				"type": "bool"
-			}
-		],
-		"name": "setUsersTeam",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usersAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_userLoc",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_value",
-				"type": "string"
-			}
-		],
-		"name": "setUsersUsername",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newCode",
-				"type": "address"
-			}
-		],
-		"name": "updateCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "accessContract",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "contractAccess",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "Games",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "live",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "prize",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "questionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "riddle",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "headStartTime",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1261,54 +944,28 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_pID",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_gameId",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_teamId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_teamPPPStart",
 				"type": "uint256"
 			}
 		],
-		"name": "LevelMapping",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "live",
-				"type": "bool"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "questionHash",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "costToEnter",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "submitSecretCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "entryLimit",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
+		"name": "ownerCreateNewTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1328,49 +985,614 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_pID",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_gameId",
 				"type": "uint256"
 			},
 			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_team",
 				"type": "uint256"
 			}
 		],
-		"name": "TeamDetails",
-		"outputs": [
+		"name": "setATeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "setAccess",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "teamid",
+				"name": "_pID",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "teamPointsTarget",
+				"name": "_gameId",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "ppp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "teamEntries",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "teamActualPoints",
+				"name": "_cost",
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
+		"name": "setBNBEntry",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_live",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_prize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_questionHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_costToEnterBNB",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_riddle",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_headStartTime",
+				"type": "uint256"
+			}
+		],
+		"name": "setGame",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_live",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_prize",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_costToEnterBNB",
+				"type": "uint256"
+			}
+		],
+		"name": "setGameSmall",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_num",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_entered",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_username",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tries",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_stage",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_team",
+				"type": "uint256"
+			}
+		],
+		"name": "setLeaderboard",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_entered",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "_username",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_points",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_stage",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_team",
+				"type": "uint256"
+			}
+		],
+		"name": "setLeaderboardAddressMapping",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "setLengthEntrantLeaderbaord",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_level",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_live",
+				"type": "bool"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "_questionHash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_costToEnter",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_submitSecretCost",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_entryLimit",
+				"type": "uint256"
+			}
+		],
+		"name": "setLevel",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_teamId",
+				"type": "uint256"
+			}
+		],
+		"name": "setTeamDetailsEntering",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_add",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_rank",
+				"type": "uint256"
+			}
+		],
+		"name": "setTeamPoints",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_userName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_rank",
+				"type": "uint256"
+			}
+		],
+		"name": "setTimeLockUpdate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_value",
+				"type": "bool"
+			}
+		],
+		"name": "setUsersEntered",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_add",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_rank",
+				"type": "uint256"
+			}
+		],
+		"name": "setUsersPoints",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_add",
+				"type": "bool"
+			}
+		],
+		"name": "setUsersStage",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_add",
+				"type": "bool"
+			}
+		],
+		"name": "setUsersTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_usersAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_userLoc",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_value",
+				"type": "string"
+			}
+		],
+		"name": "setUsersUsername",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newCode",
+				"type": "address"
+			}
+		],
+		"name": "updateCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

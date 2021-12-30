@@ -72,12 +72,12 @@ const PartnerNav = (props) => {
         <Nav className="me-auto">
 
 
-        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/PartnershipExampleHome">
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBloxHome/:top">
         Home
         </Link>
 
 
-          <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/PartnershipExample1">
+          <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
           Treasure Hunt Name
           </Link>
 

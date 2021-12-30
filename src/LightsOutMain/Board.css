@@ -27,6 +27,7 @@ table tr:last-child td:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .neon-orange {

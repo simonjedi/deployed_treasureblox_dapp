@@ -1,623 +1,5 @@
 [
 	{
-		"inputs": [],
-		"name": "constructor1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "getDeadline",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "deadline",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "getHuntEntries",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "entered",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "headStartTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "gameLive",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			}
-		],
-		"name": "getPot1AnsweredCorrectly",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "winningAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "treasurefound",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "winningPrize",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "getTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "userAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "deadline",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "userName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "gamesTries",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			}
-		],
-		"name": "getTimeItemsTries",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "deadline",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "getTimeUserAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "userAddress",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "getUserEntered",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "entered",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			}
-		],
-		"name": "setAccess",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_value",
-				"type": "uint256"
-			}
-		],
-		"name": "setBNBbalance",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_enterHuntentered",
-				"type": "bool"
-			}
-		],
-		"name": "setEnterHuntentered",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "EnterHuntgameLive",
-				"type": "bool"
-			}
-		],
-		"name": "setEnterHuntgameLive",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "EnterHuntheadStartTime",
-				"type": "uint256"
-			}
-		],
-		"name": "setEnterHuntheadStartTime",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			}
-		],
-		"name": "setFailEvent",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "headStartTime",
-				"type": "uint256"
-			}
-		],
-		"name": "setHeadStartTimes",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_address",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_huntId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_entered",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_headStartTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_gameLive",
-				"type": "bool"
-			}
-		],
-		"name": "setHuntEntries",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_increase",
-				"type": "uint256"
-			}
-		],
-		"name": "setNumberOfEntries",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_part0",
-				"type": "uint256"
-			}
-		],
-		"name": "setPart0",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_part1",
-				"type": "uint256"
-			}
-		],
-		"name": "setPart1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_part2",
-				"type": "uint256"
-			}
-		],
-		"name": "setPart2",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_winningAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "_treasurefound",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_winningPrize",
-				"type": "uint256"
-			}
-		],
-		"name": "setPot1AnsweredCorrectly",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_queEndsLastAttemptGlobal",
-				"type": "uint256"
-			}
-		],
-		"name": "setQueEndsLastAttemptGlobal",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_SubmitLevelSecretanswer",
-				"type": "bytes32"
-			}
-		],
-		"name": "setSubmitLevelSecretanswer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_SubmitSecretanswer",
-				"type": "bytes32"
-			}
-		],
-		"name": "setSubmitSecretanswer",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_SubmitSecretcurrentGameLive",
-				"type": "bool"
-			}
-		],
-		"name": "setSubmitSecretcurrentGameLive",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_SubmitSecretcurrentGamePrize",
-				"type": "uint256"
-			}
-		],
-		"name": "setSubmitSecretcurrentGamePrize1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_SubmitSecrethashedCheckSolved",
-				"type": "bytes32"
-			}
-		],
-		"name": "setSubmitSecrethashedCheckSolved",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_SubmitSecrethashedLevelResult",
-				"type": "bytes32"
-			}
-		],
-		"name": "setSubmitSecrethashedLevelResult",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "_SubmitSecrethashedResult1",
-				"type": "bytes32"
-			}
-		],
-		"name": "setSubmitSecrethashedResult1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_SubmitSecretincorrect",
-				"type": "bool"
-			}
-		],
-		"name": "setSubmitSecretincorrect",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_SubmitSecretpayment",
-				"type": "bool"
-			}
-		],
-		"name": "setSubmitSecretpayment",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_userAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_deadline",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_userName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_gamesTries",
-				"type": "uint256"
-			}
-		],
-		"name": "setTime",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_gameId",
-				"type": "uint256"
-			}
-		],
-		"name": "setTimeItemsTries",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "timeNow",
-				"type": "uint256"
-			}
-		],
-		"name": "setTimeNow",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "setTotalumberOfTries",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_walletFrontOfQueLastAttemptGlobal",
-				"type": "address"
-			}
-		],
-		"name": "setWalletFrontOfQueLastAttemptGloball",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -645,14 +27,189 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
 				"internalType": "address",
-				"name": "newCode",
+				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "updateCode",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "BNBbalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "EnterHuntentered",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "Pot1AnsweredCorrectly",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "winningAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "treasurefound",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "winningPrize",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitLevelSecretanswer",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecretanswer",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecretcurrentGameLive",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecretcurrentGamePrize",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecrethashedCheckSolved",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecrethashedLevelResult",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecrethashedResult1",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecretincorrect",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "SubmitSecretpayment",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -778,27 +335,10 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "BNBbalance",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
+		"inputs": [],
+		"name": "constructor1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -821,16 +361,226 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "EnterHuntentered",
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "getDeadline",
 		"outputs": [
 			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "getHuntEntries",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "huntId",
+				"type": "uint256"
+			},
+			{
 				"internalType": "bool",
-				"name": "",
+				"name": "entered",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "headStartTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "gameLive",
 				"type": "bool"
 			}
 		],
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			}
+		],
+		"name": "getPot1AnsweredCorrectly",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "winningAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "treasurefound",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "winningPrize",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "userName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "gamesTries",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTimeItemsTries",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "getTimeUserAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "getUserEntered",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "entered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -967,40 +717,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "Pot1AnsweredCorrectly",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "winningAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "treasurefound",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "winningPrize",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "proxiableUUID",
 		"outputs": [
@@ -1033,120 +749,477 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "SubmitLevelSecretanswer",
-		"outputs": [
+		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
 			}
 		],
-		"stateMutability": "view",
+		"name": "setAccess",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "SubmitSecretanswer",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SubmitSecretcurrentGameLive",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SubmitSecretcurrentGamePrize",
-		"outputs": [
+		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_value",
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
+		"name": "setBNBbalance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "SubmitSecrethashedCheckSolved",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SubmitSecrethashedLevelResult",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SubmitSecrethashedResult1",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "SubmitSecretincorrect",
-		"outputs": [
+		"inputs": [
 			{
 				"internalType": "bool",
-				"name": "",
+				"name": "_enterHuntentered",
 				"type": "bool"
 			}
 		],
-		"stateMutability": "view",
+		"name": "setEnterHuntentered",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "SubmitSecretpayment",
-		"outputs": [
+		"inputs": [
 			{
 				"internalType": "bool",
-				"name": "",
+				"name": "EnterHuntgameLive",
 				"type": "bool"
 			}
 		],
-		"stateMutability": "view",
+		"name": "setEnterHuntgameLive",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "EnterHuntheadStartTime",
+				"type": "uint256"
+			}
+		],
+		"name": "setEnterHuntheadStartTime",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			}
+		],
+		"name": "setFailEvent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "headStartTime",
+				"type": "uint256"
+			}
+		],
+		"name": "setHeadStartTimes",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_huntId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_entered",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_headStartTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_gameLive",
+				"type": "bool"
+			}
+		],
+		"name": "setHuntEntries",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_increase",
+				"type": "uint256"
+			}
+		],
+		"name": "setNumberOfEntries",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_part0",
+				"type": "uint256"
+			}
+		],
+		"name": "setPart0",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_part1",
+				"type": "uint256"
+			}
+		],
+		"name": "setPart1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_part2",
+				"type": "uint256"
+			}
+		],
+		"name": "setPart2",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_winningAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_treasurefound",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_winningPrize",
+				"type": "uint256"
+			}
+		],
+		"name": "setPot1AnsweredCorrectly",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_queEndsLastAttemptGlobal",
+				"type": "uint256"
+			}
+		],
+		"name": "setQueEndsLastAttemptGlobal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_SubmitLevelSecretanswer",
+				"type": "bytes32"
+			}
+		],
+		"name": "setSubmitLevelSecretanswer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_SubmitSecretanswer",
+				"type": "bytes32"
+			}
+		],
+		"name": "setSubmitSecretanswer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_SubmitSecretcurrentGameLive",
+				"type": "bool"
+			}
+		],
+		"name": "setSubmitSecretcurrentGameLive",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_SubmitSecretcurrentGamePrize",
+				"type": "uint256"
+			}
+		],
+		"name": "setSubmitSecretcurrentGamePrize1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_SubmitSecrethashedCheckSolved",
+				"type": "bytes32"
+			}
+		],
+		"name": "setSubmitSecrethashedCheckSolved",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_SubmitSecrethashedLevelResult",
+				"type": "bytes32"
+			}
+		],
+		"name": "setSubmitSecrethashedLevelResult",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_SubmitSecrethashedResult1",
+				"type": "bytes32"
+			}
+		],
+		"name": "setSubmitSecrethashedResult1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_SubmitSecretincorrect",
+				"type": "bool"
+			}
+		],
+		"name": "setSubmitSecretincorrect",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_SubmitSecretpayment",
+				"type": "bool"
+			}
+		],
+		"name": "setSubmitSecretpayment",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_userName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gamesTries",
+				"type": "uint256"
+			}
+		],
+		"name": "setTime",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_gameId",
+				"type": "uint256"
+			}
+		],
+		"name": "setTimeItemsTries",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "timeNow",
+				"type": "uint256"
+			}
+		],
+		"name": "setTimeNow",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			}
+		],
+		"name": "setTotalumberOfTries",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_pID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_walletFrontOfQueLastAttemptGlobal",
+				"type": "address"
+			}
+		],
+		"name": "setWalletFrontOfQueLastAttemptGloball",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1166,6 +1239,19 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newCode",
+				"type": "address"
+			}
+		],
+		"name": "updateCode",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

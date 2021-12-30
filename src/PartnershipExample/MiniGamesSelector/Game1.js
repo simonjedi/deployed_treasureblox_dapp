@@ -11,6 +11,7 @@ import { useWallet, UseWalletProvider } from 'use-wallet'
 import "./Game1.css";
 
 import Timer from '../TreasureHuntGame/Timer';
+import Board from '../GamesSelection/FighterPilot/FighterScreen';
 
 
 
@@ -133,7 +134,7 @@ const Level1Game1 = (props) => {
             var timer = timeleft -1
             setTimeleft(timer)
           }
-
+//Change for the winner when to start
           if (clicks > 100){
             setMore(true)
           }
@@ -152,7 +153,7 @@ const Level1Game1 = (props) => {
     return (
 <div className="background">
 
-      <div style={{height: height}} id="top" className="spaceTopHome">
+      <div style={{height: height*4}} id="top" className="spaceTopHome">
 
       <div className="background">
 
@@ -191,25 +192,13 @@ const Level1Game1 = (props) => {
 
 
 
-            <div className="siteTitle d-none d-lg-block">Someone has turned on the fuel pump to the rocket!</div>
-            <div className="siteTitle d-none d-lg-block">Press the abort button as many times as you can to fill the progress bar before the timer expires!</div>
-            <div className="siteTitle d-none d-lg-block">If you're successful you'll recieve a clue!</div>
-
-
-
-            <p className="gameOneMobile d-lg-none">Someone has turned on the fuel pump to the rocket!</p>
-            <p className="gameOneMobile d-lg-none">Press the abort button as many times as you can to fill the progress bar before the timer expires!</p>
-            <p className="gameOneMobile d-lg-none">If you're successful you'll recieve a clue!</p>
-
-
-
-
-
-
       <Container className='mt-5' fluid="md">
 
 
       <div className="aligned">
+
+
+
 
 
 
@@ -221,15 +210,14 @@ const Level1Game1 = (props) => {
         <div>
 
 
-        <div className="siteTitle">Time Remaining {timeleft}</div>
 
-
-        <ProgressBar animated now={clickpercentage} />
-        <div className="siteTitle">Abort Atempts {clicks}</div>
 
 
         {!start?(
           <div>
+          <div className="siteTitle">Some test about the flight</div>
+          <br/>
+          <br/>
 
           <Button className="customButtonDecide" onClick={startButton}>Start</Button>
 
@@ -242,7 +230,8 @@ const Level1Game1 = (props) => {
             src={countdown}
             autoPlay
           />
-          <Button className="customButtonDecide" onClick={clickbutton}>Abort</Button>
+
+            <Board/>
           </div>
 
         )}

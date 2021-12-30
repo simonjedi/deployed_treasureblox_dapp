@@ -128,9 +128,7 @@ const Home = (props) => {
   const game1_live = props.game1_live;
   const game1_prize = commaNumber(props.game1_prize,',');
   const game1_question_hash = props.game1_question_hash;
-  const game1_time_lock_cost = props.game1_time_lock_cost;
   const game1_submit_secret_cost = props.game1_submit_secret_cost;
-  const game1_clue = props.game1_clue;
 
 
   const allGame1_deadline_time = props.allGame1_deadline_time;

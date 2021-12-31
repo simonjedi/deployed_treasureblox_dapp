@@ -150,10 +150,7 @@ console.log(props.game1LeaderBoardUsername[8],"here")
 
     <Nav justify variant="pills"  >
       <Nav.Item>
-        <Nav.Link eventKey="first">Final Riddle</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">How To Play?</Nav.Link>
+        <Nav.Link eventKey="first">Main Riddle</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link eventKey="link-2">Costs</Nav.Link>
@@ -169,10 +166,6 @@ console.log(props.game1LeaderBoardUsername[8],"here")
         <Tab.Pane eventKey="first" >
         <Riddle {...props}/>
         </Tab.Pane>
-        <Tab.Pane eventKey="link-1">
-          <Rules {...props}/>
-        </Tab.Pane>
-
         <Tab.Pane eventKey="link-2">
           <Costs {...props}/>
 

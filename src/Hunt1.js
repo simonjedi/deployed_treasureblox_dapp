@@ -124,6 +124,7 @@ const Hunt1 = (props) => {
         url: window.location.pathname,
         buttonClicked:"Play_MiniGame_Game1_Level_1"
       });
+      window.scrollTo({top: 0})
 
       setloading(true);
       // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
@@ -145,6 +146,7 @@ const Hunt1 = (props) => {
         url: window.location.pathname,
         buttonClicked:"Play_MiniGame_Game1_Level_2"
       });
+      window.scrollTo({top: 0})
 
       setloading(true);
       // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
@@ -167,6 +169,7 @@ const Hunt1 = (props) => {
         url: window.location.pathname,
         buttonClicked:"Play_MiniGame_Game1_Level_2"
       });
+      window.scrollTo({top: 0})
 
       setloading(true);
       // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
@@ -189,6 +192,7 @@ const Hunt1 = (props) => {
         url: window.location.pathname,
         buttonClicked:"Play_MiniGame_Game1_Level_2"
       });
+      window.scrollTo({top: 0})
 
       setloading(true);
       const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});

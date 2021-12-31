@@ -71,10 +71,18 @@ class Board extends Component {
     if(this.state.hasWon){
       return(
         <div className='Board-title'>
-          <div className='winner'>
-            <span className='neon-orange'>YOU</span>
-            <span className='neon-blue'>WON!</span>
-          </div>
+
+            <center>
+              <div className='Board-title d-none d-lg-block'>
+
+                <a className='neon-orange' style={{"text-decoration": "none"}}>You</a>
+                <a className='neon-blue' style={{"text-decoration": "none"}}> Won!</a>
+                <br/><br/>
+                <div className="siteTitle">this is your clue!</div>
+              </div>
+
+            </center>
+
         </div>
       )
     }

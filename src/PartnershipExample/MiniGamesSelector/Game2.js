@@ -35,7 +35,7 @@ import EnterHuntCards from '../TreasureHuntGame/EnterHuntCards';
 import Confetti from 'react-confetti'
 import { Helmet } from 'react-helmet';
 
-import Board from '../GamesSelection/LightsOut/Board';
+// import Board from '../GamesSelection/LightsOut/Board';
 // import Board from '../GamesSelection/FighterPilot/FighterScreen';
 // import RandomBoard from '../GamesSelection/Gun/gun';
 
@@ -103,6 +103,7 @@ const Level2Game1 = (props) => {
   const handleEnter = async() => {
 
     if (resultCalc === "#725048" ){
+      window.scrollTo({top: 0})
       setMore(true)
     }
     else {
@@ -204,7 +205,7 @@ const Level2Game1 = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="background">
+      <div style={{height: height*4}} className="custombackgroundfightergame">
       <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox x JetSwap</title>
@@ -253,10 +254,10 @@ const Level2Game1 = (props) => {
 
 
 
-          <br/><br/>
+          <br/>
           <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
 
-          <br/><br/>
+          <br/>
           <div className="siteTitle">Crypto Dave has scrambled the pad enter '#725048' correctly before the time runs out.</div>
 
 
@@ -320,9 +321,9 @@ const Level2Game1 = (props) => {
 
           </Modal>
           <br/><br/>
-          <div className="GameFont">Oh no... Crypto Dave scrambled the rescue  launch lighting sequence!
-          <br/><br/>
-          Exploer can you switch it off?
+
+
+          <div className="siteTitle">Explorer quickly i need your help enter the code so we can engage auto pilot!
           <br/><br/>
           <Button className="customButton" onClick={handlePlay} >Start</Button>
 

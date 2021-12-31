@@ -78,7 +78,7 @@ const PartnerNav = (props) => {
 
 
           <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
-          Treasure Hunt Name
+          Strike Fighter
           </Link>
 
 

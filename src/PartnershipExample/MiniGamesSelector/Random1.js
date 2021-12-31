@@ -102,6 +102,7 @@ const Random1 = (props) => {
   const [play, setPlay]= useState(false)
 
   const handlePlay = async() => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
     setPlay(true);
     setStart(true)
     setTimeout(function(){
@@ -155,7 +156,7 @@ const Random1 = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="background">
+      <div style={{height: height*4}} className="custombackgroundfightergame">
       <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -174,7 +175,7 @@ const Random1 = (props) => {
 
       <Container className='mt-5' fluid="md">
 
-    
+
 
 
       {props.playLevel2Game1?(
@@ -182,51 +183,17 @@ const Random1 = (props) => {
         <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
         </div>
       ):(
-        <div>
-        {play?(
+        // here
 
 
-          // here
+        <div style={{height: height}}>
+
+        <div className="siteTitle">Roll Troy to win and Crypto Dave to Lose!</div>
 
 
-          <div style={{height: height}}>
+        <RandomBoard {...props}/>
 
-
-          <RandomBoard {...props}/>
-
-
-
-
-
-          <br/><br/>
-          <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
-          <br/><br/>
-          </div>
-        ):(
-          <div style={{height: height}}>
-
-          <ReactAudioPlayer
-            src={help}
-            autoPlay
-          />
-
-          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-            <Card.Img  src={troyImg} alt="Troy" />
-
-          </Modal>
-          <br/><br/>
-          <div className="GameFont">Oh no... Crypto Dave scrambled Elon's launch lighting sequence!
-          <br/><br/>
-          Exploer can you switch it off?
-          <br/><br/>
-          <Button className="customButton" onClick={handlePlay} >Start</Button>
-
-          </div>
-
-          </div>
-
-        )}
+        <br/><br/>
         </div>
       )}
 

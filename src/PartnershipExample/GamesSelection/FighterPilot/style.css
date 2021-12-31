@@ -17,3 +17,10 @@ body{
   background-color: #ffffff;
   opacity: 80%;
 }
+
+.wording{
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: center;
+
+}

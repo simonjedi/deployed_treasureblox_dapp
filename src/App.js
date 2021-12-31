@@ -531,7 +531,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
     const partnerId_treasurebloxNative = 1;
 
-    const partnerId_xyz = 2;
+    const partnerId_xyz = 1;
 
 
 
@@ -655,8 +655,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
 
 
-        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x8E98f1Bf7fe8A176E7773f342D7336acF47DF14e");
-        const game_MAIN_GAME_Address_xyz_ = "0x8E98f1Bf7fe8A176E7773f342D7336acF47DF14e"
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x933c83Cb054aFbb55E5EF87DE5846103241D714D");
+        const game_MAIN_GAME_Address_xyz_ = "0x933c83Cb054aFbb55E5EF87DE5846103241D714D"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
 
@@ -2835,7 +2835,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     // PARTNER EXAMPLE STARTS
 
     // Partner Random Contract 1
-    player_loss_xyz_,result_loss_xyz_,pid_loss_xyz_,player_win_xyz_,result_win_xyz_,pid_win_xyz_,CostToPlay_xyz_,
+    player_loss_xyz_,result_loss_xyz_,pid_loss_xyz_,player_win_xyz_,result_win_xyz_,pid_win_xyz_,
+    CostToPlay_xyz_,game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
 
 
     web3,accounts,wallet_for_google_xyz_,ip_xyz_,partnerId_xyz,contract_xyz_,tokenContract_xyz_,decimals_xyz_,totalTreasure_xyz_,globalNumberOfTries_xyz_,gameContractAddress_xyz_,
@@ -2923,6 +2924,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                   GSD_contract_bsc_={GSD_contract_bsc_}
                   MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                   VOLT_contract_xyz_={VOLT_contract_xyz_}
+                  game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                  game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
                   CostToPlay_xyz_={CostToPlay_xyz_}
                   RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
                   MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
@@ -3130,6 +3133,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 GSD_contract_bsc_={GSD_contract_bsc_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
                 CostToPlay_xyz_={CostToPlay_xyz_}
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
                 MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
@@ -3336,6 +3342,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -3544,6 +3553,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 GSD_contract_bsc_={GSD_contract_bsc_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -3824,6 +3836,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -4030,6 +4045,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -4237,6 +4255,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -4444,6 +4465,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -4651,6 +4675,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -4858,6 +4885,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -5066,6 +5096,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -5273,6 +5306,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -5480,6 +5516,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -5687,6 +5726,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -5894,6 +5936,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6101,6 +6146,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6310,6 +6358,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 GSD_contract_bsc_={GSD_contract_bsc_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6444,6 +6495,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 GSD_contract_bsc_={GSD_contract_bsc_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6578,6 +6632,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6714,6 +6771,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6847,6 +6907,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -6981,6 +7044,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -7115,6 +7181,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -7249,6 +7318,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -7384,6 +7456,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -7518,6 +7593,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
@@ -7653,6 +7731,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               GSD_contract_bsc_={GSD_contract_bsc_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}

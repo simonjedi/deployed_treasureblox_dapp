@@ -1,7 +1,17 @@
-.background {
+.custombackgroundfightergame {
+
+    /* flashing  */
+    /* animation: blink 2s;
+    animation-iteration-count: infinite; */
+
+
+
     /* The image used */
     /* background-image: url(./treasure1.jpg); */
-    /* background: url(./treasureblox_background.jpg) no-repeat center center fixed; */
+    /* background: url(../assets/images/treasureblox_jetswap_partnership_background.png) no-repeat center center fixed; */
+
+    background: url(../GamesSelection/FighterPilot/assets/Cockpit_Random4.png) no-repeat center center fixed;
+
     /* background: url(./background2.jpg) no-repeat center center fixed; */
     /* background: url(./background1.png) no-repeat center center fixed; */
 
@@ -9,7 +19,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: #071C2D;
+    background-color: #172774;
 
     /* background-attachment: fixed; */
     /* Full height */
@@ -20,6 +30,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 /* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
@@ -56,5 +67,12 @@
   background: transparent;
   border: 0;
 
+
+}
+
+.wording{
+    font-size: 1.8rem;
+    color: #000000;
+    text-align: center;
 
 }

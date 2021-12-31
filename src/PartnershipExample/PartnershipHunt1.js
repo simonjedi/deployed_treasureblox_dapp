@@ -124,8 +124,10 @@ const PartnershipHunt1 = (props) => {
       buttonClicked:"Play_MiniGame_Game1_Level_1"
     });
 
+
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    window.scrollTo({top: 0,behavior: 'smooth'})
+    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -144,9 +146,10 @@ const PartnershipHunt1 = (props) => {
       url: window.location.pathname,
       buttonClicked:"Play_MiniGame_Game1_Level_2"
     });
+    window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel2Game1(true)
     setredirectLevel2(true)
 
@@ -155,34 +158,6 @@ const PartnershipHunt1 = (props) => {
         setloading(false);
     },30000);
   }
-
-  const handleRandomFunc1 = async() => {
-
-    setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
-
-
-    setRedirectRandom1(true);
-
-    setTimeout(function(){
-        setloading(false);
-    },30000);
-  }
-
-  const handleRandomFunc = async() => {
-
-    setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
-
-
-    setRedirectRandomGun(true);
-
-    setTimeout(function(){
-        setloading(false);
-    },30000);
-  }
-
-
 
   const handlePayQuest3 = async() => {
 
@@ -193,9 +168,10 @@ const PartnershipHunt1 = (props) => {
       url: window.location.pathname,
       buttonClicked:"Play_MiniGame_Game1_Level_2"
     });
+    window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel3Game1(true);
     setredirectLevel3(true);
 
@@ -204,6 +180,7 @@ const PartnershipHunt1 = (props) => {
         setloading(false);
     },30000);
   }
+
 
 
   const handlePayQuest4 = async() => {
@@ -216,8 +193,10 @@ const PartnershipHunt1 = (props) => {
       buttonClicked:"Play_MiniGame_Game1_Level_2"
     });
 
+    window.scrollTo({top: 0})
+
     setloading(true);
-    // const quest = await props.contract.methods.makePaymentPlayQuest(props.allGame1_id).send({from: props.accounts});
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel4Game1(true)
     setredirectLevel4(true)
 
@@ -226,6 +205,29 @@ const PartnershipHunt1 = (props) => {
         setloading(false);
     },30000);
   }
+
+
+    const handleRandomFunc1 = async() => {
+      window.scrollTo({top: 0})
+      // window.scrollTo({top: 0, behavior: 'smooth'})
+
+      setloading(true);
+      setRedirectRandom1(true);
+
+      setTimeout(function(){
+          setloading(false);
+      },30000);
+    }
+
+    const handleRandomFunc = async() => {
+      window.scrollTo({top: 0})
+      setloading(true);
+      setRedirectRandomGun(true);
+
+      setTimeout(function(){
+          setloading(false);
+      },30000);
+    }
 
 
 
@@ -260,7 +262,7 @@ const handleTryTeam1Win = async() => {
   });
 
   setloading(true);
-  await contract.methods.TeamCheck(props.allGame1_id,1).send({from: accounts});
+  await props.VOLT_contract_xyz_.methods.TeamCheck(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0]});
   setTimeout(function(){
       setloading(false);
   },30000);
@@ -277,8 +279,10 @@ const handleTryTeam2Win = async() => {
     buttonClicked:"Try_Team_Win"
   });
 
+
+
   setloading(true);
-  await contract.methods.TeamCheck(props.allGame1_id,1).send({from: accounts});
+  await props.VOLT_contract_xyz_.methods.TeamCheck(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0]});
   setTimeout(function(){
       setloading(false);
   },30000);
@@ -295,9 +299,12 @@ const handleSubmitEnterTroy = async() => {
     buttonClicked:"Treasure_Hunt_Entered"
   });
 
+
+
   setloading(true);
-  await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-  await contract.methods.enterGame(props.allGame1_id,1).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+  await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+
   setTimeout(function(){
       setloading(false);
   },30000);
@@ -315,8 +322,11 @@ const handleSubmitEnterDave = async() => {
   });
 
   setloading2(true);
-  await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-  await contract.methods.enterGame(props.allGame1_id,2).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+  await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+
+
   setTimeout(function(){
       setloading2(false);
   },30000);
@@ -848,7 +858,7 @@ const handleSubmitEnterDave = async() => {
                 Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
                 </div>
 
-
+<br/>
 
                 <Row>
 
@@ -897,7 +907,7 @@ const handleSubmitEnterDave = async() => {
                 <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                   <Card.Body className="customBodyMiniGame">
-                    <Card.Header className="MiniGameTitle">Level 2 - Emergency Rescue!
+                    <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
 
                     </Card.Header>
                     <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
@@ -934,7 +944,7 @@ const handleSubmitEnterDave = async() => {
                 <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                 <Card.Body className="customBodyMiniGame">
-                  <Card.Header className="MiniGameTitle">Level 3 - Lights Out!
+                  <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
 
                   </Card.Header>
 
@@ -1103,7 +1113,7 @@ const handleSubmitEnterDave = async() => {
                 <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
 
                 <Card.Body className="customBodyMiniGame">
-                  <Card.Header className="MiniGameTitle">Rescue - Difficult!
+                  <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
 
                   </Card.Header>
                   <Card.Header className="MiniGameTitle">1 in 20 chance to win!

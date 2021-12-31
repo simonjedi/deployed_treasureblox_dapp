@@ -60,8 +60,10 @@ const Step1Card = (props) => {
       });
 
       setloading(true);
-      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame1_id,1).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+
+
       setTimeout(function(){
           setloading(false);
       },30000);
@@ -77,10 +79,10 @@ const Step1Card = (props) => {
         url: window.location.pathname,
         buttonClicked:"Treasure_Hunt_2_Entered"
       });
-
       setloading(true);
-      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame1_id,2).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+
       setTimeout(function(){
           setloading(false);
       },30000);

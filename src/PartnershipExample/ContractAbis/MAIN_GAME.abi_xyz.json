@@ -2,50 +2,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "contract GSB",
-				"name": "_addressGetsetGameB",
-				"type": "address"
-			},
-			{
-				"internalType": "contract GSC",
-				"name": "_addressGetsetGlobalTeamsC",
-				"type": "address"
-			},
-			{
-				"internalType": "contract GSD",
-				"name": "_addressGetsetPlayerInfoD",
-				"type": "address"
-			},
-			{
-				"internalType": "contract IERC20",
-				"name": "partner_token",
-				"type": "address"
-			},
-			{
-				"internalType": "contract VOLT",
-				"name": "volt_contract",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
-		"name": "_token",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_pID",
 				"type": "uint256"
@@ -145,64 +101,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "excludedFromTax",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "gsb",
-		"outputs": [
-			{
-				"internalType": "contract GSB",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "gsc",
-		"outputs": [
-			{
-				"internalType": "contract GSC",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "gsd",
-		"outputs": [
-			{
-				"internalType": "contract GSD",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "_pID",
 				"type": "uint256"
@@ -221,32 +119,6 @@
 		"name": "headStartTimeLock",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "i",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "isOwner",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -271,32 +143,6 @@
 			}
 		],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "mr",
-		"outputs": [
-			{
-				"internalType": "contract VOLT",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "partner_token",
-				"type": "address"
-			}
-		],
-		"name": "resetPartnerToken",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -368,6 +214,154 @@
 		"name": "setTreasureHuntGame",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract GSB",
+				"name": "_addressGetsetGameB",
+				"type": "address"
+			},
+			{
+				"internalType": "contract GSC",
+				"name": "_addressGetsetGlobalTeamsC",
+				"type": "address"
+			},
+			{
+				"internalType": "contract GSD",
+				"name": "_addressGetsetPlayerInfoD",
+				"type": "address"
+			},
+			{
+				"internalType": "contract IERC20",
+				"name": "partner_token",
+				"type": "address"
+			},
+			{
+				"internalType": "contract VOLT",
+				"name": "volt_contract",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_token",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "excludedFromTax",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "gsb",
+		"outputs": [
+			{
+				"internalType": "contract GSB",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "gsc",
+		"outputs": [
+			{
+				"internalType": "contract GSC",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "gsd",
+		"outputs": [
+			{
+				"internalType": "contract GSD",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "i",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isOwner",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "mr",
+		"outputs": [
+			{
+				"internalType": "contract VOLT",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{

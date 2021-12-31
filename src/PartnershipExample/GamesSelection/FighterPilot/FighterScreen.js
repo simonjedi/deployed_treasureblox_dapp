@@ -41,6 +41,9 @@ const FighterScreen = (props) =>{
   var [exit,setExit] = useState(true);
   var [isGameOver, setIsGameOver]= useState(false)
   var [redirectLevel1More,setredirectLevel1More] = useState(false);
+  const [timeleft,setTimeleft] = useState(3)
+  const [start,setStart] = useState(false)
+
 
 
 
@@ -65,32 +68,50 @@ let rectangles = [
         color: "#000099"
     },
     {
-        x: 400,
+        x: 450,
         y: 75,
-        dx: -5,
-        dy: 5.5,
-        width: 80,
-        height: 60,
-        color: "#000099"
-    },
-    {
-        x: 75,
-        y: 445,
         dx: 5,
-        dy: -5,
-        width: 40,
-        height: 80,
+        dy: 4,
+        width: 75,
+        height: 75,
         color: "#000099"
     },
     {
-        x: 420,
+        x: 265,
         y: 450,
-        dx: -5,
-        dy: -5,
-        width: 130,
-        height: 25,
+        dx: 5,
+        dy: 4,
+        width: 75,
+        height: 75,
         color: "#000099"
-    }
+    },
+    // {
+    //     x: 400,
+    //     y: 75,
+    //     dx: -5,
+    //     dy: 5.5,
+    //     width: 80,
+    //     height: 60,
+    //     color: "#000099"
+    // },
+    // {
+    //     x: 75,
+    //     y: 445,
+    //     dx: 5,
+    //     dy: -5,
+    //     width: 40,
+    //     height: 80,
+    //     color: "#000099"
+    // },
+    // {
+    //     x: 420,
+    //     y: 450,
+    //     dx: -5,
+    //     dy: -5,
+    //     width: 130,
+    //     height: 25,
+    //     color: "#000099"
+    // }
 ]
 
 
@@ -100,6 +121,35 @@ let rectangles = [
         setExit(false);
 
       }
+
+      useEffect(() => {
+          if (start){
+            setTimeout(() => {
+
+
+              if (timeleft > 0) {
+                var timer = timeleft -1
+                setTimeleft(timer)
+              }
+
+
+              if (timeleft === 0){
+
+                console.log("wiiiiiinnnnnnnn")
+
+                window.scrollTo({top: 0});
+                setredirectLevel1More(true);
+                setTimeout(setStart(false),500);
+
+
+
+              }
+            }, 1000)
+          }
+      })
+
+
+      
 
 
 
@@ -122,36 +172,36 @@ useEffect(() => {
 
 
       function update() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    drawBorder();
-    drawRect();
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          drawBorder();
+          drawRect();
 
-    if(hasGameStarted){
-        //Get the blue rectangle to start moving
-        moveRectangle();
-    }
-    //Detect whether rectangles hit edge of canvas
-    borderRectangleCollisionDetection();
-    //Detect whether player makes contact with border
-    playerCollisionDetection();
-    //Detect whether player makes contact with rectangle
-    rectangleCollisionDetection();
-    requestAnimationFrame(update);
-}
+          if(hasGameStarted){
+              //Get the blue rectangle to start moving
+              moveRectangle();
+          }
+          //Detect whether rectangles hit edge of canvas
+          borderRectangleCollisionDetection();
+          //Detect whether player makes contact with border
+          playerCollisionDetection();
+          //Detect whether player makes contact with rectangle
+          rectangleCollisionDetection();
+          requestAnimationFrame(update);
+      }
 
-//Call update method on initial document load
-update();
+      //Call update method on initial document load
+      update();
 
-//Render rectangles to canvas.
-function drawRect() {
-    //Draw playerRect first
-    ctx.fillStyle = "#990000";
-    ctx.fillRect(playerRect.x,playerRect.y,playerRect.width,playerRect.height);
-    rectangles.forEach(rect => {
-        ctx.fillStyle = rect.color;
-        ctx.fillRect(rect.x,rect.y,rect.width,rect.height);
-    })
-}
+      //Render rectangles to canvas.
+      function drawRect() {
+          //Draw playerRect first
+          ctx.fillStyle = "#990000";
+          ctx.fillRect(playerRect.x,playerRect.y,playerRect.width,playerRect.height);
+          rectangles.forEach(rect => {
+              ctx.fillStyle = rect.color;
+              ctx.fillRect(rect.x,rect.y,rect.width,rect.height);
+          })
+      }
 
       //
       // function update(){
@@ -183,7 +233,7 @@ function drawRect() {
 function drawBorder() {
     ctx.fillStyle = 'black';
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.clearRect(50,50,500,500);
+    ctx.clearRect(25,25,550,550);
 }
 
       // function drawBoarder(){
@@ -200,42 +250,41 @@ function drawBorder() {
 
       }
 
-      const handleMore = async() => {
-        setredirectLevel1More(true)
-        setTimeout(function(){
-        },1000);
-      }
+
 
 
 
       function gameOver() {
 
-
-          if(!hasGameOver){
-
-
-              let endDate = new Date();
-              let timeDiff = endDate - startDate;
-              if(timeDiff < 5000){
-                // gameOverTime()
+        gameOverTime()
 
 
-                setTimeout(handleMore,500);
-
-
-                  // alert(`You survived ${timeDiff / 1000} seconds!`);
-              }else{
-                gameOverTime()
-                  // let minutesSurvived = millisecondsToMinutes(timeDiff);
-                  // alert(`You survived ${minutesSurvived} minutes. WOW!`);
-              }
+          // if(!hasGameOver){
+          //
+          //
+          //
+          //
+          //     let endDate = new Date();
+          //     let timeDiff = endDate - startDate;
+          //     if(timeDiff < 5000){
+          //       // gameOverTime()
+          //
+          //
+          //
+          //
+          //         // alert(`You survived ${timeDiff / 1000} seconds!`);
+          //     }else{
+          //       gameOverTime()
+          //         // let minutesSurvived = millisecondsToMinutes(timeDiff);
+          //         // alert(`You survived ${minutesSurvived} minutes. WOW!`);
+          //     }
 
               // setHasGameOver(true);
 
               // FighterScreen()
 
 
-          }
+          // }
       }
 
 
@@ -267,10 +316,10 @@ function drawRect() {
       //Detect whether player makes contact with border
 function playerCollisionDetection() {
     if(
-        playerRect.x + playerRect.width > 550 ||
-        playerRect.x < 50 ||
-        playerRect.y + playerRect.height > 550 ||
-        playerRect.y < 50
+        playerRect.x + playerRect.width > 575 ||
+        playerRect.x < 25 ||
+        playerRect.y + playerRect.height > 575 ||
+        playerRect.y < 25
     ){
         gameOver();
     }
@@ -360,17 +409,17 @@ function borderRectangleCollisionDetection() {
 
 
       function configureRectSpeed() {
-    const speedUpGame = setInterval(() => {
-        numberOfSpeed++;
-        rectangles.forEach(rect => {
-            rect.dx >= 0 ? rect.dx += 1 : rect.dx -= 1;
-            rect.dy >= 0 ? rect.dy += 1 : rect.dy -= 1;
-        });
-        if(numberOfSpeed === 4){
-            clearInterval(speedUpGame);
-        }
-    }, 10000)
-}
+          const speedUpGame = setInterval(() => {
+              numberOfSpeed++;
+              rectangles.forEach(rect => {
+                  rect.dx >= 0 ? rect.dx += 1 : rect.dx -= 1;
+                  rect.dy >= 0 ? rect.dy += 1 : rect.dy -= 1;
+              });
+              if(numberOfSpeed === 4){
+                  clearInterval(speedUpGame);
+              }
+          }, 10000)
+      }
 
 
 
@@ -401,10 +450,11 @@ function borderRectangleCollisionDetection() {
               //Start timer
               if(!hasGameStarted){
                   startDate = new Date();
-                  configureRectSpeed();
+                  // configureRectSpeed();
               }
               setControlPlayer(true);
               setHasGameStarted(true);
+              setStart(true);
           }
       })
 
@@ -495,9 +545,9 @@ function borderRectangleCollisionDetection() {
 
 
   return (
-    <div>
+    <div id="top">
 
-    {isGameOver && <div className="siteTitle" style={{fontSize: '30px'}}>You Scored Bad Luck</div>}
+    {isGameOver && <div className="siteTitle" style={{fontSize: '60px',color:"#000000"}}>You Scored Bad Luck</div>}
     {isGameOver && <ReactAudioPlayer
       src={ohno}
       autoPlay
@@ -517,7 +567,7 @@ function borderRectangleCollisionDetection() {
 
     {redirectLevel1More?(
       <div>
-      <Redirect to="/Game2MoreGame2" {...props}/>
+      <Redirect to="/PartnershipLevel1More/:top" {...props}/>
       </div>
     ):(
       <div>
@@ -529,7 +579,8 @@ function borderRectangleCollisionDetection() {
 
 
 <center>
-Fighter Pilot<br/>
+<div className="wording">Fighter Pilot {timeleft}</div><br/>
+
 <canvas width="600" height="600" id="canvas"> </canvas>
 
 </center>

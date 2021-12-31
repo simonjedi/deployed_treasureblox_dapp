@@ -108,7 +108,6 @@ const Level3Game1 = (props) => {
   const commaNumber = require('comma-number')
   const { width, height } = useWindowSize();
 
-
   const game1_prize = commaNumber(props.game1_prize,',');
 
   const winner = props.treasure_found1;
@@ -151,7 +150,7 @@ const Level3Game1 = (props) => {
   })
     return (
 
-      <div style={{height: height*4}} className="custombackgroundfightergame">
+      <div style={{height: height*4}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
@@ -219,9 +218,7 @@ const Level3Game1 = (props) => {
 
           </Modal>
           <br/><br/>
-          <div className="GameFont">Oh no... Crypto Dave scrambled Elon's launch lighting sequence!
-          <br/><br/>
-          Exploer can you switch it off?
+          <div className="siteTitle">Explorer Crypto Dave's rebels are coming can you help me turn off the rescue helecopter lighting panel before they see it!
           <br/><br/>
           <Button className="customButton" onClick={handlePlay} >Start</Button>
 

@@ -90,8 +90,6 @@ function useWindowSize() {
 
 const RandomGun = (props) => {
 
-
-
   window.dataLayer.push({
     event: "wallet_information",
     wallet: props.wallet_for_google,

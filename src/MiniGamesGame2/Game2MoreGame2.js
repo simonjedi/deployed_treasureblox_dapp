@@ -127,7 +127,7 @@ const handlePlayBrailOff = async() => {
 
     return (
 <div className="background">
-      <div id="top" className="spaceTopHome">
+      <div id="top" style={{height: height*4}} className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>

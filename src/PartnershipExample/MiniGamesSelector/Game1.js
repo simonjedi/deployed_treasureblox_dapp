@@ -3,7 +3,7 @@ import MyNav from '../PartnershipNav';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
-import '../Partner.css';
+// import '../Partner.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component, useState, useEffect } from 'react'
@@ -151,11 +151,11 @@ const Level1Game1 = (props) => {
 
 
     return (
-<div className="background">
+<div className="custombackgroundfightergame"  >
 
-      <div style={{height: height*4}} id="top" className="spaceTopHome">
+      <div style={{height: height*4}} className="spaceTopHome">
 
-      <div className="background">
+      <div className="">
 
 
 
@@ -170,7 +170,7 @@ const Level1Game1 = (props) => {
       />}
 
 
-      <div id="top" className="spaceTopHome">
+      <div  className="spaceTopHome" id="top" >
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>
@@ -214,13 +214,14 @@ const Level1Game1 = (props) => {
 
 
         {!start?(
-          <div>
-          <div className="siteTitle">Some test about the flight</div>
+          <div >
+          <div className="siteTitle">Explorer i need to fly a plane! I'm a fast learner, fighter pilots complete this test for 3 mins!
+          <br/>Can you last 3 seconds to unlock a riddle so we can take off?</div>
           <br/>
           <br/>
-
-          <Button className="customButtonDecide" onClick={startButton}>Start</Button>
-
+          <center>
+            <Button className="customButton" onClick={startButton}>Start</Button>
+          </center>
           </div>
 
         ):(

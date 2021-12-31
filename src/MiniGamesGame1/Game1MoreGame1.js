@@ -124,7 +124,7 @@ const Game1MoreGame1 = (props) => {
 
 
 
-      <Container style={{height: height}} className='mt-5' fluid="md">
+      <Container style={{height: height*4}} className='mt-5' fluid="md">
 
 
       <div className="aligned">

@@ -96,8 +96,8 @@ const Game1MoreGame1 = (props) => {
 
 
     return (
-<div className="background">
-      <div id="top" className="spaceTopHome">
+      <div className="background" style={{height: height*4}} >
+      <div id="top"  className="spaceTopHome">
       <Helmet>
         <title>TreasureBlox | Fort Blox</title>
       </Helmet>
@@ -115,7 +115,7 @@ const Game1MoreGame1 = (props) => {
 
 
 
-      <Container style={{height: height}} className='mt-5' fluid="md">
+      <Container  className='mt-5' fluid="md">
 
 
       <div className="aligned">

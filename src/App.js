@@ -108,7 +108,8 @@ import PartnershipLevel3 from "./PartnershipExample/MiniGamesSelector/Game3";
 import PartnershipLevel4 from "./PartnershipExample/MiniGamesSelector/Game4";
 
 import PartnershipRandom1 from "./PartnershipExample/MiniGamesSelector/Random1";
-import PartnershipGun from "./PartnershipExample/MiniGamesSelector/Random2";
+import PartnershipRandom2 from "./PartnershipExample/MiniGamesSelector/Random2";
+import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
 
 
 
@@ -140,8 +141,8 @@ import PartnershipGun from "./PartnershipExample/MiniGamesSelector/Random2";
   const partnership_3 = "/PartnershipLevel3/:top";
   const partnership_4 = "/PartnershipLevel4/:top";
   const partnership_random1 = "/Random1/:top";
-  const partnership_gun = "/Random2/:top";
-
+  const partnership_random2 = "/Random2/:top";
+  const partnership_random3 = "/Random3/:top";
 
 
   const game1_level_1 = "/Level1Game1/:top";
@@ -236,6 +237,11 @@ const [CostToPlay_xyz_,setCostToPlay_xyz_] = useState("...Loading...");
 const [RANDOM1_contract_xyz_,set_RANDOM1_Contract_xyz_] = useState(null)
 const [game_RANDOM1_xyz_,set_RANDOM1_xyz_] = useState(null)
 
+const [RANDOM2_contract_xyz_,set_RANDOM2_Contract_xyz_] = useState(null)
+const [game_RANDOM2_xyz_,set_RANDOM2_xyz_] = useState(null)
+
+const [RANDOM3_contract_xyz_,set_RANDOM3_Contract_xyz_] = useState(null)
+const [game_RANDOM3_xyz_,set_RANDOM3_xyz_] = useState(null)
 
 const [contract_xyz_,setContract_xyz_] = useState(null)
 const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
@@ -603,6 +609,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const MAIN_GAME_contract_xyz_ABI = require('./PartnershipExample/ContractAbis/MAIN_GAME.abi_xyz.json');
         const VOLT_xyz_ABI = require('./PartnershipExample/ContractAbis/VOLT.abi_xyz.json');
         const RANDOM1_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM1.abi_xyz.json');
+        const RANDOM2_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM2.abi_xyz.json');
+        const RANDOM3_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM3.abi_xyz.json');
+
 
         const abi_xyz_ = require('./TreasureBlox.abi_example.json');
         // this will change to partner token abi contract
@@ -669,6 +678,16 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const game_RANDOM1_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
+        // RANDOM GAME CONTRACT 1 in 4
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
+        const game_RANDOM2_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 4
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
+        const game_RANDOM3_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
+
 
 
         // TOKEN CONTRACT
@@ -692,6 +711,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           set_MAIN_GAME_Contract_xyz_(MAIN_GAME_contract_xyz_)
           set_VOLT_Contract_xyz_(VOLT_contract_xyz_)
           set_RANDOM1_Contract_xyz_(RANDOM1_contract_xyz_)
+          set_RANDOM2_Contract_xyz_(RANDOM2_contract_xyz_)
+          set_RANDOM3_Contract_xyz_(RANDOM3_contract_xyz_)
+
 
           // SET TOKEN DETAILS
           setDecimals_xyz_(decimals_xyz_)
@@ -2784,9 +2806,11 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     MAIN_GAME_contract_xyz_,
     VOLT_contract_xyz_,
     RANDOM1_contract_xyz_,
+    RANDOM2_contract_xyz_,
+    RANDOM3_contract_xyz_,
     MAIN_GAME_contract_treasurebloxNative_,
     VOLT_contract_treasurebloxNative_,
-
+    CostToPlay_xyz_,game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
 
     ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
 
@@ -2806,14 +2830,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
     // GAME2
     web3,accounts,wallet_for_google,ip,
-    GSB_contract_bsc_,
-    GSC_contract_bsc_,
-    GSD_contract_bsc_,
-    MAIN_GAME_contract_xyz_,
-    VOLT_contract_xyz_,
-    RANDOM1_contract_xyz_,
-    MAIN_GAME_contract_treasurebloxNative_,
-    VOLT_contract_treasurebloxNative_,
+
     ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
 
     game2_live_treasurebloxNative_,game2_prize_treasurebloxNative_,game2_question_hash_treasurebloxNative_, game2_costToEnter_treasurebloxNative_,game2_riddle_treasurebloxNative_,
@@ -2836,7 +2853,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
     // Partner Random Contract 1
     player_loss_xyz_,result_loss_xyz_,pid_loss_xyz_,player_win_xyz_,result_win_xyz_,pid_win_xyz_,
-    CostToPlay_xyz_,game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
+
 
 
     web3,accounts,wallet_for_google_xyz_,ip_xyz_,partnerId_xyz,contract_xyz_,tokenContract_xyz_,decimals_xyz_,totalTreasure_xyz_,globalNumberOfTries_xyz_,gameContractAddress_xyz_,
@@ -2849,7 +2866,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     game1LeaderBoardEntered_xyz_,game1LeaderBoardUsername_xyz_,game1LeaderBoardTries_xyz_,game1LeaderBoardStage_xyz_,game1LeaderBoard_xyz_,game1UserList_xyz_,state_leaderboardAddressSearch_huntid_game1_xyz_,state_leaderboardAddressSearch_address_game1_xyz_,state_leaderboardAddressSearch_entered_game1_xyz_,
     state_leaderboardAddressSearch_username_game1_xyz_,state_leaderboardAddressSearch_tries_game1_xyz_,state_leaderboardAddressSearch_stage_game1_xyz_,state_leaderboardAddressSearch_team_game1_xyz_,state_WinnerEstPrizeGame1_xyz_,userLevel1Game1_xyz_,userLevel2Game1_xyz_,userLevel3Game1_xyz_,userLevel4Game1_xyz_,
 
-    web3partnership_home,partnership_treasure_hunt_page,partnership_1,partnership_1_more,partnership_2,partnership_2_more,partnership_3,partnership_4,partnership_gun,
+    web3partnership_home,partnership_treasure_hunt_page,partnership_1,partnership_1_more,partnership_2,partnership_2_more,partnership_3,partnership_4,partnership_random2,
 
     game1team1_xyz_team_points_target,game1team1_xyz_ppp,game1team1_xyz_team_entries,game1team1_xyz_team_actual_points,
     game1team2_xyz_team_points_target,game1team2_xyz_ppp,game1team2_xyz_team_entries,game1team2_xyz_team_actual_points,
@@ -2928,6 +2945,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                   game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
                   CostToPlay_xyz_={CostToPlay_xyz_}
                   RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                  RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                  RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                   MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
                   VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -2949,7 +2968,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                   partnership_3={game2_level_3}
                   partnership_4={game2_level_4}
                   partnership_random1={partnership_random1}
-                  partnership_gun={partnership_gun}
+                  partnership_random2={partnership_random2}
+                  partnership_random3={partnership_random3}
+
                   // 1
                   game1_live={game1_live_treasurebloxNative_}
                   game1_prize={game1_prize_treasurebloxNative_}
@@ -3138,6 +3159,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
                 CostToPlay_xyz_={CostToPlay_xyz_}
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
                 VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -3158,8 +3181,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 partnership_3={game2_level_3}
                 partnership_4={game2_level_4}
                 partnership_random1={partnership_random1}
-
-                partnership_gun={partnership_gun}
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
 
                 // 1
                 game1_live={game1_live_treasurebloxNative_}
@@ -3348,6 +3371,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -3368,8 +3393,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -3559,6 +3584,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
                 VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -3579,9 +3606,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 partnership_3={game2_level_3}
                 partnership_4={game2_level_4}
                 partnership_random1={partnership_random1}
-
-                partnership_gun={partnership_gun}
-
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
                 // 1
                 game1_live={game1_live_treasurebloxNative_}
                 game1_prize={game1_prize_treasurebloxNative_}
@@ -3842,6 +3868,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -3862,8 +3890,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -4051,6 +4079,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -4071,8 +4101,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -4261,6 +4291,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -4281,8 +4313,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -4471,6 +4503,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -4491,8 +4525,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -4681,6 +4715,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -4701,8 +4737,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -4891,6 +4927,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -4911,8 +4949,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -5102,6 +5140,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -5122,8 +5162,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -5312,6 +5352,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -5332,8 +5374,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -5522,6 +5564,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -5542,8 +5586,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -5732,6 +5776,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -5752,8 +5798,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -5942,6 +5988,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -5962,8 +6010,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -6152,6 +6200,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
 
@@ -6172,8 +6222,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={game2_level_3}
               partnership_4={game2_level_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_treasurebloxNative_}
@@ -6364,6 +6414,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -6383,8 +6435,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 partnership_3={partnership_3}
                 partnership_4={partnership_4}
                 partnership_random1={partnership_random1}
-
-                partnership_gun={partnership_gun}
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
 
 
                 // 1
@@ -6501,6 +6553,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 CostToPlay_xyz_={CostToPlay_xyz_}
 
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -6520,8 +6574,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 partnership_3={partnership_3}
                 partnership_4={partnership_4}
                 partnership_random1={partnership_random1}
-
-                partnership_gun={partnership_gun}
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
 
                 // 1
                 game1_live={game1_live_xyz_}
@@ -6638,6 +6692,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -6657,8 +6713,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -6777,6 +6833,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -6796,8 +6854,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -6913,6 +6971,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -6932,8 +6992,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7050,6 +7110,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7069,8 +7131,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7187,6 +7249,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7206,8 +7270,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7324,6 +7388,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7343,8 +7409,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7462,6 +7528,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7481,7 +7549,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_3={partnership_3}
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7566,9 +7634,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               />
               </Route>
 
-              <Route path={partnership_gun}>
+              <Route path={partnership_random2}>
               <PartnershipNav {...props} onClick={() => Connection()}/>
-              <PartnershipGun
+              <PartnershipRandom2
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7599,6 +7667,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7619,7 +7689,146 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
 
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
+
+              // 1
+              game1_live={game1_live_xyz_}
+              game1_prize={game1_prize_xyz_}
+              game1_question_hash={game1_question_hash_xyz_}
+              game1_entry_cost ={game1_costToEnter_xyz_}
+              game1_riddle={game1_riddle_xyz_}
+              game1_head_start_time={game1_head_start_time_xyz_}
+              allGame1_id={allGame1_id_xyz_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
+              allGame1_deadline_time={allGame1_deadline_time_xyz_}
+              allGame1_username={allGame1_username_xyz_}
+              allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
+              countGame1={countGame1_xyz_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_xyz_}
+              userGame1_id={userGame1_id_xyz_}
+              userEntered_game1={userEntered_game1_xyz_}
+              userGame1_headstart_time={userGame1_headstart_time_xyz_}
+              userGame1_live={userGame1_live_xyz_}
+
+              winning_address1={winning_address1_xyz_}
+              treasure_found1={treasure_found1_xyz_}
+              winning_prize1={winning_prize1_xyz_}
+
+              attemptId1={attemptId1_xyz_}
+              attemptAddress1={attemptAddress1_xyz_}
+              attemptUsername1={attemptUsername1_xyz_}
+              attemptDeadline1={attemptDeadline1_xyz_}
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+
+
+
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_xyz_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_xyz_}
+              game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
+              game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
+
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_xyz_}
+              game1UserList={game1UserList_xyz_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_xyz_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_xyz_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_xyz_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
+
+              userLevel1Game1={userLevel1Game1_xyz_}
+              userLevel2Game1={userLevel2Game1_xyz_}
+              userLevel3Game1={userLevel3Game1_xyz_}
+              userLevel4Game1={userLevel4Game1_xyz_}
+
+
+
+              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
+              game1team1_xyz_ppp={game1team1_xyz_ppp}
+              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
+              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
+              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
+              game1team2_xyz_ppp={game1team2_xyz_ppp}
+              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
+              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+
+
+
+              />
+              </Route>
+
+              <Route path={partnership_random3}>
+              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipRandom3
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+
+              tokenContract={tokenContract_xyz_}
+              decimals={decimals_xyz_}
+              totalTreasure={totalTreasure_xyz_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+
+              CostToPlay_xyz_={CostToPlay_xyz_}
+
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
+              globalNumberOfTries={globalNumberOfTries_xyz_}
+              // 1
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={partnership_1}
+              partnership_1_more={partnership_1_more}
+              partnership_2={partnership_2}
+              partnership_2_more={partnership_2_more}
+              partnership_3={partnership_3}
+              partnership_4={partnership_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
 
               // 1
               game1_live={game1_live_xyz_}
@@ -7737,6 +7946,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               CostToPlay_xyz_={CostToPlay_xyz_}
 
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
               VOLT_contract_xyz_={VOLT_contract_xyz_}
 
@@ -7757,7 +7968,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               partnership_4={partnership_4}
               partnership_random1={partnership_random1}
 
-              partnership_gun={partnership_gun}
+              partnership_random2={partnership_random2}
 
               // 1
               game1_live={game1_live_xyz_}

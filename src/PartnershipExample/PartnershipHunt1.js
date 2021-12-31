@@ -109,7 +109,8 @@ const PartnershipHunt1 = (props) => {
   const [redirectLevel4,setredirectLevel4] = useState(false);
 
   const [redirectRandom1,setRedirectRandom1] = useState(false);
-  const [redirectRandomGun,setRedirectRandomGun] = useState(false);
+  const [redirectRandom2,setRedirectRandom2] = useState(false);
+  const [redirectRandom3,setRedirectRandom3] = useState(false);
 
 
 
@@ -222,7 +223,19 @@ const PartnershipHunt1 = (props) => {
     const handleRandomFunc = async() => {
       window.scrollTo({top: 0})
       setloading(true);
-      setRedirectRandomGun(true);
+      setRedirectRandom2(true);
+
+      setTimeout(function(){
+          setloading(false);
+      },30000);
+    }
+
+    const handleRandomFunc3 = async() => {
+      window.scrollTo({top: 0})
+      // window.scrollTo({top: 0, behavior: 'smooth'})
+
+      setloading(true);
+      setRedirectRandom3(true);
 
       setTimeout(function(){
           setloading(false);
@@ -382,10 +395,22 @@ const handleSubmitEnterDave = async() => {
         </div>
       )}
 
-      {redirectRandomGun?(
+      {redirectRandom2?(
         <div>
 
         <Redirect to="/Random2/:top" {...props}/>
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+      {redirectRandom3?(
+        <div>
+
+        <Redirect to="/Random3/:top" {...props}/>
         </div>
 
       ):(
@@ -1130,7 +1155,7 @@ const handleSubmitEnterDave = async() => {
 
                   </div>
                   <br/>
-                  <Button className="customButton" onClick={handlePayQuest3}>Play Game</Button>
+                  <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
 
 
 

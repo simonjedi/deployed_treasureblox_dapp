@@ -126,21 +126,16 @@ const Game1MoreGame1 = (props) => {
       </Modal>
 
       <Card className='cardRounded'>
-
-
-
         <Card.Header>Congratulation Explorer</Card.Header>
         <Card.Body>
           <blockquote className="blockquote mb-0">
             <p>
               {' '}
               <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
-              <br/><br/>You showed some skill but have you got what it takes to help Elon find his Rocket?
-              <br/><br/>1. Go to the TreasureBlox Twitter page.
-              <br/><br/>2. @TreasureBlox tweeted on 23 September.. the code is the final hash on the tweet!
-              <br/><br/>3. Be sure to retweet and @ElonMusk.
-              <br/><br/>4. Head back to the time lock to submit your answer!
-
+              <br/><br/>You showed some skill but have you got what it takes to fly this plane?
+              <br/><br/>1. Write down the secret answer to level Secret Answer = 'FighterJet01'
+              <br/><br/>2. Leave this page by clicking strike fighter and go to the Prize Vault tab!
+              <br/><br/>3. Apply the time lock and enter the secret answer to level up!
               {' '}
             </p>
             <footer className="blockquote-footer">

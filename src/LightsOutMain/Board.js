@@ -90,6 +90,7 @@ class Board extends Component {
               <span className='neon-blue'>WON!</span>
             </div>
 
+
             <Redirect to="/Game2MoreGame1"/>
 
           </div>
@@ -125,7 +126,7 @@ class Board extends Component {
           <div className='neon-blue '> Lights Out</div>
         </div>
         <br/><br/>
-        <div className="siteTitle">Simply turn out the launch lights!</div>
+        <div className="siteTitle">Simply turn out the lights!</div>
 
 
         <table className='Board'>

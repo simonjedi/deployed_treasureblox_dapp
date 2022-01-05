@@ -198,10 +198,7 @@ const RandomGun = (props) => {
 
 
 
-          <ReactAudioPlayer
-            src={plane}
-            autoPlay
-          />
+
 
 
           <br/><br/>
@@ -222,9 +219,7 @@ const RandomGun = (props) => {
 
           </Modal>
           <br/><br/>
-          <div className="GameFont">Oh no... Crypto Dave scrambled Elon's launch lighting sequence!
-          <br/><br/>
-          Exploer can you switch it off?
+          <div className="siteTitle">Explorer can you help me set of the flair gun to get a rescue?
           <br/><br/>
           <Button className="customButton" onClick={handlePlay} >Start</Button>
 

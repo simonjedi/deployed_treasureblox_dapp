@@ -167,11 +167,13 @@ const App = (props) => {
 
   const [web3,setWeb3] = useState(null)
   // const [accounts,setAccounts] = useState(null)
+  const [balance,setBalance] = useState(null)
+
+
   //
   //
   // const [wallet_for_google, setWallet_for_google] = useState('Unknown');
   //
-  // console.log(wallet_for_google,"string?")
   // const [ip, setIP] = useState('');
   //
   // const [contract,setContract] = useState(null)
@@ -545,6 +547,12 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
+
+
+
+
+
+
   useEffect(() => {
 
 
@@ -553,6 +561,14 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const web3 = await getWeb3();
         const accounts = await web3.eth.getAccounts();
         setAccounts(accounts[0])
+
+
+
+
+
+
+
+
 
 
 
@@ -623,7 +639,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
         const isWeb3Active = Moralis.ensureWeb3IsInstalled()
         if (isWeb3Active) {
-          console.log("Activated");
         } else {
           await Moralis.enable();
         }
@@ -632,11 +647,14 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         //
         //
         const currentChainId = await Moralis.getChainId();
-        console.log(currentChainId)
 
 
 // START NETWORK IF BSC
         if (currentChainId === 56) {
+
+
+// Users Balance
+
 
 
 
@@ -703,6 +721,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           // // SET WEB3
           setWeb3(web3)
 
+          
+
 
           set_GSB_Contract_xyz_(GSB_contract_bsc_)
           set_GSC_Contract_xyz_(GSC_contract_bsc_)
@@ -734,7 +754,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           //creating function to load ip address from the API
 
           // const res = await axios.get('https://geolocation-db.com/json/')
-          // console.log(res,"herererererere");
           // setIP(res.data.IPv4)
 
           // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
@@ -1101,14 +1120,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             //     const random_result_player_xyz_ = await random_result_xyz_[0].returnValues["_player"];
             //     const random_result_number_xyz_ = await random_result_xyz_[0].returnValues["result"];
             //     const random_result_pid_xyz_ = await random_result_xyz_[0].returnValues["pID"];
-            //     console.log(random_result_player_xyz_,"random_result_player_xyz_")
-            //     console.log(random_result_number_xyz_,"random_result_number_xyz_")
-            //     console.log(random_result_pid_xyz_,"random_result_pid_xyz_")
             //     set_player_loss_xyz_(random_result_player_xyz_);
             //     set_result_loss_xyz_(random_result_number_xyz_);
             //     set_pid_loss_xyz_(random_result_pid_xyz_);
             // } catch (error) {
-            //     console.log("waiting random 1 loss")
             //     set_player_loss_xyz_("");
             //     set_result_loss_xyz_("");
             //     set_pid_loss_xyz_("");
@@ -1123,14 +1138,11 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             //     const random_result_player_win_xyz_ = await random_result_win_xyz_[0].returnValues["_player"];
             //     const random_result_number_win_xyz_ = await random_result_win_xyz_[0].returnValues["result"];
             //     const random_result_pid_win_xyz_ = await random_result_win_xyz_[0].returnValues["pID"];
-            //     console.log(random_result_player_win_xyz_,"random_result_player_xyz_")
-            //     console.log(random_result_number_win_xyz_,"random_result_number_xyz_")
-            //     console.log(random_result_pid_win_xyz_,"random_result_pid_xyz_")
+
             //     set_player_win_xyz_(random_result_player_win_xyz_);
             //     set_result_win_xyz_(random_result_number_win_xyz_);
             //     set_pid_win_xyz_(random_result_pid_win_xyz_);
             // } catch (error) {
-            //     console.log("waiting random 1 win")
             //     set_player_win_xyz_("");
             //     set_result_win_xyz_("");
             //     set_pid_win_xyz_("");
@@ -2798,7 +2810,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     },[
 
     // GAME1
-    is_meter,web3,accounts,wallet_for_google,ip,
+    is_meter,web3,accounts,wallet_for_google,ip,balance,
 
     GSB_contract_bsc_,
     GSC_contract_bsc_,
@@ -2921,6 +2933,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                   wallet_for_google={wallet_for_google}
                   ip={ip}
                   partnerId_xyz={partnerId_xyz}
+
 
                   // partner random 1
                   player_loss_xyz_={player_loss_xyz_}
@@ -3137,6 +3150,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 wallet_for_google={wallet_for_google}
                 ip={ip}
                 partnerId_xyz={partnerId_xyz}
+
                 // partner random 1
                 player_loss_xyz_={player_loss_xyz_}
                 result_loss_xyz_={result_loss_xyz_}
@@ -3348,6 +3362,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}

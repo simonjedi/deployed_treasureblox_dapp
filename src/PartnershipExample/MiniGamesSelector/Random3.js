@@ -38,7 +38,7 @@ import { Helmet } from 'react-helmet';
 // import Board from '../GamesSelection/LightsOut/Board';
 // import Board from '../GamesSelection/FighterPilot/FighterScreen';
 
-import RandomBoard from '../GamesSelection/RandOne/RandOne';
+import RandomBoard from '../GamesSelection/RandThree/RandThree';
 // import RandomRoulette from '../GamesSelection/Roulette/roulette';
 
 
@@ -159,7 +159,7 @@ const Random3 = (props) => {
       <div style={{height: height*4}} className="custombackgroundfightergame">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | Lucky Game</title>
       </Helmet>
       <div>
 
@@ -175,7 +175,10 @@ const Random3 = (props) => {
 
       <Container className='mt-5' fluid="md">
 
-
+      <ReactAudioPlayer
+        src={lightsmusic}
+        autoPlay
+      />
 
 
       {props.playLevel2Game1?(

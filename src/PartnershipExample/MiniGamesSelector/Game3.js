@@ -26,6 +26,9 @@ import help from '../GamesSelection/BloxEscape/assets/Troy_help.mp4';
 import troyImg from '../GamesSelection/MineGame/assets/Treasure_Hunter.png';
 import troymore from '../GamesSelection/MineGame/assets/TroyMore.png';
 
+import game1_troy from '../assets/Sounds/game3.mp3';
+import game3 from '../assets/Sounds/game3_music.mp3';
+
 
 
 import ReactAudioPlayer from 'react-audio-player';
@@ -119,7 +122,7 @@ const Level3Game1 = (props) => {
 
   const handleShow = () => setShow(true);
 
-  const [timeleft,setTimeleft] = useState(160)
+  const [timeleft,setTimeleft] = useState(120)
   const [start,setStart] = useState(false)
   const [bye,setBye] = useState(false)
   const [doexplode,setExplode] = useState(false)
@@ -169,10 +172,7 @@ const Level3Game1 = (props) => {
 
       <Container className='mt-5' fluid="md">
 
-      <ReactAudioPlayer
-        src={lightsmusic}
-        autoPlay
-      />
+
 
 
       {props.playLevel3Game1?(
@@ -192,7 +192,7 @@ const Level3Game1 = (props) => {
           <Board {...props}/>
 
           <ReactAudioPlayer
-            src={plane}
+            src={game3}
             autoPlay
           />
 
@@ -205,7 +205,7 @@ const Level3Game1 = (props) => {
           <div style={{height: height}}>
 
           <ReactAudioPlayer
-            src={help}
+            src={game1_troy}
             autoPlay
           />
 
@@ -218,7 +218,9 @@ const Level3Game1 = (props) => {
 
           </Modal>
           <br/><br/>
-          <div className="siteTitle">Explorer Crypto Dave's rebels are coming can you help me turn off the rescue helecopter lighting panel before they see it!
+          <div className="siteTitle">
+          Explorers, that was a close call! We survived, but we need help fast - I can hear
+          Cryto Dave’s forces nearby, and they're closing in on our location! help me turn off the rescue helecopter lighting panel before they see it!”
           <br/><br/>
           <Button className="customButton" onClick={handlePlay} >Start</Button>
 

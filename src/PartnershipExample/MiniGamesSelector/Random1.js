@@ -171,11 +171,7 @@ const Random1 = (props) => {
         autoPlay
       />}
 
-
-
       <Container className='mt-5' fluid="md">
-
-
 
 
       {props.playLevel2Game1?(
@@ -188,7 +184,8 @@ const Random1 = (props) => {
 
         <div style={{height: height}}>
 
-        <div className="siteTitle">Roll Troy to win and Crypto Dave to Lose!</div>
+        <div className="siteTitle">Roll Troy to Win Roll Crypto Dave to Lose!</div>
+        <div className="siteTitle">1 in 4 chance to win!</div>
 
 
         <RandomBoard {...props}/>

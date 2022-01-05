@@ -18,7 +18,10 @@ import {
 } from "react-router-dom";
 
 import ReactAudioPlayer from 'react-audio-player';
+import Confetti from 'react-confetti'
 
+import celebrate from './celebrate.wav';
+import ohno from './troy_oh_no.mp4';
 
 // Hook
 
@@ -39,7 +42,6 @@ const Gun = (props) =>{
   // console.log(props.accounts[0])
   // console.log(props.allGame1_id)
     const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(1,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
-    console.log(transaction.events.DiceRolled.returnValues["s_keyHash"])
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
       setSpin(true)
       tryAgain(uid)
@@ -260,7 +262,6 @@ async function tryAgain(uid){
         }
 
         function drawAlive(){
-
           // if statement
             ctx.fillStyle = "#006400";
             ctx.beginPath();
@@ -326,7 +327,6 @@ async function tryAgain(uid){
             drawBarrelInner();
 
 
-
             if (start) {
               drawCircles(0);
             }
@@ -363,8 +363,46 @@ async function tryAgain(uid){
 <center>
 
 
+    {lose && <ReactAudioPlayer
+      src={ohno}
+      autoPlay
+    /> }
+
+
+    {win? (
+      <div><Confetti
+
+        numberOfPieces={300}
+
+        drawShape={ctx => {
+          ctx.beginPath();
+          for (var i = 0; i < 6; i++) {
+            ctx.lineTo(10 + 20 * Math.cos(2 * Math.PI / 6 * i), 10 + 20 * Math.sin(2 * Math.PI / 6 * i));
+          }
+          ctx.closePath();
+          ctx.stroke();
+        }}
+      />
+
+      <ReactAudioPlayer
+        src={celebrate}
+        autoPlay
+      />
+
+
+      </div>
+
+    ):(
+      <div>
+
+      </div>
+    )}
+
+
+
     <canvas width="600" height="600" id="canvasgun"> </canvas>
     <br/>
+
     <Button className="customButton" onClick={handlePlay}>Shoot</Button>
 
 </center>

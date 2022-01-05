@@ -71,6 +71,7 @@ function useWindowSize() {
 }
 
 
+
 const Game2MoreGame1 = (props) => {
 
   window.dataLayer.push({
@@ -82,6 +83,8 @@ const Game2MoreGame1 = (props) => {
   });
 
   const [dobrail, setdobrail]= useState(false)
+
+  window.scrollTo({top: 0,behavior: 'smooth'})
 
 
 const handlePlayBrailOff = async() => {
@@ -111,6 +114,7 @@ const handlePlayBrailOff = async() => {
   const handleClose = () => setShow(false);
 
   const handleShow = () => setShow(true);
+
 
 
     return (
@@ -158,8 +162,8 @@ const handlePlayBrailOff = async() => {
             <p>
               {' '}
               <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
-              <br/><br/>Troy's found a message!<br/><br/>
-              please submit the time lock and use the code "XXXX" to level up!
+              <br/><br/>You unlocked a secret!<br/><br/>
+              please submit the time lock and use the code '94518A' to level up!
               {' '}
             </p>
             <footer className="blockquote-footer">

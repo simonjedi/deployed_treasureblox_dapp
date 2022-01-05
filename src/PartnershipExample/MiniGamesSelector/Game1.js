@@ -16,10 +16,14 @@ import Board from '../GamesSelection/FighterPilot/FighterScreen';
 
 
 
-import troyIntro from '../GamesSelection/MineGame/assets/TroyClip1.mp4';
+// import troyIntro from '../GamesSelection/MineGame/assets/TroyClip1.mp4';
 import gameSound from '../GamesSelection/MineGame/assets/game1_soundtrack.mp4';
+
 import troyImg from '../GamesSelection/MineGame/assets/Treasure_Hunter.png';
 import troymore from '../GamesSelection/MineGame/assets/TroyMore.png';
+
+import game1_troy from '../assets/Sounds/game1.mp3';
+
 
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -178,7 +182,7 @@ const Level1Game1 = (props) => {
 
 
       <ReactAudioPlayer
-        src={troyhelp}
+        src={game1_troy}
         autoPlay
       />
 
@@ -199,9 +203,6 @@ const Level1Game1 = (props) => {
 
 
 
-
-
-
       {props.playLevel1Game1?(
         <div>
         <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
@@ -215,8 +216,10 @@ const Level1Game1 = (props) => {
 
         {!start?(
           <div >
-          <div className="siteTitle">Explorer i need to fly a plane! I'm a fast learner, fighter pilots complete this test for 3 mins!
-          <br/>Can you last 3 seconds to unlock a riddle so we can take off?</div>
+          <div className="siteTitle">Explorer can you help me? I need to take off fast but I’m a little rusty!
+          <br/>Crypto Dave has stolen a plane and is on the runway!<br/>
+          Fighter pilots complete this test for 3 mins!
+          <br/>Can you last 10 seconds to unlock a riddle so we can take off and catch him?</div>
           <br/>
           <br/>
           <center>

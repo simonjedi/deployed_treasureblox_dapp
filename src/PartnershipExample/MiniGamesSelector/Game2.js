@@ -50,6 +50,7 @@ import denied from '../GamesSelection/MineGame/assets/Denied.mp3';
 import danger from '../GamesSelection/MineGame/assets/danger.mp4';
 import ohno from '../GamesSelection/BloxEscape/assets/troy_oh_no.mp4';
 
+import game1_troy from '../assets/Sounds/game2.mp3';
 
 import {
   BrowserRouter as Router,
@@ -103,7 +104,7 @@ const Level2Game1 = (props) => {
   const handleEnter = async() => {
 
     if (resultCalc === "#725048" ){
-      window.scrollTo({top: 0})
+      window.scrollTo({top: 0,behavior: 'smooth'})
       setMore(true)
     }
     else {
@@ -168,7 +169,7 @@ const Level2Game1 = (props) => {
 
   const handleShow = () => setShow(true);
 
-  const [timeleft,setTimeleft] = useState(160)
+  const [timeleft,setTimeleft] = useState(60)
   const [start,setStart] = useState(false)
   const [bye,setBye] = useState(false)
   const [doexplode,setExplode] = useState(false)
@@ -308,7 +309,7 @@ const Level2Game1 = (props) => {
           <div style={{height: height}}>
 
           <ReactAudioPlayer
-            src={help}
+            src={game1_troy}
             autoPlay
           />
 
@@ -323,7 +324,11 @@ const Level2Game1 = (props) => {
           <br/><br/>
 
 
-          <div className="siteTitle">Explorer quickly i need your help enter the code so we can engage auto pilot!
+          <div className="siteTitle">Warning - Warning - You're about to crash!! "Explorer, can you help me? Crypto Dave has
+          hit us with a missile what should we do?
+
+
+          Enter the code so we can engage auto pilot!
           <br/><br/>
           <Button className="customButton" onClick={handlePlay} >Start</Button>
 

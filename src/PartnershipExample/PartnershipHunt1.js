@@ -502,11 +502,13 @@ const handleSubmitEnterDave = async() => {
                   <div>
                   {props.treasure_found1?(
                     <div>
-                    <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                    <div className="siteTitle">WINNERS</div>
                     </div>
                   ):(
                     <div>
-                    <div className="siteTitle">WINNERS</div>
+                    <center>
+                    <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                    </center>
                     </div>
                   )}
                   </div>
@@ -529,11 +531,14 @@ const handleSubmitEnterDave = async() => {
                   <div>
                   {props.treasure_found1?(
                     <div>
-                    <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+
+                    <div className="siteTitle">WINNERS</div>
                     </div>
                   ):(
                     <div>
-                    <div className="siteTitle">WINNERS</div>
+                    <center>
+                    <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                    </center>
                     </div>
                   )}
                   </div>
@@ -1169,7 +1174,7 @@ const handleSubmitEnterDave = async() => {
                           </Row>
 
                           <div className="MiniGameDetails">
-
+<br/>
                           Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
                           Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
                           </div>

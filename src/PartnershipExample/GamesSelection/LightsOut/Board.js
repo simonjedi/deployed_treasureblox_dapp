@@ -78,11 +78,9 @@ class Board extends Component {
                 <a className='neon-orange' style={{"text-decoration": "none"}}>You</a>
                 <a className='neon-blue' style={{"text-decoration": "none"}}> Won!</a>
                 <br/><br/>
-                <div className="siteTitle">this is your clue!</div>
+                <div className="siteTitle">Quickly remember the code 'Lights24' use it on the timelock to level up!</div>
               </div>
-
             </center>
-
         </div>
       )
     }

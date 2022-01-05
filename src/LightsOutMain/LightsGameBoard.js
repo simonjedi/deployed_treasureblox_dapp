@@ -176,7 +176,7 @@ const [message,setMessage] = useState('')
         setBoard(board)
       }
     } else {
-      setMessage("Game over.")
+      setMessage("Game Over!")
     }
   }
 

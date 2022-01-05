@@ -19,6 +19,10 @@ import {
 
 import ReactAudioPlayer from 'react-audio-player';
 
+import Confetti from 'react-confetti'
+
+import celebrate from './celebrate.wav';
+import ohno from './troy_oh_no.mp4';
 
 import win_img from "./assets/win_img.png";
 import lose1_img from "./assets/lose1.png";
@@ -39,20 +43,24 @@ const RandOne = (props) =>{
   var rate = 1.5; // Number of rotations per second
   var start = false
 
+
+
   const [spin, setSpin] = useState(false)
   const [win, setWin] = useState(false)
   const [lose, setLose] = useState(false)
+  const [redirectRandom1,setRedirectRandom1] = useState(false);
+  const [gameNum,setGameNum] = useState(undefined);
+
+
 
   const handlePlay = async() => {
-  // console.log(props.partnerId_xyz)
-  // console.log(props.accounts[0])
-  // console.log(props.allGame1_id)
+
     setSpin(true)
     const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(1,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
-    console.log(transaction.events.DiceRolled.returnValues["s_keyHash"])
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
 
       tryAgain(uid)
+
   }
 
 
@@ -60,26 +68,25 @@ async function tryAgain(uid){
     setTimeout(async function(){
 
       const transaction2 = await props.RANDOM1_contract_xyz_.methods.player_history(props.accounts[0],uid).call();
-      console.log(transaction2);
 
       if (transaction2[2]){
         setWin(true)
         setSpin(false)
         setTimeout( function(){
           setWin(false)
-
+          handleReset()
         },6000);
       }else{
+        setGameNum(transaction2[2])
         setLose(true)
         setSpin(false)
         setTimeout( function(){
           setLose(false)
-
+          handleReset()
         },6000);
       }
 
-      if (transaction2[1]){
-        console.log("waiting")
+      if (transaction2[1] === 0){
         tryAgain(uid)
       }
 
@@ -87,14 +94,12 @@ async function tryAgain(uid){
 }
 
 
-
-
-
   useEffect(() => {
 // function draw(){
     const init = async() => {
         const canvas = document.getElementById("canvasgun");
         const ctx = canvas.getContext("2d");
+
 
 
 
@@ -185,7 +190,7 @@ async function tryAgain(uid){
             var img=new Image();
             img.onload=start;
             img.onerror=function(){alert(img.src+' failed');}
-            img.src= lose2_img;
+            img.src= final_loss;
             ctx.drawImage(img, 0, pos+400);
 
 
@@ -202,7 +207,6 @@ async function tryAgain(uid){
             }else{
               pos = pos-speed;
             }
-            console.log(Math.floor(Math.random() * 3) + 1);
 
 
         }
@@ -211,11 +215,11 @@ async function tryAgain(uid){
 
         function drawDead(){
 
-            var img=new Image();
-            img.onload=start;
-            img.onerror=function(){alert(img.src+' failed');}
-            img.src= final_loss;
-            ctx.drawImage(img, 0, 0);
+          var img=new Image();
+          img.onload=start;
+          img.onerror=function(){alert(img.src+' failed');}
+          img.src= final_loss;
+          ctx.drawImage(img, 0, 0);
 
 
         }
@@ -227,7 +231,6 @@ async function tryAgain(uid){
           img.onerror=function(){alert(img.src+' failed');}
           img.src= win_img;
           ctx.drawImage(img, 0, 0);
-
 
         }
 
@@ -266,8 +269,9 @@ async function tryAgain(uid){
             if (win){
               drawAlive()
 
-            }
 
+            }
+            // drawDead()
             if (lose){
               drawDead()
 
@@ -283,11 +287,38 @@ async function tryAgain(uid){
     },[start,spin,win,lose])
 // init()
 
+    const handleReset = async() => {
+      window.scrollTo({top: 0})
+      setRedirectRandom1(true)
+
+    }
+
 
 
   return (
 
     <div>
+
+    {win? (
+      <div>
+
+      <ReactAudioPlayer
+        src={celebrate}
+        autoPlay
+      />
+      <center>
+      <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
+      </center>
+
+
+      </div>
+
+    ):(
+      <div>
+
+      </div>
+    )}
+
 <center>
     <div className='Board-title d-none d-lg-block'>
       <a className='neon-orange' style={{"text-decoration": "none"}}>Take</a>
@@ -299,7 +330,23 @@ async function tryAgain(uid){
     {lose && <ReactAudioPlayer
       src={fail}
       autoPlay
-    /> }
+    />}
+
+    {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
+
+
+    {redirectRandom1?(
+      <div>
+
+      <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+      </div>
+
+    ):(
+      <div>
+
+      </div>
+    )}
 
 
     {spin?(

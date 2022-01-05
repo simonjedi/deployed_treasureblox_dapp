@@ -49,7 +49,6 @@ const PartnerNav = (props) => {
 
 
 
-
   return(
 
     <Navbar collapseOnSelect className="fixed-top MyBakground" expand="lg" variant="dark">
@@ -81,8 +80,7 @@ const PartnerNav = (props) => {
           Strike Fighter
           </Link>
 
-
-
+        
 
         </Nav>
         <Nav className="ml-auto">

@@ -28,6 +28,15 @@ import win_img from "./assets/win_img.png";
 import lose1_img from "./assets/lose1.png";
 import lose2_img from "./assets/loss2.png";
 import lose3_img from "./assets/loss3.png";
+import lose4_img from "./assets/loss4.png";
+import lose5_img from "./assets/loss5.png";
+import lose6_img from "./assets/loss6.png";
+import lose7_img from "./assets/loss7.png";
+import lose8_img from "./assets/loss8.png";
+import lose9_img from "./assets/loss9.png";
+import lose10_img from "./assets/loss10.png";
+import lose11_img from "./assets/loss11.png";
+
 import final_loss from "./assets/final_loss.png";
 import begin_img from "./assets/begin.png";
 
@@ -200,10 +209,58 @@ async function tryAgain(uid){
             img.src= lose3_img;
             ctx.drawImage(img, 0, pos+600);
 
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose4_img;
+            ctx.drawImage(img, 0, pos+800);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose5_img;
+            ctx.drawImage(img, 0, pos+1000);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose6_img;
+            ctx.drawImage(img, 0, pos+1200);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose7_img;
+            ctx.drawImage(img, 0, pos+1400);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose8_img;
+            ctx.drawImage(img, 0, pos+1600);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose9_img;
+            ctx.drawImage(img, 0, pos+1800);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose10_img;
+            ctx.drawImage(img, 0, pos+2000);
+
+            var img=new Image();
+            img.onload=start;
+            img.onerror=function(){alert(img.src+' failed');}
+            img.src= lose11_img;
+            ctx.drawImage(img, 0, pos+2200);
 
 
-            if (pos <= -600) {
-              pos = pos+800
+
+            if (pos <= -2200) {
+              pos = pos+2400
             }else{
               pos = pos-speed;
             }
@@ -321,8 +378,8 @@ async function tryAgain(uid){
 
 <center>
     <div className='Board-title d-none d-lg-block'>
-      <a className='neon-orange' style={{"text-decoration": "none"}}>Take</a>
-      <a className='neon-blue' style={{"text-decoration": "none"}}> Off</a>
+      <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
+      <a className='neon-blue' style={{"text-decoration": "none"}}> Rescue</a>
     </div>
     <canvas width="200" height="200" id="canvasgun"> </canvas>
     <br/>

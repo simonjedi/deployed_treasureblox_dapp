@@ -3,7 +3,7 @@ import MyNav from '../PartnershipNav';
 import moment from 'moment';
 
 // import img1 from './Treasure-hunt.jpeg';
-import './Random1.css';
+import './Random3.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component, useState, useEffect } from 'react'
@@ -156,10 +156,10 @@ const Random3 = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="custombackgroundfightergame">
+      <div style={{height: height*4}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Lucky Game</title>
+        <title>TreasureBlox | Lucky Rescue</title>
       </Helmet>
       <div>
 

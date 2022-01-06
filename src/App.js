@@ -691,19 +691,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const game_VOLT_Address_xyz_ = "0xd087d5F7F003089FBf31F521A6cE11107fe310cF"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
-        // RANDOM GAME CONTRACT 1 in 4
+        // RANDOM GAME CONTRACT 1 in 4 - Using Blox
         const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
         const game_RANDOM1_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
-        // RANDOM GAME CONTRACT 1 in 4
-        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
-        const game_RANDOM2_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        // RANDOM GAME CONTRACT 1 in 6 - Using Blox
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x7338197dc02BF569F920412f298f5925B2E3c14b");
+        const game_RANDOM2_Address_xyz_ = "0x7338197dc02BF569F920412f298f5925B2E3c14b"
         set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
 
-        // RANDOM GAME CONTRACT 1 in 4
-        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
-        const game_RANDOM3_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        // RANDOM GAME CONTRACT 1 in 20 - Using Blox
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F");
+        const game_RANDOM3_Address_xyz_ = "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
 
@@ -721,7 +721,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           // // SET WEB3
           setWeb3(web3)
 
-          
+
 
 
           set_GSB_Contract_xyz_(GSB_contract_bsc_)

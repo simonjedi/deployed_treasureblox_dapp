@@ -316,7 +316,7 @@ const handleSubmitEnterTroy = async() => {
 
   setloading(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.0000002", 'ether')});
 
   setTimeout(function(){
       setloading(false);
@@ -337,7 +337,7 @@ const handleSubmitEnterDave = async() => {
   setloading2(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
 
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.0000002", 'ether')});
 
 
   setTimeout(function(){

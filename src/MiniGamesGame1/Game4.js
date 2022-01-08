@@ -107,11 +107,11 @@ const Level4Game2 = (props) => {
     return (
 
       <div className="background">
-      <div style={{height: height}} id="top" className="spaceTopHome">
+      <div style={{height: height*5}} id="top" className="spaceTopHome">
 
       <div className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | Play 2 Earn - Elon's Lost Hus Rocket</title>
       </Helmet>
 
       <ReactAudioPlayer

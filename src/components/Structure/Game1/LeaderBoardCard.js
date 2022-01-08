@@ -152,9 +152,6 @@ if (props.state_leaderboardAddressSearch_tries_game1){
         <Nav.Link eventKey="first">Final Riddle</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="link-1">How To Play?</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
         <Nav.Link eventKey="link-2">Costs</Nav.Link>
       </Nav.Item>
       <Nav.Item>
@@ -168,10 +165,6 @@ if (props.state_leaderboardAddressSearch_tries_game1){
         <Tab.Pane eventKey="first" >
         <Riddle {...props}/>
         </Tab.Pane>
-        <Tab.Pane eventKey="link-1">
-          <Rules {...props}/>
-        </Tab.Pane>
-
         <Tab.Pane eventKey="link-2">
           <Costs {...props}/>
 

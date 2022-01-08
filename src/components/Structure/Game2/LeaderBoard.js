@@ -58,8 +58,7 @@ for (var i  = 0; i < props.game2LeaderBoardTries.length; i++){
   total  += parseInt(props.game2LeaderBoardTries[i]);
 
 }
-console.log(total,"meeeeeee")
-console.log(props.game2LeaderBoardTries,"meeeeeee")
+
 
 
   let zipped = props.game2LeaderBoardIndex.map((x, i) => [x, props.game2LeaderBoardUsername[i],props.game2LeaderBoardStage[i],props.game2LeaderBoardTries[i]]);
@@ -104,9 +103,6 @@ if (props.state_leaderboardAddressSearch_tries_game2){
         <Nav.Link eventKey="first">Final Riddle</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="link-1">How To Play?</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
         <Nav.Link eventKey="link-2">Costs</Nav.Link>
       </Nav.Item>
       <Nav.Item>
@@ -119,9 +115,6 @@ if (props.state_leaderboardAddressSearch_tries_game2){
       <Tab.Content>
         <Tab.Pane eventKey="first" >
         <Riddle {...props}/>
-        </Tab.Pane>
-        <Tab.Pane eventKey="link-1">
-          <Rules {...props}/>
         </Tab.Pane>
 
         <Tab.Pane eventKey="link-2">

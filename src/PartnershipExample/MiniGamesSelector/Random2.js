@@ -157,7 +157,7 @@ const RandomGun = (props) => {
       <div style={{height: height*4}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | On Chain Metaverse Game</title>
       </Helmet>
       <div>
 
@@ -179,7 +179,7 @@ const RandomGun = (props) => {
       />
 
 
-      {props.playLevel2Game1?(
+      {props.playRandom2?(
         <div>
         <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
         </div>

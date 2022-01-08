@@ -203,16 +203,12 @@ const Level1Game1 = (props) => {
 
 
 
-      {props.playLevel1Game1?(
+      {props.partnership_1?(
         <div>
         <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
         </div>
       ):(
         <div>
-
-
-
-
 
         {!start?(
           <div >

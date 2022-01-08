@@ -76,6 +76,11 @@ import Game2MoreGame1 from "./MiniGamesGame1/Game2MoreGame1";
 import Level3Game1 from "./MiniGamesGame1/Game3";
 import Level4Game1 from "./MiniGamesGame1/Game4";
 
+
+import Game1Random1 from "./MiniGamesGame1/Random1";
+import Game1Random2 from "./MiniGamesGame1/Random2";
+import Game1Random3 from "./MiniGamesGame1/Random3";
+
 // HUNT 2
 import Level1Game2 from "./MiniGamesGame2/Game1";
 import Game1MoreGame2 from "./MiniGamesGame2/Game1MoreGame2";
@@ -86,6 +91,11 @@ import Game2MoreGame2 from "./MiniGamesGame2/Game2MoreGame2";
 
 import Level3Game2 from "./MiniGamesGame2/Game3";
 import Level4Game2 from "./MiniGamesGame2/Game4";
+
+import Game2Random1 from "./MiniGamesGame2/Random1";
+import Game2Random2 from "./MiniGamesGame2/Random2";
+import Game2Random3 from "./MiniGamesGame2/Random3";
+
 //
 //
 import User from './components/Structure/Game1/User';
@@ -151,6 +161,9 @@ import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
   const game1_level_2_more = "/Game2MoreGame1/:top";
   const game1_level_3 = "/Level3Game1/:top";
   const game1_level_4 = "/Level4Game1/:top";
+  const game1_random1 = "/Game1_Random1/:top";
+  const game1_random2 = "/Game1_Random2/:top";
+  const game1_random3 = "/Game1_Random3/:top";
 
   const game2_level_1 = "/Level1Game2/:top";
   const game2_level_1_more = "/Game1MoreGame2/:top";
@@ -158,7 +171,9 @@ import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
   const game2_level_2_more = "/Game2MoreGame2/:top";
   const game2_level_3 = "/Level3Game2/:top";
   const game2_level_4 = "/Level4Game2/:top";
-
+  const game2_random1 = "/Game2_Random1/:top";
+  const game2_random2 = "/Game2_Random2/:top";
+  const game2_random3 = "/Game2_Random3/:top";
 
 const App = (props) => {
 
@@ -208,11 +223,18 @@ const App = (props) => {
   const [MAIN_GAME_contract_treasurebloxNative_,set_MAIN_GAME_Contract_treasurebloxNative_] = useState(null)
   const [game_MAIN_GAME_ContractAddress_treasurebloxNative_,set_MAIN_GAME_GameContractAddress_treasurebloxNative_] = useState(null)
 
-
   const [VOLT_contract_treasurebloxNative_,set_VOLT_Contract_treasurebloxNative_] = useState(null)
   const [game_VOLT_ContractAddress_treasurebloxNative_,set_VOLT_GameContractAddress_treasurebloxNative_] = useState(null)
+  const [CostToPlay_treasurebloxNative_,setCostToPlay_treasurebloxNative_] = useState("...Loading...");
 
+  const [RANDOM1_contract_treasurebloxNative_,set_RANDOM1_Contract_treasurebloxNative_] = useState(null)
+  const [game_RANDOM1_treasurebloxNative_,set_RANDOM1_treasurebloxNative_] = useState(null)
 
+  const [RANDOM2_contract_treasurebloxNative_,set_RANDOM2_Contract_treasurebloxNative_] = useState(null)
+  const [game_RANDOM2_treasurebloxNative_,set_RANDOM2_treasurebloxNative_] = useState(null)
+
+  const [RANDOM3_contract_treasurebloxNative_,set_RANDOM3_Contract_treasurebloxNative_] = useState(null)
+  const [game_RANDOM3_treasurebloxNative_,set_RANDOM3_treasurebloxNative_] = useState(null)
 
   // Set Blox Contracts Ends
 
@@ -235,7 +257,6 @@ const [VOLT_contract_xyz_,set_VOLT_Contract_xyz_] = useState(null)
 const [game_VOLT_ContractAddress_xyz_,set_VOLT_GameContractAddress_xyz_] = useState(null)
 const [CostToPlay_xyz_,setCostToPlay_xyz_] = useState("...Loading...");
 
-
 const [RANDOM1_contract_xyz_,set_RANDOM1_Contract_xyz_] = useState(null)
 const [game_RANDOM1_xyz_,set_RANDOM1_xyz_] = useState(null)
 
@@ -244,6 +265,9 @@ const [game_RANDOM2_xyz_,set_RANDOM2_xyz_] = useState(null)
 
 const [RANDOM3_contract_xyz_,set_RANDOM3_Contract_xyz_] = useState(null)
 const [game_RANDOM3_xyz_,set_RANDOM3_xyz_] = useState(null)
+
+
+
 
 const [contract_xyz_,setContract_xyz_] = useState(null)
 const [gameContractAddress_xyz_,setGameContractAddress_xyz_] = useState(null)
@@ -539,7 +563,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
     const partnerId_treasurebloxNative = 1;
 
-    const partnerId_xyz = 1;
+    const partnerId_xyz = 2;
 
 
 
@@ -780,7 +804,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
           const MAIN_GAME_treasureBloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/MAIN_GAME.abi_xyz.json');
           const VOLT_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/VOLT.abi_xyz.json');
-
+          const RANDOM1_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM1.abi_treasurebloxNative.json');
+          const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
+          const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
 
           const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c");
           const MAIN_GAME_Address_treasurebloxNative_ = "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c"
@@ -790,6 +816,22 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0x19D5Deb61a012cDd53EbAFF891EC9B06bC6f88C6");
           const VOLT_Address_treasurebloxNative_ = "0x19D5Deb61a012cDd53EbAFF891EC9B06bC6f88C6"
           set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
+
+
+          // RANDOM GAME CONTRACT 1 in 4 - Using Blox
+          const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
+          const game_RANDOM1_Address_treasurebloxNative_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+          set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
+
+          // RANDOM GAME CONTRACT 1 in 6 - Using Blox
+          const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0x7338197dc02BF569F920412f298f5925B2E3c14b");
+          const game_RANDOM2_Address_treasurebloxNative_ = "0x7338197dc02BF569F920412f298f5925B2E3c14b"
+          set_RANDOM2_treasurebloxNative_(game_RANDOM2_Address_treasurebloxNative_);
+
+          // RANDOM GAME CONTRACT 1 in 20 - Using Blox
+          const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F");
+          const game_RANDOM3_Address_treasurebloxNative_ = "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F"
+          set_RANDOM3_treasurebloxNative_(game_RANDOM3_Address_treasurebloxNative_);
 
           // TOKEN CONTRACT
           // BSC
@@ -806,13 +848,16 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           set_MAIN_GAME_Contract_treasurebloxNative_(MAIN_GAME_contract_treasurebloxNative_)
           set_VOLT_Contract_treasurebloxNative_(VOLT_contract_treasurebloxNative_)
 
+          set_RANDOM1_Contract_treasurebloxNative_(RANDOM1_contract_treasurebloxNative_)
+          set_RANDOM2_Contract_treasurebloxNative_(RANDOM2_contract_treasurebloxNative_)
+          set_RANDOM3_Contract_treasurebloxNative_(RANDOM3_contract_treasurebloxNative_)
+
           // SET TOKEN DETAILS
           setDecimals_treasurebloxNative_(decimals_treasurebloxNative_)
           setTotalTreasure_treasurebloxNative_(totalTreasure_treasurebloxNative_)
           setTokenContract_treasurebloxNative_(tokenContract_treasurebloxNative_)
 
           setWallet_for_google_treasurebloxNative_("w="+accounts.toString())
-
 
 
         // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
@@ -1111,57 +1156,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
             setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
 
-
-            // // Random1 Event Listener For Loss
-            //
-            // const random_result_xyz_ = await RANDOM1_contract_xyz_.getPastEvents("Loss", {"fromBlock":'latest'});
-            //
-            // try {
-            //     const random_result_player_xyz_ = await random_result_xyz_[0].returnValues["_player"];
-            //     const random_result_number_xyz_ = await random_result_xyz_[0].returnValues["result"];
-            //     const random_result_pid_xyz_ = await random_result_xyz_[0].returnValues["pID"];
-            //     set_player_loss_xyz_(random_result_player_xyz_);
-            //     set_result_loss_xyz_(random_result_number_xyz_);
-            //     set_pid_loss_xyz_(random_result_pid_xyz_);
-            // } catch (error) {
-            //     set_player_loss_xyz_("");
-            //     set_result_loss_xyz_("");
-            //     set_pid_loss_xyz_("");
-            // }
-            //
-            // // Random1 Event Listener For Win
-            //
-            // const random_result_win_xyz_ = await RANDOM1_contract_xyz_.getPastEvents("Win", {"fromBlock":'latest'});
-            // // const random_result_xyz_ = await RANDOM1_contract_xyz_.events.Loss();
-            //
-            // try {
-            //     const random_result_player_win_xyz_ = await random_result_win_xyz_[0].returnValues["_player"];
-            //     const random_result_number_win_xyz_ = await random_result_win_xyz_[0].returnValues["result"];
-            //     const random_result_pid_win_xyz_ = await random_result_win_xyz_[0].returnValues["pID"];
-
-            //     set_player_win_xyz_(random_result_player_win_xyz_);
-            //     set_result_win_xyz_(random_result_number_win_xyz_);
-            //     set_pid_win_xyz_(random_result_pid_win_xyz_);
-            // } catch (error) {
-            //     set_player_win_xyz_("");
-            //     set_result_win_xyz_("");
-            //     set_pid_win_xyz_("");
-            // }
-
-
-
             const cost_to_play_xyz_ = await VOLT_contract_xyz_.methods.CostToPlay().call();
             var CostToPlay_xyz_edit = await cost_to_play_xyz_[0];
             CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
             setCostToPlay_xyz_(CostToPlay_xyz_edit);
-
-
-            //
-            //
-
-
-
-
 
 //////////////////
             // PARTNER EXAMPLE GET GAME 1 END
@@ -1441,6 +1439,13 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             setGame1_team2_treasurebloxNative_ppp(game1_team2_treasurebloxNative_ppp)
             setGame1_team2_treasurebloxNative_team_entries(game1_team2_treasurebloxNative_team_entries)
             setGame1_team2_treasurebloxNative_team_actual_points(game1_team2_treasurebloxNative_team_actual_points)
+
+
+            const cost_to_play_treasurebloxNative_ = await VOLT_contract_treasurebloxNative_.methods.CostToPlay().call();
+            var CostToPlay_treasurebloxNative_edit = await cost_to_play_treasurebloxNative_[0];
+            CostToPlay_treasurebloxNative_edit =  CostToPlay_treasurebloxNative_edit.substring(0,  CostToPlay_treasurebloxNative_edit.length-18);
+            setCostToPlay_treasurebloxNative_(CostToPlay_treasurebloxNative_edit);
+
 
             // GAME 1 TREASUREBLOX ENDS
 
@@ -1725,7 +1730,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           setGame2_team2_treasurebloxNative_team_actual_points(game2_team2_treasurebloxNative_team_actual_points)
 
 
-
+          // Cost to play is called using the end of game 1 not using game 2
 
 
 
@@ -2812,6 +2817,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     // GAME1
     is_meter,web3,accounts,wallet_for_google,ip,balance,
 
+    partnerId_treasurebloxNative,
+
     GSB_contract_bsc_,
     GSC_contract_bsc_,
     GSD_contract_bsc_,
@@ -2820,11 +2827,16 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     RANDOM1_contract_xyz_,
     RANDOM2_contract_xyz_,
     RANDOM3_contract_xyz_,
+    CostToPlay_xyz_,
     MAIN_GAME_contract_treasurebloxNative_,
     VOLT_contract_treasurebloxNative_,
-    CostToPlay_xyz_,game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
+    RANDOM1_contract_treasurebloxNative_,
+    RANDOM2_contract_treasurebloxNative_,
+    RANDOM3_contract_treasurebloxNative_,
+    CostToPlay_treasurebloxNative_,
+    game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
 
-    ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
+    tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
 
     game1_live_treasurebloxNative_,game1_prize_treasurebloxNative_,game1_question_hash_treasurebloxNative_, game1_costToEnter_treasurebloxNative_,game1_riddle_treasurebloxNative_,
     allGame1_id_treasurebloxNative_,allGame1_user_front_of_que_treasurebloxNative_,allGame1_deadline_time_treasurebloxNative_,allGame1_username_treasurebloxNative_,allGame1_total_game_tries_treasurebloxNative_,countGame1_treasurebloxNative_,countGame1DeadlineTrue_treasurebloxNative_,
@@ -2922,234 +2934,18 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-                <Route path="/home">
-                <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Route path="/home">
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
 
-                <MyNav accounts={accounts}/>
-                  <Home
-                  // main
-                  is_meter={is_meter}
-                  web3={web3}
-                  wallet_for_google={wallet_for_google}
-                  ip={ip}
-                  partnerId_xyz={partnerId_xyz}
-
-
-                  // partner random 1
-                  player_loss_xyz_={player_loss_xyz_}
-                  result_loss_xyz_={result_loss_xyz_}
-                  pid_loss_xyz_={pid_loss_xyz_}
-                  player_win_xyz_={player_win_xyz_}
-                  result_win_xyz_={result_win_xyz_}
-                  pid_win_xyz_={pid_win_xyz_}
-
-
-
-                  tokenContract={tokenContract_treasurebloxNative_}
-                  decimals={decimals_treasurebloxNative_}
-                  totalTreasure={totalTreasure_treasurebloxNative_}
-
-                  GSB_contract_bsc_={GSB_contract_bsc_}
-                  GSC_contract_bsc_={GSC_contract_bsc_}
-                  GSD_contract_bsc_={GSD_contract_bsc_}
-                  MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
-                  VOLT_contract_xyz_={VOLT_contract_xyz_}
-                  game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
-                  game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-                  CostToPlay_xyz_={CostToPlay_xyz_}
-                  RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
-                  RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
-                  RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
-                  MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
-                  VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
-
-
-                  accounts={accounts}
-
-                  // totals
-
-                  totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
-                  totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
-                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
-                  // 1
-                  partnership_home={web3partnership_home}
-                  partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-                  partnership_1={game2_level_1}
-                  partnership_1_more={game2_level_1_more}
-                  partnership_2={game2_level_2}
-                  partnership_2_more={game2_level_2_more}
-                  partnership_3={game2_level_3}
-                  partnership_4={game2_level_4}
-                  partnership_random1={partnership_random1}
-                  partnership_random2={partnership_random2}
-                  partnership_random3={partnership_random3}
-
-                  // 1
-                  game1_live={game1_live_treasurebloxNative_}
-                  game1_prize={game1_prize_treasurebloxNative_}
-                  game1_question_hash={game1_question_hash_treasurebloxNative_}
-                  game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
-                  game1_riddle={game1_riddle_treasurebloxNative_}
-                  game1_head_start_time={game1_head_start_time_treasurebloxNative_}
-                  allGame1_id={allGame1_id_treasurebloxNative_}
-                  allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
-                  allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
-                  allGame1_username={allGame1_username_treasurebloxNative_}
-                  allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
-                  countGame1={countGame1_treasurebloxNative_}
-                  countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
-                  // 2
-                  game2_live={game2_live_treasurebloxNative_}
-                  game2_prize={game2_prize_treasurebloxNative_}
-                  game2_question_hash={game2_question_hash_treasurebloxNative_}
-                  game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
-                  game2_riddle={game2_riddle_treasurebloxNative_}
-                  game2_head_start_time={game2_head_start_time_treasurebloxNative_}
-                  allGame2_id={allGame2_id_treasurebloxNative_}
-                  allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
-                  allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
-                  allGame2_username={allGame2_username_treasurebloxNative_}
-                  allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
-                  countGame2={countGame2_treasurebloxNative_}
-                  countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
-
-
-                  // 1
-
-
-                  game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
-                  userGame1_id={userGame1_id_treasurebloxNative_}
-                  userEntered_game1={userEntered_game1_treasurebloxNative_}
-                  userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
-                  userGame1_live={userGame1_live_treasurebloxNative_}
-
-                  winning_address1={winning_address1_treasurebloxNative_}
-                  treasure_found1={treasure_found1_treasurebloxNative_}
-                  winning_prize1={winning_prize1_treasurebloxNative_}
-
-                  attemptId1={attemptId1_treasurebloxNative_}
-                  attemptAddress1={attemptAddress1_treasurebloxNative_}
-                  attemptUsername1={attemptUsername1_treasurebloxNative_}
-                  attemptDeadline1={attemptDeadline1_treasurebloxNative_}
-                  totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
-                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
-
-
-                  // 2
-                  game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
-                  userGame2_id={userGame2_id_treasurebloxNative_}
-                  userEntered_game2={userEntered_game2_treasurebloxNative_}
-                  userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
-                  userGame2_live={userGame2_live_treasurebloxNative_}
-
-                  winning_address2={winning_address2_treasurebloxNative_}
-                  treasure_found2={treasure_found2_treasurebloxNative_}
-                  winning_prize2={winning_prize2_treasurebloxNative_}
-
-                  attemptId2={attemptId2_treasurebloxNative_}
-                  attemptAddress2={attemptAddress2_treasurebloxNative_}
-                  attemptUsername2={attemptUsername2_treasurebloxNative_}
-                  attemptDeadline2={attemptDeadline2_treasurebloxNative_}
-                  totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
-                  globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
-
-
-                  // 1
-                  game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
-                  game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
-                  game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
-                  game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
-                  game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
-                  game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
-                  game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
-                  // 2
-                  game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
-                  game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
-                  game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
-                  game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
-                  game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
-                  game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
-                  game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
-
-                  // 1
-                  game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
-                  game1UserList={game1UserList_treasurebloxNative_}
-
-                  state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
-                  state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
-                  state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
-
-                  userLevel1Game1={userLevel1Game1_treasurebloxNative_}
-                  userLevel2Game1={userLevel2Game1_treasurebloxNative_}
-                  userLevel3Game1={userLevel3Game1_treasurebloxNative_}
-                  userLevel4Game1={userLevel4Game1_treasurebloxNative_}
-
-                  // 2
-
-                  game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
-                  game2UserList={game2UserList_treasurebloxNative_}
-
-                  state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
-                  state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
-                  state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
-
-                  // 1
-                  userLevel1Game2={userLevel1Game2_treasurebloxNative_}
-                  userLevel2Game2={userLevel2Game2_treasurebloxNative_}
-                  userLevel3Game2={userLevel3Game2_treasurebloxNative_}
-                  userLevel4Game2={userLevel4Game2_treasurebloxNative_}
-
-                  game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
-                  game1team1_ppp={game1team1_treasurebloxNative_ppp}
-                  game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
-                  game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
-                  game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
-                  game1team2_ppp={game1team2_treasurebloxNative_ppp}
-                  game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
-                  game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
-
-                  // 2
-                  userLevel1Game2={userLevel1Game2_treasurebloxNative_}
-                  userLevel2Game2={userLevel2Game2_treasurebloxNative_}
-                  userLevel3Game2={userLevel3Game2_treasurebloxNative_}
-                  userLevel4Game2={userLevel4Game2_treasurebloxNative_}
-
-                  game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
-                  game2team1_ppp={game2team1_treasurebloxNative_ppp}
-                  game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
-                  game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
-                  game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
-                  game2team2_ppp={game2team2_treasurebloxNative_ppp}
-                  game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
-                  game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
-
-
-
-
-                  />
-
-
-                </Route>
-
-              <Route path="/hunt1">
-                <MyNav accounts={accounts} onClick={() => Connection()}/>
-                <Hunt1
+              <MyNav accounts={accounts}/>
+                <Home
                 // main
                 is_meter={is_meter}
                 web3={web3}
                 wallet_for_google={wallet_for_google}
                 ip={ip}
                 partnerId_xyz={partnerId_xyz}
+                partnerId_treasurebloxNative={partnerId_treasurebloxNative}
 
                 // partner random 1
                 player_loss_xyz_={player_loss_xyz_}
@@ -3170,13 +2966,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 VOLT_contract_xyz_={VOLT_contract_xyz_}
                 game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
                 game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
                 CostToPlay_xyz_={CostToPlay_xyz_}
                 RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
                 RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
                 RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
                 VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+                CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+                RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+                RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+                RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+                game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
                 accounts={accounts}
 
@@ -3186,6 +2988,273 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
                 globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
                 // 1
+
+                game1_level_1={game1_level_1}
+                game1_level_1_more={game1_level_1_more}
+                game1_level_2={game1_level_2}
+                game1_level_2_more={game1_level_2_more}
+                game1_level_3={game1_level_3}
+                game1_level_4={game1_level_4}
+                game1_random1={game1_random1}
+                game1_random2={game1_random2}
+                game1_random3={game1_random3}
+
+                // 2
+                game2_level_1={game2_level_1}
+                game2_level_1_more={game2_level_1_more}
+                game2_level_2={game2_level_2}
+                game2_level_2_more={game2_level_2_more}
+                game2_level_3={game2_level_3}
+                game2_level_4={game2_level_4}
+                game2_random1={game2_random1}
+                game2_random2={game2_random2}
+                game2_random3={game2_random3}
+
+                // Partnership Jetswap
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={game2_level_1}
+                partnership_1_more={game2_level_1_more}
+                partnership_2={game2_level_2}
+                partnership_2_more={game2_level_2_more}
+                partnership_3={game2_level_3}
+                partnership_4={game2_level_4}
+                partnership_random1={partnership_random1}
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
+
+                // 1
+                game1_live={game1_live_treasurebloxNative_}
+                game1_prize={game1_prize_treasurebloxNative_}
+                game1_question_hash={game1_question_hash_treasurebloxNative_}
+                game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+                game1_riddle={game1_riddle_treasurebloxNative_}
+                game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+                allGame1_id={allGame1_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+                allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+                allGame1_username={allGame1_username_treasurebloxNative_}
+                allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+                countGame1={countGame1_treasurebloxNative_}
+                countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+                // 2
+                game2_live={game2_live_treasurebloxNative_}
+                game2_prize={game2_prize_treasurebloxNative_}
+                game2_question_hash={game2_question_hash_treasurebloxNative_}
+                game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+                game2_riddle={game2_riddle_treasurebloxNative_}
+                game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+                allGame2_id={allGame2_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+                allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+                allGame2_username={allGame2_username_treasurebloxNative_}
+                allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+                countGame2={countGame2_treasurebloxNative_}
+                countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+                // 1
+
+
+                game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+                userGame1_id={userGame1_id_treasurebloxNative_}
+                userEntered_game1={userEntered_game1_treasurebloxNative_}
+                userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+                userGame1_live={userGame1_live_treasurebloxNative_}
+
+                winning_address1={winning_address1_treasurebloxNative_}
+                treasure_found1={treasure_found1_treasurebloxNative_}
+                winning_prize1={winning_prize1_treasurebloxNative_}
+
+                attemptId1={attemptId1_treasurebloxNative_}
+                attemptAddress1={attemptAddress1_treasurebloxNative_}
+                attemptUsername1={attemptUsername1_treasurebloxNative_}
+                attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 2
+                game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+                userGame2_id={userGame2_id_treasurebloxNative_}
+                userEntered_game2={userEntered_game2_treasurebloxNative_}
+                userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+                userGame2_live={userGame2_live_treasurebloxNative_}
+
+                winning_address2={winning_address2_treasurebloxNative_}
+                treasure_found2={treasure_found2_treasurebloxNative_}
+                winning_prize2={winning_prize2_treasurebloxNative_}
+
+                attemptId2={attemptId2_treasurebloxNative_}
+                attemptAddress2={attemptAddress2_treasurebloxNative_}
+                attemptUsername2={attemptUsername2_treasurebloxNative_}
+                attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 1
+                game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+                game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+                game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+                game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+                game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+                game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+                game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+                // 2
+                game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+                game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+                game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+                game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+                game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+                game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+                game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+                // 1
+                game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+                game1UserList={game1UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+                userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+                userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+                userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+                userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+                // 2
+
+                game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+                game2UserList={game2UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+                state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+                // 1
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+                game1team1_ppp={game1team1_treasurebloxNative_ppp}
+                game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+                game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+                game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+                game1team2_ppp={game1team2_treasurebloxNative_ppp}
+                game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+                game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+                // 2
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+                game2team1_ppp={game2team1_treasurebloxNative_ppp}
+                game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+                game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+                game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+                game2team2_ppp={game2team2_treasurebloxNative_ppp}
+                game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+                game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
+                />
+
+
+              </Route>
+
+              <Route path="/hunt1">
+                <MyNav accounts={accounts} onClick={() => Connection()}/>
+                <Hunt1
+                // main
+                is_meter={is_meter}
+                web3={web3}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                partnerId_xyz={partnerId_xyz}
+                partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
+
+                tokenContract={tokenContract_treasurebloxNative_}
+                decimals={decimals_treasurebloxNative_}
+                totalTreasure={totalTreasure_treasurebloxNative_}
+
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+                MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+                VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+                CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+                RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+                RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+                RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+                game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+                accounts={accounts}
+
+                // totals
+
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+                // 1
+
+                game1_level_1={game1_level_1}
+                game1_level_1_more={game1_level_1_more}
+                game1_level_2={game1_level_2}
+                game1_level_2_more={game1_level_2_more}
+                game1_level_3={game1_level_3}
+                game1_level_4={game1_level_4}
+                game1_random1={game1_random1}
+                game1_random2={game1_random2}
+                game1_random3={game1_random3}
+
+                // 2
+                game2_level_1={game2_level_1}
+                game2_level_1_more={game2_level_1_more}
+                game2_level_2={game2_level_2}
+                game2_level_2_more={game2_level_2_more}
+                game2_level_3={game2_level_3}
+                game2_level_4={game2_level_4}
+                game2_random1={game2_random1}
+                game2_random2={game2_random2}
+                game2_random3={game2_random3}
+
+                // Partnership Jetswap
                 partnership_home={web3partnership_home}
                 partnership_treasure_hunt_page={partnership_treasure_hunt_page}
                 partnership_1={game2_level_1}
@@ -3362,6 +3431,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
 
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
@@ -3382,14 +3452,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -3399,6 +3474,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -3561,7 +3659,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
               />
 
               </Route>
@@ -3576,6 +3673,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 wallet_for_google={wallet_for_google}
                 ip={ip}
                 partnerId_xyz={partnerId_xyz}
+                partnerId_treasurebloxNative={partnerId_treasurebloxNative}
                 // partner random 1
                 player_loss_xyz_={player_loss_xyz_}
                 result_loss_xyz_={result_loss_xyz_}
@@ -3603,6 +3701,12 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
                 MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
                 VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+                CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+                RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+                RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+                RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+                game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
                 accounts={accounts}
 
@@ -3851,7 +3955,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-              <Route path="/Level1Game1">
+              <Route path={game1_level_1}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
               // main
@@ -3860,6 +3964,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -3879,14 +3985,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -3896,6 +4007,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -4059,10 +4193,11 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
+
               />
               </Route>
 
-              <Route path="/Game1MoreGame1">
+              <Route path={game1_level_1_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame1
               // main
@@ -4071,6 +4206,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -4090,14 +4227,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -4107,6 +4249,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -4274,7 +4439,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               />
               </Route>
 
-              <Route path="/Level2Game1">
+              <Route path={game1_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game1
               // main
@@ -4283,6 +4448,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -4302,14 +4469,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -4319,6 +4491,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -4482,11 +4677,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-
               />
               </Route>
 
-              <Route path="/Game2MoreGame1">
+              <Route path={game1_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame1
               // main
@@ -4495,6 +4689,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -4514,14 +4710,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -4531,6 +4732,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -4694,11 +4918,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-
               />
               </Route>
 
-              <Route path="/Level3Game1">
+              <Route path={game1_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game1
               // main
@@ -4707,6 +4930,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -4726,14 +4951,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -4743,6 +4973,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -4906,11 +5159,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-
               />
               </Route>
 
-              <Route path="/Level4Game1">
+              <Route path={game1_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game1
               // main
@@ -4919,6 +5171,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -4938,14 +5192,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -4955,6 +5214,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -5117,21 +5399,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
-
               />
               </Route>
 
-
-              <Route path="/Level1Game2">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
-              <Level1Game2
-              // main
+              <Route path={game1_random1}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game1Random1// main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -5151,14 +5431,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -5168,6 +5453,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -5330,20 +5638,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
-
               />
               </Route>
 
-              <Route path="/Game1MoreGame2">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
-              <Game1MoreGame2
-              // main
+              <Route path={game1_random2}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game1Random2// main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -5363,14 +5670,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -5380,6 +5692,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -5542,12 +5877,728 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
+              />
+              </Route>
+
+              <Route path={game1_random3}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game1Random3// main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+              />
+              </Route>
+// Game 1 End
+// Game 2 Start
+              <Route path={game2_level_1}>
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Level1Game2// main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
               />
               </Route>
 
-              <Route path="/Level2Game2">
+              <Route path={game2_level_1_more}>
+              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <Game1MoreGame2// main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+              />
+              </Route>
+
+              <Route path={game2_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game2
               // main
@@ -5556,6 +6607,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -5575,14 +6628,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -5592,6 +6650,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -5754,12 +6835,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
-
               />
               </Route>
 
-              <Route path="/Game2MoreGame2">
+              <Route path={game2_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame2
               // main
@@ -5768,6 +6847,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -5787,14 +6868,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -5804,6 +6890,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -5966,12 +7075,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
-
               />
               </Route>
 
-              <Route path="/Level3Game2">
+              <Route path={game2_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game2
               // main
@@ -5980,6 +7087,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -5999,14 +7108,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -6016,6 +7130,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -6178,12 +7315,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
-
-
               />
               </Route>
 
-              <Route path="/Level4Game2">
+              <Route path={game2_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game2
               // main
@@ -6192,6 +7327,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               wallet_for_google={wallet_for_google}
               ip={ip}
               partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
               // partner random 1
               player_loss_xyz_={player_loss_xyz_}
               result_loss_xyz_={result_loss_xyz_}
@@ -6211,14 +7348,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               VOLT_contract_xyz_={VOLT_contract_xyz_}
               game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
               game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
-
               CostToPlay_xyz_={CostToPlay_xyz_}
-
               RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
               RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
               RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
               MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
               VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
 
               accounts={accounts}
 
@@ -6228,6 +7370,29 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
               globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
               // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
               partnership_home={web3partnership_home}
               partnership_treasure_hunt_page={partnership_treasure_hunt_page}
               partnership_1={game2_level_1}
@@ -6390,10 +7555,730 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
+              />
+              </Route>
+
+              <Route path={game2_random1}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game2Random1
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
 
               />
               </Route>
+
+              <Route path={game2_random2}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game2Random2
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+              />
+              </Route>
+
+              <Route path={game2_random3}>
+              <MyNav {...props} onClick={() => Connection()}/>
+              <Game2Random3
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+              />
+              </Route>
+
+// End of native game
 
 // Example Partnership Starts
 
@@ -6406,6 +8291,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 wallet_for_google={wallet_for_google}
                 ip={ip}
                 partnerId_xyz={partnerId_xyz}
+
                 // partner random 1
                 player_loss_xyz_={player_loss_xyz_}
                 result_loss_xyz_={result_loss_xyz_}

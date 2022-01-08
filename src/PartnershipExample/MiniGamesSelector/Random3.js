@@ -89,8 +89,6 @@ function useWindowSize() {
 
 const Random3 = (props) => {
 
-
-
   window.dataLayer.push({
     event: "wallet_information",
     wallet: props.wallet_for_google,
@@ -112,7 +110,6 @@ const Random3 = (props) => {
   const commaNumber = require('comma-number')
   const { width, height } = useWindowSize();
 
-
   const game2_prize = commaNumber(props.game2_prize,',');
 
   const winner = props.treasure_found2;
@@ -127,7 +124,6 @@ const Random3 = (props) => {
   const [start,setStart] = useState(false)
   const [bye,setBye] = useState(false)
   const [doexplode,setExplode] = useState(false)
-
 
   const handleBye = async() => {
     setBye(true)
@@ -153,13 +149,12 @@ const Random3 = (props) => {
       }
   })
 
-
     return (
 
       <div style={{height: height*4}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Lucky Rescue</title>
+        <title>TreasureBlox | On Chain Metaverse Game</title>
       </Helmet>
       <div>
 
@@ -181,7 +176,7 @@ const Random3 = (props) => {
       />
 
 
-      {props.playLevel2Game1?(
+      {props.playRandom3?(
         <div>
         <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
         </div>

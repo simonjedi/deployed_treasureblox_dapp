@@ -619,9 +619,9 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
 
     return (
 <div className="background">
-      <div style={{height: height}} id="top" className="spaceTopHome">
+      <div style={{height: height*5}} id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | Play 2 Earn - Elon's Lost Hus Rocket</title>
       </Helmet>
       <div>
 

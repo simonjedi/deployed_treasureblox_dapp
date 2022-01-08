@@ -122,8 +122,10 @@ class Board extends Component {
 
 
         <div className='Board-title d-none d-lg-block'>
+        <center>
           <div className='neon-orange '>Blox</div>
           <div className='neon-blue '> Lights Out</div>
+          </center>
         </div>
         <br/><br/>
         <div className="siteTitle">Simply turn out the lights!</div>

@@ -108,10 +108,10 @@ const Level1Game2 = (props) => {
 
 
     return (
-<div className="background">
+<div style={{height: height*5}} className="background">
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | Fort Blox Metaverse Play 2 Earn Game</title>
       </Helmet>
       <div>
 

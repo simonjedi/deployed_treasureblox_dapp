@@ -54,8 +54,7 @@ for (var i  = 0; i < props.game2LeaderBoardTries.length; i++){
   total  += parseInt(props.game2LeaderBoardTries[i]);
 
 }
-console.log(total,"meeeeeee")
-console.log(props.game2LeaderBoardTries,"meeeeeee")
+
 
 
   let zipped = props.game2LeaderBoardIndex.map((x, i) => [x, props.game2LeaderBoardUsername[i],props.game2LeaderBoardStage[i],props.game2LeaderBoardTries[i]]);

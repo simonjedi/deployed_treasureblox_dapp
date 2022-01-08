@@ -73,7 +73,8 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      const result2 = await contract.methods.headStartTimeLock(username,props.allGame2_id).send({from: accounts});
+      const result2 = await props.MAIN_GAME_contract_treasurebloxNative_.methods.headStartTimeLock(props.partnerId_treasurebloxNative,username,props.allGame2_id).send({from: accounts});
+
 
       console.log("RESULT:", result2.from);
 
@@ -116,7 +117,8 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      const quest = await props.MAIN_GAME_contract_partnerId_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame2_id).send({from: props.accounts[0]});
+
       setplayLevel1Game2(true)
       setredirectLevel1(true)
 
@@ -137,7 +139,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      const quest = await props.MAIN_GAME_contract_partnerId_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame2_id).send({from: props.accounts[0]});
       setplayLevel2Game2(true)
       setredirectLevel2(true)
 
@@ -158,7 +160,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       });
 
       setloading(true);
-      // const quest = await contract.methods.makePaymentPlayQuest(props.allGame2_id).send({from: accounts});
+      const quest = await props.MAIN_GAME_contract_partnerId_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame2_id).send({from: props.accounts[0]});
       setplayLevel3Game2(true)
       setredirectLevel3(true)
 
@@ -459,18 +461,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                             />
                             <br/>
                             <div className="descriptionTitle">YOU HAVE ENTERED - LEVEL 3</div>
-                            <div>
                             <div className="MiniGameDetails">
 
-                            Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 50 points!
-
-
+                            Solve the final riddle to win!
 
                             </div>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play For Clue</Button>
 
-                            </div>
                             <br/>
+
                             <div className="gameTitleEnter">Use Time Lock Now!</div>
                             <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                             </div>
@@ -490,10 +488,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                         <br/>
                         <div className="descriptionTitle">Congratulations Explorer</div>
                         <div className="descriptionTitle">FINAL STAGE!</div>
-                        <div>
-                        <Button className="customButton" onClick={handlePayQuest4}>Play For Clue</Button>
+                        <div className="MiniGameDetails">
+
+                        Solve the final riddle to win!
+
                         </div>
+
                         <br/>
+
                         <div className="gameTitleEnter">Use Time Lock Now!</div>
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>

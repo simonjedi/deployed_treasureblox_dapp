@@ -21,9 +21,6 @@ import lift_off from "./assets/images/lift_off_game_banner.png";
 import rescue from "./assets/images/emergency_landing.png";
 
 
-
-
-
 import blox_loading from './GamesSelection/BloxEscape/assets/Blox.gif';
 import waiting from './assets/Sounds/waiting.wav';
 import ReactAudioPlayer from 'react-audio-player';
@@ -109,10 +106,13 @@ const PartnershipHunt1 = (props) => {
   const [redirectLevel4,setredirectLevel4] = useState(false);
 
   const [redirectRandom1,setRedirectRandom1] = useState(false);
+  const [playRandom1,setplayRandom1] = useState(false);
+
   const [redirectRandom2,setRedirectRandom2] = useState(false);
+  const [playRandom2,setplayRandom2] = useState(false);
+
   const [redirectRandom3,setRedirectRandom3] = useState(false);
-
-
+  const [playRandom3,setplayRandom3] = useState(false);
 
 
   const handlePayQuest = async() => {
@@ -213,6 +213,7 @@ const PartnershipHunt1 = (props) => {
       // window.scrollTo({top: 0, behavior: 'smooth'})
 
       setloading(true);
+      setplayRandom1(true);
       setRedirectRandom1(true);
 
       setTimeout(function(){
@@ -223,6 +224,7 @@ const PartnershipHunt1 = (props) => {
     const handleRandomFunc = async() => {
       window.scrollTo({top: 0})
       setloading(true);
+      setplayRandom2(true);
       setRedirectRandom2(true);
 
       setTimeout(function(){
@@ -235,6 +237,7 @@ const PartnershipHunt1 = (props) => {
       // window.scrollTo({top: 0, behavior: 'smooth'})
 
       setloading(true);
+      setplayRandom3(true);
       setRedirectRandom3(true);
 
       setTimeout(function(){
@@ -336,7 +339,6 @@ const handleSubmitEnterDave = async() => {
 
   setloading2(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-
   await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.0000002", 'ether')});
 
 
@@ -375,7 +377,7 @@ const handleSubmitEnterDave = async() => {
       {redirectRandom1?(
         <div>
 
-        <Redirect to="/Random1/:top" {...props}/>
+        <Redirect to={props.partnership_random1} {...props}/>
         </div>
 
       ):(
@@ -398,7 +400,7 @@ const handleSubmitEnterDave = async() => {
       {redirectRandom2?(
         <div>
 
-        <Redirect to="/Random2/:top" {...props}/>
+        <Redirect to={props.partnership_random2} {...props}/>
         </div>
 
       ):(
@@ -410,7 +412,7 @@ const handleSubmitEnterDave = async() => {
       {redirectRandom3?(
         <div>
 
-        <Redirect to="/Random3/:top" {...props}/>
+        <Redirect to={props.partnership_random3} {...props}/>
         </div>
 
       ):(
@@ -445,7 +447,7 @@ const handleSubmitEnterDave = async() => {
 
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Partner Hunt</title>
+        <title>TreasureBlox | TreasureBlox X Jetfuel</title>
 
       </Helmet>
       {winner? (

@@ -355,1203 +355,2422 @@ const handleSubmitEnterDave = async() => {
 
   // const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
-
     return (
+<div>
+{props.is_meter?(
+  <div id="top" style={{height: height*5}} className="custombackgroundmeter">
 
 
-      <div id="top" style={{height: height*5}} className="custombackground">
+
+  {redirectLevel1?(
+    <div>
+    <Redirect to={props.partnership_1} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom1?(
+    <div>
+
+    <Redirect to={props.partnership_random1} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectLevel2?(
+    <div>
+    <Redirect to={props.partnership_2} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom2?(
+    <div>
+
+    <Redirect to={props.partnership_random2} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom3?(
+    <div>
+
+    <Redirect to={props.partnership_random3} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
 
 
+  {redirectLevel3?(
+    <div>
+    <Redirect to={props.partnership_3} {...props}/>
+    </div>
 
-      {redirectLevel1?(
-        <div>
-        <Redirect to={props.partnership_1} {...props}/>
-        </div>
+  ):(
+    <div>
 
-      ):(
-        <div>
+    </div>
+  )}
 
-        </div>
-      )}
+  {redirectLevel4?(
+    <div>
+    <Redirect to={props.partnership_4} {...props}/>
+    </div>
 
-      {redirectRandom1?(
-        <div>
+  ):(
+    <div>
 
-        <Redirect to={props.partnership_random1} {...props}/>
-        </div>
-
-      ):(
-        <div>
-
-        </div>
-      )}
-
-      {redirectLevel2?(
-        <div>
-        <Redirect to={props.partnership_2} {...props}/>
-        </div>
-
-      ):(
-        <div>
-
-        </div>
-      )}
-
-      {redirectRandom2?(
-        <div>
-
-        <Redirect to={props.partnership_random2} {...props}/>
-        </div>
-
-      ):(
-        <div>
-
-        </div>
-      )}
-
-      {redirectRandom3?(
-        <div>
-
-        <Redirect to={props.partnership_random3} {...props}/>
-        </div>
-
-      ):(
-        <div>
-
-        </div>
-      )}
+    </div>
+  )}
 
 
-      {redirectLevel3?(
-        <div>
-        <Redirect to={props.partnership_3} {...props}/>
-        </div>
+  <div id="top" className="spaceTopHome">
+  <Helmet>
+    <title>TreasureBlox | TreasureBlox X Jetfuel</title>
 
-      ):(
-        <div>
+  </Helmet>
+  {winner? (
+    <div><Confetti
+      width={width}
+      height={height}
+      numberOfPieces={300}
 
-        </div>
-      )}
+      drawShape={ctx => {
+        ctx.beginPath();
+        for (var i = 0; i < 6; i++) {
+          ctx.lineTo(10 + 20 * Math.cos(2 * Math.PI / 6 * i), 10 + 20 * Math.sin(2 * Math.PI / 6 * i));
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }}
+    />
 
-      {redirectLevel4?(
-        <div>
-        <Redirect to={props.partnership_4} {...props}/>
-        </div>
+    </div>
 
-      ):(
-        <div>
+  ):(
+    <div>
 
-        </div>
-      )}
+    </div>
+  )}
 
-
-      <div id="top" className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | TreasureBlox X Jetfuel</title>
-
-      </Helmet>
-      {winner? (
-        <div><Confetti
-          width={width}
-          height={height}
-	        numberOfPieces={300}
-
-          drawShape={ctx => {
-            ctx.beginPath();
-            for (var i = 0; i < 6; i++) {
-              ctx.lineTo(10 + 20 * Math.cos(2 * Math.PI / 6 * i), 10 + 20 * Math.sin(2 * Math.PI / 6 * i));
-            }
-            ctx.closePath();
-            ctx.stroke();
-          }}
-        />
-
-        </div>
-
-      ):(
-        <div>
-
-        </div>
-      )}
-
-      <div>
+  <div>
 
 
-      {(counter >= 0)?(
-        <div>
+  {(counter >= 0)?(
+    <div>
 
-        <Container className='mt-5' fluid="md">
+    <Container className='mt-5' fluid="md">
+          <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+          <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+          <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
 
-              <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
-              <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+          <Container className='mt-5' fluid="md">
 
-              <Container className='mt-5' fluid="md">
+          <Row>
+            <Col sm={6}>
 
-              <Row>
-                <Col sm={6}>
+            <div className="StatsGameEnter">
 
-                <div className="StatsGameEnter">
-
-                <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPageLarge'/>
+            <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPageLarge'/>
 <br/>
 
-                {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
-                <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
-                <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
+            {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
+            <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
 
-                {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
-                  <div>
-                  {props.treasure_found1?(
-                    <div>
-                    <div className="siteTitle">WINNERS</div>
-                    </div>
-                  ):(
-                    <div>
-                    <center>
-                    <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
-                    </center>
-                    </div>
-                  )}
-                  </div>
-                ):(
-                  <div>
-                  </div>
-                )}
+            {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
+              <div>
+              {props.treasure_found1?(
+                <div>
+                <div className="siteTitle">WINNERS</div>
+                </div>
+              ):(
+                <div>
+                <center>
+                <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                </center>
+                </div>
+              )}
+              </div>
+            ):(
+              <div>
+              </div>
+            )}
 
 
-                </Col>
-                <Col sm={6}>
-                <div className="StatsGameEnter">
-                <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPageLarge'/>
-                <br/>
-                {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
-                <div className="siteTitle">Team Crypto Dave</div>
-                <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
+            </Col>
+            <Col sm={6}>
+            <div className="StatsGameEnter">
+            <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPageLarge'/>
+            <br/>
+            {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
+            <div className="siteTitle">Team Crypto Dave</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
 
-                {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
-                  <div>
-                  {props.treasure_found1?(
-                    <div>
+            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+              <div>
+              {props.treasure_found1?(
+                <div>
 
-                    <div className="siteTitle">WINNERS</div>
-                    </div>
-                  ):(
-                    <div>
-                    <center>
-                    <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
-                    </center>
-                    </div>
-                  )}
-                  </div>
-                ):(
-                  <div>
-                  </div>
-                )}
+                <div className="siteTitle">WINNERS</div>
+                </div>
+              ):(
+                <div>
+                <center>
+                <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                </center>
+                </div>
+              )}
+              </div>
+            ):(
+              <div>
+              </div>
+            )}
 
-                </Col>
+            </Col>
 
 
-              </Row>
+          </Row>
+
+          <br/>
+
+
+
+          <Tab.Container defaultActiveKey="Welcome">
+
+              <Nav justify variant="pills">
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="Welcome">Dashboard</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Luck Games</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Skill Games</Nav.Link>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-3">Prize Vault</Nav.Link>
+                </Nav.Item>
+
+
+              </Nav>
 
               <br/>
 
-
-
-              <Tab.Container defaultActiveKey="Welcome">
-
-                  <Nav justify variant="pills">
-                    <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab" eventKey="Welcome">Dashboard</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Luck Games</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Skill Games</Nav.Link>
-                    </Nav.Item>
-
-                    <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab" eventKey="link-3">Prize Vault</Nav.Link>
-                    </Nav.Item>
-
-
-                  </Nav>
-
-                  <br/>
-
-                    <Tab.Content>
-                      <Tab.Pane eventKey="Welcome" >
-
-                        <Tab.Container defaultActiveKey="first">
-
-                            <Nav justify variant="pills">
-                              <Nav.Item>
-                                <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
-                              </Nav.Item>
-
-                            </Nav>
-
-                            <br/>
-
-                              <Tab.Content>
-                                <Tab.Pane eventKey="first" >
-                                <Row>
-
-                                <Col sm={12}>
-
-                                <ListGroup className='cardRounded border border-danger' as="ul">
-
-                                  <ListGroup.Item as="li" className="customEnterTeam">
-                                  <Row>
-
-
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  #
-                                  </Col>
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  Team
-                                  </Col>
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  Average Points Per Player (PPP) To Win
-                                  </Col>
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  Current Members
-                                  </Col>
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  Points Required To Win!
-                                  </Col>
-
-                                  <Col className="MiniGameTitleEnter" sm={2}>
-                                  Join A Team
-                                  </Col>
-
-                                  </Row>
-
-
-
-                                  </ListGroup.Item>
-                                  <ListGroup.Item as="li">
-                                  <Row >
-                                  <Col className="MiniGameEnter"  sm={2}>
-                                  <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
-                                  </Col>
-                                  <Col className="MiniGameEnter"  sm={2}>
-                                  Team Troy
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team1_xyz_ppp}
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team1_xyz_team_entries}
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
-                                  </Col>
-
-                                  <Col className="MiniGameEnter" sm={2}>
-
-                                  {loading?(
-                                    <div>
-                                    <img
-                                      alt="Blox Loading"
-                                      src={blox_loading}
-                                      width="75"
-                                      className="d-inline-block align-middle"
-                                    />
-                                    <ReactAudioPlayer
-                                      src={waiting}
-                                      autoPlay
-                                    />
-                                    </div>
-                                  ):(
-                                    <div>
-                                    {(props.state_leaderboardAddressSearch_team_game1==1)?(
-                                    <div>
-                                    Entered
-                                    </div>
-                                  ):(
-                                    <div>
-                                    <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
-                                    </div>
-                                  )}
-
-                                    </div>
-                                  )}
-                                  </Col>
-
-                                  </Row>
-                                  </ListGroup.Item>
-
-                                  <ListGroup.Item as="li">
-                                  <Row>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  Crypto Dave
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team2_xyz_ppp}
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team2_xyz_team_entries}
-                                  </Col>
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
-                                  </Col>
-
-                                  <Col className="MiniGameEnter" sm={2}>
-                                  {loading2?(
-                                    <div>
-                                    <img
-                                      alt="Blox Loading"
-                                      src={blox_loading}
-                                      width="75"
-                                      className="d-inline-block align-middle"
-                                    />
-                                    <ReactAudioPlayer
-                                      src={waiting}
-                                      autoPlay
-                                    />
-                                    </div>
-                                  ):(
-                                    <div>
-                                    {(props.state_leaderboardAddressSearch_team_game1==2)?(
-                                    <div>
-                                    Entered
-                                    </div>
-                                  ):(
-                                    <div>
-                                    <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
-                                    </div>
-                                  )}
-
-                                    </div>
-                                  )}
-
-                                  </Col>
-
-                                  </Row>
-                                  </ListGroup.Item>
-
-                                </ListGroup>
-
-                                </Col>
-
-                                </Row>
-
-                                <Row>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter">Team Vs Team?</div>
-                                  <div className="siteTitle">Winning team takes all</div>
-                                  <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
-
-
-                                  </Col>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter">{counter}/200</div>
-                                  <div className="siteTitle">Explorers Entered</div>
-                                  <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
-
-
-                                  </Col>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
-                                  <div className="siteTitle">Entry Cost</div>
-                                  <div className="StatsGameEnterSmallSub">Select a team to join</div>
-                                  </Col>
-
-                                </Row>
-
-                                <br/>
-                                <Row>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter">4 Levels</div>
-                                  <div className="siteTitle">Complete Levels gain points</div>
-                                  <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
-
-
-                                  </Col>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter blink_me2">$20,000</div>
-                                  <div className="siteTitle">Starting Prize</div>
-                                  <div className="StatsGameEnterSmallSub">Prize increases during game</div>
-
-
-
-                                  </Col>
-                                  <Col sm={4}>
-                                  <div className="StatsGameEnter">P2E</div>
-                                  <div className="siteTitle">Gain points for playing</div>
-                                  <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
-
-                                  </Col>
-
-
-                                </Row>
-
-                                <br/>
-
-                                </Tab.Pane>
-                                <Tab.Pane eventKey="link-1">
-                                <Card className='customRoundedOne border border-danger'>
-
-                                    <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
-                                    </Card.Header>
-                                    <Card.Body >
-                                    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-
-                          <Row>
-                            <Col sm={3}>
-                              <Nav variant="pills" className="flex-column">
-                                <Nav.Item>
-                                  <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                  <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                  <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                  <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                  <Nav.Link eventKey="fith">P2E</Nav.Link>
-                                </Nav.Item>
-
-
-
-                              </Nav>
-                            </Col>
-                            <Col sm={9}>
-                              <Tab.Content>
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                                Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
-
-                                The treasure hunt will start when the number of 'explorers entered' reaches it's target.
-                                </Tab.Pane>
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                                A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
-                                </Tab.Pane>
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                                A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
-                                </Tab.Pane>
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                                When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
-                                </Tab.Pane>
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                                  30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
-                                </Tab.Pane>
-
-                                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
-                                  Each step requires a seperate transaction.
-                                </Tab.Pane>
-
-                              </Tab.Content>
-                            </Col>
-                          </Row>
-                        </Tab.Container>
-
-
-                                    <br />
-
-                                  </Card.Body>
-                                </Card>
-
-
-                                </Tab.Pane>
-
-
-
-                              </Tab.Content>
-
-
-                        </Tab.Container>
-
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="link-1" >
-
-                        <CardGroup className='mt-5'>
-
-                        {(props.userEntered_game1) ?(
-                          <div >
-                          <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
-                          <br/>
-                          <Row>
-
-                          <Col sm={4}>
-
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Lift Off - Easy!
-
-                              </Card.Header>
-
-
-                              <Card.Header className="MiniGameTitle">1 in 4 chance to win!
-                              <br />2X Play Cost Token Return
-                            <br />15 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
-                              <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_xyz_} Wings
-
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
-
-
-                              <footer className="blockquote">
-
-
-                              </footer>
-                              <br />
-
-
-
-
-                            </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
-
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">1 in 6 chance to win!
-                              <br />3X Play Cost Token Return
-                            <br />30 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-                              </Card.Header>
-
-                              <br/>
-
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_xyz_} Wings
-                              <br/>
-
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
-
-
-                              <footer className="blockquote">
-
-                              </footer>
-                              <br />
-
-
-
-
-                            </Card.Body>
-                          </Card>
-                            <br className="d-lg-none"/>
-                            <br className="d-lg-none"/>
-
-                          </Col>
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
-
-                          <Card.Body className="customBodyMiniGame">
-                            <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
-
-                            </Card.Header>
-                            <Card.Header className="MiniGameTitle">1 in 20 chance to win!
-                            <br />5X Play Cost Token Return
-                          <br />100 game points
-                          <br />level up + 1
-                        <br />2 points for loss<br />
-                            </Card.Header>
-
-                            <br/>
-                            <div className="MiniGameDetails">
-
-                            Cost to play {props.CostToPlay_xyz_} Wings
-
-                            </div>
-                            <br/>
-                            <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
-
-
-
-                            <footer className="blockquote">
-
-                            </footer>
-
-                            <br />
-
-
-                          </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
-
-
-                          </Row>
-
-                            <br/>
-                            <div className="MiniGameDetails">
-
-                            Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
-                            <br/><br/>
-                            The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
-
-                            </div>
-                            <br/><br/>
-
-
-                          </div>
-                        ):(
-                          <div style={{height: height}}>
-
-
-
-                          </div>
-                        )}
+                <Tab.Content>
+                  <Tab.Pane eventKey="Welcome" >
+
+                    <Tab.Container defaultActiveKey="first">
+
+                        <Nav justify variant="pills">
+                          <Nav.Item>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
+                          </Nav.Item>
+
+                        </Nav>
 
                         <br/>
 
+                          <Tab.Content>
+                            <Tab.Pane eventKey="first" >
+                            <Row>
+
+                            <Col sm={12}>
+
+                            <ListGroup className='cardRounded border border-danger' as="ul">
+
+                              <ListGroup.Item as="li" className="customEnterTeam">
+                              <Row>
+
+
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              #
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Team
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Average Points Per Player (PPP) To Win
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Current Members
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Points Required To Win!
+                              </Col>
+
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Join A Team
+                              </Col>
+
+                              </Row>
 
 
 
+                              </ListGroup.Item>
+                              <ListGroup.Item as="li">
+                              <Row >
+                              <Col className="MiniGameEnter"  sm={2}>
+                              <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
+                              </Col>
+                              <Col className="MiniGameEnter"  sm={2}>
+                              Team Troy
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_ppp}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_team_entries}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+                              </Col>
+
+                              <Col className="MiniGameEnter" sm={2}>
+
+                              {loading?(
+                                <div>
+                                <img
+                                  alt="Blox Loading"
+                                  src={blox_loading}
+                                  width="75"
+                                  className="d-inline-block align-middle"
+                                />
+                                <ReactAudioPlayer
+                                  src={waiting}
+                                  autoPlay
+                                />
+                                </div>
+                              ):(
+                                <div>
+                                {(props.state_leaderboardAddressSearch_team_game1==1)?(
+                                <div>
+                                Entered
+                                </div>
+                              ):(
+                                <div>
+                                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                                </div>
+                              )}
+
+                                </div>
+                              )}
+                              </Col>
+
+                              </Row>
+                              </ListGroup.Item>
+
+                              <ListGroup.Item as="li">
+                              <Row>
+                              <Col className="MiniGameEnter" sm={2}>
+                              <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              Crypto Dave
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_ppp}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_team_entries}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+                              </Col>
+
+                              <Col className="MiniGameEnter" sm={2}>
+                              {loading2?(
+                                <div>
+                                <img
+                                  alt="Blox Loading"
+                                  src={blox_loading}
+                                  width="75"
+                                  className="d-inline-block align-middle"
+                                />
+                                <ReactAudioPlayer
+                                  src={waiting}
+                                  autoPlay
+                                />
+                                </div>
+                              ):(
+                                <div>
+                                {(props.state_leaderboardAddressSearch_team_game1==2)?(
+                                <div>
+                                Entered
+                                </div>
+                              ):(
+                                <div>
+                                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                                </div>
+                              )}
+
+                                </div>
+                              )}
+
+                              </Col>
+
+                              </Row>
+                              </ListGroup.Item>
+
+                            </ListGroup>
+
+                            </Col>
+
+                            </Row>
+
+                            <Row>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">Team Vs Team?</div>
+                              <div className="siteTitle">Winning team takes all</div>
+                              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
 
 
-                        </CardGroup>
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">{counter}/200</div>
+                              <div className="siteTitle">Explorers Entered</div>
+                              <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
-                      </Tab.Pane>
 
-                      <Tab.Pane eventKey="link-2">
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                              <div className="siteTitle">Entry Cost</div>
+                              <div className="StatsGameEnterSmallSub">Select a team to join</div>
+                              </Col>
 
-                        <CardGroup className='mt-5'>
+                            </Row>
 
-                        {(props.userEntered_game1) ?(
-                          <div >
+                            <br/>
+                            <Row>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">4 Levels</div>
+                              <div className="siteTitle">Complete Levels gain points</div>
+                              <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
 
-                          <div className="siteTitle">Complete the levels in order to find clues and submit them to the Vault tab above using a timelock!</div>
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter blink_me2">$20,000</div>
+                              <div className="siteTitle">Starting Prize</div>
+                              <div className="StatsGameEnterSmallSub">Prize increases during game</div>
+
+
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">P2E</div>
+                              <div className="siteTitle">Gain points for playing</div>
+                              <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
+
+                              </Col>
+
+
+                            </Row>
+
+                            <br/>
+
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="link-1">
+                            <Card className='customRoundedOne border border-danger'>
+
+                                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                                </Card.Header>
+                                <Card.Body >
+                                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+
+                      <Row>
+                        <Col sm={3}>
+                          <Nav variant="pills" className="flex-column">
+                            <Nav.Item>
+                              <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="fith">P2E</Nav.Link>
+                            </Nav.Item>
+
+
+
+                          </Nav>
+                        </Col>
+                        <Col sm={9}>
+                          <Tab.Content>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
+                            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+
+                            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
+                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
+                            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
+                            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                            </Tab.Pane>
+
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
+                              Each step requires a seperate transaction.
+                            </Tab.Pane>
+
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+
+
+                                <br />
+
+                              </Card.Body>
+                            </Card>
+
+
+                            </Tab.Pane>
+
+
+
+                          </Tab.Content>
+
+
+                    </Tab.Container>
+
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="link-1" >
+
+                    <CardGroup className='mt-5'>
+
+                    {true ?(
+                      <div >
+                      <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
+                      <br/>
+                      <Row>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Lift Off - Easy!
+
+                          </Card.Header>
+
+
+                          <Card.Header className="MiniGameTitle">1 in 4 chance to win!
+                          <br />2X Play Cost Token Return
+                        <br />15 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
                           <br/>
-                          <Row>
+                          <div className="MiniGameDetails">
 
-                          <Col sm={4}>
+                          Cost to play {props.CostToPlay_xyz_} Wings
 
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
-                            <br />30 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
-                              <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_xyz_} Wings
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
 
 
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+                          <footer className="blockquote">
 
 
-                              <footer className="blockquote">
-                              </footer>
-
-                              <br />
-
-
-                            </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
-
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
-                            <br />60 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
-                              <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_xyz_} Wings
-
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
-
-
-                              <footer className="blockquote">
-                              </footer>
-
-                              <br />
-
-
-                            </Card.Body>
-                          </Card>
-                            <br className="d-lg-none"/>
-                            <br className="d-lg-none"/>
-
-                          </Col>
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
-
-                          <Card.Body className="customBodyMiniGame">
-                            <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
-
-                            </Card.Header>
-
-
-                            <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
-                          <br />90 game points
-                          <br />level up + 1
-                          <br />2 points for loss<br />
-
-                            </Card.Header>
-                            <br/>
-                            <div className="MiniGameDetails">
-
-                            Cost to play {props.CostToPlay_xyz_} Wings
-
-                            </div>
-                            <br/>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+                          </footer>
+                          <br />
 
 
 
 
-                            <footer className="blockquote">
-                            </footer>
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
 
-                            <br />
+                      <Col sm={4}>
 
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
 
-                          </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
 
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">1 in 6 chance to win!
+                          <br />3X Play Cost Token Return
+                        <br />30 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+                          </Card.Header>
 
-                          </Row>
+                          <br/>
 
                           <div className="MiniGameDetails">
-<br/>
-                          Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
-                          Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
-                          </div>
 
+                          Cost to play {props.CostToPlay_xyz_} Wings
                           <br/>
 
-
                           </div>
-                        ):(
-                          <div style={{height: height}}>
+                          <br/>
+                          <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
+
+
+                          <footer className="blockquote">
+
+                          </footer>
+                          <br />
 
 
 
-                          </div>
-                        )}
+
+                        </Card.Body>
+                      </Card>
+                        <br className="d-lg-none"/>
+                        <br className="d-lg-none"/>
+
+                      </Col>
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
+
+                        </Card.Header>
+                        <Card.Header className="MiniGameTitle">1 in 20 chance to win!
+                        <br />5X Play Cost Token Return
+                      <br />100 game points
+                      <br />level up + 1
+                    <br />2 points for loss<br />
+                        </Card.Header>
 
                         <br/>
+                        <div className="MiniGameDetails">
+
+                        Cost to play {props.CostToPlay_xyz_} Wings
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
+
+
+
+                        <footer className="blockquote">
+
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      </Row>
+
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                        <br/><br/>
+                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+
+                        </div>
+                        <br/><br/>
+
+
+                      </div>
+                    ):(
+                      <div style={{height: height}}>
+
+
+
+                      </div>
+                    )}
+
+                    <br/>
 
 
 
 
 
 
-                        </CardGroup>
+                    </CardGroup>
 
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="link-3">
+                  </Tab.Pane>
 
-                        <CardGroup className='mt-5' fluid="md">
+                  <Tab.Pane eventKey="link-2">
 
-                        <Row>
-                        <Col sm={4}>
+                    <CardGroup className='mt-5'>
 
-                        <EnterHuntCards {...props}/>
+                    {true ?(
+                      <div >
+
+                      <div className="siteTitle">Complete the levels in order to find clues and submit them to the Vault tab above using a timelock!</div>
+                      <br/>
+                      <Row>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
+                        <br />30 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
+                        <br />60 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
+
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
                         <br className="d-lg-none"/>
                         <br className="d-lg-none"/>
 
-                        </Col>
+                      </Col>
+                      <Col sm={4}>
 
-                        <Col sm={8}>
-                        <LeaderBoardCard {...props}/>
-                        <br className="d-lg-none"/>
-                        <br className="d-lg-none"/>
-                        </Col>
-                        </Row>
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
 
-                        </CardGroup>
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
 
-                      </Tab.Pane>
+                        </Card.Header>
 
 
+                        <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
+                      <br />90 game points
+                      <br />level up + 1
+                      <br />2 points for loss<br />
+
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Cost to play {props.CostToPlay_xyz_} Wings
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
 
 
-                    </Tab.Content>
 
 
-              </Tab.Container>
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
 
 
-              </Container>
+                      </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      </Row>
+
+                      <div className="MiniGameDetails">
+<br/>
+                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
+                      Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
+                      </div>
+
+                      <br/>
+
+
+                      </div>
+                    ):(
+                      <div style={{height: height}}>
 
 
 
-              <br/>
+                      </div>
+                    )}
+
+                    <br/>
 
 
 
+
+
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="link-3">
+
+                    <CardGroup className='mt-5' fluid="md">
+
+                    <Row>
+                    <Col sm={4}>
+
+                    <EnterHuntCards {...props}/>
+                    <br className="d-lg-none"/>
+                    <br className="d-lg-none"/>
+
+                    </Col>
+
+                    <Col sm={8}>
+                    <LeaderBoardCard {...props}/>
+                    <br className="d-lg-none"/>
+                    <br className="d-lg-none"/>
+                    </Col>
+                    </Row>
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+
+
+
+
+                </Tab.Content>
+
+
+          </Tab.Container>
 
 
           </Container>
 
 
 
-        </div>
-      ):(
-        <div style={{height: height}}>
-        <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
-        <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
+          <br/>
 
-        <Container className='mt-5' fluid="md">
-        <Tab.Container defaultActiveKey="first">
 
-            <Nav justify variant="pills">
-              <Nav.Item>
-                <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
-              </Nav.Item>
 
-            </Nav>
+
+
+      </Container>
+
+
+
+    </div>
+  ):(
+    <div style={{height: height}}>
+    <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+    <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
+
+    <Container className='mt-5' fluid="md">
+    <Tab.Container defaultActiveKey="first">
+
+        <Nav justify variant="pills">
+          <Nav.Item>
+            <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
+          </Nav.Item>
+
+        </Nav>
+
+        <br/>
+
+          <Tab.Content>
+            <Tab.Pane eventKey="first" >
+            <Row>
+
+            <Col sm={12}>
+
+            <ListGroup className='cardRounded border border-danger' as="ul">
+
+              <ListGroup.Item as="li" className="customEnterTeam">
+              <Row>
+
+
+              <Col className="MiniGameTitleEnter" sm={2}>
+              #
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Team
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Average Points Per Player (PPP) To Win
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Current Members
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Points Required To Win!
+              </Col>
+
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Join A Team
+              </Col>
+
+              </Row>
+
+
+
+              </ListGroup.Item>
+              <ListGroup.Item as="li">
+              <Row >
+              <Col className="MiniGameEnter"  sm={2}>
+              <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
+              </Col>
+              <Col className="MiniGameEnter"  sm={2}>
+              Team Troy
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_ppp}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_team_entries}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+              </Col>
+
+              <Col className="MiniGameEnter" sm={2}>
+
+              {loading?(
+                <div>
+                <img
+                  alt="Blox Loading"
+                  src={blox_loading}
+                  width="75"
+                  className="d-inline-block align-middle"
+                />
+                <ReactAudioPlayer
+                  src={waiting}
+                  autoPlay
+                />
+                </div>
+              ):(
+                <div>
+                {(props.state_leaderboardAddressSearch_team_game1==1)?(
+                <div>
+                Entered
+                </div>
+              ):(
+                <div>
+                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                </div>
+              )}
+
+                </div>
+              )}
+              </Col>
+
+              </Row>
+              </ListGroup.Item>
+
+              <ListGroup.Item as="li">
+              <Row>
+              <Col className="MiniGameEnter" sm={2}>
+              <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              Crypto Dave
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_ppp}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_team_entries}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+              </Col>
+
+              <Col className="MiniGameEnter" sm={2}>
+              {loading?(
+                <div>
+                <img
+                  alt="Blox Loading"
+                  src={blox_loading}
+                  width="75"
+                  className="d-inline-block align-middle"
+                />
+                <ReactAudioPlayer
+                  src={waiting}
+                  autoPlay
+                />
+                </div>
+              ):(
+                <div>
+                {(props.state_leaderboardAddressSearch_team_game1==2)?(
+                <div>
+                Entered
+                </div>
+              ):(
+                <div>
+                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                </div>
+              )}
+
+                </div>
+              )}
+
+              </Col>
+
+              </Row>
+              </ListGroup.Item>
+
+            </ListGroup>
+
+            </Col>
+
+            </Row>
+
+            <Row>
+              <Col sm={4}>
+              <div className="StatsGameEnter">Team Vs Team?</div>
+              <div className="siteTitle">Winning team takes all</div>
+              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+
+
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">{counter}/200</div>
+              <div className="siteTitle">Explorers Entered</div>
+              <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
+
+
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+              <div className="siteTitle">Entry Cost</div>
+              <div className="StatsGameEnterSmallSub">Select a team to join</div>
+              </Col>
+
+            </Row>
+
+            <br/>
+            <Row>
+              <Col sm={4}>
+              <div className="StatsGameEnter">4 Levels</div>
+              <div className="siteTitle">Complete Levels gain points</div>
+              <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
+
+
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter blink_me2">$20,000</div>
+              <div className="siteTitle">Starting Prize</div>
+              <div className="StatsGameEnterSmallSub">Prize increases during game</div>
+
+
+
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">P2E</div>
+              <div className="siteTitle">Gain points for playing</div>
+              <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
+
+              </Col>
+
+
+            </Row>
 
             <br/>
 
-              <Tab.Content>
-                <Tab.Pane eventKey="first" >
-                <Row>
+            </Tab.Pane>
+            <Tab.Pane eventKey="link-1">
+            <Card className='customRoundedOne border border-danger'>
 
-                <Col sm={12}>
+                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                </Card.Header>
+                <Card.Body >
+                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
 
-                <ListGroup className='cardRounded border border-danger' as="ul">
-
-                  <ListGroup.Item as="li" className="customEnterTeam">
-                  <Row>
-
-
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  #
-                  </Col>
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  Team
-                  </Col>
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  Average Points Per Player (PPP) To Win
-                  </Col>
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  Current Members
-                  </Col>
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  Points Required To Win!
-                  </Col>
-
-                  <Col className="MiniGameTitleEnter" sm={2}>
-                  Join A Team
-                  </Col>
-
-                  </Row>
+      <Row>
+        <Col sm={3}>
+          <Nav variant="pills" className="flex-column">
+            <Nav.Item>
+              <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="fith">P2E</Nav.Link>
+            </Nav.Item>
 
 
 
-                  </ListGroup.Item>
-                  <ListGroup.Item as="li">
-                  <Row >
-                  <Col className="MiniGameEnter"  sm={2}>
-                  <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
-                  </Col>
-                  <Col className="MiniGameEnter"  sm={2}>
-                  Team Troy
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team1_xyz_ppp}
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team1_xyz_team_entries}
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
-                  </Col>
+          </Nav>
+        </Col>
+        <Col sm={9}>
+          <Tab.Content>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
+            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
 
-                  <Col className="MiniGameEnter" sm={2}>
+            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
+            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
+            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
+            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+            </Tab.Pane>
 
-                  {loading?(
-                    <div>
-                    <img
-                      alt="Blox Loading"
-                      src={blox_loading}
-                      width="75"
-                      className="d-inline-block align-middle"
-                    />
-                    <ReactAudioPlayer
-                      src={waiting}
-                      autoPlay
-                    />
-                    </div>
-                  ):(
-                    <div>
-                    {(props.state_leaderboardAddressSearch_team_game1==1)?(
-                    <div>
-                    Entered
-                    </div>
-                  ):(
-                    <div>
-                    <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
-                    </div>
-                  )}
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
+              Each step requires a seperate transaction.
+            </Tab.Pane>
 
-                    </div>
-                  )}
-                  </Col>
-
-                  </Row>
-                  </ListGroup.Item>
-
-                  <ListGroup.Item as="li">
-                  <Row>
-                  <Col className="MiniGameEnter" sm={2}>
-                  <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  Crypto Dave
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team2_xyz_ppp}
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team2_xyz_team_entries}
-                  </Col>
-                  <Col className="MiniGameEnter" sm={2}>
-                  {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
-                  </Col>
-
-                  <Col className="MiniGameEnter" sm={2}>
-                  {loading?(
-                    <div>
-                    <img
-                      alt="Blox Loading"
-                      src={blox_loading}
-                      width="75"
-                      className="d-inline-block align-middle"
-                    />
-                    <ReactAudioPlayer
-                      src={waiting}
-                      autoPlay
-                    />
-                    </div>
-                  ):(
-                    <div>
-                    {(props.state_leaderboardAddressSearch_team_game1==2)?(
-                    <div>
-                    Entered
-                    </div>
-                  ):(
-                    <div>
-                    <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
-                    </div>
-                  )}
-
-                    </div>
-                  )}
-
-                  </Col>
-
-                  </Row>
-                  </ListGroup.Item>
-
-                </ListGroup>
-
-                </Col>
-
-                </Row>
-
-                <Row>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter">Team Vs Team?</div>
-                  <div className="siteTitle">Winning team takes all</div>
-                  <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+          </Tab.Content>
+        </Col>
+      </Row>
+    </Tab.Container>
 
 
-                  </Col>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter">{counter}/200</div>
-                  <div className="siteTitle">Explorers Entered</div>
-                  <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
+                <br />
 
-
-                  </Col>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
-                  <div className="siteTitle">Entry Cost</div>
-                  <div className="StatsGameEnterSmallSub">Select a team to join</div>
-                  </Col>
-
-                </Row>
-
-                <br/>
-                <Row>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter">4 Levels</div>
-                  <div className="siteTitle">Complete Levels gain points</div>
-                  <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
-
-
-                  </Col>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter blink_me2">$20,000</div>
-                  <div className="siteTitle">Starting Prize</div>
-                  <div className="StatsGameEnterSmallSub">Prize increases during game</div>
+              </Card.Body>
+            </Card>
 
 
 
-                  </Col>
-                  <Col sm={4}>
-                  <div className="StatsGameEnter">P2E</div>
-                  <div className="siteTitle">Gain points for playing</div>
-                  <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
 
-                  </Col>
+            </Tab.Pane>
 
 
-                </Row>
 
-                <br/>
 
-                </Tab.Pane>
-                <Tab.Pane eventKey="link-1">
-                <Card className='customRoundedOne border border-danger'>
 
-                    <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
-                    </Card.Header>
-                    <Card.Body >
-                    <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+          </Tab.Content>
+
+
+
+
+    </Tab.Container>
+
+
+
+
+
+
+
+
+
+
+
+
+    </Container>
+    </div>
+  )}
+
+
+
+
+  </div>
+
+
+
+</div>
+
+  </div>
+):(
+  <div id="top" style={{height: height*5}} className="custombackground">
+
+
+
+  {redirectLevel1?(
+    <div>
+    <Redirect to={props.partnership_1} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom1?(
+    <div>
+
+    <Redirect to={props.partnership_random1} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectLevel2?(
+    <div>
+    <Redirect to={props.partnership_2} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom2?(
+    <div>
+
+    <Redirect to={props.partnership_random2} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectRandom3?(
+    <div>
+
+    <Redirect to={props.partnership_random3} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+
+  {redirectLevel3?(
+    <div>
+    <Redirect to={props.partnership_3} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  {redirectLevel4?(
+    <div>
+    <Redirect to={props.partnership_4} {...props}/>
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+
+  <div id="top" className="spaceTopHome">
+  <Helmet>
+    <title>TreasureBlox | TreasureBlox X Jetfuel</title>
+
+  </Helmet>
+  {winner? (
+    <div><Confetti
+      width={width}
+      height={height}
+      numberOfPieces={300}
+
+      drawShape={ctx => {
+        ctx.beginPath();
+        for (var i = 0; i < 6; i++) {
+          ctx.lineTo(10 + 20 * Math.cos(2 * Math.PI / 6 * i), 10 + 20 * Math.sin(2 * Math.PI / 6 * i));
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }}
+    />
+
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+  <div>
+
+
+  {(counter >= 0)?(
+    <div>
+
+    <Container className='mt-5' fluid="md">
+          <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+          <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+          <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+
+          <Container className='mt-5' fluid="md">
 
           <Row>
-            <Col sm={3}>
-              <Nav variant="pills" className="flex-column">
+            <Col sm={6}>
+
+            <div className="StatsGameEnter">
+
+            <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPageLarge'/>
+  <br/>
+
+            {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
+            <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
+
+
+            {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
+              <div>
+              {props.treasure_found1?(
+                <div>
+                <div className="siteTitle">WINNERS</div>
+                </div>
+              ):(
+                <div>
+                <center>
+                <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                </center>
+                </div>
+              )}
+              </div>
+            ):(
+              <div>
+              </div>
+            )}
+
+
+            </Col>
+            <Col sm={6}>
+            <div className="StatsGameEnter">
+            <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPageLarge'/>
+            <br/>
+            {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
+            <div className="siteTitle">Team Crypto Dave</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
+
+            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+              <div>
+              {props.treasure_found1?(
+                <div>
+
+                <div className="siteTitle">WINNERS</div>
+                </div>
+              ):(
+                <div>
+                <center>
+                <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                </center>
+                </div>
+              )}
+              </div>
+            ):(
+              <div>
+              </div>
+            )}
+
+            </Col>
+
+
+          </Row>
+
+          <br/>
+
+
+
+          <Tab.Container defaultActiveKey="Welcome">
+
+              <Nav justify variant="pills">
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="Welcome">Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
+                  <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Luck Games</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fith">P2E</Nav.Link>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Skill Games</Nav.Link>
                 </Nav.Item>
 
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-3">Prize Vault</Nav.Link>
+                </Nav.Item>
 
 
               </Nav>
+
+              <br/>
+
+                <Tab.Content>
+                  <Tab.Pane eventKey="Welcome" >
+
+                    <Tab.Container defaultActiveKey="first">
+
+                        <Nav justify variant="pills">
+                          <Nav.Item>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
+                          </Nav.Item>
+
+                        </Nav>
+
+                        <br/>
+
+                          <Tab.Content>
+                            <Tab.Pane eventKey="first" >
+                            <Row>
+
+                            <Col sm={12}>
+
+                            <ListGroup className='cardRounded border border-danger' as="ul">
+
+                              <ListGroup.Item as="li" className="customEnterTeam">
+                              <Row>
+
+
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              #
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Team
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Average Points Per Player (PPP) To Win
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Current Members
+                              </Col>
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Points Required To Win!
+                              </Col>
+
+                              <Col className="MiniGameTitleEnter" sm={2}>
+                              Join A Team
+                              </Col>
+
+                              </Row>
+
+
+
+                              </ListGroup.Item>
+                              <ListGroup.Item as="li">
+                              <Row >
+                              <Col className="MiniGameEnter"  sm={2}>
+                              <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
+                              </Col>
+                              <Col className="MiniGameEnter"  sm={2}>
+                              Team Troy
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_ppp}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_team_entries}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+                              </Col>
+
+                              <Col className="MiniGameEnter" sm={2}>
+
+                              {loading?(
+                                <div>
+                                <img
+                                  alt="Blox Loading"
+                                  src={blox_loading}
+                                  width="75"
+                                  className="d-inline-block align-middle"
+                                />
+                                <ReactAudioPlayer
+                                  src={waiting}
+                                  autoPlay
+                                />
+                                </div>
+                              ):(
+                                <div>
+                                {(props.state_leaderboardAddressSearch_team_game1==1)?(
+                                <div>
+                                Entered
+                                </div>
+                              ):(
+                                <div>
+                                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                                </div>
+                              )}
+
+                                </div>
+                              )}
+                              </Col>
+
+                              </Row>
+                              </ListGroup.Item>
+
+                              <ListGroup.Item as="li">
+                              <Row>
+                              <Col className="MiniGameEnter" sm={2}>
+                              <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              Crypto Dave
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_ppp}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_team_entries}
+                              </Col>
+                              <Col className="MiniGameEnter" sm={2}>
+                              {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+                              </Col>
+
+                              <Col className="MiniGameEnter" sm={2}>
+                              {loading2?(
+                                <div>
+                                <img
+                                  alt="Blox Loading"
+                                  src={blox_loading}
+                                  width="75"
+                                  className="d-inline-block align-middle"
+                                />
+                                <ReactAudioPlayer
+                                  src={waiting}
+                                  autoPlay
+                                />
+                                </div>
+                              ):(
+                                <div>
+                                {(props.state_leaderboardAddressSearch_team_game1==2)?(
+                                <div>
+                                Entered
+                                </div>
+                              ):(
+                                <div>
+                                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                                </div>
+                              )}
+
+                                </div>
+                              )}
+
+                              </Col>
+
+                              </Row>
+                              </ListGroup.Item>
+
+                            </ListGroup>
+
+                            </Col>
+
+                            </Row>
+
+                            <Row>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">Team Vs Team?</div>
+                              <div className="siteTitle">Winning team takes all</div>
+                              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">{counter}/200</div>
+                              <div className="siteTitle">Explorers Entered</div>
+                              <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
+
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                              <div className="siteTitle">Entry Cost</div>
+                              <div className="StatsGameEnterSmallSub">Select a team to join</div>
+                              </Col>
+
+                            </Row>
+
+                            <br/>
+                            <Row>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">4 Levels</div>
+                              <div className="siteTitle">Complete Levels gain points</div>
+                              <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
+
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter blink_me2">$20,000</div>
+                              <div className="siteTitle">Starting Prize</div>
+                              <div className="StatsGameEnterSmallSub">Prize increases during game</div>
+
+
+
+                              </Col>
+                              <Col sm={4}>
+                              <div className="StatsGameEnter">P2E</div>
+                              <div className="siteTitle">Gain points for playing</div>
+                              <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
+
+                              </Col>
+
+
+                            </Row>
+
+                            <br/>
+
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="link-1">
+                            <Card className='customRoundedOne border border-danger'>
+
+                                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                                </Card.Header>
+                                <Card.Body >
+                                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+
+                      <Row>
+                        <Col sm={3}>
+                          <Nav variant="pills" className="flex-column">
+                            <Nav.Item>
+                              <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                              <Nav.Link eventKey="fith">P2E</Nav.Link>
+                            </Nav.Item>
+
+
+
+                          </Nav>
+                        </Col>
+                        <Col sm={9}>
+                          <Tab.Content>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
+                            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+
+                            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
+                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
+                            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
+                            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+                            </Tab.Pane>
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                            </Tab.Pane>
+
+                            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
+                              Each step requires a seperate transaction.
+                            </Tab.Pane>
+
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Tab.Container>
+
+
+                                <br />
+
+                              </Card.Body>
+                            </Card>
+
+
+                            </Tab.Pane>
+
+
+
+                          </Tab.Content>
+
+
+                    </Tab.Container>
+
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="link-1" >
+
+                    <CardGroup className='mt-5'>
+
+                    {(props.userEntered_game1) ?(
+                      <div >
+                      <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
+                      <br/>
+                      <Row>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Lift Off - Easy!
+
+                          </Card.Header>
+
+
+                          <Card.Header className="MiniGameTitle">1 in 4 chance to win!
+                          <br />2X Play Cost Token Return
+                        <br />15 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
+
+
+                          <footer className="blockquote">
+
+
+                          </footer>
+                          <br />
+
+
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">1 in 6 chance to win!
+                          <br />3X Play Cost Token Return
+                        <br />30 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+                          </Card.Header>
+
+                          <br/>
+
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+                          <br/>
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
+
+
+                          <footer className="blockquote">
+
+                          </footer>
+                          <br />
+
+
+
+
+                        </Card.Body>
+                      </Card>
+                        <br className="d-lg-none"/>
+                        <br className="d-lg-none"/>
+
+                      </Col>
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
+
+                        </Card.Header>
+                        <Card.Header className="MiniGameTitle">1 in 20 chance to win!
+                        <br />5X Play Cost Token Return
+                      <br />100 game points
+                      <br />level up + 1
+                    <br />2 points for loss<br />
+                        </Card.Header>
+
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Cost to play {props.CostToPlay_xyz_} Wings
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
+
+
+
+                        <footer className="blockquote">
+
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      </Row>
+
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                        <br/><br/>
+                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+
+                        </div>
+                        <br/><br/>
+
+
+                      </div>
+                    ):(
+                      <div style={{height: height}}>
+
+
+
+                      </div>
+                    )}
+
+                    <br/>
+
+
+
+
+
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="link-2">
+
+                    <CardGroup className='mt-5'>
+
+                    {(props.userEntered_game1) ?(
+                      <div >
+
+                      <div className="siteTitle">Complete the levels in order to find clues and submit them to the Vault tab above using a timelock!</div>
+                      <br/>
+                      <Row>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
+                        <br />30 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
+                        <br />60 game points
+                        <br />level up + 1
+                        <br />2 points for loss<br />
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Cost to play {props.CostToPlay_xyz_} Wings
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
+
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                        <br className="d-lg-none"/>
+                        <br className="d-lg-none"/>
+
+                      </Col>
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
+
+                        </Card.Header>
+
+
+                        <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
+                      <br />90 game points
+                      <br />level up + 1
+                      <br />2 points for loss<br />
+
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Cost to play {props.CostToPlay_xyz_} Wings
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+
+
+
+
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      </Row>
+
+                      <div className="MiniGameDetails">
+  <br/>
+                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
+                      Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
+                      </div>
+
+                      <br/>
+
+
+                      </div>
+                    ):(
+                      <div style={{height: height}}>
+
+
+
+                      </div>
+                    )}
+
+                    <br/>
+
+
+
+
+
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="link-3">
+
+                    <CardGroup className='mt-5' fluid="md">
+
+                    <Row>
+                    <Col sm={4}>
+
+                    <EnterHuntCards {...props}/>
+                    <br className="d-lg-none"/>
+                    <br className="d-lg-none"/>
+
+                    </Col>
+
+                    <Col sm={8}>
+                    <LeaderBoardCard {...props}/>
+                    <br className="d-lg-none"/>
+                    <br className="d-lg-none"/>
+                    </Col>
+                    </Row>
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+
+
+
+
+                </Tab.Content>
+
+
+          </Tab.Container>
+
+
+          </Container>
+
+
+
+          <br/>
+
+
+
+
+
+      </Container>
+
+
+
+    </div>
+  ):(
+    <div style={{height: height}}>
+    <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+    <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
+
+    <Container className='mt-5' fluid="md">
+    <Tab.Container defaultActiveKey="first">
+
+        <Nav justify variant="pills">
+          <Nav.Item>
+            <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
+          </Nav.Item>
+
+        </Nav>
+
+        <br/>
+
+          <Tab.Content>
+            <Tab.Pane eventKey="first" >
+            <Row>
+
+            <Col sm={12}>
+
+            <ListGroup className='cardRounded border border-danger' as="ul">
+
+              <ListGroup.Item as="li" className="customEnterTeam">
+              <Row>
+
+
+              <Col className="MiniGameTitleEnter" sm={2}>
+              #
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Team
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Average Points Per Player (PPP) To Win
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Current Members
+              </Col>
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Points Required To Win!
+              </Col>
+
+              <Col className="MiniGameTitleEnter" sm={2}>
+              Join A Team
+              </Col>
+
+              </Row>
+
+
+
+              </ListGroup.Item>
+              <ListGroup.Item as="li">
+              <Row >
+              <Col className="MiniGameEnter"  sm={2}>
+              <Card.Img variant="top" src={img1} alt="Logo" className='cardRoundedEnterPage'/>
+              </Col>
+              <Col className="MiniGameEnter"  sm={2}>
+              Team Troy
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_ppp}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_team_entries}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries}
+              </Col>
+
+              <Col className="MiniGameEnter" sm={2}>
+
+              {loading?(
+                <div>
+                <img
+                  alt="Blox Loading"
+                  src={blox_loading}
+                  width="75"
+                  className="d-inline-block align-middle"
+                />
+                <ReactAudioPlayer
+                  src={waiting}
+                  autoPlay
+                />
+                </div>
+              ):(
+                <div>
+                {(props.state_leaderboardAddressSearch_team_game1==1)?(
+                <div>
+                Entered
+                </div>
+              ):(
+                <div>
+                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                </div>
+              )}
+
+                </div>
+              )}
+              </Col>
+
+              </Row>
+              </ListGroup.Item>
+
+              <ListGroup.Item as="li">
+              <Row>
+              <Col className="MiniGameEnter" sm={2}>
+              <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              Crypto Dave
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_ppp}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_team_entries}
+              </Col>
+              <Col className="MiniGameEnter" sm={2}>
+              {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries}
+              </Col>
+
+              <Col className="MiniGameEnter" sm={2}>
+              {loading?(
+                <div>
+                <img
+                  alt="Blox Loading"
+                  src={blox_loading}
+                  width="75"
+                  className="d-inline-block align-middle"
+                />
+                <ReactAudioPlayer
+                  src={waiting}
+                  autoPlay
+                />
+                </div>
+              ):(
+                <div>
+                {(props.state_leaderboardAddressSearch_team_game1==2)?(
+                <div>
+                Entered
+                </div>
+              ):(
+                <div>
+                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                </div>
+              )}
+
+                </div>
+              )}
+
+              </Col>
+
+              </Row>
+              </ListGroup.Item>
+
+            </ListGroup>
+
             </Col>
-            <Col sm={9}>
-              <Tab.Content>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
 
-                The treasure hunt will start when the number of 'explorers entered' reaches it's target.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                  30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
-                </Tab.Pane>
+            </Row>
 
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
-                  Each step requires a seperate transaction.
-                </Tab.Pane>
-
-              </Tab.Content>
-            </Col>
-          </Row>
-        </Tab.Container>
+            <Row>
+              <Col sm={4}>
+              <div className="StatsGameEnter">Team Vs Team?</div>
+              <div className="siteTitle">Winning team takes all</div>
+              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
 
 
-                    <br />
-
-                  </Card.Body>
-                </Card>
-
-
-
-
-                </Tab.Pane>
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">{counter}/200</div>
+              <div className="siteTitle">Explorers Entered</div>
+              <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+              <div className="siteTitle">Entry Cost</div>
+              <div className="StatsGameEnterSmallSub">Select a team to join</div>
+              </Col>
+
+            </Row>
+
+            <br/>
+            <Row>
+              <Col sm={4}>
+              <div className="StatsGameEnter">4 Levels</div>
+              <div className="siteTitle">Complete Levels gain points</div>
+              <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
+
+
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter blink_me2">$20,000</div>
+              <div className="siteTitle">Starting Prize</div>
+              <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
 
 
-              </Tab.Content>
+              </Col>
+              <Col sm={4}>
+              <div className="StatsGameEnter">P2E</div>
+              <div className="siteTitle">Gain points for playing</div>
+              <div className="StatsGameEnterSmallSub">If your team wins your Points = % of treasure</div>
+
+              </Col>
+
+
+            </Row>
+
+            <br/>
+
+            </Tab.Pane>
+            <Tab.Pane eventKey="link-1">
+            <Card className='customRoundedOne border border-danger'>
+
+                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                </Card.Header>
+                <Card.Body >
+                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+
+      <Row>
+        <Col sm={3}>
+          <Nav variant="pills" className="flex-column">
+            <Nav.Item>
+              <Nav.Link eventKey="first">Step 1 - Enter Game</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="second">Step 2 - Unlock Clues</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="third">Step 3 - Win With Points</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="fourth">Prize Distribution</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="fith">P2E</Nav.Link>
+            </Nav.Item>
+
+
+
+          </Nav>
+        </Col>
+        <Col sm={9}>
+          <Tab.Content>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
+            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+
+            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
+            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
+            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
+            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+            </Tab.Pane>
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+            </Tab.Pane>
+
+            <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
+              Each step requires a seperate transaction.
+            </Tab.Pane>
+
+          </Tab.Content>
+        </Col>
+      </Row>
+    </Tab.Container>
+
+
+                <br />
+
+              </Card.Body>
+            </Card>
 
 
 
 
-        </Tab.Container>
+            </Tab.Pane>
+
+
+
+
+
+          </Tab.Content>
+
+
+
+
+    </Tab.Container>
 
 
 
@@ -1564,20 +2783,24 @@ const handleSubmitEnterDave = async() => {
 
 
 
-        </Container>
-        </div>
-      )}
+    </Container>
+    </div>
+  )}
 
 
 
 
-      </div>
+  </div>
 
 
 
+  </div>
+
+  </div>
+)}
 </div>
 
-</div>
+
 
 
     );

@@ -10,19 +10,10 @@
     }
 } */
 
-
-
-.custombackgroundfightergame {
-
-    /* flashing  */
-    /* animation: blink 2s;
-    animation-iteration-count: infinite; */
-
-
-
+.background {
     /* The image used */
     /* background-image: url(./treasure1.jpg); */
-    background: url(../GamesSelection/FighterPilot/assets/Cockpit.png) no-repeat center center fixed;
+    /* background: url(./treasureblox_background.jpg) no-repeat center center fixed; */
     /* background: url(./background2.jpg) no-repeat center center fixed; */
     /* background: url(./background1.png) no-repeat center center fixed; */
 
@@ -30,7 +21,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: #172774;
+    background-color: #071C2D;
 
     /* background-attachment: fixed; */
     /* Full height */
@@ -41,6 +32,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 
 
 

@@ -10,6 +10,7 @@ import img4 from './images/Elons_Rocket_Treasureblox.png';
 import img5 from './images/treasurebloxXjetswap.png';
 
 
+import img69 from './images/ready_player_one.png';
 
 
 
@@ -127,15 +128,21 @@ console.log(props.game2numberOfEntries,"me")
     <br className="d-lg-none"/>
 
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={img5} alt="Logo" className='customRounded'/>
-      <Card.Body >
-        <Card.Title className="gameTitle">Strike Fighter Series</Card.Title>
-        <Card.Title className="gameTitle">Earn your wings!</Card.Title>
 
-        <div>The first Play to earn metaverse treasure hunt released on BSC. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>
+      <Card.Img variant="top" src={props.is_meter?(img69):(img5)} alt="Logo" className='customRounded'/>
+      <Card.Body >
+      {props.is_meter?(<Card.Title className="gameTitle">Battle For the Grid</Card.Title>):(<Card.Title className="gameTitle">Strike Fighter Series</Card.Title>)}
+        {props.is_meter?(<Card.Title className="gameTitle">Earn your MTR!</Card.Title>):(<Card.Title className="gameTitle">Earn your wings!</Card.Title>)}
+        {props.is_meter?(<div>The first Play to earn metaverse treasure hunt released on METER. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>):
+        (<div>The first Play to earn metaverse treasure hunt released on BSC. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>)}
+
+
         <br/>
         <Link to="/JetswapXTreasureBloxHome/:top">
-          <Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>
+        {props.is_meter?
+          (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Battle Grid</Button>):
+          (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>)}
+
         </Link>
         <br/><br/>
 

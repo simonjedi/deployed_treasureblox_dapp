@@ -10,8 +10,7 @@ import Hunt1 from "../Hunt1";
 // import logo from '../TreasureBlox_Logo.png';
 
 import logo from './assets/images/treasurebloxXjetswap.png';
-
-
+import logo_meter from './assets/images/treasurebloxXmeter.png';
 
 
 import {
@@ -48,7 +47,6 @@ const PartnerNav = (props) => {
 
 
 
-
   return(
 
     <Navbar collapseOnSelect className="fixed-top MyBakground" expand="lg" variant="dark">
@@ -59,7 +57,8 @@ const PartnerNav = (props) => {
       <Navbar.Brand>
        <img
          alt="treasureblox_logo"
-         src={logo}
+         logo_meter
+         src={props.is_meter?(logo_meter):(logo)}
          width="225"
          className="d-inline-block align-middle"
        />
@@ -76,11 +75,22 @@ const PartnerNav = (props) => {
         </Link>
 
 
-          <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
-          Strike Fighter
-          </Link>
+      {props.is_meter?(
+        <div>
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
+        Battle For the Grid
+        </Link>
+        </div>
+      ):(
+        <div>
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
+        Strike Fighter
+        </Link>
+        </div>
+      )}
 
-        
+
+
 
         </Nav>
         <Nav className="ml-auto">

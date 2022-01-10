@@ -572,11 +572,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-
-
-
-
-
   useEffect(() => {
 
 
@@ -585,19 +580,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const web3 = await getWeb3();
         const accounts = await web3.eth.getAccounts();
         setAccounts(accounts[0])
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -642,6 +624,31 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
+
+
+
+        const Moralis = require('moralis');
+
+        const isWeb3Active = Moralis.ensureWeb3IsInstalled()
+        if (isWeb3Active) {
+        } else {
+          await Moralis.enableWeb3();
+        }
+
+        //
+        //
+        //
+
+        const currentChainId = await Moralis.getChainId();
+
+
+// START NETWORK IF BSC
+        if (currentChainId === 56) {
+
+
+        setIs_Meter(false)
+        // GAME CONTRACT
+
         const GSB_BSC_ABI = require('./GSB_BSC.abi.json');
         const GSC_BSC_ABI = require('./GSC_BSC.abi.json');
         const GSD_BSC_ABI = require('./GSD_BSC.abi.json');
@@ -657,33 +664,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // this will change to partner token abi contract
         const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
 
-
-
-        const Moralis = require('moralis');
-
-        const isWeb3Active = Moralis.ensureWeb3IsInstalled()
-        if (isWeb3Active) {
-        } else {
-          await Moralis.enable();
-        }
-
-        //
-        //
-        //
-        const currentChainId = await Moralis.getChainId();
-
-
-// START NETWORK IF BSC
-        if (currentChainId === 56) {
-
-
-// Users Balance
-
-
-
-
-        setIs_Meter(false)
-        // GAME CONTRACT
 
         // SET ACCOUNTS
         const accounts = await web3.eth.getAccounts();
@@ -1739,1064 +1719,1184 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
       }// End of network if statement BSC
 
+// STARTING HERE
 
-      // if (currentChainId === 83) {
-      //
-      //   ////////////
-      //
-      //   // Meter.io
-      //           // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
-      //           // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-      //           //
-      //           // console.log(contract_xyz_,"START treassssure")
-      //
-      //
-      //   // Meter
-      //           // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x6AF26474015a6bF540C79b77a6155b67900879D9");
-      //
-      //   ///////////
-      //
-      //   setIs_Meter(true)
-      //   console.log("boo")
-      //   // Meter.io
-      //   const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
-      //   const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-      //   console.log(gameAddress_xyz_,"START treassssure111111111")
-      //
-      //   setGameContractAddress_xyz_(gameAddress_xyz_);
-      //
-      //
-      // // BSC
-      //   const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
-      //   console.log(tokenContract_xyz_,"START twoooooooo")
-      //
-      //
-      //   const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
-      //
-      //   var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
-      //   totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
-      //
-      //
-      //
-      //   setWeb3(web3)
-      //   setAccounts(accounts[0])
-      //   setContract_xyz_(contract_xyz_)
-      //   setDecimals_xyz_(decimals_xyz_)
-      //   setTotalTreasure_xyz_(totalTreasure_xyz_)
-      //   setTokenContract_xyz_(tokenContract_xyz_)
-      //
-      //   setWallet_for_google_xyz_("w="+accounts.toString())
-      //
-      //   console.log(contract_xyz_,"loaded 1")
-      //
-      //   // GLOBAL PARTNER EXAMPLE ASYNC STARTS
-      //
-      //   const globalTries_xyz_ = await contract_xyz_.methods.totalumberOfTries().call();
-      //
-      //   setGlobalNumberOfTries_xyz_(globalTries_xyz_)
-      //
-      //
-      //
-      //   // GLOBAL PARTNER EXAMPLE ASYNC Ends
-      //
-      // // PARTNER EXAMPLE CONTRACT DETAILS END
-      //
-      //
-      //
-      // // TREASUREBLOX EXAMPLE CONTRACT DETAILS START
-      //
-      //   //creating function to load ip address from the API
-      //
-      //   // const res = await axios.get('https://geolocation-db.com/json/')
-      //   // console.log(res,"herererererere");
-      //   // setIP(res.data.IPv4)
-      //
-      //   // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
-      //
-      //   const accounts = await web3.eth.getAccounts();
-      //
-      //   const abi = require('./TreasureBlox.abi.json');
-      //   const abiToken = require('./TreasureBloxToken.abi.json');
-      //   // Set the provider
-      //   // web3.setProvider(new web3.providers.WebsocketProvider('ws://localhost:8545'));
-      //   // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
-      //
-      //   // LOCAL
-      //   // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
-      //   // MainNet
-      //   // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
-      //
-      // // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
-      // // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
-      //
+      if (currentChainId === 83) {
+
+        ////////////
+
+        // Meter.io
+                // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
+                // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
+                //
+                // console.log(contract_xyz_,"START treassssure")
+
+
+        // Meter
+                // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x6AF26474015a6bF540C79b77a6155b67900879D9");
+
+        ///////////
+
+        // METER
+        setIs_Meter(true)
+
+
+
+        const GSB_BSC_ABI = require('./METER_GSB_BSC.abi.json');
+        const GSC_BSC_ABI = require('./METER_GSC_BSC.abi.json');
+        const GSD_BSC_ABI = require('./METER_GSD_BSC.abi.json');
+
+        const MAIN_GAME_contract_xyz_ABI = require('./PartnershipExample/ContractAbis/MAIN_GAME.abi_xyz.json');
+        const VOLT_xyz_ABI = require('./PartnershipExample/ContractAbis/VOLT.abi_xyz.json');
+        const RANDOM1_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM1.abi_xyz.json');
+        const RANDOM2_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM2.abi_xyz.json');
+        const RANDOM3_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM3.abi_xyz.json');
+
+
+        const abi_xyz_ = require('./TreasureBlox.abi_example.json');
+        // this will change to partner token abi contract
+        const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
+
+
+
+
+        // SET ACCOUNTS
+        const accounts = await web3.eth.getAccounts();
+        setWallet_for_google_xyz_("w="+accounts.toString())
+        setAccounts(accounts)
+
+
+        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://rpctest.meter.io/" && "0xAF50B1943f2B659FDAd444BFC6f8a378D98f4963");
+        const game_GSB_Address_xyz_ = "0xAF50B1943f2B659FDAd444BFC6f8a378D98f4963"
+        set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
+
+
+        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://rpctest.meter.io/" && "0x4de63D2fE6F1dD7c2095Bf740248829aD798b86E");
+        const game_GSC_Address_xyz_ = "0x4de63D2fE6F1dD7c2095Bf740248829aD798b86E"
+        set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
+
+
+        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://rpctest.meter.io/" && "0x96BE062Ff4853f6152ce8eCC688688e6105865B5");
+        const game_GSD_Address_xyz_ = "0x96BE062Ff4853f6152ce8eCC688688e6105865B5"
+        set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
+
+
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://rpctest.meter.io/" && "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9");
+        const game_MAIN_GAME_Address_xyz_ = "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9"
+        set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
+
+
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpctest.meter.io/" && "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9");
+        const game_VOLT_Address_xyz_ = "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9"
+        set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 4 - Using Blox
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpctest.meter.io/" && "0xfDbfE72619853890AE7d707a30979e56664a7b74");
+        const game_RANDOM1_Address_xyz_ = "0xfDbfE72619853890AE7d707a30979e56664a7b74"
+        set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 6 - Using Blox
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpctest.meter.io/" && "0xC67A4bAA80e3e79714914136729Ed82e56e584c9");
+        const game_RANDOM2_Address_xyz_ = "0xC67A4bAA80e3e79714914136729Ed82e56e584c9"
+        set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 20 - Using Blox
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpctest.meter.io/" && "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F");
+        const game_RANDOM3_Address_xyz_ = "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F"
+        set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
+
+
+
+        // TOKEN CONTRACT
+
+        // MTR BLOX ERC20
+        const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9");
+
+        const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
+        var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9").call();
+        totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
+
+
+        // // SET WEB3
+        setWeb3(web3)
+
+
+
+
+        set_GSB_Contract_xyz_(GSB_contract_bsc_)
+        set_GSC_Contract_xyz_(GSC_contract_bsc_)
+        set_GSD_Contract_xyz_(GSD_contract_bsc_)
+
+        set_MAIN_GAME_Contract_xyz_(MAIN_GAME_contract_xyz_)
+        set_VOLT_Contract_xyz_(VOLT_contract_xyz_)
+        set_RANDOM1_Contract_xyz_(RANDOM1_contract_xyz_)
+        set_RANDOM2_Contract_xyz_(RANDOM2_contract_xyz_)
+        set_RANDOM3_Contract_xyz_(RANDOM3_contract_xyz_)
+
+
+        // SET TOKEN DETAILS
+        setDecimals_xyz_(decimals_xyz_)
+        setTotalTreasure_xyz_(totalTreasure_xyz_)
+        setTokenContract_xyz_(tokenContract_xyz_)
+
+
+
+        // TREASUREBLOX NATIVE
+        const MAIN_GAME_treasureBloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/MAIN_GAME.abi_xyz.json');
+        const VOLT_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/VOLT.abi_xyz.json');
+        const RANDOM1_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM1.abi_treasurebloxNative.json');
+        const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
+        const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
+
+        const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpctest.meter.io/" && "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9");
+        const MAIN_GAME_Address_treasurebloxNative_ = "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9"
+        set_MAIN_GAME_GameContractAddress_treasurebloxNative_(MAIN_GAME_Address_treasurebloxNative_);
+
+
+        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9");
+        const VOLT_Address_treasurebloxNative_ = "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9"
+        set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
+
+
+        // RANDOM GAME CONTRACT 1 in 4 - Using Blox
+        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xfDbfE72619853890AE7d707a30979e56664a7b74");
+        const game_RANDOM1_Address_treasurebloxNative_ = "0xfDbfE72619853890AE7d707a30979e56664a7b74"
+        set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
+
+        // RANDOM GAME CONTRACT 1 in 6 - Using Blox
+        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xC67A4bAA80e3e79714914136729Ed82e56e584c9");
+        const game_RANDOM2_Address_treasurebloxNative_ = "0xC67A4bAA80e3e79714914136729Ed82e56e584c9"
+        set_RANDOM2_treasurebloxNative_(game_RANDOM2_Address_treasurebloxNative_);
+
+        // RANDOM GAME CONTRACT 1 in 20 - Using Blox
+        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F");
+        const game_RANDOM3_Address_treasurebloxNative_ = "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F"
+        set_RANDOM3_treasurebloxNative_(game_RANDOM3_Address_treasurebloxNative_);
+
+        // TOKEN CONTRACT
+        // BSC
+        const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9");
+
+        const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call().then(console.log('Yes'));
+        var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9").call();
+        totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, tokenContract_xyz_.length-18)
+
+
+
+
+        set_MAIN_GAME_Contract_treasurebloxNative_(MAIN_GAME_contract_treasurebloxNative_)
+        set_VOLT_Contract_treasurebloxNative_(VOLT_contract_treasurebloxNative_)
+
+        set_RANDOM1_Contract_treasurebloxNative_(RANDOM1_contract_treasurebloxNative_)
+        set_RANDOM2_Contract_treasurebloxNative_(RANDOM2_contract_treasurebloxNative_)
+        set_RANDOM3_Contract_treasurebloxNative_(RANDOM3_contract_treasurebloxNative_)
+
+        // SET TOKEN DETAILS
+        setDecimals_treasurebloxNative_(decimals_treasurebloxNative_)
+        setTotalTreasure_treasurebloxNative_(totalTreasure_treasurebloxNative_)
+        setTokenContract_treasurebloxNative_(tokenContract_treasurebloxNative_)
+
+        setWallet_for_google_treasurebloxNative_("w="+accounts.toString())
+
+
+
+        // Meter.io
+        // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
+        // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
+        // console.log(gameAddress_xyz_,"START treassssure111111111")
+        //
+        // setGameContractAddress_xyz_(gameAddress_xyz_);
+        //
+        //
+        // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
+        // console.log(tokenContract_xyz_,"START twoooooooo")
+        //
+        //
+        // const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
+        //
+        // var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
+        // totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
+        //
+        //
+        // setWeb3(web3)
+        // setAccounts(accounts[0])
+        // setContract_xyz_(contract_xyz_)
+        // setDecimals_xyz_(decimals_xyz_)
+        // setTotalTreasure_xyz_(totalTreasure_xyz_)
+        // setTokenContract_xyz_(tokenContract_xyz_)
+        //
+        // setWallet_for_google_xyz_("w="+accounts.toString())
+        //
+        // console.log(contract_xyz_,"loaded 1")
+        //
+        // // GLOBAL PARTNER EXAMPLE ASYNC STARTS
+        //
+        // const globalTries_xyz_ = await contract_xyz_.methods.totalumberOfTries().call();
+        //
+        // setGlobalNumberOfTries_xyz_(globalTries_xyz_)
+
+
+
+        // GLOBAL PARTNER EXAMPLE ASYNC Ends
+
+        // PARTNER EXAMPLE CONTRACT DETAILS END
+
+
+
+        // TREASUREBLOX EXAMPLE CONTRACT DETAILS START
+
+        //creating function to load ip address from the API
+
+        // const res = await axios.get('https://geolocation-db.com/json/')
+        // console.log(res,"herererererere");
+        // setIP(res.data.IPv4)
+
+        // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
+
+        // const accounts = await web3.eth.getAccounts();
+        //
+        // const abi = require('./TreasureBlox.abi.json');
+        // const abiToken = require('./TreasureBloxToken.abi.json');
+        // Set the provider
+        // web3.setProvider(new web3.providers.WebsocketProvider('ws://localhost:8545'));
+        // this.web3.setProvider(new this.web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/'));
+
+        // LOCAL
+        // const contract = new web3.eth.Contract(abi,"localhost:8545" && "0x9987602E9e9A76CbA7e9DB9217A0962BA8F9e605");
+        // MainNet
+        // const contract = new web3.eth.Contract(abi,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
+
+      // Proxy 0x359a72d9F33685c025A6435fE1Cb4dF8fF6736B6
+      // GameV2 0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170
+
       // const contract = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
       // const gameAddress = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-      //
-      //
-      //   // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
-      //   // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
-      //
-      //   setGameContractAddress(gameAddress);
-      //
-      //   const tokenContract = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
-      //
-      //
-      //   // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
-      //
-      //   // TestNet
-      //   // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
-      //   // Sstart Data Calls
-      //   const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
-      //
-      //   var totalTreasure = await tokenContract.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
-      //   totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
-      //   console.log(totalTreasure,"Total Treasure token contract")
-      //
-      //   // const owner = await contract.methods._owner().call();
-      //   // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
-      //   //
-      //   // const total_supply = await contract.methods.totalSupply().call();
-      //   // const treasure_chest = await contract.methods.treasureChest().call();
-      //   setWeb3(web3)
-      //   setAccounts(accounts[0])
-      //   setContract(contract)
-      //   setDecimals(decimals)
-      //   setTotalTreasure(totalTreasure)
-      //   setTokenContract(tokenContract)
-      //
-      //   setWallet_for_google("w="+accounts.toString())
-      //
-      //
-      //
-      // // GLOBAL TREASUREBLOX ASYNC STARTS
-      //
-      //   const globalTries = await contract.methods.totalumberOfTries().call();
-      //
-      //   setGlobalNumberOfTries(globalTries)
-      // // GLOBAL TREASUREBLOX ASYNC ENDS
-      //
-      //
-      // // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
-      //
-      //
-      //
-      //
-      //
-      // // This Handels the countdown time and collecting information every 1 second so the counter goes down
-      // const timer = window.setInterval( async() => {
-      //     var moment = require('moment'); // require
-      //
-      //
-      // // GET GAMES //
-      //
-      // // PARTNER EXAMPLE GET GAME 1 START
-      //
-      //     // PARTNER GAME 1
-      //
-      //     const game1_xyz_ = await contract_xyz_.methods.Games(1).call();
-      //
-      //     const game1_live_xyz_ = await game1_xyz_[0];
-      //     var game1_prize_xyz_ = await game1_xyz_[1];
-      //
-      //
-      //     // Local Testing
-      //     // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-      //
-      //     var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
-      //     setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
-      //     game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
-      //
-      //
-      //     const game1_question_hash_xyz_ = await game1_xyz_[3];
-      //
-      //     var  game1_costToEnter_xyz_ = await game1_xyz_[5];
-      //     game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
-      //     const game1_riddle_xyz_ = await game1_xyz_[6];
-      //     const game1_head_start_time_xyz_ = await game1_xyz_[8];
-      //
-      //     setGame1_live_xyz_(game1_live_xyz_)
-      //     setGame1_prize_xyz_(game1_prize_xyz_)
-      //     setGame1_question_hash_xyz_(game1_question_hash_xyz_)
-      //
-      //     setGame1_costToEnter_xyz_( game1_costToEnter_xyz_)
-      //
-      //     setGame1_riddle_xyz_(game1_riddle_xyz_)
-      //     setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
-      //
-      //
-      //     const allGame1_xyz_ = await contract_xyz_.methods.allGames(1).call();
-      //     const allGame1_id_xyz_ = await allGame1_xyz_[0];
-      //     const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
-      //     const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
-      //     const allGame1_username_xyz_ = await allGame1_xyz_[3];
-      //     const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
-      //
-      //     const numberOfEntriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
-      //
-      //
-      //     const game1huntEntries_xyz_ = await contract_xyz_.methods.huntEntries(accounts[0],1).call();
-      //     const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
-      //     const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
-      //     const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
-      //     const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
-      //
-      //
-      //     const pot1AnsweredCorrectly_xyz_ = await contract_xyz_.methods.Pot1AnsweredCorrectly(1).call();
-      //     const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
-      //     const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
-      //     var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
-      //     winning_prize1_xyz_ = winning_prize1_xyz_.substring(0, winning_prize1_xyz_.length-18);
-      //
-      //
-      //
-      //     const getAllLatestGameAttempts1_xyz_ = await contract_xyz_.methods.getAllLatestGameAttempts(1).call();
-      //     const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
-      //     const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
-      //     const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
-      //     const attemptUsername1_xyz_ = await getAllLatestGameAttempts1_xyz_[3];
-      //
-      //     const entriesGame1_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call()
-      //     settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
-      //
-      //
-      //
-      //     var currentStartDate_xyz_ = Date();
-      //     var startDate_xyz_ = new Date(currentStartDate_xyz_);
-      //
-      //     var endDateGame1_xyz_ = new Date(allGame1_deadline_time_xyz_ * 1000);
-      //
-      //
-      //     function getDifferenceInDays_xyz_(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60 * 60 * 24);
-      //       }
-      //
-      //     function getDifferenceInHours_xyz_(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60 * 60);
-      //       }
-      //
-      //     function getDifferenceInMinutes_xyz_(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60);
-      //       }
-      //
-      //     function getDifferenceInSeconds_xyz_(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / 1000;
-      //       }
-      //
-      //
-      //     var timeGame1_xyz_ = Math.abs(getDifferenceInSeconds_xyz_(startDate_xyz_, endDateGame1_xyz_));
-      //
-      //
-      //
-      //
-      //     setTimeGame1_xyz_(timeGame1_xyz_)
-      //     setTimeGame1_xyz_(prevTime => prevTime - 1); // <-- Change this line!
-      //
-      //     setallGame1_id_xyz_(allGame1_id_xyz_)
-      //     setallGame1_user_front_of_que_xyz_(allGame1_user_front_of_que_xyz_)
-      //     setallGame1_deadline_xyz_(allGame1_deadline_time_xyz_)
-      //     setallGame1_username_xyz_(allGame1_username_xyz_)
-      //     setallGame1_total_game_tries_xyz_(allGame1_total_game_tries_xyz_)
-      //
-      //     if (endDateGame1_xyz_-1 >= startDate_xyz_){
-      //       setcountGame1DeadlineTrue_xyz_(true);
-      //     } else {
-      //       setcountGame1DeadlineTrue_xyz_(false);
-      //     }
-      //
-      //     setGame1numberOfEntries_xyz_(entriesGame1_xyz_)
-      //
-      //     setUserGame1_id_xyz_(userGame1_id_xyz_)
-      //     setUserEntered_game1_xyz_(userEntered_game1_xyz_)
-      //     setUserGame1_headstart_time_xyz_(userGame1_headstart_time_xyz_)
-      //     setUserGame1_live_xyz_(userGame1_live_xyz_)
-      //
-      //     setWinning_address1_xyz_(winning_address1_xyz_)
-      //     setTreasure_found1_xyz_(treasure_found1_xyz_)
-      //     setWinning_prize1_xyz_(winning_prize1_xyz_)
-      //
-      //
-      //     setAttemptId1_xyz_(attemptId1_xyz_)
-      //     setAttemptAddress1_xyz_(attemptAddress1_xyz_)
-      //     setAttemptUsername1_xyz_(attemptUsername1_xyz_)
-      //     setAttemptDeadline1_xyz_(attemptDeadline1_xyz_)
-      //
-      //
-      //     // LeaderBoardAddressSearch
-      //
-      //     const leaderboardAddressSearch_xyz_ = await contract_xyz_.methods.leaderboardAddressMapping(accounts[0],1).call();
-      //
-      //
-      //     var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
-      //     var leaderboardAddressSearch_address_game1_xyz_ = await leaderboardAddressSearch_xyz_[1];
-      //     var leaderboardAddressSearch_entered_game1_xyz_ = await leaderboardAddressSearch_xyz_[2];
-      //     var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
-      //     var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
-      //     var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
-      //     var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
-      //
-      //
-      //
-      //     setleaderboardAddressSearch_huntid_game1_xyz_(leaderboardAddressSearch_huntid_game1_xyz_)
-      //     setleaderboardAddressSearch_address_game1_xyz_(leaderboardAddressSearch_address_game1_xyz_)
-      //     setleaderboardAddressSearch_entered_game1_xyz_(leaderboardAddressSearch_entered_game1_xyz_)
-      //     setleaderboardAddressSearch_username_game1_xyz_(leaderboardAddressSearch_username_game1_xyz_)
-      //     setleaderboardAddressSearch_tries_game1_xyz_(leaderboardAddressSearch_tries_game1_xyz_)
-      //     setleaderboardAddressSearch_stage_game1_xyz_(leaderboardAddressSearch_stage_game1_xyz_)
-      //     setleaderboardAddressSearch_team_game1_xyz_(leaderboardAddressSearch_team_game1_xyz_)
-      //
-      //     // User Levels
-      //     if (leaderboardAddressSearch_stage_game1_xyz_ == 0){
-      //       setUserLevel1Game1_xyz_(true)
-      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 1) {
-      //
-      //       await setUserLevel2Game1_xyz_(true)
-      //
-      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 2){
-      //       setUserLevel3Game1_xyz_(true)
-      //     } else if (leaderboardAddressSearch_stage_game1_xyz_ == 3){
-      //       setUserLevel4Game1_xyz_(true)
-      //     } else {
-      //       setUserLevel1Game1_xyz_(true)
-      //     }
-      //
-      //
-      //
-      //     const noOfEntrys_xyz_ = await contract_xyz_.methods.numberOfEntries(1).call();
-      //
-      //     // LeaderBoard
-      //
-      //     var game1_leaderboard_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard1_xyz_ = await leaderBoard_xyz_;
-      //
-      //         game1_leaderboard_xyz_.push(leaderboard1_xyz_);
-      //       }
-      //
-      //       setgame1LeaderBoard_xyz_(game1_leaderboard_xyz_)
-      //
-      //     var game1_indexrows_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         game1_indexrows_xyz_.push(i);
-      //       }
-      //     setgame1LeaderBoardIndex_xyz_(game1_indexrows_xyz_)
-      //
-      //
-      //     var game1_leaderboard_game_id_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
-      //         game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
-      //       }
-      //     setgame1LeaderBoardGameID_xyz_(game1_leaderboard_game_id_xyz_)
-      //
-      //
-      //     var game1_leaderboard_address_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
-      //         game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
-      //       }
-      //     setgame1LeaderBoardAddress_xyz_(game1_leaderboard_address_xyz_)
-      //
-      //     var game1_leaderboard_entered_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
-      //         game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
-      //       }
-      //
-      //     setgame1LeaderBoardEntered_xyz_(game1_leaderboard_entered_xyz_)
-      //
-      //
-      //     var game1_leaderboard_username_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
-      //         game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
-      //       }
-      //
-      //     setgame1LeaderBoardUsername_xyz_(game1_leaderboard_username_xyz_)
-      //
-      //
-      //     var game1_leaderboard_tries_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
-      //         game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
-      //       }
-      //
-      //     setgame1LeaderBoardTries_xyz_(game1_leaderboard_tries_xyz_)
-      //
-      //
-      //     var game1_leaderboard_stage_xyz_ = [];
-      //       for (var i = 0; i < noOfEntrys_xyz_; i++) {
-      //         const leaderBoard_xyz_ = await contract_xyz_.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
-      //         game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
-      //       }
-      //
-      //     setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
-      //
-      //
-      //
-      //     const game1_team1_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,1).call();
-      //     const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
-      //     const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
-      //     const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
-      //     const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
-      //     const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
-      //
-      //     const game1_team2_details_xyz_ = await contract_xyz_.methods.TeamDetails(1,2).call();
-      //     const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
-      //     const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
-      //     const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
-      //     const game1_team2_xyz_team_entries = await game1_team2_details_xyz_[3];
-      //     const game1_team2_xyz_team_actual_points = await game1_team2_details_xyz_[4];
-      //
-      //     setGame1_team1_xyz_teamid(game1_team1_xyz_teamid)
-      //     setGame1_team1_xyz_team_points_target(game1_team1_xyz_team_points_target)
-      //     setGame1_team1_xyz_ppp(game1_team1_xyz_ppp)
-      //     setGame1_team1_xyz_team_entries(game1_team1_xyz_team_entries)
-      //     setGame1_team1_xyz_team_actual_points(game1_team1_xyz_team_actual_points)
-      //
-      //     setGame1_team2_xyz_teamid(game1_team2_xyz_teamid)
-      //     setGame1_team2_xyz_team_points_target(game1_team2_xyz_team_points_target)
-      //     setGame1_team2_xyz_ppp(game1_team2_xyz_ppp)
-      //     setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
-      //     setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
-      //
-      //
-      // // PARTNER EXAMPLE GET GAME 1 END
-      //
-      //
-      //
-      //       // GAME 1 TREASUREBLOX STARTS
-      //
-      //       const game1 = await contract.methods.Games(1).call();
-      //
-      //       const game1_id = await game1[0];
-      //       const game1_live = await game1[1];
-      //       var game1_prize = await game1[2];
-      //
-      //       // Local Testing
-      //       // var winnerEstPrizeGame1 = Math.round(game1_prize*.3);
-      //
-      //       var winnerEstPrizeGame1 = game1_prize.substring(0, Math.round(game1_prize*.3).length-18);
-      //       setWinnerEstPrizeGame1(winnerEstPrizeGame1)
-      //       game1_prize = game1_prize.substring(0, game1_prize.length-18);
-      //
-      //
-      //       const game1_question_hash = await game1[3];
-      //
-      //       var game1_entry_cost  = await game1[5];
-      //       game1_entry_cost  = game1_entry_cost .substring(0, game1_entry_cost .length-18);
-      //       const game1_riddle = await game1[6];
-      //       const game1_head_start_time = await game1[8];
-      //
-      //
-      //       setGame1_id(game1_id)
-      //       setGame1_live(game1_live)
-      //       setGame1_prize(game1_prize)
-      //       setGame1_question_hash(game1_question_hash)
-      //
-      //       setGame1_submit_secret_cost(game1_entry_cost )
-      //
-      //       setGame1_riddle(game1_riddle)
-      //       setGame1_head_start_time(game1_head_start_time)
-      //
-      //
-      //     const allGame1 = await contract.methods.allGames(1).call();
-      //     const allGame1_id = await allGame1[0];
-      //     const allGame1_user_front_of_que = await allGame1[1];
-      //     const allGame1_deadline_time =  await allGame1[2];
-      //     const allGame1_username = await allGame1[3];
-      //     const allGame1_total_game_tries = await allGame1[4];
-      //
-      //     const numberOfEntriesGame1 = await contract.methods.numberOfEntries(1).call();
-      //
-      //
-      //
-      //     const game1huntEntries = await contract.methods.huntEntries(accounts[0],1).call();
-      //     const userGame1_id = await game1huntEntries[0];
-      //     const userEntered_game1 = await game1huntEntries[1];
-      //     const userGame1_headstart_time =  await game1huntEntries[2];
-      //     const userGame1_live = await game1huntEntries[3];
-      //
-      //
-      //     const pot1AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(1).call();
-      //     const winning_address1 = await pot1AnsweredCorrectly[0];
-      //     const treasure_found1 = await pot1AnsweredCorrectly[1];
-      //     var winning_prize1 =  await pot1AnsweredCorrectly[2];
-      //     winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
-      //
-      //
-      //
-      //
-      //     const getAllLatestGameAttempts1 = await contract.methods.getAllLatestGameAttempts(1).call();
-      //     const attemptId1 = await getAllLatestGameAttempts1[0];
-      //     const attemptAddress1 = await getAllLatestGameAttempts1[1];
-      //     const attemptDeadline1 =  await getAllLatestGameAttempts1[2];
-      //     const attemptUsername1 = await getAllLatestGameAttempts1[3];
-      //
-      //     const entriesGame1 = await contract.methods.numberOfEntries(1).call()
-      //     settotalGameEntriesGame1(entriesGame1);
-      //
-      //     // Fetches New Games if required
-      //     // const item = await contract.getPastEvents('setGameEvent',{});
-      //     // console.log(item[0].returnValues[0])
-      //     // console.log(item[0].returnValues[1])
-      //     // console.log(item[0].returnValues[2])
-      //
-      //
-      //     var currentStartDate = Date();
-      //     var startDate = new Date(currentStartDate);
-      //     // // Hours part from the timestamp
-      //     // var startDateHours = startDate.getHours();
-      //     // // Minutes part from the timestamp
-      //     // var startDateMinutes = startDate.getMinutes();
-      //     // // Seconds part from the timestamp
-      //     // var startDateSeconds = startDate.getSeconds();
-      //
-      //     // Do
-      //     var endDateGame1 = new Date(allGame1_deadline_time * 1000);
-      //     // // Hours part from the timestamp
-      //     // var endDateHours = endDate.getHours();
-      //     // // Minutes part from the timestamp
-      //     // var endDateMinutes = endDate.getMinutes();
-      //     // // Seconds part from the timestamp
-      //     // var endDateSeconds = endDate.getSeconds();
-      //
-      //     function getDifferenceInDays(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60 * 60 * 24);
-      //       }
-      //
-      //     function getDifferenceInHours(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60 * 60);
-      //       }
-      //
-      //     function getDifferenceInMinutes(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / (1000 * 60);
-      //       }
-      //
-      //     function getDifferenceInSeconds(date1, date2) {
-      //       const diffInMs = Math.abs(date2 - date1);
-      //       return diffInMs / 1000;
-      //       }
-      //     // console.log(getDifferenceInDays(endDate, startDate));
-      //     // console.log(getDifferenceInHours(endDate, startDate));
-      //     // console.log(getDifferenceInMinutes(endDate, startDate));
-      //
-      //     // console.log(getDifferenceInSeconds(startDate, endDateGame1));
-      //
-      //     var timeGame1 = Math.abs(getDifferenceInSeconds(startDate, endDateGame1));
-      //
-      //
-      //
-      //
-      //     setTimeGame1(timeGame1)
-      //     setTimeGame1(prevTime => prevTime - 1); // <-- Change this line!
-      //
-      //     setallGame1_id(allGame1_id)
-      //     setallGame1_user_front_of_que(allGame1_user_front_of_que)
-      //     setallGame1_deadline(allGame1_deadline_time)
-      //     setallGame1_username(allGame1_username)
-      //     console.log("username past: ", allGame1_username)
-      //     setallGame1_total_game_tries(allGame1_total_game_tries)
-      //
-      //     if (endDateGame1-1 >= startDate){
-      //       setcountGame1DeadlineTrue(true);
-      //     } else {
-      //       setcountGame1DeadlineTrue(false);
-      //     }
-      //
-      //     setGame1numberOfEntries(entriesGame1)
-      //
-      //     setUserGame1_id(userGame1_id)
-      //     setUserEntered_game1(userEntered_game1)
-      //     setUserGame1_headstart_time(userGame1_headstart_time)
-      //     setUserGame1_live(userGame1_live)
-      //
-      //     setWinning_address1(winning_address1)
-      //     setTreasure_found1(treasure_found1)
-      //     setWinning_prize1(winning_prize1)
-      //
-      //
-      //     setAttemptId1(attemptId1)
-      //     setAttemptAddress1(attemptAddress1)
-      //     setAttemptUsername1(attemptUsername1)
-      //     setAttemptDeadline1(attemptDeadline1)
-      //
-      //
-      //     // LeaderBoardAddressSearch
-      //
-      //     const leaderboardAddressSearch = await contract.methods.leaderboardAddressMapping(accounts[0],1).call();
-      //
-      //
-      //     var leaderboardAddressSearch_huntid_game1 = await leaderboardAddressSearch[0];
-      //     var leaderboardAddressSearch_address_game1 = await leaderboardAddressSearch[1];
-      //     var leaderboardAddressSearch_entered_game1 = await leaderboardAddressSearch[2];
-      //     var leaderboardAddressSearch_username_game1 = await leaderboardAddressSearch[3];
-      //     var leaderboardAddressSearch_tries_game1 = await leaderboardAddressSearch[4];
-      //     var leaderboardAddressSearch_stage_game1 = await leaderboardAddressSearch[5];
-      //     var leaderboardAddressSearch_team_game1 = await leaderboardAddressSearch[6];
-      //
-      //
-      //
-      //
-      //
-      //     setleaderboardAddressSearch_huntid_game1(leaderboardAddressSearch_huntid_game1)
-      //     setleaderboardAddressSearch_address_game1(leaderboardAddressSearch_address_game1)
-      //     setleaderboardAddressSearch_entered_game1(leaderboardAddressSearch_entered_game1)
-      //     setleaderboardAddressSearch_username_game1(leaderboardAddressSearch_username_game1)
-      //     setleaderboardAddressSearch_tries_game1(leaderboardAddressSearch_tries_game1)
-      //     setleaderboardAddressSearch_stage_game1(leaderboardAddressSearch_stage_game1)
-      //     setleaderboardAddressSearch_team_game1(leaderboardAddressSearch_team_game1)
-      //
-      //
-      //
-      //
-      //     // User Levels
-      //     if (leaderboardAddressSearch_stage_game1 == 0){
-      //       setUserLevel1Game1(true)
-      //     } else if (leaderboardAddressSearch_stage_game1 == 1) {
-      //
-      //       await setUserLevel2Game1(true)
-      //
-      //     } else if (leaderboardAddressSearch_stage_game1 == 2){
-      //       setUserLevel3Game1(true)
-      //     } else if (leaderboardAddressSearch_stage_game1 == 3){
-      //       setUserLevel4Game1(true)
-      //     } else {
-      //       setUserLevel1Game1(true)
-      //     }
-      //
-      //
-      //
-      //     const noOfEntrys = await contract.methods.numberOfEntries(1).call();
-      //
-      // // LeaderBoard
-      //
-      //     var game1_leaderboard = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard1 = await leaderBoard;
-      //
-      //         game1_leaderboard.push(leaderboard1);
-      //       }
-      //
-      //       setgame1LeaderBoard(game1_leaderboard)
-      //       console.log(game1LeaderBoard,"here")
-      //
-      //
-      //
-      //     var game1_indexrows = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         game1_indexrows.push(i);
-      //       }
-      //     setgame1LeaderBoardIndex(game1_indexrows)
-      //
-      //
-      //     var game1_leaderboard_game_id = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_game_id = await leaderBoard[0];
-      //         game1_leaderboard_game_id.push(leaderboard_game_id);
-      //       }
-      //     setgame1LeaderBoardGameID(game1_leaderboard_game_id)
-      //
-      //
-      //     var game1_leaderboard_address = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_address = await leaderBoard[1];
-      //         game1_leaderboard_address.push(leaderboard_address);
-      //       }
-      //     setgame1LeaderBoardAddress(game1_leaderboard_address)
-      //
-      //     var game1_leaderboard_entered = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_entered = await leaderBoard[2];
-      //         game1_leaderboard_entered.push(leaderboard_entered);
-      //       }
-      //
-      //     setgame1LeaderBoardEntered(game1_leaderboard_entered)
-      //
-      //
-      //     var game1_leaderboard_username = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_username = await leaderBoard[3];
-      //         game1_leaderboard_username.push(leaderboard_username);
-      //       }
-      //
-      //     setgame1LeaderBoardUsername(game1_leaderboard_username)
-      //
-      //
-      //     var game1_leaderboard_tries = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_tries = await leaderBoard[4];
-      //         game1_leaderboard_tries.push(parseInt(leaderboard_tries));
-      //       }
-      //
-      //     setgame1LeaderBoardTries(game1_leaderboard_tries)
-      //
-      //
-      //     var game1_leaderboard_stage = [];
-      //       for (var i = 0; i < noOfEntrys; i++) {
-      //         const leaderBoard = await contract.methods.leaderboard(1,i).call();
-      //
-      //         var leaderboard_stage = await leaderBoard[5];
-      //         game1_leaderboard_stage.push(leaderboard_stage);
-      //       }
-      //
-      //     setgame1LeaderBoardStage(game1_leaderboard_stage)
-      //
-      //
-      //     const game1_team1_details = await contract.methods.TeamDetails(1,1).call();
-      //     const game1_team1_teamid = await game1_team1_details[0];
-      //     const game1_team1_team_points_target = await game1_team1_details[1];
-      //     const game1_team1_ppp = await game1_team1_details[2];
-      //     const game1_team1_team_entries = await game1_team1_details[3];
-      //     const game1_team1_team_actual_points = await game1_team1_details[4];
-      //
-      //     const game1_team2_details = await contract.methods.TeamDetails(1,2).call();
-      //     const game1_team2_teamid = await game1_team2_details[0];
-      //     const game1_team2_team_points_target = await game1_team2_details[1];
-      //     const game1_team2_ppp = await game1_team2_details[2];
-      //     const game1_team2_team_entries = await game1_team2_details[3];
-      //     const game1_team2_team_actual_points = await game1_team2_details[4];
-      //
-      //     setGame1_team1_teamid(game1_team1_teamid)
-      //     setGame1_team1_team_points_target(game1_team1_team_points_target)
-      //     setGame1_team1_ppp(game1_team1_ppp)
-      //     setGame1_team1_team_entries(game1_team1_team_entries)
-      //     setGame1_team1_team_actual_points(game1_team1_team_actual_points)
-      //
-      //     setGame1_team2_teamid(game1_team2_teamid)
-      //     setGame1_team2_team_points_target(game1_team2_team_points_target)
-      //     setGame1_team2_ppp(game1_team2_ppp)
-      //     setGame1_team2_team_entries(game1_team2_team_entries)
-      //     setGame1_team2_team_actual_points(game1_team2_team_actual_points)
-      //
-      //     // GAME 1 TREASUREBLOX ENDS
-      //
-      //
-      //
-      //
-      //   // GAME 2 TREASUREBLOX STARTS
-      //
-      //
-      //
-      //   const game2 = await contract.methods.Games(2).call();
-      //
-      //   const game2_id = await game2[0];
-      //   const game2_live = await game2[1];
-      //   var game2_prize = await game2[2];
-      //
-      //   // Local Testing
-      //   // var winnerEstPrizeGame2 = Math.round(game2_prize*.3);
-      //
-      //   var winnerEstPrizeGame2 = game2_prize.substring(0, Math.round(game2_prize*.3).length-18);
-      //   setWinnerEstPrizeGame2(winnerEstPrizeGame2)
-      //   game2_prize = game2_prize.substring(0, game2_prize.length-18);
-      //
-      //
-      //
-      //   const game2_question_hash = await game2[3];
-      //   var game2_time_lock_cost= await game2[4];
-      //   game2_time_lock_cost = game2_time_lock_cost.substring(0, game2_time_lock_cost.length-18);
-      //
-      //   var game2_submit_secret_cost = await game2[5];
-      //   game2_submit_secret_cost = game2_submit_secret_cost.substring(0, game2_submit_secret_cost.length-18);
-      //
-      //   const game2_riddle = await game2[6];
-      //   const game2_clue = await game2[7];
-      //   const game2_head_start_time = await game2[8];
-      //   const game2_entry_limit = await game2[9];
-      //   var game2_entry_cost = await game2[10];
-      //   game2_entry_cost = game2_entry_cost.substring(0, game2_entry_cost.length-18);
-      //
-      //
-      //   setGame2_id(game2_id)
-      //   setGame2_live(game2_live)
-      //   setGame2_prize(game2_prize)
-      //   setGame2_question_hash(game2_question_hash)
-      //   setgame2_time_lock_cost(game2_time_lock_cost)
-      //   setGame2_submit_secret_cost(game2_submit_secret_cost)
-      //   setGame2_riddle(game2_riddle)
-      //   setGame2_clue(game2_clue)
-      //   setGame2_head_start_time(game2_head_start_time)
-      //   setGame2_entry_limit(game2_entry_limit)
-      //   setGame2_entry_cost(game2_entry_cost)
-      //
-      //
-      //
-      //   const allGame2 = await contract.methods.allGames(2).call();
-      //   const allGame2_id = await allGame2[0];
-      //   const allGame2_user_front_of_que = await allGame2[1];
-      //   const allGame2_deadline_time =  await allGame2[2];
-      //   const allGame2_username = await allGame2[3];
-      //   const allGame2_total_game_tries = await allGame2[4];
-      //
-      //   const game2numberOfEntries = await contract.methods.numberOfEntries(2).call();
-      //
-      //
-      //
-      //
-      //
-      //
-      //   const game2huntEntries = await contract.methods.huntEntries(accounts[0],2).call();
-      //   const userGame2_id = await game2huntEntries[0];
-      //   const userEntered_game2 = await game2huntEntries[1];
-      //   const userGame2_headstart_time =  await game2huntEntries[2];
-      //   const userGame2_live = await game2huntEntries[3];
-      //
-      //   const numberOfEntriesGame2 = await contract.methods.numberOfEntries(2).call();
-      //
-      //
-      //
-      //   const pot2AnsweredCorrectly = await contract.methods.Pot1AnsweredCorrectly(2).call();
-      //   const winning_address2 = await pot2AnsweredCorrectly[0];
-      //   const treasure_found2 = await pot2AnsweredCorrectly[1];
-      //   var winning_prize2 =  await pot2AnsweredCorrectly[2];
-      //
-      //   winning_prize2 = winning_prize2.substring(0, winning_prize2.length-18);
-      //
-      //   const question_hash_solved2 = await pot2AnsweredCorrectly[3];
-      //   const winning_message2 = await pot2AnsweredCorrectly[4];
-      //
-      //   const getAllLatestGameAttempts2 = await contract.methods.getAllLatestGameAttempts(2).call();
-      //   const attemptId2 = await getAllLatestGameAttempts2[0];
-      //   const attemptAddress2 = await getAllLatestGameAttempts2[1];
-      //   const attemptDeadline2 =  await getAllLatestGameAttempts2[2];
-      //   const attemptUsername2 = await getAllLatestGameAttempts2[3];
-      //
-      //
-      //   var currentStartDate = Date();
-      //   var startDate = new Date(currentStartDate);
-      //
-      //   // Do
-      //   var endDateGame2 = new Date(allGame2_deadline_time * 1000);
-      //
-      //   console.log(getDifferenceInSeconds(startDate, endDateGame2));
-      //
-      //   var timeGame2 = Math.abs(getDifferenceInSeconds(startDate, endDateGame2));
-      //
-      //   setTimeGame2(timeGame2)
-      //   setTimeGame2(prevTime => prevTime - 1); // <-- Change this line!
-      //
-      //   setallGame2_id(allGame2_id)
-      //   setallGame2_user_front_of_que(allGame2_user_front_of_que)
-      //   setallGame2_deadline(allGame2_deadline_time)
-      //   setallGame2_username(allGame2_username)
-      //   setallGame2_total_game_tries(allGame2_total_game_tries)
-      //
-      //   if (endDateGame2-1 >= startDate){
-      //     setcountGame2DeadlineTrue(true);
-      //   } else {
-      //     setcountGame2DeadlineTrue(false);
-      //   }
-      //
-      //   setGame2numberOfEntries(game2numberOfEntries)
-      //
-      //   setUserGame2_id(userGame2_id)
-      //   setUserEntered_game2(userEntered_game2)
-      //   setUserGame2_headstart_time(userGame2_headstart_time)
-      //   setUserGame2_live(userGame2_live)
-      //
-      //   setWinning_address2(winning_address2)
-      //   setTreasure_found2(treasure_found2)
-      //   setWinning_prize2(winning_prize2)
-      //   setQuestion_hash_solved2(question_hash_solved2)
-      //   setWinning_message2(winning_message2)
-      //
-      //   setAttemptId2(attemptId2)
-      //   setAttemptAddress2(attemptAddress2)
-      //   setAttemptUsername2(attemptUsername2)
-      //   setAttemptDeadline2(attemptDeadline2)
-      //
-      //
-      //   // LeaderBoardAddressSearch
-      //
-      //   const leaderboardAddressSearch2 = await contract.methods.leaderboardAddressMapping(accounts[0],2).call();
-      //   var leaderboardAddressSearch_huntid_game2 = await leaderboardAddressSearch2[0];
-      //   var leaderboardAddressSearch_address_game2 = await leaderboardAddressSearch2[1];
-      //   var leaderboardAddressSearch_entered_game2 = await leaderboardAddressSearch2[2];
-      //   var leaderboardAddressSearch_username_game2 = await leaderboardAddressSearch2[3];
-      //   var leaderboardAddressSearch_tries_game2 = await leaderboardAddressSearch2[4];
-      //   var leaderboardAddressSearch_stage_game2 = await leaderboardAddressSearch2[5];
-      //   var leaderboardAddressSearch_team_game2 = await leaderboardAddressSearch2[6];
-      //
-      //
-      //
-      //
-      //   setleaderboardAddressSearch_huntid_game2(leaderboardAddressSearch_huntid_game2)
-      //   setleaderboardAddressSearch_address_game2(leaderboardAddressSearch_address_game2)
-      //   setleaderboardAddressSearch_entered_game2(leaderboardAddressSearch_entered_game2)
-      //   setleaderboardAddressSearch_username_game2(leaderboardAddressSearch_username_game2)
-      //   setleaderboardAddressSearch_tries_game2(leaderboardAddressSearch_tries_game2)
-      //   setleaderboardAddressSearch_stage_game2(leaderboardAddressSearch_stage_game2)
-      //   setleaderboardAddressSearch_team_game2(leaderboardAddressSearch_team_game2)
-      //
-      //
-      //
-      //   // User Levels
-      //   if (state_leaderboardAddressSearch_stage_game2 == 0){
-      //     setUserLevel1Game2(true)
-      //   } else if (state_leaderboardAddressSearch_stage_game2 == 1) {
-      //     setUserLevel2Game2(true)
-      //   } else if (state_leaderboardAddressSearch_stage_game2 == 2){
-      //     setUserLevel3Game2(true)
-      //   } else if (state_leaderboardAddressSearch_stage_game2 == 3){
-      //     setUserLevel4Game2(true)
-      //   } else {
-      //     setUserLevel1Game2(true)
-      //   }
-      //
-      //
-      //
-      //
-      //   const noOfEntrys2 = await contract.methods.numberOfEntries(2).call();
-      //
-      //   // LeaderBoard
-      //
-      //               var game2_leaderboard = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard2 = await leaderBoard2;
-      //
-      //                   game2_leaderboard.push(leaderboard2);
-      //                 }
-      //
-      //                 setgame1LeaderBoard(game2_leaderboard)
-      //                 console.log(game2LeaderBoard,"here")
-      //
-      //
-      //
-      //               var game2_indexrows = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   game2_indexrows.push(i);
-      //                 }
-      //               setgame2LeaderBoardIndex(game2_indexrows)
-      //
-      //
-      //               var game2_leaderboard_game_id = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_game_id2 = await leaderBoard2[0];
-      //                   game2_leaderboard_game_id.push(leaderboard_game_id2);
-      //                 }
-      //               setgame2LeaderBoardGameID(game2_leaderboard_game_id)
-      //
-      //
-      //               var game2_leaderboard_address = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_address2 = await leaderBoard2[1];
-      //                   game2_leaderboard_address.push(leaderboard_address2);
-      //                 }
-      //               setgame2LeaderBoardAddress(game2_leaderboard_address)
-      //
-      //               var game2_leaderboard_entered = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_entered2 = await leaderBoard2[2];
-      //                   game2_leaderboard_entered.push(leaderboard_entered2);
-      //                 }
-      //
-      //               setgame2LeaderBoardEntered(game2_leaderboard_entered)
-      //
-      //
-      //               var game2_leaderboard_username = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_username2 = await leaderBoard2[3];
-      //                   game2_leaderboard_username.push(leaderboard_username2);
-      //                 }
-      //
-      //               setgame2LeaderBoardUsername(game2_leaderboard_username)
-      //
-      //
-      //               var game2_leaderboard_tries = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_tries2 = await leaderBoard2[4];
-      //                   game2_leaderboard_tries.push(parseInt(leaderboard_tries2));
-      //                 }
-      //
-      //               setgame2LeaderBoardTries(game2_leaderboard_tries)
-      //
-      //               var game2_leaderboard_stage = [];
-      //                 for (var i = 0; i < noOfEntrys2; i++) {
-      //                   const leaderBoard2 = await contract.methods.leaderboard(2,i).call();
-      //
-      //                   var leaderboard_stage2 = await leaderBoard2[5];
-      //                   game2_leaderboard_stage.push(leaderboard_stage2);
-      //                 }
-      //
-      //               setgame2LeaderBoardStage(game2_leaderboard_stage)
-      //
-      //               const game2_team1_details = await contract.methods.TeamDetails(2,1).call();
-      //               const game2_team1_teamid = await game2_team1_details[0];
-      //               const game2_team1_team_points_target = await game2_team1_details[1];
-      //               const game2_team1_ppp = await game2_team1_details[2];
-      //               const game2_team1_team_entries = await game2_team1_details[3];
-      //               const game2_team1_team_actual_points = await game2_team1_details[4];
-      //
-      //               const game2_team2_details = await contract.methods.TeamDetails(2,2).call();
-      //               const game2_team2_teamid = await game2_team2_details[0];
-      //               const game2_team2_team_points_target = await game2_team2_details[1];
-      //               const game2_team2_ppp = await game2_team2_details[2];
-      //               const game2_team2_team_entries = await game2_team2_details[3];
-      //               const game2_team2_team_actual_points = await game2_team2_details[4];
-      //
-      //               setGame2_team1_teamid(game2_team1_teamid)
-      //               setGame2_team1_team_points_target(game2_team1_team_points_target)
-      //               setGame2_team1_ppp(game2_team1_ppp)
-      //               setGame2_team1_team_entries(game1_team2_team_entries)
-      //               setGame2_team1_team_actual_points(game2_team1_team_actual_points)
-      //
-      //               setGame2_team2_teamid(game2_team2_teamid)
-      //               setGame2_team2_team_points_target(game2_team2_team_points_target)
-      //               setGame2_team2_ppp(game2_team2_ppp)
-      //               setGame2_team2_team_entries(game2_team2_team_entries)
-      //               setGame2_team2_team_actual_points(game2_team2_team_actual_points)
-      //
-      //
-      //
-      // }, 1000);
+
+
+      // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3");
+      // const gameAddress = "0xd34ac2bC3a7851d586EdDc3819a5c0Eea84563A3"
+
+      // setGameContractAddress(gameAddress);
+      //
+      // const tokenContract = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
+
+
+      // const tokenContract = new web3.eth.Contract(abiToken,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0x4203b43Bb1c245529d5b6dA0F53fc263194D16ba");
+
+      // TestNet
+      // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
+      // Sstart Data Calls
+      // const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
+      //
+      // var totalTreasure = await tokenContract.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
+      // totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
+      // console.log(totalTreasure,"Total Treasure token contract")
+
+      // const owner = await contract.methods._owner().call();
+      // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
+      //
+      // const total_supply = await contract.methods.totalSupply().call();
+      // const treasure_chest = await contract.methods.treasureChest().call();
+      // setWeb3(web3)
+      // setAccounts(accounts[0])
+      // setContract(contract)
+      // setDecimals(decimals)
+      // setTotalTreasure(totalTreasure)
+      // setTokenContract(tokenContract)
+      //
+      // setWallet_for_google("w="+accounts.toString())
+      //
+
+
+    // GLOBAL TREASUREBLOX ASYNC STARTS
+
+      // const globalTries = await contract.methods.totalumberOfTries().call();
+      //
+      // setGlobalNumberOfTries(globalTries)
+    // GLOBAL TREASUREBLOX ASYNC ENDS
+
+
+      // TREASUREBLOX EXAMPLE CONTRACT DETAILS END
+
+
+
+
+
+      // This Handels the countdown time and collecting information every 1 second so the counter goes down
+      const timer = window.setInterval( async() => {
+
+          var moment = require('moment'); // require
+
+// GET GAMES //
+
+// PARTNER EXAMPLE GET GAME 1 START
+
+          // PARTNER GAME 1
+          // GSB_contract_xyz_
+          // GSC_contract_xyz_
+          // GSD_contract_xyz_
+          // MAIN_GAME_contract_xyz_
+          // VOLT_contract_xyz_
+
+
+
+
+          const game1_xyz_ = await GSC_contract_bsc_.methods.Games(partnerId_xyz,1).call();
+          const game1_live_xyz_ = await game1_xyz_[0];
+
+          var game1_prize_xyz_ = await game1_xyz_[1];
+          var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
+
+          setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
+          game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
+
+          const game1_question_hash_xyz_ = await game1_xyz_[2];
+
+          var  game1_costToEnter_xyz_ = await game1_xyz_[3];
+          game1_costToEnter_xyz_ =  game1_costToEnter_xyz_.substring(0,  game1_costToEnter_xyz_.length-18);
+
+          const game1_riddle_xyz_ = await game1_xyz_[4];
+          const game1_head_start_time_xyz_ = await game1_xyz_[5];
+
+          setGame1_live_xyz_(game1_live_xyz_)
+          setGame1_prize_xyz_(game1_prize_xyz_)
+          setGame1_question_hash_xyz_(game1_question_hash_xyz_)
+          setGame1_costToEnter_xyz_(game1_costToEnter_xyz_)
+          setGame1_riddle_xyz_(game1_riddle_xyz_)
+          setGame1_head_start_time_xyz_(game1_head_start_time_xyz_)
+
+          const allGame1_xyz_ = await GSB_contract_bsc_.methods.allGames(partnerId_xyz,1).call();
+          const allGame1_id_xyz_ = await allGame1_xyz_[0];
+          const allGame1_user_front_of_que_xyz_ = await allGame1_xyz_[1];
+          const allGame1_deadline_time_xyz_ =  await allGame1_xyz_[2];
+          const allGame1_username_xyz_ = await allGame1_xyz_[3];
+          const allGame1_total_game_tries_xyz_ = await allGame1_xyz_[4];
+
+          const numberOfEntriesGame1_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call();
+
+          const game1huntEntries_xyz_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_xyz,1).call();
+          const userGame1_id_xyz_ = await game1huntEntries_xyz_[0];
+          const userEntered_game1_xyz_ = await game1huntEntries_xyz_[1];
+          const userGame1_headstart_time_xyz_ =  await game1huntEntries_xyz_[2];
+          const userGame1_live_xyz_ = await game1huntEntries_xyz_[3];
+
+          const pot1AnsweredCorrectly_xyz_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_xyz,1).call();
+          const winning_address1_xyz_ = await pot1AnsweredCorrectly_xyz_[0];
+          const treasure_found1_xyz_ = await pot1AnsweredCorrectly_xyz_[1];
+          var winning_prize1_xyz_ =  await pot1AnsweredCorrectly_xyz_[2];
+
+
+          const getAllLatestGameAttempts1_xyz_ = await GSB_contract_bsc_.methods.allGames(partnerId_xyz,1).call();
+          const attemptId1_xyz_ = await getAllLatestGameAttempts1_xyz_[0];
+          const attemptAddress1_xyz_ = await getAllLatestGameAttempts1_xyz_[1];
+          const attemptDeadline1_xyz_ =  await getAllLatestGameAttempts1_xyz_[2];
+          const attemptUsername1_xyz_ = await getAllLatestGameAttempts1_xyz_[3];
+
+
+
+          const entriesGame1_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call()
+          settotalGameEntriesGame1_xyz_(entriesGame1_xyz_);
+
+
+
+          var currentStartDate_xyz_ = Date();
+          var startDate_xyz_ = new Date(currentStartDate_xyz_);
+
+          var endDateGame1_xyz_ = new Date(allGame1_deadline_time_xyz_ * 1000);
+
+
+          function getDifferenceInDays_xyz_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60 * 24);
+            }
+
+          function getDifferenceInHours_xyz_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60);
+            }
+
+          function getDifferenceInMinutes_xyz_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60);
+            }
+
+          function getDifferenceInSeconds_xyz_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / 1000;
+            }
+
+
+          var timeGame1_xyz_ = Math.abs(getDifferenceInSeconds_xyz_(startDate_xyz_, endDateGame1_xyz_));
+
+
+
+
+          setTimeGame1_xyz_(timeGame1_xyz_)
+          setTimeGame1_xyz_(prevTime => prevTime - 1); // <-- Change this line!
+
+          setallGame1_id_xyz_(allGame1_id_xyz_)
+          setallGame1_user_front_of_que_xyz_(allGame1_user_front_of_que_xyz_)
+          setallGame1_deadline_xyz_(allGame1_deadline_time_xyz_)
+          setallGame1_username_xyz_(allGame1_username_xyz_)
+          setallGame1_total_game_tries_xyz_(allGame1_total_game_tries_xyz_)
+
+          if (endDateGame1_xyz_-1 >= startDate_xyz_){
+            setcountGame1DeadlineTrue_xyz_(true);
+          } else {
+            setcountGame1DeadlineTrue_xyz_(false);
+          }
+
+          setGame1numberOfEntries_xyz_(entriesGame1_xyz_)
+
+          setUserGame1_id_xyz_(userGame1_id_xyz_)
+          setUserEntered_game1_xyz_(userEntered_game1_xyz_)
+          setUserGame1_headstart_time_xyz_(userGame1_headstart_time_xyz_)
+          setUserGame1_live_xyz_(userGame1_live_xyz_)
+
+          setWinning_address1_xyz_(winning_address1_xyz_)
+          setTreasure_found1_xyz_(treasure_found1_xyz_)
+          setWinning_prize1_xyz_(winning_prize1_xyz_)
+
+
+          setAttemptId1_xyz_(attemptId1_xyz_)
+          setAttemptAddress1_xyz_(attemptAddress1_xyz_)
+          setAttemptUsername1_xyz_(attemptUsername1_xyz_)
+          setAttemptDeadline1_xyz_(attemptDeadline1_xyz_)
+
+
+          // LeaderBoardAddressSearch
+
+          const leaderboardAddressSearch_xyz_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_xyz,1).call();
+
+
+          var leaderboardAddressSearch_huntid_game1_xyz_ = await leaderboardAddressSearch_xyz_[0];
+          var leaderboardAddressSearch_address_game1_xyz_ = await leaderboardAddressSearch_xyz_[1];
+          var leaderboardAddressSearch_entered_game1_xyz_ = await leaderboardAddressSearch_xyz_[2];
+          var leaderboardAddressSearch_username_game1_xyz_ = await leaderboardAddressSearch_xyz_[3];
+          var leaderboardAddressSearch_tries_game1_xyz_ = await leaderboardAddressSearch_xyz_[4];
+          var leaderboardAddressSearch_stage_game1_xyz_ = await leaderboardAddressSearch_xyz_[5];
+          var leaderboardAddressSearch_team_game1_xyz_ = await leaderboardAddressSearch_xyz_[6];
+
+
+
+
+          setleaderboardAddressSearch_huntid_game1_xyz_(leaderboardAddressSearch_huntid_game1_xyz_)
+          setleaderboardAddressSearch_address_game1_xyz_(leaderboardAddressSearch_address_game1_xyz_)
+          setleaderboardAddressSearch_entered_game1_xyz_(leaderboardAddressSearch_entered_game1_xyz_)
+          setleaderboardAddressSearch_username_game1_xyz_(leaderboardAddressSearch_username_game1_xyz_)
+          setleaderboardAddressSearch_tries_game1_xyz_(leaderboardAddressSearch_tries_game1_xyz_)
+          setleaderboardAddressSearch_stage_game1_xyz_(leaderboardAddressSearch_stage_game1_xyz_)
+          setleaderboardAddressSearch_team_game1_xyz_(leaderboardAddressSearch_team_game1_xyz_)
+
+          // User Levels
+          if (leaderboardAddressSearch_stage_game1_xyz_ == 0){
+            setUserLevel1Game1_xyz_(true)
+          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 1) {
+
+            await setUserLevel2Game1_xyz_(true)
+
+          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 2){
+            setUserLevel3Game1_xyz_(true)
+          } else if (leaderboardAddressSearch_stage_game1_xyz_ == 3){
+            setUserLevel4Game1_xyz_(true)
+          } else {
+            setUserLevel1Game1_xyz_(true)
+          }
+
+
+
+          const noOfEntrys_xyz_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_xyz,1).call();
+
+          // LeaderBoard
+
+          var game1_leaderboard_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard1_xyz_ = await leaderBoard_xyz_;
+
+              game1_leaderboard_xyz_.push(leaderboard1_xyz_);
+            }
+
+            setgame1LeaderBoard_xyz_(game1_leaderboard_xyz_)
+
+          var game1_indexrows_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              game1_indexrows_xyz_.push(i);
+            }
+          setgame1LeaderBoardIndex_xyz_(game1_indexrows_xyz_)
+
+
+          var game1_leaderboard_game_id_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_game_id_xyz_ = await leaderBoard_xyz_[0];
+              game1_leaderboard_game_id_xyz_.push(leaderboard_game_id_xyz_);
+            }
+          setgame1LeaderBoardGameID_xyz_(game1_leaderboard_game_id_xyz_)
+
+
+          var game1_leaderboard_address_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_address_xyz_ = await leaderBoard_xyz_[1];
+              game1_leaderboard_address_xyz_.push(leaderboard_address_xyz_);
+            }
+          setgame1LeaderBoardAddress_xyz_(game1_leaderboard_address_xyz_)
+
+          var game1_leaderboard_entered_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_entered_xyz_ = await leaderBoard_xyz_[2];
+              game1_leaderboard_entered_xyz_.push(leaderboard_entered_xyz_);
+            }
+
+          setgame1LeaderBoardEntered_xyz_(game1_leaderboard_entered_xyz_)
+
+
+          var game1_leaderboard_username_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_username_xyz_ = await leaderBoard_xyz_[3];
+              game1_leaderboard_username_xyz_.push(leaderboard_username_xyz_);
+            }
+
+          setgame1LeaderBoardUsername_xyz_(game1_leaderboard_username_xyz_)
+
+
+          var game1_leaderboard_tries_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_tries_xyz_ = await leaderBoard_xyz_[4];
+              game1_leaderboard_tries_xyz_.push(parseInt(leaderboard_tries_xyz_));
+            }
+
+          setgame1LeaderBoardTries_xyz_(game1_leaderboard_tries_xyz_)
+
+
+          var game1_leaderboard_stage_xyz_ = [];
+            for (var i = 0; i < noOfEntrys_xyz_; i++) {
+              const leaderBoard_xyz_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_xyz,1,i).call();
+
+              var leaderboard_stage_xyz_ = await leaderBoard_xyz_[5];
+              game1_leaderboard_stage_xyz_.push(leaderboard_stage_xyz_);
+            }
+
+          setgame1LeaderBoardStage_xyz_(game1_leaderboard_stage_xyz_)
+
+          const game1_team1_details_xyz_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_xyz,1,1).call();
+          const game1_team1_xyz_teamid = await game1_team1_details_xyz_[0];
+          const game1_team1_xyz_team_points_target = await game1_team1_details_xyz_[1];
+          const game1_team1_xyz_ppp = await game1_team1_details_xyz_[2];
+          const game1_team1_xyz_team_entries = await game1_team1_details_xyz_[3];
+          const game1_team1_xyz_team_actual_points = await game1_team1_details_xyz_[4];
+
+          const game1_team2_details_xyz_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_xyz,1,2).call();
+          const game1_team2_xyz_teamid = await game1_team2_details_xyz_[0];
+          const game1_team2_xyz_team_points_target = await game1_team2_details_xyz_[1];
+          const game1_team2_xyz_ppp = await game1_team2_details_xyz_[2];
+          const game1_team2_xyz_team_entries = await game1_team2_details_xyz_[3];
+          const game1_team2_xyz_team_actual_points = await game1_team2_details_xyz_[4];
+
+          setGame1_team1_xyz_teamid(game1_team1_xyz_teamid)
+          setGame1_team1_xyz_team_points_target(game1_team1_xyz_team_points_target)
+          setGame1_team1_xyz_ppp(game1_team1_xyz_ppp)
+          setGame1_team1_xyz_team_entries(game1_team1_xyz_team_entries)
+          setGame1_team1_xyz_team_actual_points(game1_team1_xyz_team_actual_points)
+
+          setGame1_team2_xyz_teamid(game1_team2_xyz_teamid)
+          setGame1_team2_xyz_team_points_target(game1_team2_xyz_team_points_target)
+          setGame1_team2_xyz_ppp(game1_team2_xyz_ppp)
+          setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
+          setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
+
+          const cost_to_play_xyz_ = await VOLT_contract_xyz_.methods.CostToPlay().call();
+          var CostToPlay_xyz_edit = await cost_to_play_xyz_[0];
+          CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
+          setCostToPlay_xyz_(CostToPlay_xyz_edit);
+
+//////////////////
+          // PARTNER EXAMPLE GET GAME 1 END
+
+
+          // GAME 1 TREASUREBLOX STARTS
+          const game1_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,1).call();
+          const game1_live_treasurebloxNative_ = await game1_treasurebloxNative_[0];
+
+          var game1_prize_treasurebloxNative_ = await game1_treasurebloxNative_[1];
+          var winnerEstPrizeGame1_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, Math.round(game1_prize_treasurebloxNative_*.3).length-18);
+
+          setWinnerEstPrizeGame1_treasurebloxNative_(winnerEstPrizeGame1_treasurebloxNative_)
+          game1_prize_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, game1_prize_treasurebloxNative_.length-18);
+
+          const game1_question_hash_treasurebloxNative_ = await game1_treasurebloxNative_[2];
+
+          var  game1_costToEnter_treasurebloxNative_ = await game1_treasurebloxNative_[3];
+          game1_costToEnter_treasurebloxNative_ =  game1_costToEnter_treasurebloxNative_.substring(0,  game1_costToEnter_treasurebloxNative_.length-18);
+
+          const game1_riddle_treasurebloxNative_ = await game1_treasurebloxNative_[4];
+          const game1_head_start_time_treasurebloxNative_ = await game1_treasurebloxNative_[5];
+
+          setGame1_live_treasurebloxNative_(game1_live_treasurebloxNative_)
+          setGame1_prize_treasurebloxNative_(game1_prize_treasurebloxNative_)
+          setGame1_question_hash_treasurebloxNative_(game1_question_hash_treasurebloxNative_)
+          setGame1_costToEnter_treasurebloxNative_(game1_costToEnter_treasurebloxNative_)
+          setGame1_riddle_treasurebloxNative_(game1_riddle_treasurebloxNative_)
+          setGame1_head_start_time_treasurebloxNative_(game1_head_start_time_treasurebloxNative_)
+
+          const allGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,1).call();
+          const allGame1_id_treasurebloxNative_ = await allGame1_treasurebloxNative_[0];
+          const allGame1_user_front_of_que_treasurebloxNative_ = await allGame1_treasurebloxNative_[1];
+          const allGame1_deadline_time_treasurebloxNative_ =  await allGame1_treasurebloxNative_[2];
+          const allGame1_username_treasurebloxNative_ = await allGame1_treasurebloxNative_[3];
+          const allGame1_total_game_tries_treasurebloxNative_ = await allGame1_treasurebloxNative_[4];
+
+          const numberOfEntriesGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call();
+
+          const game1huntEntries_treasurebloxNative_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_treasurebloxNative,1).call();
+          const userGame1_id_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[0];
+          const userEntered_game1_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[1];
+          const userGame1_headstart_time_treasurebloxNative_ =  await game1huntEntries_treasurebloxNative_[2];
+          const userGame1_live_treasurebloxNative_ = await game1huntEntries_treasurebloxNative_[3];
+
+          const pot1AnsweredCorrectly_treasurebloxNative_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_treasurebloxNative,1).call();
+          const winning_address1_treasurebloxNative_ = await pot1AnsweredCorrectly_treasurebloxNative_[0];
+          const treasure_found1_treasurebloxNative_ = await pot1AnsweredCorrectly_treasurebloxNative_[1];
+          var winning_prize1_treasurebloxNative_ =  await pot1AnsweredCorrectly_treasurebloxNative_[2];
+
+
+          const getAllLatestGameAttempts1_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,1).call();
+          const attemptId1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[0];
+          const attemptAddress1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[1];
+          const attemptDeadline1_treasurebloxNative_ =  await getAllLatestGameAttempts1_treasurebloxNative_[2];
+          const attemptUsername1_treasurebloxNative_ = await getAllLatestGameAttempts1_treasurebloxNative_[3];
+
+
+
+          const entriesGame1_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call()
+          settotalGameEntriesGame1_treasurebloxNative_(entriesGame1_treasurebloxNative_);
+
+
+
+          var currentStartDate_treasurebloxNative_ = Date();
+          var startDate_treasurebloxNative_ = new Date(currentStartDate_treasurebloxNative_);
+
+          var endDateGame1_treasurebloxNative_ = new Date(allGame1_deadline_time_treasurebloxNative_ * 1000);
+
+
+          function getDifferenceInDays_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60 * 24);
+            }
+
+          function getDifferenceInHours_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60 * 60);
+            }
+
+          function getDifferenceInMinutes_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / (1000 * 60);
+            }
+
+          function getDifferenceInSeconds_treasurebloxNative_(date1, date2) {
+            const diffInMs = Math.abs(date2 - date1);
+            return diffInMs / 1000;
+            }
+
+
+          var timeGame1_treasurebloxNative_ = Math.abs(getDifferenceInSeconds_treasurebloxNative_(startDate_treasurebloxNative_, endDateGame1_treasurebloxNative_));
+
+
+
+
+          setTimeGame1_treasurebloxNative_(timeGame1_treasurebloxNative_)
+          setTimeGame1_treasurebloxNative_(prevTime => prevTime - 1); // <-- Change this line!
+
+          setallGame1_id_treasurebloxNative_(allGame1_id_treasurebloxNative_)
+          setallGame1_user_front_of_que_treasurebloxNative_(allGame1_user_front_of_que_treasurebloxNative_)
+          setallGame1_deadline_treasurebloxNative_(allGame1_deadline_time_treasurebloxNative_)
+          setallGame1_username_treasurebloxNative_(allGame1_username_treasurebloxNative_)
+          setallGame1_total_game_tries_treasurebloxNative_(allGame1_total_game_tries_treasurebloxNative_)
+
+          if (endDateGame1_treasurebloxNative_-1 >= startDate_treasurebloxNative_){
+            setcountGame1DeadlineTrue_treasurebloxNative_(true);
+          } else {
+            setcountGame1DeadlineTrue_treasurebloxNative_(false);
+          }
+
+          setGame1numberOfEntries_treasurebloxNative_(entriesGame1_treasurebloxNative_)
+
+          setUserGame1_id_treasurebloxNative_(userGame1_id_treasurebloxNative_)
+          setUserEntered_game1_treasurebloxNative_(userEntered_game1_treasurebloxNative_)
+          setUserGame1_headstart_time_treasurebloxNative_(userGame1_headstart_time_treasurebloxNative_)
+          setUserGame1_live_treasurebloxNative_(userGame1_live_treasurebloxNative_)
+
+          setWinning_address1_treasurebloxNative_(winning_address1_treasurebloxNative_)
+          setTreasure_found1_treasurebloxNative_(treasure_found1_treasurebloxNative_)
+          setWinning_prize1_treasurebloxNative_(winning_prize1_treasurebloxNative_)
+
+
+          setAttemptId1_treasurebloxNative_(attemptId1_treasurebloxNative_)
+          setAttemptAddress1_treasurebloxNative_(attemptAddress1_treasurebloxNative_)
+          setAttemptUsername1_treasurebloxNative_(attemptUsername1_treasurebloxNative_)
+          setAttemptDeadline1_treasurebloxNative_(attemptDeadline1_treasurebloxNative_)
+
+
+          // LeaderBoardAddressSearch
+
+          const leaderboardAddressSearch_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_treasurebloxNative,1).call();
+
+
+          var leaderboardAddressSearch_huntid_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[0];
+          var leaderboardAddressSearch_address_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[1];
+          var leaderboardAddressSearch_entered_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[2];
+          var leaderboardAddressSearch_username_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[3];
+          var leaderboardAddressSearch_tries_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[4];
+          var leaderboardAddressSearch_stage_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[5];
+          var leaderboardAddressSearch_team_game1_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_[6];
+
+
+
+
+          setleaderboardAddressSearch_huntid_game1_treasurebloxNative_(leaderboardAddressSearch_huntid_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_address_game1_treasurebloxNative_(leaderboardAddressSearch_address_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_entered_game1_treasurebloxNative_(leaderboardAddressSearch_entered_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_username_game1_treasurebloxNative_(leaderboardAddressSearch_username_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_tries_game1_treasurebloxNative_(leaderboardAddressSearch_tries_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_stage_game1_treasurebloxNative_(leaderboardAddressSearch_stage_game1_treasurebloxNative_)
+          setleaderboardAddressSearch_team_game1_treasurebloxNative_(leaderboardAddressSearch_team_game1_treasurebloxNative_)
+
+          // User Levels
+          if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 0){
+            setUserLevel1Game1_treasurebloxNative_(true)
+          } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 1) {
+
+            await setUserLevel2Game1_treasurebloxNative_(true)
+
+          } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 2){
+            setUserLevel3Game1_treasurebloxNative_(true)
+          } else if (leaderboardAddressSearch_stage_game1_treasurebloxNative_ == 3){
+            setUserLevel4Game1_treasurebloxNative_(true)
+          } else {
+            setUserLevel1Game1_treasurebloxNative_(true)
+          }
+
+
+
+          const noOfEntrys_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,1).call();
+
+          // LeaderBoard
+
+          var game1_leaderboard_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard1_treasurebloxNative_ = await leaderBoard_treasurebloxNative_;
+
+              game1_leaderboard_treasurebloxNative_.push(leaderboard1_treasurebloxNative_);
+            }
+
+            setgame1LeaderBoard_treasurebloxNative_(game1_leaderboard_treasurebloxNative_)
+
+          var game1_indexrows_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              game1_indexrows_treasurebloxNative_.push(i);
+            }
+          setgame1LeaderBoardIndex_treasurebloxNative_(game1_indexrows_treasurebloxNative_)
+
+
+          var game1_leaderboard_game_id_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_game_id_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[0];
+              game1_leaderboard_game_id_treasurebloxNative_.push(leaderboard_game_id_treasurebloxNative_);
+            }
+          setgame1LeaderBoardGameID_treasurebloxNative_(game1_leaderboard_game_id_treasurebloxNative_)
+
+
+          var game1_leaderboard_address_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_address_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[1];
+              game1_leaderboard_address_treasurebloxNative_.push(leaderboard_address_treasurebloxNative_);
+            }
+          setgame1LeaderBoardAddress_treasurebloxNative_(game1_leaderboard_address_treasurebloxNative_)
+
+          var game1_leaderboard_entered_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_entered_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[2];
+              game1_leaderboard_entered_treasurebloxNative_.push(leaderboard_entered_treasurebloxNative_);
+            }
+
+          setgame1LeaderBoardEntered_treasurebloxNative_(game1_leaderboard_entered_treasurebloxNative_)
+
+
+          var game1_leaderboard_username_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_username_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[3];
+              game1_leaderboard_username_treasurebloxNative_.push(leaderboard_username_treasurebloxNative_);
+            }
+
+          setgame1LeaderBoardUsername_treasurebloxNative_(game1_leaderboard_username_treasurebloxNative_)
+
+
+          var game1_leaderboard_tries_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_tries_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[4];
+              game1_leaderboard_tries_treasurebloxNative_.push(parseInt(leaderboard_tries_treasurebloxNative_));
+            }
+
+          setgame1LeaderBoardTries_treasurebloxNative_(game1_leaderboard_tries_treasurebloxNative_)
+
+
+          var game1_leaderboard_stage_treasurebloxNative_ = [];
+            for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+              const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,1,i).call();
+
+              var leaderboard_stage_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[5];
+              game1_leaderboard_stage_treasurebloxNative_.push(leaderboard_stage_treasurebloxNative_);
+            }
+
+          setgame1LeaderBoardStage_treasurebloxNative_(game1_leaderboard_stage_treasurebloxNative_)
+
+          const game1_team1_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,1,1).call();
+          const game1_team1_treasurebloxNative_teamid = await game1_team1_details_treasurebloxNative_[0];
+          const game1_team1_treasurebloxNative_team_points_target = await game1_team1_details_treasurebloxNative_[1];
+          const game1_team1_treasurebloxNative_ppp = await game1_team1_details_treasurebloxNative_[2];
+          const game1_team1_treasurebloxNative_team_entries = await game1_team1_details_treasurebloxNative_[3];
+          const game1_team1_treasurebloxNative_team_actual_points = await game1_team1_details_treasurebloxNative_[4];
+
+          const game1_team2_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,1,2).call();
+          const game1_team2_treasurebloxNative_teamid = await game1_team2_details_treasurebloxNative_[0];
+          const game1_team2_treasurebloxNative_team_points_target = await game1_team2_details_treasurebloxNative_[1];
+          const game1_team2_treasurebloxNative_ppp = await game1_team2_details_treasurebloxNative_[2];
+          const game1_team2_treasurebloxNative_team_entries = await game1_team2_details_treasurebloxNative_[3];
+          const game1_team2_treasurebloxNative_team_actual_points = await game1_team2_details_treasurebloxNative_[4];
+
+          setGame1_team1_treasurebloxNative_teamid(game1_team1_treasurebloxNative_teamid)
+          setGame1_team1_treasurebloxNative_team_points_target(game1_team1_treasurebloxNative_team_points_target)
+          setGame1_team1_treasurebloxNative_ppp(game1_team1_treasurebloxNative_ppp)
+          setGame1_team1_treasurebloxNative_team_entries(game1_team1_treasurebloxNative_team_entries)
+          setGame1_team1_treasurebloxNative_team_actual_points(game1_team1_treasurebloxNative_team_actual_points)
+
+          setGame1_team2_treasurebloxNative_teamid(game1_team2_treasurebloxNative_teamid)
+          setGame1_team2_treasurebloxNative_team_points_target(game1_team2_treasurebloxNative_team_points_target)
+          setGame1_team2_treasurebloxNative_ppp(game1_team2_treasurebloxNative_ppp)
+          setGame1_team2_treasurebloxNative_team_entries(game1_team2_treasurebloxNative_team_entries)
+          setGame1_team2_treasurebloxNative_team_actual_points(game1_team2_treasurebloxNative_team_actual_points)
+
+
+          const cost_to_play_treasurebloxNative_ = await VOLT_contract_treasurebloxNative_.methods.CostToPlay().call();
+          var CostToPlay_treasurebloxNative_edit = await cost_to_play_treasurebloxNative_[0];
+          CostToPlay_treasurebloxNative_edit =  CostToPlay_treasurebloxNative_edit.substring(0,  CostToPlay_treasurebloxNative_edit.length-18);
+          setCostToPlay_treasurebloxNative_(CostToPlay_treasurebloxNative_edit);
+
+
+          // GAME 1 TREASUREBLOX ENDS
+
+
+
+
+        // GAME 2 TREASUREBLOX STARTS
+
+
+        const game2_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,2).call();
+        const game2_live_treasurebloxNative_ = await game2_treasurebloxNative_[0];
+
+        var game2_prize_treasurebloxNative_ = await game2_treasurebloxNative_[1];
+        var winnerEstPrizeGame2_treasurebloxNative_ = game2_prize_treasurebloxNative_.substring(0, Math.round(game2_prize_treasurebloxNative_*.3).length-18);
+
+        setWinnerEstPrizeGame2_treasurebloxNative_(winnerEstPrizeGame2_treasurebloxNative_)
+        game2_prize_treasurebloxNative_ = game2_prize_treasurebloxNative_.substring(0, game2_prize_treasurebloxNative_.length-18);
+
+        const game2_question_hash_treasurebloxNative_ = await game2_treasurebloxNative_[2];
+
+        var  game2_costToEnter_treasurebloxNative_ = await game2_treasurebloxNative_[3];
+        game2_costToEnter_treasurebloxNative_ =  game2_costToEnter_treasurebloxNative_.substring(0,  game2_costToEnter_treasurebloxNative_.length-18);
+
+        const game2_riddle_treasurebloxNative_ = await game2_treasurebloxNative_[4];
+        const game2_head_start_time_treasurebloxNative_ = await game2_treasurebloxNative_[5];
+
+        setGame2_live_treasurebloxNative_(game2_live_treasurebloxNative_)
+        setGame2_prize_treasurebloxNative_(game2_prize_treasurebloxNative_)
+        setGame2_question_hash_treasurebloxNative_(game2_question_hash_treasurebloxNative_)
+        setGame2_costToEnter_treasurebloxNative_(game2_costToEnter_treasurebloxNative_)
+        setGame2_riddle_treasurebloxNative_(game2_riddle_treasurebloxNative_)
+        setGame2_head_start_time_treasurebloxNative_(game2_head_start_time_treasurebloxNative_)
+
+        const allGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,2).call();
+        const allGame2_id_treasurebloxNative_ = await allGame2_treasurebloxNative_[0];
+        const allGame2_user_front_of_que_treasurebloxNative_ = await allGame2_treasurebloxNative_[1];
+        const allGame2_deadline_time_treasurebloxNative_ =  await allGame2_treasurebloxNative_[2];
+        const allGame2_username_treasurebloxNative_ = await allGame2_treasurebloxNative_[3];
+        const allGame2_total_game_tries_treasurebloxNative_ = await allGame2_treasurebloxNative_[4];
+
+        const numberOfEntriesGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call();
+
+        const game2huntEntries_treasurebloxNative_ = await GSB_contract_bsc_.methods.huntEntries(accounts[0],partnerId_treasurebloxNative,2).call();
+        const userGame2_id_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[0];
+        const userEntered_game2_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[1];
+        const userGame2_headstart_time_treasurebloxNative_ =  await game2huntEntries_treasurebloxNative_[2];
+        const userGame2_live_treasurebloxNative_ = await game2huntEntries_treasurebloxNative_[3];
+
+        const pot2AnsweredCorrectly_treasurebloxNative_ = await GSB_contract_bsc_.methods.Pot1AnsweredCorrectly(partnerId_treasurebloxNative,2).call();
+        const winning_address2_treasurebloxNative_ = await pot2AnsweredCorrectly_treasurebloxNative_[0];
+        const treasure_found2_treasurebloxNative_ = await pot2AnsweredCorrectly_treasurebloxNative_[1];
+        var winning_prize2_treasurebloxNative_ =  await pot2AnsweredCorrectly_treasurebloxNative_[2];
+
+
+        const getAllLatestGameAttempts2_treasurebloxNative_ = await GSB_contract_bsc_.methods.allGames(partnerId_treasurebloxNative,2).call();
+        const attemptId2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[0];
+        const attemptAddress2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[1];
+        const attemptDeadline2_treasurebloxNative_ =  await getAllLatestGameAttempts2_treasurebloxNative_[2];
+        const attemptUsername2_treasurebloxNative_ = await getAllLatestGameAttempts2_treasurebloxNative_[3];
+
+
+
+        const entriesGame2_treasurebloxNative_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call()
+        settotalGameEntriesGame2_treasurebloxNative_(entriesGame2_treasurebloxNative_);
+
+
+
+        var currentStartDate_treasurebloxNative_ = Date();
+        var startDate_treasurebloxNative_ = new Date(currentStartDate_treasurebloxNative_);
+
+        var endDateGame2_treasurebloxNative_ = new Date(allGame2_deadline_time_treasurebloxNative_ * 1000);
+
+
+        function getDifferenceInDays_treasurebloxNative_(date1, date2) {
+          const diffInMs = Math.abs(date2 - date1);
+          return diffInMs / (1000 * 60 * 60 * 24);
+          }
+
+        function getDifferenceInHours_treasurebloxNative_(date1, date2) {
+          const diffInMs = Math.abs(date2 - date1);
+          return diffInMs / (1000 * 60 * 60);
+          }
+
+        function getDifferenceInMinutes_treasurebloxNative_(date1, date2) {
+          const diffInMs = Math.abs(date2 - date1);
+          return diffInMs / (1000 * 60);
+          }
+
+        function getDifferenceInSeconds_treasurebloxNative_(date1, date2) {
+          const diffInMs = Math.abs(date2 - date1);
+          return diffInMs / 1000;
+          }
+
+
+        var timeGame2_treasurebloxNative_ = Math.abs(getDifferenceInSeconds_treasurebloxNative_(startDate_treasurebloxNative_, endDateGame2_treasurebloxNative_));
+
+
+
+
+        setTimeGame2_treasurebloxNative_(timeGame2_treasurebloxNative_)
+        setTimeGame2_treasurebloxNative_(prevTime => prevTime - 1); // <-- Change this line!
+
+        setallGame2_id_treasurebloxNative_(allGame2_id_treasurebloxNative_)
+        setallGame2_user_front_of_que_treasurebloxNative_(allGame2_user_front_of_que_treasurebloxNative_)
+        setallGame2_deadline_treasurebloxNative_(allGame2_deadline_time_treasurebloxNative_)
+        setallGame2_username_treasurebloxNative_(allGame2_username_treasurebloxNative_)
+        setallGame2_total_game_tries_treasurebloxNative_(allGame2_total_game_tries_treasurebloxNative_)
+
+        if (endDateGame2_treasurebloxNative_-1 >= startDate_treasurebloxNative_){
+          setcountGame2DeadlineTrue_treasurebloxNative_(true);
+        } else {
+          setcountGame2DeadlineTrue_treasurebloxNative_(false);
+        }
+
+        setGame2numberOfEntries_treasurebloxNative_(entriesGame2_treasurebloxNative_)
+
+        setUserGame2_id_treasurebloxNative_(userGame2_id_treasurebloxNative_)
+        setUserEntered_game2_treasurebloxNative_(userEntered_game2_treasurebloxNative_)
+        setUserGame2_headstart_time_treasurebloxNative_(userGame2_headstart_time_treasurebloxNative_)
+        setUserGame2_live_treasurebloxNative_(userGame2_live_treasurebloxNative_)
+
+        setWinning_address2_treasurebloxNative_(winning_address2_treasurebloxNative_)
+        setTreasure_found2_treasurebloxNative_(treasure_found2_treasurebloxNative_)
+        setWinning_prize2_treasurebloxNative_(winning_prize2_treasurebloxNative_)
+
+
+        setAttemptId1_treasurebloxNative_(attemptId1_treasurebloxNative_)
+        setAttemptAddress1_treasurebloxNative_(attemptAddress1_treasurebloxNative_)
+        setAttemptUsername1_treasurebloxNative_(attemptUsername1_treasurebloxNative_)
+        setAttemptDeadline1_treasurebloxNative_(attemptDeadline1_treasurebloxNative_)
+
+
+        // LeaderBoardAddressSearch
+
+        const leaderboardAddressSearch_treasurebloxNative_game2_ = await GSC_contract_bsc_.methods.leaderboardAddressMapping(accounts[0],partnerId_treasurebloxNative,2).call();
+
+
+        var leaderboardAddressSearch_huntid_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[0];
+        var leaderboardAddressSearch_address_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[1];
+        var leaderboardAddressSearch_entered_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[2];
+        var leaderboardAddressSearch_username_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[3];
+        var leaderboardAddressSearch_tries_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[4];
+        var leaderboardAddressSearch_stage_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[5];
+        var leaderboardAddressSearch_team_game2_treasurebloxNative_ = await leaderboardAddressSearch_treasurebloxNative_game2_[6];
+
+
+
+
+        setleaderboardAddressSearch_huntid_game2_treasurebloxNative_(leaderboardAddressSearch_huntid_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_address_game2_treasurebloxNative_(leaderboardAddressSearch_address_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_entered_game2_treasurebloxNative_(leaderboardAddressSearch_entered_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_username_game2_treasurebloxNative_(leaderboardAddressSearch_username_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_tries_game2_treasurebloxNative_(leaderboardAddressSearch_tries_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_stage_game2_treasurebloxNative_(leaderboardAddressSearch_stage_game2_treasurebloxNative_)
+        setleaderboardAddressSearch_team_game2_treasurebloxNative_(leaderboardAddressSearch_team_game2_treasurebloxNative_)
+
+        // User Levels
+        if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 0){
+          setUserLevel1Game2_treasurebloxNative_(true)
+        } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 1) {
+
+          await setUserLevel2Game2_treasurebloxNative_(true)
+
+        } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 2){
+          setUserLevel3Game2_treasurebloxNative_(true)
+        } else if (leaderboardAddressSearch_stage_game2_treasurebloxNative_ == 3){
+          setUserLevel4Game2_treasurebloxNative_(true)
+        } else {
+          setUserLevel1Game2_treasurebloxNative_(true)
+        }
+
+
+
+        const noOfEntrys_treasurebloxNative_game2_ = await GSB_contract_bsc_.methods.numberOfEntries(partnerId_treasurebloxNative,2).call();
+
+        // LeaderBoard
+
+        var game2_leaderboard_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard1_treasurebloxNative_ = await leaderBoard_treasurebloxNative_;
+
+            game2_leaderboard_treasurebloxNative_.push(leaderboard1_treasurebloxNative_);
+          }
+
+          setgame2LeaderBoard_treasurebloxNative_(game2_leaderboard_treasurebloxNative_)
+
+        var game2_indexrows_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            game2_indexrows_treasurebloxNative_.push(i);
+          }
+        setgame2LeaderBoardIndex_treasurebloxNative_(game2_indexrows_treasurebloxNative_)
+
+
+        var game2_leaderboard_game_id_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_game_id_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[0];
+            game2_leaderboard_game_id_treasurebloxNative_.push(leaderboard_game_id_treasurebloxNative_);
+          }
+        setgame2LeaderBoardGameID_treasurebloxNative_(game2_leaderboard_game_id_treasurebloxNative_)
+
+
+        var game2_leaderboard_address_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_address_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[1];
+            game2_leaderboard_address_treasurebloxNative_.push(leaderboard_address_treasurebloxNative_);
+          }
+        setgame2LeaderBoardAddress_treasurebloxNative_(game2_leaderboard_address_treasurebloxNative_)
+
+        var game2_leaderboard_entered_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_entered_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[2];
+            game2_leaderboard_entered_treasurebloxNative_.push(leaderboard_entered_treasurebloxNative_);
+          }
+
+        setgame2LeaderBoardEntered_treasurebloxNative_(game2_leaderboard_entered_treasurebloxNative_)
+
+
+        var game2_leaderboard_username_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_username_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[3];
+            game2_leaderboard_username_treasurebloxNative_.push(leaderboard_username_treasurebloxNative_);
+          }
+
+        setgame2LeaderBoardUsername_treasurebloxNative_(game2_leaderboard_username_treasurebloxNative_)
+
+
+        var game2_leaderboard_tries_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_tries_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[4];
+            game2_leaderboard_tries_treasurebloxNative_.push(parseInt(leaderboard_tries_treasurebloxNative_));
+          }
+
+        setgame2LeaderBoardTries_treasurebloxNative_(game2_leaderboard_tries_treasurebloxNative_)
+
+
+        var game2_leaderboard_stage_treasurebloxNative_ = [];
+          for (var i = 0; i < noOfEntrys_treasurebloxNative_; i++) {
+            const leaderBoard_treasurebloxNative_ = await GSC_contract_bsc_.methods.leaderboard(partnerId_treasurebloxNative,2,i).call();
+
+            var leaderboard_stage_treasurebloxNative_ = await leaderBoard_treasurebloxNative_[5];
+            game2_leaderboard_stage_treasurebloxNative_.push(leaderboard_stage_treasurebloxNative_);
+          }
+
+        setgame2LeaderBoardStage_treasurebloxNative_(game2_leaderboard_stage_treasurebloxNative_)
+
+        const game2_team1_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,2,1).call();
+        const game2_team1_treasurebloxNative_teamid = await game2_team1_details_treasurebloxNative_[0];
+        const game2_team1_treasurebloxNative_team_points_target = await game2_team1_details_treasurebloxNative_[1];
+        const game2_team1_treasurebloxNative_ppp = await game2_team1_details_treasurebloxNative_[2];
+        const game2_team1_treasurebloxNative_team_entries = await game2_team1_details_treasurebloxNative_[3];
+        const game2_team1_treasurebloxNative_team_actual_points = await game2_team1_details_treasurebloxNative_[4];
+
+        const game2_team2_details_treasurebloxNative_ = await GSC_contract_bsc_.methods.TeamDetails(partnerId_treasurebloxNative,2,2).call();
+        const game2_team2_treasurebloxNative_teamid = await game2_team2_details_treasurebloxNative_[0];
+        const game2_team2_treasurebloxNative_team_points_target = await game2_team2_details_treasurebloxNative_[1];
+        const game2_team2_treasurebloxNative_ppp = await game2_team2_details_treasurebloxNative_[2];
+        const game2_team2_treasurebloxNative_team_entries = await game2_team2_details_treasurebloxNative_[3];
+        const game2_team2_treasurebloxNative_team_actual_points = await game2_team2_details_treasurebloxNative_[4];
+
+        setGame2_team1_treasurebloxNative_teamid(game2_team1_treasurebloxNative_teamid)
+        setGame2_team1_treasurebloxNative_team_points_target(game2_team1_treasurebloxNative_team_points_target)
+        setGame2_team1_treasurebloxNative_ppp(game2_team1_treasurebloxNative_ppp)
+        setGame2_team1_treasurebloxNative_team_entries(game2_team1_treasurebloxNative_team_entries)
+        setGame2_team1_treasurebloxNative_team_actual_points(game2_team1_treasurebloxNative_team_actual_points)
+
+        setGame2_team2_treasurebloxNative_teamid(game2_team2_treasurebloxNative_teamid)
+        setGame2_team2_treasurebloxNative_team_points_target(game2_team2_treasurebloxNative_team_points_target)
+        setGame2_team2_treasurebloxNative_ppp(game2_team2_treasurebloxNative_ppp)
+        setGame2_team2_treasurebloxNative_team_entries(game2_team2_treasurebloxNative_team_entries)
+        setGame2_team2_treasurebloxNative_team_actual_points(game2_team2_treasurebloxNative_team_actual_points)
+
+
+        // Cost to play is called using the end of game 1 not using game 2
+
+
+
+      }, 1000);
       // End of Game timer code
 
-    // }// End of network if statement METER
+    }// End of network if statement METER
 
 
 
@@ -8274,7 +8374,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
               game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
 
-
               />
               </Route>
 
@@ -8283,7 +8382,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 // Example Partnership Starts
 
               <Route path={partnership_treasure_hunt_page} >
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnershipHunt1
                 // main
                 is_meter={is_meter}
@@ -8423,7 +8522,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={web3partnership_home} >
-              <PartnershipNav {...props}  onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnerHome
                 // main
                 is_meter={is_meter}
@@ -8562,7 +8661,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_1}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1
               // main
               is_meter={is_meter}
@@ -8703,7 +8802,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_1_more}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1More
               // main
               is_meter={is_meter}
@@ -8841,7 +8940,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_2}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2
               // main
               is_meter={is_meter}
@@ -8980,7 +9079,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_2_more}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2More
               // main
               is_meter={is_meter}
@@ -9119,7 +9218,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_3}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel3
               // main
               is_meter={is_meter}
@@ -9258,7 +9357,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_4}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel4
               // main
               is_meter={is_meter}
@@ -9397,7 +9496,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random1}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom1
               // main
               is_meter={is_meter}
@@ -9536,7 +9635,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random2}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom2
               // main
               is_meter={is_meter}
@@ -9676,7 +9775,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random3}>
-              <PartnershipNav {...props} onClick={() => Connection()}/>
+              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom3
               // main
               is_meter={is_meter}

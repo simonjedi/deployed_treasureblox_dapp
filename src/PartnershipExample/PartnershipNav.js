@@ -70,20 +70,20 @@ const PartnerNav = (props) => {
         <Nav className="me-auto">
 
 
-        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBloxHome/:top">
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/TreasureBloxPartnerHome/:top">
         Home
         </Link>
 
 
       {props.is_meter?(
         <div>
-        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/TreasureBloxPartner/:top">
         Battle For the Grid
         </Link>
         </div>
       ):(
         <div>
-        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/JetswapXTreasureBlox1/:top">
+        <Link className='customLinks' onClick={nav_blox_partnership1_hunt1_link_click} to="/TreasureBloxPartner/:top">
         Strike Fighter
         </Link>
         </div>

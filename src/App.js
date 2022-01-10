@@ -127,11 +127,11 @@ import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
 
   var partnerLandingPageHome = false;
 
-  if (window.location.href.includes("JetswapXTreasureBloxHome/:top")){
+  if (window.location.href.includes("TreasureBloxPartnerHome/:top")){
     var partnerLandingPageHome = true;
   }
 
-  if (window.location.href.includes("JetswapXTreasureBlox1/:top")){
+  if (window.location.href.includes("TreasureBloxPartner/:top")){
     var partnerLandingPageHome = true;
   }
 
@@ -142,8 +142,8 @@ import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
 
 
 // Set URL's
-  const web3partnership_home = "/JetswapXTreasureBloxHome/:top";
-  const partnership_treasure_hunt_page = "/JetswapXTreasureBlox1/:top";
+  const web3partnership_home = "/TreasureBloxPartnerHome/:top";
+  const partnership_treasure_hunt_page = "/TreasureBloxPartner/:top";
   const partnership_1 = "/PartnershipLevel1/:top";
   const partnership_1_more = "/PartnershipLevel1More/:top";
   const partnership_2 = "/PartnershipLevel2/:top";

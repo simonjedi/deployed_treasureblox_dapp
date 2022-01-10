@@ -567,8 +567,19 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
+    // Loading state
+      const [isLoading, setIsLoading] = useState(true);
 
 
+
+
+      useEffect(() => {
+
+        // Wait for 3 seconds
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3500);
+      }, []);
 
 
 
@@ -576,6 +587,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
       const init = async() => {
+
+
 
         const web3 = await getWeb3();
         const accounts = await web3.eth.getAccounts();
@@ -3013,7 +3026,16 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
         <div className="customFont">
 
+{isLoading?(
 
+  <div>
+
+  is loading
+
+
+  </div>
+
+):(<div>
 
 
         <Helmet>
@@ -3021,6 +3043,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
         </Helmet>
+
+
 
 
 
@@ -10078,7 +10102,15 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
+
+
+</div>)}
+
+
+
       </div>
+
+
     );
 
 }

@@ -193,7 +193,7 @@ const { width, height } = useWindowSize();
 
 
         <p>The ultimate jetswap treasurehunt adventure!</p>
-        <LinkHeader to="/PartnershipExample1">
+        <LinkHeader to="/TreasureBloxPartner/:top">
           <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
         </LinkHeader>
 

@@ -138,7 +138,7 @@ console.log(props.game2numberOfEntries,"me")
 
 
         <br/>
-        <Link to="/JetswapXTreasureBloxHome/:top">
+        <Link to="/TreasureBloxPartnerHome/:top">
         {props.is_meter?
           (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Battle Grid</Button>):
           (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>)}

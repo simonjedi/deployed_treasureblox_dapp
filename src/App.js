@@ -1,4 +1,4 @@
-import { Button,Container,Nav,Navbar,NavDropdown,Carousel } from 'react-bootstrap';
+import { Button,Container,Nav,Navbar,NavDropdown,Carousel,Card } from 'react-bootstrap';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,8 +19,8 @@ import PartnershipNav from './PartnershipExample/PartnershipNav';
 import PartnerHome from "./PartnershipExample/PartnerHome";
 
 // Partnerships
-
-
+// import img1 from './components/Structure/images/Blox.gif';
+import img1 from './components/Structure/images/PowerPose.gif';
 
 
 import SingleCard from './components/Structure/Game1/SingleCard';
@@ -175,9 +175,46 @@ import PartnershipRandom3 from "./PartnershipExample/MiniGamesSelector/Random3";
   const game2_random2 = "/Game2_Random2/:top";
   const game2_random3 = "/Game2_Random3/:top";
 
+
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+
+    useEffect(() => {
+
+
+
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+
+      window.scrollTo(0, 0);
+
+
+    }, []); // Empty array ensures that effect is only run on mount
+
+
+    return windowSize;
+  }
+
 const App = (props) => {
 
-
+  const { width, height } = useWindowSize();
 // Set Blox Contracts Starts
 
   const [web3,setWeb3] = useState(null)
@@ -578,7 +615,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // Wait for 3 seconds
         setTimeout(() => {
           setIsLoading(false);
-        }, 3500);
+        }, 4000);
       }, []);
 
 
@@ -3025,15 +3062,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
         <div className="customFont">
-
+        
 {isLoading?(
 
-  <div>
+  <div style={{height: height*5}} className="background">
 
-  is loading
+<div className="loading">
+<img
+  alt="treasureblox_logo"
+  src={img1}
+  width="500"
+  className="d-inline-block align-middle"
+/>
 
 
-  </div>
+</div>
+<div className="siteTitle caption blink_me">Loading The Metaverse!</div>
+
+
+</div>
 
 ):(<div>
 

@@ -917,7 +917,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Cost to play {props.CostToPlay_xyz_} MTRG
 
                           </div>
                           <br/>
@@ -962,7 +962,7 @@ const handleSubmitEnterDave = async() => {
 
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Cost to play {props.CostToPlay_xyz_} MTRG
                           <br/>
 
                           </div>
@@ -1002,7 +1002,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play {props.CostToPlay_xyz_} Wings
+                        Cost to play {props.CostToPlay_xyz_} MTRG
 
                         </div>
                         <br/>
@@ -1075,7 +1075,7 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
+                          <Card.Header className="MiniGameTitle">Level 1 - Force Field!
 
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
@@ -1087,7 +1087,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Cost to play {props.CostToPlay_xyz_} MTRG
 
 
                           </div>
@@ -1113,7 +1113,7 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
+                          <Card.Header className="MiniGameTitle">Level 2 - Electric Meter!
 
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
@@ -1125,7 +1125,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Cost to play {props.CostToPlay_xyz_} MTRG
 
                           </div>
                           <br/>
@@ -1150,7 +1150,7 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                       <Card.Body className="customBodyMiniGame">
-                        <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
+                        <Card.Header className="MiniGameTitle">Level 3 - Led Conundrum!
 
                         </Card.Header>
 
@@ -1164,7 +1164,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play {props.CostToPlay_xyz_} Wings
+                        Cost to play {props.CostToPlay_xyz_} MTRG
 
                         </div>
                         <br/>
@@ -1207,8 +1207,6 @@ const handleSubmitEnterDave = async() => {
                     )}
 
                     <br/>
-
-
 
 
 

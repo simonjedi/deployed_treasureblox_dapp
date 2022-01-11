@@ -38,7 +38,7 @@ const Connection = (props) =>  {
        const web3 = await getWeb3();
        const accounts = await web3.eth.getAccounts();
        const usersAccount = accounts[0];
-       const stringOfUsersAccount = new String(usersAccount)
+       const stringOfUsersAccount = new String(usersAccount);
        console.log(stringOfUsersAccount.slice(0, 4)); // "01"
        setFirstPartAddress(stringOfUsersAccount.slice(0, 5));
        setSecondPartAddress('____'+stringOfUsersAccount.slice(37, 42));
@@ -50,18 +50,14 @@ const Connection = (props) =>  {
   const connectWallet = async(e) => {
     await wallet.connect()
     const usersAccount = props.accounts[0];
-    const stringOfUsersAccount = new String(usersAccount)
+    const stringOfUsersAccount = new String(usersAccount);
     console.log(stringOfUsersAccount.slice(0, 4)); // "01"
     setFirstPartAddress('Welcome');
     setSecondPartAddress('');
     window.location.reload();
 
   }
-
-
-
-
-
+  
 
   const bsc = async(e) => {
     const Moralis = require('moralis');

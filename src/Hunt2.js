@@ -496,7 +496,7 @@ const handleSubmitEnterDave = async() => {
         <Container className='mt-5' fluid="md">
               <div className="siteTitle">Play 2 Earn - Fort Blox!</div>
 
-              <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Captain Troy!</div>
+              <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
               <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
 
               <Container className='mt-5' fluid="md">
@@ -1267,7 +1267,7 @@ const handleSubmitEnterDave = async() => {
         </div>
       ):(
         <div style={{height: height}}>
-        <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Captain Troy!</div>
+        <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
         <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
 
         <Container className='mt-5' fluid="md">

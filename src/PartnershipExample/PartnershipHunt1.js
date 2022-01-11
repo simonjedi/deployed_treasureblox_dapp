@@ -13,6 +13,14 @@ import img3 from './assets/images/the_maze.png';
 import img4 from './assets/images/lift_off.png';
 import img5 from './assets/images/LightsOut.png';
 
+import img3_meter from './assets/images/ray_gun.png';
+import img4_meter from './assets/images/lucky_lightsabre.png';
+import img5_meter from './assets/images/ready_player_one.png';
+
+
+
+
+
 import flight_training_img from "./assets/images/flight_training.png";
 import key_pad_img from "./assets/images/key_pad.png";
 import night_vision_img from "./assets/images/night_vision.png";
@@ -482,7 +490,7 @@ const handleSubmitEnterDave = async() => {
 
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
-          <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+          <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
           <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
 
           <Container className='mt-5' fluid="md">
@@ -888,12 +896,15 @@ const handleSubmitEnterDave = async() => {
 
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={props.is_meter?(img5_meter):(lift_off)} alt="Logo" className='cardRoundedMiniGame'/>
+
+
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Lift Off - Easy!
 
-                          </Card.Header>
+
+                          {props.is_meter?(<Card.Header className="MiniGameTitle">Ready Player One - Easy!</Card.Header>):(<Card.Header className="MiniGameTitle">Lift Off - Easy!</Card.Header>)}
+
 
 
                           <Card.Header className="MiniGameTitle">1 in 4 chance to win!
@@ -931,12 +942,15 @@ const handleSubmitEnterDave = async() => {
                       <Col sm={4}>
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={props.is_meter?(img3_meter):(flare_gun)} alt="ray_gun" className='cardRoundedMiniGame'/>
+
+
+
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
+                        {props.is_meter?(<Card.Header className="MiniGameTitle">Ray Gun - Intermidiate!</Card.Header>):(<Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!</Card.Header>)}
 
-                          </Card.Header>
+
                           <Card.Header className="MiniGameTitle">1 in 6 chance to win!
                           <br />3X Play Cost Token Return
                         <br />30 game points
@@ -973,12 +987,11 @@ const handleSubmitEnterDave = async() => {
                       <Col sm={4}>
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={props.is_meter?(img4_meter):(rescue)} alt="Lightsaber" className='cardRoundedMiniGame'/>
 
                       <Card.Body className="customBodyMiniGame">
-                        <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
+                        {props.is_meter?(<Card.Header className="MiniGameTitle">Lucky Lightsaber - Difficult!</Card.Header>):(<Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!</Card.Header>)}
 
-                        </Card.Header>
                         <Card.Header className="MiniGameTitle">1 in 20 chance to win!
                         <br />5X Play Cost Token Return
                       <br />100 game points
@@ -1253,7 +1266,7 @@ const handleSubmitEnterDave = async() => {
     </div>
   ):(
     <div style={{height: height}}>
-    <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+    <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
     <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
 
     <Container className='mt-5' fluid="md">
@@ -1702,7 +1715,7 @@ const handleSubmitEnterDave = async() => {
 
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
-          <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+          <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
           <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
 
           <Container className='mt-5' fluid="md">
@@ -2473,7 +2486,7 @@ const handleSubmitEnterDave = async() => {
     </div>
   ):(
     <div style={{height: height}}>
-    <div className="siteTitle">Team Crypto Dave <a className="MiniGameTitle">Vs</a> Team Capatin Troy!</div>
+    <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
     <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
 
     <Container className='mt-5' fluid="md">

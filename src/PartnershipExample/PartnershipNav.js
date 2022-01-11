@@ -20,8 +20,8 @@ import {
   Link
 } from "react-router-dom";
 
-
 const PartnerNav = (props) => {
+
 
 
     const nav_blox_partnership1_hunt1_link_click = (event) => {

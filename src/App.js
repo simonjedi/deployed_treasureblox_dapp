@@ -8406,7 +8406,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 // Example Partnership Starts
 
               <Route path={partnership_treasure_hunt_page} >
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnershipHunt1
                 // main
                 is_meter={is_meter}
@@ -8546,7 +8546,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={web3partnership_home} >
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnerHome
                 // main
                 is_meter={is_meter}
@@ -8685,7 +8685,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_1}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1
               // main
               is_meter={is_meter}
@@ -8826,7 +8826,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_1_more}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1More
               // main
               is_meter={is_meter}
@@ -8964,7 +8964,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_2}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2
               // main
               is_meter={is_meter}
@@ -9103,7 +9103,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_2_more}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2More
               // main
               is_meter={is_meter}
@@ -9242,7 +9242,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_3}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel3
               // main
               is_meter={is_meter}
@@ -9381,7 +9381,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_4}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel4
               // main
               is_meter={is_meter}
@@ -9520,7 +9520,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random1}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom1
               // main
               is_meter={is_meter}
@@ -9659,7 +9659,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random2}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom2
               // main
               is_meter={is_meter}
@@ -9799,7 +9799,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               </Route>
 
               <Route path={partnership_random3}>
-              <PartnershipNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
+              <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom3
               // main
               is_meter={is_meter}

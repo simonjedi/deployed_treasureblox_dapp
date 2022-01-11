@@ -13,14 +13,14 @@ import getWeb3 from "./getWeb3"
 import img_bsc from './components/Structure/images/bsc_logo.png';
 import img_meter from './components/Structure/images/meter.png';
 
-
+let name = 0;
 const Connection = (props) =>  {
 
 
   const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () =>  setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () =>  setShow(true);
 
 
 
@@ -34,6 +34,7 @@ const Connection = (props) =>  {
   useEffect(() => {
 
      const init = async() => {
+
        const web3 = await getWeb3();
        const accounts = await web3.eth.getAccounts();
        const usersAccount = accounts[0];
@@ -41,14 +42,14 @@ const Connection = (props) =>  {
        console.log(stringOfUsersAccount.slice(0, 4)); // "01"
        setFirstPartAddress(stringOfUsersAccount.slice(0, 5));
        setSecondPartAddress('____'+stringOfUsersAccount.slice(37, 42));
-
+       name = stringOfUsersAccount.slice(0, 5)
      }
      init()
    });
 
   const connectWallet = async(e) => {
     await wallet.connect()
-    const usersAccount = props.accounts;
+    const usersAccount = props.accounts[0];
     const stringOfUsersAccount = new String(usersAccount)
     console.log(stringOfUsersAccount.slice(0, 4)); // "01"
     setFirstPartAddress('Welcome');
@@ -56,6 +57,7 @@ const Connection = (props) =>  {
     window.location.reload();
 
   }
+
 
 
 
@@ -114,6 +116,12 @@ const Connection = (props) =>  {
     window.location.reload(false);
 
   }
+console.log(props.accounts,"acccount")
+
+
+
+
+
 
   return(
     <div>
@@ -137,7 +145,7 @@ const Connection = (props) =>  {
           />
           </Button>
 
-          <Button onClick={connectWallet} id="wallet-button" className="customWalletButton " >{firstPartAddress}{secondPartAddress}</Button>
+          <Button onClick={connectWallet} id="wallet-button" className="customWalletButton " >{props.accounts?(<div>Connected</div>):(<div>Connect Wallet</div>)} </Button>
 
         </ButtonGroup>
 
@@ -155,13 +163,16 @@ const Connection = (props) =>  {
 export default (props) => (
   <UseWalletProvider
 
+
     chainId={1337}
     connectors={{
       // This is how connectors get configured
       provided: {provider: window.cleanEthereum},
     }}>
 
-    <Connection accounts={props.accounts}/>
+
+    <Connection accounts={props.accounts[0]}/>
+
 
   </UseWalletProvider>
 )

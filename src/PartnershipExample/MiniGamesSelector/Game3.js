@@ -153,94 +153,223 @@ const Level3Game1 = (props) => {
   })
     return (
 
-      <div style={{height: height*4}} className="background">
-      <div id="top" className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
-      </Helmet>
       <div>
+      {props.is_meter?(
 
-
-
-      {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
-      {doexplode &&  <ReactAudioPlayer
-        src={denied}
-        autoPlay
-      />}
-
-
-
-      <Container className='mt-5' fluid="md">
-
-
-
-
-      {props.playLevel3Game1?(
+        <div style={{height: height*4}} className="custombackgroundmeter">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-        </div>
-      ):(
-        <div>
-        {play?(
 
 
-          // here
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
 
 
-          <div style={{height: height}}>
 
-          <Board {...props}/>
-
-          <ReactAudioPlayer
-            src={game3}
-            autoPlay
-          />
+        <Container className='mt-5' fluid="md">
 
 
-          <br/><br/>
-          <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
-          <br/><br/>
+
+
+        {props.playLevel3Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
           </div>
         ):(
-          <div style={{height: height}}>
-
-          <ReactAudioPlayer
-            src={game1_troy}
-            autoPlay
-          />
+          <div>
+          {play?(
 
 
+            // here
 
 
-          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+            <div style={{height: height}}>
+            <center>
+            {props.is_meter?(
+              <div>
+              <a className='neon-orange' style={{"text-decoration": "none"}}>LED</a>
+              <a className='neon-blue' style={{"text-decoration": "none"}}> Conundrum</a>
+              </div>
+            ):(
+              <div>
+              <a className='neon-orange' style={{"text-decoration": "none"}}>Rescue</a>
+              <a className='neon-blue' style={{"text-decoration": "none"}}> Lights</a>
+              </div>
+            )}
+            </center>
 
-            <Card.Img  src={troyImg} alt="Troy" />
+            <Board />
 
-          </Modal>
-          <br/><br/>
-          <div className="siteTitle">
-          Explorers, that was a close call! We survived, but we need help fast - I can hear
-          Cryto Dave’s forces nearby, and they're closing in on our location! help me turn off the rescue helecopter lighting panel before they see it!”
-          <br/><br/>
-          <Button className="customButton" onClick={handlePlay} >Start</Button>
+            <ReactAudioPlayer
+              src={bloxEscape}
+              autoPlay
+            />
 
+
+            <br/><br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+            <br/><br/>
+            </div>
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={help}
+              autoPlay
+            />
+
+
+
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+            <div className="siteTitle">
+            Explorers, we're in! - "Oh no this isn't right can you help me solve the LED pannel to stablise the grid!"
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
           </div>
-
-          </div>
-
         )}
+
+
+        </Container>
         </div>
+
+
+
+  </div>
+
+  </div>
+
+      ):(
+        <div style={{height: height*4}} className="background">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | Fort Blox</title>
+        </Helmet>
+        <div>
+
+
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
+
+
+
+        <Container className='mt-5' fluid="md">
+
+
+
+
+        {props.playLevel3Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+
+          {play?(
+
+
+            // here
+
+
+            <div style={{height: height}}>
+            <center>
+            {props.is_meter?(
+              <div>
+
+              <a className='neon-orange' style={{"text-decoration": "none"}}>LED</a>
+              <a className='neon-blue' style={{"text-decoration": "none"}}> Conundrum</a>
+
+              </div>
+
+            ):(
+              <div>
+              <a className='neon-orange' style={{"text-decoration": "none"}}>Rescue</a>
+              <a className='neon-blue' style={{"text-decoration": "none"}}> Lights</a>
+              </div>
+            )}
+            </center>
+
+            <Board {...props}/>
+
+            <ReactAudioPlayer
+              src={game3}
+              autoPlay
+            />
+
+
+            <br/><br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+            <br/><br/>
+            </div>
+
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={game1_troy}
+              autoPlay
+            />
+
+
+
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+            <div className="siteTitle">
+            Explorers, that was a close call! We survived, but we need help fast - I can hear
+            Cryto Dave’s forces nearby, and they're closing in on our location! help me turn off the rescue helecopter lighting panel before they see it!”
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
+          </div>
+        )}
+
+
+        </Container>
+        </div>
+
+
+
+  </div>
+
+  </div>
+
       )}
 
-
-      </Container>
       </div>
 
 
-
-</div>
-
-</div>
 
 
 

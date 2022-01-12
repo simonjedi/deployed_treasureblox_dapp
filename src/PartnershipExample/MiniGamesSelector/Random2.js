@@ -154,92 +154,188 @@ const RandomGun = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="background">
-      <div id="top" className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | On Chain Metaverse Game</title>
-      </Helmet>
       <div>
-
-
-
-      {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
-      {doexplode &&  <ReactAudioPlayer
-        src={denied}
-        autoPlay
-      />}
-
-
-
-      <Container className='mt-5' fluid="md">
-
-      <ReactAudioPlayer
-        src={lightsmusic}
-        autoPlay
-      />
-
-
-      {props.playRandom2?(
+      {props.is_meter?(
+        <div style={{height: height*4}} className="background">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter On Chain Metaverse Game</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-        </div>
-      ):(
-        <div>
-        {play?(
-
-
-          // here
-
-
-          <div style={{height: height}}>
-
-
-          <RandomBoard {...props}/>
 
 
 
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
 
 
 
-          <br/><br/>
-          <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
-          <br/><br/>
+        <Container className='mt-5' fluid="md">
+
+        <ReactAudioPlayer
+          src={lightsmusic}
+          autoPlay
+        />
+
+
+        {props.playRandom2?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
           </div>
         ):(
-          <div style={{height: height}}>
+          <div>
+          {play?(
 
-          <ReactAudioPlayer
-            src={help}
-            autoPlay
-          />
 
-          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+            // here
 
-            <Card.Img  src={troyImg} alt="Troy" />
 
-          </Modal>
-          <br/><br/>
-          <div className="siteTitle">Explorer can you help me set of the flair gun to get a rescue?
-          <br/><br/>
-          <Button className="customButton" onClick={handlePlay} >Start</Button>
+            <div style={{height: height}}>
 
+
+            <RandomBoard {...props}/>
+
+
+
+
+
+
+            <br/><br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+            <br/><br/>
+            </div>
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={help}
+              autoPlay
+            />
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+            <div className="siteTitle">Explorer can you help me fire the Ray Gun to bust my way in?
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
           </div>
-
-          </div>
-
         )}
+
+
+        </Container>
         </div>
+
+
+
+  </div>
+
+  </div>
+
+      ):(
+        <div style={{height: height*4}} className="background">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | On Chain Metaverse Game</title>
+        </Helmet>
+        <div>
+
+
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
+
+
+
+        <Container className='mt-5' fluid="md">
+
+        <ReactAudioPlayer
+          src={lightsmusic}
+          autoPlay
+        />
+
+
+        {props.playRandom2?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+          {play?(
+
+
+            // here
+
+
+            <div style={{height: height}}>
+
+
+            <RandomBoard {...props}/>
+
+
+
+
+
+
+            <br/><br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+            <br/><br/>
+            </div>
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={help}
+              autoPlay
+            />
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+            <div className="siteTitle">Explorer can you help me set of the flair gun to get a rescue?
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
+          </div>
+        )}
+
+
+        </Container>
+        </div>
+
+
+
+  </div>
+
+  </div>
+
       )}
 
-
-      </Container>
       </div>
 
 
-
-</div>
-
-</div>
 
 
 

@@ -17,6 +17,12 @@ import img3_meter from './assets/images/ray_gun.png';
 import img4_meter from './assets/images/lucky_lightsabre.png';
 import img5_meter from './assets/images/ready_player_one.png';
 
+import the_grid from './assets/images/the_grid.png';
+import enter_grid from './assets/images/enter_grid.png';
+
+
+
+
 
 
 
@@ -123,7 +129,7 @@ const PartnershipHunt1 = (props) => {
   const [playRandom3,setplayRandom3] = useState(false);
 
 
-  const handlePayQuest = async() => {
+  const handlePayQuest1 = async() => {
 
     window.dataLayer.push({
       event: "wallet_information",
@@ -139,6 +145,7 @@ const PartnershipHunt1 = (props) => {
     // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
+
 
     setTimeout(function(){
         setloading(false);
@@ -360,7 +367,6 @@ const handleSubmitEnterDave = async() => {
   var counter = parseInt(props.game1team1_xyz_team_entries)+parseInt(props.game1team2_xyz_team_entries);
 
   const game1_live = props.game1_live;
-
 
   // const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
@@ -1072,7 +1078,7 @@ const handleSubmitEnterDave = async() => {
 
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={props.is_meter?(enter_grid):(flight_training_img)} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
                           <Card.Header className="MiniGameTitle">Level 1 - Force Field!
@@ -1092,7 +1098,7 @@ const handleSubmitEnterDave = async() => {
 
                           </div>
                           <br/>
-                          <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+                          <Button className="customButton" onClick={handlePayQuest1}>Play Level 1</Button>
 
 
                           <footer className="blockquote">
@@ -1110,10 +1116,10 @@ const handleSubmitEnterDave = async() => {
                       <Col sm={4}>
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={props.is_meter?(the_grid):(key_pad_img)} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 2 - Electric Meter!
+                          <Card.Header className="MiniGameTitle">Level 2 - Enter The Grid!
 
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
@@ -2310,7 +2316,7 @@ const handleSubmitEnterDave = async() => {
 
                           </div>
                           <br/>
-                          <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
+                          <Button className="customButton" onClick={handlePayQuest1}>Play Level 1</Button>
 
 
                           <footer className="blockquote">

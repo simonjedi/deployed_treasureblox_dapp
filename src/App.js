@@ -613,7 +613,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
       useEffect(() => {
 
         // Wait for 3 seconds
+
+
         setTimeout(() => {
+
           setIsLoading(false);
         }, 4000);
       }, []);
@@ -625,7 +628,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
       const init = async() => {
 
-
+        if (isLoading){
+          window.scrollTo({top: 0})
+        }
 
         const web3 = await getWeb3();
         const accounts = await web3.eth.getAccounts();
@@ -3062,8 +3067,9 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
         <div className="customFont">
-        
+
 {isLoading?(
+
 
   <div style={{height: height*5}} className="background">
 

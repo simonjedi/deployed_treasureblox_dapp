@@ -355,83 +355,168 @@ async function tryAgain(uid){
   return (
 
     <div>
-
-    {win? (
+    {props.is_meter?(
       <div>
 
-      <ReactAudioPlayer
-        src={celebrate}
+      {win? (
+        <div>
+
+        <ReactAudioPlayer
+          src={celebrate}
+          autoPlay
+        />
+        <center>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
+        </center>
+
+
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+  <center>
+      <div className='Board-title d-none d-lg-block'>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
+        <a className='neon-blue' style={{"text-decoration": "none"}}> Lightsaber</a>
+      </div>
+      <canvas width="200" height="200" id="canvasgun"> </canvas>
+      <br/>
+
+      {lose && <ReactAudioPlayer
+        src={fail}
         autoPlay
-      />
-      <center>
-      <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
-      </center>
+      />}
 
+      {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
+
+
+      {redirectRandom1?(
+        <div>
+
+        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+
+      {spin?(
+        <div>
+        <Button className="customButton">Please Wait</Button>
+        <ReactAudioPlayer
+          src={slots}
+          autoPlay
+        />
+        </div>
+      ):(
+        <div>
+
+
+
+        <Button className="customButton" onClick={handlePlay}>Play</Button>
+
+
+
+
+
+        </div>
+      )}
+
+  </center>
+  <br/>
 
       </div>
-
     ):(
       <div>
 
+      {win? (
+        <div>
+
+        <ReactAudioPlayer
+          src={celebrate}
+          autoPlay
+        />
+        <center>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
+        </center>
+
+
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+  <center>
+      <div className='Board-title d-none d-lg-block'>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
+        <a className='neon-blue' style={{"text-decoration": "none"}}> Rescue</a>
       </div>
-    )}
+      <canvas width="200" height="200" id="canvasgun"> </canvas>
+      <br/>
 
-<center>
-    <div className='Board-title d-none d-lg-block'>
-      <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
-      <a className='neon-blue' style={{"text-decoration": "none"}}> Rescue</a>
-    </div>
-    <canvas width="200" height="200" id="canvasgun"> </canvas>
-    <br/>
-
-    {lose && <ReactAudioPlayer
-      src={fail}
-      autoPlay
-    />}
-
-    {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
-
-
-    {redirectRandom1?(
-      <div>
-
-      <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-
-      </div>
-
-    ):(
-      <div>
-
-      </div>
-    )}
-
-
-    {spin?(
-      <div>
-      <Button className="customButton">Please Wait</Button>
-      <ReactAudioPlayer
-        src={slots}
+      {lose && <ReactAudioPlayer
+        src={fail}
         autoPlay
-      />
-      </div>
-    ):(
-      <div>
+      />}
+
+      {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
+
+
+      {redirectRandom1?(
+        <div>
+
+        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+        </div>
+
+      ):(
+        <div>
+
+        </div>
+      )}
+
+
+      {spin?(
+        <div>
+        <Button className="customButton">Please Wait</Button>
+        <ReactAudioPlayer
+          src={slots}
+          autoPlay
+        />
+        </div>
+      ):(
+        <div>
 
 
 
-      <Button className="customButton" onClick={handlePlay}>Play</Button>
+        <Button className="customButton" onClick={handlePlay}>Play</Button>
 
 
 
 
+
+        </div>
+      )}
+
+  </center>
+  <br/>
 
       </div>
     )}
-
-</center>
-<br/>
-
     </div>
+
+
 
   );
 }

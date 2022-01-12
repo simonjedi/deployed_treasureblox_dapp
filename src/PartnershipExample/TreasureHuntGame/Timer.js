@@ -26,7 +26,6 @@ import ReactAudioPlayer from 'react-audio-player';
   // winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
 
 
-
   const [transactionConfirmed,setTransactionConfirmed] = useState(false);
   const [timeLock,setTimelock] = useState(false);
 

@@ -206,149 +206,301 @@ const Level2Game1 = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="custombackgroundfightergame">
-      <div id="top" className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox x JetSwap</title>
-      </Helmet>
       <div>
-
-
-      {more && <Redirect to={props.partnership_2_more} {...props}/> }
-
-      {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
-      {doexplode &&  <ReactAudioPlayer
-        src={denied}
-        autoPlay
-      />}
-
-
-      <Container className='mt-5' fluid="md">
-
-      <ReactAudioPlayer
-        src={lightsmusic}
-        autoPlay
-      />
-
-
-      {props.playLevel2Game1?(
+      {props.is_meter?(
+        <div style={{height: height*4}} className="custombackgroundmeter">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-        </div>
-      ):(
-        <div>
-        {play?(
 
 
-          // here
+        {more && <Redirect to={props.partnership_2_more} {...props}/> }
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
 
 
-          <div style={{height: height}}>
+        <Container className='mt-5' fluid="md">
+
+        <ReactAudioPlayer
+          src={lightsmusic}
+          autoPlay
+        />
 
 
-
-          <ReactAudioPlayer
-            src={plane}
-            autoPlay
-          />
-
-
-
-
-          <br/>
-          <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
-
-          <br/>
-          <div className="siteTitle">Crypto Dave has scrambled the pad enter '#725048' correctly before the time runs out.</div>
-
-
-
-          <center>
-          <div className="outerKeyPad">
-            <br/><br/>
-            <div className="siteTitle topKeyPad">{resultCalc}</div>
-            <br/><br/>
-                      <ButtonGroup size="lg" aria-label="Basic example">
-                        <Button id="1" onClick={handleInputChange} value="0" variant="secondary"> 1 </Button><br/>
-                        <Button id="2" onClick={handleInputChange} value="2" variant="secondary"> 2 </Button>
-                        <Button id="3" onClick={handleInputChange} value="3" variant="secondary"> 3 </Button>
-                        <Button id="4" onClick={handleInputChange} value="7" variant="secondary"> 4 </Button>
-
-                      </ButtonGroup>
-                      <br/><br/>
-                      <ButtonGroup size="lg" aria-label="Basic example">
-                        <Button id="5" onClick={handleInputChange} value="5" variant="secondary"> 5 </Button>
-                        <Button id="6" onClick={handleInputChange} value="9" variant="secondary"> 6 </Button>
-                        <Button id="7" onClick={handleInputChange} value="4" variant="secondary"> 7 </Button>
-                        <Button id="8" onClick={handleInputChange} value="8" variant="secondary"> 8 </Button>
-                      </ButtonGroup>
-                      <br/><br/>
-                      <ButtonGroup size="lg" aria-label="Basic example">
-
-                        <Button id="9" onClick={handleInputChange} value="6" variant="secondary"> 9 </Button>
-                        <Button id="0" onClick={handleInputChange} value="1" variant="secondary"> 0 </Button>
-                        <Button id="#" onClick={handleInputChange} value="*" variant="secondary"> # </Button>
-                        <Button id="*" onClick={handleInputChange} value="#" variant="secondary"> * </Button>
-
-                      </ButtonGroup>
-                      <br/><br/>
-                      <ButtonGroup size="lg" aria-label="Basic example">
-
-                        <Button id="clear" onClick={handleClear} variant="secondary"> CLEAR </Button>
-                        <Button id="handleEnter" onClick={handleEnter} variant="primary"> ENTER </Button>
-
-
-                      </ButtonGroup>
-                      <br/><br/>
-
-
-            </div>
-            </center>
+        {props.playLevel2Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
           </div>
         ):(
-          <div style={{height: height}}>
-
-          <ReactAudioPlayer
-            src={game1_troy}
-            autoPlay
-          />
+          <div>
+          {play?(
 
 
+            // here
 
 
-          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-            <Card.Img  src={troyImg} alt="Troy" />
-
-          </Modal>
-          <br/><br/>
+            <div style={{height: height}}>
 
 
-          <div className="siteTitle">Warning - Warning - You're about to crash!! "Explorer, can you help me? Crypto Dave has
-          hit us with a missile what should we do?
+
+            <ReactAudioPlayer
+              src={gameSound}
+              autoPlay
+            />
 
 
-          Enter the code so we can engage auto pilot!
-          <br/><br/>
-          <Button className="customButton" onClick={handlePlay} >Start</Button>
 
+
+            <br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+
+            <br/>
+            <div className="siteTitle">Crypto Dave has scrambled the code to enter the grid!
+            <br/>Enter '#725048' correctly before the time runs out.</div>
+
+
+
+            <center>
+            <div className="meterOuterKeyPad">
+              <br/><br/>
+              <div className="siteTitle topKeyPad">{resultCalc}</div>
+              <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+                          <Button id="1" onClick={handleInputChange} value="0" variant="secondary"> 1 </Button><br/>
+                          <Button id="2" onClick={handleInputChange} value="2" variant="secondary"> 2 </Button>
+                          <Button id="3" onClick={handleInputChange} value="3" variant="secondary"> 3 </Button>
+                          <Button id="4" onClick={handleInputChange} value="7" variant="secondary"> 4 </Button>
+
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+                          <Button id="5" onClick={handleInputChange} value="5" variant="secondary"> 5 </Button>
+                          <Button id="6" onClick={handleInputChange} value="9" variant="secondary"> 6 </Button>
+                          <Button id="7" onClick={handleInputChange} value="4" variant="secondary"> 7 </Button>
+                          <Button id="8" onClick={handleInputChange} value="8" variant="secondary"> 8 </Button>
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+
+                          <Button id="9" onClick={handleInputChange} value="6" variant="secondary"> 9 </Button>
+                          <Button id="0" onClick={handleInputChange} value="1" variant="secondary"> 0 </Button>
+                          <Button id="#" onClick={handleInputChange} value="*" variant="secondary"> # </Button>
+                          <Button id="*" onClick={handleInputChange} value="#" variant="secondary"> * </Button>
+
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+
+                          <Button id="clear" onClick={handleClear} variant="secondary"> CLEAR </Button>
+                          <Button id="handleEnter" onClick={handleEnter} variant="primary"> ENTER </Button>
+
+
+                        </ButtonGroup>
+                        <br/><br/>
+
+
+              </div>
+              </center>
+            </div>
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={help}
+              autoPlay
+            />
+
+
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+
+
+            <div className="siteTitle">Warning - You're about to enter the grid! <br/>"Explorer, can you help me? Crypto Dave has
+            scrambled the code?
+
+
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
           </div>
-
-          </div>
-
         )}
+
+
+        </Container>
         </div>
+
+
+
+  </div>
+
+        </div>
+
+      ):(
+        <div style={{height: height*4}} className="custombackgroundfightergame">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x JetSwap</title>
+        </Helmet>
+        <div>
+
+
+        {more && <Redirect to={props.partnership_2_more} {...props}/> }
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
+
+
+        <Container className='mt-5' fluid="md">
+
+        <ReactAudioPlayer
+          src={lightsmusic}
+          autoPlay
+        />
+
+
+        {props.playLevel2Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+          {play?(
+
+
+            // here
+
+
+            <div style={{height: height}}>
+
+
+
+            <ReactAudioPlayer
+              src={plane}
+              autoPlay
+            />
+
+
+
+
+            <br/>
+            <div className="siteTitle">Time Remaining {timeleft} Seconds</div>
+
+            <br/>
+            <div className="siteTitle">Crypto Dave has scrambled the pad enter '#725048' correctly before the time runs out.</div>
+
+
+
+            <center>
+            <div className="outerKeyPad">
+              <br/><br/>
+              <div className="siteTitle topKeyPad">{resultCalc}</div>
+              <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+                          <Button id="1" onClick={handleInputChange} value="0" variant="secondary"> 1 </Button><br/>
+                          <Button id="2" onClick={handleInputChange} value="2" variant="secondary"> 2 </Button>
+                          <Button id="3" onClick={handleInputChange} value="3" variant="secondary"> 3 </Button>
+                          <Button id="4" onClick={handleInputChange} value="7" variant="secondary"> 4 </Button>
+
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+                          <Button id="5" onClick={handleInputChange} value="5" variant="secondary"> 5 </Button>
+                          <Button id="6" onClick={handleInputChange} value="9" variant="secondary"> 6 </Button>
+                          <Button id="7" onClick={handleInputChange} value="4" variant="secondary"> 7 </Button>
+                          <Button id="8" onClick={handleInputChange} value="8" variant="secondary"> 8 </Button>
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+
+                          <Button id="9" onClick={handleInputChange} value="6" variant="secondary"> 9 </Button>
+                          <Button id="0" onClick={handleInputChange} value="1" variant="secondary"> 0 </Button>
+                          <Button id="#" onClick={handleInputChange} value="*" variant="secondary"> # </Button>
+                          <Button id="*" onClick={handleInputChange} value="#" variant="secondary"> * </Button>
+
+                        </ButtonGroup>
+                        <br/><br/>
+                        <ButtonGroup size="lg" aria-label="Basic example">
+
+                          <Button id="clear" onClick={handleClear} variant="secondary"> CLEAR </Button>
+                          <Button id="handleEnter" onClick={handleEnter} variant="primary"> ENTER </Button>
+
+
+                        </ButtonGroup>
+                        <br/><br/>
+
+
+              </div>
+              </center>
+            </div>
+          ):(
+            <div style={{height: height}}>
+
+            <ReactAudioPlayer
+              src={game1_troy}
+              autoPlay
+            />
+
+
+
+
+            <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+              <Card.Img  src={troyImg} alt="Troy" />
+
+            </Modal>
+            <br/><br/>
+
+
+            <div className="siteTitle">Warning - Warning - You're about to crash!! "Explorer, can you help me? Crypto Dave has
+            hit us with a missile what should we do?
+
+
+            Enter the code so we can engage auto pilot!
+            <br/><br/>
+            <Button className="customButton" onClick={handlePlay} >Start</Button>
+
+            </div>
+
+            </div>
+
+          )}
+          </div>
+        )}
+
+
+        </Container>
+        </div>
+
+
+
+  </div>
+
+        </div>
+
       )}
 
-
-      </Container>
       </div>
 
 
-
-</div>
-
-</div>
 
 
 

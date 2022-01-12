@@ -54,7 +54,7 @@ const Connection = (props) =>  {
     console.log(stringOfUsersAccount.slice(0, 4)); // "01"
     setFirstPartAddress('Welcome');
     setSecondPartAddress('');
-    // window.location.reload();
+    window.location.reload();
 
   }
 
@@ -107,7 +107,7 @@ const Connection = (props) =>  {
     );
 
     const chainIdHex = await Moralis.switchNetwork(chainId);
-
+    
     window.location.reload(false);
 
   }

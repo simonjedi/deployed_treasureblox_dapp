@@ -296,84 +296,168 @@ async function tryAgain(uid){
 
 
   return (
+    <div>
+{props.is_meter?(
+  <div>
 
+  {win? (
     <div>
 
-    {win? (
-      <div>
-
-      <ReactAudioPlayer
-        src={celebrate}
-        autoPlay
-      />
-      <center>
-      <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
-      </center>
+    <ReactAudioPlayer
+      src={celebrate}
+      autoPlay
+    />
+    <center>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
+    </center>
 
 
-      </div>
+    </div>
 
-    ):(
-      <div>
+  ):(
+    <div>
 
-      </div>
-    )}
+    </div>
+  )}
 
 <center>
-    <div className='Board-title d-none d-lg-block'>
-      <a className='neon-orange' style={{"text-decoration": "none"}}>Take</a>
-      <a className='neon-blue' style={{"text-decoration": "none"}}> Off</a>
+  <div className='Board-title d-none d-lg-block'>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>Ready</a>
+    <a className='neon-blue' style={{"text-decoration": "none"}}> Player </a>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>One</a>
+
+  </div>
+  <canvas width="200" height="200" id="canvasgun"> </canvas>
+  <br/>
+
+  {lose && <ReactAudioPlayer
+    src={fail}
+    autoPlay
+  />}
+
+  {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
+
+
+  {redirectRandom1?(
+    <div>
+
+    <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
     </div>
-    <canvas width="200" height="200" id="canvasgun"> </canvas>
-    <br/>
 
-    {lose && <ReactAudioPlayer
-      src={fail}
+  ):(
+    <div>
+
+    </div>
+  )}
+
+
+  {spin?(
+    <div>
+    <Button className="customButton">Please Wait</Button>
+    <ReactAudioPlayer
+      src={slots}
       autoPlay
-    />}
-
-    {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
-
-
-    {redirectRandom1?(
-      <div>
-
-      <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-
-      </div>
-
-    ):(
-      <div>
-
-      </div>
-    )}
-
-
-    {spin?(
-      <div>
-      <Button className="customButton">Please Wait</Button>
-      <ReactAudioPlayer
-        src={slots}
-        autoPlay
-      />
-      </div>
-    ):(
-      <div>
+    />
+    </div>
+  ):(
+    <div>
 
 
 
-      <Button className="customButton" onClick={handlePlay}>Play</Button>
+    <Button className="customButton" onClick={handlePlay}>Play</Button>
 
 
 
 
 
-      </div>
-    )}
+    </div>
+  )}
 
 </center>
 <br/>
 
+  </div>
+):(
+  <div>
+
+  {win? (
+    <div>
+
+    <ReactAudioPlayer
+      src={celebrate}
+      autoPlay
+    />
+    <center>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>Winner</a>
+    </center>
+
+
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+<center>
+  <div className='Board-title d-none d-lg-block'>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>Take</a>
+    <a className='neon-blue' style={{"text-decoration": "none"}}> Off</a>
+  </div>
+  <canvas width="200" height="200" id="canvasgun"> </canvas>
+  <br/>
+
+  {lose && <ReactAudioPlayer
+    src={fail}
+    autoPlay
+  />}
+
+  {lose && <a className='neon-orange' style={{"text-decoration": "none"}}>Lose!</a>}
+
+
+  {redirectRandom1?(
+    <div>
+
+    <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+    </div>
+
+  ):(
+    <div>
+
+    </div>
+  )}
+
+
+  {spin?(
+    <div>
+    <Button className="customButton">Please Wait</Button>
+    <ReactAudioPlayer
+      src={slots}
+      autoPlay
+    />
+    </div>
+  ):(
+    <div>
+
+
+
+    <Button className="customButton" onClick={handlePlay}>Play</Button>
+
+
+
+
+
+    </div>
+  )}
+
+</center>
+<br/>
+
+  </div>
+)}
     </div>
 
   );

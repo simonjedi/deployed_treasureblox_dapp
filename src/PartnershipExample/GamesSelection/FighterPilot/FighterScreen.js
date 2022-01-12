@@ -48,6 +48,7 @@ const FighterScreen = (props) =>{
   // Prevent game from working whilst page reloads
   let startDate = null;
 
+
   let playerRect = {
     x: 275,
     y: 275,
@@ -414,10 +415,11 @@ function moveRectangle() {
 
 
 
-
-
   return (
     <div id="top">
+
+
+
 
     {isGameOver && <ReactAudioPlayer
       src={ohno}
@@ -432,7 +434,7 @@ function moveRectangle() {
     ):(
       <div>
 
-      <Redirect to="/JetswapXTreasureBlox1/:top" {...props}/>
+      <Redirect to="/TreasureBloxPartner/:top" {...props}/>
 
       </div>
     )}
@@ -451,7 +453,8 @@ function moveRectangle() {
 
 
 <center>
-<div className="wording">Fighter Pilot {timeleft}</div><br/>
+{props.is_meter?(<div className="wording" style={{color:"white"}}>Force Field {timeleft}</div>):(<div className="wording">Fighter Pilot {timeleft}</div>)}
+<br/>
 
 <canvas width="600" height="600" id="canvas"> </canvas>
 

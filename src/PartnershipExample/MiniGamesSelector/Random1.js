@@ -156,53 +156,110 @@ const Random1 = (props) => {
 
     return (
 
-      <div style={{height: height*4}} className="custombackgroundfightergame">
-      <div id="top" className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | On Chain Metaverse Game</title>
-      </Helmet>
       <div>
-
-
-
-      {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
-      {doexplode &&  <ReactAudioPlayer
-        src={denied}
-        autoPlay
-      />}
-
-      <Container className='mt-5' fluid="md">
-
-
-      {props.playRandom1?(
+      {props.is_meter?(
+        <div style={{height: height*4}} className="custombackgroundmeter">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter On Chain Metaverse Game</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+
+
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
+
+        <Container className='mt-5' fluid="md">
+
+
+        {props.playRandom1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          // here
+
+
+          <div style={{height: height}}>
+
+          <div className="siteTitle">Roll Troy to Win Roll Crypto Dave to Lose!</div>
+          <div className="siteTitle">1 in 4 chance to win!</div>
+
+
+          <RandomBoard {...props}/>
+
+          <br/><br/>
+          </div>
+        )}
+
+
+        </Container>
         </div>
+
+
+
+  </div>
+
+  </div>
+
       ):(
-        // here
+        <div style={{height: height*4}} className="custombackgroundfightergame">
+        <div id="top" className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | On Chain Metaverse Game</title>
+        </Helmet>
+        <div>
 
 
-        <div style={{height: height}}>
 
-        <div className="siteTitle">Roll Troy to Win Roll Crypto Dave to Lose!</div>
-        <div className="siteTitle">1 in 4 chance to win!</div>
+        {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+        {doexplode &&  <ReactAudioPlayer
+          src={denied}
+          autoPlay
+        />}
+
+        <Container className='mt-5' fluid="md">
 
 
-        <RandomBoard {...props}/>
+        {props.playRandom1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          // here
 
-        <br/><br/>
+
+          <div style={{height: height}}>
+
+          <div className="siteTitle">Roll Troy to Win Roll Crypto Dave to Lose!</div>
+          <div className="siteTitle">1 in 4 chance to win!</div>
+
+
+          <RandomBoard {...props}/>
+
+          <br/><br/>
+          </div>
+        )}
+
+
+        </Container>
         </div>
+
+
+
+  </div>
+
+  </div>
+
       )}
 
-
-      </Container>
       </div>
 
 
-
-</div>
-
-</div>
 
 
 

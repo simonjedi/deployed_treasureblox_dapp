@@ -169,7 +169,12 @@ async function tryAgain(uid){
 
           ctx.font = "60px neon";
           ctx.fillStyle = "#fb4264";
-          ctx.fillText("Flare Gun", 130, 100);
+          if (props.is_meter){
+            ctx.fillText("Ray Gun", 160, 100);
+          }
+          if (!props.is_meter){
+            ctx.fillText("Flare Gun", 130, 100);
+          }
           // ctx.fillStyle = #fb4264;
           // ctx.font = "30px Verdana";
 

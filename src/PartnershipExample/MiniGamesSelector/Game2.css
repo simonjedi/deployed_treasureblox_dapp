@@ -260,6 +260,18 @@ border-bottom: 1px solid rgba(255,255,255,.25);
   height: 100%;
   width: 25%;
 }
+
+.meterOuterKeyPad{
+  border-radius: 10px 10px 10px 10px;
+
+  background-color: #424543;
+  border-color: #0ebd1f;
+  outline-color: #0ebd1f;
+  color: #001219;
+  height: 100%;
+  width: 25%;
+}
+
 .topKeyPad{
   border-radius: 10px 10px 10px 10px;
 

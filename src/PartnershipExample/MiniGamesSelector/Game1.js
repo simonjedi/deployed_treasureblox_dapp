@@ -23,6 +23,8 @@ import troyImg from '../GamesSelection/MineGame/assets/Treasure_Hunter.png';
 import troymore from '../GamesSelection/MineGame/assets/TroyMore.png';
 
 import game1_troy from '../assets/Sounds/game1.mp3';
+import electric from '../assets/Sounds/electric.mp4';
+
 
 
 import ReactAudioPlayer from 'react-audio-player';
@@ -155,106 +157,220 @@ const Level1Game1 = (props) => {
 
 
     return (
-<div className="custombackgroundfightergame"  >
+<div>
+{props.is_meter?(
 
-      <div style={{height: height*4}} className="spaceTopHome">
+  <div>
+    <div className="custombackgroundmeter"  >
 
-      <div className="">
+          <div style={{height: height*4}} className="spaceTopHome">
 
-
-
-
-
-
-      {more && <Redirect to={props.partnership_1_more} {...props}/> }
-      {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
-      {doexplode &&  <ReactAudioPlayer
-        src={explode}
-        autoPlay
-      />}
-
-
-      <div  className="spaceTopHome" id="top" >
-      <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
-      </Helmet>
-      <div>
-
-
-      <ReactAudioPlayer
-        src={game1_troy}
-        autoPlay
-      />
-
-
-      <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-        <Card.Img  src={troyImg} alt="Troy" />
-
-      </Modal>
-
-
-
-
-      <Container className='mt-5' fluid="md">
-
-
-      <div className="aligned">
-
-
-
-      {props.partnership_1?(
-        <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
-        </div>
-      ):(
-        <div>
-
-        {!start?(
           <div >
-          <div className="siteTitle">Explorer can you help me? I need to take off fast but I’m a little rusty!
-          <br/>Crypto Dave has stolen a plane and is on the runway!<br/>
-          Fighter pilots complete this test for 3 mins!
-          <br/>Can you last 10 seconds to unlock a riddle so we can take off and catch him?</div>
-          <br/>
-          <br/>
-          <center>
-            <Button className="customButton" onClick={startButton}>Start</Button>
-          </center>
-          </div>
 
-        ):(
 
+
+
+
+
+          {more && <Redirect to={props.partnership_1_more} {...props}/> }
+          {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+          {doexplode &&  <ReactAudioPlayer
+            src={explode}
+            autoPlay
+          />}
+
+
+          <div  className="spaceTopHome" id="top" >
+          <Helmet>
+            <title>TreasureBlox x Meter</title>
+          </Helmet>
           <div>
+
+
           <ReactAudioPlayer
-            src={countdown}
+            src={troyhelp}
             autoPlay
           />
 
-            <Board/>
+
+
+
+
+
+
+          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+            <Card.Img  src={troyImg} alt="Troy" />
+
+          </Modal>
+
+
+
+
+          <Container className='mt-5' fluid="md">
+
+
+          <div className="aligned">
+
+
+
+          {props.playLevel1Game1?(
+            <div>
+            <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+            </div>
+          ):(
+            <div>
+
+
+            {!start?(
+              <div >
+              <div className="siteTitle">Explorer can you help me? I have to unlock the grid by avoiding the electrons!
+              <br/>Can you last 10 seconds to unlock a riddle so we can enter the grid?</div>
+              <br/>
+              <br/>
+              <center>
+                <Button className="customButton" onClick={startButton}>Start</Button>
+              </center>
+              </div>
+
+            ):(
+
+              <div>
+              <ReactAudioPlayer
+                src={electric}
+                autoPlay
+              />
+
+                <Board {...props}/>
+              </div>
+
+            )}
+            {doexplode && <Card.Img  src={explodeimg} alt="Troy" />}
+
+            </div>
+          )}
+
           </div>
 
-        )}
-        {doexplode && <Card.Img  src={explodeimg} alt="Troy" />}
+          </Container>
 
-        </div>
-      )}
-
-      </div>
-
-      </Container>
-
-      </div>
+          </div>
 
 
 
-<br/><br/><br/><br/>
+    <br/><br/><br/><br/>
 
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+):(
+  <div>
+    <div className="custombackgroundfightergame"  >
+
+          <div style={{height: height*4}} className="spaceTopHome">
+
+          <div className="">
+
+
+
+
+
+
+          {more && <Redirect to={props.partnership_1_more} {...props}/> }
+          {bye && <Redirect to={props.partnership_treasure_hunt_page} {...props}/> }
+          {doexplode &&  <ReactAudioPlayer
+            src={explode}
+            autoPlay
+          />}
+
+
+          <div  className="spaceTopHome" id="top" >
+          <Helmet>
+            <title>TreasureBlox | Fort Blox</title>
+          </Helmet>
+          <div>
+
+
+          <ReactAudioPlayer
+            src={game1_troy}
+            autoPlay
+          />
+
+
+          <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+            <Card.Img  src={troyImg} alt="Troy" />
+
+          </Modal>
+
+
+
+
+          <Container className='mt-5' fluid="md">
+
+
+          <div className="aligned">
+
+
+
+          {props.playLevel1Game1?(
+            <div>
+            <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+            </div>
+          ):(
+            <div>
+
+
+            {!start?(
+              <div >
+              <div className="siteTitle">Explorer can you help me? I need to take off fast but I’m a little rusty!
+              <br/>Crypto Dave has stolen a plane and is on the runway!<br/>
+              Fighter pilots complete this test for 3 mins!
+              <br/>Can you last 10 seconds to unlock a riddle so we can take off and catch him?</div>
+              <br/>
+              <br/>
+              <center>
+                <Button className="customButton" onClick={startButton}>Start</Button>
+              </center>
+              </div>
+
+            ):(
+
+              <div>
+              <ReactAudioPlayer
+                src={countdown}
+                autoPlay
+              />
+
+                <Board/>
+              </div>
+
+            )}
+            {doexplode && <Card.Img  src={explodeimg} alt="Troy" />}
+
+            </div>
+          )}
+
+          </div>
+
+          </Container>
+
+          </div>
+
+
+
+    <br/><br/><br/><br/>
+
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+)}
 </div>
-</div>
-</div>
-</div>
-
     );
 
 }

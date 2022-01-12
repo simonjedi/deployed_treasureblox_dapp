@@ -37,9 +37,13 @@ const Riddle = (props) => {
       <Card className="customRoundedOne">
       <Card.Body className='customBodyTwo'>
         <div className="gameMainTitle">{props.game1_riddle}</div>
+      {props.is_meter?(
+        <div className="postMainPrize">Crypto Dave Has Stolen The MTRG!</div>
 
-        <div className="gamePrize"><p variant="primary" onClick={handleShow}>X</p></div>
+      ):(
         <div className="postMainPrize">Crypto Dave Has Stolen The Wings!</div>
+
+      )}
         <br/>
 
         <Modal show={show} onHide={handleClose} size="xl" aria-labelledby="contained-modal-title-vcenter" centered>

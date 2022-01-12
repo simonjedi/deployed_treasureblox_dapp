@@ -119,88 +119,180 @@ const handlePlayBrailOff = async() => {
 
     return (
 
-      <div className="background">
-
-      <div id="top" style={{height: height*4}} className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
-      </Helmet>
       <div>
+      {props.is_meter?(
+        <div className="custombackgroundmeter">
 
-
-
-
-      <ReactAudioPlayer
-        src={more}
-        autoPlay
-      />
-
-
-
-
-
-      <Container style={{height: height*4}} className='mt-5' fluid="md">
-
-
-      <div className="aligned">
-      <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-        <Card.Img  src={troymore} alt="Troy" />
-
-      </Modal>
-
-      <Card className='cardRounded'>
-
-      {dobrail && <ReactAudioPlayer
-        src={brail}
-        autoPlay
-      />}
-
-        <Card.Header>Congratulation Explorer</Card.Header>
-        <Card.Body>
-          <blockquote className="blockquote mb-0">
-            <p>
-              {' '}
-              <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
-              <br/><br/>You unlocked a secret!<br/><br/>
-              please submit the time lock and use the code '94518A' to level up!
-              {' '}
-            </p>
-            <footer className="blockquote-footer">
-              Captain Troy 'Mighty' Armstong
-            </footer>
-          </blockquote>
-        </Card.Body>
-      </Card>
-
-
-
-
-      {props.playLevel1Game1?(
+        <div id="top" style={{height: height*4}} className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+
+
+
+        <ReactAudioPlayer
+          src={more}
+          autoPlay
+        />
+
+
+
+
+
+        <Container style={{height: height*4}} className='mt-5' fluid="md">
+
+
+        <div className="aligned">
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+          <Card.Img  src={troymore} alt="Troy" />
+
+        </Modal>
+
+        <Card className='cardRounded'>
+
+        {dobrail && <ReactAudioPlayer
+          src={brail}
+          autoPlay
+        />}
+
+          <Card.Header>Congratulation Explorer</Card.Header>
+          <Card.Body>
+            <blockquote className="blockquote mb-0">
+              <p>
+                {' '}
+                <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                <br/><br/>You unlocked a secret!<br/><br/>
+                please submit the time lock and use the code '405678TROY' to level up!
+                {' '}
+              </p>
+              <footer className="blockquote-footer">
+                Captain Troy 'Mighty' Armstong
+              </footer>
+            </blockquote>
+          </Card.Body>
+        </Card>
+
+
+
+
+        {props.playLevel1Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+
+          </div>
+        )}
+
         </div>
+
+
+        </Container>
+
+        </div>
+
+
+
+  <div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+
+  </div>
+  </div>
+
       ):(
+        <div className="background">
+
+        <div id="top" style={{height: height*4}} className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | Fort Blox</title>
+        </Helmet>
         <div>
 
+
+
+
+        <ReactAudioPlayer
+          src={more}
+          autoPlay
+        />
+
+
+
+
+
+        <Container style={{height: height*4}} className='mt-5' fluid="md">
+
+
+        <div className="aligned">
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+          <Card.Img  src={troymore} alt="Troy" />
+
+        </Modal>
+
+        <Card className='cardRounded'>
+
+        {dobrail && <ReactAudioPlayer
+          src={brail}
+          autoPlay
+        />}
+
+          <Card.Header>Congratulation Explorer</Card.Header>
+          <Card.Body>
+            <blockquote className="blockquote mb-0">
+              <p>
+                {' '}
+                <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                <br/><br/>You unlocked a secret!<br/><br/>
+                please submit the time lock and use the code '94518A' to level up!
+                {' '}
+              </p>
+              <footer className="blockquote-footer">
+                Captain Troy 'Mighty' Armstong
+              </footer>
+            </blockquote>
+          </Card.Body>
+        </Card>
+
+
+
+
+        {props.playLevel1Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+
+          </div>
+        )}
+
         </div>
+
+
+        </Container>
+
+        </div>
+
+
+
+  <div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+
+  </div>
+  </div>
+
       )}
 
       </div>
 
 
-      </Container>
-
-      </div>
-
-
-
-<div>
-<br/><br/><br/><br/><br/><br/><br/><br/>
-</div>
-
-</div>
-</div>
 
 
 

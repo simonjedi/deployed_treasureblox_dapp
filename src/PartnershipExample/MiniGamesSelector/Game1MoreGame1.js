@@ -96,83 +96,174 @@ const Game1MoreGame1 = (props) => {
 
 
     return (
-      <div className="background" style={{height: height*4}} >
-      <div id="top"  className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
-      </Helmet>
+
       <div>
+      {props.is_meter?(
+        <div className="custombackgroundmeter" style={{height: height*4}} >
 
 
-
-
-      <ReactAudioPlayer
-        src={more}
-        autoPlay
-      />
-
-
-
-
-
-      <Container  className='mt-5' fluid="md">
-
-
-      <div className="aligned">
-      <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-        <Card.Img  src={troymore} alt="Troy" />
-
-      </Modal>
-
-      <Card className='cardRounded'>
-        <Card.Header>Congratulation Explorer</Card.Header>
-        <Card.Body>
-          <blockquote className="blockquote mb-0">
-            <p>
-              {' '}
-              <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
-              <br/><br/>You showed some skill but have you got what it takes to fly this plane?
-              <br/><br/>1. Write down the secret answer to level Secret Answer = 'FighterJet01'
-              <br/><br/>2. Leave this page by clicking strike fighter and go to the Prize Vault tab!
-              <br/><br/>3. Apply the time lock and enter the secret answer to level up!
-              {' '}
-            </p>
-            <footer className="blockquote-footer">
-              Captain Troy 'Mighty' Armstong
-            </footer>
-          </blockquote>
-        </Card.Body>
-      </Card>
-
-
-
-      {props.playLevel1Game1?(
+        <div id="top"  className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter</title>
+        </Helmet>
         <div>
-        <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+
+
+
+
+        <ReactAudioPlayer
+          src={more}
+          autoPlay
+        />
+
+
+
+
+
+        <Container  className='mt-5' fluid="md">
+
+
+        <div className="aligned">
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+          <Card.Img  src={troymore} alt="Troy" />
+
+        </Modal>
+
+        <Card className='cardRounded'>
+          <Card.Header>Congratulation Explorer</Card.Header>
+          <Card.Body>
+            <blockquote className="blockquote mb-0">
+              <p>
+                {' '}
+                <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                <br/><br/>You showed some skill but have you got what it takes to enter the grid?
+                <br/><br/>1. Write down the secret answer to level Secret Answer = 'MeterisElectric'
+                <br/><br/>2. Leave this page by clicking Battle for the grid' and go to the Prize Vault tab!
+                <br/><br/>3. Apply the time lock and enter the secret answer to level up!
+                {' '}
+              </p>
+              <footer className="blockquote-footer">
+                Captain Troy 'Mighty' Armstong
+              </footer>
+            </blockquote>
+          </Card.Body>
+        </Card>
+
+
+
+        {props.playLevel1Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+
+          </div>
+        )}
+
         </div>
+
+
+        </Container>
+
+        </div>
+
+
+
+  <div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+
+  </div>
+
+  </div>
+
       ):(
+
+        <div className="background" style={{height: height*4}} >
+
+
+        <div id="top"  className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | Play to earn game</title>
+        </Helmet>
         <div>
 
+
+
+
+        <ReactAudioPlayer
+          src={more}
+          autoPlay
+        />
+
+
+
+
+
+        <Container  className='mt-5' fluid="md">
+
+
+        <div className="aligned">
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+          <Card.Img  src={troymore} alt="Troy" />
+
+        </Modal>
+
+        <Card className='cardRounded'>
+          <Card.Header>Congratulation Explorer</Card.Header>
+          <Card.Body>
+            <blockquote className="blockquote mb-0">
+              <p>
+                {' '}
+                <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                <br/><br/>You showed some skill but have you got what it takes to fly this plane?
+                <br/><br/>1. Write down the secret answer to level Secret Answer = 'FighterJet01'
+                <br/><br/>2. Leave this page by clicking strike fighter and go to the Prize Vault tab!
+                <br/><br/>3. Apply the time lock and enter the secret answer to level up!
+                {' '}
+              </p>
+              <footer className="blockquote-footer">
+                Captain Troy 'Mighty' Armstong
+              </footer>
+            </blockquote>
+          </Card.Body>
+        </Card>
+
+
+
+        {props.playLevel1Game1?(
+          <div>
+          <Redirect to={props.partnership_treasure_hunt_page} {...props}/>
+          </div>
+        ):(
+          <div>
+
+          </div>
+        )}
+
         </div>
+
+
+        </Container>
+
+        </div>
+
+
+
+  <div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  </div>
+
+  </div>
+
+  </div>
+
       )}
-
       </div>
 
-
-      </Container>
-
-      </div>
-
-
-
-<div>
-<br/><br/><br/><br/><br/><br/><br/><br/>
-</div>
-
-</div>
-
-</div>
 
 
     );

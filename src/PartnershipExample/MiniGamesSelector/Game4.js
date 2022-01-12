@@ -93,69 +93,142 @@ const Level4Game2 = (props) => {
 
     return (
 
-      <div className="background">
-      <div style={{height: height*4}} id="top" className="spaceTopHome">
+      <div>
+      {props.is_meter?(
+        <div className="custombackgroundmeter">
+        <div style={{height: height*4}} id="top" className="spaceTopHome">
 
-      <div className="spaceTopHome">
-      <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
-      </Helmet>
+        <div className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox x Meter</title>
+        </Helmet>
 
-      <ReactAudioPlayer
-        src={final}
-        autoPlay
-      />
-      <ReactAudioPlayer
-        src={finalcountdown}
-        autoPlay
-      />
-
-
-      <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
-
-        <Card.Img  src={troyImg} alt="Troy" />
-
-      </Modal>
-
-      <Container className='mt-5' fluid="md">
-        <Card className='cardRounded'>
+        <ReactAudioPlayer
+          src={final}
+          autoPlay
+        />
+        <ReactAudioPlayer
+          src={finalcountdown}
+          autoPlay
+        />
 
 
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
 
-          <Card.Header>Final Clue</Card.Header>
-          <Card.Body>
-            <blockquote className="blockquote mb-0">
-              <p>
+          <Card.Img  src={troyImg} alt="Troy" />
 
-                THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
-                <br/><br/>It will take 50 billion of these to find Elon's Rocket? I think there is a worm hole nearby!
-                <br/><br/>The end is bigger than the starT + a "(key year)!"
-                <br/><br/>
-                {' '}
-              </p>
+        </Modal>
 
-
-              <footer className="blockquote-footer">
-                Captain Troy 'Mighty' Armstong
-              </footer>
-            </blockquote>
-          </Card.Body>
-        </Card>
-
-        <ThreePageCards {...props}/>
-
-
-      </Container>
+        <Container className='mt-5' fluid="md">
+          <Card className='cardRounded'>
 
 
 
+            <Card.Header>Final Clue</Card.Header>
+            <Card.Body>
+              <blockquote className="blockquote mb-0">
+                <p>
 
+                  THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                  <br/><br/>It will take 50 billion of these to find Elon's Rocket? I think there is a worm hole nearby!
+                  <br/><br/>The end is bigger than the starT + a "(key year)!"
+                  <br/><br/>
+                  {' '}
+                </p>
+
+
+                <footer className="blockquote-footer">
+                  Captain Troy 'Mighty' Armstong
+                </footer>
+              </blockquote>
+            </Card.Body>
+          </Card>
+
+          <ThreePageCards {...props}/>
+
+
+        </Container>
+
+
+
+
+
+        </div>
+
+        </div>
+
+  </div>
+
+      ):(
+        <div className="background">
+        <div style={{height: height*4}} id="top" className="spaceTopHome">
+
+        <div className="spaceTopHome">
+        <Helmet>
+          <title>TreasureBlox | Fort Blox</title>
+        </Helmet>
+
+        <ReactAudioPlayer
+          src={final}
+          autoPlay
+        />
+        <ReactAudioPlayer
+          src={finalcountdown}
+          autoPlay
+        />
+
+
+        <Modal className="custom modal-dialog" show={show} onHide={handleClose}>
+
+          <Card.Img  src={troyImg} alt="Troy" />
+
+        </Modal>
+
+        <Container className='mt-5' fluid="md">
+          <Card className='cardRounded'>
+
+
+
+            <Card.Header>Final Clue</Card.Header>
+            <Card.Body>
+              <blockquote className="blockquote mb-0">
+                <p>
+
+                  THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
+                  <br/><br/>It will take 50 billion of these to find Elon's Rocket? I think there is a worm hole nearby!
+                  <br/><br/>The end is bigger than the starT + a "(key year)!"
+                  <br/><br/>
+                  {' '}
+                </p>
+
+
+                <footer className="blockquote-footer">
+                  Captain Troy 'Mighty' Armstong
+                </footer>
+              </blockquote>
+            </Card.Body>
+          </Card>
+
+          <ThreePageCards {...props}/>
+
+
+        </Container>
+
+
+
+
+
+        </div>
+
+        </div>
+
+  </div>
+
+      )}
 
       </div>
 
-      </div>
 
-</div>
 
 
     );

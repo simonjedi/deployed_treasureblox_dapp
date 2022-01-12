@@ -31,6 +31,7 @@
     overflow-y: hidden;
 }
 
+
 /* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
@@ -71,6 +72,13 @@
 }
 
 .wording{
+    font-size: 1.8rem;
+    color: #000000;
+    text-align: center;
+
+}
+
+.meter_wording{
     font-size: 1.8rem;
     color: #000000;
     text-align: center;

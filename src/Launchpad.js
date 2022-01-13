@@ -139,9 +139,7 @@ const Home = (props) => {
   const game1_live = props.game1_live;
   const game1_prize = commaNumber(props.game1_prize,',');
   const game1_question_hash = props.game1_question_hash;
-  const game1_time_lock_cost = props.game1_time_lock_cost;
   const game1_submit_secret_cost = props.game1_submit_secret_cost;
-  const game1_clue = props.game1_clue;
 
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
@@ -177,14 +175,14 @@ const { width, height } = useWindowSize();
         alt="First slide"
       />
       <Carousel.Caption >
-      <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h3>
+      <h3 sm={12} lg={4} className="d-none d-lg-block">TreasureBlox - The World's first GameFi Metaverse crypto treasure hunt.</h3>
 
 
       <p sm={12} lg={4} className="d-none d-lg-block">We are building and preparing to launch with our partners to be anounced shortly!</p>
 
 <center>
 
-        <Button className="customMobileButton d-none d-lg-block" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
+        <Button className="customMobileButton d-none d-lg-block" href="https://discord.gg/mAQeHXEjB9" onClick={learn_more}  >Join Discord </Button>
 </center>
 
       </Carousel.Caption>
@@ -193,8 +191,8 @@ const { width, height } = useWindowSize();
     </Carousel>
     <br/>
     <center>
-      <h2 sm={12} lg={4} className="landingPageFont d-lg-none">TreasureBlox - The World's first Metaverse crypto treasure hunt.</h2>
-      <Button className="customMobileButton d-lg-none" href="https://t.me/treasureblox" onClick={learn_more}  >Join Telegram </Button>
+      <h2 sm={12} lg={4} className="landingPageFont d-lg-none">TreasureBlox - The World's first GameFi Metaverse crypto treasure hunt.</h2>
+      <Button className="customMobileButton d-lg-none" href="https://discord.gg/mAQeHXEjB9" onClick={learn_more}  >Join Discord </Button>
   <br/>
   </center>
 

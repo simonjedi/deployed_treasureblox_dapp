@@ -31,6 +31,7 @@ const HuntWowCards = (props) => {
 
 
   const view_elon_home_view_click = (event) => {
+
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
@@ -41,6 +42,7 @@ const HuntWowCards = (props) => {
   }
 
   const view_strike_fighter_view_click = (event) => {
+
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
@@ -48,9 +50,11 @@ const HuntWowCards = (props) => {
       url: window.location.pathname,
       buttonClicked:"view_strike_fighter_view_click"
     });
+
   }
 
   const fort_blox_home_view_click = (event) => {
+
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,

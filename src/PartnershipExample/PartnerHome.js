@@ -59,6 +59,8 @@ const PartnerHome = (props) => {
 
 
 
+
+
   const partner_example_header_play_to_earn = (event) => {
     window.dataLayer.push({
       event: "wallet_information",
@@ -115,8 +117,11 @@ const PartnerHome = (props) => {
 
   // console.log(game1_id)s
 
-
   function useWindowSize() {
+    // scroll_to top
+
+
+
     // Initialize state with undefined width/height so server and client renders match
     // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
     const [windowSize, setWindowSize] = useState({

@@ -694,7 +694,10 @@ const handleSubmitEnterDave = async() => {
                                     <div>
                                     {(props.state_leaderboardAddressSearch_team_game1==1)?(
                                     <div>
-                                    Entered
+
+                                    <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Entered - Team Chat</Button>
+
+
                                     </div>
                                   ):(
                                     <div>
@@ -745,7 +748,9 @@ const handleSubmitEnterDave = async() => {
                                     <div>
                                     {(props.state_leaderboardAddressSearch_team_game1==2)?(
                                     <div>
-                                    Entered
+
+                                    <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/QBPbwQgYZf">Entered - Team Chat</Button>
+
                                     </div>
                                   ):(
                                     <div>
@@ -1368,7 +1373,10 @@ const handleSubmitEnterDave = async() => {
                     <div>
                     {(props.state_leaderboardAddressSearch_team_game1==1)?(
                     <div>
-                    Entered
+
+                    <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Entered - Team Chat</Button>
+
+
                     </div>
                   ):(
                     <div>
@@ -1419,7 +1427,10 @@ const handleSubmitEnterDave = async() => {
                     <div>
                     {(props.state_leaderboardAddressSearch_team_game1==2)?(
                     <div>
-                    Entered
+
+
+                    <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/QBPbwQgYZf">Entered - Team Chat</Button>
+
                     </div>
                   ):(
                     <div>

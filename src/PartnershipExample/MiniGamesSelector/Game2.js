@@ -227,10 +227,7 @@ const Level2Game1 = (props) => {
 
         <Container className='mt-5' fluid="md">
 
-        <ReactAudioPlayer
-          src={lightsmusic}
-          autoPlay
-        />
+        
 
 
         {props.playLevel2Game1?(

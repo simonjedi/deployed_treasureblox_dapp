@@ -45,14 +45,14 @@ const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
       <Card.Body className='customBodyTwo'>
         <div className="gameMainTitle">Game Prize Vault</div>
 
-        <div className="gamePrize">{game1_prize} WINGS</div>
-        <div className="postMainPrize">Entry Cost <a className="descriptionTitle">{game1_entry_cost}</a> WINGS</div>
+        <div className="gamePrize">{game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+        <div className="postMainPrize">Entry Cost <a className="descriptionTitle">{props.is_meter?(<a>5 MTR</a>):(<a>300 WINGS</a>)}</a></div>
 
-        <div className="postMainPrize">Cost to Play <a className="descriptionTitle">{props.CostToPlay_xyz_}</a> WINGS</div>
+        <div className="postMainPrize">Cost to Play <a className="descriptionTitle">{props.is_meter?(<a>0.5 MTRG</a>):(<a>100 WINGS</a>)}</a></div>
 
-        <div className="postMainPrize">90 second Time Lock Cost <a className="descriptionTitle">{props.CostToPlay_xyz_}</a> WINGS</div>
+        <div className="postMainPrize">90 second Time Lock Cost <a className="descriptionTitle">{props.is_meter?(<a>0.5 MTRG</a>):(<a>100 WINGS</a>)}</a></div>
 
-        <div className="postMainPrize">Cost to submit Secret <a className="descriptionTitle">{props.CostToPlay_xyz_}</a> WINGS</div>
+        <div className="postMainPrize">Cost to submit Secret <a className="descriptionTitle">{props.is_meter?(<a>0.5 MTRG</a>):(<a>100 WINGS</a>)}</a></div>
         <br/>
       </Card.Body >
       </Card>

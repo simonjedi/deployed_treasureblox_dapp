@@ -53,7 +53,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
 
 
   const contract = props.contract
-  const accounts = props.accounts
+  const accounts = props.accounts[0]
 
     const handleInputChange = (event) => {
       const target = event.target;
@@ -76,17 +76,14 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
       const result2 = await props.MAIN_GAME_contract_treasurebloxNative_.methods.headStartTimeLock(props.partnerId_treasurebloxNative,username,props.allGame2_id).send({from: accounts});
 
 
-      console.log("RESULT:", result2.from);
 
       const enteringUser = await result2.from
 
       setUsername(undefined);
 
-      console.log("Transaction confirmed",result2)
 
       props.updateLocalDeadLineTime(result2)
 
-      console.log("I am the first log");
 
       setTimeout(function(){
           setloading(false);
@@ -290,7 +287,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                       <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                       </div>
                       <div>
-                      <div className="descriptionTitle">90 second Time Lock Cost {props.game2_time_lock_cost} Blox</div>
+                      <div className="descriptionTitle">90 second Time Lock</div>
                       <br />
                       <div>Enter a username</div>
                       <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -367,7 +364,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                           <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                           </div>
                           <div>
-                          <div className="descriptionTitle">90 second Time Lock Cost {props.game2_time_lock_cost} Blox</div>
+                          <div className="descriptionTitle">90 second Time Lock</div>
                           <br />
                           <div>Enter a username</div>
                           <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -438,7 +435,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                             <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                             </div>
                             <div>
-                            <div className="descriptionTitle">90 second Time Lock Cost {props.game2_time_lock_cost} Blox</div>
+                            <div className="descriptionTitle">90 second Time Lock</div>
                             <br />
                             <div>Enter a username</div>
                             <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -500,7 +497,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost {props.game2_time_lock_cost} Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -527,7 +524,7 @@ const [playLevel4Game2,setplayLevel4Game2] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost {props.game2_time_lock_cost} Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>

@@ -772,7 +772,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // BSC
           const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
-          const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
+          const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call();
           var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
           totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
 
@@ -872,7 +872,7 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           // BSC
           const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
 
-          const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call().then(console.log('Yes'));
+          const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call();
           var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
           totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, tokenContract_xyz_.length-18)
 
@@ -916,11 +916,14 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
 
-
             const game1_xyz_ = await GSC_contract_bsc_.methods.Games(partnerId_xyz,1).call();
+
+
             const game1_live_xyz_ = await game1_xyz_[0];
 
             var game1_prize_xyz_ = await game1_xyz_[1];
+
+
             var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
 
             setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
@@ -1208,6 +1211,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             var winnerEstPrizeGame1_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, Math.round(game1_prize_treasurebloxNative_*.3).length-18);
 
             setWinnerEstPrizeGame1_treasurebloxNative_(winnerEstPrizeGame1_treasurebloxNative_)
+
+
             game1_prize_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, game1_prize_treasurebloxNative_.length-18);
 
             const game1_question_hash_treasurebloxNative_ = await game1_treasurebloxNative_[2];
@@ -1775,8 +1780,12 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
       }// End of network if statement BSC
 
 // STARTING HERE
+      // Meter Testnet
+      // if (currentChainId === 83) {
+      // https://rpctest.meter.io/
 
-      if (currentChainId === 83) {
+
+      if (currentChainId === 82) {
 
         ////////////
 
@@ -1784,7 +1793,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
                 // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
                 // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
                 //
-                // console.log(contract_xyz_,"START treassssure")
 
 
         // Meter
@@ -1821,43 +1829,43 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         setAccounts(accounts)
 
 
-        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://rpctest.meter.io/" && "0xAF50B1943f2B659FDAd444BFC6f8a378D98f4963");
-        const game_GSB_Address_xyz_ = "0xAF50B1943f2B659FDAd444BFC6f8a378D98f4963"
+        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://rpc.meter.io/" && "0x98f0B0dAf137c4E680dF74b71D093B843ce275C8");
+        const game_GSB_Address_xyz_ = "0x98f0B0dAf137c4E680dF74b71D093B843ce275C8"
         set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
 
 
-        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://rpctest.meter.io/" && "0x4de63D2fE6F1dD7c2095Bf740248829aD798b86E");
-        const game_GSC_Address_xyz_ = "0x4de63D2fE6F1dD7c2095Bf740248829aD798b86E"
+        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://rpc.meter.io/" && "0xFBcA4a6BaaAd1fdddBDf15aBAfAcbCe19035C416");
+        const game_GSC_Address_xyz_ = "0xFBcA4a6BaaAd1fdddBDf15aBAfAcbCe19035C416"
         set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
 
 
-        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://rpctest.meter.io/" && "0x96BE062Ff4853f6152ce8eCC688688e6105865B5");
-        const game_GSD_Address_xyz_ = "0x96BE062Ff4853f6152ce8eCC688688e6105865B5"
+        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://rpc.meter.io/" && "0x988Ead3Bd6F57320F619A195Ec69800b0Af01eCc");
+        const game_GSD_Address_xyz_ = "0x988Ead3Bd6F57320F619A195Ec69800b0Af01eCc"
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
 
 
-        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://rpctest.meter.io/" && "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9");
-        const game_MAIN_GAME_Address_xyz_ = "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9"
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://rpc.meter.io/" && "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F");
+        const game_MAIN_GAME_Address_xyz_ = "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
 
-        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpctest.meter.io/" && "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9");
-        const game_VOLT_Address_xyz_ = "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9"
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpc.meter.io/" && "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f");
+        const game_VOLT_Address_xyz_ = "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpctest.meter.io/" && "0xfDbfE72619853890AE7d707a30979e56664a7b74");
-        const game_RANDOM1_Address_xyz_ = "0xfDbfE72619853890AE7d707a30979e56664a7b74"
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be");
+        const game_RANDOM1_Address_xyz_ = "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpctest.meter.io/" && "0xC67A4bAA80e3e79714914136729Ed82e56e584c9");
-        const game_RANDOM2_Address_xyz_ = "0xC67A4bAA80e3e79714914136729Ed82e56e584c9"
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpc.meter.io/" && "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E");
+        const game_RANDOM2_Address_xyz_ = "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E"
         set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpctest.meter.io/" && "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F");
-        const game_RANDOM3_Address_xyz_ = "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F"
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpc.meter.io/" && "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D");
+        const game_RANDOM3_Address_xyz_ = "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
 
@@ -1865,10 +1873,15 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // TOKEN CONTRACT
 
         // MTR BLOX ERC20
-        const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9");
 
-        const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
-        var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9").call();
+        // Meter Mainnet:
+        // MTRG ERC20 Interface: 0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3
+
+
+        const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpc.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
+
+        const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call();
+        var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3").call();
         totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
 
 
@@ -1903,38 +1916,38 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
         const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
 
-        const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpctest.meter.io/" && "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9");
-        const MAIN_GAME_Address_treasurebloxNative_ = "0x1621c122E0Bf622A34bA64bc179be43f73F28FE9"
+        const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpc.meter.io/" && "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F");
+        const MAIN_GAME_Address_treasurebloxNative_ = "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F"
         set_MAIN_GAME_GameContractAddress_treasurebloxNative_(MAIN_GAME_Address_treasurebloxNative_);
 
 
-        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9");
-        const VOLT_Address_treasurebloxNative_ = "0xed2f64D17B2315f9F6164599e08297d5f9A0A9D9"
+        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f");
+        const VOLT_Address_treasurebloxNative_ = "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f"
         set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
 
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xfDbfE72619853890AE7d707a30979e56664a7b74");
-        const game_RANDOM1_Address_treasurebloxNative_ = "0xfDbfE72619853890AE7d707a30979e56664a7b74"
+        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be");
+        const game_RANDOM1_Address_treasurebloxNative_ = "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0xC67A4bAA80e3e79714914136729Ed82e56e584c9");
-        const game_RANDOM2_Address_treasurebloxNative_ = "0xC67A4bAA80e3e79714914136729Ed82e56e584c9"
+        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E");
+        const game_RANDOM2_Address_treasurebloxNative_ = "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E"
         set_RANDOM2_treasurebloxNative_(game_RANDOM2_Address_treasurebloxNative_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpctest.meter.io/" && "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F");
-        const game_RANDOM3_Address_treasurebloxNative_ = "0x27df78fb2C98d25B9543268f537CEDF2DbF6514F"
+        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D");
+        const game_RANDOM3_Address_treasurebloxNative_ = "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D"
         set_RANDOM3_treasurebloxNative_(game_RANDOM3_Address_treasurebloxNative_);
 
         // TOKEN CONTRACT
         // BSC
-        const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9");
+        const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://rpc.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
 
-        const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call().then(console.log('Yes'));
-        var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0xBdD81FB7073f0cd695dE736A9AaDb2d148789fD9").call();
-        totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, tokenContract_xyz_.length-18)
+        const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call();
+        var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3").call();
+        totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, totalTreasure_treasurebloxNative_.length-18)
 
 
 
@@ -1958,16 +1971,14 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // Meter.io
         // const contract_xyz_ = new web3.eth.Contract(abi_xyz_,"https://rpctest.meter.io/" && "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d");
         // const gameAddress_xyz_ = "0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d"
-        // console.log(gameAddress_xyz_,"START treassssure111111111")
         //
         // setGameContractAddress_xyz_(gameAddress_xyz_);
         //
         //
         // const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://rpctest.meter.io/" && "0x573c95aae615afCDd6b17E0E969B4879f4c95784");
-        // console.log(tokenContract_xyz_,"START twoooooooo")
         //
         //
-        // const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call().then(console.log('Yes'));
+        // const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call();
         //
         // var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
         // totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
@@ -1982,7 +1993,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         //
         // setWallet_for_google_xyz_("w="+accounts.toString())
         //
-        // console.log(contract_xyz_,"loaded 1")
         //
         // // GLOBAL PARTNER EXAMPLE ASYNC STARTS
         //
@@ -2003,7 +2013,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         //creating function to load ip address from the API
 
         // const res = await axios.get('https://geolocation-db.com/json/')
-        // console.log(res,"herererererere");
         // setIP(res.data.IPv4)
 
         // {"country_code":"IT","country_name":"Italy","city":null,"postal":null,"latitude":43.1479,"longitude":12.1097,"IPv4":"149.71.134.27","state":null}
@@ -2041,14 +2050,13 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
       // TestNet
       // const contract = new web3.eth.Contract(abi,"https://data-seed-prebsc-1-s1.binance.org:8545/" && "0xE2f3578757fe29a481D0221A6d1Ce7A33Ae01170");
       // Sstart Data Calls
-      // const decimals = await tokenContract.methods.decimals().call().then(console.log('Yes'));
+      // const decimals = await tokenContract.methods.decimals().call();
       //
       // var totalTreasure = await tokenContract.methods.balanceOf("0x9CE689CdB9356Bd11bbfac142A7Ea0d0e8d0c15d").call();
       // totalTreasure = totalTreasure.substring(0, tokenContract.length-18)
-      // console.log(totalTreasure,"Total Treasure token contract")
 
       // const owner = await contract.methods._owner().call();
-      // const marketingWallet = await contract.methods.marketingWallet().call().then(console.log('marketing Wallet Complete'));
+      // const marketingWallet = await contract.methods.marketingWallet().call();
       //
       // const total_supply = await contract.methods.totalSupply().call();
       // const treasure_chest = await contract.methods.treasureChest().call();
@@ -2097,12 +2105,17 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
           const game1_xyz_ = await GSC_contract_bsc_.methods.Games(partnerId_xyz,1).call();
+
+
           const game1_live_xyz_ = await game1_xyz_[0];
 
           var game1_prize_xyz_ = await game1_xyz_[1];
-          var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3).length-18);
+
+          var winnerEstPrizeGame1_xyz_ = game1_prize_xyz_.substring(0, Math.round(game1_prize_xyz_*.3));
+
 
           setWinnerEstPrizeGame1_xyz_(winnerEstPrizeGame1_xyz_)
+
           game1_prize_xyz_ = game1_prize_xyz_.substring(0, game1_prize_xyz_.length-18);
 
           const game1_question_hash_xyz_ = await game1_xyz_[2];

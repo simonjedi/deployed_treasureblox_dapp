@@ -480,7 +480,6 @@ const m = 'The guard scans his eyes and lets you in. The door raises.. You enter
       const value = target.type === "checkbox" ? target.checked : target.value;
       const code = target.code;
       setCode(value);
-      console.log(value)
 
     }
     const handleSubmit = async() => {

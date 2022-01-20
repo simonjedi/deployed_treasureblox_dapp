@@ -60,8 +60,10 @@ const Step1Card = (props) => {
       });
 
       setloading(true);
-      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
 
       setTimeout(function(){
@@ -80,8 +82,10 @@ const Step1Card = (props) => {
         buttonClicked:"Treasure_Hunt_2_Entered"
       });
       setloading(true);
-      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+      await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
       setTimeout(function(){
           setloading(false);
@@ -125,7 +129,7 @@ const Step1Card = (props) => {
             ) : (
               <div>
                 <div className="largeEnter">Enter Here!</div>
-                <div className="gameTitleEnter">Entry Cost XXX Blox</div>
+                <div className="gameTitleEnter">Entry Cost {props.is_meter?(<a>5 MTRG</a>):(<a> WINGS</a>)}</div>
                 <div>Only those who have entered may participate in this quest. The Quest participant limit will increase 10x on {headStart} so enter now to gain a head start!
                 </div>
 

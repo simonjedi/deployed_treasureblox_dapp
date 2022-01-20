@@ -38,7 +38,6 @@ const Step3Card = (props) => {
       const target = event.target;
       const value = target.type === "checkbox" ? target.checked : target.value;
       const secret = target.secret;
-      // console.log("hashed secret: ","0x"+keccak256(value).toString('hex'));
 
       // props.web3.solidityKeccak()
       const userAccount = "0x"+keccak256(accounts).toString('hex');

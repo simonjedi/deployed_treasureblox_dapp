@@ -79,9 +79,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
       setloading(true);
 
-      const result1 = await props.MAIN_GAME_contract_xyz_.methods.headStartTimeLock(props.partnerId_xyz,username,props.allGame1_id).send({from: accounts});
-
-      console.log("RESULT:", result1.from);
+      const result1 = await props.MAIN_GAME_contract_xyz_.methods.headStartTimeLock(props.partnerId_xyz,username,props.allGame1_id).send({from: accounts[0]});
 
       const enteringUser = await result1.from
 
@@ -120,6 +118,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
       setloading(true);
       const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+      window.scrollTo({top: 0,behavior: 'smooth'})
       setplayLevel1Game1(true)
       setredirectLevel1(true)
 
@@ -141,6 +140,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
       setloading(true);
       const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+      window.scrollTo({top: 0,behavior: 'smooth'})
       setplayLevel2Game1(true)
       setredirectLevel2(true)
 
@@ -162,6 +162,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
       setloading(true);
       const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+      window.scrollTo({top: 0,behavior: 'smooth'})
       setplayLevel3Game1(true)
       setredirectLevel3(true)
 
@@ -192,7 +193,6 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
       },30000);
     }
 
-    // console.log(props.state_leaderboardAddressSearch_stage_game1,"GAME STAGE??? WTF")
 
 
   return(
@@ -281,7 +281,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
                       <div className="MiniGameDetails">
 
-                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
+                      Play for a clue, Earn 1 Points for failed attempts at the game, solve the clue using the timelock and get 10 points!
 
 
 
@@ -298,7 +298,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                       <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                       </div>
                       <div>
-                      <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
+                      <div className="descriptionTitle">90 second Time Lock</div>
                       <br />
                       <div>Enter a username</div>
                       <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -324,7 +324,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                       <div>
                       <div className="MiniGameDetails">
 
-                      Play for a clue, Earn 2 Points for failed attempts of the game, solve the clue using the timelock and get 10 points!
+                      Play for a clue, Earn 1 Points for failed attempts of the game, solve the clue using the timelock and get 10 points!
 
 
 
@@ -359,7 +359,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
                           <div className="MiniGameDetails">
 
-                          Play for a clue, Earn 2 Points for failed attempts of the game, solve the clue using the timelock and get 20 points!
+                          Play for a clue, Earn 1 Points for failed attempts of the game, solve the clue using the timelock and get 20 points!
 
 
                           </div>
@@ -372,7 +372,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                           <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                           </div>
                           <div>
-                          <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
+                          <div className="descriptionTitle">90 second Time Lock</div>
                           <br />
                           <div>Enter a username</div>
                           <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -398,7 +398,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                           <div>
                           <div className="MiniGameDetails">
 
-                          Play for a clue, Earn 2 Points for failed attempts of the game, solve the clue using the timelock and get 20 points!
+                          Play for a clue, Earn 1 Points for failed attempts of the game, solve the clue using the timelock and get 20 points!
 
 
                           </div>
@@ -430,7 +430,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                             <div>
                             <div className="MiniGameDetails">
 
-                            Play for a clue, Earn 2 Points for failed attempts of the game, solve the clue using the timelock and get 50 points!
+                            Play for a clue, Earn 1 Points for failed attempts of the game, solve the clue using the timelock and get 50 points!
 
 
                             </div>
@@ -443,7 +443,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                             <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                             </div>
                             <div>
-                            <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
+                            <div className="descriptionTitle">90 second Time Lock</div>
                             <br />
                             <div>Enter a username</div>
                             <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -469,7 +469,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                             <div>
                             <div className="MiniGameDetails">
 
-                            Play for a clue, Earn 2 Points for failed attempts of the game, solve the clue using the timelock and get 50 points!
+                            Play for a clue, Earn 1 Points for failed attempts of the game, solve the clue using the timelock and get 50 points!
 
                             </div>
                             <br/>
@@ -508,7 +508,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>
@@ -540,7 +540,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                         <div>Know the answer? Get a 90 second time lock where only you can answer the secret!
                         </div>
                         <div>
-                        <div className="descriptionTitle">90 second Time Lock Cost XXX Blox</div>
+                        <div className="descriptionTitle">90 second Time Lock</div>
                         <br />
                         <div>Enter a username</div>
                         <Form.Control type="text" placeholder="@Username" name="username" value={username} onChange={handleInputChange}/>

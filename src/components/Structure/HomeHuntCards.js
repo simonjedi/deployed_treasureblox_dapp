@@ -31,7 +31,7 @@ const HuntWowCards = (props) => {
 
 
   const view_elon_home_view_click = (event) => {
-
+    window.scrollTo({top: 0,behavior: 'smooth'})
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
@@ -42,7 +42,7 @@ const HuntWowCards = (props) => {
   }
 
   const view_strike_fighter_view_click = (event) => {
-
+    window.scrollTo({top: 0,behavior: 'smooth'})
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
@@ -54,7 +54,7 @@ const HuntWowCards = (props) => {
   }
 
   const fort_blox_home_view_click = (event) => {
-
+    window.scrollTo({top: 0,behavior: 'smooth'})
     window.dataLayer.push({
       event: "wallet_information",
       wallet: props.wallet_for_google,
@@ -70,8 +70,6 @@ const HuntWowCards = (props) => {
   const game2_prize = commaNumber(props.game2_prize,',');
 
 
-console.log(props.game2numberOfEntries,"me")
-  // console.log(game1_id)s
 
   const renderTooltip = (props) => (
 
@@ -89,23 +87,43 @@ console.log(props.game2numberOfEntries,"me")
 
     <div>
 
-
     <Card className='cardRounded'>
-      <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
-      <Card.Body >
-        <Card.Title className="gameTitle">Fort Blox</Card.Title>
-        <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
 
-        <div>Riddle {props.game2_riddle}</div>
-        <div>Prize {game2_prize} Blox</div>
-        <div>Number of people entered {props.game2numberOfEntries}</div>
+      <Card.Img variant="top" src={props.is_meter?(img69):(img5)} alt="Logo" className='customRounded'/>
+      <Card.Body >
+      {props.is_meter?(<Card.Title className="gameTitle">Battle For the Grid</Card.Title>):(<Card.Title className="gameTitle">Strike Fighter Series</Card.Title>)}
+        {props.is_meter?(<Card.Title className="gameTitle">Round one Earn your MTRG!</Card.Title>):(<Card.Title className="gameTitle">Earn your wings!</Card.Title>)}
+        {props.is_meter?(<div>The first Play to earn metaverse treasure hunt released on METER. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against supervillain Crypto Dave!</div>):
+        (<div>The first Play to earn metaverse treasure hunt released on BSC. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against supervillain Crypto Dave!</div>)}
+
         <br/>
-        <Link to="/hunt2">
-          <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
+
+        <Link to="/TreasureBloxPartnerHome/:top">
+        {props.is_meter?
+
+          (
+
+            <Button className="customButton" onClick={view_strike_fighter_view_click} >View Battle Grid</Button>):
+          (
+          <div>
+            {false?(
+            <Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>
+          ):(
+            <div>
+            <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+            </div>
+          )}
+          </div>
+          )}
+
         </Link>
-        <br/><br/>
+
+
+        <br/>
+
       </Card.Body>
     </Card>
+
 
     <br className="d-lg-none"/>
     <br className="d-lg-none"/>
@@ -117,41 +135,52 @@ console.log(props.game2numberOfEntries,"me")
         <Card.Title className="gameTitle">Troy Vs Crypto Dave</Card.Title>
 
         <div>Riddle {props.game1_riddle}</div>
-        <div>Prize {game1_prize} Blox</div>
-        <div>Number of people entered {props.game1numberOfEntries}</div>
-        <br/>
+        <br/><br/>
+        {false?(
         <Link to="/hunt1">
           <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
         </Link>
-        <br/><br/>
+
+      ):(
+        <div>
+        <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+        </div>
+      )}
+        <br/>
 
       </Card.Body>
     </Card>
 
     <br className="d-lg-none"/>
     <br className="d-lg-none"/>
+
+
 
     <Card className='cardRounded'>
-
-      <Card.Img variant="top" src={props.is_meter?(img69):(img5)} alt="Logo" className='customRounded'/>
+      <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
       <Card.Body >
-      {props.is_meter?(<Card.Title className="gameTitle">Battle For the Grid</Card.Title>):(<Card.Title className="gameTitle">Strike Fighter Series</Card.Title>)}
-        {props.is_meter?(<Card.Title className="gameTitle">Earn your MTR!</Card.Title>):(<Card.Title className="gameTitle">Earn your wings!</Card.Title>)}
-        {props.is_meter?(<div>The first Play to earn metaverse treasure hunt released on METER. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>):
-        (<div>The first Play to earn metaverse treasure hunt released on BSC. Explorers will join metaverse hero Captain Troy 'Mighty' Armstrong in his fight against Crypto supervillain Crypto Dave!</div>)}
+        <Card.Title className="gameTitle">Fort Blox</Card.Title>
+        <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
 
+        <div>Riddle {props.game2_riddle}</div>
+        <br/>
+
+        {false?(
+          <Link to="/hunt2">
+            <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
+          </Link>
+        ):(
+          <div>
+          <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+          </div>
+        )}
 
         <br/>
-        <Link to="/TreasureBloxPartnerHome/:top">
-        {props.is_meter?
-          (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Battle Grid</Button>):
-          (<Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>)}
-
-        </Link>
-        <br/><br/>
-
       </Card.Body>
     </Card>
+
+
+
 
 
     </div>

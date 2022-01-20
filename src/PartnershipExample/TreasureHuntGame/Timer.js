@@ -22,8 +22,10 @@ import ReactAudioPlayer from 'react-audio-player';
   const commaNumber = require('comma-number')
 
 
-  var winning_prize1 = commaNumber(props.winning_prize1,',');
+  // var winning_prize1 = commaNumber(props.winning_prize1,',');
   // winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
+
+const winning_prize1 = props.game1_prize;
 
 
   const [transactionConfirmed,setTransactionConfirmed] = useState(false);
@@ -37,14 +39,11 @@ import ReactAudioPlayer from 'react-audio-player';
     // Head Start Time Lock
 
   const updateLocalDeadLineTime = (bool) => {
-    console.log("pre timelock:", bool)
 
     if (props.bool){
 
       setTransactionConfirmed(true);
-      console.log("pre timelock:", timeLock)
       setTimelock(true);
-      console.log("updated timelock:", timeLock)
     }
   }
   // setTimelock(props.countGame1DeadlineTrue);
@@ -79,24 +78,21 @@ import ReactAudioPlayer from 'react-audio-player';
                     {  props.countGame1DeadlineTrue ? (
 
                        <div>
-                            {props.accounts === props.attemptAddress1 ?(
+                            {props.accounts[0] === props.attemptAddress1 ?(
                               <div>
-                                { props.accounts === props.winning_address1 ?(
+                                { props.accounts[0] === props.winning_address1 ?(
 
                                     <div>
                                       <ReactAudioPlayer
                                         src={celebrate}
                                         autoPlay
                                       />
-                                      Congratulations you have solved the quest!
-                                      <div className="largeEnter">WINNER</div>
-                                      <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>
+                                      Congratulations a treasure hunter unlocked the vault!
+                                      <div className="largeEnter">Total Prize Won</div>
+                                      <div className="gameTitleEnter"> {winning_prize1} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+
 
                                       <br/>
-                                      <div className="enterGameTitle">Winning Message</div>
-                                      <div className="descriptionTitle">{props.winning_message1}</div>
-
-                                      <br/><br/>
                                       <div className="enterGameTitle">Winning Address</div>
                                       {props.winning_address1}
 
@@ -162,13 +158,11 @@ import ReactAudioPlayer from 'react-audio-player';
                     src={celebrate}
                     autoPlay
                   />
-                  Congratulations a treasure hunter helped Elon find his Rocket!
-                  <div className="largeEnter">WINNER</div>
-                  <div className="gameTitleEnter">Prize Won {winning_prize1} Blox</div>
-                  <br/>
-                  <div className="enterGameTitle">Winning Message</div>
-                  <div className="descriptionTitle">{props.winning_message1}</div>
-                  <br/>
+                  Congratulations a treasure hunter unlocked the vault!
+
+                  <div className="largeEnter">Total Prize Won</div>
+                  <div className="gameTitleEnter"> {winning_prize1} {props.is_meter?(<a> MTRG</a>):(<a> WINGS</a>)}</div>
+
                   <br/>
                   <div className="enterGameTitle">Winning Address</div>
                   {props.winning_address1}

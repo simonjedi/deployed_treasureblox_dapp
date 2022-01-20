@@ -57,8 +57,9 @@ const Step1Card = (props) => {
 
 
       setloading(true);
-      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame2_id,1).send({from: accounts});
+      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+      await contract.methods.enterGame(props.allGame2_id,1).send({from: accounts[0]});
+
 
       setTimeout(function(){
           setloading(false);
@@ -77,8 +78,10 @@ const Step1Card = (props) => {
       });
 
       setloading(true);
-      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame2_id,1).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await contract.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
+
       setTimeout(function(){
           setloading(false);
       },30000);
@@ -96,8 +99,9 @@ const Step1Card = (props) => {
       });
 
       setloading(true);
-      await tokenContract.methods.approve(gameContractAddress,props.web3.utils.toWei("500000", 'ether')).send({from: accounts});
-      await contract.methods.enterGame(props.allGame2_id,2).send({from: accounts,value:props.web3.utils.toWei("0.2", 'ether')});
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await contract.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,2).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
       setTimeout(function(){
           setloading(false);
       },30000);

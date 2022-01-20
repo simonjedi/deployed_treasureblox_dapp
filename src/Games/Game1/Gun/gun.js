@@ -38,9 +38,7 @@ const Gun = (props) =>{
   const [lose, setLose] = useState(false)
 
   const handlePlay = async() => {
-  // console.log(props.partnerId_xyz)
-  // console.log(props.accounts[0])
-  // console.log(props.allGame1_id)
+
     const transaction = await props.RANDOM2_contract_treasurebloxNative_.methods.rollDice(props.partnerId_treasurebloxNative,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
       setSpin(true)
@@ -52,7 +50,6 @@ async function tryAgain(uid){
     setTimeout(async function(){
 
       const transaction2 = await props.RANDOM1_contract_treasurebloxNative_.methods.player_history(props.accounts[0],uid).call();
-      console.log(transaction2);
 
       if (transaction2[2]){
         setWin(true)
@@ -69,7 +66,6 @@ async function tryAgain(uid){
       }
 
       if (transaction2[1]){
-        console.log("waiting")
         tryAgain(uid)
       }
 

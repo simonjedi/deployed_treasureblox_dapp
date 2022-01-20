@@ -329,7 +329,9 @@ const handleSubmitEnterTroy = async() => {
 
   setloading(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-  await props.MAIN_GAME_contract_treasurebloxNative_.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+  await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+  await props.MAIN_GAME_contract_treasurebloxNative_.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
   setTimeout(function(){
       setloading(false);
@@ -349,7 +351,9 @@ const handleSubmitEnterDave = async() => {
 
   setloading2(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
-  await props.MAIN_GAME_contract_treasurebloxNative_.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.2", 'ether')});
+  await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+  await props.MAIN_GAME_contract_treasurebloxNative_.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame2_id,2).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
 
   setTimeout(function(){
@@ -490,7 +494,7 @@ const handleSubmitEnterDave = async() => {
       <div>
 
 
-      {(counter >= 200)?(
+      {(counter >= 0)?(
         <div>
 
         <Container className='mt-5' fluid="md">
@@ -778,7 +782,7 @@ const handleSubmitEnterDave = async() => {
 
                                   </Col>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                                  <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
                                   <div className="siteTitle">Entry Cost</div>
                                   <div className="StatsGameEnterSmallSub">Select a team to join</div>
                                   </Col>
@@ -795,7 +799,7 @@ const handleSubmitEnterDave = async() => {
 
                                   </Col>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter blink_me2">$20,000</div>
+                                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>1000 MTRG</a>):(<a>$5,000</a>)}</div>
                                   <div className="siteTitle">Starting Prize</div>
                                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1454,7 +1458,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                  <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
                   <div className="siteTitle">Entry Cost</div>
                   <div className="StatsGameEnterSmallSub">Select a team to join</div>
                   </Col>
@@ -1471,7 +1475,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter blink_me2">$20,000</div>
+                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>1000 MTRG</a>):(<a>$5,000</a>)}</div>
                   <div className="siteTitle">Starting Prize</div>
                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 

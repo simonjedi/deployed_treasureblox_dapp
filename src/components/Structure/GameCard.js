@@ -27,7 +27,6 @@ const HomeCards = (props) => {
   const treasure = commaNumber(props.totalTreasure,',');
 
 
-  // console.log(game1_id)s
 
   const renderTooltip = (props) => (
 

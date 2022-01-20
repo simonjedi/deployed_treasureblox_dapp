@@ -22,7 +22,6 @@ const LeaderBoardCard = (props) => {
   const game2_prize = commaNumber(props.game2_prize,',');
   const game2_WinnerPrize = commaNumber(Math.round(props.game2_prize*0.3),',');
 
-  console.log(game2_WinnerPrize,"prize")
 
   const game2_entry_cost = commaNumber(props.game2_entry_cost,',');
 
@@ -44,8 +43,6 @@ const LeaderBoardCard = (props) => {
   }];
 
 
-// console.log(props.game2LeaderBoardIndex)
-// console.log(props.game2LeaderBoardTries)
 
 var total = 0;
 
@@ -91,8 +88,10 @@ if (props.state_leaderboardAddressSearch_tries_game2){
     <Card className="customRoundedOne">
 
 <Tab.Container defaultActiveKey="first">
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game2}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game2}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game2}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {game2_WinnerPrize} Blox</div>
+    <Card.Header className="descriptionTitle">fuck
+    PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
 
+    Total Est Prize Volt {game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}
 
     <Nav justify variant="pills"  >
       <Nav.Item>

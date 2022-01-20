@@ -32,12 +32,17 @@ const LeaderBoardCard = (props) => {
   const decimals = props.decimals;
 
 
-  const game1_prize = commaNumber(props.game1_prize,',');
+  const game1_prize = props.game1_prize;
+
   const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
   const game1_WinnerPrize = commaNumber(Math.round(props.game1_prize*0.3),',');
 
-  console.log(game1_WinnerPrize,"prize")
+
+  const est_prize = props.state_WinnerEstPrizeGame1.length-18;
+
+
+
 
 
 
@@ -48,14 +53,7 @@ const LeaderBoardCard = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //
-  // console.log(props.game1LeaderBoardIndex,"ITEMS");
-  // console.log(props.game1LeaderBoardGameID,"ITEMS");
-  // console.log(props.game1LeaderBoardAddress,"ITEMS");
-  // console.log(props.game1LeaderBoardEntered,"ITEMS");
-  // console.log(props.game1LeaderBoardUsername,"ITEMS");
-  // console.log(props.game1LeaderBoardTries,"ITEMS");
-  // console.log(props.game1LeaderBoardStage,"ITEMS");
+
 
   const columns = [
     {
@@ -66,8 +64,6 @@ const LeaderBoardCard = (props) => {
   }];
 
 
-// console.log(props.game1LeaderBoardIndex)
-// console.log(props.game1LeaderBoardTries)
 
 
     // const userList = async () => {
@@ -87,12 +83,10 @@ const LeaderBoardCard = (props) => {
    }
 
 
-console.log(props.game1LeaderBoardIndex)
 
 
   let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
 
-  console.log(zipped,"zipped")
 
   let rank = 0;
 
@@ -101,11 +95,8 @@ console.log(props.game1LeaderBoardIndex)
 
 
 
-  console.log(zipped,"zipped")
-  console.log(oredered_zipped,"orders")
 
 
-  console.log(oredered_zipped.slice(1),"orders")
 
 
   const userList = oredered_zipped.map((users,index) => {
@@ -114,26 +105,25 @@ console.log(props.game1LeaderBoardIndex)
           return (
               //mapping over the User component to display them in the <tbody>
               //Key makes each User unique.
-              <User key={index} data={users} total={total} rank={rank} {...props}/>
+              <User key={index} meter={props.is_meter} data={users} total={total} rank={rank} {...props}/>
           )
       });
 
 
-      console.log(userList.slice(1),"orders")
 
 
 // console.log(zipped.sort((a,b) => a[3] < b[3] ? 1 : -1),"zip sorted")
 // console.log(props.game1LeaderBoardIndex.sort(),"zip sorted")
-console.log(props.state_leaderboardAddressSearch_tries_game1,"personal")
 var personalgamereturn = 0;
 if (props.state_leaderboardAddressSearch_tries_game1){
     if (props.game1_prize){
+      // var personalgamereturn = (0.7*((props.state_leaderboardAddressSearch_tries_game1/total)*props.game1_prize)*80);
+// points/total points]
       var personalgamereturn = Math.round((0.7*((props.state_leaderboardAddressSearch_tries_game1/total)*props.game1_prize))*0.8);
     }
 
 
 }
-console.log(props.game1LeaderBoardUsername[8],"here")
 
 
 
@@ -145,8 +135,16 @@ console.log(props.game1LeaderBoardUsername[8],"here")
     <Card className="customRoundedOne">
 
 <Tab.Container defaultActiveKey="first">
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Wings<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} Wings</div>
+    <Card.Header className="descriptionTitle">
 
+
+
+    PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+
+    Total Est Prize Volt {game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}
+
+    <br/>
+    <br/>
 
     <Nav justify variant="pills"  >
       <Nav.Item>

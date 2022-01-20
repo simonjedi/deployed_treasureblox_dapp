@@ -113,7 +113,6 @@ const HuntWowCards = (props) => {
 
 
 
-  // console.log(game1_id)s
 
   const renderTooltip = (props) => (
 

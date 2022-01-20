@@ -36,7 +36,6 @@ const LeaderBoardCard = (props) => {
 
   const game1_WinnerPrize = commaNumber(Math.round(props.game1_prize*0.3),',');
 
-  console.log(game1_WinnerPrize,"prize")
 
 
 
@@ -47,14 +46,7 @@ const LeaderBoardCard = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //
-  // console.log(props.game1LeaderBoardIndex,"ITEMS");
-  // console.log(props.game1LeaderBoardGameID,"ITEMS");
-  // console.log(props.game1LeaderBoardAddress,"ITEMS");
-  // console.log(props.game1LeaderBoardEntered,"ITEMS");
-  // console.log(props.game1LeaderBoardUsername,"ITEMS");
-  // console.log(props.game1LeaderBoardTries,"ITEMS");
-  // console.log(props.game1LeaderBoardStage,"ITEMS");
+
 
   const columns = [
     {
@@ -64,9 +56,6 @@ const LeaderBoardCard = (props) => {
 
   }];
 
-
-// console.log(props.game1LeaderBoardIndex)
-// console.log(props.game1LeaderBoardTries)
 
 
     // const userList = async () => {
@@ -86,13 +75,11 @@ const LeaderBoardCard = (props) => {
    }
 
 
-console.log(props.game1LeaderBoardIndex)
 
 
 
   let zipped = props.game1LeaderBoardIndex.map((x, i) => [x, props.game1LeaderBoardUsername[i],props.game1LeaderBoardStage[i],props.game1LeaderBoardTries[i]]);
 
-  console.log(zipped,"zipped")
 
   let rank = 0;
 
@@ -101,11 +88,6 @@ console.log(props.game1LeaderBoardIndex)
 
 
 
-  console.log(zipped,"zipped")
-  console.log(oredered_zipped,"orders")
-
-
-  console.log(oredered_zipped.slice(1),"orders")
 
 
   const userList = oredered_zipped.map((users,index) => {
@@ -119,12 +101,10 @@ console.log(props.game1LeaderBoardIndex)
       });
 
 
-      console.log(userList.slice(1),"orders")
 
 
 // console.log(zipped.sort((a,b) => a[3] < b[3] ? 1 : -1),"zip sorted")
 // console.log(props.game1LeaderBoardIndex.sort(),"zip sorted")
-console.log(props.state_leaderboardAddressSearch_tries_game1,"personal")
 var personalgamereturn = 0;
 if (props.state_leaderboardAddressSearch_tries_game1){
     if (props.game1_prize){
@@ -144,8 +124,11 @@ if (props.state_leaderboardAddressSearch_tries_game1){
     <Card className="customRoundedOne">
 
 <Tab.Container defaultActiveKey="first">
-    <Card.Header className="descriptionTitle">PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> Blox<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} Blox</div>
+    <Card.Header className="descriptionTitle">
 
+    PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+
+    Total Est Prize Volt {game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}
 
     <Nav justify variant="pills"  >
       <Nav.Item>

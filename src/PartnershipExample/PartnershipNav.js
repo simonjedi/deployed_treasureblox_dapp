@@ -45,6 +45,26 @@ const PartnerNav = (props) => {
       });
     }
 
+    const nav_how_to_play = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"how_to_play"
+      });
+    }
+
+    const nav_discord = (event) => {
+      window.dataLayer.push({
+        event: "wallet_information",
+        wallet: props.wallet_for_google,
+        wallet_ip: props.ip,
+        url: window.location.pathname,
+        buttonClicked:"nav_discord"
+      });
+    }
+
 
 
   return(
@@ -88,6 +108,11 @@ const PartnerNav = (props) => {
         </Link>
         </div>
       )}
+
+      <NavDropdown title="How to play / Community" id="collasible-nav-dropdown">
+      <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">How to Play</NavDropdown.Item>
+      <NavDropdown.Item  onClick={nav_discord} target = "_blank" href="https://discord.gg/mAQeHXEjB9">Discord</NavDropdown.Item>
+      </NavDropdown>
 
 
 

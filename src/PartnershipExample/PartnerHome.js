@@ -115,7 +115,6 @@ const PartnerHome = (props) => {
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
 
-  // console.log(game1_id)s
 
   function useWindowSize() {
     // scroll_to top
@@ -162,10 +161,99 @@ const PartnerHome = (props) => {
 const { width, height } = useWindowSize();
 
 // style={{height: height}}
+
+
+// <br/>
+// <div className="siteTitle">IFRAME EMBEDDED example</div>
+// <br/>
+//
+//     <Iframe url="https://www.treasureblox.finance/PartnershipExampleHome"
+//             width="100%"
+//             height="1334"
+//             display="initial"
+//             frameBorder="0"
+//             position="relative"/>
+
+
+
+
     return (
 <div>
       {props.is_meter?(
-        <div className="custombackgroundmeter">
+        <div style={{height: height*5}} className="custombackgroundmeter">
+
+
+
+
+        <Helmet>
+          <title>TreasureBlox | Home</title>
+        </Helmet>
+        <Container className='mt-5' fluid="md">
+
+
+
+        <div id="top" className="spaceTopHome">
+
+
+
+
+        <Carousel  prevIcon="" prevLabel="" nextIcon="" nextLabel="">
+        <Carousel.Item>
+        <img
+          className="d-block w-100 cardRounded "
+
+          src={props.is_meter?(img69):(img9)}
+          alt="First slide"
+        />
+
+        <Carousel.Caption >
+        <h3 className="d-none d-lg-block">{props.is_meter?(<a>Battle for the grid - 'earn your MTRG'</a>):(<a>Battle for the sky - strike fighter 'earn your wings'</a>)}</h3>
+
+        <p className="d-lg-none">{props.is_meter?(<a>Battle for the grid - 'earn your MTRG'</a>):(<a>Battle for the sky - strike fighter 'earn your wings'</a>)}</p>
+
+        <p className="d-lg-none">{props.is_meter?(<p>The ultimate meter treasurehunt adventure!</p>):(<p>The ultimate jetswap treasurehunt adventure!</p>)}</p>
+
+
+        <LinkHeader to="/TreasureBloxPartner/:top">
+          <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/TreasureBloxPartner/:top" style={{margin:'10px'}}>Get Started</Button>
+        </LinkHeader>
+
+
+
+
+        </Carousel.Caption>
+        </Carousel.Item>
+
+
+        </Carousel>
+
+        <br/>
+
+
+
+
+
+        </div>
+
+
+
+
+        </Container>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+      ):(
+
+        <div style={{height: height*5}} className="custombackground">
 
 
 
@@ -199,7 +287,7 @@ const { width, height } = useWindowSize();
 
         <p>The ultimate jetswap treasurehunt adventure!</p>
         <LinkHeader to="/TreasureBloxPartner/:top">
-          <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
+          <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/TreasureBloxPartner/:top" style={{margin:'10px'}}>Get Started</Button>
         </LinkHeader>
 
 
@@ -211,96 +299,7 @@ const { width, height } = useWindowSize();
 
         </Carousel>
 
-        <br/>
-        <div className="siteTitle">IFRAME EMBEDDED example</div>
-        <br/>
 
-            <Iframe url="https://www.treasureblox.finance/PartnershipExampleHome"
-                    width="100%"
-                    height="1334"
-                    display="initial"
-                    frameBorder="0"
-                    position="relative"/>
-
-
-
-
-        </div>
-
-
-
-
-        </Container>
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-      ):(
-
-        <div className="custombackground">
-
-
-
-
-        <Helmet>
-          <title>TreasureBlox | Home</title>
-        </Helmet>
-        <Container className='mt-5' fluid="md">
-
-
-
-        <div id="top" className="spaceTopHome">
-
-
-
-
-        <Carousel  prevIcon="" prevLabel="" nextIcon="" nextLabel="">
-        <Carousel.Item>
-        <img
-          className="d-block w-100 cardRounded "
-
-          src={props.is_meter?(img69):(img9)}
-          alt="First slide"
-        />
-
-        <Carousel.Caption >
-        <h3 className="d-none d-lg-block">{props.is_meter?(<a>Battle for the grid - 'earn your MTR'</a>):(<a>Battle for the sky - strike fighter 'earn your wings'</a>)}</h3>
-
-        <p className="d-lg-none">{props.is_meter?(<a>Battle for the grid - 'earn your MTR'</a>):(<a>Battle for the sky - strike fighter 'earn your wings'</a>)}</p>
-
-
-        <p>The ultimate jetswap treasurehunt adventure!</p>
-        <LinkHeader to="/PartnershipExample1">
-          <Button className="customButton" onClick={partner_example_header_play_to_earn} id="partner_example_header_play_to_earn" to="/PartnershipExample1" style={{margin:'10px'}}>Get Started</Button>
-        </LinkHeader>
-
-
-
-
-        </Carousel.Caption>
-        </Carousel.Item>
-
-
-        </Carousel>
-
-        <br/>
-        <div className="siteTitle">IFRAME EMBEDDED example</div>
-        <br/>
-
-            <Iframe url="https://www.treasureblox.finance/PartnershipExampleHome"
-                    width="100%"
-                    height="1334"
-                    display="initial"
-                    frameBorder="0"
-                    position="relative"/>
 
 
 

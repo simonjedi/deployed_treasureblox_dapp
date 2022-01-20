@@ -119,12 +119,10 @@ const Screen = (props) =>{
     }
     //if i dont have birdBottom as a dependecy, it wont stop
   }, [birdBottom])
-  console.log(birdBottom)
 
   // const jump = () => {
   //   if (!isGameOver && (birdBottom < screenHeight)) {
   //     setBirdBottom(birdBottom => birdBottom + 50)
-  //     console.log('jumped')
   //   }
   // }
 
@@ -132,10 +130,8 @@ const Screen = (props) =>{
   document.body.onkeyup = function(e){
       if(e.keyCode == 32){
         e.preventDefault();
-          console.log("JUMP")
           if (!isGameOver && (birdBottom < screenHeight)) {
             setBirdBottom(birdBottom => birdBottom + 50)
-            console.log('jumped')
           }
       }
   }
@@ -198,9 +194,7 @@ const Screen = (props) =>{
 
     //check for collisions
     useEffect(() => {
-      console.log(obstaclesLeft)
-      console.log(screenWidth/2)
-      console.log(obstaclesLeft > screenWidth/2)
+
       if (
         ((birdBottom < (obstaclesNegHeight + obstacleHeight + 30) ||
         birdBottom > (obstaclesNegHeight + obstacleHeight + gap -30)) &&
@@ -218,7 +212,6 @@ const Screen = (props) =>{
         )
         )
         {
-        console.log('game over')
         gameOver()
       }
     })

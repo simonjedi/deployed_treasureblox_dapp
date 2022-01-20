@@ -42,9 +42,7 @@ const Timer = (props) => {
   const updateLocalDeadLineTime = (bool) => {
     if (bool){
       setTransactionConfirmed(true);
-      console.log("pre timelock:", timeLock)
       setTimelock(true);
-      console.log("updated timelock:", timeLock)
     }
   }
   // setTimelock(props.countGame1DeadlineTrue);

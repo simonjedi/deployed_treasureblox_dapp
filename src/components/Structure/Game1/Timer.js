@@ -38,14 +38,11 @@ import ReactAudioPlayer from 'react-audio-player';
     // Head Start Time Lock
 
   const updateLocalDeadLineTime = (bool) => {
-    console.log("pre timelock:", bool)
 
     if (props.bool){
 
       setTransactionConfirmed(true);
-      console.log("pre timelock:", timeLock)
       setTimelock(true);
-      console.log("updated timelock:", timeLock)
     }
   }
   // setTimelock(props.countGame1DeadlineTrue);

@@ -52,7 +52,7 @@ const Step3Card = (props) => {
 
   const allGame2_deadline_time = props.allGame2_deadline_time;
   const contract = props.contract
-  const accounts = props.accounts
+  const accounts = props.accounts[0]
 
 
   const handleInputChangeSecret = (event) => {
@@ -60,7 +60,6 @@ const Step3Card = (props) => {
 
     const value = target.type === "checkbox" ? target.checked : target.value;
     const secret = target.secret;
-    // console.log("hashed secret: ","0x"+keccak256(value).toString('hex'));
 
     // props.web3.solidityKeccak()
     const userAccount = "0x"+keccak256(accounts).toString('hex');
@@ -86,9 +85,11 @@ const Step3Card = (props) => {
     const handleSubmitSecret = async() => {
 
       setloading(true);
-      const result = await contract.methods.SubmitSecret(hashedSecret,secret,props.allGame2_id,message).send({from: accounts});
 
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
+      const result = await props.VOLT_contract_treasurebloxNative_.methods.SubmitSecret(props.partnerId_treasurebloxNative,hashedSecret,secret,props.allGame2_id,message,props.state_leaderboardAddressSearch_team_game2).send({from: accounts});
+
+
+      if (result.events[1].raw.topics[3] == "0x0000000000000000000000000000000000000000000000000000000000000001"){
         // Block of code to try
         // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
         setloading(false);
@@ -121,7 +122,6 @@ const Step3Card = (props) => {
       setloading(true);
       const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame2_id,message).send({from: accounts});
 
-      // console.log(result.events.submitSecretFailEvent.returnValues[2],"result wrong.....<-----")
 
       if (result.events.submitSecretFailEvent.returnValues[2] == true){
         // Block of code to try
@@ -129,7 +129,6 @@ const Step3Card = (props) => {
         setloading(false);
         setunlucky(true)
       } else {
-        // console.log(result.events.submitSecretFailEvent.returnValues[2],"result winner.....<-----")
         setunlucky(false)
         setLevelWon(true)
       }

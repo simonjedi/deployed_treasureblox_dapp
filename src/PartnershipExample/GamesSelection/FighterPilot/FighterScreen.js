@@ -56,7 +56,6 @@ const FighterScreen = (props) =>{
     height: 50
   }
 
-  console.log(playerRect,"set playerRect")
 
   //Game Elements
   let rectangles = [
@@ -115,7 +114,6 @@ const FighterScreen = (props) =>{
       //     color: "#000099"
       // }
   ]
-  console.log(rectangles,"set rectangles")
 
 
       const gameOverTime = () => {
@@ -337,9 +335,7 @@ function moveRectangle() {
               x: e.clientX - canvas.offsetLeft,
               y: e.clientY - canvas.offsetTop
           }
-          console.log(pos.x,"x")
 
-          console.log(pos.y,"y")
 
           //See if they clicked on the red square in particular
           if(isCursorInRect(pos.x,pos.y,playerRect)){
@@ -361,7 +357,6 @@ function moveRectangle() {
               x: e.clientX - canvas.offsetLeft,
               y: e.clientY - canvas.offsetTop
           };
-          console.log(pos)
           playerRect.x = pos.x - 25;
           playerRect.y = pos.y - 25;
           }

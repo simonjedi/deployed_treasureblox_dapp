@@ -66,7 +66,6 @@ function Board(props) {
         // deep copy of the object
         let newGrid=JSON.parse(JSON.stringify(grid));
         newGrid[x][y].flagged=true;
-        console.log(newGrid[x][y]);
         setGrid(newGrid);
     }
     const newfresh=()=>{

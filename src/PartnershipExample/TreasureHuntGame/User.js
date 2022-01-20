@@ -23,7 +23,7 @@ const User = (props) => {
       <td >{props.data[1]}</td>
       <td >{props.data[2]}</td>
       <td >{props.data[3]}</td>
-      <td >{gamereturn} Blox</td>
+      <td >{gamereturn} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</td>
     </tr>
 
   )

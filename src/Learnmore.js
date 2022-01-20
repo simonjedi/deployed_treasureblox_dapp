@@ -68,7 +68,6 @@ const Learnmore = (props) => {
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
 
-  // console.log(game1_id)s
 
   const renderTooltip = (props) => (
 

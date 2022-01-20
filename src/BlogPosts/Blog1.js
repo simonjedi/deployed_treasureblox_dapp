@@ -189,35 +189,20 @@ const Blog1 = (props) => {
             <Button className="customButton" onClick={header_play_to_earn} id="header_play_to_earn" to="/home#yourAnchorTag" style={{margin:'10px'}}>Play to earn</Button>
           </LinkHeader>
 
-          <LinkHeader to="/Learnmore">
-            <Button className="customButton" onClick={learn_more} id="learn_more" to="/Learnmore" style={{margin:'10px'}}>Learn More</Button>
-          </LinkHeader>
+
 
 
           </Carousel.Caption>
           </Carousel.Item>
 
-          <Carousel.Item>
-          <img
-            className="d-block w-100 cardRounded"
-            src={img5}
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-          <h3>Play to Earn, Project Information & More</h3>
-            <br/>
-          <p>Explorers earn Blox for playing and get paid to play!</p>
-            <Button className="customButton" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
-          </Carousel.Caption>
-          </Carousel.Item>
+          
 
 
         </Carousel>
 
 <br/>
             <Row id="intro">
-            <Col sm={8}>
+            <Col sm={12}>
             <br/>
 
             <Card className='cardRounded' >
@@ -243,39 +228,14 @@ const Blog1 = (props) => {
               To be continued…
               </div>
 
-                <Link to="/hunt1">
-                  <Button className="customButtonBlog"  white_paper={play_elons_quest} to="/hunt1">Play Elon's Quest</Button>
-                </Link>
+
 
               </Card.Body>
             </Card>
 
 
             </Col>
-            <Col sm={4}>
-            <br/>
 
-
-            <Card className='cardRounded'>
-              <Card.Img variant="top" src={img3} alt="Logo" className='customRounded'/>
-              <Card.Body >
-                <Card.Title className="gameTitle">The Story So Far</Card.Title>
-                <div>Crypto Dave has broken into fort blox and stolen the treasure. Fort bloc has 4 main door to the Valut. He scrambled the passwords for them.
-         <br/><br/>
-        Can you help Captain Troy mighty Armstrong get in and find the treasure and to save the day.
-        </div>
-                <br/>
-                <Link to="/hunt1">
-                  <Button className="customButtonBlog" id="blog_sidebar_play_elon_card" to="/hunt1">Play Elon's Quest</Button>
-                </Link>
-                <div class="badge badge-pill badge-secondary" style={{float:'right',align:'bottom'}}>Defi Games</div>
-
-              </Card.Body>
-            </Card>
-
-            <br/>
-
-            </Col>
 
 
             </Row>

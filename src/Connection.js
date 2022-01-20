@@ -39,7 +39,6 @@ const Connection = (props) =>  {
        const accounts = await web3.eth.getAccounts();
        const usersAccount = accounts;
        const stringOfUsersAccount = new String(usersAccount);
-       console.log(stringOfUsersAccount.slice(0, 4)); // "01"
        setFirstPartAddress(stringOfUsersAccount.slice(0, 5));
        setSecondPartAddress('____'+stringOfUsersAccount.slice(37, 42));
        name = stringOfUsersAccount.slice(0, 5)
@@ -51,7 +50,6 @@ const Connection = (props) =>  {
     await wallet.connect()
     const usersAccount = props.accounts;
     const stringOfUsersAccount = new String(usersAccount);
-    console.log(stringOfUsersAccount.slice(0, 4)); // "01"
     setFirstPartAddress('Welcome');
     setSecondPartAddress('');
     window.location.reload();
@@ -89,13 +87,16 @@ const Connection = (props) =>  {
     const web3 = await Moralis.enableWeb3();
 
 
-    const chainId = "0x53"; //Meter Mainnet
-    // const chainId = "0x52"; //Meter Mainnet
+    // const chainId = "0x53"; //Meter Mainnet
+    const chainId = "0x52"; //Meter Mainnet
 
-    const chainName = "Meter Testnet";
+    // const chainName = "Meter Testnet";
+    const chainName = "Meter Mainnet";
+
     const currencyName = "MTR";
     const currencySymbol = "MTR";
-    const rpcUrl = "https://rpctest.meter.io";
+    // const rpcUrl = "https://rpctest.meter.io";
+    const rpcUrl = "https://rpc.meter.io";
     const blockExplorerUrl = "https://scan-warringstakes.meter.io";
     await Moralis.addNetwork(
       chainId,
@@ -107,11 +108,10 @@ const Connection = (props) =>  {
     );
 
     const chainIdHex = await Moralis.switchNetwork(chainId);
-    
+
     window.location.reload(false);
 
   }
-console.log(props.accounts,"acccount")
 
 
 

@@ -100,9 +100,13 @@ const PartnershipHunt1 = (props) => {
 
 
   const commaNumber = require('comma-number')
+
   const { width, height } = useWindowSize();
 
   const game1_prize = commaNumber(props.game1_prize,',');
+
+
+
   const [loading,setloading] = useState(false);
   const [loading2,setloading2] = useState(false);
 
@@ -141,8 +145,9 @@ const PartnershipHunt1 = (props) => {
 
 
     setloading(true);
+
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     window.scrollTo({top: 0,behavior: 'smooth'})
-    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -165,7 +170,8 @@ const PartnershipHunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel2Game1(true)
     setredirectLevel2(true)
 
@@ -187,7 +193,8 @@ const PartnershipHunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel3Game1(true);
     setredirectLevel3(true);
 
@@ -330,17 +337,20 @@ const handleSubmitEnterTroy = async() => {
     buttonClicked:"Treasure_Hunt_Entered"
   });
 
-
-
   setloading(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("1.0", 'ether')});
+
+  await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
   setTimeout(function(){
       setloading(false);
   },30000);
 
 }
+
+
 
 const handleSubmitEnterDave = async() => {
 
@@ -355,7 +365,9 @@ const handleSubmitEnterDave = async() => {
   setloading2(true);
 
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("1.0", 'ether')});
+  await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
 
 
   setTimeout(function(){
@@ -374,7 +386,6 @@ const handleSubmitEnterDave = async() => {
 <div>
 {props.is_meter?(
   <div id="top" style={{height: height*5}} className="custombackgroundmeter">
-
 
 
   {redirectLevel1?(
@@ -497,7 +508,8 @@ const handleSubmitEnterDave = async() => {
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
           <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-          <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+          <div className="SubTitleHeader">{props.is_meter?(<a>Who's side will you join in the battle for the grid</a>):(<a>Who's side will you join in the Strike Fighter battle for the metaverse</a>)}</div>
+
 
           <Container className='mt-5' fluid="md">
 
@@ -769,14 +781,14 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">{counter}/200</div>
+                              <div className="StatsGameEnter">{counter}/100</div>
                               <div className="siteTitle">Explorers Entered</div>
                               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
                               <div className="siteTitle">Entry Cost</div>
                               <div className="StatsGameEnterSmallSub">Select a team to join</div>
                               </Col>
@@ -793,7 +805,7 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter blink_me2">$20,000</div>
+                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>250 MTRG</a>):(<a>$5,000</a>)}</div>
                               <div className="siteTitle">Starting Prize</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -925,7 +937,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} MTRG
+                          Cost to play 0.5 MTRG
 
                           </div>
                           <br/>
@@ -970,7 +982,7 @@ const handleSubmitEnterDave = async() => {
 
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} MTRG
+                          Cost to play 0.5 MTRG
                           <br/>
 
                           </div>
@@ -1010,7 +1022,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play {props.CostToPlay_xyz_} MTRG
+                        Cost to play 0.5 MTRG
 
                         </div>
                         <br/>
@@ -1095,7 +1107,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} MTRG
+                          Cost to play 0.5 MTRG
 
 
                           </div>
@@ -1133,7 +1145,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} MTRG
+                          Cost to play 0.5 MTRG
 
                           </div>
                           <br/>
@@ -1172,7 +1184,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play {props.CostToPlay_xyz_} MTRG
+                        Cost to play 0.5 MTRG
 
                         </div>
                         <br/>
@@ -1448,14 +1460,14 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">{counter}/200</div>
+              <div className="StatsGameEnter">{counter}/100</div>
               <div className="siteTitle">Explorers Entered</div>
               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
               <div className="siteTitle">Entry Cost</div>
               <div className="StatsGameEnterSmallSub">Select a team to join</div>
               </Col>
@@ -1472,7 +1484,7 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter blink_me2">$20,000</div>
+              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>250 MTRG</a>):(<a>$5,000</a>)}</div>
               <div className="siteTitle">Starting Prize</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1724,7 +1736,8 @@ const handleSubmitEnterDave = async() => {
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
           <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-          <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+          <div className="SubTitleHeader">{props.is_meter?(<a>Who's side will you join in the battle for the grid</a>):(<a>Who's side will you join in the Strike Fighter battle for the metaverse</a>)}</div>
+
 
           <Container className='mt-5' fluid="md">
 
@@ -1996,14 +2009,14 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">{counter}/200</div>
+                              <div className="StatsGameEnter">{counter}/100</div>
                               <div className="siteTitle">Explorers Entered</div>
                               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+                              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
                               <div className="siteTitle">Entry Cost</div>
                               <div className="StatsGameEnterSmallSub">Select a team to join</div>
                               </Col>
@@ -2020,7 +2033,7 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter blink_me2">$20,000</div>
+                              <div className="StatsGameEnter blink_me2">$2,000</div>
                               <div className="siteTitle">Starting Prize</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -2672,14 +2685,14 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">{counter}/200</div>
+              <div className="StatsGameEnter">{counter}/100</div>
               <div className="siteTitle">Explorers Entered</div>
               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">0.2 {props.is_meter?(<a>MTR</a>):(<a>BNB</a>)}</div>
+              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
               <div className="siteTitle">Entry Cost</div>
               <div className="StatsGameEnterSmallSub">Select a team to join</div>
               </Col>
@@ -2696,7 +2709,7 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter blink_me2">$20,000</div>
+              <div className="StatsGameEnter blink_me2">$5,000</div>
               <div className="siteTitle">Starting Prize</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 

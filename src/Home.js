@@ -133,7 +133,6 @@ const Home = (props) => {
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
 
-  // console.log(game1_id)s
 
   const renderTooltip = (props) => (
 
@@ -210,23 +209,7 @@ const Home = (props) => {
 </center>
       </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-      <img
-        className="d-block w-100 cardRounded"
-        src={img5}
-        alt="Second slide"
-      />
-
-      <Carousel.Caption>
-      <h3 sm={12} lg={4} className="d-none d-lg-block">Play to Earn, Project Information & More</h3>
-        <br/>
-      <p>Explorers join teams, earn Blox for playing with out P2E rewards!</p>
-
-<center>
-        <Button sm={12} lg={4} className="customButton d-none d-lg-block" onClick={white_paper} id="white_paper" href={pdf} target = "_blank" style={{margin:'10px'}}>View white paper</Button>
-</center>
-      </Carousel.Caption>
-      </Carousel.Item>
+      
     </Carousel>
 
 

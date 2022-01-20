@@ -47,14 +47,13 @@ const Step3Card = (props) => {
 
   const [levelWon,setLevelWon] = useState(false);
 
-
-
+console.log(hashedSecret,"hashedSecret")
 
   const [loading,setloading] = useState(false);
 
   const allGame1_deadline_time = props.allGame1_deadline_time;
   const contract = props.contract
-  const accounts = props.accounts
+  const accounts = props.accounts[0]
 
 
   const handleInputChangeSecret = (event) => {
@@ -62,15 +61,13 @@ const Step3Card = (props) => {
 
     const value = target.type === "checkbox" ? target.checked : target.value;
     const secret = target.secret;
-    // console.log("hashed secret: ","0x"+keccak256(value).toString('hex'));
 
     // props.web3.solidityKeccak()
     const userAccount = "0x"+keccak256(accounts).toString('hex');
 
     const userSecret = "0x"+keccak256(value).toString('hex');
 
-    const confirmedSecret = props.web3.utils.soliditySha3(userAccount,userSecret).toString('hex');
-
+    var confirmedSecret = props.web3.utils.soliditySha3(userAccount,userSecret).toString('hex');
     setSecret(value);
     setHashedSecret(confirmedSecret)
 
@@ -88,9 +85,10 @@ const Step3Card = (props) => {
     const handleSubmitSecret = async() => {
 
       setloading(true);
-      const result = await contract.methods.SubmitSecret(hashedSecret,secret,props.allGame1_id,message,props.state_leaderboardAddressSearch_team_game1).send({from: accounts});
+      const result = await props.VOLT_contract_xyz_.methods.SubmitSecret(props.partnerId_xyz,hashedSecret,secret,props.allGame1_id,message,props.state_leaderboardAddressSearch_team_game1).send({from: accounts});
 
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
+
+      if (result.events[1].raw.topics[3] == "0x0000000000000000000000000000000000000000000000000000000000000001"){
         // Block of code to try
         // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
         window.dataLayer.push({
@@ -100,6 +98,7 @@ const Step3Card = (props) => {
           url: window.location.pathname,
           buttonClicked:"Explorer_Submit_Secret"
         });
+        console.log("inside if")
 
         setloading(false);
         setunlucky(true)

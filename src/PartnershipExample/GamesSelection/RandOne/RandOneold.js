@@ -53,12 +53,9 @@ const RandOne = (props) =>{
 
 
   const handlePlay = async() => {
-  // console.log(props.partnerId_xyz)
-  // console.log(props.accounts[0])
-  // console.log(props.allGame1_id)
+
     setSpin(true)
     const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(1,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
-    console.log(transaction.events.DiceRolled.returnValues["s_keyHash"])
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
 
       tryAgain(uid)
@@ -69,7 +66,6 @@ async function tryAgain(uid){
     setTimeout(async function(){
 
       const transaction2 = await props.RANDOM1_contract_xyz_.methods.player_history(props.accounts[0],uid).call();
-      console.log(transaction2,"transaction returns");
 
       if (transaction2[2]){
         setWin(true)
@@ -87,7 +83,6 @@ async function tryAgain(uid){
       }
 
       // if (transaction2[1]){
-      //   console.log("waiting")
       //   tryAgain(uid)
       // }
 

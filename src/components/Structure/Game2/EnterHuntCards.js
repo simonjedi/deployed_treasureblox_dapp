@@ -24,7 +24,6 @@ const EnterHuntCards = (props) => {
 
   const allGame1_deadline_time = props.allGame2_deadline_time;
 
-console.log("enter card.js: ",props.attemptAddress2)
 
   const renderTooltip = (props) => (
 

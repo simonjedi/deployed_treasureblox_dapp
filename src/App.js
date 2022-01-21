@@ -1854,18 +1854,18 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be");
-        const game_RANDOM1_Address_xyz_ = "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be"
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36");
+        const game_RANDOM1_Address_xyz_ = "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpc.meter.io/" && "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E");
-        const game_RANDOM2_Address_xyz_ = "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E"
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpc.meter.io/" && "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB");
+        const game_RANDOM2_Address_xyz_ = "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB"
         set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpc.meter.io/" && "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D");
-        const game_RANDOM3_Address_xyz_ = "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D"
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpc.meter.io/" && "0x99Df05DDf17930733f43B33E70c43e519E223e57");
+        const game_RANDOM3_Address_xyz_ = "0x99Df05DDf17930733f43B33E70c43e519E223e57"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
 
@@ -1927,18 +1927,18 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be");
-        const game_RANDOM1_Address_treasurebloxNative_ = "0x6c9fb7F4Cf62EF407281CaD143cd5356F9B802Be"
+        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36");
+        const game_RANDOM1_Address_treasurebloxNative_ = "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E");
-        const game_RANDOM2_Address_treasurebloxNative_ = "0x8fb6956b71c0979fa9717f24113eb708eB03dc1E"
+        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB");
+        const game_RANDOM2_Address_treasurebloxNative_ = "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB"
         set_RANDOM2_treasurebloxNative_(game_RANDOM2_Address_treasurebloxNative_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D");
-        const game_RANDOM3_Address_treasurebloxNative_ = "0xA962dAf4CeF0b35051Af7dD7252F387BB580BB1D"
+        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x99Df05DDf17930733f43B33E70c43e519E223e57");
+        const game_RANDOM3_Address_treasurebloxNative_ = "0x99Df05DDf17930733f43B33E70c43e519E223e57"
         set_RANDOM3_treasurebloxNative_(game_RANDOM3_Address_treasurebloxNative_);
 
         // TOKEN CONTRACT

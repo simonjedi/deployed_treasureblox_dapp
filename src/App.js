@@ -1933,13 +1933,13 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpc.meter.io/" && "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB");
-        const game_RANDOM2_Address_xyz_ = "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB"
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://rpc.meter.io/" && "0xaFDDB2b99fa3fEBce68F0F3F26f920A4951CCf91");
+        const game_RANDOM2_Address_xyz_ = "0xaFDDB2b99fa3fEBce68F0F3F26f920A4951CCf91"
         set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpc.meter.io/" && "0x99Df05DDf17930733f43B33E70c43e519E223e57");
-        const game_RANDOM3_Address_xyz_ = "0x99Df05DDf17930733f43B33E70c43e519E223e57"
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://rpc.meter.io/" && "0xCCB6bF125604eBA8ece40742Ea7526F22911d18c");
+        const game_RANDOM3_Address_xyz_ = "0xCCB6bF125604eBA8ece40742Ea7526F22911d18c"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
 
@@ -2006,13 +2006,13 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB");
-        const game_RANDOM2_Address_treasurebloxNative_ = "0xE3e0BCa5f27a50B84aeb1afe6d0da35bC2881DEB"
+        const RANDOM2_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM2_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xaFDDB2b99fa3fEBce68F0F3F26f920A4951CCf91");
+        const game_RANDOM2_Address_treasurebloxNative_ = "0xaFDDB2b99fa3fEBce68F0F3F26f920A4951CCf91"
         set_RANDOM2_treasurebloxNative_(game_RANDOM2_Address_treasurebloxNative_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x99Df05DDf17930733f43B33E70c43e519E223e57");
-        const game_RANDOM3_Address_treasurebloxNative_ = "0x99Df05DDf17930733f43B33E70c43e519E223e57"
+        const RANDOM3_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM3_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xCCB6bF125604eBA8ece40742Ea7526F22911d18c");
+        const game_RANDOM3_Address_treasurebloxNative_ = "0xCCB6bF125604eBA8ece40742Ea7526F22911d18c"
         set_RANDOM3_treasurebloxNative_(game_RANDOM3_Address_treasurebloxNative_);
 
         // TOKEN CONTRACT

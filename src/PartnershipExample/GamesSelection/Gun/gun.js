@@ -163,7 +163,7 @@ async function tryAgain(uid){
           //   <a className='neon-blue' style={{"text-decoration": "none"}}> Gun</a>
           // </div>
 
-          ctx.font = "60px neon";
+          ctx.font = "60px neon-orange";
           ctx.fillStyle = "#fb4264";
           if (props.is_meter){
             ctx.fillText("Ray Gun", 160, 100);

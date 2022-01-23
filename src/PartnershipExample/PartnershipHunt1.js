@@ -505,7 +505,7 @@ const handleSubmitEnterDave = async() => {
   <div>
 
 
-  {(counter >= 100)?(
+  {(counter >= 200)?(
     <div>
 
     <Container className='mt-5' fluid="md">

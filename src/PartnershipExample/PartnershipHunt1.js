@@ -385,7 +385,10 @@ const handleSubmitEnterDave = async() => {
     return (
 <div>
 {props.is_meter?(
+
   <div id="top" style={{height: height*5}} className="custombackgroundmeter">
+
+
 
 
   {redirectLevel1?(
@@ -1715,7 +1718,7 @@ const handleSubmitEnterDave = async() => {
 ):(
   <div id="top" style={{height: height*5}} className="custombackground">
 
-
+  <Redirect to="" />
 
   {redirectLevel1?(
     <div>

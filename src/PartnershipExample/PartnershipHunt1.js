@@ -880,7 +880,7 @@ const handleSubmitEnterDave = async() => {
                             The treasure hunt will start when the number of 'explorers entered' reaches it's target.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
                             A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
@@ -889,7 +889,7 @@ const handleSubmitEnterDave = async() => {
                             When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
                             </Tab.Pane>
 
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -955,7 +955,7 @@ const handleSubmitEnterDave = async() => {
                               ):(
                                 <ListGroup className="list-group-not-complete">
                                 <ListGroup.Item >
-                                  Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll recieve if your team wins!
+                                  Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll receive if your team wins!
                                 </ListGroup.Item>
                                 </ListGroup>
                               )}
@@ -1672,7 +1672,7 @@ const handleSubmitEnterDave = async() => {
             The treasure hunt will start when the number of 'explorers entered' reaches it's target.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
             A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
@@ -1681,7 +1681,7 @@ const handleSubmitEnterDave = async() => {
             When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
             </Tab.Pane>
 
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -2228,7 +2228,7 @@ const handleSubmitEnterDave = async() => {
                             The treasure hunt will start when the number of 'explorers entered' reaches it's target.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
                             A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
@@ -2237,7 +2237,7 @@ const handleSubmitEnterDave = async() => {
                             When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
                             </Tab.Pane>
 
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -2302,7 +2302,7 @@ const handleSubmitEnterDave = async() => {
                             ):(
                               <ListGroup className="list-group-not-complete">
                               <ListGroup.Item >
-                                Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll recieve if your team wins!
+                                Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll receive if your team wins!
                               </ListGroup.Item>
                               </ListGroup>
                             )}
@@ -3014,7 +3014,7 @@ const handleSubmitEnterDave = async() => {
             The treasure hunt will start when the number of 'explorers entered' reaches it's target.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
             A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
@@ -3023,7 +3023,7 @@ const handleSubmitEnterDave = async() => {
             When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
             </Tab.Pane>
 
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">

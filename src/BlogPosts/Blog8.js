@@ -217,7 +217,7 @@ const Blog8 = (props) => {
             </Card.Header>
 
               <Card.Body >
-                <p>As part of our community gorwth we aim to answer questions and are delighted to recieve meaningful feedback to enhance and improve our project. We ran our first AMA with CafeSwap as part of our strategic patnership. You can find more in our telegram chat.</p>
+                <p>As part of our community gorwth we aim to answer questions and are delighted to receive meaningful feedback to enhance and improve our project. We ran our first AMA with CafeSwap as part of our strategic patnership. You can find more in our telegram chat.</p>
                 <br/>
                 <TelegramEmbed src='https://t.me/treasureblox/1905' />
 

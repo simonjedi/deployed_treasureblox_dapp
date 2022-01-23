@@ -197,14 +197,14 @@ const Level1Game1 = (props) => {
 
       <div className="siteTitle d-none d-lg-block">Someone has turned on the fuel pump to the rocket!</div>
       <div className="siteTitle d-none d-lg-block">Press the abort button as many times as you can to fill the progress bar before the timer expires!</div>
-      <div className="siteTitle d-none d-lg-block">If you're successful you'll recieve a clue!</div>
+      <div className="siteTitle d-none d-lg-block">If you're successful you'll receive a clue!</div>
 
 
 
 
       <p className="gameOneMobile d-lg-none">Someone has turned on the fuel pump to the rocket!</p>
       <p className="gameOneMobile d-lg-none">Press the abort button as many times as you can to fill the progress bar before the timer expires!</p>
-      <p className="gameOneMobile d-lg-none">If you're successful you'll recieve a clue!</p>
+      <p className="gameOneMobile d-lg-none">If you're successful you'll receive a clue!</p>
 
 
 

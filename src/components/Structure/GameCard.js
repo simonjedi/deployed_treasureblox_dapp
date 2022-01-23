@@ -61,7 +61,7 @@ const HomeCards = (props) => {
               <div className="descriptionBody">Once you have purchased the time lock you are the only player who can enter the secret. Answer the riddle correctly and win!</div>
 
               <div className="descriptionTitle">Play To Earn</div>
-              <div className="descriptionBody">30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.</div>
+              <div className="descriptionBody">30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.</div>
 
               <div className="descriptionTitle">Points</div>
               <div className="descriptionBody">You gain points every time you play and for leveling up.</div>

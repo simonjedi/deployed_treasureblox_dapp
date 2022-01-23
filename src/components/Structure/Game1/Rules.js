@@ -92,7 +92,7 @@ const Rules = (props) => {
           Once you have purchased the time lock you are the only player who can enter the secret. Answer the riddle correctly and win!
         </Tab.Pane>
         <Tab.Pane eventKey="fith">
-          30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+          30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
         </Tab.Pane>
         <Tab.Pane eventKey="sith">
           You gain points every time you play and for leveling up.

@@ -162,7 +162,7 @@ const HuntWowCards = (props) => {
         <Card.Title className="gameTitle">Fort Blox</Card.Title>
         <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
 
-        <div>Crypto Dave has broken into fort blox and has access to all of the security equiptment and has scrambled the gates to enter! Can you break in with your team to unlock the treasure vault?</div>
+        <div>Crypto Dave has broken into fort blox and has access to all of the security equipment and has scrambled the gates to enter! Can you break in with your team to unlock the treasure vault?</div>
         <br/>
 
         {false?(

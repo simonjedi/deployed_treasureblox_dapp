@@ -165,7 +165,7 @@ const HuntWowCards = (props) => {
         <div>Crypto Dave has broken into fort blox and has access to all of the security equiptment and has scrambled the gates to enter! Can you break in with your team to unlock the treasure vault?</div>
         <br/>
 
-        {true?(
+        {false?(
           <Link to="/hunt2">
             <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
           </Link>

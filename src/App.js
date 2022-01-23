@@ -1928,8 +1928,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36");
-        const game_RANDOM1_Address_xyz_ = "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36"
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0xB456f6eb9b48939513b8E9D03d56105c591ab58d");
+        const game_RANDOM1_Address_xyz_ = "0xB456f6eb9b48939513b8E9D03d56105c591ab58d"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
@@ -2001,8 +2001,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36");
-        const game_RANDOM1_Address_treasurebloxNative_ = "0x6075325Bb4506aef0abc47F5A05fF5fCDA987b36"
+        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xB456f6eb9b48939513b8E9D03d56105c591ab58d");
+        const game_RANDOM1_Address_treasurebloxNative_ = "0xB456f6eb9b48939513b8E9D03d56105c591ab58d"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox

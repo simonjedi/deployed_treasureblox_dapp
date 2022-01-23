@@ -51,7 +51,7 @@ table tr:last-child td:last-child {
 
 
   color: #fb4264;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 100;
 
   /* text-shadow: 0 0 3vw #f40a35; */
@@ -72,6 +72,48 @@ table tr:last-child td:last-child {
   -moz-animation: neon-blue 2s linear infinite;
   -webkit-animation: neon-blue 2s linear infinite;
   -o-animation: neon-blue 2s linear infinite;
+}
+
+.neon-blue-small {
+  font-family: 'Lato', sans-serif;
+
+  color: #72baef;
+  font-size: 20px;
+  font-weight: 100;
+
+  /* text-shadow: 0 0 3vw #2356ff; */
+  animation: neon-blue 2s linear infinite;
+  -moz-animation: neon-blue 2s linear infinite;
+  -webkit-animation: neon-blue 2s linear infinite;
+  -o-animation: neon-blue 2s linear infinite;
+}
+
+.neon-green {
+  font-family: 'Lato', sans-serif;
+
+  color: #06f928;
+  font-size: 50px;
+  font-weight: 100;
+
+  /* text-shadow: 0 0 3vw #2356ff; */
+  animation: neon-green 2s linear infinite;
+  -moz-animation: neon-green 2s linear infinite;
+  -webkit-animation: neon-green 2s linear infinite;
+  -o-animation: neon-green 2s linear infinite;
+}
+
+.neon-green-small {
+  font-family: 'Lato', sans-serif;
+
+  color: #06f928;
+  font-size: 20px;
+  font-weight: 100;
+
+  /* text-shadow: 0 0 3vw #2356ff; */
+  animation: neon-green 2s linear infinite;
+  -moz-animation: neon-green 2s linear infinite;
+  -webkit-animation: neon-green 2s linear infinite;
+  -o-animation: neon-green 2s linear infinite;
 }
 
 .winner .neon-blue,
@@ -104,5 +146,19 @@ table tr:last-child td:last-child {
     text-shadow: 0 0 0.5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180,
       0 0 5vw #082180, 0 0 0.2vw #082180, 0.5vw 0.5vw 0.1vw #0a3940;
     color: #146c80;
+  }
+}
+
+@keyframes neon-green {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #06f928, 0 0 3vw #06f928, 0 0 10vw #06f928,
+      0 0 10vw #06f928, 0 0 0.4vw #d8ffb2, 0.5vw 0.5vw 0.1vw #17fd1c;
+    color: #3fff0c;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #357a23, 0 0 1.5vw #357a23, 0 0 5vw #357a23,
+      0 0 5vw #357a23, 0 0 0.2vw #357a23, 0.5vw 0.5vw 0.1vw #27521c;
+    color: #88de71;
   }
 }

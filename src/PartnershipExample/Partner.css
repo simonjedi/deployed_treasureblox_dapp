@@ -253,7 +253,6 @@
 .blink_me3 {
   animation: blinker 3s linear infinite;
   color:#ffffff;
-
 }
 
 @keyframes blinker {

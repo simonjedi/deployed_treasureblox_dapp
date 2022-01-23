@@ -39,7 +39,7 @@ const Gun = (props) =>{
 
   const handlePlay = async() => {
 
-    const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(1,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
+    const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(props.partnerId_xyz,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
       setSpin(true)
       tryAgain(uid)

@@ -65,7 +65,7 @@ const RandThree = (props) =>{
   const handlePlay = async() => {
 
     setSpin(true)
-    const transaction = await props.RANDOM3_contract_xyz_.methods.rollDice(1,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
+    const transaction = await props.RANDOM3_contract_xyz_.methods.rollDice(props.partnerId_xyz,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
 
       tryAgain(uid)

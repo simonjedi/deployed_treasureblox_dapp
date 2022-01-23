@@ -134,8 +134,8 @@ const HuntWowCards = (props) => {
         <Card.Title className="gameTitle">Elon's lost his Rocket!</Card.Title>
         <Card.Title className="gameTitle">Troy Vs Crypto Dave</Card.Title>
 
-        <div>Riddle {props.game1_riddle}</div>
-        <br/><br/>
+        <div>Elon has lost his rocket! In this epic round you'll need to keep a cool head to help Captain Troy 'Mighty' Armstrong find Elon's rocket so he can complete his trip to Mars!</div>
+        <br/>
         {false?(
         <Link to="/hunt1">
           <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
@@ -146,7 +146,7 @@ const HuntWowCards = (props) => {
         <Card.Title className="gameTitle">Launching Soon!</Card.Title>
         </div>
       )}
-        <br/>
+
 
       </Card.Body>
     </Card>
@@ -162,10 +162,10 @@ const HuntWowCards = (props) => {
         <Card.Title className="gameTitle">Fort Blox</Card.Title>
         <Card.Title className="gameTitle">Battle for the Metaverse</Card.Title>
 
-        <div>Riddle {props.game2_riddle}</div>
+        <div>Crypto Dave has broken into fort blox and has access to all of the security equiptment and has scrambled the gates to enter! Can you break in with your team to unlock the treasure vault?</div>
         <br/>
 
-        {false?(
+        {true?(
           <Link to="/hunt2">
             <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
           </Link>

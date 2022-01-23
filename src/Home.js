@@ -209,7 +209,7 @@ const Home = (props) => {
 </center>
       </Carousel.Caption>
       </Carousel.Item>
-      
+
     </Carousel>
 
 

@@ -156,3 +156,11 @@
 .caption{
   display: block;
 }
+
+.list-group-mine .list-group-item {
+  background-color: #16b330;
+}
+
+.list-group-not-complete .list-group-item {
+  background-color: #7a7979;
+}

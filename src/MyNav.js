@@ -22,6 +22,9 @@ import {
 const MyNav = (props) => {
 
 
+
+
+
     const nav_home_link_click = (event) => {
       window.dataLayer.push({
         event: "wallet_information",
@@ -176,6 +179,18 @@ const MyNav = (props) => {
           Home
           </Link>
 
+          {props.is_meter?(
+            <div>
+            <Link className='customLinks' to="/TreasureBloxPartner/:top">
+            Battle For the Grid
+            </Link>
+            </div>
+          ):(
+            <div>
+
+            </div>
+          )}
+
       {false?(
         <div>
         <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
@@ -204,9 +219,16 @@ const MyNav = (props) => {
 
           <NavDropdown title="How to play / Community" id="collasible-nav-dropdown">
           <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">How to Play</NavDropdown.Item>
-            <NavDropdown.Item  onClick={nav_discord} target = "_blank" href="https://discord.gg/mAQeHXEjB9">Discord</NavDropdown.Item>
+          <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://www.youtube.com/channel/UC3bSv9wrLjpqiSq-WwErWHQ">Video Tutorials</NavDropdown.Item>
+          <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/treasureblox/">About</NavDropdown.Item>
+
+          <NavDropdown.Item  onClick={nav_discord} target = "_blank" href="https://discord.gg/mAQeHXEjB9">Discord</NavDropdown.Item>
 
           </NavDropdown>
+
+
+
+
 
           {
           // <NavDropdown title="Project information" id="collasible-nav-dropdown">

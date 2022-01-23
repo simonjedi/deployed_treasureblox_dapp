@@ -19,8 +19,8 @@ table tr:last-child td:last-child {
 }
 
 @font-face {
-  font-family: neon;
-  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  font-family: 'Lato', sans-serif;
+  src: url(https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Neonderthaw&display=swap);
 }
 
 .Board-title {
@@ -31,9 +31,24 @@ table tr:last-child td:last-child {
 }
 
 .neon-orange {
-  font-family: neon;
+  font-family: 'Lato', sans-serif;
+
   color: #fb4264;
   font-size: 60px;
+  font-weight: 100;
+  /* text-shadow: 0 0 3vw #f40a35; */
+  animation: neon-orange 1s ease infinite;
+  -moz-animation: neon-orange 1s ease infinite;
+  -webkit-animation: neon-orange 1s ease infinite;
+}
+
+.neon-orange-small {
+  font-family: 'Lato', sans-serif;
+
+  color: #fb4264;
+  font-size: 50px;
+  font-weight: 100;
+
   /* text-shadow: 0 0 3vw #f40a35; */
   animation: neon-orange 1s ease infinite;
   -moz-animation: neon-orange 1s ease infinite;
@@ -41,9 +56,12 @@ table tr:last-child td:last-child {
 }
 
 .neon-blue {
-  font-family: neon;
+  font-family: 'Lato', sans-serif;
+
   color: #72baef;
-  font-size: 60px;
+  font-size: 50px;
+  font-weight: 100;
+
   /* text-shadow: 0 0 3vw #2356ff; */
   animation: neon-blue 2s linear infinite;
   -moz-animation: neon-blue 2s linear infinite;
@@ -53,7 +71,7 @@ table tr:last-child td:last-child {
 
 .winner .neon-blue,
 .winner .neon-orange {
-  font-size: 200px;
+  font-size: 100px;
 }
 
 @keyframes neon-orange {

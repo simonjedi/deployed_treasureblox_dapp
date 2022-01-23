@@ -502,14 +502,22 @@ const handleSubmitEnterDave = async() => {
   <div>
 
 
-  {(counter >= 0)?(
+  {(counter >= 100)?(
     <div>
 
     <Container className='mt-5' fluid="md">
-          <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
-          <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-          <div className="SubTitleHeader">{props.is_meter?(<a>Who's side will you join in the battle for the grid</a>):(<a>Who's side will you join in the Strike Fighter battle for the metaverse</a>)}</div>
 
+          <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+          <div className="SubTitleHeader">Who's side will you join?</div>
+
+          <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
+<center>
+
+
+          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
+
+
+</center>
 
           <Container className='mt-5' fluid="md">
 
@@ -616,8 +624,12 @@ const handleSubmitEnterDave = async() => {
                             <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Todo List</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
                             <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
                           </Nav.Item>
+
 
                         </Nav>
 
@@ -805,8 +817,8 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>250 MTRG</a>):(<a>$5,000</a>)}</div>
-                              <div className="siteTitle">Starting Prize</div>
+                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>$5,000</a>)}</div>
+                              <div className="siteTitle">Prize Vault</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
 
@@ -830,6 +842,7 @@ const handleSubmitEnterDave = async() => {
 
                                 <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
                                 </Card.Header>
+
                                 <Card.Body >
                                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
 
@@ -894,7 +907,95 @@ const handleSubmitEnterDave = async() => {
 
                             </Tab.Pane>
 
+                            <Tab.Pane eventKey="link-2">
 
+
+                              <br/>
+                              <div className="siteTitle">Learn how to play and win by completing the P2E todo list!</div>
+                              <br/>
+
+                              {(props.step1_xyz_ > 0) ?(
+                                <ListGroup className="list-group-mine" >
+                                <ListGroup.Item >
+                                  Step 1 Complete! - Congratulations you entered the treasure hunt successfully!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              ):(
+                                <ListGroup className="list-group-not-complete">
+                                <ListGroup.Item >
+                                  Step 1 - Enter the treasure hunt - and you can compete to unlock the prize vault!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              )}
+
+                              <br/>
+                              {(props.step2_xyz_ > 0)?(
+                                <ListGroup className="list-group-mine" >
+                                <ListGroup.Item >
+                                  Step 2 Complete! - Congratulations joined a team successfully!  Remember to join them on discord!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              ):(
+                                <ListGroup className="list-group-not-complete">
+                                <ListGroup.Item >
+                                  Step 2 - Join a team - earn points with team mates, when your team points target is reached you will unlock the treasure vault!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              )}
+                              <br/>
+                              {(props.step3_xyz_ > 0)?(
+                                <ListGroup className="list-group-mine" >
+                                <ListGroup.Item >
+                                  Step 3 Complete! - Congratulations you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              ):(
+                                <ListGroup className="list-group-not-complete">
+                                <ListGroup.Item >
+                                  Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll recieve if your team wins!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              )}
+                              <br/>
+                              {(props.step4_xyz_ > 0)?(
+                                <ListGroup className="list-group-mine" >
+                                <ListGroup.Item >
+                                  Step 4 Complete! - Congratulations you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              ):(
+                                <ListGroup className="list-group-not-complete">
+                                <ListGroup.Item >
+                                  Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensative!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              )}
+                              <br/>
+                              {(props.step5_xyz_ > 0)?(
+                                <ListGroup className="list-group-mine" >
+                                <ListGroup.Item >
+                                  Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              ):(
+                                <ListGroup className="list-group-not-complete">
+
+                                <ListGroup.Item >
+                                  Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                                </ListGroup.Item>
+                                </ListGroup>
+                              )}
+
+
+
+
+
+
+
+
+
+
+                            </Tab.Pane>
 
                           </Tab.Content>
 
@@ -1484,8 +1585,8 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>250 MTRG</a>):(<a>$5,000</a>)}</div>
-              <div className="siteTitle">Starting Prize</div>
+              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>$5,000</a>)}</div>
+              <div className="siteTitle">Prize Vault</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
 
@@ -1730,15 +1831,19 @@ const handleSubmitEnterDave = async() => {
   <div>
 
 
-  {(counter >= 0)?(
+  {(counter >= 100)?(
     <div>
 
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+          <div className="SubTitleHeader">Who's side will you join?</div>
+
           <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-          <div className="SubTitleHeader">{props.is_meter?(<a>Who's side will you join in the battle for the grid</a>):(<a>Who's side will you join in the Strike Fighter battle for the metaverse</a>)}</div>
+          <center>
+          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
 
 
+          </center>
           <Container className='mt-5' fluid="md">
 
           <Row>
@@ -1842,6 +1947,9 @@ const handleSubmitEnterDave = async() => {
                         <Nav justify variant="pills">
                           <Nav.Item>
                             <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">To Do List</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
                             <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
@@ -2034,7 +2142,7 @@ const handleSubmitEnterDave = async() => {
                               </Col>
                               <Col sm={4}>
                               <div className="StatsGameEnter blink_me2">$2,000</div>
-                              <div className="siteTitle">Starting Prize</div>
+                              <div className="siteTitle">Prize Vault</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
 
@@ -2118,6 +2226,90 @@ const handleSubmitEnterDave = async() => {
 
                               </Card.Body>
                             </Card>
+
+
+                            </Tab.Pane>
+
+                            <Tab.Pane eventKey="link-2">
+
+                            <br/>
+                            <div className="siteTitle">Learn how to play and win by completing the P2E todo list!</div>
+                            <br/>
+
+                            {(props.step1_xyz_ > 0) ?(
+                              <ListGroup className="list-group-mine" >
+                              <ListGroup.Item >
+                                Step 1 Complete! - Congratulations you entered the treasure hunt successfully!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            ):(
+                              <ListGroup className="list-group-not-complete">
+                              <ListGroup.Item >
+                                Step 1 - Enter the treasure hunt - and you can compete to unlock the prize vault!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            )}
+
+                            <br/>
+                            {(props.step2_xyz_ > 0)?(
+                              <ListGroup className="list-group-mine" >
+                              <ListGroup.Item >
+                                Step 2 Complete! - Congratulations joined a team successfully!  Remember to join them on discord!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            ):(
+                              <ListGroup className="list-group-not-complete">
+                              <ListGroup.Item >
+                                Step 2 - Join a team - earn points with team mates, when your team points target is reached you will unlock the treasure vault!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            )}
+                            <br/>
+                            {(props.step3_xyz_ > 0)?(
+                              <ListGroup className="list-group-mine" >
+                              <ListGroup.Item >
+                                Step 3 Complete! - Congratulations you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            ):(
+                              <ListGroup className="list-group-not-complete">
+                              <ListGroup.Item >
+                                Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll recieve if your team wins!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            )}
+                            <br/>
+                            {(props.step4_xyz_ > 0)?(
+                              <ListGroup className="list-group-mine" >
+                              <ListGroup.Item >
+                                Step 4 Complete! - Congratulations you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            ):(
+                              <ListGroup className="list-group-not-complete">
+                              <ListGroup.Item >
+                                Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensative!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            )}
+                            <br/>
+                            {(props.step5_xyz_ > 0)?(
+                              <ListGroup className="list-group-mine" >
+                              <ListGroup.Item >
+                                Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            ):(
+                              <ListGroup className="list-group-not-complete">
+
+                              <ListGroup.Item >
+                                Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                              </ListGroup.Item>
+                              </ListGroup>
+                            )}
+
+
+
 
 
                             </Tab.Pane>
@@ -2710,7 +2902,7 @@ const handleSubmitEnterDave = async() => {
               </Col>
               <Col sm={4}>
               <div className="StatsGameEnter blink_me2">$5,000</div>
-              <div className="siteTitle">Starting Prize</div>
+              <div className="siteTitle">Prize Vault</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
 

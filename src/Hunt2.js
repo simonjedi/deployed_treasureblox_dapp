@@ -608,6 +608,9 @@ const handleSubmitEnterDave = async() => {
                                 <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
                               </Nav.Item>
                               <Nav.Item>
+                                <Nav.Link className="MiniGameEnterTab" eventKey="link-2">ToDo List</Nav.Link>
+                              </Nav.Item>
+                              <Nav.Item>
                                 <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
                               </Nav.Item>
 
@@ -884,6 +887,90 @@ const handleSubmitEnterDave = async() => {
 
                                   </Card.Body>
                                 </Card>
+
+
+                                </Tab.Pane>
+
+                                <Tab.Pane eventKey="link-2">
+
+                                <br/>
+                                <div className="siteTitle">Learn how to play and win by completing the P2E todo list!</div>
+                                <br/>
+
+                                {(props.step1_game2_treasurebloxNative_ > 0) ?(
+                                  <ListGroup className="list-group-mine" >
+                                  <ListGroup.Item >
+                                    Step 1 Complete! - Congratulations you entered the treasure hunt successfully!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                ):(
+                                  <ListGroup className="list-group-not-complete">
+                                  <ListGroup.Item >
+                                    Step 1 - Enter the treasure hunt - and you can compete to unlock the prize vault!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                )}
+
+                                <br/>
+                                {(props.step2_game2_treasurebloxNative_ > 0)?(
+                                  <ListGroup className="list-group-mine" >
+                                  <ListGroup.Item >
+                                    Step 2 Complete! - Congratulations joined a team successfully!  Remember to join them on discord!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                ):(
+                                  <ListGroup className="list-group-not-complete">
+                                  <ListGroup.Item >
+                                    Step 2 - Join a team - earn points with team mates, when your team points target is reached you will unlock the treasure vault!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                )}
+                                <br/>
+                                {(props.step3_game2_treasurebloxNative_ > 0)?(
+                                  <ListGroup className="list-group-mine" >
+                                  <ListGroup.Item >
+                                    Step 3 Complete! - Congratulations you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                ):(
+                                  <ListGroup className="list-group-not-complete">
+                                  <ListGroup.Item >
+                                    Step 3 - Play a skill Game - unlock the first clue by playing a skill game! remember you earn points even if you lose! The more points you earn the larger % of the prize vault you'll recieve if your team wins!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                )}
+                                <br/>
+                                {(props.step4_game2_treasurebloxNative_ > 0)?(
+                                  <ListGroup className="list-group-mine" >
+                                  <ListGroup.Item >
+                                    Step 4 Complete! - Congratulations you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                ):(
+                                  <ListGroup className="list-group-not-complete">
+                                  <ListGroup.Item >
+                                    Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensative!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                )}
+                                <br/>
+                                {(props.step5_game2_treasurebloxNative_ > 0)?(
+                                  <ListGroup className="list-group-mine" >
+                                  <ListGroup.Item >
+                                    Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                ):(
+                                  <ListGroup className="list-group-not-complete">
+
+                                  <ListGroup.Item >
+                                    Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                                  </ListGroup.Item>
+                                  </ListGroup>
+                                )}
+
+
+
 
 
                                 </Tab.Pane>

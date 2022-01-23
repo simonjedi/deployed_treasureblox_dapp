@@ -416,6 +416,15 @@ const [totalTreasure_treasurebloxNative_,setTotalTreasure_treasurebloxNative_] =
   const [pid_win_xyz_,set_pid_win_xyz_] = useState("...Loading...");
 
 
+
+  // CHECKLIST
+  const [step1_xyz_,set_step1_xyz_] = useState(false);
+  const [step2_xyz_,set_step2_xyz_] = useState(false);
+  const [step3_xyz_,set_step3_xyz_] = useState(false);
+  const [step4_xyz_,set_step4_xyz_] = useState(false);
+  const [step5_xyz_,set_step5_xyz_] = useState(false);
+
+
 // PARTNER GAME EXAMPLE ENDS
 
 
@@ -505,6 +514,12 @@ const [game1team2_treasurebloxNative_ppp,setGame1_team2_treasurebloxNative_ppp] 
 const [game1team2_treasurebloxNative_team_entries,setGame1_team2_treasurebloxNative_team_entries] = useState("...Loading...");
 const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasurebloxNative_team_actual_points] = useState("...Loading...");
 
+// CHECKLIST
+const [step1_game1_treasurebloxNative_,set_step1_game1_treasurebloxNative_] = useState(false);
+const [step2_game1_treasurebloxNative_,set_step2_game1_treasurebloxNative_] = useState(false);
+const [step3_game1_treasurebloxNative_,set_step3_game1_treasurebloxNative_] = useState(false);
+const [step4_game1_treasurebloxNative_,set_step4_game1_treasurebloxNative_] = useState(false);
+const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = useState(false);
 
 
         // GAME 2
@@ -592,7 +607,12 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const [game2team2_treasurebloxNative_team_entries,setGame2_team2_treasurebloxNative_team_entries] = useState("...Loading...");
         const [game2team2_treasurebloxNative_team_actual_points,setGame2_team2_treasurebloxNative_team_actual_points] = useState("...Loading...");
 
-
+        // CHECKLIST
+        const [step1_game2_treasurebloxNative_,set_step1_game2_treasurebloxNative_] = useState(false);
+        const [step2_game2_treasurebloxNative_,set_step2_game2_treasurebloxNative_] = useState(false);
+        const [step3_game2_treasurebloxNative_,set_step3_game2_treasurebloxNative_] = useState(false);
+        const [step4_game2_treasurebloxNative_,set_step4_game2_treasurebloxNative_] = useState(false);
+        const [step5_game2_treasurebloxNative_,set_step5_game2_treasurebloxNative_] = useState(false);
 
 
 // network type
@@ -764,7 +784,6 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F");
         const game_RANDOM3_Address_xyz_ = "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
-
 
 
         // TOKEN CONTRACT
@@ -1199,7 +1218,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
             setCostToPlay_xyz_(CostToPlay_xyz_edit);
 
+            // CHECKLIST
+            const todoItems = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_xyz,1).call();
+
+            const todoItems_step1_game1_xyz_ = await todoItems[0];
+            const todoItems_step2_game1_xyz_ = await todoItems[1];
+            const todoItems_step3_game1_xyz_ = await todoItems[2];
+            const todoItems_step4_game1_xyz_ = await todoItems[3];
+            const todoItems_step5_game1_xyz_ = await todoItems[4];
+
+
+            set_step1_xyz_(todoItems_step1_game1_xyz_)
+            set_step2_xyz_(todoItems_step2_game1_xyz_)
+            set_step3_xyz_(todoItems_step3_game1_xyz_)
+            set_step4_xyz_(todoItems_step4_game1_xyz_)
+            set_step5_xyz_(todoItems_step5_game1_xyz_)
+
+
+
 //////////////////
+
+
             // PARTNER EXAMPLE GET GAME 1 END
 
 
@@ -1485,6 +1524,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             var CostToPlay_treasurebloxNative_edit = await cost_to_play_treasurebloxNative_[0];
             CostToPlay_treasurebloxNative_edit =  CostToPlay_treasurebloxNative_edit.substring(0,  CostToPlay_treasurebloxNative_edit.length-18);
             setCostToPlay_treasurebloxNative_(CostToPlay_treasurebloxNative_edit);
+
+            // CHECKLIST
+            const todoItems_game1 = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_treasurebloxNative,1).call();
+
+            const todoItems_step1_game1_treasurebloxNative_ = await todoItems_game1[0];
+            const todoItems_step2_game1_treasurebloxNative_ = await todoItems_game1[1];
+            const todoItems_step3_game1_treasurebloxNative_ = await todoItems_game1[2];
+            const todoItems_step4_game1_treasurebloxNative_ = await todoItems_game1[3];
+            const todoItems_step5_game1_treasurebloxNative_ = await todoItems_game1[4];
+
+
+            set_step1_game1_treasurebloxNative_(todoItems_step1_game1_treasurebloxNative_)
+            set_step2_game1_treasurebloxNative_(todoItems_step2_game1_treasurebloxNative_)
+            set_step3_game1_treasurebloxNative_(todoItems_step3_game1_treasurebloxNative_)
+            set_step4_game1_treasurebloxNative_(todoItems_step4_game1_treasurebloxNative_)
+            set_step5_game1_treasurebloxNative_(todoItems_step5_game1_treasurebloxNative_)
+
+
+
 
 
             // GAME 1 TREASUREBLOX ENDS
@@ -1772,6 +1830,22 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
           // Cost to play is called using the end of game 1 not using game 2
 
+          // CHECKLIST
+          const todoItems_game2 = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_treasurebloxNative,2).call();
+
+          const todoItems_step1_game2_treasurebloxNative_ = await todoItems_game2[0];
+          const todoItems_step2_game2_treasurebloxNative_ = await todoItems_game2[1];
+          const todoItems_step3_game2_treasurebloxNative_ = await todoItems_game2[2];
+          const todoItems_step4_game2_treasurebloxNative_ = await todoItems_game2[3];
+          const todoItems_step5_game2_treasurebloxNative_ = await todoItems_game2[4];
+
+
+          set_step1_game2_treasurebloxNative_(todoItems_step1_game2_treasurebloxNative_)
+          set_step2_game2_treasurebloxNative_(todoItems_step2_game2_treasurebloxNative_)
+          set_step3_game2_treasurebloxNative_(todoItems_step3_game2_treasurebloxNative_)
+          set_step4_game2_treasurebloxNative_(todoItems_step4_game2_treasurebloxNative_)
+          set_step5_game2_treasurebloxNative_(todoItems_step5_game2_treasurebloxNative_)
+
 
 
         }, 1000);
@@ -1829,28 +1903,28 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         setAccounts(accounts)
 
 
-        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://rpc.meter.io/" && "0x98f0B0dAf137c4E680dF74b71D093B843ce275C8");
-        const game_GSB_Address_xyz_ = "0x98f0B0dAf137c4E680dF74b71D093B843ce275C8"
+        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://rpc.meter.io/" && "0xf6e4322ce0c3F11A7E3b0dcDc7aE980E25Fb13BA");
+        const game_GSB_Address_xyz_ = "0xf6e4322ce0c3F11A7E3b0dcDc7aE980E25Fb13BA"
         set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
 
 
-        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://rpc.meter.io/" && "0xFBcA4a6BaaAd1fdddBDf15aBAfAcbCe19035C416");
-        const game_GSC_Address_xyz_ = "0xFBcA4a6BaaAd1fdddBDf15aBAfAcbCe19035C416"
+        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://rpc.meter.io/" && "0xE190d834b6D720A30a0Db16545882002ACe00B3e");
+        const game_GSC_Address_xyz_ = "0xE190d834b6D720A30a0Db16545882002ACe00B3e"
         set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
 
 
-        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://rpc.meter.io/" && "0x988Ead3Bd6F57320F619A195Ec69800b0Af01eCc");
-        const game_GSD_Address_xyz_ = "0x988Ead3Bd6F57320F619A195Ec69800b0Af01eCc"
+        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://rpc.meter.io/" && "0x34B90bb4f69d62eEdF9B2778f850441ac1Edc62b");
+        const game_GSD_Address_xyz_ = "0x34B90bb4f69d62eEdF9B2778f850441ac1Edc62b"
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
 
 
-        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://rpc.meter.io/" && "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F");
-        const game_MAIN_GAME_Address_xyz_ = "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F"
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://rpc.meter.io/" && "0x93Fb9903708525C9aD08ff401DD2D123d8300453");
+        const game_MAIN_GAME_Address_xyz_ = "0x93Fb9903708525C9aD08ff401DD2D123d8300453"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
 
-        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpc.meter.io/" && "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f");
-        const game_VOLT_Address_xyz_ = "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f"
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpc.meter.io/" && "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa");
+        const game_VOLT_Address_xyz_ = "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
@@ -1916,13 +1990,13 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
         const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
 
-        const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpc.meter.io/" && "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F");
-        const MAIN_GAME_Address_treasurebloxNative_ = "0xBcAA9F1247ae36cBD8Cc5168A62fB89C862afF0F"
+        const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpc.meter.io/" && "0x93Fb9903708525C9aD08ff401DD2D123d8300453");
+        const MAIN_GAME_Address_treasurebloxNative_ = "0x93Fb9903708525C9aD08ff401DD2D123d8300453"
         set_MAIN_GAME_GameContractAddress_treasurebloxNative_(MAIN_GAME_Address_treasurebloxNative_);
 
 
-        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f");
-        const VOLT_Address_treasurebloxNative_ = "0xf06Cf5c40b9A3aE31e1Fd35D99A164Cd56f4703f"
+        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa");
+        const VOLT_Address_treasurebloxNative_ = "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa"
         set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
 
 
@@ -2292,6 +2366,8 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
             for (var i = 0; i < noOfEntrys_xyz_; i++) {
               game1_indexrows_xyz_.push(i);
             }
+
+
           setgame1LeaderBoardIndex_xyz_(game1_indexrows_xyz_)
 
 
@@ -2388,7 +2464,26 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
           setCostToPlay_xyz_(CostToPlay_xyz_edit);
 
+
+          // CHECKLIST
+          const todoItems_xyz = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_xyz,1).call();
+
+          const todoItems_step1_game1_xyz_ = await todoItems_xyz[0];
+          const todoItems_step2_game1_xyz_ = await todoItems_xyz[1];
+          const todoItems_step3_game1_xyz_ = await todoItems_xyz[2];
+          const todoItems_step4_game1_xyz_ = await todoItems_xyz[3];
+          const todoItems_step5_game1_xyz_ = await todoItems_xyz[4];
+
+          set_step1_xyz_(todoItems_step1_game1_xyz_)
+          set_step2_xyz_(todoItems_step2_game1_xyz_)
+          set_step3_xyz_(todoItems_step3_game1_xyz_)
+          set_step4_xyz_(todoItems_step4_game1_xyz_)
+          set_step5_xyz_(todoItems_step5_game1_xyz_)
+
+
 //////////////////
+
+
           // PARTNER EXAMPLE GET GAME 1 END
 
 
@@ -2672,6 +2767,23 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
           var CostToPlay_treasurebloxNative_edit = await cost_to_play_treasurebloxNative_[0];
           CostToPlay_treasurebloxNative_edit =  CostToPlay_treasurebloxNative_edit.substring(0,  CostToPlay_treasurebloxNative_edit.length-18);
           setCostToPlay_treasurebloxNative_(CostToPlay_treasurebloxNative_edit);
+
+
+          // CHECKLIST
+          const todoItems = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_treasurebloxNative,1).call();
+
+          const todoItems_step1_game1_treasurebloxNative_ = await todoItems[0];
+          const todoItems_step2_game1_treasurebloxNative_ = await todoItems[1];
+          const todoItems_step3_game1_treasurebloxNative_ = await todoItems[2];
+          const todoItems_step4_game1_treasurebloxNative_ = await todoItems[3];
+          const todoItems_step5_game1_treasurebloxNative_ = await todoItems[4];
+
+
+          set_step1_game1_treasurebloxNative_(todoItems_step1_game1_treasurebloxNative_)
+          set_step2_game1_treasurebloxNative_(todoItems_step2_game1_treasurebloxNative_)
+          set_step3_game1_treasurebloxNative_(todoItems_step3_game1_treasurebloxNative_)
+          set_step4_game1_treasurebloxNative_(todoItems_step4_game1_treasurebloxNative_)
+          set_step5_game1_treasurebloxNative_(todoItems_step5_game1_treasurebloxNative_)
 
 
           // GAME 1 TREASUREBLOX ENDS
@@ -2960,6 +3072,23 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
         // Cost to play is called using the end of game 1 not using game 2
 
 
+        // CHECKLIST
+        const todoItems_game2_tbN = await GSD_contract_bsc_.methods.PlayerCheckList(accounts[0],partnerId_treasurebloxNative,2).call();
+
+        const todoItems_step1_game2_treasurebloxNative_ = await todoItems_game2_tbN[0];
+        const todoItems_step2_game2_treasurebloxNative_ = await todoItems_game2_tbN[1];
+        const todoItems_step3_game2_treasurebloxNative_ = await todoItems_game2_tbN[2];
+        const todoItems_step4_game2_treasurebloxNative_ = await todoItems_game2_tbN[3];
+        const todoItems_step5_game2_treasurebloxNative_ = await todoItems_game2_tbN[4];
+
+
+        set_step1_game2_treasurebloxNative_(todoItems_step1_game2_treasurebloxNative_)
+        set_step2_game2_treasurebloxNative_(todoItems_step2_game2_treasurebloxNative_)
+        set_step3_game2_treasurebloxNative_(todoItems_step3_game2_treasurebloxNative_)
+        set_step4_game2_treasurebloxNative_(todoItems_step4_game2_treasurebloxNative_)
+        set_step5_game2_treasurebloxNative_(todoItems_step5_game2_treasurebloxNative_)
+
+
 
       }, 1000);
       // End of Game timer code
@@ -2983,6 +3112,11 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
     },[
 
     // GAME1
+
+
+    step1_game1_treasurebloxNative_,step2_game1_treasurebloxNative_,step3_game1_treasurebloxNative_,
+    step4_game1_treasurebloxNative_,step5_game1_treasurebloxNative_,
+
     is_meter,web3,accounts,wallet_for_google,ip,balance,
 
     partnerId_treasurebloxNative,
@@ -3021,6 +3155,10 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
     // GAME2
+
+    step1_game2_treasurebloxNative_,step2_game2_treasurebloxNative_,step3_game2_treasurebloxNative_,
+    step4_game2_treasurebloxNative_,step5_game2_treasurebloxNative_,
+
     web3,accounts,wallet_for_google,ip,
 
     ,tokenContract_treasurebloxNative_,decimals_treasurebloxNative_,totalTreasure_treasurebloxNative_,globalNumberOfTries_treasurebloxNative_,
@@ -3042,6 +3180,12 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
 
     // PARTNER EXAMPLE STARTS
+
+    // CHECKLIST
+    step1_xyz_,step2_xyz_,step3_xyz_,step4_xyz_,step5_xyz_,
+
+
+
 
     // Partner Random Contract 1
     player_loss_xyz_,result_loss_xyz_,pid_loss_xyz_,player_win_xyz_,result_win_xyz_,pid_win_xyz_,
@@ -3129,6 +3273,28 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
               <MyNav accounts={accounts}/>
                 <Home
+
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
+
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+
+
                 // main
                 is_meter={is_meter}
                 web3={web3}
@@ -3373,6 +3539,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path="/hunt1">
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Hunt1
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
+
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
                 // main
                 is_meter={is_meter}
                 web3={web3}
@@ -3615,6 +3800,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path="/hunt2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Hunt2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -3857,6 +4061,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path="/Learnmore">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Learnmore
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
+
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
                 // main
                 is_meter={is_meter}
                 web3={web3}
@@ -4148,6 +4371,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_1}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -4390,6 +4632,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_1_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -4632,6 +4893,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -4873,6 +5153,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -5114,6 +5413,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -5355,6 +5673,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game1_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -5594,7 +5931,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
               <Route path={game1_random1}>
               <MyNav {...props} onClick={() => Connection()}/>
-              <Game1Random1// main
+              <Game1Random1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
@@ -5833,7 +6190,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
               <Route path={game1_random2}>
               <MyNav {...props} onClick={() => Connection()}/>
-              <Game1Random2// main
+              <Game1Random2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
@@ -6072,7 +6449,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
               <Route path={game1_random3}>
               <MyNav {...props} onClick={() => Connection()}/>
-              <Game1Random3// main
+              <Game1Random3
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
@@ -6312,7 +6709,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 // Game 2 Start
               <Route path={game2_level_1}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
-              <Level1Game2// main
+              <Level1Game2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
@@ -6551,7 +6968,27 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
 
               <Route path={game2_level_1_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
-              <Game1MoreGame2// main
+              <Game1MoreGame2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
               is_meter={is_meter}
               web3={web3}
               wallet_for_google={wallet_for_google}
@@ -6791,6 +7228,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7031,6 +7487,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7271,6 +7746,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7511,6 +8005,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7751,6 +8264,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_random1}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -7991,6 +8523,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_random2}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -8231,6 +8782,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={game2_random3}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random3
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -8474,6 +9044,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_treasure_hunt_page} >
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnershipHunt1
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
+
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
                 // main
                 is_meter={is_meter}
                 web3={web3}
@@ -8614,6 +9203,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={web3partnership_home} >
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnerHome
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
+
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
                 // main
                 is_meter={is_meter}
                 web3={web3}
@@ -8753,6 +9361,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_1}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -8894,6 +9521,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_1_more}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1More
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9032,6 +9678,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_2}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9171,6 +9836,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_2_more}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2More
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9310,6 +9994,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_3}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel3
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9449,6 +10152,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_4}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel4
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9588,6 +10310,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_random1}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom1
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9727,6 +10468,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_random2}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom2
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -9867,6 +10627,25 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               <Route path={partnership_random3}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom3
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
               // main
               is_meter={is_meter}
               web3={web3}
@@ -10003,147 +10782,276 @@ const [game1team2_treasurebloxNative_team_actual_points,setGame1_team2_treasureb
               />
               </Route>
 
-// Partnership End
 
               <Route path="">
-              <Launchpad
-              // main
-              is_meter={is_meter}
-              web3={web3}
-              wallet_for_google={wallet_for_google}
-              ip={ip}
-              partnerId_xyz={partnerId_xyz}
-              // partner random 1
-              player_loss_xyz_={player_loss_xyz_}
-              result_loss_xyz_={result_loss_xyz_}
-              pid_loss_xyz_={pid_loss_xyz_}
-              player_win_xyz_={player_win_xyz_}
-              result_win_xyz_={result_win_xyz_}
-              pid_win_xyz_={pid_win_xyz_}
+              <MyNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
 
-              tokenContract={tokenContract_xyz_}
-              decimals={decimals_xyz_}
-              totalTreasure={totalTreasure_xyz_}
+                <Home
 
-              GSB_contract_bsc_={GSB_contract_bsc_}
-              GSC_contract_bsc_={GSC_contract_bsc_}
-              GSD_contract_bsc_={GSD_contract_bsc_}
-              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
-              VOLT_contract_xyz_={VOLT_contract_xyz_}
-              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
-              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+                // Checklist
+                step1_xyz_={step1_xyz_}
+                step2_xyz_={step2_xyz_}
+                step3_xyz_={step3_xyz_}
+                step4_xyz_={step4_xyz_}
+                step5_xyz_={step5_xyz_}
 
-              CostToPlay_xyz_={CostToPlay_xyz_}
-
-              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
-              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
-              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
-              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
-              VOLT_contract_xyz_={VOLT_contract_xyz_}
-
-              accounts={accounts}
-
-              // totals
-
-              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
-              globalNumberOfTries={globalNumberOfTries_xyz_}
-              // 1
-              partnership_home={web3partnership_home}
-              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
-              partnership_1={partnership_1}
-              partnership_1_more={partnership_1_more}
-              partnership_2={partnership_2}
-              partnership_2_more={partnership_2_more}
-              partnership_3={partnership_3}
-              partnership_4={partnership_4}
-              partnership_random1={partnership_random1}
-
-              partnership_random2={partnership_random2}
-
-              // 1
-              game1_live={game1_live_xyz_}
-              game1_prize={game1_prize_xyz_}
-              game1_question_hash={game1_question_hash_xyz_}
-              game1_entry_cost ={game1_costToEnter_xyz_}
-              game1_riddle={game1_riddle_xyz_}
-              game1_head_start_time={game1_head_start_time_xyz_}
-              allGame1_id={allGame1_id_xyz_}
-              allGame1_user_front_of_que={allGame1_user_front_of_que_xyz_}
-              allGame1_deadline_time={allGame1_deadline_time_xyz_}
-              allGame1_username={allGame1_username_xyz_}
-              allGame1_total_game_tries={allGame1_total_game_tries_xyz_}
-              countGame1={countGame1_xyz_}
-              countGame1DeadlineTrue={countGame1DeadlineTrue_xyz_}
-
-              // 1
+                step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+                step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+                step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+                step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+                step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
 
 
-              game1numberOfEntries={game1numberOfEntries_xyz_}
-              userGame1_id={userGame1_id_xyz_}
-              userEntered_game1={userEntered_game1_xyz_}
-              userGame1_headstart_time={userGame1_headstart_time_xyz_}
-              userGame1_live={userGame1_live_xyz_}
-
-              winning_address1={winning_address1_xyz_}
-              treasure_found1={treasure_found1_xyz_}
-              winning_prize1={winning_prize1_xyz_}
-
-              attemptId1={attemptId1_xyz_}
-              attemptAddress1={attemptAddress1_xyz_}
-              attemptUsername1={attemptUsername1_xyz_}
-              attemptDeadline1={attemptDeadline1_xyz_}
-              totalGameEntriesGame1={totalGameEntriesGame1_xyz_}
-              globalNumberOfTries={globalNumberOfTries_xyz_}
-
-              // 1
-              game1LeaderBoardIndex={game1LeaderBoardIndex_xyz_}
-              game1LeaderBoardGameID={game1LeaderBoardGameID_xyz_}
-              game1LeaderBoardAddress={game1LeaderBoardAddress_xyz_}
-              game1LeaderBoardEntered={game1LeaderBoardEntered_xyz_}
-              game1LeaderBoardUsername={game1LeaderBoardUsername_xyz_}
-              game1LeaderBoardTries={game1LeaderBoardTries_xyz_}
-              game1LeaderBoardStage={game1LeaderBoardStage_xyz_}
+                step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+                step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+                step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+                step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+                step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
 
 
-              // 1
-              game1LeaderBoard={game1LeaderBoard_xyz_}
-              game1UserList={game1UserList_xyz_}
+                // main
+                is_meter={is_meter}
+                web3={web3}
+                wallet_for_google={wallet_for_google}
+                ip={ip}
+                partnerId_xyz={partnerId_xyz}
+                partnerId_treasurebloxNative={partnerId_treasurebloxNative}
 
-              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_xyz_}
-              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_xyz_}
-              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_xyz_}
-              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_xyz_}
-              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_xyz_}
-              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_xyz_}
-              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_xyz_}
-              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_xyz_}
+                // partner random 1
+                player_loss_xyz_={player_loss_xyz_}
+                result_loss_xyz_={result_loss_xyz_}
+                pid_loss_xyz_={pid_loss_xyz_}
+                player_win_xyz_={player_win_xyz_}
+                result_win_xyz_={result_win_xyz_}
+                pid_win_xyz_={pid_win_xyz_}
 
-              userLevel1Game1={userLevel1Game1_xyz_}
-              userLevel2Game1={userLevel2Game1_xyz_}
-              userLevel3Game1={userLevel3Game1_xyz_}
-              userLevel4Game1={userLevel4Game1_xyz_}
+                tokenContract={tokenContract_treasurebloxNative_}
+                decimals={decimals_treasurebloxNative_}
+                totalTreasure={totalTreasure_treasurebloxNative_}
+
+                GSB_contract_bsc_={GSB_contract_bsc_}
+                GSC_contract_bsc_={GSC_contract_bsc_}
+                GSD_contract_bsc_={GSD_contract_bsc_}
+                MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+                VOLT_contract_xyz_={VOLT_contract_xyz_}
+                game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+                game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+                CostToPlay_xyz_={CostToPlay_xyz_}
+                RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+                RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+                RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+                MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+                VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+                CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+                RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+                RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+                RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+                game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
 
+                accounts={accounts}
 
-              game1team1_xyz_team_points_target={game1team1_xyz_team_points_target}
-              game1team1_xyz_ppp={game1team1_xyz_ppp}
-              game1team1_xyz_team_entries={game1team1_xyz_team_entries}
-              game1team1_xyz_team_actual_points={game1team1_xyz_team_actual_points}
-              game1team2_xyz_team_points_target={game1team2_xyz_team_points_target}
-              game1team2_xyz_ppp={game1team2_xyz_ppp}
-              game1team2_xyz_team_entries={game1team2_xyz_team_entries}
-              game1team2_xyz_team_actual_points={game1team2_xyz_team_actual_points}
+                // totals
+
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+                // 1
+
+                game1_level_1={game1_level_1}
+                game1_level_1_more={game1_level_1_more}
+                game1_level_2={game1_level_2}
+                game1_level_2_more={game1_level_2_more}
+                game1_level_3={game1_level_3}
+                game1_level_4={game1_level_4}
+                game1_random1={game1_random1}
+                game1_random2={game1_random2}
+                game1_random3={game1_random3}
+
+                // 2
+                game2_level_1={game2_level_1}
+                game2_level_1_more={game2_level_1_more}
+                game2_level_2={game2_level_2}
+                game2_level_2_more={game2_level_2_more}
+                game2_level_3={game2_level_3}
+                game2_level_4={game2_level_4}
+                game2_random1={game2_random1}
+                game2_random2={game2_random2}
+                game2_random3={game2_random3}
+
+                // Partnership Jetswap
+                partnership_home={web3partnership_home}
+                partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+                partnership_1={game2_level_1}
+                partnership_1_more={game2_level_1_more}
+                partnership_2={game2_level_2}
+                partnership_2_more={game2_level_2_more}
+                partnership_3={game2_level_3}
+                partnership_4={game2_level_4}
+                partnership_random1={partnership_random1}
+                partnership_random2={partnership_random2}
+                partnership_random3={partnership_random3}
+
+                // 1
+                game1_live={game1_live_treasurebloxNative_}
+                game1_prize={game1_prize_treasurebloxNative_}
+                game1_question_hash={game1_question_hash_treasurebloxNative_}
+                game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+                game1_riddle={game1_riddle_treasurebloxNative_}
+                game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+                allGame1_id={allGame1_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+                allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+                allGame1_username={allGame1_username_treasurebloxNative_}
+                allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+                countGame1={countGame1_treasurebloxNative_}
+                countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+                // 2
+                game2_live={game2_live_treasurebloxNative_}
+                game2_prize={game2_prize_treasurebloxNative_}
+                game2_question_hash={game2_question_hash_treasurebloxNative_}
+                game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+                game2_riddle={game2_riddle_treasurebloxNative_}
+                game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+                allGame2_id={allGame2_id_treasurebloxNative_}
+                allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+                allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+                allGame2_username={allGame2_username_treasurebloxNative_}
+                allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+                countGame2={countGame2_treasurebloxNative_}
+                countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+                // 1
+
+
+                game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+                userGame1_id={userGame1_id_treasurebloxNative_}
+                userEntered_game1={userEntered_game1_treasurebloxNative_}
+                userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+                userGame1_live={userGame1_live_treasurebloxNative_}
+
+                winning_address1={winning_address1_treasurebloxNative_}
+                treasure_found1={treasure_found1_treasurebloxNative_}
+                winning_prize1={winning_prize1_treasurebloxNative_}
+
+                attemptId1={attemptId1_treasurebloxNative_}
+                attemptAddress1={attemptAddress1_treasurebloxNative_}
+                attemptUsername1={attemptUsername1_treasurebloxNative_}
+                attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+                totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 2
+                game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+                userGame2_id={userGame2_id_treasurebloxNative_}
+                userEntered_game2={userEntered_game2_treasurebloxNative_}
+                userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+                userGame2_live={userGame2_live_treasurebloxNative_}
+
+                winning_address2={winning_address2_treasurebloxNative_}
+                treasure_found2={treasure_found2_treasurebloxNative_}
+                winning_prize2={winning_prize2_treasurebloxNative_}
+
+                attemptId2={attemptId2_treasurebloxNative_}
+                attemptAddress2={attemptAddress2_treasurebloxNative_}
+                attemptUsername2={attemptUsername2_treasurebloxNative_}
+                attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+                totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+                globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+                // 1
+                game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+                game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+                game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+                game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+                game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+                game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+                game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+                // 2
+                game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+                game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+                game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+                game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+                game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+                game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+                game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+                // 1
+                game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+                game1UserList={game1UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+                state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+                userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+                userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+                userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+                userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+                // 2
+
+                game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+                game2UserList={game2UserList_treasurebloxNative_}
+
+                state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+                state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+                state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+                // 1
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+                game1team1_ppp={game1team1_treasurebloxNative_ppp}
+                game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+                game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+                game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+                game1team2_ppp={game1team2_treasurebloxNative_ppp}
+                game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+                game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+                // 2
+                userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+                userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+                userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+                userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+                game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+                game2team1_ppp={game2team1_treasurebloxNative_ppp}
+                game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+                game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+                game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+                game2team2_ppp={game2team2_treasurebloxNative_ppp}
+                game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+                game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
 
 
 
                 />
+
+
               </Route>
-
-
 
         </Switch>
         <div>
-
 
         {partnerLandingPageHome?(
           <div>

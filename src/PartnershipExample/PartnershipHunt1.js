@@ -146,7 +146,7 @@ const PartnershipHunt1 = (props) => {
 
     setloading(true);
 
-    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel1Game1(true)
     setredirectLevel1(true)

@@ -141,7 +141,7 @@ if (props.state_leaderboardAddressSearch_tries_game1){
 
     PERSONAL INFORMATION - @<a className="descriptionTitle">{props.state_leaderboardAddressSearch_username_game1}</a> - Level <a className="descriptionTitle">{props.state_leaderboardAddressSearch_stage_game1}</a> - Score <a className="descriptionTitle">{props.state_leaderboardAddressSearch_tries_game1}</a> - Est Return <a className="descriptionTitle">{personalgamereturn}</a> {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}<div className="gamePrize">Est Winner Prize {game1_WinnerPrize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
 
-    Total Est Prize Volt {game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}
+    Total Est Prize Vault {game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}
 
     <br/>
     <br/>

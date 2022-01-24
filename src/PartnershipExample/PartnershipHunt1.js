@@ -564,7 +564,7 @@ const handleSubmitEnterDave = async() => {
             <br/>
             {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
             <div className="siteTitle">Team Crypto Dave</div>
-            <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
             {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
               <div>
@@ -627,7 +627,7 @@ const handleSubmitEnterDave = async() => {
                             <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
-                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Todo List</Nav.Link>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">To-do List</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
                             <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
@@ -789,9 +789,9 @@ const handleSubmitEnterDave = async() => {
 
                             <Row>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">Team Vs Team?</div>
+                              <div className="StatsGameEnter">Team Vs Team</div>
                               <div className="siteTitle">Winning team takes all</div>
-                              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+                              <div className="StatsGameEnterSmallSub">Two ways to win: solve the riddle or hit points target</div>
 
 
                               </Col>
@@ -843,7 +843,7 @@ const handleSubmitEnterDave = async() => {
                             <Tab.Pane eventKey="link-1">
                             <Card className='customRoundedOne border border-danger'>
 
-                                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                                <Card.Header className="MiniGameTitle">Whose side will you join in the battle for the metaverse
                                 </Card.Header>
 
                                 <Card.Body >
@@ -875,21 +875,28 @@ const handleSubmitEnterDave = async() => {
                         <Col sm={9}>
                           <Tab.Content>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+                            Are you better entering a team with less players to gain a bigger share of the prize or entering a
+                            larger team with a greater chance of reaching their points target to win faster?
 
-                            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+                            The treasure hunt will start when the number of 'explorers entered' reaches the target.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
+                            solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
+                            other team members. The winning team takes all.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+                            A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
+                            The more players you have enter your team the lower this target becomes. Your team's points to unlock the
+                            treasure vault is the PPP x the number of players in your team.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+                            When the points are reached the treasure vault is distributed to all team members as a % of the points
+                            they have relative to other team members. The winning team takes all!
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points.
+                              The more you play the larger the proprtion you'll recieve.
                             </Tab.Pane>
 
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -914,19 +921,19 @@ const handleSubmitEnterDave = async() => {
 
 
                               <br/>
-                              <div className="siteTitle">Learn how to play and win by completing the P2E todo list!</div>
+                              <div className="siteTitle">Learn how to play and win by completing the P2E to-do list!</div>
                               <br/>
 
                               {(props.step1_xyz_ > 0) ?(
                                 <ListGroup className="list-group-mine" >
                                 <ListGroup.Item >
-                                  Step 1 Complete! - Congratulations you entered the treasure hunt successfully!
+                                  Step 1 Complete! - Congratulations, you entered the treasure hunt successfully!
                                 </ListGroup.Item>
                                 </ListGroup>
                               ):(
                                 <ListGroup className="list-group-not-complete">
                                 <ListGroup.Item >
-                                  Step 1 - Enter the treasure hunt - and you can compete to unlock the prize vault!
+                                  Step 1 - Enter the treasure hunt and you can compete to unlock the prize vault!
                                 </ListGroup.Item>
                                 </ListGroup>
                               )}
@@ -935,7 +942,7 @@ const handleSubmitEnterDave = async() => {
                               {(props.step2_xyz_ > 0)?(
                                 <ListGroup className="list-group-mine" >
                                 <ListGroup.Item >
-                                  Step 2 Complete! - Congratulations joined a team successfully!  Remember to join them on discord!
+                                  Step 2 Complete! - Congratulations, you joined a team successfully!  Remember to join them on discord!
                                 </ListGroup.Item>
                                 </ListGroup>
                               ):(
@@ -949,7 +956,7 @@ const handleSubmitEnterDave = async() => {
                               {(props.step3_xyz_ > 0)?(
                                 <ListGroup className="list-group-mine" >
                                 <ListGroup.Item >
-                                  Step 3 Complete! - Congratulations you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
+                                  Step 3 Complete! - Congratulations, you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
                                 </ListGroup.Item>
                                 </ListGroup>
                               ):(
@@ -963,13 +970,13 @@ const handleSubmitEnterDave = async() => {
                               {(props.step4_xyz_ > 0)?(
                                 <ListGroup className="list-group-mine" >
                                 <ListGroup.Item >
-                                  Step 4 Complete! - Congratulations you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
+                                  Step 4 Complete! - Congratulations, you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
                                 </ListGroup.Item>
                                 </ListGroup>
                               ):(
                                 <ListGroup className="list-group-not-complete">
                                 <ListGroup.Item >
-                                  Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensative!
+                                  Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensitive!
                                 </ListGroup.Item>
                                 </ListGroup>
                               )}
@@ -977,14 +984,14 @@ const handleSubmitEnterDave = async() => {
                               {(props.step5_xyz_ > 0)?(
                                 <ListGroup className="list-group-mine" >
                                 <ListGroup.Item >
-                                  Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                                  Step 5 Complete! - Congratulations, you played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
                                 </ListGroup.Item>
                                 </ListGroup>
                               ):(
                                 <ListGroup className="list-group-not-complete">
 
                                 <ListGroup.Item >
-                                  Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                                  Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! They also level you up so you don't need to solve riddles!
                                 </ListGroup.Item>
                                 </ListGroup>
                               )}
@@ -1012,7 +1019,7 @@ const handleSubmitEnterDave = async() => {
 
                     {true ?(
                       <div >
-                      <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
+                      <div className="siteTitle">Complete luck based games for instant wins, tokens, points and level ups!</div>
                       <br/>
                       <Row>
 
@@ -1048,7 +1055,7 @@ const handleSubmitEnterDave = async() => {
                           Cost to play 0.5 MTRG
                           <br/>
 
-                          Average game response time 45 seconds
+                          Results may take 45 seconds on average
 
                           </div>
                           <br/>
@@ -1079,7 +1086,7 @@ const handleSubmitEnterDave = async() => {
 
 
                         <Card.Body className="customBodyMiniGame">
-                        {props.is_meter?(<Card.Header className="MiniGameTitle">Ray Gun - Intermidiate!</Card.Header>):(<Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!</Card.Header>)}
+                        {props.is_meter?(<Card.Header className="MiniGameTitle">Ray Gun - Intermediate!</Card.Header>):(<Card.Header className="MiniGameTitle">Flair Gun - Intermediate!</Card.Header>)}
 
 
                           <Card.Header className="MiniGameTitle">1 in 6 chance to win!
@@ -1099,7 +1106,7 @@ const handleSubmitEnterDave = async() => {
                           Cost to play 0.5 MTRG
                           <br/>
 
-                          Average game response time 45 seconds
+                          Results may take 45 seconds on average
 
                           </div>
                           <br/>
@@ -1132,7 +1139,8 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>                      <br />100 game points
+                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                        <br />100 game points
                       <br />level up + 1
                     <br />2 points for loss<br />
                         </Card.Header>
@@ -1143,7 +1151,7 @@ const handleSubmitEnterDave = async() => {
                         Cost to play 0.5 MTRG
                         <br/>
 
-                        Average game response time 45 seconds
+                        Results may take 45 seconds on average
 
                         </div>
                         <br/>
@@ -1170,10 +1178,9 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                        Play a luck based game to win! If you win you'll instantly receive a multiplier of the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
                         <br/><br/>
-                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
-
+                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if successful. Good Luck!
                         </div>
                         <br/><br/>
 
@@ -1221,7 +1228,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>                      <br />100 game points
+                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
 
                         <br />30 game points
                         <br />level up + 1
@@ -1262,11 +1269,12 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
                           <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>                      <br />100 game points
-
+                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
+                          <br />
                         <br />60 game points
                         <br />level up + 1
-                        <br />2 points for loss<br />
+                        <br />2 points for loss
+                        <br />
 
                           </Card.Header>
                           <br/>
@@ -1304,7 +1312,7 @@ const handleSubmitEnterDave = async() => {
 
                         <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALY!</a>
+                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
                       <br />90 game points
                       <br />level up + 1
                       <br />2 points for loss<br />
@@ -1414,7 +1422,7 @@ const handleSubmitEnterDave = async() => {
   ):(
     <div style={{height: height}}>
     <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-    <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
+    <div className="SubTitleHeader">Whose side will you join in the battle for the metaverse</div>
 
     <Container className='mt-5' fluid="md">
     <Tab.Container defaultActiveKey="first">
@@ -1582,9 +1590,9 @@ const handleSubmitEnterDave = async() => {
 
             <Row>
               <Col sm={4}>
-              <div className="StatsGameEnter">Team Vs Team?</div>
+              <div className="StatsGameEnter">Team Vs Team</div>
               <div className="siteTitle">Winning team takes all</div>
-              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+              <div className="StatsGameEnterSmallSub">Two ways to win: solve the riddle or hit points target</div>
 
 
               </Col>
@@ -1636,8 +1644,9 @@ const handleSubmitEnterDave = async() => {
             <Tab.Pane eventKey="link-1">
             <Card className='customRoundedOne border border-danger'>
 
-                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                <Card.Header className="MiniGameTitle">Whose side will you join in the battle for the metaverse
                 </Card.Header>
+
                 <Card.Body >
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
 
@@ -1667,21 +1676,28 @@ const handleSubmitEnterDave = async() => {
         <Col sm={9}>
           <Tab.Content>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+            Are you better entering a team with less players to gain a bigger share of the prize or entering a
+            larger team with a greater chance of reaching their points target to win faster?
 
-            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+            The treasure hunt will start when the number of 'explorers entered' reaches the target.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
+            solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
+            other team members. The winning team takes all.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+            A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
+            The more players you have enter your team the lower this target becomes. Your team's points to unlock the
+            treasure vault is the PPP x the number of players in your team.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+            When the points are reached the treasure vault is distributed to all team members as a % of the points
+            they have relative to other team members. The winning team takes all!
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points.
+              The more you play the larger the proprtion you'll recieve.
             </Tab.Pane>
 
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -1914,7 +1930,7 @@ const handleSubmitEnterDave = async() => {
             <br/>
             {props.game1team2_xyz_team_actual_points} / {props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries} Points</div>
             <div className="siteTitle">Team Crypto Dave</div>
-            <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
+            <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
             {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
               <div>
@@ -1977,7 +1993,7 @@ const handleSubmitEnterDave = async() => {
                             <Nav.Link  className="MiniGameEnterTab" eventKey="first">Enter - Winning team takes all!</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
-                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">To Do List</Nav.Link>
+                            <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">to-do List</Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
                             <Nav.Link className="MiniGameEnterTab blink_me" eventKey="link-1">How To Play</Nav.Link>
@@ -2138,9 +2154,9 @@ const handleSubmitEnterDave = async() => {
 
                             <Row>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">Team Vs Team?</div>
+                              <div className="StatsGameEnter">Team Vs Team</div>
                               <div className="siteTitle">Winning team takes all</div>
-                              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+                              <div className="StatsGameEnterSmallSub">Two ways to win: solve the riddle or hit points target</div>
 
 
                               </Col>
@@ -2192,8 +2208,9 @@ const handleSubmitEnterDave = async() => {
                             <Tab.Pane eventKey="link-1">
                             <Card className='customRoundedOne border border-danger'>
 
-                                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                                <Card.Header className="MiniGameTitle">Whose side will you join in the battle for the metaverse
                                 </Card.Header>
+
                                 <Card.Body >
                                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
 
@@ -2223,21 +2240,28 @@ const handleSubmitEnterDave = async() => {
                         <Col sm={9}>
                           <Tab.Content>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+                            Are you better entering a team with less players to gain a bigger share of the prize or entering a
+                            larger team with a greater chance of reaching their points target to win faster?
 
-                            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+                            The treasure hunt will start when the number of 'explorers entered' reaches the target.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                            A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
+                            solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
+                            other team members. The winning team takes all.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+                            A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
+                            The more players you have enter your team the lower this target becomes. Your team's points to unlock the
+                            treasure vault is the PPP x the number of players in your team.
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+                            When the points are reached the treasure vault is distributed to all team members as a % of the points
+                            they have relative to other team members. The winning team takes all!
                             </Tab.Pane>
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+                              30% of the prize goes to the winner and 70% shared with all players as a % of their points.
+                              The more you play the larger the proprtion you'll recieve.
                             </Tab.Pane>
 
                             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -2261,19 +2285,19 @@ const handleSubmitEnterDave = async() => {
                             <Tab.Pane eventKey="link-2">
 
                             <br/>
-                            <div className="siteTitle">Learn how to play and win by completing the P2E todo list!</div>
+                            <div className="siteTitle">Learn how to play and win by completing the P2E to-do list!</div>
                             <br/>
 
                             {(props.step1_xyz_ > 0) ?(
                               <ListGroup className="list-group-mine" >
                               <ListGroup.Item >
-                                Step 1 Complete! - Congratulations you entered the treasure hunt successfully!
+                                Step 1 Complete! - Congratulations, you entered the treasure hunt successfully!
                               </ListGroup.Item>
                               </ListGroup>
                             ):(
                               <ListGroup className="list-group-not-complete">
                               <ListGroup.Item >
-                                Step 1 - Enter the treasure hunt - and you can compete to unlock the prize vault!
+                                Step 1 - Enter the treasure hunt and you can compete to unlock the prize vault!
                               </ListGroup.Item>
                               </ListGroup>
                             )}
@@ -2282,7 +2306,7 @@ const handleSubmitEnterDave = async() => {
                             {(props.step2_xyz_ > 0)?(
                               <ListGroup className="list-group-mine" >
                               <ListGroup.Item >
-                                Step 2 Complete! - Congratulations joined a team successfully!  Remember to join them on discord!
+                                Step 2 Complete! - Congratulations, you joined a team successfully!  Remember to join them on discord!
                               </ListGroup.Item>
                               </ListGroup>
                             ):(
@@ -2296,7 +2320,7 @@ const handleSubmitEnterDave = async() => {
                             {(props.step3_xyz_ > 0)?(
                               <ListGroup className="list-group-mine" >
                               <ListGroup.Item >
-                                Step 3 Complete! - Congratulations you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
+                                Step 3 Complete! - Congratulations, you played a skill game!  Once you win you'll unlock a clue so you can complete step 4!
                               </ListGroup.Item>
                               </ListGroup>
                             ):(
@@ -2310,13 +2334,13 @@ const handleSubmitEnterDave = async() => {
                             {(props.step4_xyz_ > 0)?(
                               <ListGroup className="list-group-mine" >
                               <ListGroup.Item >
-                                Step 4 Complete! - Congratulations you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
+                                Step 4 Complete! - Congratulations, you have applied the time lock! The time lock should be applied every time you wish to level up by solving riddles!
                               </ListGroup.Item>
                               </ListGroup>
                             ):(
                               <ListGroup className="list-group-not-complete">
                               <ListGroup.Item >
-                                Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensative!
+                                Step 4 - Use the time lock - visit the prize vault tab and apply the time lock! This will give you 90 seconds to submit the answer to the riddle you solved! Be sure to add it exactly right it will be case sensitive!
                               </ListGroup.Item>
                               </ListGroup>
                             )}
@@ -2324,17 +2348,18 @@ const handleSubmitEnterDave = async() => {
                             {(props.step5_xyz_ > 0)?(
                               <ListGroup className="list-group-mine" >
                               <ListGroup.Item >
-                                Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                                Step 5 Complete! - Congratulations, you played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
                               </ListGroup.Item>
                               </ListGroup>
                             ):(
                               <ListGroup className="list-group-not-complete">
 
                               <ListGroup.Item >
-                                Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                                Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! They also level you up so you don't need to solve riddles!
                               </ListGroup.Item>
                               </ListGroup>
                             )}
+
 
 
 
@@ -2356,7 +2381,7 @@ const handleSubmitEnterDave = async() => {
 
                     {(props.userEntered_game1) ?(
                       <div >
-                      <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
+                      <div className="siteTitle">Complete luck based games for instant wins, tokens, points and level ups!</div>
                       <br/>
                       <Row>
 
@@ -2390,7 +2415,7 @@ const handleSubmitEnterDave = async() => {
                           Cost to play {props.CostToPlay_xyz_} Wings
                           <br/>
 
-                          Average game response time 45 seconds
+                          Results may take 45 seconds on average
 
                           </div>
                           <br/>
@@ -2418,7 +2443,7 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
+                          <Card.Header className="MiniGameTitle">Flair Gun - Intermediate!
 
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">1 in 6 chance to win!
@@ -2438,7 +2463,7 @@ const handleSubmitEnterDave = async() => {
                           Cost to play {props.CostToPlay_xyz_} Wings
                           <br/>
 
-                          Average game response time 45 seconds
+                          Results may take 45 seconds on average
 
                           </div>
                           <br/>
@@ -2484,7 +2509,7 @@ const handleSubmitEnterDave = async() => {
                         Cost to play {props.CostToPlay_xyz_} Wings
                         <br/>
 
-                        Average game response time 45 seconds
+                        Results may take 45 seconds on average
 
                         </div>
                         <br/>
@@ -2511,9 +2536,9 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                        Play a luck based game to win! If you win you'll instantly receive a multiplier of the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
                         <br/><br/>
-                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if successful. Good Luck!
 
                         </div>
                         <br/><br/>
@@ -2562,7 +2587,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>                      <br />100 game points
+                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
 
                         <br />30 game points
                         <br />level up + 1
@@ -2604,9 +2629,11 @@ const handleSubmitEnterDave = async() => {
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
                           <br/>
                           <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
+                          <br />
                         <br />60 game points
                         <br />level up + 1
-                        <br />2 points for loss<br />
+                        <br />2 points for loss
+                        <br />
 
                           </Card.Header>
                           <br/>
@@ -2644,7 +2671,7 @@ const handleSubmitEnterDave = async() => {
 
                         <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALY!</a>
+                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
                       <br />90 game points
                       <br />level up + 1
                       <br />2 points for loss<br />
@@ -2756,7 +2783,7 @@ const handleSubmitEnterDave = async() => {
   ):(
     <div style={{height: height}}>
     <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-    <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
+    <div className="SubTitleHeader">Whose side will you join in the battle for the metaverse</div>
 
     <Container className='mt-5' fluid="md">
     <Tab.Container defaultActiveKey="first">
@@ -2924,9 +2951,9 @@ const handleSubmitEnterDave = async() => {
 
             <Row>
               <Col sm={4}>
-              <div className="StatsGameEnter">Team Vs Team?</div>
+              <div className="StatsGameEnter">Team Vs Team</div>
               <div className="siteTitle">Winning team takes all</div>
-              <div className="StatsGameEnterSmallSub">Two ways to win solve the riddle or hit points target</div>
+              <div className="StatsGameEnterSmallSub">Two ways to win: solve the riddle or hit points target</div>
 
 
               </Col>
@@ -2978,8 +3005,9 @@ const handleSubmitEnterDave = async() => {
             <Tab.Pane eventKey="link-1">
             <Card className='customRoundedOne border border-danger'>
 
-                <Card.Header className="MiniGameTitle">Who's side will you join in the battle for the metaverse
+                <Card.Header className="MiniGameTitle">Whose side will you join in the battle for the metaverse
                 </Card.Header>
+
                 <Card.Body >
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
 
@@ -3009,21 +3037,28 @@ const handleSubmitEnterDave = async() => {
         <Col sm={9}>
           <Tab.Content>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-            Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+            Are you better entering a team with less players to gain a bigger share of the prize or entering a
+            larger team with a greater chance of reaching their points target to win faster?
 
-            The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+            The treasure hunt will start when the number of 'explorers entered' reaches the target.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-            A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+            A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
+            solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
+            other team members. The winning team takes all.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-            A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+            A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
+            The more players you have enter your team the lower this target becomes. Your team's points to unlock the
+            treasure vault is the PPP x the number of players in your team.
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-            When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+            When the points are reached the treasure vault is distributed to all team members as a % of the points
+            they have relative to other team members. The winning team takes all!
             </Tab.Pane>
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-              30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+              30% of the prize goes to the winner and 70% shared with all players as a % of their points.
+              The more you play the larger the proprtion you'll recieve.
             </Tab.Pane>
 
             <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">

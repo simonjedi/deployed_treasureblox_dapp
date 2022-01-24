@@ -339,7 +339,6 @@ const handleSubmitEnterTroy = async() => {
 
   setloading(true);
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
-
   await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
 
   await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});

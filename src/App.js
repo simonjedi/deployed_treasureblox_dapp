@@ -3129,6 +3129,9 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
     RANDOM1_contract_xyz_,
     RANDOM2_contract_xyz_,
     RANDOM3_contract_xyz_,
+    game_RANDOM1_xyz_,
+    game_RANDOM2_xyz_,
+    game_RANDOM2_xyz_,
     CostToPlay_xyz_,
     MAIN_GAME_contract_treasurebloxNative_,
     VOLT_contract_treasurebloxNative_,
@@ -3273,6 +3276,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
               <MyNav accounts={accounts}/>
                 <Home
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
 
                 // Checklist
                 step1_xyz_={step1_xyz_}
@@ -3539,6 +3546,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path="/hunt1">
                 <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Hunt1
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
                 // Checklist
                 step1_xyz_={step1_xyz_}
                 step2_xyz_={step2_xyz_}
@@ -3800,6 +3811,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path="/hunt2">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Hunt2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -4061,6 +4077,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path="/Learnmore">
               <MyNav accounts={accounts} onClick={() => Connection()}/>
                 <Learnmore
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
                 // Checklist
                 step1_xyz_={step1_xyz_}
                 step2_xyz_={step2_xyz_}
@@ -4371,6 +4392,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_1}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -4632,6 +4658,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_1_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -4893,6 +4923,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -5153,6 +5187,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -5413,6 +5451,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game1
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -5673,6 +5715,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -5932,6 +5979,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_random1}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game1Random1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -6191,6 +6242,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_random2}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game1Random2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -6450,6 +6506,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game1_random3}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game1Random3
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -6710,6 +6771,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_1}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level1Game2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -6969,6 +7035,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_1_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game1MoreGame2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -7228,6 +7299,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_2}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level2Game2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -7487,6 +7563,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_2_more}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Game2MoreGame2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -7746,6 +7827,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_3}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level3Game2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -8005,6 +8091,12 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_level_4}>
               <MyNav accounts={accounts} onClick={() => Connection()}/>
               <Level4Game2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -8264,6 +8356,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_random1}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -8523,6 +8620,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_random2}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -8782,6 +8884,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={game2_random3}>
               <MyNav {...props} onClick={() => Connection()}/>
               <Game2Random3
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -9044,6 +9151,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_treasure_hunt_page} >
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnershipHunt1
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
                 // Checklist
                 step1_xyz_={step1_xyz_}
                 step2_xyz_={step2_xyz_}
@@ -9203,6 +9315,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={web3partnership_home} >
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <PartnerHome
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
                 // Checklist
                 step1_xyz_={step1_xyz_}
                 step2_xyz_={step2_xyz_}
@@ -9361,6 +9478,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_1}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -9521,6 +9643,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_1_more}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel1More
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -9678,6 +9805,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_2}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -9836,6 +9968,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_2_more}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel2More
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -9994,6 +10131,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_3}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel3
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -10152,6 +10294,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_4}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipLevel4
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -10310,6 +10457,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_random1}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom1
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -10468,6 +10620,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_random2}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom2
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -10627,6 +10784,11 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path={partnership_random3}>
               <PartnershipNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <PartnershipRandom3
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
               // Checklist
               step1_xyz_={step1_xyz_}
               step2_xyz_={step2_xyz_}
@@ -10787,6 +10949,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <MyNav {...props} accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
 
                 <Home
+
+                game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+                game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+                game_RANDOM3_xyz_={game_RANDOM3_xyz_}
 
                 // Checklist
                 step1_xyz_={step1_xyz_}

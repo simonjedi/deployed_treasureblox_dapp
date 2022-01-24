@@ -27,7 +27,6 @@ import ohno from './troy_oh_no.mp4';
 
 
 
-
 const Gun = (props) =>{
 
   var rate = 1.5; // Number of rotations per second
@@ -36,10 +35,19 @@ const Gun = (props) =>{
   const [spin, setSpin] = useState(false)
   const [win, setWin] = useState(false)
   const [lose, setLose] = useState(false)
+  const tokenContract = props.tokenContract
+  const accounts = props.accounts[0]
+
 
   const handlePlay = async() => {
 
-    const transaction = await props.RANDOM1_contract_xyz_.methods.rollDice(props.partnerId_xyz,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
+
+
+    const test = await props.tokenContract.methods.approve(props.game_RANDOM2_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: props.accounts[0]});
+    console.log(test,"test")
+    console.log("george")
+
+    const transaction = await props.RANDOM2_contract_xyz_.methods.rollDice(props.partnerId_xyz,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
       setSpin(true)
       tryAgain(uid)

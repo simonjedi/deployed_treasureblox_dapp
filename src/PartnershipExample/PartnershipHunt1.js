@@ -516,7 +516,7 @@ const handleSubmitEnterDave = async() => {
 <center>
 
 
-          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
+          <a className=' ' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
 
 
 </center>
@@ -1039,9 +1039,9 @@ const handleSubmitEnterDave = async() => {
 
                           <Card.Header className="MiniGameTitle">1 in 4 chance to win!
                           <br/>
-                          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>2X</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>2X</a>
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
 
                         <br />15 game points
                         <br />level up + 1
@@ -1051,7 +1051,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play 0.5 MTRG
+                          Cost to play 0.2 MTRG
                           <br/>
 
                           Results may take 45 seconds on average
@@ -1090,9 +1090,9 @@ const handleSubmitEnterDave = async() => {
 
                           <Card.Header className="MiniGameTitle">1 in 6 chance to win!
                           <br/>
-                          <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>3X</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>3X</a>
                           <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                         <br />30 game points
                         <br />level up + 1
                         <br />2 points for loss<br />
@@ -1102,7 +1102,7 @@ const handleSubmitEnterDave = async() => {
 
                           <div className="MiniGameDetails">
 
-                          Cost to play 0.5 MTRG
+                          Cost to play 0.2 MTRG
                           <br/>
 
                           Results may take 45 seconds on average
@@ -1136,9 +1136,9 @@ const handleSubmitEnterDave = async() => {
 
                         <Card.Header className="MiniGameTitle">1 in 20 chance to win!
                         <br/>
-                        <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>5X</a>
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                         <br />100 game points
                       <br />level up + 1
                     <br />2 points for loss<br />
@@ -1147,7 +1147,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play 0.5 MTRG
+                        Cost to play 0.2 MTRG
                         <br/>
 
                         Results may take 45 seconds on average
@@ -1227,7 +1227,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
 
                         <br />30 game points
                         <br />level up + 1
@@ -1237,7 +1237,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play 0.5 MTRG
+                          Cost to play 0.2 MTRG
 
 
                           </div>
@@ -1268,7 +1268,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
                           <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
                           <br />
                         <br />60 game points
                         <br />level up + 1
@@ -1279,7 +1279,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play 0.5 MTRG
+                          Cost to play 0.2 MTRG
 
                           </div>
                           <br/>
@@ -1311,7 +1311,7 @@ const handleSubmitEnterDave = async() => {
 
                         <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
                       <br />90 game points
                       <br />level up + 1
                       <br />2 points for loss<br />
@@ -1320,7 +1320,7 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Cost to play 0.5 MTRG
+                        Cost to play 0.2 MTRG
 
                         </div>
                         <br/>
@@ -1883,7 +1883,7 @@ const handleSubmitEnterDave = async() => {
 
           <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
           <center>
-          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
+          <a className=' ' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
 
 
           </center>
@@ -2399,9 +2399,9 @@ const handleSubmitEnterDave = async() => {
                           <Card.Header className="MiniGameTitle">1 in 4 chance to win!
 
                           <br/>
-                          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>2X</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>2X</a>
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
 
                         <br />15 game points
                         <br />level up + 1
@@ -2447,9 +2447,9 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">1 in 6 chance to win!
                           <br/>
-                          <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>3X</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>3X</a>
                           <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                         <br />30 game points
                         <br />level up + 1
                         <br />2 points for loss<br />
@@ -2494,9 +2494,9 @@ const handleSubmitEnterDave = async() => {
                         </Card.Header>
                         <Card.Header className="MiniGameTitle">1 in 20 chance to win!
                         <br/>
-                        <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>5X</a>
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                       <br />100 game points
                       <br />level up + 1
                     <br />2 points for loss<br />
@@ -2586,7 +2586,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
 
                         <br />30 game points
                         <br />level up + 1
@@ -2627,7 +2627,7 @@ const handleSubmitEnterDave = async() => {
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
                           <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
+                          <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
                           <br />
                         <br />60 game points
                         <br />level up + 1
@@ -2670,7 +2670,7 @@ const handleSubmitEnterDave = async() => {
 
                         <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
                         <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
+                        <a className=' ' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
                       <br />90 game points
                       <br />level up + 1
                       <br />2 points for loss<br />

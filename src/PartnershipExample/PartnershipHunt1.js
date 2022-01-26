@@ -565,7 +565,7 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+            {false ?(
               <div>
               {props.treasure_found1?(
                 <div>
@@ -1041,7 +1041,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <a className='neon-orange ' style={{"text-decoration": "none"}}>2X</a>
                           <br/>
-                          <a className='neon-orange-small ' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
 
                         <br />15 game points
                         <br />level up + 1
@@ -1237,7 +1237,7 @@ const handleSubmitEnterDave = async() => {
                           <br/>
                           <div className="MiniGameDetails">
 
-                          Cost to play 0.2 MTRG
+                          Free play
 
 
                           </div>
@@ -1931,9 +1931,11 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+            {false ?(
               <div>
-              {props.treasure_found1?(
+
+
+            {props.treasure_found1?(
                 <div>
 
                 <div className="siteTitle">WINNERS</div>
@@ -1945,6 +1947,8 @@ const handleSubmitEnterDave = async() => {
                 </center>
                 </div>
               )}
+
+
               </div>
             ):(
               <div>

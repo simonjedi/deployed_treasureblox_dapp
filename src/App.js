@@ -1922,14 +1922,13 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         const game_MAIN_GAME_Address_xyz_ = "0x93Fb9903708525C9aD08ff401DD2D123d8300453"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
-
         const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://rpc.meter.io/" && "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa");
         const game_VOLT_Address_xyz_ = "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0xB456f6eb9b48939513b8E9D03d56105c591ab58d");
-        const game_RANDOM1_Address_xyz_ = "0xB456f6eb9b48939513b8E9D03d56105c591ab58d"
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://rpc.meter.io/" && "0xFF035748fC257dd6bCEb25B61862be7E064b07dE");
+        const game_RANDOM1_Address_xyz_ = "0xFF035748fC257dd6bCEb25B61862be7E064b07dE"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
@@ -2001,8 +2000,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xB456f6eb9b48939513b8E9D03d56105c591ab58d");
-        const game_RANDOM1_Address_treasurebloxNative_ = "0xB456f6eb9b48939513b8E9D03d56105c591ab58d"
+        const RANDOM1_contract_treasurebloxNative_ = new web3.eth.Contract(RANDOM1_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xFF035748fC257dd6bCEb25B61862be7E064b07dE");
+        const game_RANDOM1_Address_treasurebloxNative_ = "0xFF035748fC257dd6bCEb25B61862be7E064b07dE"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox

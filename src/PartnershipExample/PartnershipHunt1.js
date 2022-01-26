@@ -540,7 +540,7 @@ const handleSubmitEnterDave = async() => {
               <div>
               {props.treasure_found1?(
                 <div>
-                <div className="siteTitle">WINNERS</div>
+                <div className="siteTitle">LOSERS</div>
                 </div>
               ):(
                 <div>
@@ -1906,7 +1906,7 @@ const handleSubmitEnterDave = async() => {
               <div>
               {props.treasure_found1?(
                 <div>
-                <div className="siteTitle">WINNERS</div>
+                <div className="siteTitle">LOSERS</div>
                 </div>
               ):(
                 <div>

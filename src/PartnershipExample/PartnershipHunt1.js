@@ -565,7 +565,7 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {false ?(
+            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
               <div>
               {props.treasure_found1?(
                 <div>
@@ -1931,11 +1931,11 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {false ?(
+            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
               <div>
 
 
-            {props.treasure_found1?(
+             {props.treasure_found1?(
                 <div>
 
                 <div className="siteTitle">WINNERS</div>

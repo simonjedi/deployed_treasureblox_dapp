@@ -143,7 +143,7 @@ const HuntWowCards = (props) => {
 
 {props.is_meter?(
   <div>
-  {false?(
+  {true?(
   <Link to="/hunt1">
     <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
   </Link>

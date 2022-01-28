@@ -184,7 +184,7 @@ const MyNav = (props) => {
 
 
 
-          {false?(
+          {props.is_meter?(
             <div>
             <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
             Elon's Rocket

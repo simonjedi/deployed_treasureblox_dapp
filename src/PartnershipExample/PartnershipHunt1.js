@@ -387,7 +387,7 @@ const handleSubmitEnterDave = async() => {
 
 
   <div id="top" style={{height: height*5}} className="custombackgroundmeter">
-  <Redirect to="" />
+  
 
 
 

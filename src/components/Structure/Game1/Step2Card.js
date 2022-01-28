@@ -30,6 +30,8 @@ import {
 
 const Step2Card = (props) => {
 
+const tokenContract = props.tokenContract;
+
 const commaNumber = require('comma-number')
 const keccak256 = require('keccak256')
 
@@ -83,6 +85,9 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
       });
 
       setloading(true);
+      await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+      await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
+
       const result1 = await props.MAIN_GAME_contract_treasurebloxNative_.methods.headStartTimeLock(props.partnerId_treasurebloxNative,username,props.allGame1_id).send({from: accounts});
 
       const enteringUser = await result1.from
@@ -260,7 +265,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
                         <div>
 
-                          {(props.state_leaderboardAddressSearch_stage_game1 == 10)?(
+                          {(props.state_leaderboardAddressSearch_stage_game1 == 0)?(
               <div>
                 {submitLevel1Secret?(
                   <div>
@@ -440,8 +445,8 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                                             <br/>
                                             <div className="descriptionTitle">LEVEL 4 - OBSERVATION</div>
                                             <div>
-                                            <Link to="#">
-                                              <Button className="customButton"  to="#">Play Level 1</Button>
+                                            <Link to="https://twitter.com/TreasureBlox">
+                                              <Button className="customButton"  to="https://twitter.com/TreasureBlox">Play Level 1</Button>
                                             </Link>
                                             </div>
                                             <br/>

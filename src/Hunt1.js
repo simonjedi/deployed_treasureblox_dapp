@@ -151,7 +151,7 @@ const Hunt1 = (props) => {
 
     setloading(true);
     window.scrollTo({top: 0,behavior: 'smooth'})
-    // const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel1Game1(true)
     setredirectLevel1(true)
 
@@ -173,7 +173,7 @@ const Hunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel2Game1(true)
     setredirectLevel2(true)
 
@@ -195,7 +195,7 @@ const Hunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_treasurebloxNative_.methods.makePaymentPlayQuest(props.partnerId_treasurebloxNative,props.allGame1_id).send({from: props.accounts[0]});
     setplayLevel3Game1(true);
     setredirectLevel3(true);
 
@@ -339,9 +339,8 @@ const handleSubmitEnterTroy = async() => {
   });
 
 
-
   setloading(true);
-  await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("500000", 'ether')).send({from: accounts[0]});
+  await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
   await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
 
   await props.MAIN_GAME_contract_treasurebloxNative_.methods.enterGame(props.partnerId_treasurebloxNative,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
@@ -506,7 +505,7 @@ const handleSubmitEnterDave = async() => {
       <div>
 
 
-      {(counter >= 0)?(
+      {(counter >= 200)?(
         <div>
 
         <Container className='mt-5' fluid="md">
@@ -810,7 +809,7 @@ const handleSubmitEnterDave = async() => {
                                   <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
                                   </Col>
                                   <Col className="MiniGameEnter" sm={2}>
-                                  Crypto Davex
+                                  Crypto Dave
                                   </Col>
                                   <Col className="MiniGameEnter" sm={2}>
                                   {props.game1team2_ppp}
@@ -873,7 +872,7 @@ const handleSubmitEnterDave = async() => {
 
                                   </Col>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter">{counter}/200</div>
+                                  <div className="StatsGameEnter">{counter}/50</div>
                                   <div className="siteTitle">Explorers Entered</div>
                                   <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
@@ -890,14 +889,14 @@ const handleSubmitEnterDave = async() => {
                                 <br/>
                                 <Row>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter">4 Levels</div>
+                                  <div className="StatsGameEnter">10 Levels</div>
                                   <div className="siteTitle">Complete Levels gain points</div>
-                                  <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
+                                  <div className="StatsGameEnterSmallSub">Solve riddles and play games to level up!</div>
 
 
                                   </Col>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>1000 MTRG</a>):(<a>$5,000</a>)}</div>
+                                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>50 MTRG</a>):(<a>$5,000</a>)}</div>
                                   <div className="siteTitle">Starting Prize</div>
                                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -952,28 +951,19 @@ const handleSubmitEnterDave = async() => {
                             <Col sm={9}>
                               <Tab.Content>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                                Are you better entering a team with less players to gain a bigger share of the prize or entering a
-                                larger team with a greater chance of reaching their points target to win faster?
-
-                                The treasure hunt will start when the number of 'explorers entered' reaches the target.
+                                Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster? The treasure hunt will start when the number of 'explorers entered' reaches the target.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                                A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
-                                solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
-                                other team members. The winning team takes all.
+                                A team works together to solve the riddles and win the treasure hunt. If a explorer in a team solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                                A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
-                                The more players you have enter your team the lower this target becomes. Your team's points to unlock the
-                                treasure vault is the PPP x the number of players in your team.
+                                A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target. The more players you have enter your team the lower this target becomes. Your team's points to unlock the treasure vault is the PPP x the number of players in your team.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                                When the points are reached the treasure vault is distributed to all team members as a % of the points
-                                they have relative to other team members. The winning team takes all!
+                                When the points are reached the treasure vault is distributed to all team members as a % of the points they have relative to other team members. The winning team takes all!
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                                  30% of the prize goes to the winner and 70% shared with all players as a % of their points.
-                                  The more you play the larger the proprtion you'll recieve.
+                                  30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
                                 </Tab.Pane>
 
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -1238,14 +1228,12 @@ const handleSubmitEnterDave = async() => {
 
                           </Row>
 
-                            <br/>
+                            <br/><br/>
                             <div className="MiniGameDetails">
-
-                            Play a luck based games at any point to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points. You will only increase you level if you play it once you have solved the first two games in the round!
+                            Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
                             <br/><br/>
+                            Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!                          </div>
 
-                            </div>
-                            <br/><br/>
 
 
                           </div>
@@ -1419,14 +1407,13 @@ const handleSubmitEnterDave = async() => {
 
 
                           </Row>
+                          <br/><br/>
 
                           <div className="MiniGameDetails">
-<br/>
-                          Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
-                          Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
-                          </div>
+                          Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
+                          <br/><br/>
+                          Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!                          </div>
 
-                          <br/>
 
 
                           </div>
@@ -1599,9 +1586,9 @@ const handleSubmitEnterDave = async() => {
                             <br/>
                             <div className="MiniGameDetails">
 
-                            Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                            Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
                             <br/><br/>
-                            The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+                            Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
 
                             </div>
                             <br/><br/>
@@ -1862,7 +1849,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter">{counter}/200</div>
+                  <div className="StatsGameEnter">{counter}/50</div>
                   <div className="siteTitle">Explorers Entered</div>
                   <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
@@ -1886,7 +1873,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>1000 MTRG</a>):(<a>$5,000</a>)}</div>
+                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>50 MTRG</a>):(<a>$5,000</a>)}</div>
                   <div className="siteTitle">Starting Prize</div>
                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1938,30 +1925,28 @@ const handleSubmitEnterDave = async() => {
               </Nav>
             </Col>
             <Col sm={9}>
-              <Tab.Content>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+            <Tab.Content>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
+              Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster? The treasure hunt will start when the number of 'explorers entered' reaches the target.
+              </Tab.Pane>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
+              A team works together to solve the riddles and win the treasure hunt. If a explorer in a team solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+              </Tab.Pane>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
+              A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target. The more players you have enter your team the lower this target becomes. Your team's points to unlock the treasure vault is the PPP x the number of players in your team.
+              </Tab.Pane>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
+              When the points are reached the treasure vault is distributed to all team members as a % of the points they have relative to other team members. The winning team takes all!
+              </Tab.Pane>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
+                30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proprtion you'll recieve.
+              </Tab.Pane>
 
-                The treasure hunt will start when the number of 'explorers entered' reaches it's target.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
-                </Tab.Pane>
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                  30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
-                </Tab.Pane>
+              <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
+                Each step requires a seperate transaction.
+              </Tab.Pane>
 
-                <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
-                  Each step requires a seperate transaction.
-                </Tab.Pane>
-
-              </Tab.Content>
+            </Tab.Content>
             </Col>
           </Row>
         </Tab.Container>

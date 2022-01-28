@@ -184,7 +184,7 @@ const MyNav = (props) => {
 
 
 
-          {props.is_meter?(
+          {false?(
             <div>
             <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
             Elon's Rocket
@@ -192,7 +192,7 @@ const MyNav = (props) => {
             </div>
           ):(
             <div>
-            
+
             </div>
           )}
 

@@ -1,0 +1,11 @@
+{
+    "name": "Troy",
+    "description": "Captain Troy 'Mighty' Armstrong",
+    "image": "https://api.treasureblox.finance/nft/battle_for_the_grid.png",
+    "attributes": [
+        {
+            "trait_type": "Power",
+            "value": 100
+        }
+    ]
+}

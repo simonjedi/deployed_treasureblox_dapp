@@ -9,8 +9,8 @@ import ReactAudioPlayer from 'react-audio-player';
 class Board extends Component {
 
   static defaultProps = {
-    nrows: 5,
-    ncols: 5,
+    nrows: 10,
+    ncols: 10,
     chanceLightStartsOn: 0.25
   };
 

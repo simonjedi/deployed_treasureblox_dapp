@@ -56,6 +56,7 @@ export default function Cell({details,updateFlag,revealcell}) {
     // rendering the cell component and showing the different values on right and left clicks
 
     return (
+
         <div style={style.cellStyle} onClick={click} onContextMenu={rightclick}>
 
             {!details.revealed && details.flagged ? (

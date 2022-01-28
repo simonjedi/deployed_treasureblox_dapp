@@ -32,6 +32,7 @@ function Board(props) {
 
 
     const handleMore = async() => {
+      window.scrollTo(0, 0);
       setredirectLevel1More(true)
       setTimeout(function(){
       },1000);
@@ -119,7 +120,7 @@ function Board(props) {
                   </div>
                 ):(
                   <div>
-                  <Redirect to="/hunt2" {...props}/>
+                  <Redirect to="/hunt1" {...props}/>
 
                   </div>
                 )}
@@ -127,7 +128,7 @@ function Board(props) {
 
                 {redirectLevel1More?(
                   <div>
-                  <Redirect to="/Game1MoreGame2" {...props}/>
+                  <Redirect to="/Game2MoreGame1/:top" {...props}/>
                   </div>
                 ):(
                   <div>

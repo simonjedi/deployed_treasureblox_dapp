@@ -43,9 +43,9 @@ const Step3Card = (props) => {
   const [secret,setSecret] = useState("");
   const [message,setMessage] = useState("");
   const [hashedSecret,setHashedSecret] = useState(undefined);
-  const [unlucky,setunlucky] = useState(false);
+  var [unlucky,setunlucky] = useState(false);
 
-  const [levelWon,setLevelWon] = useState(false);
+  var [levelWon,setLevelWon] = useState(false);
 
 
 
@@ -100,11 +100,16 @@ const Step3Card = (props) => {
           buttonClicked:"Failed_Secret_Treasure_Hunt_1"
         });
 
-        setloading(false);
-        setunlucky(true)
+        setTimeout(function(){
+            setloading(false);
+            setunlucky(true)
+        },30000);
+
       } else {
 
+
         setunlucky(false)
+
       }
 
       setSecret('');
@@ -116,78 +121,7 @@ const Step3Card = (props) => {
 
     }
 
-    const handleSubmitLevel1 = async() => {
 
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-        setunlucky(false)
-        setLevelWon(true)
-      }
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
-
-    const handleSubmitLevel2 = async() => {
-
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-
-        setunlucky(false)
-        setLevelWon(true)
-      }
-
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
-
-    const handleSubmitLevel3 = async() => {
-
-      setloading(true);
-      const result = await contract.methods.SubmitLevel(hashedSecret,secret,props.allGame1_id,message).send({from: accounts});
-
-      if (result.events.submitSecretFailEvent.returnValues[2] == true){
-        // Block of code to try
-        // const incorrect = result.events.submitSecretFailEvent.returnValues[0]
-        setloading(false);
-        setunlucky(true)
-      } else {
-        setunlucky(false)
-        setLevelWon(true)
-      }
-
-      setSecret('');
-      setMessage('');
-
-      setTimeout(function(){
-          setloading(false);
-      },1000);
-
-    }
 
     if (props.countGame1 === 0){
       props.cancelLocalTime()
@@ -226,7 +160,6 @@ const Step3Card = (props) => {
               </div>
             ) : (
               <div>
-                    <div>
 
                         {unlucky?(
 
@@ -248,251 +181,64 @@ const Step3Card = (props) => {
                               ):(
                               <div>
 
+                              {levelWon?(
+
+
+                                <div>
+                                <ReactAudioPlayer
+                                  src={winninglevel}
+                                  autoPlay
+                                />
+
+                                  <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
+
+                                  Congratulations explorer you did it now wait for the timer to expire to level up!
+
+                                </div>
+
+
+                              ):(
+                                <div>
+
+
+                                  <div className="descriptionTitle">QUICKLY SUBMIT YOUR ANSWER</div>
+
+                                  <ReactAudioPlayer
+                                    src={music}
+                                    autoPlay
+                                  />
+
+                                  <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
+
+                                  <img
+                                    alt="eyes"
+                                    src={eyes}
+                                    width="225"
+                                    className="d-inline-block align-middle"
+                                  />
+
+                                  <br />
+                                  <div>Enter your guess</div>
+                                  <Form.Control type="password"  required placeholder="Enter The Secret" name="secret" value={secret} onChange={handleInputChangeSecret}/>
+
+                                  <div>Enter a victory message!</div>
+                                  <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
+                                  <br />
+                                  <Button className="customButton" onClick={handleSubmitSecret}>Submit Secret</Button>
+                                  <br />
+                                  <br />
+                                  <div>Game Entrants {props.totalGameEntriesGame1}</div>
+
+                                </div>
+                              )}
+
 
 
                               </div>
                               )}
 
-                                  {(props.state_leaderboardAddressSearch_stage_game1 == 0)?(
 
-
-                                    <div>
-
-                                    {levelWon?(
-
-
-                                      <div>
-                                      <ReactAudioPlayer
-                                        src={winninglevel}
-                                        autoPlay
-                                      />
-
-                                        <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                        Congratulations explorer you did it now wait for the timer to expire to level up!
-
-                                      </div>
-
-
-                                    ):(
-                                      <div>
-
-                                      Level 1 Secret
-                                      <div>
-                                        <div className="descriptionTitle">QUICKLY SUBMIT YOUR ANSWER</div>
-
-                                        <ReactAudioPlayer
-                                          src={music}
-                                          autoPlay
-                                        />
-
-                                        <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                        <img
-                                          alt="eyes"
-                                          src={eyes}
-                                          width="225"
-                                          className="d-inline-block align-middle"
-                                        />
-
-                                        <br />
-                                        <div>Enter your guess</div>
-                                        <Form.Control type="password"  required placeholder="Enter The Secret" name="secret" value={secret} onChange={handleInputChangeSecret}/>
-
-                                        <div>Enter a victory message!</div>
-                                        <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
-                                        <br />
-                                        <Button className="customButton" onClick={handleSubmitLevel1}>Submit Secret</Button>
-                                        <br />
-                                        <br />
-                                        <div>Game Entrants {props.totalGameEntriesGame1}</div>
-                                      </div>
-
-                                      </div>
-                                    )}
-                                    </div>
-
-
-
-
-
-
-
-                                  ):(
-                                    <div>
-                                    {(props.state_leaderboardAddressSearch_stage_game1 == 1)?(
-
-                                      <div>
-
-                                      {levelWon?(
-
-
-                                        <div>
-                                        <ReactAudioPlayer
-                                          src={winninglevel}
-                                          autoPlay
-                                        />
-
-                                          <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                          Congratulations explorer you did it now wait for the timer to expire to level up!
-
-                                        </div>
-
-
-                                      ):(
-                                        <div>
-
-                                        Level 2 Secret
-                                        <div>
-                                          <div className="descriptionTitle">QUICKLY SUBMIT YOUR ANSWER</div>
-
-                                          <ReactAudioPlayer
-                                            src={music}
-                                            autoPlay
-                                          />
-
-                                          <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                          <img
-                                            alt="eyes"
-                                            src={eyes}
-                                            width="225"
-                                            className="d-inline-block align-middle"
-                                          />
-
-                                          <br />
-                                          <div>Enter your guess</div>
-                                          <Form.Control type="password"  required placeholder="Enter The Secret" name="secret" value={secret} onChange={handleInputChangeSecret}/>
-
-                                          <div>Enter a victory message!</div>
-                                          <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
-                                          <br />
-                                          <Button className="customButton" onClick={handleSubmitLevel2}>Submit Secret</Button>
-                                          <br />
-                                          <br />
-                                          <div>Game Entrants {props.totalGameEntriesGame1}</div>
-                                        </div>
-
-                                        </div>
-                                      )}
-
-                                      </div>
-
-
-
-
-                                    ):(
-                                      <div>
-                                      {(props.state_leaderboardAddressSearch_stage_game1 == 2)?(
-
-
-
-
-                                        <div>
-
-
-                                        {levelWon?(
-
-
-                                          <div>
-
-
-                                          <ReactAudioPlayer
-                                            src={winninglevel}
-                                            autoPlay
-                                          />
-
-                                            <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                            Congratulations explorer you did it now wait for the timer to expire to level up!
-
-                                          </div>
-
-
-                                        ):(
-                                          <div>
-
-                                            Level 3 Secret
-
-                                              <div className="descriptionTitle">QUICKLY SUBMIT YOUR ANSWER</div>
-
-                                              <ReactAudioPlayer
-                                                src={music}
-                                                autoPlay
-                                              />
-
-
-
-                                              <div className="gameTitleEnter">TIME LEFT {props.countGame1}</div>
-
-                                              <img
-                                                alt="eyes"
-                                                src={eyes}
-                                                width="225"
-                                                className="d-inline-block align-middle"
-                                              />
-
-                                              <br />
-                                              <div>Enter your guess</div>
-                                              <Form.Control type="password"  required placeholder="Enter The Secret" name="secret" value={secret} onChange={handleInputChangeSecret}/>
-
-                                              <div>Enter a victory message!</div>
-                                              <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
-                                              <br />
-                                              <Button className="customButton" onClick={handleSubmitLevel3}>Submit Secret</Button>
-                                              <br />
-                                              <br />
-                                              <div>Game Entrants {props.totalGameEntriesGame1}</div>
-                                            </div>
-
-
-                                        )}
-
-                                        </div>
-
-                                      ):(
-                                        <div>
-                                        Final Secret
-                                        <div>
-                                          <div className="descriptionTitle">QUICKLY SUBMIT YOUR ANSWER</div>
-
-                                          <ReactAudioPlayer
-                                            src={music}
-                                            autoPlay
-                                          />
-
-                                          <div className="gameTitleEnter">TIME lEFT {props.countGame1}</div>
-
-                                          <img
-                                            alt="eyes"
-                                            src={eyes}
-                                            width="225"
-                                            className="d-inline-block align-middle"
-                                          />
-
-                                          <br />
-                                          <div>Enter your guess</div>
-                                          <Form.Control type="password"  required placeholder="Enter The Secret" name="secret" value={secret} onChange={handleInputChangeSecret}/>
-
-                                          <div>Enter a victory message!</div>
-                                          <Form.Control type="text" required placeholder="Enter A Winning Message" name="message" value={message} onChange={handleInputChangeMessage}/>
-                                          <br />
-                                          <Button className="customButton" onClick={handleSubmitSecret}>Submit Secret</Button>
-                                          <br />
-                                          <br />
-                                          <div>Game Entrants {props.totalGameEntriesGame1}</div>
-                                        </div>
-                                        </div>
-                                      )}
-
-
-                                      </div>
-                                    )}
-                                    </div>
-                                  )}
-                              </div>
-                            </div>
+                    </div>
             )}
         </div>
 

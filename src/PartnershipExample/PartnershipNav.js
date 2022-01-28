@@ -129,9 +129,10 @@ const PartnerNav = (props) => {
         </div>
       ):(
         <div>
-      
+
         </div>
       )}
+
 
       <NavDropdown title="How to play / Community" id="collasible-nav-dropdown">
       <NavDropdown.Item  onClick={nav_how_to_play} target = "_blank" href="https://treasureblox.gitbook.io/how-to-play/">How to Play</NavDropdown.Item>

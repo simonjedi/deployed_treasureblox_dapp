@@ -212,7 +212,6 @@ const Cell = ({ rowIndex, columnIndex, cellValue, gameOver, toggle, difficulty }
     <td>
       <div className={light} onClick={() => {toggle(rowIndex, columnIndex)}}></div>
     </td>
-    <div>
       <p>The object of this game is to set the entire board to blue.</p>
 
       <div className="buttons">

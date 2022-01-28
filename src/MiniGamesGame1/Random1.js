@@ -184,7 +184,7 @@ const Random1 = (props) => {
 
         <div style={{height: height}}>
 
-        <div className="siteTitle">Roll Troy to Win Roll Crypto Dave to Lose!</div>
+        <div className="siteTitle">Roll Elon to Win Roll Crypto Dave to Lose!</div>
         <div className="siteTitle">1 in 4 chance to win!</div>
 
 

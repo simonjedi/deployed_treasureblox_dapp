@@ -91,7 +91,7 @@ class Board extends Component {
             </div>
 
 
-            <Redirect to="/Game2MoreGame1"/>
+            <Redirect to="/Game2MoreGame2"/>
 
           </div>
         </center>

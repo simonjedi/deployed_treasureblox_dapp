@@ -186,7 +186,7 @@ const Random3 = (props) => {
 
         <div style={{height: height}}>
 
-        <div className="siteTitle">Roll Troy to win and Crypto Dave to Lose!</div>
+        <div className="siteTitle">Roll Elon to win and Crypto Dave to Lose!</div>
 
 
         <RandomBoard {...props}/>

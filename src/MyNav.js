@@ -9,6 +9,7 @@ import Hunt1 from "./Hunt1";
 
 import logo from './TreasureBlox_Logo.png';
 import Pdf from './components/Structure/images/TreasureBloxWhitePaperV1.pdf';
+import logo_meter from './PartnershipExample/assets/images/treasurebloxXmeter.png';
 
 
 import {
@@ -163,12 +164,14 @@ const MyNav = (props) => {
 
       <Link className='customLinks' to="/home">
       <Navbar.Brand>
-       <img
-         alt="treasureblox_logo"
-         src={logo}
-         width="225"
-         className="d-inline-block align-middle"
-       />
+      <img
+        alt="treasureblox_logo"
+
+        src={props.is_meter?(logo_meter):(logo)}
+        width="225"
+        className="d-inline-block align-middle"
+      />
+
      </Navbar.Brand>
      </Link>
 
@@ -179,17 +182,20 @@ const MyNav = (props) => {
           Home
           </Link>
 
+
+
           {props.is_meter?(
             <div>
-            <Link className='customLinks' to="/TreasureBloxPartner/:top">
-            Battle For the Grid
+            <Link className='customLinks' onClick={nav_blox_hunt1_link_click} to="/hunt1">
+            Elon's Rocket
             </Link>
             </div>
           ):(
             <div>
-
+            
             </div>
           )}
+
 
       {false?(
         <div>

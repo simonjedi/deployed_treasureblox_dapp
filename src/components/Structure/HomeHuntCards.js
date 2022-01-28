@@ -103,8 +103,11 @@ const HuntWowCards = (props) => {
 
           (
 
-            <Button className="customButton" onClick={view_strike_fighter_view_click} >View Battle Grid</Button>):
-          (
+            <div>
+            <Card.Title className="gameTitle">Game Over Crypto Dave Wins!</Card.Title>
+            </div>
+
+          ):(
           <div>
             {false?(
             <Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>
@@ -132,20 +135,41 @@ const HuntWowCards = (props) => {
       <Card.Img variant="top" src={img4} alt="Logo" className='customRounded'/>
       <Card.Body >
         <Card.Title className="gameTitle">Elon's lost his Rocket!</Card.Title>
-        <Card.Title className="gameTitle">Troy Vs Crypto Dave</Card.Title>
+        {props.is_meter?(<Card.Title className="gameTitle">Earn your MTRG!</Card.Title>):(<Card.Title className="gameTitle">Troy Vs Crypto Dave</Card.Title>)}
 
         <div>Elon has lost his rocket! In this epic round you'll need to keep a cool head to help Captain Troy 'Mighty' Armstrong find Elon's rocket so he can complete his trip to Mars!</div>
         <br/>
-        {false?(
-        <Link to="/hunt1">
-          <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
-        </Link>
 
-      ):(
-        <div>
-        <Card.Title className="gameTitle">Launching Soon!</Card.Title>
-        </div>
-      )}
+
+{props.is_meter?(
+  <div>
+  {false?(
+  <Link to="/hunt1">
+    <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
+  </Link>
+
+):(
+  <div>
+  <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+  </div>
+)}
+  </div>
+):(
+  <div>
+
+  {false?(
+  <Link to="/hunt1">
+    <Button className="customButton" onClick={view_elon_home_view_click} to="/hunt1">View Elon's Quest</Button>
+  </Link>
+
+):(
+  <div>
+  <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+  </div>
+)}
+  </div>
+)}
+
 
 
       </Card.Body>
@@ -164,16 +188,33 @@ const HuntWowCards = (props) => {
 
         <div>Crypto Dave has broken into fort blox and has access to all of the security equipment and has scrambled the gates to enter! Can you break in with your team to unlock the treasure vault?</div>
         <br/>
-
-        {false?(
-          <Link to="/hunt2">
-            <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
-          </Link>
+        {props.is_meter?(
+          <div>
+          {false?(
+            <Link to="/hunt2">
+              <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
+            </Link>
+          ):(
+            <div>
+            <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+            </div>
+          )}
+          </div>
         ):(
           <div>
-          <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+          {false?(
+            <Link to="/hunt2">
+              <Button className="customButton" onClick={fort_blox_home_view_click} to="/hunt2">View Fort Blox Quest</Button>
+            </Link>
+          ):(
+            <div>
+            <Card.Title className="gameTitle">Launching Soon!</Card.Title>
+            </div>
+          )}
+
           </div>
         )}
+
 
         <br/>
       </Card.Body>

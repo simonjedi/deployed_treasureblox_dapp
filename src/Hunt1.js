@@ -8,10 +8,13 @@ import moment from 'moment';
 import img1 from './components/Structure/images/PowerPose.gif';
 import img2 from './components/Structure/images/Cash.gif';
 
+import img_mine from './components/Structure/images/mine_field.png';
 
 import img4 from './components/Structure/images/lift_off.png';
 import img5 from './components/Structure/images/LightsOut.png';
 import img3 from './components/Structure/images/the_maze.png';
+import speaktoelon from './components/Structure/images/speaktoelon.png';
+
 
 
 import flight_training_img from "./MiniGamesGame1/assets/images/flight_training.png";
@@ -23,7 +26,8 @@ import rescue from "./MiniGamesGame1/assets/images/emergency_landing.png";
 
 import lucky_lift_off from "./components/Structure/images/lucky_lift_off.png";
 import mystery_madness from "./components/Structure/images/mystery_madness.png";
-
+import meter_to_the_moon from "./components/Structure/images/meter_to_the_moon.png";
+import magic from "./components/Structure/images/magic.png";
 
 
 
@@ -378,7 +382,6 @@ const handleSubmitEnterDave = async() => {
 
   // const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
 
-
     return (
 
 
@@ -473,7 +476,7 @@ const handleSubmitEnterDave = async() => {
 
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Play To Earn - Elon's Lost His Rocket</title>
+        <title>TreasureBlox | Elon's Lost His Rocket</title>
 
       </Helmet>
       {winner? (
@@ -507,10 +510,14 @@ const handleSubmitEnterDave = async() => {
         <div>
 
         <Container className='mt-5' fluid="md">
-              <div className="siteTitle">Play 2 Earn - Elon's lost his rocket!</div>
+              <div className="siteTitle">Elon's lost his rocket!</div>
 
               <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
               <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+
+<center>
+              <div className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+</center>
 
               <Container className='mt-5' fluid="md">
 
@@ -527,25 +534,62 @@ const handleSubmitEnterDave = async() => {
                 <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
 
-                {props.game1team1_team_actual_points > (props.game1team1_ppp*props.game1team1_team_entries) ?(
+                {props.treasure_found1?(
                   <div>
-                  {props.treasure_found1?(
+                  {props.game1team1_team_actual_points > (props.game1team1_ppp*props.game1team1_team_entries)?(
                     <div>
-                    <div className="siteTitle">WINNERS</div>
+
+                    {props.treasure_found1?(
+                      <div>
+                      {props.game1team1_team_actual_points > (props.game1team1_ppp*props.game1team1_team_entries)?(
+                        <div className="siteTitle">WINNERS</div>
+
+                      ):(
+                        <div className="siteTitle">LOSERS</div>
+                      )}
+
+                      </div>
+                    ):(
+                      <div>
+                      <center>
+                      <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                      </center>
+                      </div>
+                    )}
+
+
                     </div>
                   ):(
                     <div>
-                    <center>
-                    <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
-                    </center>
+
+                    {props.treasure_found1?(
+                      <div>
+                      {props.game1team1_team_actual_points > (props.game1team1_ppp*props.game1team1_team_entries)?(
+                        <div className="siteTitle">WINNERS</div>
+
+                      ):(
+                        <div className="siteTitle">LOSERS</div>
+                      )}
+
+                      </div>
+                    ):(
+                      <div>
+                      <center>
+                      <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                      </center>
+                      </div>
+                    )}
+
+
                     </div>
                   )}
+
+
                   </div>
                 ):(
                   <div>
                   </div>
                 )}
-
 
                 </Col>
                 <Col sm={6}>
@@ -556,20 +600,57 @@ const handleSubmitEnterDave = async() => {
                 <div className="siteTitle">Team Crypto Dave</div>
                 <div className="StatsGameEnterSmallSub">Points Required To Win!!</div>
 
-                {props.game1team2_team_actual_points > (props.game1team2_ppp*props.game1team2_team_entries) ?(
+                {props.treasure_found1?(
                   <div>
-                  {props.treasure_found1?(
+                  {props.game1team2_team_actual_points > (props.game1team2_ppp*props.game1team2_team_entries)?(
                     <div>
 
-                    <div className="siteTitle">WINNERS</div>
+                    {props.treasure_found1?(
+                      <div>
+                      {props.game1team2_team_actual_points > (props.game1team2_ppp*props.game1team2_team_entries)?(
+                        <div className="siteTitle">WINNERS</div>
+
+                      ):(
+                        <div className="siteTitle">LOSERS</div>
+                      )}
+
+                      </div>
+                    ):(
+                      <div>
+                      <center>
+                      <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                      </center>
+                      </div>
+                    )}
+
+
                     </div>
                   ):(
                     <div>
-                    <center>
-                    <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
-                    </center>
+
+                    {props.treasure_found1?(
+                      <div>
+                      {props.game1team2_team_actual_points > (props.game1team2_ppp*props.game1team2_team_entries)?(
+                        <div className="siteTitle">WINNERS</div>
+
+                      ):(
+                        <div className="siteTitle">LOSERS</div>
+                      )}
+
+                      </div>
+                    ):(
+                      <div>
+                      <center>
+                      <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                      </center>
+                      </div>
+                    )}
+
+
                     </div>
                   )}
+
+
                   </div>
                 ):(
                   <div>
@@ -592,10 +673,14 @@ const handleSubmitEnterDave = async() => {
                       <Nav.Link  className="MiniGameEnterTab" eventKey="Welcome">Dashboard</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Luck Games</Nav.Link>
+                      <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Round 1</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Skill Games</Nav.Link>
+                      <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Round 2</Nav.Link>
+                    </Nav.Item>
+
+                    <Nav.Item>
+                      <Nav.Link  className="MiniGameEnterTab" eventKey="link-4">Round 3</Nav.Link>
                     </Nav.Item>
 
                     <Nav.Item>
@@ -864,23 +949,31 @@ const handleSubmitEnterDave = async() => {
                               </Nav>
                             </Col>
                             <Col sm={9}>
+                            <Col sm={9}>
                               <Tab.Content>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="first">
-                                Are you better entering a team with less players to gain a bigger share of the prize or entering a larger team with a greater chance of reaching their points target to win faster?
+                                Are you better entering a team with less players to gain a bigger share of the prize or entering a
+                                larger team with a greater chance of reaching their points target to win faster?
 
-                                The treasure hunt will start when the number of 'explorers entered' reaches it's target.
+                                The treasure hunt will start when the number of 'explorers entered' reaches the target.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="second">
-                                A team works together to solve the clues and solve the treasure hunt. If a explorer in a team solves the clue they will receive 30% of the prize pot. The remaining 70% will be shared with other team members. The winning team takes all.
+                                A team works together to solve the riddles and win the treasure hunt. If a explorer in a team
+                                solves the final riddle they will recieve 30% of the prize pot. The remaining 70% will be shared with
+                                other team members. The winning team takes all.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="third">
-                                A team can also win by reaching a certain number of points. Each team has a points per player (PPP) ammount. The more players you have enter your team the lower this score goes. Your teams points to unlock the treasure vault is the PPP x the number of players in your team.
+                                A team can also win by reaching a certain number of points. To find out other ways of winning please view step 2. Each team has a points per player (PPP) target.
+                                The more players you have enter your team the lower this target becomes. Your team's points to unlock the
+                                treasure vault is the PPP x the number of players in your team.
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fourth">
-                                When the points are reached the team pot is distributed to all team members as a % of the points they have compaired to other team members. The winning team takes all!
+                                When the points are reached the treasure vault is distributed to all team members as a % of the points
+                                they have relative to other team members. The winning team takes all!
                                 </Tab.Pane>
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="fith">
-                                  30% of the prize goes to the winner and 70% shared with all players as a % of their points. The more you play the larger the proportion you'll receive.
+                                  30% of the prize goes to the winner and 70% shared with all players as a % of their points.
+                                  The more you play the larger the proprtion you'll recieve.
                                 </Tab.Pane>
 
                                 <Tab.Pane className="MiniGameTitleEnterTargetRaised" eventKey="seventh">
@@ -888,6 +981,7 @@ const handleSubmitEnterDave = async() => {
                                 </Tab.Pane>
 
                               </Tab.Content>
+                            </Col>
                             </Col>
                           </Row>
                         </Tab.Container>
@@ -967,14 +1061,14 @@ const handleSubmitEnterDave = async() => {
                                 {(props.step5_game1_treasurebloxNative_ > 0)?(
                                   <ListGroup className="list-group-mine" >
                                   <ListGroup.Item >
-                                    Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins and level up. Note when you reach level 3 the only way to win is through a team points victory or by solving the final riddle!
+                                    Step 5 Complete! - Congratulations played a luck game! Play more to earn instant wins. Note your level will only increase once when you win a luck game!
                                   </ListGroup.Item>
                                   </ListGroup>
                                 ):(
                                   <ListGroup className="list-group-not-complete">
 
                                   <ListGroup.Item >
-                                    Step 5 - Play a luck game - You can level up quickly by playing a luck game. Some are easier than others. Luck games pay out instant wins dependant on their difficulty! The also level you up so you don't need to solve riddles!
+                                    Step 5 - Play a luck games - Luck games pay out instant wins dependant on their difficulty! The also level you up so you can move to the next round. This means you earn tokens on your journey to success!
                                   </ListGroup.Item>
                                   </ListGroup>
                                 )}
@@ -999,9 +1093,97 @@ const handleSubmitEnterDave = async() => {
 
                         {(props.userEntered_game1) ?(
                           <div >
-                          <div className="siteTitle">Complete luck based games to for instant wins, earn tokens, points and level up!</div>
+                          <div className="siteTitle">Round 1 - Complete the first 2 games and finish with the luck based game to progress to Round 2. It's important you submit the answers in the right order or you won't level up!</div>
                           <br/>
                           <Row>
+                          <Col sm={4}>
+
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={speaktoelon} alt="Logo" className='cardRoundedMiniGame'/>
+
+                            <Card.Body className="customBodyMiniGame">
+                              <Card.Header className="MiniGameTitle">Level 1 - Speak to Elon!
+
+                              </Card.Header>
+                              <Card.Header className="MiniGameTitle">
+                              <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                              <br/>
+                              <br/>
+                              How many rockets + Troys?
+
+                            <br />10 game points
+                            <br />level up + 1
+
+                              </Card.Header>
+                              <br/>
+                              <div className="MiniGameDetails">
+                              <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                              {props.is_meter?(<a>Free to play</a>):(<a>0.1 BNB</a>)}
+
+
+                              </div>
+                              <br/>
+                              <Button className="customButton" >Play Level 1</Button>
+
+
+                              <footer className="blockquote">
+                              </footer>
+
+                              <br />
+
+
+                            </Card.Body>
+                          </Card>
+                          <br className="d-lg-none"/>
+                          <br className="d-lg-none"/>
+                          </Col>
+
+                          <Col sm={4}>
+
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={img4} alt="Logo" className='cardRoundedMiniGame'/>
+
+                            <Card.Body className="customBodyMiniGame">
+                              <Card.Header className="MiniGameTitle">Level 2 - Lift Off!
+
+                              </Card.Header>
+                              <Card.Header className="MiniGameTitle">
+                              <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+                              <br/><br/>
+                              Earn Level 2 clue for win.
+
+                            <br />20 game points
+                            <br />level up + 1
+
+                              </Card.Header>
+                              <br/>
+                              <div className="MiniGameDetails">
+                              <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                              Cost to play {props.is_meter?(<a>0.2 MTRG</a>):(<a>0.1 BNB</a>)}
+
+
+                              </div>
+                              <br/>
+                              <Button className="customButton" onClick={handlePayQuest}>Play Level 2</Button>
+
+
+                              <footer className="blockquote">
+                              </footer>
+
+                              <br />
+
+
+                            </Card.Body>
+                          </Card>
+                          <br className="d-lg-none"/>
+                          <br className="d-lg-none"/>
+                          </Col>
 
                           <Col sm={4}>
 
@@ -1010,72 +1192,35 @@ const handleSubmitEnterDave = async() => {
                           <Card.Img variant="top" src={lucky_lift_off} alt="Logo" className='cardRoundedMiniGame'/>
 
                             <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Lucky Lift Off - Easy!
+                              <Card.Header className="MiniGameTitle">Level 3 - Pure Luck!
 
                               </Card.Header>
 
-
-                              <Card.Header className="MiniGameTitle">1 in 4 chance to win!
-                              <br />2X Play Cost Token Return
-                            <br />15 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
+                              <Card.Header className="MiniGameTitle">
+                              <a className='neon-green ' style={{"text-decoration": "none"}}>2X</a>
                               <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_treasurebloxNative_} Blox
-
-                              </div>
+                              <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                               <br/>
-                              <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
+                              1 in 4 chance to win!
 
-
-                              <footer className="blockquote">
-
-
-                              </footer>
-                              <br />
-
-
-
-
-                            </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
-
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Flair Gun - Intermidiate!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">1 in 6 chance to win!
-                              <br />3X Play Cost Token Return
                             <br />30 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
+                            <br />Play any time for instant wins!<br />
+
                               </Card.Header>
-
                               <br/>
-
                               <div className="MiniGameDetails">
+                              <br /><div className="MiniGameDetails">Level up to next Round if you are level 2</div>
 
-                              Cost to play {props.CostToPlay_treasurebloxNative_} Blox
-                              <br/>
+
+                              Cost to play {props.is_meter?(<a>1.2 MTRG</a>):(<a>0.1 BNB</a>)}
 
                               </div>
                               <br/>
-                              <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
+                              <Button className="customButton" onClick={handleRandomFunc1}>Play Level 3</Button>
 
 
                               <footer className="blockquote">
+
 
                               </footer>
                               <br />
@@ -1085,49 +1230,10 @@ const handleSubmitEnterDave = async() => {
 
                             </Card.Body>
                           </Card>
-                            <br className="d-lg-none"/>
-                            <br className="d-lg-none"/>
-
-                          </Col>
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={mystery_madness} alt="Logo" className='cardRoundedMiniGame'/>
-
-                          <Card.Body className="customBodyMiniGame">
-                            <Card.Header className="MiniGameTitle">Mystery Madness - Difficult!
-
-                            </Card.Header>
-                            <Card.Header className="MiniGameTitle">1 in 20 chance to win!
-                            <br />5X Play Cost Token Return
-                          <br />100 game points
-                          <br />level up + 1
-                        <br />2 points for loss<br />
-                            </Card.Header>
-
-                            <br/>
-                            <div className="MiniGameDetails">
-
-                            Cost to play {props.CostToPlay_treasurebloxNative_} Blox
-
-                            </div>
-                            <br/>
-                            <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
-
-
-
-                            <footer className="blockquote">
-
-                            </footer>
-
-                            <br />
-
-
-                          </Card.Body>
-                          </Card>
                           <br className="d-lg-none"/>
                           <br className="d-lg-none"/>
                           </Col>
+
 
 
                           </Row>
@@ -1135,9 +1241,8 @@ const handleSubmitEnterDave = async() => {
                             <br/>
                             <div className="MiniGameDetails">
 
-                            Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                            Play a luck based games at any point to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points. You will only increase you level if you play it once you have solved the first two games in the round!
                             <br/><br/>
-                            The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
 
                             </div>
                             <br/><br/>
@@ -1170,111 +1275,37 @@ const handleSubmitEnterDave = async() => {
                         {(props.userEntered_game1) ?(
                           <div >
 
-                          <div className="siteTitle">Complete the levels in order to find clues and submit them to the Vault tab above using a timelock!</div>
+                          <div className="siteTitle">Round 2 - Complete game 4 & 5 then finish with the luck based game to progress to Round 3. It's important you submit the answers in the right order or you won't level up!</div>
                           <br/>
                           <Row>
 
                           <Col sm={4}>
 
-
                           <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={img4} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Level 1 - Lift Off!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
-                            <br />30 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
-                              <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_treasurebloxNative_} Blox
-
-
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handlePayQuest}>Play Level 1</Button>
-
-
-                              <footer className="blockquote">
-                              </footer>
-
-                              <br />
-
-
-                            </Card.Body>
-                          </Card>
-                          <br className="d-lg-none"/>
-                          <br className="d-lg-none"/>
-                          </Col>
-
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={img5} alt="Logo" className='cardRoundedMiniGame'/>
-
-                            <Card.Body className="customBodyMiniGame">
-                              <Card.Header className="MiniGameTitle">Level 2 - Lights Out!
-
-                              </Card.Header>
-                              <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
-                            <br />60 game points
-                            <br />level up + 1
-                            <br />2 points for loss<br />
-
-                              </Card.Header>
-                              <br/>
-                              <div className="MiniGameDetails">
-
-                              Cost to play {props.CostToPlay_treasurebloxNative_} Blox
-
-                              </div>
-                              <br/>
-                              <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
-
-
-                              <footer className="blockquote">
-                              </footer>
-
-                              <br />
-
-
-                            </Card.Body>
-                          </Card>
-                            <br className="d-lg-none"/>
-                            <br className="d-lg-none"/>
-
-                          </Col>
-                          <Col sm={4}>
-
-                          <Card className='cardRounded border border-danger'>
-                          <Card.Img variant="top" src={img3} alt="Logo" className='cardRoundedMiniGame'/>
+                          <Card.Img variant="top" src={meter_to_the_moon} alt="Logo" className='cardRoundedMiniGame'/>
 
                           <Card.Body className="customBodyMiniGame">
-                            <Card.Header className="MiniGameTitle">Level 3 - Mystery!
+                            <Card.Header className="MiniGameTitle">Level 4 - Meter To The Moon!
 
                             </Card.Header>
 
-
-                            <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
-                          <br />90 game points
+                            <Card.Header className="MiniGameTitle">
+                            <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                            <br/><br/>
+                            Hashtag on the tweet
+                          <br />40 game points
                           <br />level up + 1
-                          <br />2 points for loss<br />
 
                             </Card.Header>
                             <br/>
                             <div className="MiniGameDetails">
 
-                            Cost to play {props.CostToPlay_treasurebloxNative_} Blox
+                            <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
 
+                            {props.is_meter?(<a>Free to play</a>):(<a>0.1 BNB</a>)}
                             </div>
                             <br/>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 4</Button>
 
 
 
@@ -1291,6 +1322,101 @@ const handleSubmitEnterDave = async() => {
                           <br className="d-lg-none"/>
                           </Col>
 
+                          <Col sm={4}>
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={img_mine} alt="Logo" className='cardRoundedMiniGame'/>
+
+                            <Card.Body className="customBodyMiniGame">
+                              <Card.Header className="MiniGameTitle">Level 5 - Mine Field!
+
+                              </Card.Header>
+                              <Card.Header className="MiniGameTitle">
+                              <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+                              <br/><br/>
+                              Earn Level 5 clue for win.
+                            <br />50 game points
+                            <br />level up + 1
+
+                              </Card.Header>
+                              <br/>
+                              <div className="MiniGameDetails">
+
+                              <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+                              Cost to play {props.is_meter?(<a>0.2 MTRG</a>):(<a>0.1 BNB</a>)}
+                              </div>
+                              <br/>
+                              <Button className="customButton" onClick={handlePayQuest2}>Play Level 5</Button>
+
+
+                              <footer className="blockquote">
+                              </footer>
+
+                              <br />
+
+
+                            </Card.Body>
+                          </Card>
+                            <br className="d-lg-none"/>
+                            <br className="d-lg-none"/>
+
+                          </Col>
+
+
+                          <Col sm={4}>
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
+
+                            <Card.Body className="customBodyMiniGame">
+                              <Card.Header className="MiniGameTitle">Level 6 - Flair Gun!
+
+                              </Card.Header>
+                              <Card.Header className="MiniGameTitle">
+
+                              <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>3X</a>
+                              <br/>
+                              <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>                            <br />30 game points
+                              <br />1 in 6 chance to win!
+                              <br />60 game points
+
+                            <br />level up + 1
+                              </Card.Header>
+
+                              <br/>
+
+                              <div className="MiniGameDetails">
+
+                              <br /><div className="MiniGameDetails">Level up to next Round if you are level 5</div>
+
+
+                              Cost to play {props.is_meter?(<a>1.2 MTRG</a>):(<a>0.1 BNB</a>)}                              <br/>
+
+                              </div>
+                              <br/>
+                              <Button className="customButton" onClick={handleRandomFunc} >Play Level 6</Button>
+
+
+                              <footer className="blockquote">
+
+                              </footer>
+                              <br />
+
+
+
+
+                            </Card.Body>
+                          </Card>
+                            <br className="d-lg-none"/>
+                            <br className="d-lg-none"/>
+
+                          </Col>
+
+
+
+
+
 
                           </Row>
 
@@ -1301,6 +1427,184 @@ const handleSubmitEnterDave = async() => {
                           </div>
 
                           <br/>
+
+
+                          </div>
+                        ):(
+                          <div style={{height: height}}>
+
+
+
+                          </div>
+                        )}
+
+                        <br/>
+
+
+
+
+
+
+                        </CardGroup>
+
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="link-4" >
+
+                        <CardGroup className='mt-5'>
+
+                        {(props.userEntered_game1) ?(
+                          <div >
+                          <div className="siteTitle">Round 3 - Complete game 7 & 8 then finish with the luck based game to progress to and sulve the final riddle. It's important you submit the answers in the right order or you won't progress!</div>
+                          <br/>
+                          <Row>
+
+
+
+
+                          <Col sm={4}>
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={magic} alt="Logo" className='cardRoundedMiniGame'/>
+
+                          <Card.Body className="customBodyMiniGame">
+                            <Card.Header className="MiniGameTitle">Level 7 - Meter Magic!
+
+                            </Card.Header>
+
+                            <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                            <br/><br/>
+                            <Card.Header className="MiniGameTitle">
+                            What am I?
+                          <br />70 game points
+                          <br />level up + 1
+
+                            </Card.Header>
+                            <br/>
+                            <div className="MiniGameDetails">
+
+                            <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                            {props.is_meter?(<a>Free to play</a>):(<a>0.1 BNB</a>)}
+                            </div>
+                            <br/>
+                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 7</Button>
+
+
+
+
+                            <footer className="blockquote">
+                            </footer>
+
+                            <br />
+
+
+                          </Card.Body>
+                          </Card>
+                          <br className="d-lg-none"/>
+                          <br className="d-lg-none"/>
+                          </Col>
+
+                          <Col sm={4}>
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={img3} alt="Logo" className='cardRoundedMiniGame'/>
+
+                          <Card.Body className="customBodyMiniGame">
+                            <Card.Header className="MiniGameTitle">Level 8 - Mystery!
+
+                            </Card.Header>
+                            <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+
+                            <br/><br/>
+                            <Card.Header className="MiniGameTitle">
+                            Earn Level 3 clue for win.
+                          <br />80 game points
+                          <br />level up + 1
+
+                            </Card.Header>
+                            <br/>
+                            <div className="MiniGameDetails">
+
+                            <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                            Cost to play {props.is_meter?(<a>0.2 MTRG</a>):(<a>0.1 BNB</a>)}
+                            </div>
+                            <br/>
+                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 8</Button>
+
+
+
+
+                            <footer className="blockquote">
+                            </footer>
+
+                            <br />
+
+
+                          </Card.Body>
+                          </Card>
+                          <br className="d-lg-none"/>
+                          <br className="d-lg-none"/>
+                          </Col>
+
+                          <Col sm={4}>
+
+                          <Card className='cardRounded border border-danger'>
+                          <Card.Img variant="top" src={mystery_madness} alt="Logo" className='cardRoundedMiniGame'/>
+
+                          <Card.Body className="customBodyMiniGame">
+                            <Card.Header className="MiniGameTitle">Level 9 - Mystery Madness!
+
+                            </Card.Header>
+                            <Card.Header className="MiniGameTitle">
+                            <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
+                            <br/>
+                            <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                            <br/>1 in 20 chance to win!
+                            <br />90 game points
+                            <br />level up + Final Round
+                            </Card.Header>
+
+                            <br/>
+                            <div className="MiniGameDetails">
+                            <br /><div className="MiniGameDetails">Level to the final clue with this Luck based game!</div>
+
+                            Cost to play {props.is_meter?(<a>1.2 MTRG</a>):(<a>0.1 BNB</a>)}
+
+                            <br/>
+                            </div>
+                            <br/>
+                            <Button className="customButton" onClick={handleRandomFunc3}>Level 9</Button>
+
+
+
+                            <footer className="blockquote">
+
+                            </footer>
+
+                            <br />
+
+
+                          </Card.Body>
+                          </Card>
+                          <br className="d-lg-none"/>
+                          <br className="d-lg-none"/>
+                          </Col>
+
+
+                          </Row>
+
+                            <br/>
+                            <div className="MiniGameDetails">
+
+                            Play a luck based game to win! If you win you'll instatly recive a multiplierof the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                            <br/><br/>
+                            The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+
+                            </div>
+                            <br/><br/>
 
 
                           </div>
@@ -1372,9 +1676,15 @@ const handleSubmitEnterDave = async() => {
         </div>
       ):(
         <div style={{height: height}}>
+        <div className="siteTitle">Elon's lost his rocket!</div>
+
+
+
         <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
         <div className="SubTitleHeader">Who's side will you join in the battle for the metaverse</div>
-
+        <center>
+                <div className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
+        </center>
         <Container className='mt-5' fluid="md">
         <Tab.Container defaultActiveKey="first">
 
@@ -1702,7 +2012,7 @@ const handleSubmitEnterDave = async() => {
 
 </div>
 
-</div>
+      </div>
 
 
     );

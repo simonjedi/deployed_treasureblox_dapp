@@ -193,7 +193,7 @@ const PartnershipHunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel3Game1(true);
     setredirectLevel3(true);
@@ -472,12 +472,15 @@ const handleSubmitEnterDave = async() => {
   )}
 
 
+
+
   <div id="top" className="spaceTopHome">
   <Helmet>
     <title>TreasureBlox | TreasureBlox X Jetfuel</title>
 
   </Helmet>
-  {winner? (
+  // {winner}
+  {true? (
     <div><Confetti
       width={width}
       height={height}
@@ -536,19 +539,57 @@ const handleSubmitEnterDave = async() => {
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
 
-            {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
+            {props.treasure_found1?(
               <div>
-              {props.treasure_found1?(
+              {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
                 <div>
-                <div className="siteTitle">LOSERS</div>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               ):(
                 <div>
-                <center>
-                <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
-                </center>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               )}
+
+
               </div>
             ):(
               <div>
@@ -565,18 +606,54 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+            {props.treasure_found1  ?(
               <div>
-              {props.treasure_found1?(
+              {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
                 <div>
 
-                <div className="siteTitle">WINNERS</div>
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               ):(
                 <div>
-                <center>
-                <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
-                </center>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
+
                 </div>
               )}
               </div>
@@ -716,7 +793,18 @@ const handleSubmitEnterDave = async() => {
                                 </div>
                               ):(
                                 <div>
-                                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                                {props.treasure_found1?(
+                                  <div>
+
+                                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+                                  </div>
+                                ):(
+                                  <div>
+                                  <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+
+                                  </div>
+                                )}
                                 </div>
                               )}
 
@@ -768,7 +856,19 @@ const handleSubmitEnterDave = async() => {
                                 </div>
                               ):(
                                 <div>
-                                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                                {props.treasure_found1?(
+                                  <div>
+
+                                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+                                  </div>
+                                ):(
+                                  <div>
+                                  <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+
+
+                                  </div>
+                                )}
                                 </div>
                               )}
 
@@ -1517,7 +1617,18 @@ const handleSubmitEnterDave = async() => {
                 </div>
               ):(
                 <div>
-                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                {props.treasure_found1?(
+                  <div>
+                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                  </div>
+                ):(
+                  <div>
+
+                  <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                  </div>
+                )}
                 </div>
               )}
 
@@ -1569,7 +1680,18 @@ const handleSubmitEnterDave = async() => {
                 </div>
               ):(
                 <div>
-                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                {props.treasure_found1?(
+                  <div>
+                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                  </div>
+                ):(
+                  <div>
+
+                  <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                  </div>
+                )}
                 </div>
               )}
 
@@ -1879,7 +2001,7 @@ const handleSubmitEnterDave = async() => {
 
     <Container className='mt-5' fluid="md">
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
-          <div className="SubTitleHeader">Who's side will you join?</div>
+          <div className="SubTitleHeader">Who's side will you join ?</div>
 
           <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
           <center>
@@ -1902,19 +2024,57 @@ const handleSubmitEnterDave = async() => {
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
 
-            {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries) ?(
+            {props.treasure_found1?(
               <div>
-              {props.treasure_found1?(
+              {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
                 <div>
-                <div className="siteTitle">LOSERS</div>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               ):(
                 <div>
-                <center>
-                <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
-                </center>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team1_xyz_team_actual_points > (props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam1Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               )}
+
+
               </div>
             ):(
               <div>
@@ -1931,24 +2091,56 @@ const handleSubmitEnterDave = async() => {
             <div className="siteTitle">Team Crypto Dave</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
 
-            {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries) ?(
+            {props.treasure_found1  ?(
               <div>
-
-
-             {props.treasure_found1?(
+              {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
                 <div>
 
-                <div className="siteTitle">WINNERS</div>
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
                 </div>
               ):(
                 <div>
-                <center>
-                <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
-                </center>
+
+                {props.treasure_found1?(
+                  <div>
+                  {props.game1team2_xyz_team_actual_points > (props.game1team2_xyz_ppp*props.game1team2_xyz_team_entries)?(
+                    <div className="siteTitle">WINNERS</div>
+
+                  ):(
+                    <div className="siteTitle">LOSERS</div>
+                  )}
+
+                  </div>
+                ):(
+                  <div>
+                  <center>
+                  <Button className="customButtonEntering" onClick={handleTryTeam2Win}>Push To Win!</Button>
+                  </center>
+                  </div>
+                )}
+
+
+
                 </div>
               )}
-
-
               </div>
             ):(
               <div>
@@ -2085,7 +2277,20 @@ const handleSubmitEnterDave = async() => {
                                 </div>
                               ):(
                                 <div>
-                                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+
+
+                                {props.treasure_found1?(
+                                  <div>
+                                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                                  </div>
+                                ):(
+                                  <div>
+
+                                  <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                                  </div>
+                                )}
                                 </div>
                               )}
 
@@ -2137,7 +2342,18 @@ const handleSubmitEnterDave = async() => {
                                 </div>
                               ):(
                                 <div>
-                                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                                {props.treasure_found1?(
+                                  <div>
+                                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                                  </div>
+                                ):(
+                                  <div>
+
+                                  <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                                  </div>
+                                )}
                                 </div>
                               )}
 
@@ -2882,7 +3098,18 @@ const handleSubmitEnterDave = async() => {
                 </div>
               ):(
                 <div>
-                <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                {props.treasure_found1?(
+                  <div>
+                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                  </div>
+                ):(
+                  <div>
+
+                  <Button className="customButtonEntering" onClick={handleSubmitEnterTroy}>Join Team</Button>
+                  </div>
+                )}
                 </div>
               )}
 
@@ -2934,7 +3161,18 @@ const handleSubmitEnterDave = async() => {
                 </div>
               ):(
                 <div>
-                <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                {props.treasure_found1?(
+                  <div>
+                  <Button className="customButtonEntering" target = "_blank" href="https://discord.gg/mAQeHXEjB9">Join Discord</Button>
+
+
+                  </div>
+                ):(
+                  <div>
+
+                  <Button className="customButtonEntering" onClick={handleSubmitEnterDave}>Join Team</Button>
+                  </div>
+                )}
                 </div>
               )}
 

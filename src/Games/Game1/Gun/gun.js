@@ -163,9 +163,10 @@ async function tryAgain(uid){
           //   <a className='neon-blue' style={{"text-decoration": "none"}}> Gun</a>
           // </div>
 
-          ctx.font = "60px neon";
+          ctx.font = "60px neon-blue";
           ctx.fillStyle = "#fb4264";
-          ctx.fillText("Flare Gun", 130, 100);
+
+          ctx.fillText("FLARE GUN", 130, 100);
           // ctx.fillStyle = #fb4264;
           // ctx.font = "30px Verdana";
 

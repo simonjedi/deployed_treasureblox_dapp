@@ -121,6 +121,7 @@ const handlePlayBrailOff = async() => {
 
   const handleShow = () => setShow(true);
 
+  window.scrollTo({top: 0})
 
     return (
 
@@ -128,7 +129,7 @@ const handlePlayBrailOff = async() => {
 
       <div id="top" className="spaceTopHome">
       <Helmet>
-        <title>TreasureBlox | Fort Blox</title>
+        <title>TreasureBlox | Elon's Lost His Rocket</title>
       </Helmet>
       <div>
 
@@ -144,7 +145,7 @@ const handlePlayBrailOff = async() => {
 
 
 
-      <Container style={{height: height}} className='mt-5' fluid="md">
+      <Container style={{height: height*5}} className='mt-5' fluid="md">
 
 
       <div className="aligned">
@@ -169,11 +170,10 @@ const handlePlayBrailOff = async() => {
               <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
               <br/><br/>Troy's found a message!<br/><br/>
               <Button className="customButtonDecide" onClick={handlePlayBrail}>Play Me</Button>
-
               {' '}
             </p>
             <footer className="blockquote-footer">
-              Captain Troy 'Mighty' Armstong
+              Captain Troy 'Mighty' Armstrong
             </footer>
           </blockquote>
         </Card.Body>

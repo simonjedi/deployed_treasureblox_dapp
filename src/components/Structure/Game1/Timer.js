@@ -17,15 +17,11 @@ import celebrate from '../Sounds/celebrate.wav';
 
 import ReactAudioPlayer from 'react-audio-player';
 
-
   const Timer = (props) => {
   const commaNumber = require('comma-number')
 
-
   var winning_prize1 = commaNumber(props.winning_prize1,',');
   // winning_prize1 = winning_prize1.substring(0, winning_prize1.length-18);
-
-
 
   const [transactionConfirmed,setTransactionConfirmed] = useState(false);
   const [timeLock,setTimelock] = useState(false);
@@ -37,7 +33,7 @@ import ReactAudioPlayer from 'react-audio-player';
     const enter = props.userEntered_game1;
     // Head Start Time Lock
 
-  const updateLocalDeadLineTime = (bool) => {
+  var updateLocalDeadLineTime = (bool) => {
 
     if (props.bool){
 
@@ -65,16 +61,14 @@ import ReactAudioPlayer from 'react-audio-player';
 
       <div>
 
-
       <div>
 
         {enter ? (
 
-
           <div>
 
             <div>
-                    {  props.countGame1DeadlineTrue ? (
+                    { props.countGame1DeadlineTrue ? (
 
                        <div>
                             {props.accounts === props.attemptAddress1 ?(
@@ -102,11 +96,9 @@ import ReactAudioPlayer from 'react-audio-player';
 
                                 ):(
 
-
                                     <div className="descriptionTitle">
 
-                                      <Step3Card
-                                      {...props} cancelLocalTime={cancelLocalTime}/>
+                                      <Step3Card {...props} cancelLocalTime={cancelLocalTime}/>
 
                                     </div>
                               )}
@@ -115,9 +107,7 @@ import ReactAudioPlayer from 'react-audio-player';
                             ):(
                               <div>
 
-                                <Step3CardNoEntry
-                                {...props }cancelLocalTime={cancelLocalTime}/>
-
+                                <Step3CardNoEntry {...props }cancelLocalTime={cancelLocalTime}/>
                               </div>
                             )}
                         </div>
@@ -126,8 +116,7 @@ import ReactAudioPlayer from 'react-audio-player';
 
                       <div>
 
-                        <Step2Card
-                        {...props} updateLocalDeadLineTime={updateLocalDeadLineTime}/>
+                        <Step2Card {...props} updateLocalDeadLineTime={updateLocalDeadLineTime}/>
 
                       </div>
 
@@ -135,7 +124,6 @@ import ReactAudioPlayer from 'react-audio-player';
             </div>
 
           </div>
-
 
 
         ) :

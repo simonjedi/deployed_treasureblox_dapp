@@ -623,7 +623,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
     const partnerId_xyz = 2;
 
 
-
     // Loading state
       const [isLoading, setIsLoading] = useState(true);
 
@@ -697,11 +696,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
 
-
-
-
-
-
         const Moralis = require('moralis');
 
         const isWeb3Active = Moralis.ensureWeb3IsInstalled()
@@ -734,7 +728,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         const RANDOM2_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM2.abi_xyz.json');
         const RANDOM3_xyz_ABI = require('./PartnershipExample/ContractAbis/RANDOM3.abi_xyz.json');
 
-
         const abi_xyz_ = require('./TreasureBlox.abi_example.json');
         // this will change to partner token abi contract
         const abiToken_xyz_ = require('./TreasureBloxToken.abi.json');
@@ -759,7 +752,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42");
         const game_GSD_Address_xyz_ = "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42"
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
-
 
         const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x933c83Cb054aFbb55E5EF87DE5846103241D714D");
         const game_MAIN_GAME_Address_xyz_ = "0x933c83Cb054aFbb55E5EF87DE5846103241D714D"
@@ -894,6 +886,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
           const decimals_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.decimals().call();
           var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
           totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, tokenContract_xyz_.length-18)
+
 
           // // SET WEB3
           setWeb3(web3)
@@ -1213,6 +1206,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
             setGame1_team2_xyz_team_entries(game1_team2_xyz_team_entries)
             setGame1_team2_xyz_team_actual_points(game1_team2_xyz_team_actual_points)
 
+
             const cost_to_play_xyz_ = await VOLT_contract_xyz_.methods.CostToPlay().call();
             var CostToPlay_xyz_edit = await cost_to_play_xyz_[0];
             CostToPlay_xyz_edit =  CostToPlay_xyz_edit.substring(0,  CostToPlay_xyz_edit.length-18);
@@ -1243,11 +1237,25 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
             // GAME 1 TREASUREBLOX STARTS
+
+
+
+
+
+
+
+
+
             const game1_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,1).call();
             const game1_live_treasurebloxNative_ = await game1_treasurebloxNative_[0];
 
             var game1_prize_treasurebloxNative_ = await game1_treasurebloxNative_[1];
             var winnerEstPrizeGame1_treasurebloxNative_ = game1_prize_treasurebloxNative_.substring(0, Math.round(game1_prize_treasurebloxNative_*.3).length-18);
+
+
+
+
+
 
             setWinnerEstPrizeGame1_treasurebloxNative_(winnerEstPrizeGame1_treasurebloxNative_)
 
@@ -1518,6 +1526,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
             setGame1_team2_treasurebloxNative_ppp(game1_team2_treasurebloxNative_ppp)
             setGame1_team2_treasurebloxNative_team_entries(game1_team2_treasurebloxNative_team_entries)
             setGame1_team2_treasurebloxNative_team_actual_points(game1_team2_treasurebloxNative_team_actual_points)
+
 
 
             const cost_to_play_treasurebloxNative_ = await VOLT_contract_treasurebloxNative_.methods.CostToPlay().call();
@@ -1982,6 +1991,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
 
+
+
         // TREASUREBLOX NATIVE
         const MAIN_GAME_treasureBloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/MAIN_GAME.abi_xyz.json');
         const VOLT_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/VOLT.abi_xyz.json');
@@ -2173,7 +2184,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
           // GSD_contract_xyz_
           // MAIN_GAME_contract_xyz_
           // VOLT_contract_xyz_
-
 
 
 
@@ -2487,6 +2497,18 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
           // GAME 1 TREASUREBLOX STARTS
+
+          // const allowance = await tokenContract_treasurebloxNative_.methods.allowance(accounts[0],game_RANDOM1_Address_treasurebloxNative_).call();
+          // console.log(allowance,"allowance")
+          //
+          // const allowance = await tokenContract_treasurebloxNative_.methods.allowance(accounts[0],game_RANDOM1_Address_treasurebloxNative_).call();
+          // console.log(allowance,"allowance")
+          //
+          // const allowance = await tokenContract_treasurebloxNative_.methods.allowance(accounts[0],game_RANDOM1_Address_treasurebloxNative_).call();
+          // console.log(allowance,"allowance")
+
+
+
           const game1_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,1).call();
           const game1_live_treasurebloxNative_ = await game1_treasurebloxNative_[0];
 
@@ -3271,7 +3293,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
               <Route path="/home">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
 
               <MyNav accounts={accounts}/>
                 <Home
@@ -3543,7 +3565,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/hunt1">
-                <MyNav accounts={accounts} onClick={() => Connection()}/>
+                <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <Hunt1
 
                 game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -3808,7 +3830,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/hunt2">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Hunt2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -4074,7 +4096,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
               <Route path="/Learnmore">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <Learnmore
 
                 game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -4315,7 +4337,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog1">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog1
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4323,7 +4345,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog2">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog2
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4331,7 +4353,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog3">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog3
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4339,7 +4361,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog4">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog4
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4347,7 +4369,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog5">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog5
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4355,7 +4377,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog6">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog6
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4363,7 +4385,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog7">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog7
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4371,7 +4393,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog8">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog8
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4379,7 +4401,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path="/Blog9">
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Blog9
               wallet_for_google={wallet_for_google}
               ip={ip}
@@ -4389,7 +4411,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
               <Route path={game1_level_1}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level1Game1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -4655,7 +4677,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_level_1_more}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Game1MoreGame1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -4920,7 +4942,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_level_2}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level2Game1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -5184,7 +5206,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_level_2_more}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Game2MoreGame1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -5448,7 +5470,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_level_3}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level3Game1
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
               game_RANDOM2_xyz_={game_RANDOM2_xyz_}
@@ -5712,7 +5734,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_level_4}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level4Game1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -5976,7 +5998,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_random1}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game1Random1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -6239,7 +6261,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_random2}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game1Random2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -6503,7 +6525,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game1_random3}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game1Random3
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -6768,7 +6790,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 // Game 1 End
 // Game 2 Start
               <Route path={game2_level_1}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level1Game2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -7032,7 +7054,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_level_1_more}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Game1MoreGame2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -7296,7 +7318,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_level_2}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level2Game2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -7560,7 +7582,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_level_2_more}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Game2MoreGame2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -7824,7 +7846,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_level_3}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level3Game2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -8088,7 +8110,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_level_4}>
-              <MyNav accounts={accounts} onClick={() => Connection()}/>
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level4Game2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -8353,7 +8375,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_random1}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game2Random1
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -8617,7 +8639,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_random2}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game2Random2
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}
@@ -8881,7 +8903,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               </Route>
 
               <Route path={game2_random3}>
-              <MyNav {...props} onClick={() => Connection()}/>
+              <MyNav {...props} is_meter={is_meter} onClick={() => Connection()}/>
               <Game2Random3
 
               game_RANDOM1_xyz_={game_RANDOM1_xyz_}

@@ -810,7 +810,7 @@ const handleSubmitEnterDave = async() => {
                                   <Card.Img variant="top" src={img2} alt="Logo" className='cardRoundedEnterPage'/>
                                   </Col>
                                   <Col className="MiniGameEnter" sm={2}>
-                                  Crypto Dave
+                                  Crypto Davex
                                   </Col>
                                   <Col className="MiniGameEnter" sm={2}>
                                   {props.game1team2_ppp}

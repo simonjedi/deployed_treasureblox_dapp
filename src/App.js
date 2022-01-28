@@ -1970,8 +1970,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         setWeb3(web3)
 
 
-
-
         set_GSB_Contract_xyz_(GSB_contract_bsc_)
         set_GSC_Contract_xyz_(GSC_contract_bsc_)
         set_GSD_Contract_xyz_(GSD_contract_bsc_)
@@ -1987,9 +1985,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         setDecimals_xyz_(decimals_xyz_)
         setTotalTreasure_xyz_(totalTreasure_xyz_)
         setTokenContract_xyz_(tokenContract_xyz_)
-
-
-
 
 
         // TREASUREBLOX NATIVE
@@ -3303,7 +3298,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path="/home">
               <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
 
-              <MyNav accounts={accounts}/>
                 <Home
 
                 game_RANDOM1_xyz_={game_RANDOM1_xyz_}

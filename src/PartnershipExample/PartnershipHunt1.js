@@ -385,8 +385,9 @@ const handleSubmitEnterDave = async() => {
 <div>
 {props.is_meter?(
 
-  <div id="top" style={{height: height*5}} className="custombackgroundmeter">
 
+  <div id="top" style={{height: height*5}} className="custombackgroundmeter">
+  <Redirect to="" />
 
 
 

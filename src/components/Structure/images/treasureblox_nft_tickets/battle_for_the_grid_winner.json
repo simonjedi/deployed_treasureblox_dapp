@@ -1,11 +1,11 @@
 {
-    "name": "Troy",
-    "description": "Captain Troy 'Mighty' Armstrong",
-    "image": "https://api.treasureblox.finance/nft/battle_for_the_grid_winner.png",
+    "name": "TreasureBlox X Meter",
+    "description": "Battle For The Grid Winner Ticket",
+    "image": "https://api.treasureblox.finance/nft/v1/battle_for_the_grid_winner.png",
     "attributes": [
         {
-            "trait_type": "Power",
-            "value": 100
+            "trait_type": "Winner",
+            "value": 1
         }
     ]
 }

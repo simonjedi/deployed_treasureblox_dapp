@@ -1,11 +1,11 @@
 {
-    "name": "Troy",
-    "description": "Captain Troy 'Mighty' Armstrong",
-    "image": "https://api.treasureblox.finance/nft/elon_lost_his_rocket.png",
+    "name": "TreasureBlox X Meter",
+    "description": "Elon Lost His Rocket Entry Ticket",
+    "image": "https://api.treasureblox.finance/nft/v1/elon_lost_his_rocket.png",
     "attributes": [
         {
-            "trait_type": "Power",
-            "value": 100
+            "trait_type": "Winner",
+            "value": 0
         }
     ]
 }

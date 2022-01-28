@@ -1,7 +1,7 @@
 {
     "name": "Troy",
     "description": "Captain Troy 'Mighty' Armstrong",
-    "image": "https://api.treasureblox.finance/nft/fort_blox_winner.png",
+    "image": "https://api.treasureblox.finance/nft/v1/fort_blox_winner.png",
     "attributes": [
         {
             "trait_type": "Power",

@@ -896,7 +896,7 @@ const handleSubmitEnterDave = async() => {
 
                                   </Col>
                                   <Col sm={4}>
-                                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>50 MTRG</a>):(<a>$5,000</a>)}</div>
+                                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>300 MTRG</a>):(<a>$5,000</a>)}</div>
                                   <div className="siteTitle">Starting Prize</div>
                                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1873,7 +1873,7 @@ const handleSubmitEnterDave = async() => {
 
                   </Col>
                   <Col sm={4}>
-                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>50 MTRG</a>):(<a>$5,000</a>)}</div>
+                  <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>300 MTRG</a>):(<a>$5,000</a>)}</div>
                   <div className="siteTitle">Starting Prize</div>
                   <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 

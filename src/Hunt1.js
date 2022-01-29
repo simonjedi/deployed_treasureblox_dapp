@@ -505,7 +505,7 @@ const handleSubmitEnterDave = async() => {
       <div>
 
 
-      {(counter >= 200)?(
+      {(counter >= 2000)?(
         <div>
 
         <Container className='mt-5' fluid="md">
@@ -1866,9 +1866,9 @@ const handleSubmitEnterDave = async() => {
                 <br/>
                 <Row>
                   <Col sm={4}>
-                  <div className="StatsGameEnter">4 Levels</div>
+                  <div className="StatsGameEnter">10 Levels</div>
                   <div className="siteTitle">Complete Levels gain points</div>
-                  <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
+                  <div className="StatsGameEnterSmallSub">Solve riddles and play games to level up!</div>
 
 
                   </Col>

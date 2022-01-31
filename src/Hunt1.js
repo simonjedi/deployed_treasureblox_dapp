@@ -1116,8 +1116,8 @@ const handleSubmitEnterDave = async() => {
 
                               </div>
                               <br/>
-                              <Button className="customButton" >Play Level 1</Button>
 
+                              <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 1</Button>
 
                               <footer className="blockquote">
                               </footer>
@@ -1293,8 +1293,7 @@ const handleSubmitEnterDave = async() => {
                             {props.is_meter?(<a>Free to play</a>):(<a>0.1 BNB</a>)}
                             </div>
                             <br/>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 4</Button>
-
+                            <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1487160211102126081?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 4</Button>
 
 
 
@@ -1462,8 +1461,8 @@ const handleSubmitEnterDave = async() => {
                             <br/><br/>
                             <Card.Header className="MiniGameTitle">
                             What am I?
-                          <br />70 game points
-                          <br />level up + 1
+                            <br />70 game points
+                            <br />level up + 1
 
                             </Card.Header>
                             <br/>
@@ -1475,7 +1474,7 @@ const handleSubmitEnterDave = async() => {
                             {props.is_meter?(<a>Free to play</a>):(<a>0.1 BNB</a>)}
                             </div>
                             <br/>
-                            <Button className="customButton" onClick={handlePayQuest3}>Play Level 7</Button>
+                            <Button className="customButton"  target = "_blank" href="https://twitter.com/Meter_IO/status/1487864675354218500?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 7</Button>
 
 
 

@@ -71,9 +71,9 @@ import ReactAudioPlayer from 'react-audio-player';
                     { props.countGame1DeadlineTrue ? (
 
                        <div>
-                            {props.accounts === props.attemptAddress1 ?(
+                            {props.accounts[0] === props.attemptAddress1 ?(
                               <div>
-                                { props.accounts === props.winning_address1 ?(
+                                { props.accounts[0] === props.winning_address1 ?(
 
                                     <div>
                                       <ReactAudioPlayer
@@ -108,6 +108,7 @@ import ReactAudioPlayer from 'react-audio-player';
                               <div>
 
                                 <Step3CardNoEntry {...props }cancelLocalTime={cancelLocalTime}/>
+
                               </div>
                             )}
                         </div>

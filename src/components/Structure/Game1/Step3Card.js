@@ -99,11 +99,11 @@ const Step3Card = (props) => {
           url: window.location.pathname,
           buttonClicked:"Failed_Secret_Treasure_Hunt_1"
         });
+        setloading(false);
 
-        setTimeout(function(){
-            setloading(false);
-            setunlucky(true)
-        },30000);
+
+        setloading(false);
+        setunlucky(true)
 
       } else {
 

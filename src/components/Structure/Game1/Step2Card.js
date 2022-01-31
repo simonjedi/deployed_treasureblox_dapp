@@ -276,13 +276,13 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
                     <div className="MiniGameDetails">
 
-                    Solve the clue using the timelock and get 10 points!
+
 
                     </div>
+                    <br/>
 
-                    <Link to="#">
-                      <Button className="customButton"  to="#">Play Level 1</Button>
-                    </Link>
+                    <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox">Play Level 4</Button>
+
 
                     </div>
                     <br/>
@@ -319,9 +319,8 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                     Solve the clue using the timelock and get 10 points!
 
                     </div>
-
-                      <Button className="customButton" onClick={handlePayQuest1}>Play Level 1</Button>
-
+                    <br/>
+                    <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 1</Button>
 
 
                     </div>
@@ -445,9 +444,9 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                                             <br/>
                                             <div className="descriptionTitle">LEVEL 4 - OBSERVATION</div>
                                             <div>
-                                            <Link to="https://twitter.com/TreasureBlox">
-                                              <Button className="customButton"  to="https://twitter.com/TreasureBlox">Play Level 1</Button>
-                                            </Link>
+                                            <br/>
+                                            <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1487160211102126081?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 4</Button>
+
                                             </div>
                                             <br/>
                                             <div className="gameTitleEnter">Use Time Lock Now!</div>
@@ -480,13 +479,9 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                                             <div>
                                             <div className="MiniGameDetails">
 
-                                            Solve the clue using the timelock and get 10 points!
-
-
-
                                             </div>
-                                            <Button className="customButton" onClick={handlePayQuest3}>Play For Clue</Button>
-
+                                            <br/>
+                                            <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1487160211102126081?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 4</Button>
                                             </div>
                                             <br/>
                                             <div className="gameTitleEnter">Use Time Lock Now!</div>
@@ -600,9 +595,8 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                                                   <br/>
                                                   <div className="descriptionTitle">LEVEL 7 - OBSERVATION</div>
                                                   <div>
-                                                  <Link to="#">
-                                                    <Button className="customButton"  to="#">Play Level 1</Button>
-                                                  </Link>
+                                                  <br/>
+                                                  <Button className="customButton"  target = "_blank" href="https://twitter.com/Meter_IO/status/1487864675354218500?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 7</Button>
                                                   </div>
                                                   <br/>
                                                   <div className="gameTitleEnter">Use Time Lock Now!</div>
@@ -635,13 +629,9 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
                                                   <div>
                                                   <div className="MiniGameDetails">
 
-                                                  Solve the clue using the timelock and get 10 points!
-
-
-
                                                   </div>
-                                                  <Button className="customButton" onClick={handlePayQuest3}>Play For Clue</Button>
-
+                                                  <br/>
+                                                    <Button className="customButton"  target = "_blank" href="https://twitter.com/Meter_IO/status/1487864675354218500?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 7</Button>
                                                   </div>
                                                   <br/>
                                                   <div className="gameTitleEnter">Use Time Lock Now!</div>

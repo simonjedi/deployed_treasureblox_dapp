@@ -99,7 +99,7 @@ async function tryAgain(uid){
         tryAgain(uid)
       }
 
-  },30000);
+  },45000);
 }
 
 

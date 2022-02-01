@@ -488,7 +488,7 @@ const handleSubmitEnterDave = async() => {
 
   </Helmet>
   // {winner}
-  {true? (
+  {winner? (
     <div><Confetti
       width={width}
       height={height}
@@ -3006,7 +3006,7 @@ const handleSubmitEnterDave = async() => {
                           <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
                           <br/><br/>
                           <Card.Header className="MiniGameTitle">
-                          Where am I?
+                          Enter the correct 6 figure grid!
                           <br />70 game points
                           <br />level up + 1
 
@@ -3022,7 +3022,7 @@ const handleSubmitEnterDave = async() => {
                           </div>
                           <br/>
 
-                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 7</Button>
+                          <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488621355180437512?s=20&t=6f9_6ib9PUzL09Zg7yXUQQ">Play Level 7</Button>
 
                           <footer className="blockquote">
                           </footer>

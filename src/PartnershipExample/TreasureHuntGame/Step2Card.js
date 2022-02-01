@@ -611,7 +611,7 @@ const Step2Card = (props) => {
                                                   <div className="descriptionTitle">LEVEL 7 - OBSERVATION</div>
                                                   <div>
                                                   <br/>
-                                                  <Button className="customButton"  target = "_blank" href="https://twitter.com/Meter_IO/status/1487864675354218500?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 7</Button>
+                                                  <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488621355180437512?s=20&t=6f9_6ib9PUzL09Zg7yXUQQ">Play Level 7</Button>
                                                   </div>
                                                   <br/>
                                                   <div className="gameTitleEnter">Use Time Lock Now!</div>

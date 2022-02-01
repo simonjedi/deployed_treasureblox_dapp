@@ -46,7 +46,7 @@ const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
         <div className="gameMainTitle">Game Prize Vault</div>
 
         <div className="gamePrize">{game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>
-        <div className="postMainPrize">Entry Cost <a className="descriptionTitle">{props.is_meter?(<a>5 MTR</a>):(<a>300 WINGS</a>)}</a></div>
+        <div className="postMainPrize">Entry Cost <a className="descriptionTitle">{props.is_meter?(<a>5 MTR</a>):(<a>0.02 BNB</a>)}</a></div>
 
         <div className="postMainPrize">Cost to Play <a className="descriptionTitle">{props.is_meter?(<a>0.2 MTRG</a>):(<a>100 WINGS</a>)}</a></div>
 

@@ -146,7 +146,7 @@ const PartnershipHunt1 = (props) => {
 
     setloading(true);
 
-    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel1Game1(true)
     setredirectLevel1(true)
@@ -193,7 +193,7 @@ const PartnershipHunt1 = (props) => {
     window.scrollTo({top: 0})
 
     setloading(true);
-    // const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
+    const quest = await props.MAIN_GAME_contract_xyz_.methods.makePaymentPlayQuest(props.partnerId_xyz,props.allGame1_id).send({from: props.accounts[0]});
     window.scrollTo({top: 0,behavior: 'smooth'})
     setplayLevel3Game1(true);
     setredirectLevel3(true);
@@ -341,7 +341,7 @@ const handleSubmitEnterTroy = async() => {
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
   await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
 
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,1).send({from: accounts[0],value:props.web3.utils.toWei("0.02", 'ether')});
 
   setTimeout(function(){
       setloading(false);
@@ -366,7 +366,7 @@ const handleSubmitEnterDave = async() => {
   await tokenContract.methods.approve(props.game_VOLT_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
   await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts[0]});
 
-  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("5", 'ether')});
+  await props.MAIN_GAME_contract_xyz_.methods.enterGame(props.partnerId_xyz,props.allGame1_id,2).send({from: accounts[0],value:props.web3.utils.toWei("0.02", 'ether')});
 
 
   setTimeout(function(){
@@ -380,14 +380,14 @@ const handleSubmitEnterDave = async() => {
   const game1_live = props.game1_live;
 
   // const game1_entry_cost = commaNumber(props.game1_entry_cost,',');
-
+// <Redirect to="" />
     return (
 <div>
 {props.is_meter?(
-
-
+<div>
+  <Redirect to="" />
   <div id="top" style={{height: height*5}} className="custombackgroundmeter">
-  
+
 
 
 
@@ -508,7 +508,7 @@ const handleSubmitEnterDave = async() => {
   <div>
 
 
-  {(counter >= 0)?(
+  {(counter >= 2000)?(
     <div>
 
     <Container className='mt-5' fluid="md">
@@ -896,14 +896,14 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">{counter}/100</div>
+                              <div className="StatsGameEnter">{counter}/200</div>
                               <div className="siteTitle">Explorers Entered</div>
                               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
+                              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.02 BNB</a>)}</div>
                               <div className="siteTitle">Entry Cost</div>
                               <div className="StatsGameEnterSmallSub">Select a team to join</div>
                               </Col>
@@ -913,14 +913,14 @@ const handleSubmitEnterDave = async() => {
                             <br/>
                             <Row>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">4 Levels</div>
+                              <div className="StatsGameEnter">10 Levels</div>
                               <div className="siteTitle">Complete Levels gain points</div>
                               <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>$5,000</a>)}</div>
+                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>{props.game1_prize} WINGS</a>)}</div>
                               <div className="siteTitle">Prize Vault</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1521,8 +1521,17 @@ const handleSubmitEnterDave = async() => {
     </div>
   ):(
     <div style={{height: height}}>
+    <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+
     <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
     <div className="SubTitleHeader">Whose side will you join in the battle for the metaverse</div>
+    <center>
+
+
+              <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
+
+
+    </center>
 
     <Container className='mt-5' fluid="md">
     <Tab.Container defaultActiveKey="first">
@@ -1719,14 +1728,14 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">{counter}/100</div>
+              <div className="StatsGameEnter">{counter}/200</div>
               <div className="siteTitle">Explorers Entered</div>
               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
+              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.02 BNB</a>)}</div>
               <div className="siteTitle">Entry Cost</div>
               <div className="StatsGameEnterSmallSub">Select a team to join</div>
               </Col>
@@ -1736,14 +1745,14 @@ const handleSubmitEnterDave = async() => {
             <br/>
             <Row>
               <Col sm={4}>
-              <div className="StatsGameEnter">4 Levels</div>
+              <div className="StatsGameEnter">10 Levels</div>
               <div className="siteTitle">Complete Levels gain points</div>
               <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>$5,000</a>)}</div>
+              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>{props.game1_prize} WINGS</a>)}</div>
               <div className="siteTitle">Prize Vault</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -1878,10 +1887,14 @@ const handleSubmitEnterDave = async() => {
 </div>
 
   </div>
+
+</div>
 ):(
+
+
   <div id="top" style={{height: height*5}} className="custombackground">
 
-  <Redirect to="" />
+
 
   {redirectLevel1?(
     <div>
@@ -1997,10 +2010,11 @@ const handleSubmitEnterDave = async() => {
   <div>
 
 
-  {(counter >= 0)?(
+  {(counter >= 2000)?(
     <div>
 
     <Container className='mt-5' fluid="md">
+
           <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
           <div className="SubTitleHeader">Who's side will you join ?</div>
 
@@ -2023,7 +2037,6 @@ const handleSubmitEnterDave = async() => {
             {props.game1team1_xyz_team_actual_points} / {props.game1team1_xyz_ppp*props.game1team1_xyz_team_entries} Points</div>
             <div className="siteTitle">Team Troy 'Mighty' Armstong</div>
             <div className="StatsGameEnterSmallSub">Points Required To Win!</div>
-
 
             {props.treasure_found1?(
               <div>
@@ -2164,10 +2177,13 @@ const handleSubmitEnterDave = async() => {
                   <Nav.Link  className="MiniGameEnterTab" eventKey="Welcome">Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Luck Games</Nav.Link>
+                  <Nav.Link  className="MiniGameEnterTab blink_me" eventKey="link-1">Round 1</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Skill Games</Nav.Link>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-2">Round 2</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link  className="MiniGameEnterTab" eventKey="link-4">Round 3</Nav.Link>
                 </Nav.Item>
 
                 <Nav.Item>
@@ -2381,14 +2397,14 @@ const handleSubmitEnterDave = async() => {
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">{counter}/100</div>
+                              <div className="StatsGameEnter">{counter}/200</div>
                               <div className="siteTitle">Explorers Entered</div>
                               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
+                              <div className="StatsGameEnter"> {props.is_meter?(<a>5 MTR</a>):(<a>0.02 BNB</a>)}</div>
                               <div className="siteTitle">Entry Cost</div>
                               <div className="StatsGameEnterSmallSub">Select a team to join</div>
                               </Col>
@@ -2398,14 +2414,14 @@ const handleSubmitEnterDave = async() => {
                             <br/>
                             <Row>
                               <Col sm={4}>
-                              <div className="StatsGameEnter">4 Levels</div>
+                              <div className="StatsGameEnter">10 Levels</div>
                               <div className="siteTitle">Complete Levels gain points</div>
                               <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
 
 
                               </Col>
                               <Col sm={4}>
-                              <div className="StatsGameEnter blink_me2">$2,000</div>
+                              <div className="StatsGameEnter blink_me2">{props.is_meter?(<a>{props.game1_prize} MTRG</a>):(<a>{props.game1_prize} WINGS</a>)}</div>
                               <div className="siteTitle">Prize Vault</div>
                               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 
@@ -2601,9 +2617,97 @@ const handleSubmitEnterDave = async() => {
 
                     {(props.userEntered_game1) ?(
                       <div >
-                      <div className="siteTitle">Complete luck based games for instant wins, tokens, points and level ups!</div>
+                      <div className="siteTitle">Round 1 - Complete the first 2 games and finish with the luck based game to progress to Round 2. It's important you submit the answers in the right order or you won't level up!</div>
                       <br/>
                       <Row>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 1 - Speak to Elon!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">
+                          <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                          <br/>
+                          <br/>
+                          How many rockets + Troys?
+
+                        <br />10 game points
+                        <br />level up + 1
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+                          <div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                          Free to play
+                          <br/>
+
+
+                          </div>
+                          <br/>
+
+                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 1</Button>
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 2 - Flight Training!
+
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle">
+                          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+                          <br/><br/>
+                          Earn Level 2 clue for win.
+
+                          <br />20 game points
+                          <br />level up + 1
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+
+                          Free to play
+
+
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handlePayQuest1}>Play Level 2</Button>
+
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
 
                       <Col sm={4}>
 
@@ -2612,85 +2716,37 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={lift_off} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Lift Off - Easy!
+                          <Card.Header className="MiniGameTitle">Level 3 - Lift Off!
 
                           </Card.Header>
 
 
-                          <Card.Header className="MiniGameTitle">1 in 4 chance to win!
+                          <Card.Header className="MiniGameTitle">
 
+                          <a className='neon-green ' style={{"text-decoration": "none"}}>2X</a>
                           <br/>
-                          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>2X</a>
+                          <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                           <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          1 in 4 chance to win!
 
-                        <br />15 game points
-                        <br />level up + 1
-                        <br />2 points for loss<br />
-
-                          </Card.Header>
-                          <br/>
-                          <div className="MiniGameDetails">
-
-                          Cost to play {props.CostToPlay_xyz_} Wings
-                          <br/>
-
-                          Results may take 45 seconds on average
-
-                          </div>
-                          <br/>
-                          <Button className="customButton" onClick={handleRandomFunc1}>Play Game</Button>
-
-
-                          <footer className="blockquote">
-
-
-                          </footer>
-                          <br />
-
-
-
-
-                        </Card.Body>
-                      </Card>
-                      <br className="d-lg-none"/>
-                      <br className="d-lg-none"/>
-                      </Col>
-
-                      <Col sm={4}>
-
-                      <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
-
-                        <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Flair Gun - Intermediate!
-
-                          </Card.Header>
-                          <Card.Header className="MiniGameTitle">1 in 6 chance to win!
-                          <br/>
-                          <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>3X</a>
-                          <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
                         <br />30 game points
-                        <br />level up + 1
-                        <br />2 points for loss<br />
+                        <br />Play any time for instant wins!<br />
                           </Card.Header>
-
                           <br/>
-
                           <div className="MiniGameDetails">
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Cost to play {props.CostToPlay_xyz_*6} Wings
                           <br/>
 
                           Results may take 45 seconds on average
 
                           </div>
                           <br/>
-                          <Button className="customButton" onClick={handleRandomFunc} >Play Game</Button>
+                          <Button className="customButton" onClick={handleRandomFunc1}>Play Level 3</Button>
 
 
                           <footer className="blockquote">
+
 
                           </footer>
                           <br />
@@ -2700,55 +2756,11 @@ const handleSubmitEnterDave = async() => {
 
                         </Card.Body>
                       </Card>
-                        <br className="d-lg-none"/>
-                        <br className="d-lg-none"/>
-
-                      </Col>
-                      <Col sm={4}>
-
-                      <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
-
-                      <Card.Body className="customBodyMiniGame">
-                        <Card.Header className="MiniGameTitle">Lucky Rescue - Difficult!
-
-                        </Card.Header>
-                        <Card.Header className="MiniGameTitle">1 in 20 chance to win!
-                        <br/>
-                        <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
-                        <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
-                      <br />100 game points
-                      <br />level up + 1
-                    <br />2 points for loss<br />
-                        </Card.Header>
-
-                        <br/>
-                        <div className="MiniGameDetails">
-
-                        Cost to play {props.CostToPlay_xyz_} Wings
-                        <br/>
-
-                        Results may take 45 seconds on average
-
-                        </div>
-                        <br/>
-                        <Button className="customButton" onClick={handleRandomFunc3}>Play Game</Button>
-
-
-
-                        <footer className="blockquote">
-
-                        </footer>
-
-                        <br />
-
-
-                      </Card.Body>
-                      </Card>
                       <br className="d-lg-none"/>
                       <br className="d-lg-none"/>
                       </Col>
+
+                      //
 
 
                       </Row>
@@ -2756,12 +2768,12 @@ const handleSubmitEnterDave = async() => {
                         <br/>
                         <div className="MiniGameDetails">
 
-                        Play a luck based game to win! If you win you'll instantly receive a multiplier of the play cost in tokens, game points and increase your treasure hunt level meaning you don't have to solve the clue for the level. If you lose you'll still earn 2 treasure hunt points!
+                        Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
                         <br/><br/>
-                        The maximum level achievable from luck based games is level 3 however once achieved you can still continue to play for further points and tokens if successful. Good Luck!
+                        Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+                         </div>
 
-                        </div>
-                        <br/><br/>
+
 
 
                       </div>
@@ -2791,7 +2803,7 @@ const handleSubmitEnterDave = async() => {
                     {(props.userEntered_game1) ?(
                       <div >
 
-                      <div className="siteTitle">Complete the levels in order to find clues and submit them to the Vault tab above using a timelock!</div>
+                      <div className="siteTitle">Round 2 - Complete game 4 & 5 then finish with the luck based game to progress to Round 3. It's important you submit the answers in the right order or you won't level up!</div>
                       <br/>
                       <Row>
 
@@ -2802,28 +2814,30 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 1 - Flight Training!
+                          <Card.Header className="MiniGameTitle">Level 4 - Meter To The Moon!
 
                           </Card.Header>
-                          <Card.Header className="MiniGameTitle">Earn Level 1 clue for win.
-                          <br/>
-                          <a className='neon-orange-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR HAND EYE COORDINATION!</a>
 
-                        <br />30 game points
+                          <Card.Header className="MiniGameTitle">
+                          <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                          <br/><br/>
+                          Hashtag on the tweet
+                        <br />40 game points
                         <br />level up + 1
-                        <br />2 points for loss<br />
 
                           </Card.Header>
                           <br/>
                           <div className="MiniGameDetails">
+                          <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+
+                          Free to play
 
 
                           </div>
                           <br/>
-                          <Button className="customButton" onClick={handlePayQuest1}>Play Level 1</Button>
 
+                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 4</Button>
 
                           <footer className="blockquote">
                           </footer>
@@ -2843,27 +2857,26 @@ const handleSubmitEnterDave = async() => {
                       <Card.Img variant="top" src={key_pad_img} alt="Logo" className='cardRoundedMiniGame'/>
 
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 2 - Crash Landing!
+                          <Card.Header className="MiniGameTitle">Level 5 - Crash Landing!
 
                           </Card.Header>
-                          <Card.Header className="MiniGameTitle">Earn Level 2 clue for win.
-                          <br/>
-                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR MEMORY!</a>
-                          <br />
-                        <br />60 game points
+                          <Card.Header className="MiniGameTitle">
+                          <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+                          <br/><br/>
+                          Earn Level 5 clue for win.
+                        <br />50 game points
                         <br />level up + 1
-                        <br />2 points for loss
-                        <br />
 
                           </Card.Header>
                           <br/>
                           <div className="MiniGameDetails">
+                          <br />Submit the answer to the time lock<br />
 
-                          Cost to play {props.CostToPlay_xyz_} Wings
+                          Free to play
 
                           </div>
                           <br/>
-                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 2</Button>
+                          <Button className="customButton" onClick={handlePayQuest2}>Play Level 5</Button>
 
 
                           <footer className="blockquote">
@@ -2878,56 +2891,67 @@ const handleSubmitEnterDave = async() => {
                         <br className="d-lg-none"/>
 
                       </Col>
+
                       <Col sm={4}>
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
+                      <Card.Img variant="top" src={flare_gun} alt="Logo" className='cardRoundedMiniGame'/>
 
-                      <Card.Body className="customBodyMiniGame">
-                        <Card.Header className="MiniGameTitle">Level 3 - Hostile Rescue!
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 6 - Flair Gun!
 
-                        </Card.Header>
+                          </Card.Header>
+                          <Card.Header className="MiniGameTitle"><a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>3X</a>
+                          <br/>
+                          <a className='neon-blue-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                          <br />1 in 6 chance to win!
+                          <br />60 game points
 
+                        <br />level up + 1
 
-                        <Card.Header className="MiniGameTitle">Earn Level 3 clue for win.
-                        <br/>
-                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>TEST YOUR ABILITY TO THINK LOGICALLY!</a>
-                      <br />90 game points
-                      <br />level up + 1
-                      <br />2 points for loss<br />
+                          </Card.Header>
 
-                        </Card.Header>
-                        <br/>
-                        <div className="MiniGameDetails">
+                          <br/>
 
-                        Cost to play {props.CostToPlay_xyz_} Wings
+                          <div className="MiniGameDetails">
 
-                        </div>
-                        <br/>
-                        <Button className="customButton" onClick={handlePayQuest3}>Play Level 3</Button>
+                          Cost to play {props.CostToPlay_xyz_*6} Wings
+                          <br/>
 
+                          Level up to next Round if you are level 5 - Results may take 45 seconds on average
 
-
-
-                        <footer className="blockquote">
-                        </footer>
-
-                        <br />
+                          </div>
+                          <br/>
+                          <Button className="customButton" onClick={handleRandomFunc} >Play Level 6</Button>
 
 
-                      </Card.Body>
+                          <footer className="blockquote">
+
+                          </footer>
+                          <br />
+
+
+
+
+                        </Card.Body>
                       </Card>
-                      <br className="d-lg-none"/>
-                      <br className="d-lg-none"/>
+                        <br className="d-lg-none"/>
+                        <br className="d-lg-none"/>
+
                       </Col>
+
+
+
+
 
 
                       </Row>
 
                       <div className="MiniGameDetails">
-  <br/>
-                      Play for a clue, Earn 2 Points for failed attempts at the game, solve the clue using the timelock and increase your points!<br/><br/>
-                      Solve the clues in order to level up! Once level 3 is achieved you must solve the final clue or reach your teams points target to win the treasure vault!
+                      <br/>
+                      Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
+                      <br/><br/>
+                      Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
                       </div>
 
                       <br/>
@@ -2952,6 +2976,191 @@ const handleSubmitEnterDave = async() => {
                     </CardGroup>
 
                   </Tab.Pane>
+
+                  <Tab.Pane eventKey="link-4" >
+
+                    <CardGroup className='mt-5'>
+
+                    {(props.userEntered_game1) ?(
+                      <div >
+                      <div className="siteTitle">Round 3 - Complete game 7 & 8 then finish with the luck based game to progress to and sulve the final riddle. It's important you submit the answers in the right order or you won't progress!</div>
+                      <br/>
+                      <Row>
+
+
+                      <Col sm={4}>
+
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                        <Card.Body className="customBodyMiniGame">
+                          <Card.Header className="MiniGameTitle">Level 7 - Air Strike!
+
+                          </Card.Header>
+
+                          <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
+                          <br/><br/>
+                          <Card.Header className="MiniGameTitle">
+                          Where am I?
+                          <br />70 game points
+                          <br />level up + 1
+
+                          </Card.Header>
+                          <br/>
+                          <div className="MiniGameDetails">
+                          <div className="MiniGameDetails">Submit the answer to the time lock</div>
+
+
+                          Free to play
+
+
+                          </div>
+                          <br/>
+
+                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 7</Button>
+
+                          <footer className="blockquote">
+                          </footer>
+
+                          <br />
+
+
+                        </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={night_vision_img} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 8 - Hostile Rescue!
+
+                        </Card.Header>
+
+
+                        <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>Skill</a>
+
+                        <br/><br/>
+                        <Card.Header className="MiniGameTitle">
+                        Earn Level 8 clue for win.
+                      <br />80 game points
+                      <br />level up + 1
+
+
+                        </Card.Header>
+                        <br/>
+                        <div className="MiniGameDetails">Submit the answer to the time lock<br/>
+
+                        Free to play
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handlePayQuest3}>Play Level 8</Button>
+
+
+
+
+                        <footer className="blockquote">
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+                      </Card>
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+                      <Col sm={4}>
+
+                      <Card className='cardRounded border border-danger'>
+                      <Card.Img variant="top" src={rescue} alt="Logo" className='cardRoundedMiniGame'/>
+
+                      <Card.Body className="customBodyMiniGame">
+                        <Card.Header className="MiniGameTitle">Level 9 - Lucky Rescue!
+
+                        </Card.Header>
+                        <Card.Header className="MiniGameTitle">
+                        <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>5X</a>
+                        <br/>
+                        <a className='neon-green-small blink_me3' style={{"text-decoration": "none"}}>Play Cost Token Return</a>
+                        <br/>1 in 20 chance to win!
+                        <br />90 game points
+                        <br />level up + Final Round
+                        </Card.Header>
+
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Cost to play {props.CostToPlay_xyz_*6} Wings
+                        <br/>
+                        Progress to the final clue with this Luck based game!<br/>
+
+                        Results may take 45 seconds on average
+
+                        </div>
+                        <br/>
+                        <Button className="customButton" onClick={handleRandomFunc3}>Play Level 9</Button>
+
+
+
+                        <footer className="blockquote">
+
+                        </footer>
+
+                        <br />
+
+
+                      </Card.Body>
+
+
+                      </Card>
+
+                      <br className="d-lg-none"/>
+                      <br className="d-lg-none"/>
+                      </Col>
+
+
+                      </Row>
+
+                        <br/>
+                        <div className="MiniGameDetails">
+
+                        Solve the clues in order to level up! Once you have solved the first two you must complete a luck based game to progress to the next round!
+                        <br/><br/>
+                        Luck based games allow you to progress to the next round however once achieved you can still continue to play for further points and tokens if succesful. Good Luck!
+                        </div>
+
+                        <br/><br/>
+
+
+                      </div>
+                    ):(
+                      <div style={{height: height}}>
+
+
+
+                      </div>
+                    )}
+
+                    <br/>
+
+
+
+
+
+
+                    </CardGroup>
+
+                  </Tab.Pane>
+
                   <Tab.Pane eventKey="link-3">
 
                     <CardGroup className='mt-5' fluid="md">
@@ -3002,8 +3211,17 @@ const handleSubmitEnterDave = async() => {
     </div>
   ):(
     <div style={{height: height}}>
+    <div className="siteTitle">{props.is_meter?(<a>Battle for the Grid</a>):(<a>Strike Fighter</a>)}</div>
+
     <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
     <div className="SubTitleHeader">Whose side will you join in the battle for the metaverse</div>
+    <center>
+
+
+              <a className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</a>
+
+
+    </center>
 
     <Container className='mt-5' fluid="md">
     <Tab.Container defaultActiveKey="first">
@@ -3200,14 +3418,14 @@ const handleSubmitEnterDave = async() => {
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">{counter}/100</div>
+              <div className="StatsGameEnter">{counter}/200</div>
               <div className="siteTitle">Explorers Entered</div>
               <div className="StatsGameEnterSmallSub">When target is reached hunt will go live</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.2 BNB</a>)}</div>
+              <div className="StatsGameEnter">{props.is_meter?(<a>5 MTR</a>):(<a>0.02 BNB</a>)}</div>
               <div className="siteTitle">Entry Cost</div>
               <div className="StatsGameEnterSmallSub">Select a team to join</div>
               </Col>
@@ -3217,14 +3435,14 @@ const handleSubmitEnterDave = async() => {
             <br/>
             <Row>
               <Col sm={4}>
-              <div className="StatsGameEnter">4 Levels</div>
+              <div className="StatsGameEnter">10 Levels</div>
               <div className="siteTitle">Complete Levels gain points</div>
               <div className="StatsGameEnterSmallSub">Solve riddles and enter secrets to level up!</div>
 
 
               </Col>
               <Col sm={4}>
-              <div className="StatsGameEnter blink_me2">$5,000</div>
+              <div className="StatsGameEnter blink_me2">260,000 WINGS</div>
               <div className="siteTitle">Prize Vault</div>
               <div className="StatsGameEnterSmallSub">Prize increases during game</div>
 

@@ -406,8 +406,8 @@ async function tryAgain(uid){
 
 <center>
   <div className='Board-title d-none d-lg-block'>
-    <a className='neon-orange' style={{"text-decoration": "none"}}>Take</a>
-    <a className='neon-blue' style={{"text-decoration": "none"}}> Off</a>
+    <a className='neon-orange' style={{"text-decoration": "none"}}>TAKE</a>
+    <a className='neon-blue' style={{"text-decoration": "none"}}> OFF</a>
   </div>
   <canvas width="200" height="200" id="canvasgun"> </canvas>
   <br/>

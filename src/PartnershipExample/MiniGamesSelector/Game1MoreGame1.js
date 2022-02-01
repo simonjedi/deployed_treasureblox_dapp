@@ -220,7 +220,7 @@ const Game1MoreGame1 = (props) => {
                 {' '}
                 <br/><br/>THIS PAGE WILL SELF DISTRUCT ONCE YOU CLOSE IT...
                 <br/><br/>You showed some skill but have you got what it takes to fly this plane?
-                <br/><br/>1. Write down the secret answer to level Secret Answer = 'FighterJet01'
+                <br/><br/>1. Write down the secret answer to level Secret Answer = 'FIGHTERJET01'
                 <br/><br/>2. Leave this page by clicking strike fighter and go to the Prize Vault tab!
                 <br/><br/>3. Apply the time lock and enter the secret answer to level up!
                 {' '}

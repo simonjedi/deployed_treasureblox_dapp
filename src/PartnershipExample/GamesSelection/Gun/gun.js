@@ -43,7 +43,7 @@ const Gun = (props) =>{
 
 
     await props.tokenContract.methods.approve(props.game_RANDOM2_xyz_,props.web3.utils.toWei("50000", 'ether')).send({from: props.accounts[0]});
-    
+
 
     const transaction = await props.RANDOM2_contract_xyz_.methods.rollDice(props.partnerId_xyz,props.accounts[0],1,props.allGame1_id).send({from: props.accounts[0]});
     var uid = transaction.events.DiceRolled.returnValues["s_keyHash"];
@@ -169,13 +169,13 @@ async function tryAgain(uid){
           //   <a className='neon-blue' style={{"text-decoration": "none"}}> Gun</a>
           // </div>
 
-          ctx.font = "60px neon-orange";
+          ctx.font = "60px neon-blue";
           ctx.fillStyle = "#fb4264";
           if (props.is_meter){
-            ctx.fillText("Ray Gun", 160, 100);
+            ctx.fillText("RAY GUN", 160, 100);
           }
           if (!props.is_meter){
-            ctx.fillText("Flare Gun", 130, 100);
+            ctx.fillText("FLARE GUN", 130, 100);
           }
           // ctx.fillStyle = #fb4264;
           // ctx.font = "30px Verdana";

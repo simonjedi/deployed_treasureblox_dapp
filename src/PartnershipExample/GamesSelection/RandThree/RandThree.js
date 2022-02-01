@@ -381,8 +381,8 @@ async function tryAgain(uid){
 
   <center>
       <div className='Board-title d-none d-lg-block'>
-        <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
-        <a className='neon-blue' style={{"text-decoration": "none"}}> Lightsaber</a>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>LUCKY</a>
+        <a className='neon-blue' style={{"text-decoration": "none"}}> LIGHTSABRE</a>
       </div>
       <canvas width="200" height="200" id="canvasgun"> </canvas>
       <br/>
@@ -460,8 +460,8 @@ async function tryAgain(uid){
 
   <center>
       <div className='Board-title d-none d-lg-block'>
-        <a className='neon-orange' style={{"text-decoration": "none"}}>Lucky</a>
-        <a className='neon-blue' style={{"text-decoration": "none"}}> Rescue</a>
+        <a className='neon-orange' style={{"text-decoration": "none"}}>LUCKY</a>
+        <a className='neon-blue' style={{"text-decoration": "none"}}> RESCUE</a>
       </div>
       <canvas width="200" height="200" id="canvasgun"> </canvas>
       <br/>

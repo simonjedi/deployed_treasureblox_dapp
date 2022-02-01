@@ -103,7 +103,7 @@ const Level2Game1 = (props) => {
 
   const handleEnter = async() => {
 
-    if (resultCalc === "#725048" ){
+    if (resultCalc === "#71452538048" ){
       window.scrollTo({top: 0,behavior: 'smooth'})
       setMore(true)
     }
@@ -227,7 +227,7 @@ const Level2Game1 = (props) => {
 
         <Container className='mt-5' fluid="md">
 
-        
+
 
 
         {props.playLevel2Game1?(
@@ -259,7 +259,7 @@ const Level2Game1 = (props) => {
 
             <br/>
             <div className="siteTitle">Crypto Dave has scrambled the code to enter the grid!
-            <br/>Enter '#725048' correctly before the time runs out.</div>
+            <br/>Enter '#71452538048' correctly before the time runs out.</div>
 
 
 
@@ -269,8 +269,8 @@ const Level2Game1 = (props) => {
               <div className="siteTitle topKeyPad">{resultCalc}</div>
               <br/><br/>
                         <ButtonGroup size="lg" aria-label="Basic example">
-                          <Button id="1" onClick={handleInputChange} value="0" variant="secondary"> 1 </Button><br/>
-                          <Button id="2" onClick={handleInputChange} value="2" variant="secondary"> 2 </Button>
+                          <Button id="1" onClick={handleInputChange} value="*" variant="secondary"> 1 </Button><br/>
+                          <Button id="2" onClick={handleInputChange} value="#" variant="secondary"> 2 </Button>
                           <Button id="3" onClick={handleInputChange} value="3" variant="secondary"> 3 </Button>
                           <Button id="4" onClick={handleInputChange} value="7" variant="secondary"> 4 </Button>
 
@@ -287,8 +287,8 @@ const Level2Game1 = (props) => {
 
                           <Button id="9" onClick={handleInputChange} value="6" variant="secondary"> 9 </Button>
                           <Button id="0" onClick={handleInputChange} value="1" variant="secondary"> 0 </Button>
-                          <Button id="#" onClick={handleInputChange} value="*" variant="secondary"> # </Button>
-                          <Button id="*" onClick={handleInputChange} value="#" variant="secondary"> * </Button>
+                          <Button id="#" onClick={handleInputChange} value="0" variant="secondary"> # </Button>
+                          <Button id="*" onClick={handleInputChange} value="2" variant="secondary"> * </Button>
 
                         </ButtonGroup>
                         <br/><br/>

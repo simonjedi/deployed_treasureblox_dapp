@@ -738,52 +738,52 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         setAccounts(accounts)
 
 
-        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x1ae9808d0b70110Ddf0Ee941F53E9626A5e7e40E");
-        const game_GSB_Address_xyz_ = "0x1ae9808d0b70110Ddf0Ee941F53E9626A5e7e40E"
+        const GSB_contract_bsc_ = new web3.eth.Contract(GSB_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x54c20FF09989B3Cd334c3C0803555C086b952179");
+        const game_GSB_Address_xyz_ = "0x54c20FF09989B3Cd334c3C0803555C086b952179"
         set_GSB_GameContractAddress_xyz_(game_GSB_Address_xyz_);
 
 
-        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0xa924DDe84dCcD2eD13F002799AF30Ccc34953B40");
-        const game_GSC_Address_xyz_ = "0xa924DDe84dCcD2eD13F002799AF30Ccc34953B40"
+        const GSC_contract_bsc_ = new web3.eth.Contract(GSC_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x6DecaB82f0a2B43e59bAb406f701A0Ed0a839A79");
+        const game_GSC_Address_xyz_ = "0x6DecaB82f0a2B43e59bAb406f701A0Ed0a839A79"
         set_GSC_GameContractAddress_xyz_(game_GSC_Address_xyz_);
 
 
-        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42");
-        const game_GSD_Address_xyz_ = "0x2A864e976694Abd5E2Ab33AF1C00cFeE2B467e42"
+        const GSD_contract_bsc_ = new web3.eth.Contract(GSD_BSC_ABI,"https://bsc-dataseed.binance.org/" && "0xA8e377D8289AfD090e2339448c5f304a4B80d849");
+        const game_GSD_Address_xyz_ = "0xA8e377D8289AfD090e2339448c5f304a4B80d849"
         set_GSD_GameContractAddress_xyz_(game_GSD_Address_xyz_);
 
-        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x933c83Cb054aFbb55E5EF87DE5846103241D714D");
-        const game_MAIN_GAME_Address_xyz_ = "0x933c83Cb054aFbb55E5EF87DE5846103241D714D"
+        const MAIN_GAME_contract_xyz_ = new web3.eth.Contract(MAIN_GAME_contract_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x50D07B6c1B316590dc092e6660615F6587B628E4");
+        const game_MAIN_GAME_Address_xyz_ = "0x50D07B6c1B316590dc092e6660615F6587B628E4"
         set_MAIN_GAME_GameContractAddress_xyz_(game_MAIN_GAME_Address_xyz_);
 
 
-        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xd087d5F7F003089FBf31F521A6cE11107fe310cF");
-        const game_VOLT_Address_xyz_ = "0xd087d5F7F003089FBf31F521A6cE11107fe310cF"
+        const VOLT_contract_xyz_ = new web3.eth.Contract(VOLT_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x0333f409B71B9E2f64A7fAef933acAfA90Ef19f6");
+        const game_VOLT_Address_xyz_ = "0x0333f409B71B9E2f64A7fAef933acAfA90Ef19f6"
         set_VOLT_GameContractAddress_xyz_(game_VOLT_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 4 - Using Blox
-        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324");
-        const game_RANDOM1_Address_xyz_ = "0xFd225611cFa99d6bC3ECD658C3bC5B0293c73324"
+        const RANDOM1_contract_xyz_ = new web3.eth.Contract(RANDOM1_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x36feaf3b7A56e59Dd7cF623d73F79fE06a0a3CD8");
+        const game_RANDOM1_Address_xyz_ = "0x36feaf3b7A56e59Dd7cF623d73F79fE06a0a3CD8"
         set_RANDOM1_xyz_(game_RANDOM1_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 6 - Using Blox
-        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x7338197dc02BF569F920412f298f5925B2E3c14b");
-        const game_RANDOM2_Address_xyz_ = "0x7338197dc02BF569F920412f298f5925B2E3c14b"
+        const RANDOM2_contract_xyz_ = new web3.eth.Contract(RANDOM2_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x7E74cE7Fee31cFA3455e333DCb60d5Cf274dDB99");
+        const game_RANDOM2_Address_xyz_ = "0x7E74cE7Fee31cFA3455e333DCb60d5Cf274dDB99"
         set_RANDOM2_xyz_(game_RANDOM2_Address_xyz_);
 
         // RANDOM GAME CONTRACT 1 in 20 - Using Blox
-        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F");
-        const game_RANDOM3_Address_xyz_ = "0x3Da3223d7c6c3D060077eaFb8a79A4c02e0FAa0F"
+        const RANDOM3_contract_xyz_ = new web3.eth.Contract(RANDOM3_xyz_ABI,"https://bsc-dataseed.binance.org/" && "0x5F38f5188c218a5fF90d48ACF6cECd97dBAfE834");
+        const game_RANDOM3_Address_xyz_ = "0x5F38f5188c218a5fF90d48ACF6cECd97dBAfE834"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
 
         // TOKEN CONTRACT
 
         // BSC
-          const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930");
+          const tokenContract_xyz_ = new web3.eth.Contract(abiToken_xyz_,"https://bsc-dataseed.binance.org/" && "0x0487b824c8261462f88940f97053e65bdb498446");
 
           const decimals_xyz_ = await tokenContract_xyz_.methods.decimals().call();
-          var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x845f23Ae63b5d03a363f216Ce0BAD4FB12259930").call();
+          var totalTreasure_xyz_ = await tokenContract_xyz_.methods.balanceOf("0x0487b824c8261462f88940f97053e65bdb498446").call();
           totalTreasure_xyz_ = totalTreasure_xyz_.substring(0, tokenContract_xyz_.length-18)
 
 
@@ -3569,6 +3569,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               <Route path="/hunt1">
                 <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <Hunt1
+
+
 
                 game_RANDOM1_xyz_={game_RANDOM1_xyz_}
                 game_RANDOM2_xyz_={game_RANDOM2_xyz_}

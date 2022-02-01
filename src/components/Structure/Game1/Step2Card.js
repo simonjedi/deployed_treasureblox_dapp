@@ -391,7 +391,7 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
 
 
                                       </div>
-                                      <Button className="customButton" onClick={handlePayQuest2}>Play For Clue</Button>
+                                      <Button className="customButton" onClick={handlePayQuest1}>Play For Clue</Button>
 
                                       </div>
                                       <br/>

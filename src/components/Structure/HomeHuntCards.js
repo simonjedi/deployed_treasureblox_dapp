@@ -109,7 +109,7 @@ const HuntWowCards = (props) => {
 
           ):(
           <div>
-            {false?(
+            {true?(
             <Button className="customButton" onClick={view_strike_fighter_view_click} >View Strike Fighter</Button>
           ):(
             <div>

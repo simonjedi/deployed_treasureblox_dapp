@@ -292,11 +292,12 @@ const Step2Card = (props) => {
                     <div className="MiniGameDetails">
 
 
-
+                    #Hashtag
                     </div>
+
                     <br/>
 
-                    <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox">Play Level 4</Button>
+                    <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488559828838531077?s=20&t=A_CVPN9VRI-3v-3KyBdiVw">Play Level 4</Button>
 
 
                     </div>
@@ -460,8 +461,7 @@ const Step2Card = (props) => {
                                             <div className="descriptionTitle">LEVEL 4 - OBSERVATION</div>
                                             <div>
                                             <br/>
-                                            <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1487160211102126081?s=20&t=HNJReXXmDHdsDWTOugJmKQ">Play Level 4</Button>
-
+                                            <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488569410944176140?s=20&t=TJBvRRVrB5-C8pJRDAKEzg">Play Level 4</Button>
                                             </div>
                                             <br/>
                                             <div className="gameTitleEnter">Use Time Lock Now!</div>

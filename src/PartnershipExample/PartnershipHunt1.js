@@ -27,7 +27,14 @@ import enter_grid from './assets/images/enter_grid.png';
 
 
 
+
 import flight_training_img from "./assets/images/flight_training.png";
+import danger_zone from "./assets/images/danger_zone.png";
+import spot_the_difference from "./assets/images/spot_the_difference.png";
+
+
+
+
 import key_pad_img from "./assets/images/key_pad.png";
 import night_vision_img from "./assets/images/night_vision.png";
 import flare_gun from "./assets/images/flare_gun.png";
@@ -2625,17 +2632,16 @@ const handleSubmitEnterDave = async() => {
 
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
-
+                      <Card.Img variant="top" src={danger_zone} alt="Logo" className='cardRoundedMiniGame'/>
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 1 - Speak to Elon!
+                          <Card.Header className="MiniGameTitle">Level 1 - Danger Zone!
 
                           </Card.Header>
                           <Card.Header className="MiniGameTitle">
                           <a className='neon-blue blink_me3' style={{"text-decoration": "none"}}>Observation</a>
                           <br/>
                           <br/>
-                          How many rockets + Troys?
+                          Hashtag?
 
                         <br />10 game points
                         <br />level up + 1
@@ -2653,7 +2659,7 @@ const handleSubmitEnterDave = async() => {
                           </div>
                           <br/>
 
-                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 1</Button>
+                          <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488559828838531077?s=20&t=TJBvRRVrB5-C8pJRDAKEzg">Play Level 1</Button>
 
                           <footer className="blockquote">
                           </footer>
@@ -2760,7 +2766,7 @@ const handleSubmitEnterDave = async() => {
                       <br className="d-lg-none"/>
                       </Col>
 
-                      //
+
 
 
                       </Row>
@@ -2811,17 +2817,16 @@ const handleSubmitEnterDave = async() => {
 
 
                       <Card className='cardRounded border border-danger'>
-                      <Card.Img variant="top" src={flight_training_img} alt="Logo" className='cardRoundedMiniGame'/>
-
+                      <Card.Img variant="top" src={spot_the_difference} alt="Logo" className='cardRoundedMiniGame'/>
                         <Card.Body className="customBodyMiniGame">
-                          <Card.Header className="MiniGameTitle">Level 4 - Meter To The Moon!
+                          <Card.Header className="MiniGameTitle">Level 4 - Spotter!
 
                           </Card.Header>
 
                           <Card.Header className="MiniGameTitle">
                           <a className='neon-green blink_me3' style={{"text-decoration": "none"}}>Observation</a>
                           <br/><br/>
-                          Hashtag on the tweet
+                          How many Differences can you spot? As a Single Number!
                         <br />40 game points
                         <br />level up + 1
 
@@ -2830,14 +2835,13 @@ const handleSubmitEnterDave = async() => {
                           <div className="MiniGameDetails">
                           <br /><div className="MiniGameDetails">Submit the answer to the time lock</div>
 
-
                           Free to play
 
 
                           </div>
                           <br/>
 
-                          <Button className="customButton"  target = "_blank" href="https://discord.gg/FkPWzsVmNQ">Play Level 4</Button>
+                          <Button className="customButton"  target = "_blank" href="https://twitter.com/TreasureBlox/status/1488569410944176140?s=20&t=TJBvRRVrB5-C8pJRDAKEzg">Play Level 4</Button>
 
                           <footer className="blockquote">
                           </footer>

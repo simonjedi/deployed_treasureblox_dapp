@@ -63,12 +63,11 @@ import Blog6 from "./BlogPosts/Blog6";
 import Blog7 from "./BlogPosts/Blog7";
 import Blog8 from "./BlogPosts/Blog8";
 import Blog9 from "./BlogPosts/Blog9";
-
+import WaitingGunGame from "./waitingGame/Gun_Pages/WaitingGameGun";
 
 // HUNT 1
 import Level1Game1 from "./MiniGamesGame1/Game1";
 import Game1MoreGame1 from "./MiniGamesGame1/Game1MoreGame1";
-
 
 import Level2Game1 from "./MiniGamesGame1/Game2";
 import Game2MoreGame1 from "./MiniGamesGame1/Game2MoreGame1";
@@ -272,6 +271,8 @@ const App = (props) => {
   const [RANDOM3_contract_treasurebloxNative_,set_RANDOM3_Contract_treasurebloxNative_] = useState(null)
   const [game_RANDOM3_treasurebloxNative_,set_RANDOM3_treasurebloxNative_] = useState(null)
 
+  const [WAITINGGAME_contract_treasurebloxNative_,set_WAITINGGAME_Contract_treasurebloxNative_] = useState(null)
+  const [game_WAITINGGAME_treasurebloxNative_,set_WAITINGGAME_treasurebloxNative_] = useState(null)
   // Set Blox Contracts Ends
 
 
@@ -430,6 +431,8 @@ const [totalTreasure_treasurebloxNative_,setTotalTreasure_treasurebloxNative_] =
 
 // GAME 1
 
+
+const [waitingGameBal,setWaitingGameBal] = useState("...Loading...")
 
 const [game1_live_treasurebloxNative_,setGame1_live_treasurebloxNative_] = useState("...Loading...")
 const [game1_prize_treasurebloxNative_,setGame1_prize_treasurebloxNative_] = useState("...Loading...")
@@ -790,9 +793,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
           // // SET WEB3
           setWeb3(web3)
 
-
-
-
           set_GSB_Contract_xyz_(GSB_contract_bsc_)
           set_GSC_Contract_xyz_(GSC_contract_bsc_)
           set_GSD_Contract_xyz_(GSD_contract_bsc_)
@@ -852,6 +852,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
           const RANDOM1_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM1.abi_treasurebloxNative.json');
           const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
           const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
+
 
           const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://bsc-dataseed.binance.org/" && "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c");
           const MAIN_GAME_Address_treasurebloxNative_ = "0xC7284f84715dC34dC2Ba1e5eFD06F8fbA16f4a5c"
@@ -1949,8 +1950,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         const game_RANDOM3_Address_xyz_ = "0xCCB6bF125604eBA8ece40742Ea7526F22911d18c"
         set_RANDOM3_xyz_(game_RANDOM3_Address_xyz_);
 
-
-
         // TOKEN CONTRACT
 
         // MTR BLOX ERC20
@@ -2001,6 +2000,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         const RANDOM1_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM1.abi_treasurebloxNative.json');
         const RANDOM2_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM2.abi_treasurebloxNative.json');
         const RANDOM3_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/RANDOM3.abi_treasurebloxNative.json');
+        const WAITINGGAME_treasurebloxNative_ABI = require('./components/Structure/TreasureBloxContractAbis/WAITINGGAME.abi_treasurebloxNative.json');
 
         const MAIN_GAME_contract_treasurebloxNative_ = new web3.eth.Contract(MAIN_GAME_treasureBloxNative_ABI,"https://rpc.meter.io/" && "0x787B3fAcbA1Fd62A3ef6Fa1a19dAE524ba0AF136");
         const MAIN_GAME_Address_treasurebloxNative_ = "0x787B3fAcbA1Fd62A3ef6Fa1a19dAE524ba0AF136"
@@ -2028,6 +2028,13 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
         // Free Play for users - 0xD622d11592e79fdFaad7584483C3d8D1F3e1cBE6
 
+        // WAITINGGAME 1 in 6 - using MTRG
+        const WAITINGGAME_contract_treasurebloxNative_ = new web3.eth.Contract(WAITINGGAME_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x7F12D0D89828671a066d193280AaAbe6Cd311Fb9");
+        const game_WAITINGGAME_Address_treasurebloxNative_ = "0x7F12D0D89828671a066d193280AaAbe6Cd311Fb9"
+
+
+        set_WAITINGGAME_treasurebloxNative_(game_WAITINGGAME_Address_treasurebloxNative_);
+
         // TOKEN CONTRACT
         // BSC
         const tokenContract_treasurebloxNative_ = new web3.eth.Contract(abiToken_xyz_,"https://rpc.meter.io/" && "0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3");
@@ -2036,15 +2043,14 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         var totalTreasure_treasurebloxNative_ = await tokenContract_treasurebloxNative_.methods.balanceOf("0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3").call();
         totalTreasure_treasurebloxNative_ = totalTreasure_treasurebloxNative_.substring(0, totalTreasure_treasurebloxNative_.length-18)
 
-
-
-
         set_MAIN_GAME_Contract_treasurebloxNative_(MAIN_GAME_contract_treasurebloxNative_)
         set_VOLT_Contract_treasurebloxNative_(VOLT_contract_treasurebloxNative_)
 
         set_RANDOM1_Contract_treasurebloxNative_(RANDOM1_contract_treasurebloxNative_)
         set_RANDOM2_Contract_treasurebloxNative_(RANDOM2_contract_treasurebloxNative_)
         set_RANDOM3_Contract_treasurebloxNative_(RANDOM3_contract_treasurebloxNative_)
+        set_WAITINGGAME_Contract_treasurebloxNative_(WAITINGGAME_contract_treasurebloxNative_)
+
 
         // SET TOKEN DETAILS
         setDecimals_treasurebloxNative_(decimals_treasurebloxNative_)
@@ -2190,9 +2196,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
 
+
           const game1_xyz_ = await GSC_contract_bsc_.methods.Games(partnerId_xyz,1).call();
-
-
           const game1_live_xyz_ = await game1_xyz_[0];
 
           var game1_prize_xyz_ = await game1_xyz_[1];
@@ -2511,6 +2516,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
           // console.log(allowance,"allowance")
 
 
+          const waitingGameBal = await WAITINGGAME_contract_treasurebloxNative_.methods.bal().call();
+          setWaitingGameBal(waitingGameBal)
 
           const game1_treasurebloxNative_ = await GSC_contract_bsc_.methods.Games(partnerId_treasurebloxNative,1).call();
           const game1_live_treasurebloxNative_ = await game1_treasurebloxNative_[0];
@@ -3162,6 +3169,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
     RANDOM1_contract_treasurebloxNative_,
     RANDOM2_contract_treasurebloxNative_,
     RANDOM3_contract_treasurebloxNative_,
+    WAITINGGAME_contract_treasurebloxNative_,
+    game_WAITINGGAME_treasurebloxNative_,
+    waitingGameBal,
+
     CostToPlay_treasurebloxNative_,
     game_VOLT_ContractAddress_xyz_,game_MAIN_GAME_ContractAddress_xyz_,
 
@@ -3202,7 +3213,6 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
     game2team1_treasurebloxNative_team_points_target,game2team1_treasurebloxNative_ppp,game2team1_treasurebloxNative_team_entries,game2team1_treasurebloxNative_team_actual_points,
     game2team2_treasurebloxNative_team_points_target,game2team2_treasurebloxNative_ppp,game2team2_treasurebloxNative_team_entries,game2team2_treasurebloxNative_team_actual_points,
-
 
 
 
@@ -3362,6 +3372,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
                 RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
                 RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
                 RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
                 game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
                 game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -3566,6 +3577,10 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
               </Route>
 
+
+
+
+
               <Route path="/hunt1">
                 <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
                 <Hunt1
@@ -3631,6 +3646,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
                 RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
                 RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
                 RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
                 game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
                 game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -3897,6 +3914,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -4164,6 +4183,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
                 RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
                 RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
                 RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
                 game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
                 game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -4414,6 +4435,282 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
 
 
 
+              <Route path="/WaitingGunGame">
+              <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
+              <WaitingGunGame
+
+              web3={web3}
+              waitingGameBal={waitingGameBal}
+
+              game_RANDOM1_xyz_={game_RANDOM1_xyz_}
+              game_RANDOM2_xyz_={game_RANDOM2_xyz_}
+              game_RANDOM3_xyz_={game_RANDOM3_xyz_}
+
+
+
+              // Checklist
+              step1_xyz_={step1_xyz_}
+              step2_xyz_={step2_xyz_}
+              step3_xyz_={step3_xyz_}
+              step4_xyz_={step4_xyz_}
+              step5_xyz_={step5_xyz_}
+
+              step1_game1_treasurebloxNative_={step1_game1_treasurebloxNative_}
+              step2_game1_treasurebloxNative_={step2_game1_treasurebloxNative_}
+              step3_game1_treasurebloxNative_={step3_game1_treasurebloxNative_}
+              step4_game1_treasurebloxNative_={step4_game1_treasurebloxNative_}
+              step5_game1_treasurebloxNative_={step5_game1_treasurebloxNative_}
+
+
+              step1_game2_treasurebloxNative_={step1_game2_treasurebloxNative_}
+              step2_game2_treasurebloxNative_={step2_game2_treasurebloxNative_}
+              step3_game2_treasurebloxNative_={step3_game2_treasurebloxNative_}
+              step4_game2_treasurebloxNative_={step4_game2_treasurebloxNative_}
+              step5_game2_treasurebloxNative_={step5_game2_treasurebloxNative_}
+              // main
+              is_meter={is_meter}
+              web3={web3}
+              wallet_for_google={wallet_for_google}
+              ip={ip}
+              partnerId_xyz={partnerId_xyz}
+              partnerId_treasurebloxNative={partnerId_treasurebloxNative}
+
+              // partner random 1
+              player_loss_xyz_={player_loss_xyz_}
+              result_loss_xyz_={result_loss_xyz_}
+              pid_loss_xyz_={pid_loss_xyz_}
+              player_win_xyz_={player_win_xyz_}
+              result_win_xyz_={result_win_xyz_}
+              pid_win_xyz_={pid_win_xyz_}
+
+              tokenContract={tokenContract_treasurebloxNative_}
+              decimals={decimals_treasurebloxNative_}
+              totalTreasure={totalTreasure_treasurebloxNative_}
+
+              GSB_contract_bsc_={GSB_contract_bsc_}
+              GSC_contract_bsc_={GSC_contract_bsc_}
+              GSD_contract_bsc_={GSD_contract_bsc_}
+              MAIN_GAME_contract_xyz_={MAIN_GAME_contract_xyz_}
+              VOLT_contract_xyz_={VOLT_contract_xyz_}
+              game_VOLT_ContractAddress_xyz_={game_VOLT_ContractAddress_xyz_}
+              game_MAIN_GAME_ContractAddress_xyz_={game_MAIN_GAME_ContractAddress_xyz_}
+              CostToPlay_xyz_={CostToPlay_xyz_}
+              RANDOM1_contract_xyz_={RANDOM1_contract_xyz_}
+              RANDOM2_contract_xyz_={RANDOM2_contract_xyz_}
+              RANDOM3_contract_xyz_={RANDOM3_contract_xyz_}
+              MAIN_GAME_contract_treasurebloxNative_={MAIN_GAME_contract_treasurebloxNative_}
+              VOLT_contract_treasurebloxNative_={VOLT_contract_treasurebloxNative_}
+              CostToPlay_treasurebloxNative_={CostToPlay_treasurebloxNative_}
+              RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
+              RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
+              RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+              game_WAITINGGAME_treasurebloxNative_={game_WAITINGGAME_treasurebloxNative_}
+
+              game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
+              game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
+
+
+              accounts={accounts}
+
+              // totals
+
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+              // 1
+
+              game1_level_1={game1_level_1}
+              game1_level_1_more={game1_level_1_more}
+              game1_level_2={game1_level_2}
+              game1_level_2_more={game1_level_2_more}
+              game1_level_3={game1_level_3}
+              game1_level_4={game1_level_4}
+              game1_random1={game1_random1}
+              game1_random2={game1_random2}
+              game1_random3={game1_random3}
+
+              // 2
+              game2_level_1={game2_level_1}
+              game2_level_1_more={game2_level_1_more}
+              game2_level_2={game2_level_2}
+              game2_level_2_more={game2_level_2_more}
+              game2_level_3={game2_level_3}
+              game2_level_4={game2_level_4}
+              game2_random1={game2_random1}
+              game2_random2={game2_random2}
+              game2_random3={game2_random3}
+
+              // Partnership Jetswap
+              partnership_home={web3partnership_home}
+              partnership_treasure_hunt_page={partnership_treasure_hunt_page}
+              partnership_1={game2_level_1}
+              partnership_1_more={game2_level_1_more}
+              partnership_2={game2_level_2}
+              partnership_2_more={game2_level_2_more}
+              partnership_3={game2_level_3}
+              partnership_4={game2_level_4}
+              partnership_random1={partnership_random1}
+              partnership_random2={partnership_random2}
+              partnership_random3={partnership_random3}
+
+              // 1
+              game1_live={game1_live_treasurebloxNative_}
+              game1_prize={game1_prize_treasurebloxNative_}
+              game1_question_hash={game1_question_hash_treasurebloxNative_}
+              game1_entry_cost ={game1_costToEnter_treasurebloxNative_}
+              game1_riddle={game1_riddle_treasurebloxNative_}
+              game1_head_start_time={game1_head_start_time_treasurebloxNative_}
+              allGame1_id={allGame1_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame1_user_front_of_que_treasurebloxNative_}
+              allGame1_deadline_time={allGame1_deadline_time_treasurebloxNative_}
+              allGame1_username={allGame1_username_treasurebloxNative_}
+              allGame1_total_game_tries={allGame1_total_game_tries_treasurebloxNative_}
+              countGame1={countGame1_treasurebloxNative_}
+              countGame1DeadlineTrue={countGame1DeadlineTrue_treasurebloxNative_}
+              // 2
+              game2_live={game2_live_treasurebloxNative_}
+              game2_prize={game2_prize_treasurebloxNative_}
+              game2_question_hash={game2_question_hash_treasurebloxNative_}
+              game2_entry_cost ={game2_costToEnter_treasurebloxNative_}
+              game2_riddle={game2_riddle_treasurebloxNative_}
+              game2_head_start_time={game2_head_start_time_treasurebloxNative_}
+              allGame2_id={allGame2_id_treasurebloxNative_}
+              allGame1_user_front_of_que={allGame2_user_front_of_que_treasurebloxNative_}
+              allGame2_deadline_time={allGame2_deadline_time_treasurebloxNative_}
+              allGame2_username={allGame2_username_treasurebloxNative_}
+              allGame2_total_game_tries={allGame2_total_game_tries_treasurebloxNative_}
+              countGame2={countGame2_treasurebloxNative_}
+              countGame2DeadlineTrue={countGame2DeadlineTrue_treasurebloxNative_}
+
+
+              // 1
+
+
+              game1numberOfEntries={game1numberOfEntries_treasurebloxNative_}
+              userGame1_id={userGame1_id_treasurebloxNative_}
+              userEntered_game1={userEntered_game1_treasurebloxNative_}
+              userGame1_headstart_time={userGame1_headstart_time_treasurebloxNative_}
+              userGame1_live={userGame1_live_treasurebloxNative_}
+
+              winning_address1={winning_address1_treasurebloxNative_}
+              treasure_found1={treasure_found1_treasurebloxNative_}
+              winning_prize1={winning_prize1_treasurebloxNative_}
+
+              attemptId1={attemptId1_treasurebloxNative_}
+              attemptAddress1={attemptAddress1_treasurebloxNative_}
+              attemptUsername1={attemptUsername1_treasurebloxNative_}
+              attemptDeadline1={attemptDeadline1_treasurebloxNative_}
+              totalGameEntriesGame1={totalGameEntriesGame1_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 2
+              game2numberOfEntries={game2numberOfEntries_treasurebloxNative_}
+              userGame2_id={userGame2_id_treasurebloxNative_}
+              userEntered_game2={userEntered_game2_treasurebloxNative_}
+              userGame2_headstart_time={userGame2_headstart_time_treasurebloxNative_}
+              userGame2_live={userGame2_live_treasurebloxNative_}
+
+              winning_address2={winning_address2_treasurebloxNative_}
+              treasure_found2={treasure_found2_treasurebloxNative_}
+              winning_prize2={winning_prize2_treasurebloxNative_}
+
+              attemptId2={attemptId2_treasurebloxNative_}
+              attemptAddress2={attemptAddress2_treasurebloxNative_}
+              attemptUsername2={attemptUsername2_treasurebloxNative_}
+              attemptDeadline2={attemptDeadline2_treasurebloxNative_}
+              totalGameEntriesGame2={totalGameEntriesGame2_treasurebloxNative_}
+              globalNumberOfTries={globalNumberOfTries_treasurebloxNative_}
+
+
+              // 1
+              game1LeaderBoardIndex={game1LeaderBoardIndex_treasurebloxNative_}
+              game1LeaderBoardGameID={game1LeaderBoardGameID_treasurebloxNative_}
+              game1LeaderBoardAddress={game1LeaderBoardAddress_treasurebloxNative_}
+              game1LeaderBoardEntered={game1LeaderBoardEntered_treasurebloxNative_}
+              game1LeaderBoardUsername={game1LeaderBoardUsername_treasurebloxNative_}
+              game1LeaderBoardTries={game1LeaderBoardTries_treasurebloxNative_}
+              game1LeaderBoardStage={game1LeaderBoardStage_treasurebloxNative_}
+              // 2
+              game2LeaderBoardIndex={game2LeaderBoardIndex_treasurebloxNative_}
+              game2LeaderBoardGameID={game2LeaderBoardGameID_treasurebloxNative_}
+              game2LeaderBoardAddress={game2LeaderBoardAddress_treasurebloxNative_}
+              game2LeaderBoardEntered={game2LeaderBoardEntered_treasurebloxNative_}
+              game2LeaderBoardUsername={game2LeaderBoardUsername_treasurebloxNative_}
+              game2LeaderBoardTries={game2LeaderBoardTries_treasurebloxNative_}
+              game2LeaderBoardStage={game2LeaderBoardStage_treasurebloxNative_}
+
+              // 1
+              game1LeaderBoard={game1LeaderBoard_treasurebloxNative_}
+              game1UserList={game1UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game1={state_leaderboardAddressSearch_huntid_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game1={state_leaderboardAddressSearch_address_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game1={state_leaderboardAddressSearch_entered_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game1={state_leaderboardAddressSearch_username_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game1={state_leaderboardAddressSearch_tries_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game1={state_leaderboardAddressSearch_stage_game1_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game1={state_leaderboardAddressSearch_team_game1_treasurebloxNative_}
+              state_WinnerEstPrizeGame1={state_WinnerEstPrizeGame1_treasurebloxNative_}
+
+              userLevel1Game1={userLevel1Game1_treasurebloxNative_}
+              userLevel2Game1={userLevel2Game1_treasurebloxNative_}
+              userLevel3Game1={userLevel3Game1_treasurebloxNative_}
+              userLevel4Game1={userLevel4Game1_treasurebloxNative_}
+
+              // 2
+
+              game2LeaderBoard={game2LeaderBoard_treasurebloxNative_}
+              game2UserList={game2UserList_treasurebloxNative_}
+
+              state_leaderboardAddressSearch_huntid_game2={state_leaderboardAddressSearch_huntid_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_address_game2={state_leaderboardAddressSearch_address_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_entered_game2={state_leaderboardAddressSearch_entered_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_username_game2={state_leaderboardAddressSearch_username_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_tries_game2={state_leaderboardAddressSearch_tries_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_stage_game2={state_leaderboardAddressSearch_stage_game2_treasurebloxNative_}
+              state_leaderboardAddressSearch_team_game2={state_leaderboardAddressSearch_team_game2_treasurebloxNative_}
+              state_WinnerEstPrizeGame2={state_WinnerEstPrizeGame2_treasurebloxNative_}
+
+              // 1
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game1team1_team_points_target={game1team1_treasurebloxNative_team_points_target}
+              game1team1_ppp={game1team1_treasurebloxNative_ppp}
+              game1team1_team_entries={game1team1_treasurebloxNative_team_entries}
+              game1team1_team_actual_points={game1team1_treasurebloxNative_team_actual_points}
+              game1team2_team_points_target={game1team2_treasurebloxNative_team_points_target}
+              game1team2_ppp={game1team2_treasurebloxNative_ppp}
+              game1team2_team_entries={game1team2_treasurebloxNative_team_entries}
+              game1team2_team_actual_points={game1team2_treasurebloxNative_team_actual_points}
+
+              // 2
+              userLevel1Game2={userLevel1Game2_treasurebloxNative_}
+              userLevel2Game2={userLevel2Game2_treasurebloxNative_}
+              userLevel3Game2={userLevel3Game2_treasurebloxNative_}
+              userLevel4Game2={userLevel4Game2_treasurebloxNative_}
+
+              game2team1_team_points_target={game2team1_treasurebloxNative_team_points_target}
+              game2team1_ppp={game2team1_treasurebloxNative_ppp}
+              game2team1_team_entries={game2team1_treasurebloxNative_team_entries}
+              game2team1_team_actual_points={game2team1_treasurebloxNative_team_actual_points}
+              game2team2_team_points_target={game2team2_treasurebloxNative_team_points_target}
+              game2team2_ppp={game2team2_treasurebloxNative_ppp}
+              game2team2_team_entries={game2team2_treasurebloxNative_team_entries}
+              game2team2_team_actual_points={game2team2_treasurebloxNative_team_actual_points}
+
+
+
+
+              />
+              </Route>
+
+
+
               <Route path={game1_level_1}>
               <MyNav accounts={accounts} is_meter={is_meter} onClick={() => Connection()}/>
               <Level1Game1
@@ -4478,6 +4775,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -4743,6 +5042,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -5008,6 +5309,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -5272,6 +5575,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -5536,6 +5841,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -5801,6 +6108,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -6064,6 +6373,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -6328,6 +6639,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -6592,6 +6905,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -6857,6 +7172,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -7121,6 +7438,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -7385,6 +7704,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -7649,6 +7970,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -7913,6 +8236,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -8178,6 +8503,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -8442,6 +8769,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -8706,6 +9035,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -8970,6 +9301,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
               RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
               RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
               RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+              WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
               game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
               game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 
@@ -11037,6 +11370,8 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
                 RANDOM1_contract_treasurebloxNative_={RANDOM1_contract_treasurebloxNative_}
                 RANDOM2_contract_treasurebloxNative_={RANDOM2_contract_treasurebloxNative_}
                 RANDOM3_contract_treasurebloxNative_={RANDOM3_contract_treasurebloxNative_}
+                WAITINGGAME_contract_treasurebloxNative_={WAITINGGAME_contract_treasurebloxNative_}
+
                 game_VOLT_ContractAddress_treasurebloxNative_={game_VOLT_ContractAddress_treasurebloxNative_}
                 game_MAIN_GAME_ContractAddress_treasurebloxNative_={game_MAIN_GAME_ContractAddress_treasurebloxNative_}
 

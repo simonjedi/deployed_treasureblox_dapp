@@ -49,7 +49,7 @@ const Gun = (props) =>{
 async function tryAgain(uid){
     setTimeout(async function(){
 
-      const transaction2 = await props.RANDOM1_contract_treasurebloxNative_.methods.player_history(props.accounts[0],uid).call();
+      const transaction2 = await props.RANDOM2_contract_treasurebloxNative_.methods.player_history(props.accounts[0],uid).call();
 
       if (transaction2[2]){
         setWin(true)

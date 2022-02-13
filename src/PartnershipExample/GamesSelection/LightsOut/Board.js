@@ -83,7 +83,6 @@ class Board extends Component {
 
 
 
-
               </div>
             </center>
         </div>

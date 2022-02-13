@@ -12,7 +12,6 @@ import { useWallet, UseWalletProvider } from 'use-wallet'
 import Timer from '../TreasureHuntGame/Timer';
 
 
-
 import troyIntro from '../GamesSelection/MineGame/assets/TroyClip1.mp4';
 import gameSound from '../GamesSelection/MineGame/assets/game1_soundtrack.mp4';
 

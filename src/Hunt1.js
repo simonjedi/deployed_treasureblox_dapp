@@ -508,14 +508,24 @@ const handleSubmitEnterDave = async() => {
         <div>
 
 
-        {(counter >= 2000)?(
+        {(counter >= 0)?(
           <div>
 
           <Container className='mt-5' fluid="md">
                 <div className="siteTitle">Elon's lost his rocket!</div>
 
                 <div className="siteTitle">Team Captain Troy <a className="MiniGameTitle">Vs</a> Team Crypto Dave!</div>
-                <div className="SubTitleHeader">Who's side will you join in the Strike Fighter battle for the metaverse</div>
+                <div>{props.is_meter?(
+                  <div className="SubTitleHeader">
+                  Who's side will you join to help Elon find his rocket?
+                  </div>
+                ):(
+                  <div>
+                  Who's side will you join in the Strike Fighter battle for the metaverse
+
+                  </div>
+
+                )}</div>
 
   <center>
                 <div className='neon-orange blink_me3' style={{"text-decoration": "none"}}>PRIZE VAULT {props.game1_prize} {props.is_meter?(<a>MTRG</a>):(<a>WINGS</a>)}</div>

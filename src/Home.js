@@ -66,13 +66,6 @@ const Home = (props) => {
 
 
 
-
-
-
-
-
-
-
   const header_play_to_earn = (event) => {
     window.dataLayer.push({
       event: "wallet_information",

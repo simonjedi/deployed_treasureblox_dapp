@@ -13,8 +13,6 @@ import waiting from '../Sounds/waiting.wav';
 import winninglevel from '../Sounds/winning.mp4';
 
 
-
-
 import ReactAudioPlayer from 'react-audio-player';
 
 
@@ -84,9 +82,21 @@ const Step3Card = (props) => {
       setMessage(value);
     }
 
+
+    
+
     const handleSubmitSecret = async() => {
 
       setloading(true);
+
+      console.log(props.VOLT_contract_treasurebloxNative_)
+      console.log(props.partnerId_treasurebloxNative)
+      console.log(hashedSecret)
+      console.log(secret)
+      console.log(props.allGame1_id)
+      console.log(message)
+      console.log(props.state_leaderboardAddressSearch_team_game1)
+
       const result = await props.VOLT_contract_treasurebloxNative_.methods.SubmitSecret(props.partnerId_treasurebloxNative,hashedSecret,secret,props.allGame1_id,message,props.state_leaderboardAddressSearch_team_game1).send({from: accounts});
 
       if (result.events[1].raw.topics[3] == "0x0000000000000000000000000000000000000000000000000000000000000001"){

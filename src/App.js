@@ -2007,7 +2007,7 @@ const [step5_game1_treasurebloxNative_,set_step5_game1_treasurebloxNative_] = us
         set_MAIN_GAME_GameContractAddress_treasurebloxNative_(MAIN_GAME_Address_treasurebloxNative_);
 
 
-        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0xdFf65B18c39602395d1333289Fb53661e8Ee4aFa");
+        const VOLT_contract_treasurebloxNative_ = new web3.eth.Contract(VOLT_treasurebloxNative_ABI,"https://rpc.meter.io/" && "0x65c6F4a659DC6848214b4Dd0D84a669ee37809f1");
         const VOLT_Address_treasurebloxNative_ = "0x65c6F4a659DC6848214b4Dd0D84a669ee37809f1"
         set_VOLT_GameContractAddress_treasurebloxNative_(VOLT_Address_treasurebloxNative_);
 

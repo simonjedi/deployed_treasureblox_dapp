@@ -90,10 +90,10 @@ const [playLevel4Game1,setplayLevel4Game1] = useState(false);
       const allowance = await props.tokenContract.methods.allowance(props.accounts[0],props.game_VOLT_ContractAddress_treasurebloxNative_).call();
       const allowance_main_game = await props.tokenContract.methods.allowance(props.accounts[0],props.game_MAIN_GAME_ContractAddress_treasurebloxNative_).call();
 
-      if (allowance <= props.web3.utils.toWei("50000", 'ether')){
-        if (allowance_main_game <= props.web3.utils.toWei("50000", 'ether')){
-          await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts});
-          await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("50000", 'ether')).send({from: accounts});
+      if (allowance <= props.web3.utils.toWei("5000", 'ether')){
+        if (allowance_main_game <= props.web3.utils.toWei("5000", 'ether')){
+          await tokenContract.methods.approve(props.game_VOLT_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("5000", 'ether')).send({from: accounts});
+          await tokenContract.methods.approve(props.game_MAIN_GAME_ContractAddress_treasurebloxNative_,props.web3.utils.toWei("5000", 'ether')).send({from: accounts});
         }
       }
       const result1 = await props.MAIN_GAME_contract_treasurebloxNative_.methods.headStartTimeLock(props.partnerId_treasurebloxNative,username,props.allGame1_id).send({from: accounts});
